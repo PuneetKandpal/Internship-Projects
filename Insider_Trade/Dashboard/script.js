@@ -3,13 +3,16 @@ document.getElementById("theme-toggle").addEventListener("click", function () {
 
   const themeToggle = document.getElementById("theme-toggle");
   const logo = document.getElementById("logo");
+  const heroImage = document.getElementById("heroImage");
 
   if (document.body.classList.contains("dark-mode")) {
     themeToggle.src = "./images/dark_button.svg";
     logo.src = "./images/logo_dark_theme.svg";
+    // heroImage.src = "./images/dark.png";
   } else {
     themeToggle.src = "./images/light_button.svg";
     logo.src = "./images/logo_light_theme.svg";
+    // heroImage.src = "./images/hero_img_light..svg";
   }
 });
 

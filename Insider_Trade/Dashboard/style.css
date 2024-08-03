@@ -16,7 +16,9 @@
   --white-70: rgba(22, 22, 22, 0.7);
   --white-50: rgba(22, 22, 22, 0.5);
   --white-40: rgba(22, 22, 22, 0.4);
+  --white-08: rgba(22, 22, 22, 0.08);
   --golden: #c2a404;
+  --slate: #f6f6f6;
 }
 
 body.dark-mode {
@@ -29,13 +31,14 @@ body.dark-mode {
   --white-70: rgba(246, 246, 246, 0.7);
   --white-50: rgba(246, 246, 246, 0.5);
   --white-40: rgba(246, 246, 246, 0.4);
+  --white-08: rgba(246, 246, 246, 0.08);
   --golden: #c2a404;
 }
 
 html,
 body {
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   font-family: "Lato", sans-serif;
   background-color: var(--primary);
   color: var(--secondary);
@@ -48,20 +51,20 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.9rem 5% 1.1rem 5%;
-  background: linear-gradient(to bottom, #20af203a, var(--primary));
+  padding: 1rem 5%;
+  background: linear-gradient(to bottom, #20af203a, #f6f6f600);
   transition: background-color 0s;
   position: sticky;
   top: 0;
-  z-index: 10000;
+  z-index: 1000;
 }
 
 .navbar.scrolled {
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(8px);
 }
 
 .navbar .nav-left img {
-  width: auto;
+  width: fit-content;
   height: 2rem;
 }
 
@@ -78,13 +81,24 @@ body {
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
+  .navbar .nav-left img {
+    height: 1.5rem;
   }
 
-  .navbar .nav-right {
-    margin-top: 1rem;
+  .navbar .nav-right img {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar .nav-left img {
+    height: 1.2rem;
+  }
+
+  .navbar .nav-right img {
+    width: 1.8rem;
+    height: 1.8rem;
   }
 }
 
@@ -99,7 +113,9 @@ body {
   margin: 3rem auto 0rem auto;
   width: 90%;
   text-align: center;
-  color: var(--white);
+  background: linear-gradient(to bottom, var(--white), var(--white-70));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #main p {
@@ -112,6 +128,34 @@ body {
   font-weight: 400;
 }
 
+@media (max-width: 768px) {
+  #main h1 {
+    font-size: 2rem;
+    line-height: 40px;
+  }
+
+  #main p {
+    width: 70%;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #main {
+    padding: 1rem 5%;
+  }
+
+  #main h1 {
+    font-size: 1.6rem;
+    line-height: 30px;
+  }
+
+  #main p {
+    width: 90%;
+    font-size: 0.9rem;
+  }
+}
+
 /* search ---------------------------------------------- */
 #searchBox {
   padding: 2rem 20%;
@@ -119,13 +163,15 @@ body {
 }
 
 #searchDiv {
-  border-radius: 0.5rem;
+  border-radius: 0.7rem;
   background-color: var(--light-green-2);
   border: 1px solid var(--light-green-1);
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   display: flex;
   flex-direction: column;
   gap: 18px;
+  position: relative;
+  z-index: 100;
 }
 
 #searchDiv h2 {
@@ -139,33 +185,232 @@ body {
 }
 
 .search-and-btns input {
-  width: 64%;
+  width: 60%;
   border: none;
   outline: none;
   border-radius: 5px;
   padding: 10px 15px;
-  background-color: rgba(22, 22, 22, 0.1);
+  background-color: var(--white-08);
+  color: var(--white);
+  font-size: 0.9rem;
+}
+
+.search-and-btns input::placeholder {
   color: var(--white-40);
 }
 
 #filterBtns {
-  width: 35%;
+  width: 40%;
   display: flex;
   justify-content: end;
   align-items: center;
-  /* background-color: rgba(22, 22, 22, 0.1); */
   color: var(--white-40);
 }
 
 #filterBtns button {
-  background-color: rgba(22, 22, 22, 0.1);
+  background-color: var(--white-08);
   border: none;
   outline: none;
   width: 49.4%;
   height: 100%;
+  color: var(--white-50);
+  border-radius: 5px;
+}
+
+#filterBtns button:hover {
+  background-color: var(--light-green-1);
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+#NYSE,
+#TSX {
+  font-size: 15px;
 }
 
 .selected {
-  /* background-color: var(--secondary); */
+  background-color: var(--secondary) !important;
+  color: var(--slate) !important;
+}
+
+#search {
+  background-color: var(--golden);
   color: var(--primary);
+  margin-top: 0px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  padding: 12px;
+  width: 100%;
+}
+
+#search:hover {
+  background-color: var(--white);
+  color: var(--primary);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+#searchDiv .blur1 {
+  width: 65px;
+  height: 70px;
+  background-color: var(--secondary);
+  filter: blur(52px);
+  border-radius: 50%;
+  top: -8%;
+  right: -2%;
+  z-index: 10;
+  position: absolute;
+}
+
+#searchDiv .blur2 {
+  width: 75px;
+  height: 60px;
+  background-color: var(--secondary);
+  filter: blur(52px);
+  border-radius: 50%;
+  bottom: -10%;
+  left: -3%;
+  z-index: 10;
+  position: absolute;
+}
+
+/* Responsive styles */
+@media (max-width: 780px) {
+  #searchBox {
+    padding: 2rem 10%;
+  }
+
+  #searchDiv {
+    padding: 2rem;
+  }
+
+  .search-and-btns {
+    /* flex-direction: column; */
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .search-and-btns input {
+    width: 100%;
+  }
+
+  #filterBtns {
+    width: 100%;
+    /* justify-content: center; */
+    /* gap: 10px; */
+  }
+
+  #filterBtns button {
+    width: 60%;
+  }
+
+  #search {
+    width: 100%;
+  }
+
+  #searchDiv .blur1 {
+    width: 50px;
+    height: 55px;
+    top: -5%;
+    right: -5%;
+  }
+
+  #searchDiv .blur2 {
+    width: 60px;
+    height: 50px;
+    bottom: -5%;
+    left: -5%;
+  }
+}
+
+@media (max-width: 480px) {
+  #searchDiv h2 {
+    font-size: 1rem;
+  }
+
+  #NYSE,
+  #TSX {
+    font-size: 12px !important;
+  }
+
+  #searchBox {
+    padding: 1rem 5%;
+  }
+
+  #searchDiv {
+    padding: 1rem;
+  }
+
+  .search-and-btns {
+    height: 1.8rem;
+    font-size: 10px;
+  }
+
+  .search-and-btns input {
+    font-size: 0.8rem;
+  }
+
+  #filterBtns button {
+    font-size: 0.8rem;
+  }
+
+  #search {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+
+  #searchDiv .blur1 {
+    width: 40px;
+    height: 45px;
+  }
+
+  #searchDiv .blur2 {
+    width: 45px;
+    height: 40px;
+  }
+}
+
+/* img-------------------------------------------------------------------------------------------------  */
+#heroimg {
+  width: 80%;
+  padding: 6rem;
+  margin: 1rem auto 0rem auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: saddlebrown; */
+}
+
+#heroimg img {
+  max-width: 80%;
+  min-height: 70%;
+  /* scale: 2; */
+}
+
+@media (max-width: 780px) {
+  #heroimg {
+    width: 90%;
+    padding: 3rem;
+  }
+
+  #heroimg img {
+    max-width: 80%;
+    scale: 1.5;
+  }
+}
+
+@media (max-width: 500) {
+  #heroimg {
+    width: 100%;
+    padding: 2rem;
+  }
+
+  #heroimg img {
+    max-width: 80%;
+    scale: 2;
+  }
 }
