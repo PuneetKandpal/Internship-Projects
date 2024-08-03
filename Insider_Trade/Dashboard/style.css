@@ -12,6 +12,10 @@
   --light-green-1: rgba(19, 114, 19, 0.5);
   --light-green-2: rgba(19, 114, 19, 0.09);
   --white: #161616;
+  --white-80: rgba(22, 22, 22, 0.8);
+  --white-70: rgba(22, 22, 22, 0.7);
+  --white-50: rgba(22, 22, 22, 0.5);
+  --white-40: rgba(22, 22, 22, 0.4);
   --golden: #c2a404;
 }
 
@@ -21,6 +25,10 @@ body.dark-mode {
   --light-green-1: rgba(19, 114, 19, 0.5);
   --light-green-2: rgba(19, 114, 19, 0.09);
   --white: #f6f6f6;
+  --white-80: rgba(246, 246, 246, 0.8);
+  --white-70: rgba(246, 246, 246, 0.7);
+  --white-50: rgba(246, 246, 246, 0.5);
+  --white-40: rgba(246, 246, 246, 0.4);
   --golden: #c2a404;
 }
 
@@ -49,9 +57,8 @@ body {
 }
 
 .navbar.scrolled {
-    backdrop-filter: blur(10px);
-    /* background-color: rgba(19, 114, 19, 0.5); */
-  }
+  backdrop-filter: blur(10px);
+}
 
 .navbar .nav-left img {
   width: auto;
@@ -81,7 +88,3 @@ body {
   }
 }
 
-/* hero-----------------------------------  */
-#main {
-  padding: 2rem 5%;
-}
