@@ -88,3 +88,26 @@ body {
   }
 }
 
+/* hero-----------------------------------  */
+#main {
+  padding: 2rem 5%;
+}
+
+#main h1 {
+  font-size: 2.4rem;
+  line-height: 50px;
+  margin: 3rem auto 0rem auto;
+  width: 90%;
+  text-align: center;
+  color: var(--white);
+}
+
+#main p {
+  /* line-height: ; */
+  text-align: center;
+  margin: auto;
+  padding: 15px;
+  width: 50%;
+  color: var(--white-70);
+  font-weight: 400;
+}
