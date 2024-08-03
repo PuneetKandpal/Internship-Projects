@@ -1,5 +1,22 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:100,100italic,300,300italic,regular,italic,700,700italic,900,900italic);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   --primary: #ffffff;
+  --secondary: #137213;
+  --light-green-1: rgba(19, 114, 19, 0.5);
+  --light-green-2: rgba(19, 114, 19, 0.09);
+  --white: #161616;
+  --golden: #c2a404;
+}
+
+body.dark-mode {
+  --primary: #011001;
   --secondary: #137213;
   --light-green-1: rgba(19, 114, 19, 0.5);
   --light-green-2: rgba(19, 114, 19, 0.09);
@@ -7,9 +24,64 @@
   --golden: #c2a404;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: #011001;
-    --white: #161616;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Lato", sans-serif;
+  background-color: var(--primary);
+  color: var(--secondary);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* navbar----------------------------------------------------------------  */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 5% 1.1rem 5%;
+  background: linear-gradient(to bottom, #20af203a, var(--primary));
+  transition: background-color 0s;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+}
+
+.navbar.scrolled {
+    backdrop-filter: blur(10px);
+    /* background-color: rgba(19, 114, 19, 0.5); */
   }
+
+.navbar .nav-left img {
+  width: auto;
+  height: 2rem;
+}
+
+.navbar .nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .nav-right img {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  transition: transform 0s;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar .nav-right {
+    margin-top: 1rem;
+  }
+}
+
+/* hero-----------------------------------  */
+#main {
+  padding: 2rem 5%;
 }
