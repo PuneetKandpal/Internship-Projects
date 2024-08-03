@@ -1,0 +1,15 @@
+:root {
+  --primary: #ffffff;
+  --secondary: #137213;
+  --light-green-1: rgba(19, 114, 19, 0.5);
+  --light-green-2: rgba(19, 114, 19, 0.09);
+  --white: #f6f6f6;
+  --golden: #c2a404;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #011001;
+    --white: #161616;
+  }
+}
