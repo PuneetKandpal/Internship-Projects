@@ -660,10 +660,6 @@ body {
     height: 1.9rem;
   }
 
-  .footer-right {
-    /* padding-top: -27rem; */
-  }
-
   .footer-nav li a {
     font-size: 14px;
   }
@@ -674,10 +670,6 @@ body {
 
   .footer-nav li a {
     padding-left: 0;
-  }
-
-  .footer-hr {
-    /* padding-top: -12rem; */
   }
 
   .footer-bottom {
