@@ -54,7 +54,8 @@ body {
   padding: 1rem 5%;
   background: linear-gradient(to bottom, #20af203a, #f6f6f600);
   transition: background-color 0s;
-  position: sticky;
+  position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1000;
 }
@@ -110,6 +111,7 @@ body {
 }
 
 #company-details {
+  margin-top: 5rem;
   width: 100%;
   /* height: 37vh; */
   background-image: url("./imgs/company-pic.webp"),
@@ -253,6 +255,48 @@ body {
   .company-name p {
     font-size: 0.8rem;
   }
+}
+
+/* second nav--------------------------------------------------------------------  */
+.stickynav2 {
+  background-color: transparent;
+  padding-top: 0.1rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 4rem;
+  z-index: 999;
+  /* backdrop-filter: blur(8px); */
+}
+
+.second-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  margin-top: 1rem; /* Adjust to create space below the main nav */
+  border-radius: 4px;
+}
+
+.second-nav-light {
+  background-color: #011001e8;
+}
+
+.second-nav-dark {
+  background-color: rgb(2, 62, 2);
+}
+
+.second-nav a {
+  text-decoration: none;
+}
+
+.second-nav a p {
+  color: rgba(255, 255, 255, 0.522);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.second-nav a p.active {
+  color: white !important;
 }
 
 /* footer----------------------------------------------------------------------------------------------  */
