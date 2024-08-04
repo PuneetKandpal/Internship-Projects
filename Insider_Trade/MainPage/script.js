@@ -34,3 +34,28 @@ window.addEventListener("scroll", function () {
 });
 
 // -----------------------------------------------------------------------------------------------
+
+// second nav------------------------
+
+window.addEventListener("scroll", () => {
+  const sections = document.querySelectorAll("div[id]");
+  const navLinks = document.querySelectorAll(".second-nav a p");
+
+  let currentSection = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 80; // Adjust based on your nav height
+    const sectionBottom = sectionTop + section.offsetHeight;
+
+    if (pageYOffset >= sectionTop && pageYOffset < sectionBottom) {
+      currentSection = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.parentElement.getAttribute("href") === `#${currentSection}`) {
+      link.classList.add("active");
+    }
+  });
+});

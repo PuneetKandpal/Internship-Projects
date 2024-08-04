@@ -110,6 +110,12 @@ body {
   padding: 2% 6%;
 }
 
+@media (max-width: 500px) {
+  #main {
+    padding: 2% 2.2%;
+  }
+}
+
 #company-details {
   margin-top: 5rem;
   width: 100%;
@@ -260,6 +266,7 @@ body {
 /* second nav--------------------------------------------------------------------  */
 .stickynav2 {
   background-color: transparent;
+  display: block;
   padding-top: 0.1rem;
   position: -webkit-sticky;
   position: sticky;
@@ -275,6 +282,7 @@ body {
   padding: 1rem 2rem;
   margin-top: 1rem; /* Adjust to create space below the main nav */
   border-radius: 4px;
+  flex-wrap: wrap;
 }
 
 .second-nav-light {
@@ -297,6 +305,227 @@ body {
 
 .second-nav a p.active {
   color: white !important;
+}
+
+#components-business-summary,
+#components-financial-metric {
+  padding-top: 5.6rem;
+}
+
+@media (max-width: 1130px) {
+  .second-nav a p {
+    font-size: 0.75rem;
+  }
+
+  .second-nav {
+    padding: 0.9rem;
+    /* justify-content: center; */
+    gap: 13px;
+  }
+}
+
+@media (max-width: 860px) {
+  .second-nav {
+    /* padding: 0.9rem; */
+    justify-content: center;
+    /* gap: 10px; */
+  }
+}
+
+@media (max-width: 500px) {
+  .stickynav2 {
+    display: none;
+  }
+
+  #components-business-summary,
+  #components-financial-metric {
+    padding-top: 4rem;
+  }
+}
+
+/* =========================================================================  */
+/* <!-- Business Summary Content --> */
+.component-box {
+  background-color: var(--light-green-2);
+  border: 1px solid #06550665;
+  padding: 2rem 2.5rem;
+  border-radius: 5px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 500px) {
+  .component-box {
+    padding: 1rem 0.8rem;
+  }
+}
+
+.component-heading {
+  font-size: 1.6rem;
+  color: var(--golden);
+}
+
+@media (max-width: 500px) {
+  .component-heading {
+    font-size: 1.3rem;
+  }
+}
+
+.blur1,
+.blur2 {
+  height: 65px;
+  width: 65px;
+  background-color: var(--secondary);
+  filter: blur(58px);
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+.blur1 {
+  top: -5%;
+  right: -1%;
+}
+.blur2 {
+  bottom: -5%;
+  left: -1%;
+}
+
+#business-summary .links {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#business-summary .links p {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+#business-summary .links p a {
+  text-decoration: none;
+  font-size: 15px;
+}
+
+#business-summary .links p i {
+  color: var(--golden);
+  font-size: 1.1rem;
+}
+
+#summary {
+  margin-top: 2rem;
+  font-size: 16px;
+  /* font-weight: 600; */
+  color: var(--white-70);
+  line-height: 1.7rem;
+}
+.summary-dark {
+  font-weight: 300;
+}
+.summary-light {
+  font-weight: 600;
+}
+
+#website {
+  color: rgb(16, 105, 161);
+}
+#address {
+  color: var(--white-70);
+  font-weight: 400;
+}
+
+@media (max-width: 500px) {
+  #business-summary .links p a {
+    font-size: 13px;
+  }
+
+  #summary {
+    font-size: 14px;
+    line-height: 1.6rem;
+  }
+}
+
+/* <!-- Financial Metric Content -->  */
+
+#financial-matrics-box {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.matric-box {
+  padding: 1rem 0;
+  margin-right: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  width: 18.5%;
+}
+
+.matric-box h5 {
+  color: var(--white-40);
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.matric-box p {
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 1440px) {
+  .matric-box {
+    margin-right: 6%;
+  }
+
+  .matric-box h5,
+  .matric-box p {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 880px) {
+  .matric-box {
+    padding: 0.8rem 0;
+    width: 25%;
+    margin-right: 5%;
+  }
+}
+@media (max-width: 780px) {
+  .matric-box {
+    width: 45%;
+    padding: 0.7rem 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .matric-box h5,
+  .matric-box p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 380px) {
+  #financial-matrics-box {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .matric-box {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .matric-box h5,
+  .matric-box p {
+    font-size: 12px;
+  }
 }
 
 /* footer----------------------------------------------------------------------------------------------  */
