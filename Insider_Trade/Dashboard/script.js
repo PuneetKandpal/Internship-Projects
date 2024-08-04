@@ -4,15 +4,18 @@ document.getElementById("theme-toggle").addEventListener("click", function () {
   const themeToggle = document.getElementById("theme-toggle");
   const logo = document.getElementById("logo");
   const heroImage = document.getElementById("heroImage");
+  const footer = document.querySelector(".footer");
 
   if (document.body.classList.contains("dark-mode")) {
     themeToggle.src = "./images/dark_button.svg";
     logo.src = "./images/logo_dark_theme.svg";
-    // heroImage.src = "./images/dark.png";
+    footer.classList.remove("footer-light");
+    footer.classList.add("footer-dark");
   } else {
     themeToggle.src = "./images/light_button.svg";
     logo.src = "./images/logo_light_theme.svg";
-    // heroImage.src = "./images/hero_img_light..svg";
+    footer.classList.remove("footer-dark");
+    footer.classList.add("footer-light");
   }
 });
 
