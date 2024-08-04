@@ -103,6 +103,157 @@ body {
 }
 
 /* Main=================================================================  */
+#main {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2% 6%;
+}
+
+#company-details {
+  width: 100%;
+  /* height: 37vh; */
+  background-image: url("./imgs/company-pic.webp"),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.6));
+  background-size: cover;
+  background-position: 65% 70%;
+  background-blend-mode: multiply;
+  padding: 3% 3%;
+  border-radius: 6px;
+}
+
+#company-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+  justify-content: space-between;
+}
+
+.upper-div {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 2rem;
+}
+
+.company-logo {
+  height: 60px;
+  width: 60px;
+}
+
+.company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.company-name {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.company-name h1 {
+  font-size: 1.9rem;
+  color: white;
+  text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.804);
+  margin-top: -5px;
+}
+
+.company-name p {
+  color: rgba(255, 255, 255, 0.953);
+  margin-top: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.804);
+}
+.company-name p span {
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 5px;
+  font-weight: 400;
+  padding-left: 4px;
+}
+
+.lower-div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
+
+.sub-info {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 4px;
+}
+
+.sub-info-upper {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 500;
+  text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.804);
+}
+
+.sub-info-lower {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.886);
+  font-weight: 400;
+  text-transform: capitalize;
+  text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.804);
+}
+
+@media (max-width: 910px) {
+  .lower-div {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 770px) {
+  .lower-div {
+    gap: 2rem;
+  }
+
+  .company-logo {
+    height: 50px;
+    width: 50px;
+  }
+
+  .company-name h1 {
+    font-size: 1.4rem;
+  }
+
+  .company-name p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .lower-div {
+    gap: 1.5rem;
+  }
+
+  .sub-info {
+    gap: 3px;
+  }
+
+  #company-info {
+    gap: 2rem;
+  }
+
+  .company-name h1 {
+    font-size: 1.2rem;
+  }
+
+  .company-name p {
+    font-size: 0.8rem;
+  }
+}
 
 /* footer----------------------------------------------------------------------------------------------  */
 .footer {
