@@ -59,3 +59,26 @@ window.addEventListener("scroll", () => {
     }
   });
 });
+
+// dropdown-filter for stock chart ----------------------------
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdown = document.querySelector(".dropdown");
+  const dropdownContent = document.querySelector(".dropdown-content");
+  const dropbtn = document.querySelector(".dropbtn");
+
+  dropdownContent.addEventListener("click", (event) => {
+    if (event.target.tagName === "A") {
+      dropbtn.textContent = `${event.target.textContent} \u25BE`;
+    }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const radioButtons = document.querySelectorAll('input[name="filter"]');
+
+  radioButtons.forEach((radio) => {
+    radio.addEventListener("change", () => {
+      console.log(`${radio.value} selected`);
+    });
+  });
+});

@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: #0c560c;
+  color: #f6f6f6;
+}
+
 :root {
   --primary: #ffffff;
   --secondary: #137213;
@@ -608,6 +613,249 @@ body {
 
 .key-profit {
   color: rgb(3, 129, 3) !important;
+  text-transform: uppercase;
+}
+
+@media (max-width: 780px) {
+  .key-metric {
+    margin-top: 10px;
+  }
+
+  .key-metric h4 span:nth-child(1) {
+    width: 20px;
+    height: 20px;
+  }
+
+  .key-metric i {
+    font-size: 11px;
+  }
+
+  .key-metric h4 span:nth-child(2) {
+    font-size: 13px;
+  }
+
+  .key-metric h5 {
+    padding-left: 31px;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .key-metric {
+    margin-top: 8px;
+  }
+
+  .key-metric h4 span:nth-child(1) {
+    width: 18px;
+    height: 18px;
+  }
+
+  .key-metric i {
+    font-size: 11px;
+  }
+
+  .key-metric h5 {
+    font-size: 0.9rem;
+  }
+
+  .key-metric {
+    padding: 10px;
+  }
+}
+
+/* <!-- Stock Chart  -->  */
+#volume-analysis {
+  /* position: relative; */
+}
+
+#chart {
+  margin-top: 2rem;
+  width: 100%;
+  height: 50vh;
+  position: relative;
+}
+
+#chart img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: -12%;
+}
+
+.stock-filter {
+  position: absolute;
+  top: -12%;
+  right: 0;
+  display: flex;
+  align-items: start;
+  gap: 20px;
+}
+
+.dropdown-container {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.label {
+  margin-right: 10px;
+  color: var(--white);
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropbtn {
+  background-color: #007c00;
+  color: white;
+  padding: 5px 7px;
+  font-size: 0.7rem;
+  font-weight: 300;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dropbtn .arrow i {
+  margin-left: 2px;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #011001e8;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 5px;
+}
+
+.dropdown-content a {
+  color: var(--slate);
+  padding: 10px 14px;
+  text-decoration: none;
+  display: block;
+  border-radius: 5px;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--secondary);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #005700;
+}
+
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #666;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.custom-radio {
+  width: 10px;
+  height: 10px;
+  border: 1.5px solid var(--golden);
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  position: relative;
+}
+
+input[type="radio"]:checked + .custom-radio::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background-color: var(--golden);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.label-text {
+  color: var(--white-80);
+}
+
+.signals {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.signal {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.buy-signal .triangle {
+  color: #007c00;
+}
+
+.sell-signal .triangle {
+  color: red;
+}
+
+.signal-text {
+  font-size: 0.8rem;
+  color: var(--white-50);
+}
+
+@media (max-width: 480px) {
+  .dropdown-container {
+    font-size: 0.6rem;
+  }
+
+  .label {
+    margin-right: 3px;
+  }
+
+  .dropbtn {
+    padding: 3px 5px;
+    font-size: 0.5rem;
+    font-weight: 400;
+  }
+
+  .signal-text {
+    font-size: 0.5rem;
+    font-weight: 500;
+  }
+
+  .stock-filter {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .filter-container {
+    font-size: 0.5rem;
+  }
 }
 
 /* <!-- Volume Analysis -->  */
@@ -639,8 +887,7 @@ body {
   padding: 17px 0;
   display: flex;
   gap: 11px;
-  /* width: 30%; */
-  padding-right: 13%;
+  padding-right: 12%;
 }
 
 .volume1 {
@@ -667,6 +914,36 @@ body {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--white);
+}
+
+@media (max-width: 865px) {
+  .volume {
+    padding-right: 8%;
+  }
+}
+
+@media (max-width: 780px) {
+  .volume2 h1 {
+    font-size: 1rem;
+  }
+
+  .volume2 p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 500px) {
+  .volume2 h1 {
+    font-size: 0.9rem;
+  }
+
+  .volume {
+    padding-right: 8%;
+  }
+
+  #Volume-analysis {
+    margin-bottom: 0rem;
+  }
 }
 
 /* footer----------------------------------------------------------------------------------------------  */

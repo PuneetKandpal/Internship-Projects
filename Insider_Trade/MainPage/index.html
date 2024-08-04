@@ -255,6 +255,61 @@
                 </div>
               </div>
 
+              <!-- Stock Chart  -->
+              <div id="component-volume-analysis">
+                <div class="component-box" id="volume-analysis">
+                    <!-- <div class="blur1"></div> -->
+                    <!-- <div class="blur2"></div> -->
+                    <h1 class="component-heading">Stock Chart</h1>
+                    <div id="chart">
+                        <img src="./imgs/graph.svg" alt="">
+                        <div class="stock-filter">
+                            <div class="dropdown-container">
+                                <span class="label">History</span>
+        <div class="dropdown">
+            <button class="dropbtn">1 year <span class="arrow"><i class="ri-arrow-down-s-fill"></i></span></button>
+            <div class="dropdown-content">
+                <a href="#">1 month</a>
+                <a href="#">3 months</a>
+                <a href="#">6 months</a>
+                <a href="#">1 year</a>
+                <a href="#">5 years</a>
+            </div>
+        </div>
+                            </div>
+
+                            <div class="filter-container">
+                                <div class="filter-options">
+                                    <label>
+                                        <input type="radio" name="filter" value="price" checked>
+                                        <span class="custom-radio"></span> 
+                                        <span class="label-text">AMZN Stock Price</span>
+                                    </label>
+                                    <label>
+                                        <input type="radio" name="filter" value="volume">
+                                        <span class="custom-radio"></span> 
+                                        <span class="label-text">Volume</span>
+                                    </label>
+                                </div>
+                        
+                                <div class="signals">
+                                    <div class="signal buy-signal">
+                                        <span class="triangle">&#9650;</span> 
+                                        <span class="signal-text">Buy Signals</span>
+                                    </div>
+                                    <div class="signal sell-signal">
+                                        <span class="triangle">&#9660;</span> 
+                                        <span class="signal-text">Sell Signals</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                   
+              </div>
+
+
               <!-- Key Statistics -->
               <div id="component-key-stats">
                 <div class="component-box2" id="key-stats">
