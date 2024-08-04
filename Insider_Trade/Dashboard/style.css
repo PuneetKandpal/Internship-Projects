@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+::selection {
+  background-color: #0c560c;
+  color: #f6f6f6;
+}
+
 :root {
   --primary: #ffffff;
   --secondary: #137213;
