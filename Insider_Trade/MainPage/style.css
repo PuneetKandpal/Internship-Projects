@@ -308,7 +308,12 @@ body {
 }
 
 #components-business-summary,
-#components-financial-metric {
+#components-financial-metric,
+#component-key-matrics,
+#component-key-stats,
+#component-stock-chart,
+#component-insider-trade,
+#component-volume-analysis {
   padding-top: 5.6rem;
 }
 
@@ -338,7 +343,12 @@ body {
   }
 
   #components-business-summary,
-  #components-financial-metric {
+  #components-financial-metric,
+  #component-key-matrics,
+  #component-key-stats,
+  #component-stock-chart,
+  #component-insider-trade,
+  #component-volume-analysis {
     padding-top: 4rem;
   }
 }
@@ -376,7 +386,7 @@ body {
   height: 65px;
   width: 65px;
   background-color: var(--secondary);
-  filter: blur(58px);
+  filter: blur(62px);
   border-radius: 50%;
   position: absolute;
   z-index: -1;
@@ -465,7 +475,7 @@ body {
 }
 
 .matric-box h5 {
-  color: var(--white-40);
+  color: var(--white-50);
   text-transform: uppercase;
   font-size: 14px;
   font-weight: 400;
@@ -526,6 +536,137 @@ body {
   .matric-box p {
     font-size: 12px;
   }
+}
+
+/* <!-- Key Metrics Summary -->  */
+.component-box2 {
+  border: 1px solid #0655064d;
+  padding: 2rem 2.5rem;
+  border-radius: 5px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 500px) {
+  .component-box2 {
+    padding: 1rem 0.8rem;
+  }
+}
+
+#key-matrics-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.7rem;
+}
+
+.key-metric {
+  background-color: rgba(128, 128, 128, 0.076);
+  padding: 16px;
+  border-radius: 5px;
+  border: 1px solid var(--light-green-2);
+  box-shadow: inset 0 0 20px #049b0420;
+  margin-right: 2%;
+  margin-top: 22px;
+}
+
+.key-metric h4 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.key-metric h4 span:nth-child(1) {
+  background-color: var(--golden);
+  /* padding: 5px; */
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.key-metric i {
+  color: var(--primary);
+  font-size: 12px;
+}
+
+.key-metric h4 span:nth-child(2) {
+  text-transform: uppercase;
+  color: var(--white-40);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.key-metric h5 {
+  padding-left: 31px;
+  color: var(--white);
+  font-size: 1.2rem;
+  margin-top: 0.8rem;
+  font-weight: 600;
+}
+
+.key-profit {
+  color: rgb(3, 129, 3) !important;
+}
+
+/* <!-- Volume Analysis -->  */
+
+.component-box3 {
+  padding: 2rem 2.5rem;
+  border-radius: 5px;
+  position: relative;
+  z-index: 10;
+}
+
+@media (max-width: 500px) {
+  .component-box3 {
+    padding: 1rem 0.8rem;
+  }
+}
+
+#Volume-analysis {
+  margin-bottom: 3rem;
+}
+
+#volume-box {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1.8rem;
+}
+
+.volume {
+  padding: 17px 0;
+  display: flex;
+  gap: 11px;
+  /* width: 30%; */
+  padding-right: 13%;
+}
+
+.volume1 {
+  border-radius: 3px;
+  width: 4px;
+  background-color: var(--golden);
+}
+
+.volume2 {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 2px 0;
+}
+
+.volume2 p {
+  color: var(--white-50);
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.volume2 h1 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
 }
 
 /* footer----------------------------------------------------------------------------------------------  */
