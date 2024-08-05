@@ -116,7 +116,6 @@ body {
     scale: 0.77;
     margin-left: 10px;
   }
-  
 }
 
 @media (max-width: 480px) {
@@ -268,6 +267,8 @@ body {
 }
 
 #search {
+  text-decoration: none;
+  text-align: center;
   background-color: var(--golden);
   color: var(--primary);
   margin-top: 0px;

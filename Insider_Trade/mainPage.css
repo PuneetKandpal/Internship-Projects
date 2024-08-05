@@ -11,6 +11,10 @@
   color: #f6f6f6;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --primary: #ffffff;
   --secondary: #137213;
@@ -350,7 +354,7 @@ body {
 #component-stock-chart,
 #component-insider-trade,
 #component-volume-analysis {
-  padding-top: 7.5rem;
+  padding-top: 6rem;
 }
 
 @media (max-width: 1130px) {

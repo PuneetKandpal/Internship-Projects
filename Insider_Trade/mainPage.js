@@ -36,6 +36,31 @@ window.addEventListener("scroll", function () {
 // -----------------------------------------------------------------------------------------------
 
 // second nav------------------------
+// window.addEventListener("scroll", () => {
+//   const sections = document.querySelectorAll("div[id]");
+//   const navLinks = document.querySelectorAll(".second-nav a p");
+
+//   let currentSection = "";
+
+//   sections.forEach((section) => {
+//     const sectionTop = section.offsetTop - 80; // Adjust based on your nav height
+//     const sectionBottom = sectionTop + section.offsetHeight;
+
+//     if (pageYOffset >= sectionTop && pageYOffset < sectionBottom) {
+//       currentSection = section.getAttribute("id");
+//     }
+//   });
+
+//   navLinks.forEach((link) => {
+//     link.classList.remove("active");
+//     if (link.parentElement.getAttribute("href") === `#${currentSection}`) {
+//       link.classList.add("active");
+//     }
+//   });
+// });
+
+const offset = 50; // Adjust this value to the desired offset from the top
+
 window.addEventListener("scroll", () => {
   const sections = document.querySelectorAll("div[id]");
   const navLinks = document.querySelectorAll(".second-nav a p");
@@ -43,10 +68,13 @@ window.addEventListener("scroll", () => {
   let currentSection = "";
 
   sections.forEach((section) => {
-    const sectionTop = section.offsetTop - 80; // Adjust based on your nav height
+    const sectionTop = section.offsetTop - offset; // Adjust based on your nav height
     const sectionBottom = sectionTop + section.offsetHeight;
 
-    if (pageYOffset >= sectionTop && pageYOffset < sectionBottom) {
+    if (
+      window.pageYOffset >= sectionTop &&
+      window.pageYOffset < sectionBottom
+    ) {
       currentSection = section.getAttribute("id");
     }
   });
@@ -56,6 +84,21 @@ window.addEventListener("scroll", () => {
     if (link.parentElement.getAttribute("href") === `#${currentSection}`) {
       link.classList.add("active");
     }
+  });
+});
+
+document.querySelectorAll(".second-nav a").forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute("href").substring(1);
+    const targetElement = document.getElementById(targetId);
+    const elementPosition = targetElement.offsetTop - offset; // Adjust this value to the desired offset from the top
+
+    window.scrollTo({
+      top: elementPosition,
+      behavior: "smooth",
+    });
   });
 });
 
