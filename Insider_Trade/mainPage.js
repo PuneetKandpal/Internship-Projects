@@ -376,3 +376,55 @@ const myChart = new Chart(ctx, {
     },
   ],
 });
+
+// ANIMATION ====================================================================================================
+
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  const tl = gsap.timeline({ defaults: { ease: "power2.out" } });
+
+  tl.from(".navbar", { y: -100, opacity: 0, duration: 0.8 })
+    .from(
+      "#company-details",
+      {
+        // y: -40,
+        opacity: 0,
+        duration: 0.9,
+      },
+      "-=0.5"
+    )
+    .from(
+      ".stickynav2",
+      {
+        // y: -50,
+        opacity: 0,
+        duration: 1,
+      },
+      "-=0.4"
+    );
+
+  const components = [
+    "#components-business-summary",
+    "#components-financial-metric",
+    "#component-key-matrics",
+    "#component-key-stats",
+    "#component-stock-chart",
+    "#component-insider-trade",
+    "#component-volume-analysis",
+  ];
+
+  components.forEach((selector) => {
+    gsap.from(selector, {
+      y: 60,
+      opacity: 0,
+      duration: 1,
+      scrollTrigger: {
+        trigger: selector,
+        start: "top 80%",
+        end: "bottom 20%",
+        toggleActions: "play none none none",
+      },
+    });
+  });
+});
