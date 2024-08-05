@@ -334,6 +334,10 @@ body {
   text-transform: uppercase;
   font-size: 0.9rem;
 }
+.second-nav a p:hover {
+  color: white;
+  transition: all 0.3s;
+}
 
 .second-nav a p.active {
   color: white !important;
