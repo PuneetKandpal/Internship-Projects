@@ -213,6 +213,260 @@
                </div>
            </div>
 
+             <!-- Insider Transactions Section -->
+           <div id="component-insider-trade">
+            <div class="component-box1" id="insider-trade">
+                <div class="blur1"></div>
+                <div class="blur2"></div>
+                <div class="component-box1-heading">
+                    <h1 class="component-heading">Insider Transactions</h1>
+                    <div class="filters">
+
+                        <!-- dropdown ---------  -->
+                        <div class="entries">
+                            <label for="entries" class="entries-label">Entries</label>
+                            <select id="entries" class="entries-dropdown">
+                              <option value="10">10</option>
+                              <option value="16">16</option>
+                              <option value="20">20</option>
+                            </select>
+                          </div>
+                        <!-- search-------------------------  -->
+                        <div class="search-bar">
+                            <input type="text" id="searchInput" placeholder="Search" />
+                            <i class="ri-search-line"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                    
+                   
+
+                <table class="transactions-table">
+                    <thead>
+                      <tr>
+                        <th>FILING DATE</th>
+                        <th>TICKER</th>
+                        <th>INSIDER NAME</th>
+                        <th>TITLE</th>
+                        <th>TRANSACTION TYPE</th>
+                        <th>PRICE</th>
+                        <th>QUANTITY</th>
+                        <th>OWNED</th>
+                        <th>OWN</th>
+                        <th>VALUE</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Rows with data -->
+                      <tr>
+                        <td>2024-07-15</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$200.03</td>
+                        <td>403,974</td>
+                        <td>928,029,899</td>
+                        <td class="negative-change">-0.04%</td>
+                        <td>$80,806,193</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$230.12</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$177.73</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$109.1</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+1.60%</td>
+                        <td>$399,442.32</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$100</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+0.99%</td>
+                        <td>$399,442.23</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>M - Exercise/Convert</td>
+                        <td>$200.12</td>
+                        <td>800</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>M - Exercise/Convert</td>
+                        <td>$0</td>
+                        <td>700</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$0</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$0</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+0.21%</td>
+                        <td>$0</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$0</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+1.44%</td>
+                        <td>$0</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$0</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+2.44%</td>
+                        <td>$0</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>G - Gift</td>
+                        <td>$200.12</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+0.44%</td>
+                        <td>$399,442.32</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>G - Gift</td>
+                        <td>$200.12</td>
+                        <td>1015</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$200.12</td>
+                        <td>1,996</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$200.12</td>
+                        <td>3,015</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$177.73</td>
+                        <td>5,000</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$100</td>
+                        <td>8,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+1.99%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+            </div>
+            <div class="pagination">
+                <a href="#"><i class="ri-arrow-left-s-fill"></i></a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#"><i class="ri-arrow-right-s-fill"></i></a>
+            </div>
+           </div>
+          
+
              <!-- Key Metrics Summary -->
               <div id="component-key-matrics">
                 <div class="component-box2" id="key-matrics">
@@ -256,8 +510,8 @@
               </div>
 
               <!-- Stock Chart  -->
-              <div id="component-volume-analysis">
-                <div class="component-box" id="volume-analysis">
+              <div id="component-stock-chart">
+                <div class="component-box" >
                     <!-- <div class="blur1"></div> -->
                     <!-- <div class="blur2"></div> -->
                     <h1 class="component-heading">Stock Chart</h1>
@@ -391,7 +645,7 @@
 
 
         <!-- end--------------------------------------------------------------- -->
-     </div>
+     </div> -->
 
     <!-- footer------------------------------------------------ -->
     <footer class="footer footer-light">

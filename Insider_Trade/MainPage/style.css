@@ -126,7 +126,7 @@ body {
   width: 100%;
   /* height: 37vh; */
   background-image: url("./imgs/company-pic.webp"),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.6));
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.692), rgba(0, 0, 0, 0.7));
   background-size: cover;
   background-position: 65% 70%;
   background-blend-mode: multiply;
@@ -172,7 +172,7 @@ body {
 .company-name h1 {
   font-size: 1.9rem;
   color: white;
-  text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.804);
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.9);
   margin-top: -5px;
 }
 
@@ -181,7 +181,7 @@ body {
   margin-top: 8px;
   font-weight: bold;
   font-size: 1rem;
-  text-shadow: 0px 2px 20px rgba(0, 0, 0, 0.804);
+  text-shadow: 0px 2px 15px rgba(0, 0, 0, 0.9);
 }
 .company-name p span {
   color: rgba(255, 255, 255, 0.5);
@@ -260,7 +260,7 @@ body {
   }
 
   .company-name h1 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .company-name p {
@@ -270,14 +270,14 @@ body {
 
 /* second nav--------------------------------------------------------------------  */
 .stickynav2 {
-  background-color: transparent;
+  background-color: white;
   display: block;
   padding-top: 0.1rem;
   position: -webkit-sticky;
   position: sticky;
   top: 4rem;
   z-index: 999;
-  /* backdrop-filter: blur(8px); */
+  backdrop-filter: blur(8px);
 }
 
 .second-nav {
@@ -521,11 +521,14 @@ body {
 @media (max-width: 500px) {
   .matric-box h5,
   .matric-box p {
-    font-size: 12px;
+    font-size: 13px;
+  }
+  .matric-box {
+    padding: 0.6rem 0;
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 300px) {
   #financial-matrics-box {
     flex-direction: column;
     align-items: flex-start;
@@ -536,10 +539,279 @@ body {
     margin-right: 0;
     margin-bottom: 1rem;
   }
+}
 
-  .matric-box h5,
-  .matric-box p {
-    font-size: 12px;
+/* <!-- Insider Transactions Section -->  */
+
+.component-box1 {
+  border: 1px solid #06550665;
+  border-radius: 5px;
+  position: relative;
+  z-index: 10;
+}
+
+.component-box1-heading {
+  padding: 2rem 2.5rem;
+}
+
+@media (max-width: 500px) {
+  .component-box1 {
+    padding: 1rem 0.8rem;
+  }
+
+  .component-box1-heading {
+    padding: 2rem 0.5rem;
+  }
+}
+
+.filters {
+  padding: 2.2rem 0 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* dropdown  --  */
+
+.entries{
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.entries-label {
+  font-size: 1.2rem;
+  padding-right: 5px;
+  color: var(--white);
+}
+
+.entries-dropdown {
+  padding: 0.4rem 0.2rem;
+  background-color: var(--secondary);
+  color: var(--slate);
+  border-radius: 4px;
+}
+
+/* search --------------------  */
+
+.search-bar {
+  position: relative;
+  border-color: var(--secondary);
+}
+
+.search-bar input {
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  background-color: #1b301b;
+  color: #ffffff;
+  max-width: 17rem;
+  border-radius: 20px;
+  border: 1px solid var(--secondary);
+}
+
+.search-bar input::placeholder {
+  color: rgba(255, 255, 255, 0.779);
+  font-size: 0.8rem;
+  padding-left: 5px;
+}
+
+.search-bar i {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--slate);
+}
+
+.transactions-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--light-green-2);
+  overflow: hidden;
+}
+
+.transactions-table th,
+.transactions-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--light-green-1);
+}
+
+.transactions-table th {
+  background-color: var(--secondary);
+  color: var(--slate);
+  vertical-align: top;
+  font-size: 0.87rem;
+}
+
+.transactions-table tr {
+  background-color: var(--light-green-2);
+  color: var(--white-50);
+  font-size: 0.9rem;
+}
+
+.transactions-table tr:hover {
+  background-color: var(--light-green-1); /* Light hover effect for rows */
+  color: var(--slate);
+  transition: all 0.2s;
+}
+
+.transactions-table .positive-change {
+  color: #08c408;
+}
+
+.transactions-table .negative-change {
+  color: red;
+}
+
+/* Responsive Styles */
+@media (max-width: 1350px) and (min-width: 769px) {
+  
+
+  .search-bar input {
+    padding: 0.5rem;
+  }
+
+  .transactions-table-wrapper {
+    padding: 0.5rem;
+  }
+
+  .transactions-table {
+    border: none;
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 12rem;
+    padding: 0.5rem;
+  }
+
+  .transactions-table-wrapper {
+    padding: 0.5rem;
+    max-height: 300px;
+  }
+
+  .transactions-table {
+    border: none;
+    overflow-x: auto;
+    display: block;
+  }
+}
+
+@media (max-width: 500px) {
+  .entries-label {
+    font-size: 0.9rem;
+    padding-right: 5px;
+    color: var(--white);
+  }
+  
+  .filters {
+    display: flex;
+    margin-left: 0.1rem;
+  }
+
+  .search-bar input {
+    width: 10rem;
+    padding: 0.3rem;
+    font-size: 13px;
+  }
+  .search-bar i {
+    font-size: 0.8rem;
+  }
+  .transactions-table {
+    border: none;
+    overflow-x: auto;
+    display: block;
+  }
+  .transactions-table-wrapper {
+    padding: 0.5rem;
+    max-height: 250px;
+  }
+
+  .transactions-table th,
+  .transactions-table td {
+    font-size: 0.7rem;
+  }
+}
+
+/* Additional styles for responsiveness */
+@media (max-width: 1350px) and (min-width: 769px) {
+  #blurred-background-left,
+  #blurred-background-right {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  #blurred-background-left,
+  #blurred-background-right {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  #blurred-background-left,
+  #blurred-background-right {
+    width: 150px;
+    height: 150px;
+  }
+  #blurred-background-left {
+    left: 34%;
+    top: 0;
+  }
+}
+
+.pagination {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 1rem;
+  gap: 0.5rem;
+}
+
+.pagination a {
+  color: var(--dark-text);
+  float: left;
+  padding: 6px 12px;
+  text-decoration: none;
+  border: 1px solid var(--golden);
+  border-radius: 5px;
+  transition: background-color 0.3s, var(--golden) 0.3s;
+  color: var(--golden);
+  font-size: 0.9rem;
+}
+
+.pagination a.active {
+  background-color: var(--golden);
+  color: var(--primary);
+}
+
+.pagination a:hover:not(.active) {
+  background-color: var(--golden);
+  color: var(--primary);
+}
+
+.pagination i {
+  color: var(--golden);
+  font-weight: bolder;
+}
+.pagination i:hover {
+  color: white;
+}
+@media (max-width: 600px) {
+  .pagination {
+    justify-content: center;
+    gap: 0.3rem;
+  }
+
+  .pagination a {
+    padding: 4px 8px;
+    font-size: 0.8rem;
   }
 }
 
