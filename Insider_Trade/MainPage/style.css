@@ -270,7 +270,7 @@ body {
 
 /* second nav--------------------------------------------------------------------  */
 .stickynav2 {
-  background-color: white;
+  background-color: var(--primary);
   display: block;
   padding-top: 0.1rem;
   position: -webkit-sticky;
@@ -574,7 +574,7 @@ body {
 
 /* dropdown  --  */
 
-.entries{
+.entries {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -666,8 +666,6 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 1350px) and (min-width: 769px) {
-  
-
   .search-bar input {
     padding: 0.5rem;
   }
@@ -707,7 +705,7 @@ body {
     padding-right: 5px;
     color: var(--white);
   }
-  
+
   .filters {
     display: flex;
     margin-left: 0.1rem;
@@ -938,192 +936,15 @@ body {
 
 /* <!-- Stock Chart  -->  */
 
-#chart {
-  margin-top: 2rem;
-  width: 100%;
-  height: 50vh;
-  position: relative;
+.chart-container {
+  width: 80%;
+  margin: 6rem auto 0rem auto;
 }
 
-#chart img {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  bottom: -12%;
-}
-
-.stock-filter {
-  position: absolute;
-  top: -12%;
-  right: 0;
-  display: flex;
-  align-items: start;
-  gap: 20px;
-}
-
-.dropdown-container {
-  display: flex;
-  align-items: center;
-  font-size: 0.8rem;
-  font-weight: 400;
-}
-
-.label {
-  margin-right: 10px;
-  color: var(--white);
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  background-color: #007c00;
-  color: white;
-  padding: 5px 7px;
-  font-size: 0.7rem;
-  font-weight: 300;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.dropbtn .arrow i {
-  margin-left: 2px;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #011001e8;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  border-radius: 5px;
-}
-
-.dropdown-content a {
-  color: var(--slate);
-  padding: 10px 14px;
-  text-decoration: none;
-  display: block;
-  border-radius: 5px;
-}
-
-.dropdown-content a:hover {
-  background-color: var(--secondary);
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-.dropdown:hover .dropbtn {
-  background-color: #005700;
-}
-
-.filter-container {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: #666;
-}
-
-.filter-options {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-label {
-  display: flex;
-  align-items: center;
-}
-
-input[type="radio"] {
-  display: none;
-}
-
-.custom-radio {
-  width: 10px;
-  height: 10px;
-  border: 1.5px solid var(--golden);
-  border-radius: 50%;
-  display: inline-block;
-  margin-right: 10px;
-  position: relative;
-}
-
-input[type="radio"]:checked + .custom-radio::before {
-  content: "";
-  width: 5px;
-  height: 5px;
-  background-color: var(--golden);
-  border-radius: 50%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.label-text {
-  color: var(--white-80);
-}
-
-.signals {
-  display: flex;
-  gap: 15px;
-  align-items: center;
-}
-
-.signal {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.buy-signal .triangle {
-  color: #007c00;
-}
-
-.sell-signal .triangle {
-  color: red;
-}
-
-.signal-text {
-  font-size: 0.8rem;
-  color: var(--white-50);
-}
-
-@media (max-width: 480px) {
-  .dropdown-container {
-    font-size: 0.6rem;
-  }
-
-  .label {
-    margin-right: 3px;
-  }
-
-  .dropbtn {
-    padding: 3px 5px;
-    font-size: 0.5rem;
-    font-weight: 400;
-  }
-
-  .signal-text {
-    font-size: 0.5rem;
-    font-weight: 500;
-  }
-
-  .stock-filter {
-    flex-direction: column;
-    gap: 10px;
-  }
-  .filter-container {
-    font-size: 0.5rem;
+@media (max-width: 500px) {
+  .chart-container {
+    width: 80%;
+    margin: 2.5rem auto 0rem auto;
   }
 }
 

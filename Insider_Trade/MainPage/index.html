@@ -9,6 +9,7 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <!-- nav -------------------------------------------  -->
@@ -512,53 +513,13 @@
               <!-- Stock Chart  -->
               <div id="component-stock-chart">
                 <div class="component-box" >
-                    <!-- <div class="blur1"></div> -->
-                    <!-- <div class="blur2"></div> -->
+                    <div class="blur1"></div>
+                    <div class="blur2"></div>
                     <h1 class="component-heading">Stock Chart</h1>
-                    <div id="chart">
-                        <img src="./imgs/graph.svg" alt="">
-                        <div class="stock-filter">
-                            <div class="dropdown-container">
-                                <span class="label">History</span>
-        <div class="dropdown">
-            <button class="dropbtn">1 year <span class="arrow"><i class="ri-arrow-down-s-fill"></i></span></button>
-            <div class="dropdown-content">
-                <a href="#">1 month</a>
-                <a href="#">3 months</a>
-                <a href="#">6 months</a>
-                <a href="#">1 year</a>
-                <a href="#">5 years</a>
-            </div>
-        </div>
-                            </div>
-
-                            <div class="filter-container">
-                                <div class="filter-options">
-                                    <label>
-                                        <input type="radio" name="filter" value="price" checked>
-                                        <span class="custom-radio"></span> 
-                                        <span class="label-text">AMZN Stock Price</span>
-                                    </label>
-                                    <label>
-                                        <input type="radio" name="filter" value="volume">
-                                        <span class="custom-radio"></span> 
-                                        <span class="label-text">Volume</span>
-                                    </label>
-                                </div>
-                        
-                                <div class="signals">
-                                    <div class="signal buy-signal">
-                                        <span class="triangle">&#9650;</span> 
-                                        <span class="signal-text">Buy Signals</span>
-                                    </div>
-                                    <div class="signal sell-signal">
-                                        <span class="triangle">&#9660;</span> 
-                                        <span class="signal-text">Sell Signals</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
                     </div>
+                
                 </div>
                    
               </div>
@@ -645,7 +606,7 @@
 
 
         <!-- end--------------------------------------------------------------- -->
-     </div> -->
+     </div> 
 
     <!-- footer------------------------------------------------ -->
     <footer class="footer footer-light">
