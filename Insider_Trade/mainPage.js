@@ -8,15 +8,15 @@ document.getElementById("theme-toggle").addEventListener("click", function () {
   const secNav = document.querySelector(".second-nav");
 
   if (document.body.classList.contains("dark-mode")) {
-    themeToggle.src = "../images/dark_button.svg";
-    logo.src = "../images/logo_dark_theme.svg";
+    themeToggle.src = "./images/dark_button.svg";
+    logo.src = "./images/logo_dark_theme.svg";
     footer.classList.remove("footer-light");
     footer.classList.add("footer-dark");
     secNav.classList.remove("second-nav-light");
     secNav.classList.add("second-nav-dark");
   } else {
-    themeToggle.src = "../images/light_button.svg";
-    logo.src = "../images/logo_light_theme.svg";
+    themeToggle.src = "./images/light_button.svg";
+    logo.src = "./images/logo_light_theme.svg";
     footer.classList.remove("footer-dark");
     footer.classList.add("footer-light");
     secNav.classList.remove("second-nav-dark");
@@ -214,15 +214,20 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// ===================================
+// =====================================================================================================
 // graph ---------------------
 const ctx = document.getElementById("myChart").getContext("2d");
 
+// Create gradient fill
+const gradient = ctx.createLinearGradient(0, 0, 0, 400);
+gradient.addColorStop(0, "rgba(34, 139, 34, 0.5)"); // Forest green with transparency
+gradient.addColorStop(1, "rgba(34, 139, 34, 0)"); // Forest green with more transparency
+
 // Data for each point, including signals
 const chartData = [
-  { date: "Aug 3", price: 320, volume: 1000000, signal: null },
-  { date: "Aug 15", price: 325, volume: 1100000, signal: null },
-  { date: "Aug 25", price: 340, volume: 1200000, signal: "up" },
+  { date: "Aug 3", price: 420, volume: 1000000, signal: null },
+  { date: "Aug 15", price: 425, volume: 1100000, signal: null },
+  { date: "Aug 25", price: 400, volume: 1200000, signal: "up" },
   { date: "Sep 10", price: 360, volume: 1500000, signal: null },
   { date: "Sep 20", price: 355, volume: 1300000, signal: null },
   { date: "Oct 5", price: 375, volume: 1400000, signal: null },
@@ -250,8 +255,8 @@ const data = {
     {
       label: "MSFT Stock Price",
       data: chartData.map((point) => point.price),
-      backgroundColor: "rgba(0, 123, 255, 0.1)",
-      borderColor: "rgba(0, 123, 255, 1)",
+      backgroundColor: gradient,
+      borderColor: "rgba(34, 139, 34, 1)", // Forest green color for the line
       borderWidth: 2,
       fill: true,
       tension: 0.4, // this makes the line curved
@@ -259,7 +264,7 @@ const data = {
       pointHoverRadius: 8,
       pointStyle: chartData.map((point) => (point.signal ? "" : "circle")),
       pointBackgroundColor: chartData.map((point) => {
-        return point.signal ? "transparent" : "rgba(0, 123, 255, 1)";
+        return point.signal ? "transparent" : "rgba(34, 139, 34, 1)";
       }),
     },
   ],
@@ -270,13 +275,13 @@ const options = {
     x: {
       beginAtZero: false,
       ticks: {
-        color: "white",
+        color: "goldenrod",
       },
     },
     y: {
       beginAtZero: false,
       ticks: {
-        color: "white",
+        color: "goldenrod",
       },
     },
   },
@@ -288,14 +293,54 @@ const options = {
       callbacks: {
         label: function (context) {
           const point = chartData[context.dataIndex];
-          return `Price: $${
+          let label = `Price: $${
             point.price
-          }\nVolume: ${point.volume.toLocaleString()}\nSignal: ${
-            point.signal || "none"
-          }`;
+          }\nVolume: ${point.volume.toLocaleString()}`;
+          if (point.signal) {
+            label += `\nSignal: ${point.signal}`;
+          }
+          return label;
         },
       },
     },
+  },
+  hover: {
+    mode: "nearest",
+    intersect: true,
+  },
+};
+
+// Custom plugin to draw shadows with green color
+const shadowPlugin = {
+  id: "shadowPlugin",
+  beforeDatasetsDraw: (chart, args, options) => {
+    const ctx = chart.ctx;
+    ctx.save();
+    ctx.shadowColor = "rgba(34, 139, 34, 0.5)"; // Forest green shadow
+    ctx.shadowBlur = 10;
+    ctx.shadowOffsetX = 0;
+    ctx.shadowOffsetY = 5;
+  },
+  afterDatasetsDraw: (chart, args, options) => {
+    const ctx = chart.ctx;
+    ctx.restore();
+  },
+};
+
+// Custom plugin to animate points
+const pointAnimationPlugin = {
+  id: "pointAnimationPlugin",
+  beforeEvent: (chart, args) => {
+    const event = args.event;
+    const datasetIndex = chart.getDatasetMeta(0).index;
+    const points = chart.getDatasetMeta(datasetIndex).data;
+    points.forEach((point) => {
+      if (point.inRange(event.x, event.y)) {
+        point.options.radius = 12;
+      } else {
+        point.options.radius = 6;
+      }
+    });
   },
 };
 
@@ -304,6 +349,8 @@ const myChart = new Chart(ctx, {
   data: data,
   options: options,
   plugins: [
+    shadowPlugin,
+    pointAnimationPlugin,
     {
       id: "customPointStyle",
       afterDraw: (chart) => {
@@ -316,10 +363,10 @@ const myChart = new Chart(ctx, {
             ctx.font = "24px Arial";
             ctx.textAlign = "center";
             if (signal === "up") {
-              ctx.fillStyle = "green";
+              ctx.fillStyle = "rgba(50, 205, 50, 1)"; // Lighter green color
               ctx.fillText("▲", point.x, point.y); // Up arrow
             } else if (signal === "down") {
-              ctx.fillStyle = "red";
+              ctx.fillStyle = "rgba(255, 99, 71, 1)"; // Lighter red color
               ctx.fillText("▼", point.x, point.y + 6); // Down arrow
             }
             ctx.restore();
