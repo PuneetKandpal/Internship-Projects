@@ -85,6 +85,23 @@ body {
   transition: transform 0s;
 }
 
+#usericon {
+  text-decoration: none;
+  background-color: var(--white);
+  /* padding: 5px; */
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  justify-content: center;
+  align-items: center;
+  margin-left: 12px;
+}
+#usericon i {
+  font-size: 0.8rem;
+  margin-left: 5.5px;
+  color: var(--primary);
+}
+
 @media (max-width: 768px) {
   .navbar .nav-left img {
     height: 1.5rem;
@@ -94,6 +111,12 @@ body {
     width: 2.4rem;
     height: 2.4rem;
   }
+
+  #usericon {
+    scale: 0.77;
+    margin-left: 10px;
+  }
+  
 }
 
 @media (max-width: 480px) {
@@ -104,6 +127,11 @@ body {
   .navbar .nav-right img {
     width: 1.9rem;
     height: 1.9rem;
+  }
+
+  #usericon {
+    scale: 0.65;
+    margin-left: 3px;
   }
 }
 
