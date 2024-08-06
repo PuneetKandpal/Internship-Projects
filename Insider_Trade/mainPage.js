@@ -35,30 +35,6 @@ window.addEventListener("scroll", function () {
 
 // -----------------------------------------------------------------------------------------------
 
-// second nav------------------------
-// window.addEventListener("scroll", () => {
-//   const sections = document.querySelectorAll("div[id]");
-//   const navLinks = document.querySelectorAll(".second-nav a p");
-
-//   let currentSection = "";
-
-//   sections.forEach((section) => {
-//     const sectionTop = section.offsetTop - 80; // Adjust based on your nav height
-//     const sectionBottom = sectionTop + section.offsetHeight;
-
-//     if (pageYOffset >= sectionTop && pageYOffset < sectionBottom) {
-//       currentSection = section.getAttribute("id");
-//     }
-//   });
-
-//   navLinks.forEach((link) => {
-//     link.classList.remove("active");
-//     if (link.parentElement.getAttribute("href") === `#${currentSection}`) {
-//       link.classList.add("active");
-//     }
-//   });
-// });
-
 const offset = 50; // Adjust this value to the desired offset from the top
 
 window.addEventListener("scroll", () => {
@@ -259,6 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // =====================================================================================================
 // graph ---------------------
+
 const ctx = document.getElementById("myChart").getContext("2d");
 
 // Create gradient fill
@@ -333,6 +310,7 @@ const options = {
       display: true,
     },
     tooltip: {
+      backgroundColor: "rgba(0, 0, 0, 0.5)", // More transparent tooltip background
       callbacks: {
         label: function (context) {
           const point = chartData[context.dataIndex];
@@ -387,37 +365,36 @@ const pointAnimationPlugin = {
   },
 };
 
+// Custom plugin to draw signals over points
+const signalPlugin = {
+  id: "signalPlugin",
+  afterDatasetsDraw: (chart) => {
+    const ctx = chart.ctx;
+    chart.data.datasets.forEach((dataset, datasetIndex) => {
+      const meta = chart.getDatasetMeta(datasetIndex);
+      meta.data.forEach((point, index) => {
+        const signal = chartData[index].signal;
+        ctx.save();
+        ctx.font = "24px Arial";
+        ctx.textAlign = "center";
+        if (signal === "up") {
+          ctx.fillStyle = "rgba(50, 205, 50, 1)"; // Lighter green color
+          ctx.fillText("▲", point.x, point.y); // Up arrow
+        } else if (signal === "down") {
+          ctx.fillStyle = "rgba(255, 99, 71, 1)"; // Lighter red color
+          ctx.fillText("▼", point.x, point.y + 6); // Down arrow
+        }
+        ctx.restore();
+      });
+    });
+  },
+};
+
 const myChart = new Chart(ctx, {
   type: "line",
   data: data,
   options: options,
-  plugins: [
-    shadowPlugin,
-    pointAnimationPlugin,
-    {
-      id: "customPointStyle",
-      afterDraw: (chart) => {
-        const ctx = chart.ctx;
-        chart.data.datasets.forEach((dataset, datasetIndex) => {
-          const meta = chart.getDatasetMeta(datasetIndex);
-          meta.data.forEach((point, index) => {
-            const signal = chartData[index].signal;
-            ctx.save();
-            ctx.font = "24px Arial";
-            ctx.textAlign = "center";
-            if (signal === "up") {
-              ctx.fillStyle = "rgba(50, 205, 50, 1)"; // Lighter green color
-              ctx.fillText("▲", point.x, point.y); // Up arrow
-            } else if (signal === "down") {
-              ctx.fillStyle = "rgba(255, 99, 71, 1)"; // Lighter red color
-              ctx.fillText("▼", point.x, point.y + 6); // Down arrow
-            }
-            ctx.restore();
-          });
-        });
-      },
-    },
-  ],
+  plugins: [shadowPlugin, pointAnimationPlugin, signalPlugin],
 });
 
 // ANIMATION ====================================================================================================
