@@ -156,6 +156,129 @@ body {
   background-color: var(--primary);
 }
 
+#hero {
+  position: relative;
+  width: 100%;
+  height: 89vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -10;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.3),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.6)
+  );
+  z-index: 10;
+}
+
+.hero-content {
+  position: absolute;
+  right: 10%;
+  z-index: 20;
+  max-width: 600px;
+  text-align: start;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 2.4rem;
+  background: linear-gradient(to bottom, white, rgba(255, 255, 255, 0.477));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.767);
+}
+
+.hero-content p {
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 25px;
+  font-weight: 400;
+}
+
+.hero-button {
+  margin-top: 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 8px 20px;
+  border: 1px solid var(--golden);
+  color: var(--golden);
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.9rem;
+  border-radius: 50px;
+  transition: background-color 0.4s ease;
+  position: relative;
+  z-index: 10;
+  overflow-x: hidden;
+}
+
+.hero-button span i {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.hero-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+  transform: translateX(-120%);
+  z-index: -1;
+  background-color: var(--golden);
+  transition: transform 0.3s ease;
+}
+
+.hero-button:hover::before {
+  transform: translateX(0);
+}
+
+.hero-button:hover {
+  color: black;
+  font-weight: 500;
+  background-color: #ffbf0000;
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    font-size: 0.875rem;
+    padding: 10px 20px;
+  }
+}
+
 
 
 /* footer----------------------------------------------------------------------------------------------  */
