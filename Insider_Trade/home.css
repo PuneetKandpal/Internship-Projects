@@ -558,7 +558,7 @@ body {
   }
 }
 
-@media (max-width:800px){
+@media (max-width: 800px) {
   #howItWorks {
     width: 77%;
   }
@@ -575,7 +575,7 @@ body {
     padding: 0.6rem 0.5rem;
   }
 
-  .count{
+  .count {
     width: 40px;
     height: 40px;
   }
@@ -592,7 +592,7 @@ body {
   }
 }
 
-@media (max-width:800px){
+@media (max-width: 800px) {
   #howItWorks {
     width: 85%;
   }
@@ -606,7 +606,7 @@ body {
     padding: 0.6rem 0.5rem;
   }
 
-  .count{
+  .count {
     width: 35px;
     height: 30px;
     font-size: 11px;
@@ -624,18 +624,18 @@ body {
   }
 
   .mainBox1,
-.mainBox3 {
-  transform: translateX(-0%);
-}
+  .mainBox3 {
+    transform: translateX(-0%);
+  }
 
-.mainBox2,
-.mainBox4 {
-  transform: translateX(0%);
-}
+  .mainBox2,
+  .mainBox4 {
+    transform: translateX(0%);
+  }
 
-.howItWorksBox {
-  margin-top: 2.3rem;
-}
+  .howItWorksBox {
+    margin-top: 2.3rem;
+  }
 }
 
 /* features =============================================================  */
@@ -694,7 +694,7 @@ body {
   width: 100%;
   scale: 1.15;
   transform: translateX(14%);
-  /* object-fit: cover; */
+  overflow-x: visible;
 }
 
 .featureInfo {
@@ -719,6 +719,79 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+@media (max-width: 770px) {
+  .featureInfo h2 {
+    width: 70%;
+    font-size: 1.3rem;
+  }
+
+  .featureInfo ul {
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .featureImg {
+    width: 55%;
+  }
+
+  .featureInfo {
+    width: 43%;
+  }
+}
+
+@media (max-width: 500px) {
+  #features {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .fdiv {
+    height: 65%;
+    width: 80%;
+    margin: auto;
+    transform: translateX(0%);
+  }
+  .fdiv img {
+    scale: 4;
+    transform: translateX(0%);
+  }
+
+  .featureImg {
+    width: 100%;
+    height: 80%;
+  }
+
+  .featureInfo h2 {
+    width: 100%;
+    margin: auto;
+    font-size: 1.1rem;
+  }
+
+  .featureInfo ul {
+    font-size: 14px;
+    margin-top: 1.3rem;
+    padding: 1rem;
+    gap: 8px;
+  }
+
+  .featureImg {
+    width: 100%;
+  }
+
+  .featureInfo {
+    /* background-color: cadetblue; */
+    width: 100%;
+  }
+  .featureInfo ul {
+    margin-top: 1rem;
+    font-size: 14px;
+    gap: 5px;
+    margin-left: 0rem;
+  }
 }
 
 /* services======================================================  */
