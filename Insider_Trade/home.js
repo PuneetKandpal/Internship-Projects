@@ -21,15 +21,6 @@ document.getElementById("theme-toggle").addEventListener("click", function () {
   }
 });
 
-// window.addEventListener("scroll", function () {
-//   const navbar = document.getElementById("navbar");
-//   if (window.scrollY > 50) {
-//     navbar.classList.add("scrolled");
-//   } else {
-//     navbar.classList.remove("scrolled");
-//   }
-// });
-
 // menu--------------------------------------------------
 const hamburger = document.querySelector(".hamburger");
 const mobileMenu = document.querySelector(".mobile-menu");
@@ -61,9 +52,55 @@ window.addEventListener("scroll", () => {
   }
 });
 
-// Log to check if elements are properly selected
-console.log("Hamburger:", hamburger);
-console.log("Mobile Menu:", mobileMenu);
+// search bar------------------------------------------
+const searchInput = document.getElementById("search-input");
+const searchResults = document.getElementById("search-results");
+
+// Sample data (you can replace this with your own data)
+const items = [
+  "Apple",
+  "Banana",
+  "Cherry",
+  "Date",
+  "Elderberry",
+  "Fig",
+  "Grape",
+  "Honeydew",
+  "Imbe",
+  "Jackfruit",
+];
+
+// Function to display all items
+function displayItems(items) {
+  searchResults.innerHTML = items.map((item) => `<li>${item}</li>`).join("");
+}
+
+// Initial display of all items
+displayItems(items);
+
+// Function to highlight matching text
+function highlightText(text, query) {
+  const regex = new RegExp(`(${query})`, "gi");
+  return text.replace(regex, '<span class="highlight">$1</span>');
+}
+
+// Function to filter items based on search query
+function filterItems(query) {
+  return items
+    .filter((item) => item.toLowerCase().includes(query.toLowerCase()))
+    .map((item) => highlightText(item, query));
+}
+
+// Event listener for search input
+searchInput.addEventListener("input", function () {
+  const query = this.value;
+  if (query.length > 0) {
+    const filteredItems = filterItems(query);
+    displayItems(filteredItems);
+  } else {
+    displayItems(items);
+  }
+});
 
 // contact ------------------------------------------------------
 document.getElementById("contactForm").addEventListener("submit", function (e) {
