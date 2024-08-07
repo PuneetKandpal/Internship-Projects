@@ -100,6 +100,7 @@ body {
 }
 
 /* Navbar---------------------------------------------------------------------------- */
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -127,7 +128,6 @@ body {
   display: flex;
   gap: 22px;
   list-style-type: none;
-  /* background-color: red; */
   border: 1px solid var(--light-green-1);
   box-shadow: inset 0 0 10px var(--light-green-1);
   padding: 6px 17px;
@@ -166,14 +166,9 @@ body {
   z-index: 1001;
 }
 
-.bar {
-  display: block;
-  width: 25px;
-  height: 3px;
-  margin: 5px auto;
-  transition: all 0.3s ease-in-out;
-  background-color: var(--white-80);
-  border-radius: 10px;
+.hamburger i {
+  color: var(--white-80);
+  font-size: 1.3rem;
 }
 
 .mobile-menu {
@@ -199,6 +194,7 @@ body {
 
 .mobile-menu ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .mobile-menu ul li {
@@ -223,21 +219,13 @@ body {
   margin-top: 2rem;
 }
 
+.mobile-menu a {
+  margin-left: 1rem;
+}
+
 @media (max-width: 768px) {
   .hamburger {
     display: block;
-  }
-
-  .hamburger.active .bar:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.active .bar:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.active .bar:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
   }
 
   .nav-right {
@@ -248,11 +236,6 @@ body {
 @media (max-width: 500px) {
   .nav-left img {
     height: 1.8rem;
-  }
-  .bar {
-    width: 20px;
-    height: 3px;
-    margin: 4px auto;
   }
 }
 
@@ -805,7 +788,7 @@ body {
   color: var(--golden);
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 2.8rem;
+  margin-bottom: 3rem;
 }
 
 .serviceContainer {
@@ -1151,7 +1134,8 @@ body {
 
 /* contact form ===========================================================  */
 #contact {
-  background: var(--primary);
+  /* background: var(--primary); */
+  background-color: #000000;
   padding: 5rem 3rem;
   margin-top: 2rem;
   margin-bottom: 5rem;
@@ -1303,7 +1287,7 @@ body {
   text-decoration: underline;
 }
 
-@media (max-width: 800px){
+@media (max-width: 800px) {
   .contactContainer h2 {
     font-size: 1.7rem;
     margin-top: 10px;
@@ -1332,8 +1316,8 @@ body {
   }
 }
 
-@media (max-width: 500px){
-  .contactContainer p{
+@media (max-width: 500px) {
+  .contactContainer p {
     width: 100%;
   }
   .contactContainer h2 {
@@ -1345,7 +1329,7 @@ body {
     width: 100%;
   }
 
-  .contactContainer button{
+  .contactContainer button {
     width: 100%;
     padding: 7px 10px;
     background-color: transparent;
