@@ -325,7 +325,7 @@ body {
   font-weight: 400;
 }
 
-.btn-search-cntainer{
+.btn-search-cntainer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -380,7 +380,6 @@ body {
   background-color: #ffbf0000;
 }
 
-
 #search-input {
   width: 100%;
   padding: 8px 20px;
@@ -394,7 +393,7 @@ body {
   transition: border-color 0.3s ease;
 }
 
-#search-input::placeholder{
+#search-input::placeholder {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.585);
 }
@@ -481,7 +480,6 @@ body {
 }
 
 .mainbox {
-  /* position: absolute; */
   margin: 2.2rem auto;
   width: 70%;
   display: flex;
@@ -489,7 +487,6 @@ body {
   gap: 5px;
   background-color: var(--light-green-2);
   border: 1px solid rgba(5, 82, 5, 0.412);
-  /* border-radius: 60px; */
   border-bottom-left-radius: 60px;
   border-top-left-radius: 60px;
   border-top-right-radius: 10px;
@@ -548,6 +545,97 @@ body {
   color: var(--white-70);
   /* font-weight: 300; */
   font-size: 14px;
+}
+
+@media (max-width: 1350px) {
+  .mainbox {
+    width: 100%;
+  }
+}
+@media (max-width: 1060px) {
+  #howItWorks {
+    width: 70%;
+  }
+}
+
+@media (max-width:800px){
+  #howItWorks {
+    width: 77%;
+  }
+
+  #howItWorks h2 {
+    font-size: 1.7rem;
+  }
+  .mainbox {
+    margin: 1.8rem auto;
+    /* width: 70%; */
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.6rem 0.5rem;
+  }
+
+  .count{
+    width: 40px;
+    height: 40px;
+  }
+
+  .afterCount {
+    gap: 6px;
+  }
+
+  .mainbox h5 {
+    font-size: 1rem;
+  }
+  .mainbox p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width:800px){
+  #howItWorks {
+    width: 85%;
+  }
+
+  #howItWorks h2 {
+    font-size: 1.3rem;
+  }
+  .mainbox {
+    margin: 1.8rem auto;
+    gap: 4px;
+    padding: 0.6rem 0.5rem;
+  }
+
+  .count{
+    width: 35px;
+    height: 30px;
+    font-size: 11px;
+  }
+
+  .afterCount {
+    gap: 5px;
+  }
+
+  .mainbox h5 {
+    font-size: 0.8rem;
+  }
+  .mainbox p {
+    font-size: 11px;
+  }
+
+  .mainBox1,
+.mainBox3 {
+  transform: translateX(-0%);
+}
+
+.mainBox2,
+.mainBox4 {
+  transform: translateX(0%);
+}
+
+.howItWorksBox {
+  margin-top: 2.3rem;
+}
 }
 
 /* features =============================================================  */
