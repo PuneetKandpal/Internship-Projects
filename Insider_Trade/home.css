@@ -455,8 +455,8 @@ body {
 #services {
   width: 100%;
   height: 100%;
-  padding: 3rem;
-  margin-top: 6rem;
+  padding: 9rem 3rem 3rem 3rem;
+  /* margin-top: 6rem; */
   /* background-color: darkcyan; */
 }
 
@@ -469,7 +469,7 @@ body {
 
 .serviceContainer {
   margin-top: 2rem;
-  width: 90%;
+  width: 95%;
   margin: auto;
   padding: 2rem;
   display: flex;
@@ -498,8 +498,8 @@ body {
 
 .serviceImg {
   border-radius: 10px;
-  width: 95%;
-  height: 250px;
+  width: 97%;
+  height: 300px;
   background-color: var(--light-green-2);
   border: 1px solid rgba(5, 82, 5, 0.412);
   position: relative;
@@ -558,12 +558,118 @@ body {
 }
 
 /* reports ======================================================  */
+#reports {
+  margin-top: 3rem;
+  /* background-color: cadetblue; */
+  padding: 6rem 2rem;
+}
+
+#reports h2 {
+  color: var(--golden);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2.8rem;
+}
+
+.reportContainer {
+  width: 78%;
+  margin: auto;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.reportBox {
+  width: 48%;
+  padding: 1.5rem 2rem;
+margin-top: 1rem;
+  background-color: var(--light-green-2);
+  border: 1px solid rgba(5, 82, 5, 0.412);
+  border-radius: 10px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.title h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--golden);
+  display: flex;
+  align-items: center;
+}
+
+.title h3 span{
+  /* font-weight: 300; */
+  /* color: rgba(255, 255, 255, 0.363); */
+  opacity: 50%;
+  margin-left: 10px;
+}
+
+.title img {
+  height: 30px;
+}
+
+.reportBox ul {
+  margin-top: 1.8rem;
+  margin-left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.reportBox ul li {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  justify-content: start;
+  font-size: 1.06rem;
+  color: var(--white-70);
+  /* font-weight: 300; */
+}
+
+.reportBox ul li svg {
+  height: 21px;
+}
+
+.reportBox ul li p {
+  /* font-weight: bold; */
+}
+
+.reportBox ul li p span {
+  font-weight: 300;
+  margin-left: 6px;
+}
+
+.reportBox a{
+  margin-top: 1.5rem;
+  color: rgb(56, 164, 207);
+  opacity: 70%;
+  display: inline-flex;
+  margin-left: 2.7rem;
+  text-decoration: none;
+}
+
+.reportBox a:hover{
+  opacity: 100%;
+  transition: all 0.3s;
+}
+
+.reportBox a i{
+  margin-top: 3px;
+  margin-left: 5px;
+}
 
 /* contact form ===========================================================  */
 #contact {
   background: var(--primary);
-  padding: 6rem 3rem;
-  margin-top: 3rem;
+  padding: 5rem 3rem;
+  margin-top: 2rem;
   margin-bottom: 5rem;
   color: #fff;
   display: flex;
