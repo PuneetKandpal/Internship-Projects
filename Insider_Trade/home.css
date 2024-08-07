@@ -974,7 +974,6 @@ body {
 /* reports ======================================================  */
 #reports {
   margin-top: 3rem;
-  /* background-color: cadetblue; */
   padding: 6rem 2rem;
 }
 
@@ -1019,8 +1018,6 @@ body {
 }
 
 .title h3 span {
-  /* font-weight: 300; */
-  /* color: rgba(255, 255, 255, 0.363); */
   opacity: 50%;
   margin-left: 10px;
 }
@@ -1044,7 +1041,6 @@ body {
   justify-content: start;
   font-size: 1.06rem;
   color: var(--white-70);
-  /* font-weight: 300; */
 }
 
 .reportBox ul li svg {
@@ -1073,6 +1069,84 @@ body {
 .reportBox a i {
   margin-top: 3px;
   margin-left: 5px;
+}
+
+@media (max-width: 800px) {
+  #reports h2 {
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+  }
+
+  .reportContainer {
+    width: 100%;
+    gap: 0.8rem;
+    padding: 1rem 0.6rem;
+  }
+
+  .reportBox {
+    width: 48%;
+    padding: 1rem 1rem;
+    margin-top: 1rem;
+  }
+
+  .title h3 {
+    font-size: 1.2rem;
+  }
+
+  .title img {
+    height: 25px;
+    margin-top: 1px;
+  }
+
+  .reportBox ul li {
+    align-items: start;
+    justify-content: start;
+    font-size: 1rem;
+  }
+
+  .reportBox ul li svg {
+    height: 21px;
+  }
+}
+
+@media (max-width: 650px) {
+  .reportBox {
+    width: 99%;
+  }
+}
+
+@media (max-width: 500px) {
+  #reports {
+    margin-top: 1rem;
+    padding: 5rem 2rem;
+  }
+  #reports h2 {
+    margin-bottom: 1.6rem;
+  }
+
+  .title h3 {
+    font-size: 1.1rem;
+  }
+
+  .title img {
+    height: 24px;
+  }
+
+  .reportBox ul li {
+    font-size: 15px;
+  }
+
+  .reportBox ul li svg {
+    height: 19px;
+  }
+  .reportBox ul {
+    margin-top: 1.3rem;
+    gap: 8px;
+  }
+
+  .reportBox a {
+    margin-top: 1.3rem;
+  }
 }
 
 /* contact form ===========================================================  */
