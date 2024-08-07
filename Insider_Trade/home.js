@@ -21,14 +21,49 @@ document.getElementById("theme-toggle").addEventListener("click", function () {
   }
 });
 
-window.addEventListener("scroll", function () {
-  const navbar = document.getElementById("navbar");
+// window.addEventListener("scroll", function () {
+//   const navbar = document.getElementById("navbar");
+//   if (window.scrollY > 50) {
+//     navbar.classList.add("scrolled");
+//   } else {
+//     navbar.classList.remove("scrolled");
+//   }
+// });
+
+// menu--------------------------------------------------
+const hamburger = document.querySelector(".hamburger");
+const mobileMenu = document.querySelector(".mobile-menu");
+
+hamburger.addEventListener("click", toggleMenu);
+
+function toggleMenu() {
+  hamburger.classList.toggle("active");
+  mobileMenu.classList.toggle("active");
+  document.body.classList.toggle("menu-open");
+}
+
+const navLinks = document.querySelectorAll(".mobile-menu ul li a");
+
+navLinks.forEach((link) => link.addEventListener("click", closeMenu));
+
+function closeMenu() {
+  hamburger.classList.remove("active");
+  mobileMenu.classList.remove("active");
+  document.body.classList.remove("menu-open");
+}
+
+window.addEventListener("scroll", () => {
+  const navbar = document.querySelector(".navbar");
   if (window.scrollY > 50) {
     navbar.classList.add("scrolled");
   } else {
     navbar.classList.remove("scrolled");
   }
 });
+
+// Log to check if elements are properly selected
+console.log("Hamburger:", hamburger);
+console.log("Mobile Menu:", mobileMenu);
 
 // contact ------------------------------------------------------
 document.getElementById("contactForm").addEventListener("submit", function (e) {

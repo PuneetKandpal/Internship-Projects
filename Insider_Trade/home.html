@@ -12,25 +12,33 @@
   </head>
   <body>
     <!-- nav -------------------------------------------  -->
-    <nav class="navbar scrolled">
+    <nav class="navbar">
       <div class="nav-left">
-        <img id="logo" src="./images/logo_dark_theme.svg" alt="" />
+          <img id="logo" src="./images/logo_dark_theme.svg" alt="Logo" />
       </div>
       <div class="nav-right">
-        <ul>
-            <a href="#services">services</a>
-            <a href="#reports">reports</a>
-            <a href="#contact">Contact</a>
-        </ul>
-        <a id="loginBtn" href="./login.html">Log In</a>
-        <!-- <img
-          id="theme-toggle"
-          src="./images/dark_button.svg"
-          alt="Toggle Theme"
-        /> -->
-        
+          <ul class="nav-menu">
+              <li><a href="#services">Services</a></li>
+              <li><a href="#reports">Reports</a></li>
+              <li><a href="#contact">Contact</a></li>
+          </ul>
+          <a id="loginBtn" href="./login.html">Log In</a>
       </div>
-    </nav>
+      <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+      </div>
+  </nav>
+
+  <div class="mobile-menu">
+      <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#reports">Reports</a></li>
+          <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a id="loginBtn" class="mobile-login-btn" href="./login.html">Log In</a>
+  </div>
 
     <!-- main----------------------------------------  -->
      <div id="main">
