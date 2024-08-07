@@ -724,7 +724,7 @@ body {
 @media (max-width: 770px) {
   .featureInfo h2 {
     width: 70%;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
   }
 
   .featureInfo ul {
@@ -768,7 +768,7 @@ body {
   .featureInfo h2 {
     width: 100%;
     margin: auto;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .featureInfo ul {
@@ -799,8 +799,6 @@ body {
   width: 100%;
   height: 100%;
   padding: 9rem 3rem 3rem 3rem;
-  /* margin-top: 6rem; */
-  /* background-color: darkcyan; */
 }
 
 #services h2 {
@@ -816,6 +814,7 @@ body {
   margin: auto;
   padding: 2rem;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 
@@ -898,6 +897,78 @@ body {
   margin-bottom: 10px;
   color: white;
   font-size: 18px;
+}
+
+@media (max-width: 800px) {
+  #services h2 {
+    font-size: 1.7rem;
+    margin-bottom: 2.8rem;
+  }
+
+  .serviceContainer {
+    margin-top: 0;
+    width: 100%;
+    padding: 2rem 0;
+    flex-wrap: wrap;
+  }
+
+  .serviceBox {
+    width: 33%;
+  }
+
+  .serviceImg {
+    width: 97%;
+    height: 220px;
+  }
+
+  .serviceImg h3 {
+    font-size: 16.5px;
+  }
+
+  .sevice-arrow img {
+    width: 30px;
+  }
+}
+
+@media (max-width: 500px) {
+  #services {
+    padding: 5rem 1rem 3rem 1rem;
+  }
+
+  #services h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.9rem;
+  }
+
+  .serviceContainer {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .serviceBox {
+    width: 49%;
+    margin-top: 0.5rem;
+  }
+
+  .serviceImg {
+    height: 200px;
+  }
+
+  .serviceImg h3 {
+    font-size: 15px;
+  }
+
+  .sevice-arrow img {
+    width: 25px;
+  }
+}
+
+@media (max-width: 350px) {
+  .serviceBox {
+    width: 90%;
+    margin-top: 0.5rem;
+  }
 }
 
 /* reports ======================================================  */
