@@ -149,6 +149,23 @@ heroTimeline
     "-=1.2"
   );
 
+// search
+const searchTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: "#search",
+    start: "top 80%",
+    end: "bottom 40%",
+    scrub: true,
+    // markers: true,
+  },
+});
+
+searchTimeline.from(".search-container", {
+  opacity: 0,
+  y: 50,
+  duration: 1.2,
+});
+
 // How It Works
 const howItWorksTimeline = gsap.timeline({
   scrollTrigger: {
