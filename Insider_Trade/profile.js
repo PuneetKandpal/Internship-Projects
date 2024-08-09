@@ -121,5 +121,5 @@ function saveChanges() {
 
 function logout() {
   // alert("Logged out!");
-  window.location.href = "mainPage.html";
+  window.location.href = "home.html";
 }

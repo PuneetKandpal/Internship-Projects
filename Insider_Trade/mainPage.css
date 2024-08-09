@@ -16,6 +16,20 @@ html {
 }
 
 :root {
+  --primary: #011001;
+  --secondary: #137213;
+  --light-green-1: rgba(19, 114, 19, 0.5);
+  --light-green-2: rgba(19, 114, 19, 0.09);
+  --white: #f6f6f6;
+  --white-80: rgba(246, 246, 246, 0.8);
+  --white-70: rgba(246, 246, 246, 0.7);
+  --white-50: rgba(246, 246, 246, 0.5);
+  --white-40: rgba(246, 246, 246, 0.4);
+  --white-08: rgba(246, 246, 246, 0.08);
+  --golden: #c2a404;
+}
+
+body.dark-mode {
   --primary: #ffffff;
   --secondary: #137213;
   --light-green-1: rgba(19, 114, 19, 0.5);
@@ -28,20 +42,6 @@ html {
   --white-08: rgba(22, 22, 22, 0.08);
   --golden: #c2a404;
   --slate: #f6f6f6;
-}
-
-body.dark-mode {
-  --primary: #011001;
-  --secondary: #137213;
-  --light-green-1: rgba(19, 114, 19, 0.5);
-  --light-green-2: rgba(19, 114, 19, 0.09);
-  --white: #f6f6f6;
-  --white-80: rgba(246, 246, 246, 0.8);
-  --white-70: rgba(246, 246, 246, 0.7);
-  --white-50: rgba(246, 246, 246, 0.5);
-  --white-40: rgba(246, 246, 246, 0.4);
-  --white-08: rgba(246, 246, 246, 0.08);
-  --golden: #c2a404;
 }
 
 html,
@@ -75,7 +75,7 @@ body {
 
 .navbar .nav-left img {
   width: fit-content;
-  height: 2rem;
+  height: 3.5rem;
 }
 
 .navbar .nav-right {
@@ -109,7 +109,7 @@ body {
 
 @media (max-width: 768px) {
   .navbar .nav-left img {
-    height: 1.5rem;
+    height: 2.5rem;
   }
 
   .navbar .nav-right img {
@@ -125,7 +125,7 @@ body {
 
 @media (max-width: 480px) {
   .navbar .nav-left img {
-    height: 1.6rem;
+    height: 2rem;
   }
 
   .navbar .nav-right img {

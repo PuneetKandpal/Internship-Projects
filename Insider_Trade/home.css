@@ -116,7 +116,7 @@ body {
 
 .nav-left img {
   width: auto;
-  height: 2rem;
+  height: 3rem;
 }
 
 .nav-right {
@@ -241,7 +241,7 @@ body {
 
 @media (max-width: 500px) {
   .nav-left img {
-    height: 1.8rem;
+    height: 2rem;
   }
 }
 
@@ -802,7 +802,7 @@ body {
 
   .featureInfo h2 {
     width: 100%;
-    margin:auto;
+    margin: auto;
     font-size: 1.2rem;
   }
 
