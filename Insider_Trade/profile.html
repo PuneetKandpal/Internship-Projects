@@ -1,11 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="profile.css" />
     <title>Profile Page</title>
-</head>
-<body>
-    <h1>User Profile</h1>
-</body>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left-panel">
+        <div class="hi-username">
+          <a href="./dashboard.html"><i class="ri-arrow-left-line"></i></a>
+          <h2 id="left-panel-username">Hi, John!</h2>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="left-panel-menu">
+          <div class="navoptions">
+            <div id="profile-btn" class="nav-item active">
+              <i class="ri-user-line"></i> Profile
+            </div>
+            <div id="edit-profile-btn" class="nav-item">
+              <i class="ri-edit-line"></i> Edit Profile
+            </div>
+            <div id="settings-btn" class="nav-item">
+              <i class="ri-settings-3-line"></i> Settings
+            </div>
+          </div>
+
+          <div class="logout-section nav-item" onclick="logout()">
+            <i class="ri-logout-box-line"></i> Logout
+          </div>
+        </div>
+      </div>
+
+      <div class="right-panel">
+        <div id="profile-content" class="content-section active">
+          <div class="profile-container">
+            <div class="profile-header">
+              <img
+                src="https://img.freepik.com/free-vector/gradient-stock-market-concept_23-2149166910.jpg"
+                alt="Background"
+                class="background-img"
+                id="background-img"
+              />
+              <button class="edit-background-btn" onclick="triggerFileInput()">
+                &#9998;
+              </button>
+              <input
+                type="file"
+                id="background-file-input"
+                style="display: none"
+                accept="image/*"
+              />
+              <div class="profile-photo">
+                <img src="https://t4.ftcdn.net/jpg/02/24/86/95/360_F_224869519_aRaeLneqALfPNBzg0xxMZXghtvBXkfIA.jpg" alt="Profile Photo" />
+                <button class="edit-photo-btn">&#9998;</button>
+                <input
+                  type="file"
+                  id="profile-photo-input"
+                  style="display: none"
+                  accept="image/*"
+                />
+              </div>
+            </div>
+
+            <div class="profile-info">
+              <h2 id="profile-name">
+                John Doe
+                <span><p id="profile-username">john20</p></span>
+              </h2>
+
+              <div class="email-phone">
+                <p id="profile-phone">
+                  <span><i class="ri-phone-fill"></i></span>
+                  (123) 456-7890
+                </p>
+                <p id="profile-email">
+                  <span><i class="ri-mail-fill"></i></span>
+                  john.doe@example.com
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="edit-profile-content" class="content-section hidden">
+          <h2>Edit Profile</h2>
+
+          <input
+            type="text"
+            id="edit-name"
+            placeholder="Name"
+            value="John Doe"
+          />
+          <input
+            type="text"
+            id="edit-username"
+            placeholder="Username"
+            value="johndoe"
+          />
+          <input
+            type="email"
+            id="edit-email"
+            placeholder="Email"
+            value="john.doe@example.com"
+          />
+          <input
+            type="tel"
+            id="edit-phone"
+            placeholder="Phone"
+            value="+1234567890"
+          />
+          <button onclick="saveChanges()">Save Changes</button>
+        </div>
+
+        <div id="settings-content" class="content-section hidden">
+          <h2>Settings</h2>
+          <p>No data available</p>
+        </div>
+      </div>
+    </div>
+    <script src="profile.js"></script>
+  </body>
 </html>
