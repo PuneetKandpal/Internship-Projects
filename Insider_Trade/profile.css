@@ -125,12 +125,10 @@ body {
   background-color: var(--highlight);
 }
 
-/* .logout-section {
+.logout-section {
   cursor: pointer;
-  color: var(--white);
-  padding: 12px 20px;
-  margin-top: 300px;
-} */
+  /* display: block; */
+}
 
 .right-panel {
   width: 80%;
@@ -413,14 +411,6 @@ button {
     right: 91%;
     padding: 5px;
     font-size: 12px;
-  }
-
-  .edit-photo-btn {
-    bottom: 3px;
-    right: 31px;
-    width: 40px;
-    height: 36px;
-    font-size: 14px;
   }
 
   .profile-info {

@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   const profileBtn = document.getElementById("profile-btn");
   const editProfileBtn = document.getElementById("edit-profile-btn");
   const settingsBtn = document.getElementById("settings-btn");
-  const editPhotoBtn = document.querySelector(".edit-photo-btn"); // Get the edit photo button
+  const editPhotoBtn = document.querySelector(".edit-photo-btn");
 
   // Get the name from the profile section
-  const profileName = document.getElementById("profile-name").textContent;
+  const profileName = document.getElementById("profile-name").innerText;
 
   // Set the left panel username to the profile name
   const leftPanelUsername = document.getElementById("left-panel-username");
@@ -121,6 +121,5 @@ function saveChanges() {
 
 function logout() {
   // alert("Logged out!");
-  window.location.href = 'mainPage.html';
+  window.location.href = "mainPage.html";
 }
-
