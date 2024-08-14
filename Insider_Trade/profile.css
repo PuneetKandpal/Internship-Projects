@@ -131,8 +131,7 @@ body {
 }
 
 .right-panel {
-  width: 80%;
-  /* flex-grow: 1; */
+  width: 82%;
   background-color: var(--light-green-2);
   display: flex;
   flex-direction: column;
@@ -353,10 +352,6 @@ button {
     display: flex;
   }
 
-  .logout-section {
-    display: block;
-  }
-
   .menu-icon {
     display: block;
     margin-right: 30px;
@@ -364,7 +359,8 @@ button {
 
   .left-panel-menu .logout-section {
     display: block;
-    margin-top: 15px;
+    /* margin-top: 15px; */
+    margin-bottom: 8rem;
   }
 
   .right-panel {
