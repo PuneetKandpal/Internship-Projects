@@ -1,7 +1,8 @@
 const App = () => {
   return (
-    <div>
+    <div className="bg-black text-white">
       App
+      <h1>Tailwind Setup</h1>
     </div>
   )
 }
