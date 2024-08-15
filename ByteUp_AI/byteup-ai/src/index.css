@@ -89,3 +89,41 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* marquee animation --------------------  */
+.moving-text {
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: block;
+  animation: marqueanime 18s linear infinite;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-around;
+}
+
+.container h1 {
+  background: linear-gradient(to right, #a270c9, #637eb2);
+  -webkit-background-clip: text; /* Clip the background to the text */
+  -webkit-text-fill-color: transparent; /* Make the text color transparent */
+  font-weight: 600;
+  font-weight: 900;
+  font-size: 5rem;
+  font-family: "Heebo";
+}
+
+@keyframes marqueanime {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
