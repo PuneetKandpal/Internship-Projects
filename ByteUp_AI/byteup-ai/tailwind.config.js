@@ -8,6 +8,12 @@ export default {
         Syne: ["Syne", "sans-serif"],
         Heebo: ["Heebo", "sans-serif"],
       },
+      colors: {
+        white: "#ffffff",
+        black: "#000000",
+        purple: "#b993d6",
+        sky: "#8ca6db",
+      },
     },
   },
   plugins: [],
