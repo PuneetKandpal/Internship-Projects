@@ -6,6 +6,7 @@ import Main from "./Pages/Main";
 import Home from "./Pages/Home";
 import Services from "./Pages/Services";
 import Work from "./Pages/Work";
+import Blogs from "./Pages/Blogs";
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -22,6 +23,7 @@ const App = () => {
           <Route index element={<Home />} />
           <Route path="/services" element={<Services />} />
           <Route path="/work" element={<Work />} />
+          <Route path="/blogs" element={<Blogs />} />
         </Route>
       </Routes>
     </div>
