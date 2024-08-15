@@ -15,11 +15,11 @@
 
 /* From Uiverse.io by cuzpq */
 .theme-checkbox {
-  --toggle-size: 8px;
+  --toggle-size: 7.5px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 5.4em;
+  width: 5.2em;
   height: 3.125em;
   background: -webkit-gradient(
       linear,
@@ -82,4 +82,10 @@
   -webkit-background-clip: text; /* Clip the background to the text */
   -webkit-text-fill-color: transparent; /* Make the text color transparent */
   font-weight: 600;
+}
+
+.text-gradient-css {
+  background: linear-gradient(to right, #7e5bef, #3b82f6); /* Gradient colors */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

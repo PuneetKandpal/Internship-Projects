@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import logo from '../assets/logo.svg'
 
 const Navbar = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useContext(ThemeContext);
 
   return (
     <div
