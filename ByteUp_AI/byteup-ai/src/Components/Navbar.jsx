@@ -13,7 +13,7 @@ const Navbar = () => {
     >
       <h1 className="font-Syne text-2xl font-bold">ByteUp AI</h1>
       <ul className="flex items-center space-x-6 uppercase font-Heebo text-sm">
-        <li>Home</li>
+        <li className="hover:text-red-700">Home</li>
         <NavLink to="/services">Services</NavLink>
         <NavLink to="/work">Work</NavLink>
         <li>Blogs</li>
