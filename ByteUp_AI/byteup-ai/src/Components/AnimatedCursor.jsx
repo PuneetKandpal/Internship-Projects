@@ -1,17 +1,17 @@
+// src/components/AnimatedCursor.js
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const AnimatedCursor = () => {
+const AnimatedCursor = ({ isHovered }) => {
   const cursorRef = useRef(null);
 
   useEffect(() => {
     const cursor = cursorRef.current;
 
     const moveCursor = (e) => {
-      const { clientX: x, clientY: y } = e;
       gsap.to(cursor, {
-        x,
-        y,
+        x: e.clientX - cursor.offsetWidth / 2,
+        y: e.clientY - cursor.offsetHeight / 2,
         duration: 0.1,
         ease: "power3.out",
       });
@@ -27,9 +27,10 @@ const AnimatedCursor = () => {
   return (
     <div
       ref={cursorRef}
-      className="fixed w-8 h-8 bg-purple-500 rounded-full pointer-events-none z-50"
-      style={{ top: 0, left: 0, transform: "translate(-50%, -50%)" }} // Center the cursor at the mouse pointer
-    />
+      className={`cursor mix-blend-difference pointer-events-none w-3 h-3 bg-white border-none fixed top-0 left-0 rounded-full  z-[1000] ${
+        isHovered ? "scale-125 text-black " : "scale-100"
+      }`}
+    ></div>
   );
 };
 
