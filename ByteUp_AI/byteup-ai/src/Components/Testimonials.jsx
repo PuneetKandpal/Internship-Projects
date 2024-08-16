@@ -65,7 +65,7 @@ const Testimonials = () => {
   const prevTestimonial = () => {
     gsap.to(testimonialRef.current, {
       opacity: 0,
-      y: 20,
+      x: 20,
       duration: 0.3,
       onComplete: () => {
         setCurrentTestimonialIndex(
@@ -74,8 +74,8 @@ const Testimonials = () => {
         );
         gsap.fromTo(
           testimonialRef.current,
-          { opacity: 0, y: -20 },
-          { opacity: 1, y: 0, duration: 0.3 }
+          { opacity: 0, x: -20 },
+          { opacity: 1, x: 0, duration: 0.3 }
         );
       },
     });
