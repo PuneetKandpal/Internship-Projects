@@ -25,25 +25,29 @@ const HomeWork = () => {
 
   const cardData = [
     {
-      image: "./src/assets/images/1.jpg",
+      image:
+        "https://cdn.dribbble.com/users/2558685/screenshots/7700236/media/e31395802cff9343b9293e6271cb89a5.jpg?resize=1000x750&vertical=center",
       label: "Big Swinging Insiders",
       description:
         "This project tracks insider trading activities of big companies.",
     },
     {
-      image: "./src/assets/images/2.jpg",
+      image:
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       label: "Uranium Tracker",
       description:
         "This tool monitors the uranium market and price fluctuations.",
     },
     {
-      image: "./src/assets/images/3.jpg",
+      image:
+        "https://cdn.dribbble.com/userupload/7317089/file/original-3323c6e6b03d4c9a4cab0c67d6237a40.png?resize=1200x900",
       label: "Big Swinging Insiders",
       description:
         "Analyzes and predicts market trends based on insider activities.",
     },
     {
-      image: "./src/assets/images/4.jpg",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSelvsRw3CrdFo6ddHRXNMFx-59LIw4LnYIQA&s",
       label: "Uranium Tracker",
       description:
         "Provides detailed analytics on uranium mining and investment.",
@@ -52,7 +56,7 @@ const HomeWork = () => {
 
   return (
     <div
-      className={`font-['Archivo', sans-serif] p-8 py-20 ml-14 ${
+      className={`font-['Archivo', sans-serif] p-8  ml-14 ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
