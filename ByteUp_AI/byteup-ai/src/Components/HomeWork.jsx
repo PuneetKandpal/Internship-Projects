@@ -1,9 +1,11 @@
-import { useEffect, useRef, useContext } from "react";
+import { useEffect, useRef, useContext, useState } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
+import AnimatedCursor from "./AnimatedCursor";
 
 const HomeWork = () => {
   const { theme } = useContext(ThemeContext);
   const cardsRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -26,50 +28,82 @@ const HomeWork = () => {
     return () => clearInterval(intervalId);
   }, []);
 
+  const handleMouseMove = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
   const cardData = [
     {
       image:
-
-        "https://cdn.dribbble.com/users/2558685/screenshots/7700236/media/e31395802cff9343b9293e6271cb89a5.jpg?resize=1000x750&vertical=center",
-
+        "https://img.freepik.com/free-photo/marketing-strategy-planning-strategy-concept_53876-42950.jpg?t=st=1723799297~exp=1723802897~hmac=dedd80eb6b170f1cf29675e3545120d2ba4e94cf13190dfbc8aab8ed5bda12c5&w=1060",
       label: "Big Swinging Insiders",
       description:
         "This project tracks insider trading activities of big companies.",
     },
     {
       image:
-
-        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-
+        "https://img.freepik.com/free-photo/homepage-seen-computer-screen_23-2149416724.jpg?t=st=1723799434~exp=1723803034~hmac=033a0e4867a6a4111311fe85d736c72f4c8e640eea3bcde682b3d6033cf783e6&w=1380",
       label: "Uranium Tracker",
       description:
         "This tool monitors the uranium market and price fluctuations.",
     },
     {
       image:
-        "https://cdn.dribbble.com/userupload/7317089/file/original-3323c6e6b03d4c9a4cab0c67d6237a40.png?resize=1200x900",
-
+        "https://img.freepik.com/free-photo/web-design-internet-website-responsive-software-concept_53876-124757.jpg?t=st=1723799538~exp=1723803138~hmac=38f58b99400516532477ad2ef5a32888531fe3f845a34b7ff5e0e32ecc913263&w=1380",
       label: "Big Swinging Insiders",
       description:
         "Analyzes and predicts market trends based on insider activities.",
     },
     {
       image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSelvsRw3CrdFo6ddHRXNMFx-59LIw4LnYIQA&s",
-
+        "https://img.freepik.com/free-photo/develop-coding-web-design-coding-web-template_53876-132245.jpg?t=st=1723799571~exp=1723803171~hmac=923535a417f40245c03a4440b9f3c3f42c9298509d3c8a9b513e9d33fdb77ac4&w=1060",
       label: "Uranium Tracker",
       description:
         "Provides detailed analytics on uranium mining and investment.",
     },
   ];
 
+  useEffect(() => {
+    const applyTheme = () => {
+      if (cardsRef.current) {
+        const cards = cardsRef.current.querySelectorAll(".card-label");
+        cards.forEach((card) => {
+          card.className = `card-label text-[26px] font-Syne font-semibold leading-8 ${
+            theme === "light" ? "text-black" : "text-white"
+          }`;
+        });
+      }
+    };
+
+    applyTheme();
+
+    // Re-apply the theme whenever the theme changes
+    if (cardsRef.current) {
+      const observer = new MutationObserver(() => {
+        applyTheme();
+      });
+
+      observer.observe(cardsRef.current, {
+        childList: true,
+        subtree: true,
+      });
+
+      return () => observer.disconnect();
+    }
+  }, [theme]);
+
   return (
     <div
-      className={`font-['Archivo', sans-serif] p-8  ml-14 ${
-        theme === "light" ? "bg-white text-black" : "bg-black text-white"
-
+      className={`font-['Archivo', sans-serif] p-8 ml-14 ${
+        theme === "light" ? "bg-white" : "bg-black"
       }`}
     >
+      <AnimatedCursor isHovered={isHovered} />
+
       <h2
         className={`text-sm uppercase mb-2 font-Syne leading-4 font-medium tracking-[.25em] ${
           theme === "light" ? "text-gray-500" : "text-gray-400"
@@ -78,7 +112,9 @@ const HomeWork = () => {
         Portfolio
       </h2>
       <h1
-        className={`text-5xl font-semibold mb-12 leading-tight font-Syne ${
+        onMouseEnter={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+        className={`text-5xl font-semibold mb-12 leading-tight font-Syne inline-block ${
           theme === "light" ? "text-black" : "text-white"
         }`}
       >
@@ -111,7 +147,7 @@ const HomeWork = () => {
                 </div>
               </div>
               <div
-                className={`text-[26px] font-Syne font-semibold leading-8 ${
+                className={`card-label text-[26px] font-Syne font-semibold leading-8 ${
                   theme === "light" ? "text-black" : "text-white"
                 }`}
               >
