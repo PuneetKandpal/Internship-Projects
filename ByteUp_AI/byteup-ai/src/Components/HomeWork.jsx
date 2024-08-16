@@ -64,9 +64,9 @@ const HomeWork = () => {
         Portfolio
       </h2>
       <h1 className="text-5xl font-semibold mb-12 leading-tight font-Syne">
-        Innovation and
+        Dynamic Results,
         <br />
-        Digital Branding
+        Proven Success
       </h1>
       <div className="overflow-hidden">
         <div
