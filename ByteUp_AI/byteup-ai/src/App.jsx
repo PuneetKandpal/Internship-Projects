@@ -1,4 +1,3 @@
-
 import { useContext } from "react";
 import { ThemeContext } from "./Context/ThemeContext";
 import { Routes, Route } from "react-router-dom";
@@ -7,6 +6,7 @@ import Home from "./Pages/Home";
 import Services from "./Pages/Services";
 import Work from "./Pages/Work";
 import Blogs from "./Pages/Blogs";
+import AnimatedCursor from "./Components/AnimatedCursor";
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -16,7 +16,7 @@ const App = () => {
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
-     
+      <AnimatedCursor />
 
       <Routes>
         <Route path="/" element={<Main />}>
