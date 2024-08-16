@@ -1,5 +1,5 @@
 import Hero from "../Components/Hero";
-// import Marquee from "../Components/Marquee";
+// import MarqueeDiv from "../Components/Marquee";
 import Navbar from "../Components/Navbar";
 
 const Home = () => {
@@ -7,7 +7,7 @@ const Home = () => {
     <div>
       <Navbar />
       <Hero />
-      {/* <Marquee /> */}
+      {/* <MarqueeDiv /> */}
     </div>
   );
 };
