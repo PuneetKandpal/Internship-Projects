@@ -52,7 +52,7 @@ const HomeWork = () => {
 
   return (
     <div
-      className={`font-['Archivo', sans-serif] p-8 ml-14 ${
+      className={`font-['Archivo', sans-serif] p-8 py-20 ml-14 ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       }`}
     >

@@ -9,7 +9,7 @@ const MarqueeDiv = () => {
 
   return (
     <div
-      className={`py-24 select-none ${
+      className={`py-44 select-none ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
