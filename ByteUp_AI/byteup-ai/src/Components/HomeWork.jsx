@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useContext } from "react";
+import { useEffect, useRef, useContext } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 
 const HomeWork = () => {
