@@ -27,8 +27,8 @@ const AnimatedCursor = ({ isHovered }) => {
   return (
     <div
       ref={cursorRef}
-      className={`cursor mix-blend-difference pointer-events-none w-3 h-3 bg-white border-none fixed top-0 left-0 rounded-full  z-[1000] ${
-        isHovered ? "scale-125 text-black " : "scale-100"
+      className={`cursor mix-blend-difference pointer-events-none bg-white border-none fixed top-0 left-0 rounded-full  z-[1000] ${
+        isHovered ? "w-20 h-20 text-black " : "w-3 h-3"
       }`}
     ></div>
   );
