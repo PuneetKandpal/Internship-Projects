@@ -98,15 +98,15 @@ const HomeWork = () => {
 
   return (
     <div
-      className={`font-['Archivo', sans-serif] p-8 ml-14 ${
+      className={`font-['Archivo', sans-serif] pb-8 ml-14 ${
         theme === "light" ? "bg-white" : "bg-black"
       }`}
     >
       <AnimatedCursor isHovered={isHovered} />
 
       <h2
-        className={`text-sm uppercase mb-2 font-Syne leading-4 font-medium tracking-[.25em] ${
-          theme === "light" ? "text-gray-500" : "text-gray-400"
+        className={`text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
+          theme === "light" ? "text-gradient-css opacity-70" : "text-white/40"
         }`}
       >
         Portfolio
@@ -118,9 +118,9 @@ const HomeWork = () => {
           theme === "light" ? "text-black" : "text-white"
         }`}
       >
-        Dynamic Results,
+        Driving Excellence in
         <br />
-        Proven Success
+        Every Project
       </h1>
       <div className="overflow-hidden">
         <div
