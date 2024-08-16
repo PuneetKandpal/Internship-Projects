@@ -28,25 +28,29 @@ const HomeWork = () => {
 
   const cardData = [
     {
-      image: "./src/assets/images/1.jpg",
+      image:
+        "https://img.freepik.com/free-photo/marketing-strategy-planning-strategy-concept_53876-42950.jpg?t=st=1723799297~exp=1723802897~hmac=dedd80eb6b170f1cf29675e3545120d2ba4e94cf13190dfbc8aab8ed5bda12c5&w=1060",
       label: "Big Swinging Insiders",
       description:
         "This project tracks insider trading activities of big companies.",
     },
     {
-      image: "./src/assets/images/2.jpg",
+      image:
+        "https://img.freepik.com/free-photo/homepage-seen-computer-screen_23-2149416724.jpg?t=st=1723799434~exp=1723803034~hmac=033a0e4867a6a4111311fe85d736c72f4c8e640eea3bcde682b3d6033cf783e6&w=1380",
       label: "Uranium Tracker",
       description:
         "This tool monitors the uranium market and price fluctuations.",
     },
     {
-      image: "./src/assets/images/3.jpg",
+      image:
+        "https://img.freepik.com/free-photo/web-design-internet-website-responsive-software-concept_53876-124757.jpg?t=st=1723799538~exp=1723803138~hmac=38f58b99400516532477ad2ef5a32888531fe3f845a34b7ff5e0e32ecc913263&w=1380",
       label: "Big Swinging Insiders",
       description:
         "Analyzes and predicts market trends based on insider activities.",
     },
     {
-      image: "./src/assets/images/4.jpg",
+      image:
+        "https://img.freepik.com/free-photo/develop-coding-web-design-coding-web-template_53876-132245.jpg?t=st=1723799571~exp=1723803171~hmac=923535a417f40245c03a4440b9f3c3f42c9298509d3c8a9b513e9d33fdb77ac4&w=1060",
       label: "Uranium Tracker",
       description:
         "Provides detailed analytics on uranium mining and investment.",
