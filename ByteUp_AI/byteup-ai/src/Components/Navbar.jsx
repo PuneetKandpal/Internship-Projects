@@ -1,62 +1,45 @@
 import { useContext } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import { Link, NavLink } from "react-router-dom";
+import logo from '../assets/logo.svg'
 
 const Navbar = () => {
-  const { theme, toggleTheme } = useContext(ThemeContext);
+  const { toggleTheme } = useContext(ThemeContext);
 
   return (
     <div
-      className={`w-full py-6 px-8 ${
-        theme === "light" ? "bg-white text-black" : "bg-black text-white"
-      } flex justify-between`}
+      className={`w-full py-8 px-12 fixed top-0 left-0 right-0 z-50 bg-gradient-to-b from-black/80 to-transparent text-white flex justify-between items-center`}
     >
-      <h1 className="font-Syne text-2xl font-bold">ByteUp AI</h1>
-      <ul className="flex items-center space-x-6 uppercase font-Heebo text-sm font-medium">
+      <div className="font-Syne h-[55px] w-[210px]  flex justify-center items-center object-cover"><img className="object-cover h-[100%] w-[100%] mt-[-2px]" src={logo} alt="" /></div>
+      <ul className="flex items-center space-x-8 uppercase tracking-[2px] font-Archivo text-[13px] font-normal">
         <NavLink
           to="/"
-          className={`${
-            theme === "light" ? ` hover:text-black/70` : " hover:text-white/70"
-          } hover:transition-all duration-200`}
+          className="hover:text-white/70 hover:transition-all duration-200"
         >
           Home
         </NavLink>
         <NavLink
           to="/services"
-          className={`${
-            theme === "light" ? ` hover:text-black/70` : " hover:text-white/70"
-          } hover:transition-all duration-200`}
+          className="hover:text-white/70 hover:transition-all duration-200"
         >
           Services
         </NavLink>
         <NavLink
           to="/work"
-          className={`${
-            theme === "light" ? ` hover:text-black/70` : " hover:text-white/70"
-          } hover:transition-all duration-200`}
+          className="hover:text-white/70 hover:transition-all duration-200"
         >
           Work
         </NavLink>
         <NavLink
           to="/blogs"
-          className={`${
-            theme === "light" ? ` hover:text-black/70` : " hover:text-white/70"
-          } hover:transition-all duration-200`}
+          className="hover:text-white/70 hover:transition-all duration-200"
         >
           Blogs
         </NavLink>
-        <Link
-          className={`${
-            theme === "light" ? ` hover:text-black/70` : " hover:text-white/70"
-          } hover:transition-all duration-200`}
-        >
+        <Link className="hover:text-white/70 hover:transition-all duration-200">
           About
         </Link>
-        <Link
-          className={`${
-            theme === "light" ? ` hover:text-black/70` : " hover:text-white/70"
-          } hover:transition-all duration-200`}
-        >
+        <Link className="hover:text-white/70 hover:transition-all duration-200">
           Contact
         </Link>
         <input
