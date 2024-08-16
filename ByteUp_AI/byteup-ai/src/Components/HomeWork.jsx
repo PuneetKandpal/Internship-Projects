@@ -29,28 +29,34 @@ const HomeWork = () => {
   const cardData = [
     {
       image:
-        "https://img.freepik.com/free-photo/marketing-strategy-planning-strategy-concept_53876-42950.jpg?t=st=1723799297~exp=1723802897~hmac=dedd80eb6b170f1cf29675e3545120d2ba4e94cf13190dfbc8aab8ed5bda12c5&w=1060",
+
+        "https://cdn.dribbble.com/users/2558685/screenshots/7700236/media/e31395802cff9343b9293e6271cb89a5.jpg?resize=1000x750&vertical=center",
+
       label: "Big Swinging Insiders",
       description:
         "This project tracks insider trading activities of big companies.",
     },
     {
       image:
-        "https://img.freepik.com/free-photo/homepage-seen-computer-screen_23-2149416724.jpg?t=st=1723799434~exp=1723803034~hmac=033a0e4867a6a4111311fe85d736c72f4c8e640eea3bcde682b3d6033cf783e6&w=1380",
+
+        "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+
       label: "Uranium Tracker",
       description:
         "This tool monitors the uranium market and price fluctuations.",
     },
     {
       image:
-        "https://img.freepik.com/free-photo/web-design-internet-website-responsive-software-concept_53876-124757.jpg?t=st=1723799538~exp=1723803138~hmac=38f58b99400516532477ad2ef5a32888531fe3f845a34b7ff5e0e32ecc913263&w=1380",
+        "https://cdn.dribbble.com/userupload/7317089/file/original-3323c6e6b03d4c9a4cab0c67d6237a40.png?resize=1200x900",
+
       label: "Big Swinging Insiders",
       description:
         "Analyzes and predicts market trends based on insider activities.",
     },
     {
       image:
-        "https://img.freepik.com/free-photo/develop-coding-web-design-coding-web-template_53876-132245.jpg?t=st=1723799571~exp=1723803171~hmac=923535a417f40245c03a4440b9f3c3f42c9298509d3c8a9b513e9d33fdb77ac4&w=1060",
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSelvsRw3CrdFo6ddHRXNMFx-59LIw4LnYIQA&s",
+
       label: "Uranium Tracker",
       description:
         "Provides detailed analytics on uranium mining and investment.",
@@ -59,8 +65,9 @@ const HomeWork = () => {
 
   return (
     <div
-      className={`font-['Archivo', sans-serif] p-8 ml-14 ${
-        theme === "light" ? "bg-white" : "bg-black"
+      className={`font-['Archivo', sans-serif] p-8  ml-14 ${
+        theme === "light" ? "bg-white text-black" : "bg-black text-white"
+
       }`}
     >
       <h2

@@ -86,7 +86,34 @@
 }
 
 .text-gradient-css {
-  background: linear-gradient(to right, #7e5bef, #3b82f6); /* Gradient colors */
+  background: linear-gradient(to right, #7e5bef, #3b82f6); 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+
+/* home service section ------------------------------------------------  */
+.service-hover-black{
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.2s ;
+}
+
+.service-hover-black:hover{
+  background: linear-gradient(to right, #dededed6, #aeaeae76); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.2s ;
+}
+
+
+.service-hover-white{
+  color: rgba(0, 0, 0, 0.75);
+  transition: all 0.2s ;
+}
+
+.service-hover-white:hover{
+  background: linear-gradient(to right, #212020c7, #3d3d3d76); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.2s ;
 }
