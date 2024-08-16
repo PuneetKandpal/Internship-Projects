@@ -11,6 +11,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Archivo";
+  cursor: none;
 }
 
 /* From Uiverse.io by cuzpq */
@@ -89,4 +90,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+
 

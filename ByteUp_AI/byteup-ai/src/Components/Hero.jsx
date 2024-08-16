@@ -3,11 +3,13 @@ import { ThemeContext } from "../Context/ThemeContext";
 import { Link } from "react-router-dom";
 import "../../src/index.css";
 import PrimaryBtn from "./PrimaryBtn";
+import AnimatedCursor from "./AnimatedCursor";
 
 const Hero = () => {
   const { theme } = useContext(ThemeContext);
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isScaled, setIsScaled] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   const slides = [
     {
@@ -57,6 +59,7 @@ const Hero = () => {
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       } ${isScaled ? "opacity-100" : "opacity-0"}`}
     >
+      <AnimatedCursor isHovered={isHovered}/>
       <div
         className={`absolute inset-0 bg-cover bg-center transform transition-transform duration-[60s] ease-out ${
           isScaled ? "scale-150" : "scale-100"
@@ -69,7 +72,15 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/60 to-transparent"></div>
 
       <div className="absolute inset-0 w-[45%] ml-56 flex flex-col items-start justify-center">
-        <h1 className="text-[2rem]  font-Syne text-white md:text-6xl font-bold text-start">
+        <h1
+          onMouseEnter={() => {
+            setIsHovered(true);
+          }}
+          onMouseLeave={() => {
+            setIsHovered(false);
+          }}
+          className="cursor-hover text-[2rem]  font-Syne text-white md:text-6xl font-bold text-start"
+        >
           {slides[currentSlide].text}
         </h1>
         <div className="mt-10">
