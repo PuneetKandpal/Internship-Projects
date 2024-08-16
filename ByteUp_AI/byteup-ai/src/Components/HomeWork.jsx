@@ -1,10 +1,15 @@
 import { useEffect, useRef, useContext, useState } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import AnimatedCursor from "./AnimatedCursor";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HomeWork = () => {
   const { theme } = useContext(ThemeContext);
   const cardsRef = useRef(null);
+  const containerRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
@@ -26,6 +31,57 @@ const HomeWork = () => {
     }, 5000);
 
     return () => clearInterval(intervalId);
+  }, []);
+
+  useEffect(() => {
+    // Animate cards
+    const cards = gsap.utils.toArray(".card");
+    
+    cards.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        {
+          opacity: 0,
+          y: 50,
+        },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top bottom-=100",
+            toggleActions: "play none none reverse",
+          },
+          delay: index * 0.2,
+        }
+      );
+    });
+
+    // Animate headings
+    gsap.fromTo(
+      ".animate-heading",
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: ".animate-heading",
+          start: "top bottom-=100",
+          toggleActions: "play none none reverse",
+        },
+      }
+    );
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    };
   }, []);
 
   const handleMouseMove = () => {
@@ -81,7 +137,6 @@ const HomeWork = () => {
 
     applyTheme();
 
-    // Re-apply the theme whenever the theme changes
     if (cardsRef.current) {
       const observer = new MutationObserver(() => {
         applyTheme();
@@ -98,6 +153,7 @@ const HomeWork = () => {
 
   return (
     <div
+      ref={containerRef}
       className={`font-['Archivo', sans-serif] pb-8 ml-14 ${
         theme === "light" ? "bg-white" : "bg-black"
       }`}
@@ -105,7 +161,7 @@ const HomeWork = () => {
       <AnimatedCursor isHovered={isHovered} />
 
       <h2
-        className={`text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
+        className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
           theme === "light" ? "text-gradient-css opacity-70" : "text-white/40"
         }`}
       >
@@ -114,7 +170,7 @@ const HomeWork = () => {
       <h1
         onMouseEnter={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`text-5xl font-semibold mb-12 leading-tight font-Syne inline-block ${
+        className={`animate-heading text-5xl font-semibold mb-12 leading-tight font-Syne inline-block ${
           theme === "light" ? "text-black" : "text-white"
         }`}
       >
@@ -128,7 +184,7 @@ const HomeWork = () => {
           className="flex gap-8 transition-all duration-1000 ease-in-out"
         >
           {cardData.map((card, index) => (
-            <div key={index} className="flex-shrink-0 w-[500px]">
+            <div key={index} className="flex-shrink-0 w-[500px] card">
               <div className="relative h-[300px] mb-4 group overflow-hidden">
                 <img
                   src={card.image}
