@@ -9,13 +9,16 @@ const HomeWork = () => {
     const intervalId = setInterval(() => {
       if (cardsRef.current) {
         const firstCard = cardsRef.current.firstElementChild;
-        cardsRef.current.appendChild(firstCard.cloneNode(true));
+        const cardWidth = firstCard.offsetWidth;
+        const clone = firstCard.cloneNode(true);
+        cardsRef.current.appendChild(clone);
         cardsRef.current.style.transition = "transform 1s ease";
-        cardsRef.current.style.transform = "translateX(-37.5%)";
+        cardsRef.current.style.transform = `translateX(-${cardWidth + 32}px)`; // 32px for the gap
+
         setTimeout(() => {
           cardsRef.current.style.transition = "none";
           cardsRef.current.style.transform = "translateX(0)";
-          cardsRef.current.removeChild(cardsRef.current.firstElementChild);
+          cardsRef.current.removeChild(firstCard);
         }, 1000);
       }
     }, 5000);
@@ -53,7 +56,7 @@ const HomeWork = () => {
   return (
     <div
       className={`font-['Archivo', sans-serif] p-8 ml-14 ${
-        theme === "light" ? "bg-white text-black" : "bg-black text-white"
+        theme === "light" ? "bg-white" : "bg-black"
       }`}
     >
       <h2
@@ -63,7 +66,11 @@ const HomeWork = () => {
       >
         Portfolio
       </h2>
-      <h1 className="text-5xl font-semibold mb-12 leading-tight font-Syne">
+      <h1
+        className={`text-5xl font-semibold mb-12 leading-tight font-Syne ${
+          theme === "light" ? "text-black" : "text-white"
+        }`}
+      >
         Dynamic Results,
         <br />
         Proven Success
@@ -71,7 +78,7 @@ const HomeWork = () => {
       <div className="overflow-hidden">
         <div
           ref={cardsRef}
-          className="flex gap-8 transition-transform duration-1000 ease"
+          className="flex gap-8 transition-all duration-1000 ease-in-out"
         >
           {cardData.map((card, index) => (
             <div key={index} className="flex-shrink-0 w-[500px]">
@@ -79,16 +86,17 @@ const HomeWork = () => {
                 <img
                   src={card.image}
                   alt={card.label}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
                 />
-                {/* Overlay with smoother gradient transition */}
                 <div
-                  className={`absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-[1200ms] ease-out transform group-hover:translate-y-0 translate-y-4 flex flex-col justify-end p-4 ${
-                    theme === "light" ? "text-white" : "text-white"
-                  }`}
+                  className={`absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out flex flex-col justify-end p-4 text-white`}
                 >
-                  <div className="text-xl font-bold mb-2">• {card.label}</div>
-                  <div className="text-lg font-Syne">{card.description}</div>
+                  <div className="text-xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                    • {card.label}
+                  </div>
+                  <div className="text-lg font-Syne transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out delay-100">
+                    {card.description}
+                  </div>
                 </div>
               </div>
               <div
