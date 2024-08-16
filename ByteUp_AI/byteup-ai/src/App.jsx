@@ -12,7 +12,7 @@ const App = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div
-      className={`w-full min-h-[100vh] ${
+      className={`relative w-full min-h-[100vh] ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
