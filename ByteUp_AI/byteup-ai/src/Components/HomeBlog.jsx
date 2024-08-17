@@ -1,25 +1,67 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../Context/ThemeContext";
 import AnimatedCursor from "./AnimatedCursor";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HomeBlog = () => {
   const { theme } = useContext(ThemeContext);
   const [isHeadingHovered, setIsHeadingHovered] = useState(false);
 
   const containerStyles =
-    theme === "light" ? "bg-white text-gray-800" : "bg-black text-gray-100";
+    theme === "light" ? "bg-white text-black" : "bg-black text-gray-100";
 
   const imageContainerStyles =
-    theme === "light" ? "bg-white shadow-lg" : "bg-gray-800 shadow-xl";
+    theme === "light" ? "bg-white shadow-lg" : "bg-black shadow-xl";
 
   const buttonStyles =
     theme === "light"
       ? "border border-transparent bg-white text-black hover:text-white"
       : "border border-white text-white bg-black hover:bg-white hover:text-black";
 
-  const descriptionColor =
-    theme === "light" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.3)";
+  // const descriptionColor =
+  //   theme === "light" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.3)";
+
+  // Refs for the animated elements
+  const textRef = useRef(null);
+  const imagesRef = useRef(null);
+
+  useEffect(() => {
+    // Text section animation
+    gsap.fromTo(
+      textRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 80%", // Trigger animation when the top of the element hits 80% of the viewport height
+        },
+      }
+    );
+
+    // Images section animation
+    gsap.fromTo(
+      imagesRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: imagesRef.current,
+          start: "top 80%",
+        },
+      }
+    );
+  }, []);
 
   return (
     <div>
@@ -67,31 +109,35 @@ const HomeBlog = () => {
       `}</style>
 
       <div
-        className={`min-h-screen p-8 md:p-16 flex items-center ${containerStyles}`}
+        className={`h-[100vh] mt-[4rem] px-[5.5rem] flex items-center  ${containerStyles}`}
       >
         <AnimatedCursor isHovered={isHeadingHovered} />
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-20">
+        <div
+          ref={textRef} // Attach ref to the text section
+          className="w-full overflow-hidden mx-auto flex flex-col md:flex-row gap-2"
+        >
           {/* Text Section */}
-          <div className="w-full md:w-2/5 flex flex-col justify-center items-start pr-8 ">
+          <div className="w-full md:w-2/5 flex flex-col justify-center items-start pr-0">
             <h2
-              className="text-sm uppercase mb-2 font-Syne leading-4 font-medium tracking-[.25em] text-gray-500"
-              onMouseEnter={() => setIsHeadingHovered(true)}
-              onMouseLeave={() => setIsHeadingHovered(false)}
+              className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
+                theme === "light"
+                  ? "text-gradient-css opacity-70"
+                  : "text-white/40"
+              }`}
             >
-              BLOG LAYOUTS
+              Blog Layouts
             </h2>
             <h1
               className="text-5xl font-semibold mb-5 leading-tight font-Syne inline-block"
               onMouseEnter={() => setIsHeadingHovered(true)}
               onMouseLeave={() => setIsHeadingHovered(false)}
             >
-              Tech Blog for <br />
-              Your Latest IT <br />
-              Updates
+              Tech Blog for Your Latest IT Updates
             </h1>
             <p
-              className="mb-5 text-lg leading-relaxed font-Heebo"
-              style={{ color: descriptionColor }}
+              className={`mb-5 text-[17px] font-normal leading-6 ${
+                theme === "light" ? " text-black/50" : " text-white/40"
+              } font-Archivo`}
             >
               Share the latest from the IT field with a set <br />
               of cutting-edge blog list layouts and <br />
@@ -111,13 +157,16 @@ const HomeBlog = () => {
           </div>
 
           {/* Images Section */}
-          <div className="relative w-full md:w-3/5 flex items-center justify-center mt-8 md:mt-0">
+          <div
+            ref={imagesRef} // Attach ref to the images section
+            className="relative w-full md:w-3/5 flex items-center justify-center mt-8 md:mt-0"
+          >
             {/* Main image positioned above, crossing to the right */}
             <div
               className={` ${imageContainerStyles} animate-float image-container relative`}
             >
               <img
-                src="../src/assets/images/blog3.png"
+                src="https://static.wixstatic.com/media/0e0314_856bdf8b5611413aad5e1f2559656d2f~mv2.png/v1/fill/w_924,h_533,al_c,q_90,enc_auto/0e0314_856bdf8b5611413aad5e1f2559656d2f~mv2.png"
                 alt="Main blog post"
                 className="w-full h-full object-cover"
               />
@@ -127,7 +176,7 @@ const HomeBlog = () => {
               className={`absolute left-0 ${imageContainerStyles} animate-float secondary-image-container`}
             >
               <img
-                src="../src/assets/images/blog4.png"
+                src="https://web-images6.pixpa.com/Obc1JDeEgJ8fErXagBz4Z6EjVhs-cgTRI-nxCjivB38/rs:fit:1200:0/q:80/aHR0cHM6Ly9waXhwYWNvbS1pbWcucGl4cGEuY29tL2NvbS9hcnRpY2xlcy8xNTc0Njc1MDM3LTg3MTA2My1hLWJlYXV0aWZ1bC1tZXNzanBnLmpwZw=="
                 alt="Secondary blog post"
                 className="w-full h-full object-cover"
               />
