@@ -15,7 +15,8 @@ const Home = () => {
       <MarqueeDiv />
       <HomeWork />
       <HomeServices />
-      <Testimonials/>
+
+      <Testimonials />
     </div>
   );
 };
