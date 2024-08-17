@@ -8,6 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HomeServices = () => {
   const { theme } = useContext(ThemeContext);
+  
 
   const services = [
     {
@@ -88,7 +89,7 @@ const HomeServices = () => {
             }`}
           >
             <h1
-              className={`text-[1.6rem] font-semibold font-Syne transition ease-in duration-200`}
+              className={`text-[26px] font-semibold font-Syne transition ease-in duration-200`}
             >
               {ser.name}
             </h1>

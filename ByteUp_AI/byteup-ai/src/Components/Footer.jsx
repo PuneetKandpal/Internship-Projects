@@ -13,7 +13,7 @@ const Footer = () => {
   const { theme } = useContext(ThemeContext);
   return (
     <div
-      className={`w-full px-20 py-14 mt-[20rem]   ${
+      className={`w-full px-20 py-14 mt-[10rem]   ${
         theme === "light" ? "bg-black text-white/90" : "bg-white text-black/90"
       }`}
     >
