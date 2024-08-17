@@ -7,6 +7,7 @@ import HomeServices from "../Components/HomeServices";
 import Testimonials from "../Components/Testimonials";
 import Footer from "../Components/Footer";
 import Team from "../Components/Team";
+import HomeBlog from "../Components/HomeBlog";
 
 const Home = () => {
   return (
@@ -17,9 +18,10 @@ const Home = () => {
       <MarqueeDiv />
       <HomeWork />
       <HomeServices />
-      <Testimonials/>
-      <Team/>
-      <Footer/>
+      <HomeBlog />
+      <Testimonials />
+      <Team />
+      <Footer />
     </div>
   );
 };
