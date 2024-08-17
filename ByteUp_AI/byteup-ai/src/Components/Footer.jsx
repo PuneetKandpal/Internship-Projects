@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useEffect, useContext, useRef } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import logoLight from "../assets/logo-light.svg";
 import logoDark from "../assets/logo-dark.svg";
@@ -8,12 +8,38 @@ import { NavLink } from "react-router-dom";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Footer = () => {
   const { theme } = useContext(ThemeContext);
+  const footerRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      footerRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: footerRef.current,
+          start: "top bottom", // animation starts when the top of the footer hits the bottom of the viewport
+          end: "bottom bottom", // animation ends when the bottom of the footer hits the bottom of the viewport
+          toggleActions: "play none none reverse", // play animation on enter, reverse on leave
+        },
+      }
+    );
+  }, []);
+
   return (
     <div
-      className={`w-full px-20 py-14 mt-[20rem]   ${
+      ref={footerRef}
+      className={`w-full px-20 py-14 mt-[20rem] ${
         theme === "light" ? "bg-black text-white/90" : "bg-white text-black/90"
       }`}
     >
@@ -57,7 +83,7 @@ const Footer = () => {
               }`}
             >
               <NavLink
-                className={` hover:text-white/70 transition ease-linear duration-200 w-fit ${
+                className={`hover:text-white/70 transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -67,7 +93,7 @@ const Footer = () => {
                 Work
               </NavLink>
               <NavLink
-                className={` hover:text-white/70 transition ease-linear duration-200 w-fit ${
+                className={`hover:text-white/70 transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -77,7 +103,7 @@ const Footer = () => {
                 Services
               </NavLink>
               <NavLink
-                className={` hover:text-white/70 transition ease-linear duration-200 w-fit ${
+                className={`hover:text-white/70 transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -87,7 +113,7 @@ const Footer = () => {
                 Blog
               </NavLink>
               <NavLink
-                className={` hover:text-white/70 transition ease-linear duration-200 w-fit ${
+                className={`hover:text-white/70 transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -97,7 +123,7 @@ const Footer = () => {
                 About Us
               </NavLink>
               <NavLink
-                className={` hover:text-white/70 transition ease-linear duration-200 w-fit ${
+                className={`hover:text-white/70 transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -116,7 +142,7 @@ const Footer = () => {
               }`}
             >
               <NavLink
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -126,7 +152,7 @@ const Footer = () => {
                 Generative AI
               </NavLink>
               <NavLink
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -136,7 +162,7 @@ const Footer = () => {
                 Web Scrapping
               </NavLink>
               <NavLink
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -146,7 +172,7 @@ const Footer = () => {
                 Automation
               </NavLink>
               <NavLink
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -156,7 +182,7 @@ const Footer = () => {
                 Python API development
               </NavLink>
               <NavLink
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -218,34 +244,15 @@ const Footer = () => {
                   }`}
                 />{" "}
                 <span>Instagram</span>
-              </a>{" "}
+              </a>
             </ul>
           </div>
         </div>
       </div>
-
-      {/* line---------  */}
-      <div
-        className={`mt-16 h-[0.5px] ${
-          theme === "light" ? "bg-white/25" : "bg-black/20"
-        }`}
-      ></div>
-
-      <div className=" mt-5 w-full py-1 flex justify-between">
-        <p
-          className={`text-[14px] font-medium ${
-            theme === "light" ? "text-white/40" : "text-black/40"
-          }`}
-        >
-          2024 © ByteUp AI | All Rights Reserved
-        </p>
-        <p
-          className={`text-[14px] font-medium ${
-            theme === "light" ? "text-white/40" : "text-black/40"
-          }`}
-        >
-          Terms Conditions & Policy
-        </p>
+      <div className="flex justify-between items-center pt-10">
+        <div className="opacity-80 text-[15px]">
+          Copyright © 2024 - ByteUpAI
+        </div>
       </div>
     </div>
   );
