@@ -1,7 +1,11 @@
-import  { useState, useContext } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../Context/ThemeContext";
 import AnimatedCursor from "./AnimatedCursor";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const HomeBlog = () => {
   const { theme } = useContext(ThemeContext);
@@ -20,6 +24,44 @@ const HomeBlog = () => {
 
   const descriptionColor =
     theme === "light" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.3)";
+
+  // Refs for the animated elements
+  const textRef = useRef(null);
+  const imagesRef = useRef(null);
+
+  useEffect(() => {
+    // Text section animation
+    gsap.fromTo(
+      textRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: textRef.current,
+          start: "top 80%", // Trigger animation when the top of the element hits 80% of the viewport height
+        },
+      }
+    );
+
+    // Images section animation
+    gsap.fromTo(
+      imagesRef.current,
+      { y: 50, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out",
+        scrollTrigger: {
+          trigger: imagesRef.current,
+          start: "top 80%",
+        },
+      }
+    );
+  }, []);
 
   return (
     <div>
@@ -70,9 +112,12 @@ const HomeBlog = () => {
         className={`h-[100vh] mt-[4rem] px-[5.5rem] flex items-center  ${containerStyles}`}
       >
         <AnimatedCursor isHovered={isHeadingHovered} />
-        <div className="w-full overflow-hidden mx-auto flex flex-col md:flex-row gap-2">
+        <div
+          ref={textRef} // Attach ref to the text section
+          className="w-full overflow-hidden mx-auto flex flex-col md:flex-row gap-2"
+        >
           {/* Text Section */}
-          <div className="w-full md:w-2/5 flex flex-col justify-center items-start pr-0 ">
+          <div className="w-full md:w-2/5 flex flex-col justify-center items-start pr-0">
             <h2
               className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
                 theme === "light"
@@ -93,7 +138,6 @@ const HomeBlog = () => {
               className={`mb-5 text-[17px] font-normal leading-6 ${
                 theme === "light" ? " text-black/50" : " text-white/40"
               } font-Archivo`}
-              // style={{ color: descriptionColor }}
             >
               Share the latest from the IT field with a set <br />
               of cutting-edge blog list layouts and <br />
@@ -113,7 +157,10 @@ const HomeBlog = () => {
           </div>
 
           {/* Images Section */}
-          <div className="relative w-full md:w-3/5 flex items-center justify-center mt-8 md:mt-0">
+          <div
+            ref={imagesRef} // Attach ref to the images section
+            className="relative w-full md:w-3/5 flex items-center justify-center mt-8 md:mt-0"
+          >
             {/* Main image positioned above, crossing to the right */}
             <div
               className={` ${imageContainerStyles} animate-float image-container relative`}
