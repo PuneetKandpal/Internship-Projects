@@ -57,7 +57,7 @@ const Footer = () => {
               }`}
             >
               <NavLink
-                className={` hover:text-white/70 transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -67,7 +67,7 @@ const Footer = () => {
                 Work
               </NavLink>
               <NavLink
-                className={` hover:text-white/70 transition ease-linear duration-200 w-fit ${
+                className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -77,7 +77,7 @@ const Footer = () => {
                 Services
               </NavLink>
               <NavLink
-                className={` hover:text-white/70 transition ease-linear duration-200 w-fit ${
+                className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -87,7 +87,7 @@ const Footer = () => {
                 Blog
               </NavLink>
               <NavLink
-                className={` hover:text-white/70 transition ease-linear duration-200 w-fit ${
+                className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -97,7 +97,7 @@ const Footer = () => {
                 About Us
               </NavLink>
               <NavLink
-                className={` hover:text-white/70 transition ease-linear duration-200 w-fit ${
+                className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
