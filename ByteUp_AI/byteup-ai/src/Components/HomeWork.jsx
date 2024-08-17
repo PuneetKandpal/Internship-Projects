@@ -35,29 +35,29 @@ const HomeWork = () => {
 
   useEffect(() => {
     // Animate cards
-    const cards = gsap.utils.toArray(".card");
+    // const cards = gsap.utils.toArray(".card");
     
-    cards.forEach((card, index) => {
-      gsap.fromTo(
-        card,
-        {
-          opacity: 0,
-          y: 50,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: card,
-            start: "top bottom-=100",
-            toggleActions: "play none none reverse",
-          },
-          delay: index * 0.2,
-        }
-      );
-    });
+    // cards.forEach((card, index) => {
+    //   gsap.fromTo(
+    //     card,
+    //     {
+    //       opacity: 0,
+    //       y: 50,
+    //     },
+    //     {
+    //       opacity: 1,
+    //       y: 0,
+    //       duration: 1,
+    //       ease: "power3.out",
+    //       scrollTrigger: {
+    //         trigger: card,
+    //         start: "top bottom-=100",
+    //         toggleActions: "play none none reverse",
+    //       },
+    //       delay: index * 0.2,
+    //     }
+    //   );
+    // });
 
     // Animate headings
     gsap.fromTo(
