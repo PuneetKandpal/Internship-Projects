@@ -1,6 +1,10 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import AnimatedCursor from "./AnimatedCursor";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const Team = () => {
   const teamMembers = [
@@ -33,8 +37,32 @@ const Team = () => {
   const { theme } = useContext(ThemeContext);
   const [isHovered, setIsHovered] = useState(false);
 
+  const sectionRef = useRef(null);
+
+  useEffect(() => {
+    const sectionEl = sectionRef.current;
+
+    gsap.fromTo(
+      sectionEl.querySelectorAll(".team-member"),
+      { y: 100, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: sectionEl,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
+
   return (
     <div
+      ref={sectionRef}
       className={`w-full py-10 px-[5.4rem] mt-52 ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       }`}
@@ -54,7 +82,10 @@ const Team = () => {
 
       <div className="flex justify-between mt-10">
         {teamMembers.map((person, i) => (
-          <div key={i} className="w-[30%] h-[560px] relative ">
+          <div
+            key={i}
+            className="team-member w-[30%] h-[560px] relative opacity-0"
+          >
             <div className="w-full h-[80%] relative overflow-hidden group">
               <img
                 src={person.image}
@@ -95,7 +126,11 @@ const Team = () => {
             <h1 className="text-center font-Syne text-[26px] font-semibold mt-4">
               {person.name}
             </h1>
-            <p className="text-center font-Archivo text-black/40 text-sm font-semibold uppercase mt-0 tracking-[1.4px]">
+            <p
+              className={`text-center font-Archivo text-sm font-semibold uppercase mt-0 tracking-[1.4px] ${
+                theme === "light" ? "text-black/40" : "text-white/40"
+              }`}
+            >
               {person.position}
             </p>
           </div>
