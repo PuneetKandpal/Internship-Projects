@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import  { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../Context/ThemeContext";
 import AnimatedCursor from "./AnimatedCursor";
@@ -8,10 +8,10 @@ const HomeBlog = () => {
   const [isHeadingHovered, setIsHeadingHovered] = useState(false);
 
   const containerStyles =
-    theme === "light" ? "bg-white text-gray-800" : "bg-black text-gray-100";
+    theme === "light" ? "bg-white text-black" : "bg-black text-gray-100";
 
   const imageContainerStyles =
-    theme === "light" ? "bg-white shadow-lg" : "bg-gray-800 shadow-xl";
+    theme === "light" ? "bg-white shadow-lg" : "bg-black shadow-xl";
 
   const buttonStyles =
     theme === "light"
@@ -67,31 +67,33 @@ const HomeBlog = () => {
       `}</style>
 
       <div
-        className={`min-h-screen p-8 md:p-16 flex items-center ${containerStyles}`}
+        className={`h-[100vh] mt-[4rem] px-[5.5rem] flex items-center  ${containerStyles}`}
       >
         <AnimatedCursor isHovered={isHeadingHovered} />
-        <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-20">
+        <div className="w-full overflow-hidden mx-auto flex flex-col md:flex-row gap-2">
           {/* Text Section */}
-          <div className="w-full md:w-2/5 flex flex-col justify-center items-start pr-8 ">
+          <div className="w-full md:w-2/5 flex flex-col justify-center items-start pr-0 ">
             <h2
-              className="text-sm uppercase mb-2 font-Syne leading-4 font-medium tracking-[.25em] text-gray-500"
-              onMouseEnter={() => setIsHeadingHovered(true)}
-              onMouseLeave={() => setIsHeadingHovered(false)}
+              className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
+                theme === "light"
+                  ? "text-gradient-css opacity-70"
+                  : "text-white/40"
+              }`}
             >
-              BLOG LAYOUTS
+              Blog Layouts
             </h2>
             <h1
               className="text-5xl font-semibold mb-5 leading-tight font-Syne inline-block"
               onMouseEnter={() => setIsHeadingHovered(true)}
               onMouseLeave={() => setIsHeadingHovered(false)}
             >
-              Tech Blog for <br />
-              Your Latest IT <br />
-              Updates
+              Tech Blog for Your Latest IT Updates
             </h1>
             <p
-              className="mb-5 text-lg leading-relaxed font-Heebo"
-              style={{ color: descriptionColor }}
+              className={`mb-5 text-[17px] font-normal leading-6 ${
+                theme === "light" ? " text-black/50" : " text-white/40"
+              } font-Archivo`}
+              // style={{ color: descriptionColor }}
             >
               Share the latest from the IT field with a set <br />
               of cutting-edge blog list layouts and <br />
