@@ -22,8 +22,8 @@ const HomeBlog = () => {
       ? "border border-transparent bg-white text-black hover:text-white"
       : "border border-white text-white bg-black hover:bg-white hover:text-black";
 
-  const descriptionColor =
-    theme === "light" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.3)";
+  // const descriptionColor =
+  //   theme === "light" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.3)";
 
   // Refs for the animated elements
   const textRef = useRef(null);
@@ -166,7 +166,7 @@ const HomeBlog = () => {
               className={` ${imageContainerStyles} animate-float image-container relative`}
             >
               <img
-                src="../src/assets/images/blog3.png"
+                src="https://static.wixstatic.com/media/0e0314_856bdf8b5611413aad5e1f2559656d2f~mv2.png/v1/fill/w_924,h_533,al_c,q_90,enc_auto/0e0314_856bdf8b5611413aad5e1f2559656d2f~mv2.png"
                 alt="Main blog post"
                 className="w-full h-full object-cover"
               />
@@ -176,7 +176,7 @@ const HomeBlog = () => {
               className={`absolute left-0 ${imageContainerStyles} animate-float secondary-image-container`}
             >
               <img
-                src="../src/assets/images/blog4.png"
+                src="https://web-images6.pixpa.com/Obc1JDeEgJ8fErXagBz4Z6EjVhs-cgTRI-nxCjivB38/rs:fit:1200:0/q:80/aHR0cHM6Ly9waXhwYWNvbS1pbWcucGl4cGEuY29tL2NvbS9hcnRpY2xlcy8xNTc0Njc1MDM3LTg3MTA2My1hLWJlYXV0aWZ1bC1tZXNzanBnLmpwZw=="
                 alt="Secondary blog post"
                 className="w-full h-full object-cover"
               />
