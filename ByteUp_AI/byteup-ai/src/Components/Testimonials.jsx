@@ -93,7 +93,7 @@ const Testimonials = () => {
         } else {
           clearInterval(interval);
         }
-      }, 100);
+      }, 60);
 
       setHasAnimated(true);
     }
