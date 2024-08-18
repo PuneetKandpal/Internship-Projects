@@ -6,6 +6,9 @@ import { gsap } from "gsap";
 const Testimonials = () => {
   const { theme } = useContext(ThemeContext);
   const testimonialRef = useRef(null);
+  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
+  const countRef = useRef(null);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
   const testimonials = [
     {
@@ -41,8 +44,6 @@ const Testimonials = () => {
       position: "Product Manager, Company A",
     },
   ];
-
-  const [currentTestimonialIndex, setCurrentTestimonialIndex] = useState(0);
 
   const nextTestimonial = () => {
     gsap.to(testimonialRef.current, {
@@ -81,6 +82,46 @@ const Testimonials = () => {
     });
   };
 
+  const animateCount = () => {
+    if (!hasAnimated) {
+      let count = 1;
+      const targetCount = 30;
+      const interval = setInterval(() => {
+        if (count <= targetCount) {
+          countRef.current.innerText = `${count}+`;
+          count++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 100);
+
+      setHasAnimated(true);
+    }
+  };
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCount();
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (testimonialRef.current) {
+      observer.observe(testimonialRef.current);
+    }
+
+    return () => {
+      if (testimonialRef.current) {
+        observer.unobserve(testimonialRef.current);
+      }
+    };
+  }, [hasAnimated]);
+
   useEffect(() => {
     const interval = setInterval(nextTestimonial, 5000);
     return () => clearInterval(interval);
@@ -93,7 +134,9 @@ const Testimonials = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
       <div className="absolute inset-0 flex justify-between items-center px-20 py-10 z-10">
         <div className="w-[40%] h-[80%] text-white flex flex-col justify-center">
-          <h1 className="text-[9rem] mt-[-20px] font-extrabold">30+</h1>
+          <h1 ref={countRef} className="text-[9rem] mt-[-20px] font-extrabold">
+            1+
+          </h1>
           <h2
             className={`text-[13px] uppercase font-Syne leading-4 font-normal ml-1 tracking-[.20em] text-white/70`}
           >
