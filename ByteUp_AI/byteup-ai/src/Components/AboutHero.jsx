@@ -1,12 +1,48 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import { Link } from "react-router-dom";
 import SecondaryBtn from "./SecondaryBtn";
 import AnimatedCursor from "./AnimatedCursor";
+import gsap from "gsap";
 
 const AboutHero = () => {
   const { theme } = useContext(ThemeContext);
   const [isHovered, setIsHovered] = useState(false);
+
+  // Refs for elements to animate
+  const headingRef = useRef(null);
+  const paragraphRef1 = useRef(null);
+  const paragraphRef2 = useRef(null);
+  const imageRef = useRef(null); // New ref for the image
+
+  useEffect(() => {
+    const tl = gsap.timeline({ defaults: { ease: "power1.out" } });
+
+    // Animation sequence
+    tl.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 20 },
+      { opacity: 1, y: 0, duration: 1 }
+    )
+      .fromTo(
+        paragraphRef1.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1 },
+        "-=0.8"
+      )
+      .fromTo(
+        paragraphRef2.current,
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 1 },
+        "-=0.8"
+      )
+      .fromTo(
+        imageRef.current, // Adding image animation
+        { opacity: 0, scale: 1.05 },
+        { opacity: 1, scale: 1, duration: 1 },
+        "-=1.3"
+      );
+  }, []);
 
   return (
     <div
@@ -17,9 +53,10 @@ const AboutHero = () => {
       <AnimatedCursor isHovered={isHovered} />
       <div className="md:w-[47%] w-full h-full ">
         <img
-          src="https://plus.unsplash.com/premium_photo-1661772661721-b16346fe5b0f?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YnVzaW5lc3N8ZW58MHx8MHx8fDA%3D"
+          ref={imageRef} // Assign the ref to the image
+          src="https://media.istockphoto.com/id/1827291486/photo/a-dedicated-mentor-is-explaining-mentees-importance-of-project-while-sitting-at-the-boardroom.webp?b=1&s=612x612&w=0&k=20&c=C4KGssB_GUCjYp_XFzhHJcI1TX35Q6gM9hl0YwfgKWo="
           alt="Calendar Planning"
-          className="w-[100%] h-[100%] "
+          className="w-[100%] h-[100%] object-cover"
         />
       </div>
       <div className="md:w-[45%] w-full mt-8 md:mt-0 md:ml-8 text-center md:text-left ">
@@ -31,17 +68,15 @@ const AboutHero = () => {
           Our Story
         </h2>
         <h1
-          onMouseEnter={() => {
-            setIsHovered(true);
-          }}
-          onMouseLeave={() => {
-            setIsHovered(false);
-          }}
+          ref={headingRef}
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
           className="text-5xl font-semibold mb-6 leading-[3rem] font-Syne"
         >
           We Help You Accelerate Growth with Social Media
         </h1>
         <p
+          ref={paragraphRef1}
           className={`mb-2 text-[17px] font-normal leading-6 ${
             theme === "light" ? " text-black/50" : " text-white/40"
           } font-Archivo`}
@@ -53,6 +88,7 @@ const AboutHero = () => {
           ea, veritatis omnis as
         </p>
         <p
+          ref={paragraphRef2}
           className={`mb-6 text-[17px] font-normal leading-6 ${
             theme === "light" ? " text-black/50" : " text-white/40"
           } font-Archivo`}
