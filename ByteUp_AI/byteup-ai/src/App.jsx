@@ -7,6 +7,7 @@ import Services from "./Pages/Services";
 import Work from "./Pages/Work";
 import Blogs from "./Pages/Blogs";
 import AnimatedCursor from "./Components/AnimatedCursor";
+import Contact from "./Pages/Contact";
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -21,9 +22,38 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Main />}>
           <Route index element={<Home />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/work" element={<Work />} />
-          <Route path="/blogs" element={<Blogs />} />
+          <Route
+            path="/services"
+            element={
+              <div className="pt-[80px]">
+                <Services />
+              </div>
+            }
+          />
+          <Route
+            path="/work"
+            element={
+              <div className="pt-[80px]">
+                <Work />
+              </div>
+            }
+          />
+          <Route
+            path="/blogs"
+            element={
+              <div className="pt-[80px]">
+                <Blogs />
+              </div>
+            }
+          />
+          <Route
+            path="/contact"
+            element={
+              <div className="pt-[80px]">
+                <Contact />
+              </div>
+            }
+          />
         </Route>
       </Routes>
     </div>
