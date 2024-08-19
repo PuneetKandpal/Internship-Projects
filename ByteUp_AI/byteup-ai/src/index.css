@@ -102,7 +102,7 @@
 }
 
 .text-gradient-css {
-  background: linear-gradient(to right, #7e5bef, #3b82f6);
+  background: linear-gradient(to right, #593bbe, #226be1);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
