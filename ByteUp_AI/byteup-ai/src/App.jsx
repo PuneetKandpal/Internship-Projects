@@ -8,6 +8,7 @@ import Work from "./Pages/Work";
 import Blogs from "./Pages/Blogs";
 import AnimatedCursor from "./Components/AnimatedCursor";
 import Contact from "./Pages/Contact";
+import About from "./Pages/About";
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -46,6 +47,15 @@ const App = () => {
               </div>
             }
           />
+          <Route
+            path="/about"
+            element={
+              <div className="pt-[80px]">
+                <About />
+              </div>
+            }
+          />
+
           <Route
             path="/contact"
             element={
