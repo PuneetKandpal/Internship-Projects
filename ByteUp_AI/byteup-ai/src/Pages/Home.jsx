@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <div>
       <AnimatedCursor />
-      <Navbar />
+      <Navbar withHeroSection={true} />
       <Hero />
       <MarqueeDiv />
       <HomeWork />
