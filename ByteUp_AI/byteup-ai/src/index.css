@@ -107,6 +107,14 @@
   -webkit-text-fill-color: transparent;
 }
 
+.border-gradient-css {
+  border-image: linear-gradient(to right, #7e5bef, #3b82f6) 1;
+}
+
+.border-gradient-css:hover {
+  border-image: linear-gradient(to bottom, #ffffff, #ffffff);
+}
+
 /* home service section ------------------------------------------------  */
 .service-hover-black {
   color: rgba(255, 255, 255, 0.7);

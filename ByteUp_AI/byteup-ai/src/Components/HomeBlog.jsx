@@ -4,6 +4,7 @@ import { ThemeContext } from "../Context/ThemeContext";
 import AnimatedCursor from "./AnimatedCursor";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SecondaryBtn from "./SecondaryBtn";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -17,10 +18,6 @@ const HomeBlog = () => {
   const imageContainerStyles =
     theme === "light" ? "bg-white shadow-lg" : "bg-black shadow-xl";
 
-  const buttonStyles =
-    theme === "light"
-      ? "border border-transparent bg-white text-black hover:text-white"
-      : "border border-white text-white bg-black hover:bg-white hover:text-black";
 
   // const descriptionColor =
   //   theme === "light" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.3)";
@@ -145,13 +142,7 @@ const HomeBlog = () => {
             </p>
             <div>
               <Link to="/blogs">
-                <button
-                  className={`text-sm uppercase font-Archivo tracking-[1.5px] font-light px-6 py-3 transition ease-in-out duration-200 ${buttonStyles} ${
-                    theme === "light" ? "light-button-gradient" : ""
-                  }`}
-                >
-                  view more
-                </button>
+                <SecondaryBtn btn="View more" />
               </Link>
             </div>
           </div>
