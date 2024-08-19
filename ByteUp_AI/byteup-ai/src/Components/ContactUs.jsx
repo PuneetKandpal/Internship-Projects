@@ -1,52 +1,111 @@
-import React, { useContext } from "react";
+import { useContext, useState } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 
 const ContactUs = () => {
   const { theme } = useContext(ThemeContext);
   const imageUrl =
-    "https://img.freepik.com/free-photo/low-angle-shot-tall-city-building-with-blue-sky-background-new-york_181624-20345.jpg?t=st=1724070549~exp=1724074149~hmac=79f5c927fe73ec72539e507cf75e2bbd96ac6dd621de683f7395c125debb67ee&w=740";
+    "https://images.unsplash.com/photo-1667238002143-b5e117168e98?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbXBhbnklMjBidWlsZGluZ3xlbnwwfHwwfHx8MA%3D%3D";
+
+  const [formData, setFormData] = useState({
+    fullName: "",
+    email: "",
+    companyName: "",
+    phoneNumber: "",
+    websiteUrl: "",
+    projectDescription: "",
+    interests: [],
+    budget: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+
+    // Validate required fields
+    if (!formData.interests.length)
+      newErrors.interests = "Please select at least one interest";
+    if (!formData.budget) newErrors.budget = "Please select a budget";
+
+    setErrors(newErrors);
+
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      // Submit form data to the database
+      console.log("Form data submitted:", formData);
+      // Replace with your submission logic
+      // Example: axios.post('/api/submit', formData);
+    }
+  };
 
   return (
     <div
-      className={`min-h-screen overflow-x-hidden ${
+      className={`w-full px-[5.5rem] overflow-x-hidden mt-14 pb-20 ${
         theme === "dark" ? "bg-black" : "bg-white"
       }`}
     >
-      <div className="w-full px-20 py-12">
-        <div className="flex flex-col lg:flex-row border rounded-lg w-full p-0">
+      <div className="w-full">
+        <div className="flex flex-col lg:flex-row justify-between w-full">
           {/* Left Side Image */}
-          <div className="flex-shrink-0 w-full lg:w-[40%]">
+          <div className="h-fit w-full lg:w-[42%]">
             <img
               src={imageUrl}
               alt="Contact Us"
-              className="w-full h-full object-cover rounded-l-lg"
+              className="w-full object-cover"
             />
           </div>
 
           {/* Right Side Form */}
-          <div className="w-full lg:w-[60%] p-20">
+          <div className="w-full lg:w-[50%]">
             <div>
-              <h3 className="text-lg font-medium mb-2 font-Archivo">
-                GET IN TOUCH
-              </h3>
-              <hr className="mb-4 border-gray-900 w-[8rem]" />
-              <h2 className="text-3xl font-bold mb-6 font-Syne">
-                LET'S BE SOCIAL.
+              <h2
+                className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
+                  theme === "light"
+                    ? "text-gradient-css opacity-90"
+                    : "text-white/30"
+                }`}
+              >
+                Get in touch
               </h2>
-              <form>
+              <h2 className="text-4xl font-semibold mb-10 font-Syne">
+                Let's Be Social
+              </h2>
+              <form onSubmit={handleSubmit}>
                 {/* Form Layout */}
-                <div className="flex flex-col gap-8">
+                <div className="flex flex-col gap-6 mt-5">
                   {/* First Row: Full Name and Email */}
-                  <div className="flex flex-col lg:flex-row justify-between font-Archivo">
+                  <div className="flex text-[16px] flex-col lg:flex-row justify-between font-Archivo">
                     <input
+                      required
                       type="text"
-                      placeholder="Full name*"
-                      className="p-3 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[48%]"
+                      placeholder="Full name *"
+                      value={formData.fullName}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          fullName: e.target.value,
+                        }))
+                      }
+                      className="py-2 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[46%]"
                     />
+
                     <input
+                      required
                       type="email"
-                      placeholder="Email address*"
-                      className="p-3 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[48%]"
+                      placeholder="Email address *"
+                      value={formData.email}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          email: e.target.value,
+                        }))
+                      }
+                      className="py-2 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[46%]"
                     />
                   </div>
 
@@ -55,12 +114,26 @@ const ContactUs = () => {
                     <input
                       type="text"
                       placeholder="Company name"
-                      className="p-3 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[48%]"
+                      value={formData.companyName}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          companyName: e.target.value,
+                        }))
+                      }
+                      className="py-2 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[46%]"
                     />
                     <input
                       type="text"
                       placeholder="Phone number"
-                      className="p-3 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[48%]"
+                      value={formData.phoneNumber}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          phoneNumber: e.target.value,
+                        }))
+                      }
+                      className="py-2 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[46%]"
                     />
                   </div>
 
@@ -69,115 +142,134 @@ const ContactUs = () => {
                     <input
                       type="text"
                       placeholder="Website URL"
-                      className="p-3 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[48%]"
+                      value={formData.websiteUrl}
+                      onChange={(e) =>
+                        setFormData((prev) => ({
+                          ...prev,
+                          websiteUrl: e.target.value,
+                        }))
+                      }
+                      className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
                     />
-                    <textarea
-                      placeholder="Tell us about your project"
-                      className="p-3 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[48%] h-14"
-                    ></textarea>
                   </div>
+                  <textarea
+                    rows="3"
+                    placeholder="Tell us about your project"
+                    value={formData.projectDescription}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        projectDescription: e.target.value,
+                      }))
+                    }
+                    className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
+                  ></textarea>
 
                   {/* Selection Options */}
-                  <div className="flex flex-col gap-4 font-Archivo">
+                  <div className="flex flex-col gap-4 font-Archivo mt-4">
                     {/* I am interested in section */}
                     <div className="flex flex-col mb-4">
-                      <label className="block font-medium mb-2 font-Archivo">
+                      <label className="block text-gray-500 text-black/40 font-normal mb-2 font-Archivo">
                         I am interested in...
                       </label>
-                      <div className="flex flex-wrap gap-2 font-Archivo">
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          Generative AI
-                        </button>
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          Web Scraping
-                        </button>
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          Automation
-                        </button>
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          Python API Development
-                        </button>
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          SaaS Development
-                        </button>
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          Other
-                        </button>
+                      <div className="flex flex-wrap gap-2 font-Archivo mt-1">
+                        {[
+                          "Generative AI",
+                          "Web Scraping",
+                          "Automation",
+                          "Python API Development",
+                          "SaaS Development",
+                          "Other",
+                        ].map((interest) => (
+                          <button
+                            key={interest}
+                            type="button"
+                            value={interest}
+                            onClick={() => {
+                              setFormData((prev) => {
+                                const interests = prev.interests.includes(
+                                  interest
+                                )
+                                  ? prev.interests.filter(
+                                      (item) => item !== interest
+                                    )
+                                  : [...prev.interests, interest];
+                                return { ...prev, interests };
+                              });
+                            }}
+                            className={`border ${
+                              theme === "light"
+                                ? "border-gray-300 text-zinc-500"
+                                : "border-white/30 text-white/35 font-normal"
+                            } text-[14px] px-4 py-1 cursor-pointer transition-all duration-300 ease-in-out ${
+                              formData.interests.includes(interest)
+                                ? "bg-gradient-to-r from-[#a270c9] to-[#637eb2] text-white"
+                                : "hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
+                            }`}
+                          >
+                            {interest}
+                          </button>
+                        ))}
                       </div>
+                      {errors.interests && (
+                        <p className="text-red-500 text-[12px] mt-1">
+                          {errors.interests}
+                        </p>
+                      )}
                     </div>
 
                     {/* Budget section */}
                     <div className="flex flex-col">
-                      <label className="block font-medium mb-2 font-Archivo">
+                      <label className="block text-gray-500 text-black/40 font-normal mb-2 font-Archivo">
                         Select budget (USD)
                       </label>
                       <div className="flex flex-wrap gap-2 font-Archivo">
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          5k-10k
-                        </button>
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          10k-20k
-                        </button>
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          20k-30k
-                        </button>
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          30k-50k
-                        </button>
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          50k-100k
-                        </button>
-                        <button
-                          type="button"
-                          className="border border-gray-300 text-gray-500 px-4 py-2 rounded-lg transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
-                        >
-                          &gt;100k
-                        </button>
+                        {[
+                          "5k-10k",
+                          "10k-20k",
+                          "20k-30k",
+                          "30k-50k",
+                          "50k-100k",
+                          ">100k",
+                        ].map((budgetOption) => (
+                          <button
+                            key={budgetOption}
+                            type="button"
+                            value={budgetOption}
+                            onClick={() =>
+                              setFormData((prev) => ({
+                                ...prev,
+                                budget: budgetOption,
+                              }))
+                            }
+                            className={`border ${
+                              theme === "light"
+                                ? "border-gray-300 text-zinc-500"
+                                : "border-white/30 text-white/35 font-normal"
+                            } text-[14px] px-4 py-1 cursor-pointer transition-all duration-300 ease-in-out ${
+                              formData.budget === budgetOption
+                                ? "bg-gradient-to-r from-[#a270c9] to-[#637eb2] text-white"
+                                : "hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
+                            }`}
+                          >
+                            {budgetOption}
+                          </button>
+                        ))}
                       </div>
+                      {errors.budget && (
+                        <p className="text-red-500 text-[12px] mt-1">
+                          {errors.budget}
+                        </p>
+                      )}
                     </div>
                   </div>
-                </div>
 
-                {/* Full Width Submit Button */}
-                <div className="mt-8 flex justify-center">
+                  {/* Submit Button */}
                   <button
                     type="submit"
-                    className="w-full px-6 py-3 border border-[#a270c9] text-black transition-all duration-300 ease-in-out hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
+                    className="mt-6 bg-gradient-to-r from-purple to-sky text-white px-6 py-3 uppercase tracking-[0.05rem] transition-all duration-300 ease-in-out hover:opacity-80"
                   >
-                    SEND MESSAGE
+                    Send Message
                   </button>
                 </div>
               </form>

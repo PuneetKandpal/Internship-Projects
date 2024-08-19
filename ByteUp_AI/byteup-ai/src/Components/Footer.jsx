@@ -4,7 +4,7 @@ import logoLight from "../assets/logo-light.svg";
 import logoDark from "../assets/logo-dark.svg";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaLinkedin } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
@@ -56,7 +56,7 @@ const Footer = () => {
                 theme === "light" ? "text-white/45" : "text-black/55"
               }`}
             >
-              <NavLink
+              <Link
                 className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -65,8 +65,8 @@ const Footer = () => {
                 to="/work"
               >
                 Work
-              </NavLink>
-              <NavLink
+              </Link>
+              <Link
                 className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -75,8 +75,8 @@ const Footer = () => {
                 to="/services"
               >
                 Services
-              </NavLink>
-              <NavLink
+              </Link>
+              <Link
                 className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -85,8 +85,8 @@ const Footer = () => {
                 to="/blogs"
               >
                 Blog
-              </NavLink>
-              <NavLink
+              </Link>
+              <Link
                 className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -95,8 +95,8 @@ const Footer = () => {
                 to="/about"
               >
                 About Us
-              </NavLink>
-              <NavLink
+              </Link>
+              <Link
                 className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -105,7 +105,7 @@ const Footer = () => {
                 to="/contact"
               >
                 Contact Us
-              </NavLink>
+              </Link>
             </ul>
           </div>
           <div className="w-[28%] h-full ">
@@ -115,7 +115,7 @@ const Footer = () => {
                 theme === "light" ? "text-white/45" : "text-black/55"
               }`}
             >
-              <NavLink
+              <Link
                 className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -124,8 +124,8 @@ const Footer = () => {
                 to="/services"
               >
                 Generative AI
-              </NavLink>
-              <NavLink
+              </Link>
+              <Link
                 className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -134,8 +134,8 @@ const Footer = () => {
                 to="/services"
               >
                 Web Scrapping
-              </NavLink>
-              <NavLink
+              </Link>
+              <Link
                 className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -144,8 +144,8 @@ const Footer = () => {
                 to="/services"
               >
                 Automation
-              </NavLink>
-              <NavLink
+              </Link>
+              <Link
                 className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -154,8 +154,8 @@ const Footer = () => {
                 to="/services"
               >
                 Python API development
-              </NavLink>
-              <NavLink
+              </Link>
+              <Link
                 className={` transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -164,7 +164,7 @@ const Footer = () => {
                 to="/services"
               >
                 SaaS Development
-              </NavLink>
+              </Link>
             </ul>
           </div>
           <div className="w-[20%] h-full ">
