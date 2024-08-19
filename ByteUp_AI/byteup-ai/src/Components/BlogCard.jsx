@@ -1,83 +1,56 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
-// import blogs from "../assets/blog.js";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-const BlogCard = () => {
+// Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
+
+const BlogCard = ({ blogs, currentPage, blogsPerPage }) => {
   const { theme } = useContext(ThemeContext);
+  const blogRef = useRef([]);
 
-  const blogs = [
-    {
-      id: 1,
-      date: "September 12, 2024",
-      writer: "Emily Davis",
-      title:
-        "AI Revolution: How Artificial Intelligence is Shaping the Future of Healthcare",
-      description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quisquam soluta obcaecati, corrupti nemo, incidunt nam facilis illo minima natus dolor fugit necessitatibus tempore quod modi. Ea consectetur excepturi minus!",
-      tags: ["AI", "Healthcare"],
-      image:
-        "https://images.unsplash.com/photo-1498050108023-c5249f4df085?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dGVjaHxlbnwwfHwwfHx8MA%3D%3D",
-    },
-    {
-      id: 2,
-      date: "September 5, 2024",
-      writer: "Emily Chen",
-      title:
-        "Exploring the Future of AI: How Machine Learning is Changing the Tech Landscape",
-      description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quisquam soluta obcaecati, corrupti nemo, incidunt nam facilis illo minima natus dolor fugit necessitatibus tempore quod modi. Ea consectetur excepturi minus!",
-      tags: ["AI", "Machine Learning"],
-      image:
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGl0JTIwY29tcGFueXxlbnwwfHwwfHx8MA%3D%3D",
-    },
-    {
-      id: 3,
-      date: "October 15, 2024",
-      writer: "Michael Smith",
-      title:
-        "Quantum Computing: Breaking Down the Myths and Realities of this Emerging Technology",
-      description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quisquam soluta obcaecati, corrupti nemo, incidunt nam facilis illo minima natus dolor fugit necessitatibus tempore quod modi. Ea consectetur excepturi minus!",
-      tags: ["Quantum Computing", "Technology"],
-      image:
-        "https://st3.depositphotos.com/9880800/17524/i/450/depositphotos_175242348-stock-photo-happy-colleagues-having-fun-modern.jpg",
-    },
-    {
-      id: 4,
-      date: "November 2, 2024",
-      writer: "Sophia Martinez",
-      title:
-        "Sustainable Tech: How the Industry is Evolving to Meet Environmental Challenges",
-      description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quisquam soluta obcaecati, corrupti nemo, incidunt nam facilis illo minima natus dolor fugit necessitatibus tempore quod modi. Ea consectetur excepturi minus!",
-      tags: ["Sustainability", "Green Tech"],
-      image:
-        "https://images.unsplash.com/photo-1531973576160-7125cd663d86?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGl0JTIwY29tcGFueXxlbnwwfHwwfHx8MA%3D%3D",
-    },
-    {
-      id: 5,
-      date: "December 20, 2024",
-      writer: "Liam Johnson",
-      title:
-        "Blockchain Beyond Cryptocurrency: Applications and Innovations in 2024",
-      description:
-        "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quisquam soluta obcaecati, corrupti nemo, incidunt nam facilis illo minima natus dolor fugit necessitatibus tempore quod modi. Ea consectetur excepturi minus!",
-      tags: ["Blockchain", "Innovation"],
-      image:
-        "https://plus.unsplash.com/premium_photo-1681487178876-a1156952ec60?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aXQlMjBjb21wYW55fGVufDB8fDB8fHww",
-    },
-  ];
+  // Calculate the blogs to display on the current page
+  const indexOfLastBlog = currentPage * blogsPerPage;
+  const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
+  const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
+
+  useEffect(() => {
+    blogRef.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 70%", // Animation starts when the top of the element is 80% from the top of the viewport
+            end: "bottom 60%", // Animation ends when the bottom of the element is 60% from the top of the viewport
+            scrub: true, // Smooth animation based on scroll position
+            once: true, // Trigger animation only once
+          },
+        }
+      );
+    });
+  }, [currentBlogs]);
 
   return (
     <div className="w-full px-[5.5rem] mt-24">
-      {blogs.map((blog) => {
+      {currentBlogs.map((blog, index) => {
         return (
-          <div key={blog.id} className="w-full py-10 mb-10">
+          <div
+            key={blog.id}
+            ref={(el) => (blogRef.current[index] = el)} // Assigning each blog card to the blogRef
+            className="w-full py-10 mb-10"
+          >
             <div className="w-full h-[350px]">
               <img
                 className="w-full h-full object-cover"
                 src={blog.image}
-                alt=""
+                alt={blog.title}
               />
             </div>
 
@@ -93,11 +66,11 @@ const BlogCard = () => {
               {blog.title}
             </h1>
             <p
-              className={`mt-2 text-sm ${
+              className={`mt-2 text-[15px] ${
                 theme === "light" ? "text-black/60" : "text-white/40"
               }`}
             >
-             {blog.description}
+              {blog.description}
             </p>
 
             <div className="mt-4 flex space-x-2">
