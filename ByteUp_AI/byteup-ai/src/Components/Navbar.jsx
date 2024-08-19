@@ -97,17 +97,18 @@ const Navbar = ({ withHeroSection }) => {
         >
           Blogs
         </NavLink>
-        <Link
+        <NavLink
+          to="/about"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}
         >
           About
-        </Link>
-        <Link
+        </NavLink>
+        <NavLink
           to="/contact"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}
         >
           Contact
-        </Link>
+        </NavLink>
         <input
           onClick={toggleTheme}
           type="checkbox"
