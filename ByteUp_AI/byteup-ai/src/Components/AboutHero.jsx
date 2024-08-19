@@ -98,7 +98,7 @@ const AboutHero = () => {
           latest trends, algorithms, and best practices. the latest trends,
           algorithms, and best practices.
         </p>
-        <Link to="/blogs">
+        <Link to="/services">
           <SecondaryBtn btn="Learn more" />
         </Link>
       </div>
