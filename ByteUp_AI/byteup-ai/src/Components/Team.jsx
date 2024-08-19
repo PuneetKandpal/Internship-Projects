@@ -75,7 +75,7 @@ const Team = () => {
         onMouseLeave={() => {
           setIsHovered(false);
         }}
-        className="font-Syne text-[40px] font-bold text-start"
+        className="font-Syne w-fit text-[40px] font-bold text-start"
       >
         Our Team
       </h1>
