@@ -62,7 +62,7 @@ const AboutHero = () => {
       <div className="md:w-[45%] w-full mt-8 md:mt-0 md:ml-8 text-center md:text-left ">
         <h2
           className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
-            theme === "light" ? "text-gradient-css opacity-70" : "text-white/40"
+            theme === "light" ? "text-gradient-css opacity-90" : "text-white/30"
           }`}
         >
           Our Story
