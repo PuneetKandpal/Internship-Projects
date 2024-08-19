@@ -1,19 +1,51 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+// Register the ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger);
 
 const BlogCard = ({ blogs, currentPage, blogsPerPage }) => {
   const { theme } = useContext(ThemeContext);
+  const blogRef = useRef([]);
 
   // Calculate the blogs to display on the current page
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
   const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
+  useEffect(() => {
+    blogRef.current.forEach((el, index) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 50 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: el,
+            start: "top 70%", // Animation starts when the top of the element is 80% from the top of the viewport
+            end: "bottom 60%", // Animation ends when the bottom of the element is 60% from the top of the viewport
+            scrub: true, // Smooth animation based on scroll position
+            once: true, // Trigger animation only once
+          },
+        }
+      );
+    });
+  }, [currentBlogs]);
+
   return (
     <div className="w-full px-[5.5rem] mt-24">
-      {currentBlogs.map((blog) => {
+      {currentBlogs.map((blog, index) => {
         return (
-          <div key={blog.id} className="w-full py-10 mb-10">
+          <div
+            key={blog.id}
+            ref={(el) => (blogRef.current[index] = el)} // Assigning each blog card to the blogRef
+            className="w-full py-10 mb-10"
+          >
             <div className="w-full h-[350px]">
               <img
                 className="w-full h-full object-cover"
@@ -34,7 +66,7 @@ const BlogCard = ({ blogs, currentPage, blogsPerPage }) => {
               {blog.title}
             </h1>
             <p
-              className={`mt-2 text-sm ${
+              className={`mt-2 text-[15px] ${
                 theme === "light" ? "text-black/60" : "text-white/40"
               }`}
             >

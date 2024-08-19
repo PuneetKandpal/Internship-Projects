@@ -1,5 +1,5 @@
 import Navbar from "../Components/Navbar";
-import { useContext, useState } from "react";
+import { useContext, useState, useRef } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import FeaturedBlog from "../Components/FeaturedBlog";
 import BlogCard from "../Components/BlogCard";
@@ -9,6 +9,7 @@ const Blogs = () => {
   const { theme } = useContext(ThemeContext);
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 5;
+  const blogSectionRef = useRef(null); // Create a ref for the blog section
 
   // Dummy data for the blog posts
   const blogs = [
@@ -133,6 +134,18 @@ const Blogs = () => {
     },
   ];
 
+  // Scroll to the top of the blog section
+  const scrollToTop = () => {
+    if (blogSectionRef.current) {
+      blogSectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    scrollToTop(); // Scroll to the top when the page changes
+  };
+
   return (
     <div
       className={`${
@@ -141,23 +154,27 @@ const Blogs = () => {
     >
       <Navbar />
       <FeaturedBlog />
-      <BlogCard
-        blogs={blogs}
-        currentPage={currentPage}
-        blogsPerPage={blogsPerPage}
-      />
+      <div ref={blogSectionRef}>
+        {" "}
+        {/* Attach the ref to the blog section */}
+        <BlogCard
+          blogs={blogs}
+          currentPage={currentPage}
+          blogsPerPage={blogsPerPage}
+        />
+      </div>
 
       {/* Pagination Controls */}
       <div className="flex justify-center mt-10">
         <button
-          onClick={() => setCurrentPage(currentPage - 1)}
+          onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
           className="px-3 py-1 text-sm mx-2 text-white bg-gradient-to-br from-purple to-sky disabled:opacity-40"
         >
           Previous
         </button>
         <button
-          onClick={() => setCurrentPage(currentPage + 1)}
+          onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === Math.ceil(blogs.length / blogsPerPage)}
           className="px-3 py-1 text-sm mx-2 text-white bg-gradient-to-br from-purple to-sky disabled:opacity-40"
         >

@@ -1,5 +1,6 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
+import { gsap } from "gsap";
 
 const FeaturedBlog = () => {
   const { theme } = useContext(ThemeContext);
@@ -15,12 +16,41 @@ const FeaturedBlog = () => {
     },
   ];
 
-  // Access the first object in the array
   const { date, writer, title, tags } = featured[0];
+
+  useEffect(() => {
+    // Animation for the container
+    gsap.fromTo(
+      ".featured-container",
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1, ease: "power2.out" }
+    );
+
+    // Animation for the tags
+    gsap.fromTo(
+      ".tag",
+      { opacity: 0, scale: 0.8 },
+      {
+        opacity: 1,
+        scale: 1,
+        duration: 0.5,
+        ease: "power2.out",
+        stagger: 0.2,
+        delay: 0.5,
+      }
+    );
+
+    // Animation for the "Read More" link
+    gsap.fromTo(
+      ".read-more",
+      { opacity: 0, x: -30 },
+      { opacity: 1, x: 0, duration: 0.7, ease: "power2.out", delay: 0.8 }
+    );
+  }, []);
 
   return (
     <div
-      className={`px-[5.5rem]  ${
+      className={`featured-container px-[5.5rem]  ${
         theme === "light" ? "bg-white text-white" : "bg-black text-black"
       }`}
     >
@@ -29,7 +59,7 @@ const FeaturedBlog = () => {
           theme === "light" ? "bg-black" : "bg-white"
         } `}
       >
-        <div className="absolute left-0 top-[0%] bg-gradient-to-br from-purple to-sky h-[100%] w-[10px] rounded- "></div>
+        <div className="absolute left-0 top-[0%] bg-gradient-to-br from-purple to-sky h-[100%] w-[10px] rounded-"></div>
         <p
           className={`mt-1 text-sm italic font-normal ${
             theme === "light" ? "text-white/40" : "text-black/50"
@@ -46,7 +76,7 @@ const FeaturedBlog = () => {
           {tags.map((tag, i) => (
             <p
               key={i}
-              className={`border rounded-full py-1 px-4 text-sm font-normal transition-all duration-200 ${
+              className={`tag border rounded-full py-1 px-4 text-sm font-normal transition-all duration-200 ${
                 theme === "light"
                   ? "border-white/60 text-white/60 hover:text-black/80 hover:border-transparent"
                   : "border-black/80 text-black/80 hover:text-white/80 hover:border-transparent"
@@ -58,7 +88,7 @@ const FeaturedBlog = () => {
         </div>
 
         <a
-          className="mt-14 block text-[13px] font-Archivo uppercase tracking-[1.2px] text-purple hover:text-sky transition-all duration-200"
+          className="read-more mt-14 block text-[13px] font-Archivo uppercase tracking-[1.2px] text-purple hover:text-sky transition-all duration-200"
           href="#"
         >
           Read More
