@@ -1,20 +1,46 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import { services } from "../servicesData";
 import { Link } from "react-router-dom";
 import SecondaryBtn from "./SecondaryBtn";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ServiceCard = () => {
   const { theme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    // Animate the cards when they scroll into view
+    gsap.utils.toArray(".service-card").forEach((card) => {
+      gsap.fromTo(
+        card,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: card,
+            start: "top 70%",
+            end: "bottom 30%",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, []);
 
   return (
     <div>
       {services.map((s, i) => (
         <div
           key={i}
-          className={`w-full h-[50vh] mt-10 mb-36 px-[5.5rem] mx-auto flex justify-between flex-col md:flex-row items-center overflow-hidden ${
+          className={`service-card w-full h-[50vh] mt-10 mb-36 px-[5.5rem] mx-auto flex justify-between flex-col md:flex-row items-center overflow-hidden ${
             theme === "light" ? "bg-white text-black" : "bg-black text-white"
-          }`}
+          } ${i % 2 !== 0 ? "flex-row-reverse" : ""}`}
         >
           {/* Left Div - Service Info */}
           <div className="w-full md:w-[42%] p-6">
