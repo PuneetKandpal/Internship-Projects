@@ -36,7 +36,7 @@ const HomeWork = () => {
   useEffect(() => {
     // Animate cards
     // const cards = gsap.utils.toArray(".card");
-    
+
     // cards.forEach((card, index) => {
     //   gsap.fromTo(
     //     card,
@@ -80,7 +80,7 @@ const HomeWork = () => {
     );
 
     return () => {
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 

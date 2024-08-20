@@ -1,13 +1,15 @@
-import React, { useEffect, useRef, useContext } from "react";
+import { useEffect, useRef, useContext, useState } from "react";
 import { MdEmail, MdLocationOn, MdPhone } from "react-icons/md";
 import { ThemeContext } from "../Context/ThemeContext";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import AnimatedCursor from "./AnimatedCursor";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const ReachOutSection = () => {
   const { theme } = useContext(ThemeContext);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Refs for animation targets
   const emailRef = useRef(null);
@@ -23,8 +25,6 @@ const ReachOutSection = () => {
           trigger: ".reach-out-section",
           start: "top 80%",
           end: "bottom top",
-          // markers: true, // Uncomment for debugging
-          // scrub: 1,
         },
       });
 
@@ -36,18 +36,27 @@ const ReachOutSection = () => {
 
   return (
     <div
-      className={`p-8 px-[5.5rem] ${
+      className={`p-8 px-[5.5rem] mt-20 ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       } reach-out-section`}
     >
       <h2
-        className={`font-semibold text-md mb-2 pb-2 inline-block font-Archivo ${
-          theme === "light" ? "text-black" : "text-white"
+        className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
+          theme === "light" ? "text-gradient-css opacity-90" : "text-white/30"
         }`}
       >
-        Reach Out To Us
+        Reach out to us
       </h2>
-      <h3 className="text-left text-2xl font-bold mb-4 font-Syne">
+      <h3
+        onMouseEnter={() => {
+          setIsHovered(true);
+        }}
+        onMouseLeave={() => {
+          setIsHovered(false);
+        }}
+        className="text-left w-fit text-4xl font-bold mb-2 font-Syne"
+      >
+        <AnimatedCursor isHovered={isHovered} />
         We’d Love to Hear From You.
       </h3>
       <p
@@ -68,7 +77,7 @@ const ReachOutSection = () => {
           >
             <MdEmail className="text-white text-xl" />
           </div>
-          <h4 className="font-semibold mb-2">Email Support</h4>
+          <h4 className="font-semibold font-Syne text-xl">Email Support</h4>
           <p
             className={`mb-3 ${
               theme === "light" ? "text-gray-600" : "text-gray-300"
@@ -86,7 +95,7 @@ const ReachOutSection = () => {
           >
             <MdLocationOn className="text-white text-xl" />
           </div>
-          <h4 className="font-semibold mb-2">Visit Our Office</h4>
+          <h4 className="font-semibold font-Syne text-xl">Visit Our Office</h4>
           <p
             className={`mb-3 ${
               theme === "light" ? "text-gray-600" : "text-gray-300"
@@ -104,7 +113,7 @@ const ReachOutSection = () => {
           >
             <MdPhone className="text-white text-xl" />
           </div>
-          <h4 className="font-semibold mb-2">Call Us Directly</h4>
+          <h4 className="font-semibold font-Syne text-xl">Call Us Directly</h4>
           <p
             className={`mb-3 ${
               theme === "light" ? "text-gray-600" : "text-gray-300"
