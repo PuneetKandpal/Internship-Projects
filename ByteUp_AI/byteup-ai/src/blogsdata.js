@@ -1,4 +1,5 @@
-[
+// Dummy data for the blog posts
+export const blogs = [
   {
     id: 1,
     date: "September 12, 2024",
@@ -58,5 +59,41 @@
     tags: ["Blockchain", "Innovation"],
     image:
       "https://plus.unsplash.com/premium_photo-1681487178876-a1156952ec60?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aXQlMjBjb21wYW55fGVufDB8fDB8fHww",
+  },
+
+  {
+    id: 6,
+    date: "January 5, 2025",
+    writer: "Olivia Brown",
+    title: "Cybersecurity Trends: What to Expect in 2025 and Beyond",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quisquam soluta obcaecati, corrupti nemo, incidunt nam facilis illo minima natus dolor fugit necessitatibus tempore quod modi. Ea consectetur excepturi minus!",
+    tags: ["Cybersecurity", "Tech Trends"],
+    image:
+      "https://img.pagecloud.com/0K11AosjE1WtzXEezlFJ2R7z5x8=/1000x0/filters:no_upscale()/blogmerge/085c2d25-9ced-4034-8671-91e56970acd0.jpeg",
+  },
+  {
+    id: 7,
+    date: "February 14, 2025",
+    writer: "James Wilson",
+    title:
+      "The Role of Data Science in Predictive Analytics and Decision Making",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quisquam soluta obcaecati, corrupti nemo, incidunt nam facilis illo minima natus dolor fugit necessitatibus tempore quod modi. Ea consectetur excepturi minus!",
+    tags: ["Data Science", "Analytics"],
+    image:
+      "https://www.constantcontact.com/blog/wp-content/uploads/2021/04/Social-4.jpg",
+  },
+  {
+    id: 8,
+    date: "March 3, 2025",
+    writer: "Sophia Green",
+    title:
+      "Virtual Reality and Augmented Reality: Transforming the Gaming World",
+    description:
+      "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia quisquam soluta obcaecati, corrupti nemo, incidunt nam facilis illo minima natus dolor fugit necessitatibus tempore quod modi. Ea consectetur excepturi minus!",
+    tags: ["VR", "AR", "Gaming"],
+    image:
+      "https://cdn-media-1.freecodecamp.org/images/1*QVTcnfXyMXivNu62IJ7JSg.jpeg",
   },
 ];
