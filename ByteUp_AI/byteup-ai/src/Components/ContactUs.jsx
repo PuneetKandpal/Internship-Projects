@@ -103,6 +103,7 @@ const ContactUs = () => {
         theme === "dark" ? "bg-black" : "bg-white"
       }`}
     >
+      <AnimatedCursor isHovered={isHovered} />
       <div className="w-full flex flex-col lg:flex-row justify-between">
         {/* Left Side Image */}
         <div className="h-fit w-full lg:w-[42%]" ref={imageRef}>
@@ -126,7 +127,7 @@ const ContactUs = () => {
             >
               Get in touch
             </h2>
-            <AnimatedCursor isHovered={isHovered} />
+
             <h2
               ref={headingRef}
               onMouseEnter={() => {
