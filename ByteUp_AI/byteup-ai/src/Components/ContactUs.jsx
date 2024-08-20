@@ -1,8 +1,14 @@
 import { useContext, useState, useEffect, useRef } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
+import AnimatedCursor from "./AnimatedCursor";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ContactUs = () => {
   const { theme } = useContext(ThemeContext);
+  const [isHovered, setIsHovered] = useState(false);
   const imageUrl =
     "https://images.unsplash.com/photo-1667238002143-b5e117168e98?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGNvbXBhbnklMjBidWlsZGluZ3xlbnwwfHwwfHx8MA%3D%3D";
 
@@ -19,6 +25,8 @@ const ContactUs = () => {
 
   const [errors, setErrors] = useState({});
   const formRef = useRef(null);
+  const imageRef = useRef(null);
+  const headingRef = useRef(null);
   const [formHeight, setFormHeight] = useState(0);
 
   useEffect(() => {
@@ -26,6 +34,43 @@ const ContactUs = () => {
     if (formRef.current) {
       setFormHeight(formRef.current.clientHeight);
     }
+
+    // GSAP Animations
+    gsap.fromTo(
+      imageRef.current,
+      { opacity: 0, scale: 1.05 },
+      { opacity: 1, scale: 1, duration: 1 }
+    );
+
+    gsap.fromTo(
+      headingRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: headingRef.current,
+          start: "top 80%",
+        },
+      }
+    );
+
+    gsap.fromTo(
+      formRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: formRef.current,
+          start: "top 80%",
+        },
+      }
+    );
   }, []);
 
   const validateForm = () => {
@@ -58,9 +103,10 @@ const ContactUs = () => {
         theme === "dark" ? "bg-black" : "bg-white"
       }`}
     >
+      <AnimatedCursor isHovered={isHovered} />
       <div className="w-full flex flex-col lg:flex-row justify-between">
         {/* Left Side Image */}
-        <div className="h-fit w-full lg:w-[42%]">
+        <div className="h-fit w-full lg:w-[42%]" ref={imageRef}>
           <img
             src={imageUrl}
             alt="Contact Us"
@@ -81,7 +127,17 @@ const ContactUs = () => {
             >
               Get in touch
             </h2>
-            <h2 className="text-4xl font-semibold mb-10 font-Syne">
+
+            <h2
+              ref={headingRef}
+              onMouseEnter={() => {
+                setIsHovered(true);
+              }}
+              onMouseLeave={() => {
+                setIsHovered(false);
+              }}
+              className="text-4xl w-fit font-semibold mb-10 font-Syne"
+            >
               Let's Be Social
             </h2>
             <form onSubmit={handleSubmit}>
@@ -208,8 +264,8 @@ const ContactUs = () => {
                           }}
                           className={`border ${
                             theme === "light"
-                              ? "border-gray-300 text-zinc-500"
-                              : "border-white/30 text-white/35 font-normal"
+                              ? "border-gray-300 text-black"
+                              : "border-white/30 text-white font-normal"
                           } text-[14px] px-4 py-1 cursor-pointer transition-all duration-300 ease-in-out ${
                             formData.interests.includes(interest)
                               ? "bg-gradient-to-r from-[#a270c9] to-[#637eb2] text-white"
@@ -253,8 +309,8 @@ const ContactUs = () => {
                           }
                           className={`border ${
                             theme === "light"
-                              ? "border-gray-300 text-zinc-500"
-                              : "border-white/30 text-white/35 font-normal"
+                              ? "border-gray-300 text-black"
+                              : "border-white/30 text-white font-normal"
                           } text-[14px] px-4 py-1 cursor-pointer transition-all duration-300 ease-in-out ${
                             formData.budget === budgetOption
                               ? "bg-gradient-to-r from-[#a270c9] to-[#637eb2] text-white"
