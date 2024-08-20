@@ -65,7 +65,7 @@ const ReachOutSection = () => {
         }`}
       >
         Or just reach out manually to{" "}
-        <a href="mailto:hello@slothui.com" className="text-[#9f7cbe]">
+        <a href="mailto:info@byteupai.com" className="text-[#9f7cbe]">
           info@byteupai.com
         </a>
         .
