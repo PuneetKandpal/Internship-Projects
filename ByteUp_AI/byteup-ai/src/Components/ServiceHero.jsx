@@ -1,12 +1,38 @@
-import { useContext } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import PrimaryBtn from "../Components/PrimaryBtn";
+import AnimatedCursor from "./AnimatedCursor";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const ServiceHero = () => {
   const { theme } = useContext(ThemeContext);
+  const [isHovered, setIsHovered] = useState(false);
   const backgroundUrl =
     "https://plus.unsplash.com/premium_photo-1681487178876-a1156952ec60?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aXQlMjBjb21wYW55fGVufDB8fDB8fHww";
+  
+  const contentRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      contentRef.current,
+      { opacity: 0, y: 50 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1.5,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: contentRef.current,
+          start: "top 80%",
+          end: "bottom 60%",
+        },
+      }
+    );
+  }, []);
 
   return (
     <div
@@ -15,12 +41,21 @@ const ServiceHero = () => {
       }`}
       style={{ backgroundImage: `url(${backgroundUrl})` }}
     >
+      <AnimatedCursor isHovered={isHovered} />
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/60 to-transparent z-10"></div>
 
       {/* Content */}
-      <div className="relative z-20 w-[60%]">
-        <h1 className="text-5xl font-bold leading-10 mb-6">
+      <div className="relative z-20 w-[60%]" ref={contentRef}>
+        <h1
+          onMouseEnter={() => {
+            setIsHovered(true);
+          }}
+          onMouseLeave={() => {
+            setIsHovered(false);
+          }}
+          className="text-5xl font-bold leading-10 mb-6"
+        >
           <span className="text-white font-Syne text-5xl">
             Elevate Your Business with Our Expert Services
           </span>
@@ -32,7 +67,7 @@ const ServiceHero = () => {
           expertise and tools you need to succeed in today's competitive market.
         </p>
 
-        <Link>
+        <Link to="/work">
           <PrimaryBtn btn="View Our Work" />
         </Link>
       </div>
