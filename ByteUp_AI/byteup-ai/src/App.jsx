@@ -9,6 +9,7 @@ import Blogs from "./Pages/Blogs";
 import AnimatedCursor from "./Components/AnimatedCursor";
 import Contact from "./Pages/Contact";
 import About from "./Pages/About";
+import ScrollToTop from "./Components/ScrollToTop";
 
 const App = () => {
   const { theme } = useContext(ThemeContext);
@@ -19,6 +20,7 @@ const App = () => {
       }`}
     >
       <AnimatedCursor />
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Main />}>
