@@ -126,6 +126,7 @@ const ContactUs = () => {
             >
               Get in touch
             </h2>
+            <AnimatedCursor isHovered={isHovered} />
             <h2
               ref={headingRef}
               onMouseEnter={() => {
@@ -136,7 +137,6 @@ const ContactUs = () => {
               }}
               className="text-4xl w-fit font-semibold mb-10 font-Syne"
             >
-              <AnimatedCursor isHovered={isHovered} />
               Let's Be Social
             </h2>
             <form onSubmit={handleSubmit}>
@@ -263,8 +263,8 @@ const ContactUs = () => {
                           }}
                           className={`border ${
                             theme === "light"
-                              ? "border-gray-300 text-zinc-500"
-                              : "border-white/30 text-white/35 font-normal"
+                              ? "border-gray-300 text-black"
+                              : "border-white/30 text-white font-normal"
                           } text-[14px] px-4 py-1 cursor-pointer transition-all duration-300 ease-in-out ${
                             formData.interests.includes(interest)
                               ? "bg-gradient-to-r from-[#a270c9] to-[#637eb2] text-white"
@@ -308,8 +308,8 @@ const ContactUs = () => {
                           }
                           className={`border ${
                             theme === "light"
-                              ? "border-gray-300 text-zinc-500"
-                              : "border-white/30 text-white/35 font-normal"
+                              ? "border-gray-300 text-black"
+                              : "border-white/30 text-white font-normal"
                           } text-[14px] px-4 py-1 cursor-pointer transition-all duration-300 ease-in-out ${
                             formData.budget === budgetOption
                               ? "bg-gradient-to-r from-[#a270c9] to-[#637eb2] text-white"
