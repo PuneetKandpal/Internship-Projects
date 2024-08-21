@@ -65,53 +65,163 @@
          </div>
 
 
-<!-- Latest Insider Transactions Section -->
-<section id="latestTransactions" class="component-box">
-  <h2 class="component-heading">Latest Insider Transactions</h2>
-  <div class="table-responsive">
-    <table class="transaction-table">
+<!-- Insider Transactions Section -->
+<div id="component-insider-trade">
+  <div class="component-box1" id="insider-trade">
+      <div class="blur1"></div>
+      <div class="blur2"></div>
+      <div class="component-box1-heading">
+          <!-- <h1 class="component-heading">Insider Transactions</h1> -->
+          <div class="filters">
+              <div class="dropdown-container">
+                  <div class="dropdown-wrapper">
+                      <label class="dropdown-label">Country</label>
+                      <select class="custom-dropdown">
+                          <option value="USA">USA</option>
+                      </select>
+                  </div>
+                  <div class="dropdown-wrapper">
+                      <label class="dropdown-label">Sector</label>
+                      <select class="custom-dropdown">
+                          <option value="all">All Sectors</option>
+                      </select>
+                  </div>
+                  <div class="dropdown-wrapper">
+                      <label class="dropdown-label">Market Cap</label>
+                      <select class="custom-dropdown">
+                          <option value="all">All Market Caps</option>
+                      </select>
+                  </div>
+                  <div class="dropdown-wrapper">
+                      <label class="dropdown-label">Transaction Size</label>
+                      <select class="custom-dropdown">
+                          <option value="all">$50,000+</option>
+                      </select>
+                  </div>
+                  <div class="dropdown-wrapper">
+                      <label class="dropdown-label">MarketRank</label>
+                      <select class="custom-dropdown">
+                          <option value="all">All Ranks</option>
+                      </select>
+                  </div>
+                  <div class="dropdown-wrapper">
+                      <label class="dropdown-label">MediaSentiment</label>
+                      <select class="custom-dropdown">
+                          <option value="all">All Sentiments</option>
+                      </select>
+                  </div>
+                  <div class="dropdown-wrapper">
+                      <label class="dropdown-label">Analyst Consensus</label>
+                      <select class="custom-dropdown">
+                          <option value="all">All Ratings</option>
+                      </select>
+                  </div>
+                  <div class="dropdown-wrapper">
+                      <label class="dropdown-label">Reporting Date</label>
+                      <input type="date" class="custom-dropdown" value="2024-08-12">
+                  </div>
+                  <button class="export-btn">Export to Excel</button>
+              </div>
+          </div>
+      </div>
+
+  <table class="transactions-table">
       <thead>
         <tr>
-          <th>Date</th>
           <th>Company</th>
-          <th>Insider</th>
-          <th>Type</th>
-          <th>Value</th>
-          <th>Country</th>
-        </tr>
+          <th>Last Price</th>
+          <th>7D Return</th>
+          <th>Market Cap</th>
+          <th>Analyst Target</th>
+          <th>Valuation</th>
+          <th>Growth</th>
+          <th>Div Yield</th>
+          <th>Industry</th>
+        </tr> 
       </thead>
       <tbody>
-        {% for transaction in latest_transactions %}
         <tr>
-          <td>{{ transaction.filingDate|date:"Y-m-d" }}</td>
-          <td>
-            {% if transaction.companyName %}
-              {{ transaction.companyName }}
-            {% endif %}
-            ({{ transaction.ticker }})
+          <td class="company-head">AAPL <p class="company-fullName">Apple</p>
+          
           </td>
-          <td>{{ transaction.insiderName }}</td>
-          <td>
-            {% if transaction.transactionType %}
-              {{ transaction.transactionType }}
-            {% elif transaction.tradeType %}
-              {{ transaction.tradeType }}
-            {% endif %}
-          </td>
-          <td>
-            {% if transaction.country == 'CA' %}
-              {{ transaction.value }}
-            {% else %}
-              {{ transaction.value }}
-            {% endif %}
-          </td>
-          <td>{{ transaction.country }}</td>
+          <td>US$226.51</td>
+          <td class="positive">+2.4%</td>
+          <td>US$3.4t</td>
+          <td>US$234.42</td>
+          <td>PE 33.8x</td>
+          <td>27.8%</td>
+          <td>0.4%</td>
+          <td class="industry">Tech</td>
         </tr>
-        {% endfor %}
+        <tr>
+          <td class="company-head">NVDA <p  class="company-fullName">NVIDIA</p></td>
+          <td>US$127.25</td>
+          <td class="positive">+9.6%</td>
+          <td>US$3.2t</td>
+          <td>US$140.67</td>
+          <td>PE 73.4x</td>
+          <td>178.6%</td>
+          <td>0.03%</td>
+          <td class="industry">Semiconductors</td>
+        </tr>
+        <tr>
+          <td class="company-head">MSFT <p  class="company-fullName">Microsoft</p></td>
+          <td>US$424.80</td>
+          <td class="positive">+2.6%</td>
+          <td>US$3.1t</td>
+          <td>US$500.07</td>
+          <td>PE 50.0x</td>
+          <td>31.7%</td>
+          <td>0.7%</td>
+          <td class="industry">Software</td>
+        </tr>
+        <tr>
+          <td class="company-head">GOOGL <p  class="company-fullName">Google</p></td>
+          <td>US$167.18</td>
+          <td class="positive">+4.2%</td>
+          <td>US$2.1t</td>
+          <td>US$204.71</td>
+          <td>PE 23.5x</td>
+          <td>26.3%</td>
+          <td>0.5%</td>
+          <td class="industry">Media</td>
+        </tr>
+        <tr>
+          <td class="company-head">AMZN <p  class="company-fullName">Amazon.com</p></td>
+          <td>US$178.88</td>
+          <td class="positive">+5.1%</td>
+          <td>US$1.9t</td>
+          <td>US$188.97</td>
+          <td>PE 42.3x</td>
+          <td>33.2%</td>
+          <td>n/a</td>
+          <td class="industry">Retail</td>
+        </tr>
+        <tr>
+          <td class="company-head">META <p  class="company-fullName">Meta Platforms</p></td>
+          <td>US$526.73</td>
+          <td class="negative">-0.3%</td>
+          <td>US$1.7t</td>
+          <td>US$586.66</td>
+          <td>PE 25.9x</td>
+          <td>83.1%</td>
+          <td>0.3%</td>
+          <td class="industry">Media</td>
+        </tr>
       </tbody>
     </table>
-  </div>
-</section>
+  
+</div>
+<div class="pagination">
+  <a href="#"><i class="ri-arrow-left-s-fill"></i></a>
+  <a href="#" class="active">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#"><i class="ri-arrow-right-s-fill"></i></a>
+</div>
+</div>
 
 
 
