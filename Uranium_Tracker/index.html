@@ -4,8 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
-
     <title>Uranium Tracker</title>
     <script>
       tailwind.config = {
@@ -84,7 +87,6 @@
         </button>
       </div>
     </nav>
-
     <!-- Styled Mobile Menu -->
     <div class="md:hidden">
       <div
@@ -126,6 +128,64 @@
         </button>
       </div>
     </div>
+    <!-- Navber End ============================================================================ -->
+
+    <!-- Footer ================================================================================ -->
+    <footer class="w-full bg-black text-white py-12 px-[1.4rem] mt-7">
+      <div class="container mx-auto px-4 flex justify-between items-center">
+        <!-- Newsletter Subscription -->
+        <div class="">
+          <p class="text-[1rem]"></p>
+            Subscribe to our newsletter for updates and <br> special offers
+          </p>
+          <div class="flex mt-6">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="px-4 py-[5px] bg-white/15 text-[14px] text-white rounded-l-sm focus:outline-none"
+            />
+            <button
+              class="bg-primary  text-white px-4 py-[5px] text-[13px] rounded-r-sm hover:bg-green-600"
+            >
+              SUBSCRIBE
+            </button>
+          </div>
+        </div>
+
+        <!-- Links and Copyright -->
+        <div class="flex flex-col space-y-7 items-end">
+          
+          <!-- Social Icons -->
+          <div class="flex space-x-4">
+            <a href="#" class="text-white/60 hover:text-white/90 transition-all duration-200">
+              <i class="ri-instagram-line text-xl"></i>
+            </a>
+            <a href="#" class="text-white/60 hover:text-white/90 transition-all duration-200">
+              <i class="ri-pinterest-line text-xl"></i>
+            </a>
+            <a href="#" class="text-white/60 hover:text-white/90 transition-all duration-200">
+              <i class="ri-facebook-circle-line text-xl"></i>
+            </a>
+            <a href="#" class="text-white/60  hover:text-white/90 transition-all duration-200">
+              <i class="ri-close-line text-xl"></i>
+            </a>
+          </div>
+
+          <div class="hidden md:flex text-[14px] text-white/70  space-x-6">
+            <a href="#" class="hover:underline">HOME</a>
+            <a href="#" class="hover:underline">COMMUNITY</a>
+            <a href="#" class="hover:underline">LIBRARY</a>
+            <a href="#" class="hover:underline">CONTACT US</a>
+          </div>
+
+          <p class="text-[13.5px] text-white/50">© Copyright 2024 | UraniumTracker</p>
+
+          
+        </div>
+      </div>
+
+     
+    </footer>
 
     <!-- js file----------------------------------------  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
