@@ -48,6 +48,37 @@ const searchResults = document.getElementById("search-results");
 // });
 
 // contact ------------------------------------------------------
+//----------Latest insider table script-------------------------
+// Animation for Latest Insider Transactions
+document.addEventListener("DOMContentLoaded", function () {
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".transaction-table", {
+    scrollTrigger: {
+      trigger: ".transaction-table",
+      start: "top bottom-=100",
+      toggleActions: "play none none reverse",
+    },
+    opacity: 0,
+    y: 50,
+    duration: 0.6,
+  });
+
+  gsap.utils.toArray(".transaction-table tr").forEach((row, i) => {
+    gsap.from(row, {
+      scrollTrigger: {
+        trigger: row,
+        start: "top bottom-=50",
+        toggleActions: "play none none reverse",
+      },
+      opacity: 0,
+      x: -20,
+      duration: 0.3,
+      delay: i * 0.05,
+    });
+  });
+});
+
 document.getElementById("contactForm").addEventListener("submit", function (e) {
   e.preventDefault();
 

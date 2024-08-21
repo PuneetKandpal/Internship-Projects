@@ -64,6 +64,58 @@
                </div>
          </div>
 
+
+<!-- Latest Insider Transactions Section -->
+<section id="latestTransactions" class="component-box">
+  <h2 class="component-heading">Latest Insider Transactions</h2>
+  <div class="table-responsive">
+    <table class="transaction-table">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Company</th>
+          <th>Insider</th>
+          <th>Type</th>
+          <th>Value</th>
+          <th>Country</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for transaction in latest_transactions %}
+        <tr>
+          <td>{{ transaction.filingDate|date:"Y-m-d" }}</td>
+          <td>
+            {% if transaction.companyName %}
+              {{ transaction.companyName }}
+            {% endif %}
+            ({{ transaction.ticker }})
+          </td>
+          <td>{{ transaction.insiderName }}</td>
+          <td>
+            {% if transaction.transactionType %}
+              {{ transaction.transactionType }}
+            {% elif transaction.tradeType %}
+              {{ transaction.tradeType }}
+            {% endif %}
+          </td>
+          <td>
+            {% if transaction.country == 'CA' %}
+              {{ transaction.value }}
+            {% else %}
+              {{ transaction.value }}
+            {% endif %}
+          </td>
+          <td>{{ transaction.country }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+
         <!-- how it works --------------------------------  -->
          <div id="howItWorks">
             <h2 class="heading">How It Works</h2>
