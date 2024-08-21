@@ -1,7 +1,27 @@
-const navToggle = document.getElementById('nav-toggle');
-  const mobileMenu = document.getElementById('mobile-menu');
+// Navbar ====================================
 
-  navToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
-    mobileMenu.classList.toggle('scale-y-100'); // Toggle the menu scale
-  });
+const navToggle = document.getElementById("nav-toggle");
+const mobileMenu = document.getElementById("mobile-menu");
+
+navToggle.addEventListener("click", () => {
+  if (mobileMenu.classList.contains("hidden")) {
+    // Open menu animation
+    mobileMenu.classList.remove("hidden");
+    gsap.fromTo(
+      mobileMenu,
+      { scaleY: 0, opacity: 0 },
+      { scaleY: 1, opacity: 1, duration: 0.5, ease: "power2.out" }
+    );
+  } else {
+    // Close menu animation
+    gsap.to(mobileMenu, {
+      scaleY: 0,
+      opacity: 0,
+      duration: 0.5,
+      ease: "power2.in",
+      onComplete: () => {
+        mobileMenu.classList.add("hidden");
+      },
+    });
+  }
+});
