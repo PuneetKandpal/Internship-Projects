@@ -514,8 +514,16 @@ body.scrolled .navbar {
 }
 
 /* Latest Insider Transactions Section Styles */
+
 #component-insider-trade {
   padding: 3rem;
+  width: 80%;
+  margin: auto;
+}
+.insider-transations-heading {
+  color: var(--secondary);
+  text-align: center;
+  font-size: 2rem;
 }
 .component-box1 {
   border: 1px solid var(--border-color);
