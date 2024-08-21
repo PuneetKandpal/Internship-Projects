@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="signUp.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="blur1"></div>
+      <div class="blur2"></div>
+      <div class="image-section"></div>
+      <div class="form-section">
+        <div class="signup-header">
+          <h2>SIGN UP</h2>
+          <p class="signup-subtext">
+            Sign Up and join the Insider Trading Track
+          </p>
+        </div>
+        <form id="signupForm">
+          <div class="form-group">
+            <input type="text" id="name" required placeholder=" " />
+            <label for="name">Your Name</label>
+            <span class="error-message" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" required placeholder=" " />
+            <label for="email">Email</label>
+            <span class="error-message" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <input type="password" id="password" required placeholder=" " />
+            <label for="password">Password</label>
+            <i class="ri-eye-off-fill toggle-password" id="togglePassword"></i>
+            <span class="error-message" id="passwordError"></span>
+          </div>
+          <div class="form-group">
+            <input
+              type="password"
+              id="confirmPassword"
+              required
+              placeholder=" "
+            />
+            <label for="confirmPassword">Confirm Password</label>
+            <i
+              class="ri-eye-off-fill toggle-password"
+              id="toggleConfirmPassword"
+            ></i>
+            <span class="error-message" id="confirmPasswordError"></span>
+          </div>
+          <button type="submit">CREATE ACCOUNT</button>
+        </form>
+        <div class="login-link">
+          Already have an account ? &nbsp;<a href="./login.html"> LOG IN</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="signUp.js"></script>
+  </body>
+</html>

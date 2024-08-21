@@ -19,7 +19,7 @@ const BlogCard = ({ blogs, currentPage, blogsPerPage }) => {
     blogRef.current.forEach((el, index) => {
       gsap.fromTo(
         el,
-        { opacity: 0, y: 50 },
+        { opacity: 0, y: 60 },
         {
           opacity: 1,
           y: 0,
@@ -29,7 +29,7 @@ const BlogCard = ({ blogs, currentPage, blogsPerPage }) => {
             trigger: el,
             start: "top 70%", // Animation starts when the top of the element is 80% from the top of the viewport
             end: "bottom 60%", // Animation ends when the bottom of the element is 60% from the top of the viewport
-            scrub: true, // Smooth animation based on scroll position
+            // scrub: true, 
             once: true, // Trigger animation only once
           },
         }
