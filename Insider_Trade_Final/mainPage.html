@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Main Page</title>
+    <link rel="stylesheet" href="mainPage.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <!-- nav -------------------------------------------  -->
+    <nav class="navbar scrolled">
+      <div class="nav-left">
+        <img id="logo" src="./images/logo.png" alt="" />
+      </div>
+      <div class="nav-right">
+       
+        <a id="usericon" href="./profile.html"><i class="ri-user-3-fill"></i></a>
+      </div>
+    </nav>
+
+    <!-- main----------------------------------------  -->
+     <div id="main">
+        <!-- company details---------------------------------------------------  -->
+        <div id="company-details">
+            <div id="company-info">
+                <div class="upper-div">
+                    <div class="company-logo">
+                        <img src="./images/company-logo.jpg" alt="">
+                    </div>
+                    <div class="company-name">
+                        <h1>Amazon.com, Inc</h1>
+                        <p>Symbol : <span>AMZN</span></p>
+                    </div>
+                </div>
+
+                <div class="lower-div">
+                    <div class="sub-info">
+                        <p class="sub-info-upper">sector</p>
+                        <p class="sub-info-lower">Consumer Cyclica</p>
+                    </div>
+
+                    <div class="sub-info">
+                        <p class="sub-info-upper">industry</p>
+                        <p class="sub-info-lower">Intern Retail</p>
+                    </div>
+
+                    <div class="sub-info">
+                        <p class="sub-info-upper">country</p>
+                        <p class="sub-info-lower">United states</p>
+                    </div>
+
+                    <div class="sub-info">
+                        <p class="sub-info-upper">Exchange</p>
+                        <p class="sub-info-lower">NMS</p>
+                    </div>
+
+                    <div class="sub-info">
+                        <p class="sub-info-upper">Currency</p>
+                        <p class="sub-info-lower">USD</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- second nav ---------------------------------------------  -->
+        <div class="stickynav2">
+            <div class="second-nav second-nav-dark">
+                <a href="#components-business-summary"><p>Business Summary</p></a>
+                <a href="#components-financial-metric"><p>Financial Metric</p></a>
+                <a href="#component-insider-trade"><p>Transactions</p></a>
+                <a href="#component-key-matrics"><p>Key Metrics</p></a>
+                <a href="#component-stock-chart"><p>Stock Chart</p></a>
+                <a href="#component-key-stats"><p>Key Statistics</p></a>
+                <a href="#component-volume-analysis"><p>Volume Analysis</p></a>
+            </div>
+        </div>
+
+        <!-- Business Summary Content -->
+        <div id="components-business-summary">
+            <div class="component-box" id="business-summary">
+                <div class="blur1"></div>
+                <div class="blur2"></div>
+                <h1 class="component-heading">Business Summary</h1>
+                
+                <div class="links">
+                    <p> <i class="ri-earth-fill"></i> <a id="website" href="https://www.aboutamazon.com/">https://www.aboutamazon.com/</a></p>
+                <p> <i class="ri-map-pin-2-fill"></i> <a id="address" href="https://www.aboutamazon.com/">410 Terry Avenue North, N/A, Seattle, WA 98109-5210, United State</a></p>
+                </div>
+    
+                <p id="summary">Amazon.com, Inc. engages in the retail sale of consumer products, advertising, and subscriptions service through online and physical stores in North 
+                    America and internationally. The company operates through three segments: North America, International, and Amazon Web Services (AWS). It also 
+                    manufactures and sells electronic devices, including Kindle, Fire tablets, Fire TVs, Echo, Ring, Blink, and eero; and develops and produces media content. 
+                    In addition, the company offers programs that enable sellers to sell their products in its stores; and programs that allow authors, independent publishers, 
+                    musicians, filmmakers, Twitch streamers, skill and app developers, and others to publish and sell content. Further, it provides compute, storage, 
+                    database, analytics, machine learning, and other services, as well as advertising services through programs, such as sponsored ads, display, and video 
+                    advertising. Additionally, the company offers Amazon Prime, a membership program. The company's products offered through its stores include 
+                    merchandise and content purchased for resale and products offered by third-party sellers. It serves consumers, sellers, developers, enterprises, content 
+                    creators, advertisers, and employees. Amazon.com, Inc. was incorporated in 1994 and is headquartered in Seattle, Washington</p>
+              </div>
+        </div>
+
+           <!-- Financial Metric Content -->
+           <div id="components-financial-metric">
+               <div class="component-box" id="financial-metric">
+                <div class="blur1"></div>
+                <div class="blur2"></div>
+                   <h1 class="component-heading">Financial Metrics</h1>
+                   <div id="financial-matrics-box">
+                    <div class="matric-box">
+                        <h5>Market</h5>
+                        <p>1,753,404,669,952</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Market cap</h5>
+                        <p>201.20</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>52 Week Low</h5>
+                        <p>118.35
+                        </p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>50 Day Moving Average</h5>
+                        <p>187.10</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>P/E Ratio</h5>
+                        <p>39.89</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Forward P/E</h5>
+                        <p>28.67</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Profit Margin</h5>
+                        <p>0.07%</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Revenue (TTM)
+                        </h5>
+                        <p>604,333,998,080
+                        </p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Quarterly Earnings Growth</h5>
+                        <p>1.00%
+                        </p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>EPS (TTM)
+                        </h5>
+                        <p>4.19</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Operating Margin</h5>
+                        <p>0.10%</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Return on Equity</h5>
+                        <p>0.22%</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Shares Outstanding</h5>
+                        <p>10,406,599,680
+                        </p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Quarterly Revenue Growth</h5>
+                        <p>0.10%</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Book Value Per Share</h5>
+                        <p>22.54</p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Price to Book Ratio</h5>
+                        <p>7.4</p>
+                    </div>
+                    <div class="matric-box">
+                        <h5>Total Cash</h5>
+                        <p>89,091,997,696
+                        </p>
+                    </div>
+
+                    <div class="matric-box">
+                        <h5>Total Debt</h5>
+                        <p>132,973,002,752</p>
+                    </div>
+                   </div>
+
+               </div>
+           </div>
+
+             <!-- Insider Transactions Section -->
+           <div id="component-insider-trade">
+            <div class="component-box1" id="insider-trade">
+                <div class="blur1"></div>
+                <div class="blur2"></div>
+                <div class="component-box1-heading">
+                  <h1 class="component-heading">Insider Transactions</h1>
+                  <div class="filters">
+                    <div class="dropdown-container">
+                      <div class="dropdown-wrapper">
+                        <label class="dropdown-label">Country</label>
+                        <select class="custom-dropdown">
+                          <option value="USA">USA</option>
+                          <!-- Add more country options here -->
+                        </select>
+                      </div>
+                      <div class="dropdown-wrapper">
+                        <label class="dropdown-label">Sector</label>
+                        <select class="custom-dropdown">
+                          <option value="all">All Sectors</option>
+                          <!-- Add more sector options here -->
+                        </select>
+                      </div>
+                      <div class="dropdown-wrapper">
+                        <label class="dropdown-label">Market Cap</label>
+                        <select class="custom-dropdown">
+                          <option value="all">All Market Caps</option>
+                          <!-- Add more market cap options here -->
+                        </select>
+                      </div>
+                      <div class="dropdown-wrapper">
+                        <label class="dropdown-label">Transaction Size</label>
+                        <select class="custom-dropdown">
+                          <option value="all">$50,000+</option>
+                          <!-- Add more transaction size options here -->
+                        </select>
+                      </div>
+                      <div class="dropdown-wrapper">
+                        <label class="dropdown-label">Rank</label>
+                        <select class="custom-dropdown">
+                          <option value="all">All Ranks</option>
+                          <!-- Add more rank options here -->
+                        </select>
+                      </div>
+                      <div class="dropdown-wrapper">
+                        <label class="dropdown-label">Sentiment</label>
+                        <select class="custom-dropdown">
+                          <option value="all">All Sentiments</option>
+                          <!-- Add more sentiment options here -->
+                        </select>
+                      </div>
+                      <div class="dropdown-wrapper">
+                        <label class="dropdown-label">Rating</label>
+                        <select class="custom-dropdown">
+                          <option value="all">All Ratings</option>
+                          <!-- Add more rating options here -->
+                        </select>
+                      </div>
+                      <div class="dropdown-wrapper">
+                        <label class="dropdown-label">Date</label>
+                        <input type="date" class="custom-dropdown" value="8/12/2024">
+                      </div>
+                      <button class="export-btn">Export to Excel</button>
+                    </div>
+                  </div>
+                </div>
+                
+                    
+                   
+
+                <table class="transactions-table">
+                    <thead>
+                      <tr>
+                        <th>FILING DATE</th>
+                        <th>TICKER</th>
+                        <th>INSIDER NAME</th>
+                        <th>TITLE</th>
+                        <th>TRANSACTION TYPE</th>
+                        <th>PRICE</th>
+                        <th>QUANTITY</th>
+                        <th>OWNED</th>
+                        <th>OWN</th>
+                        <th>VALUE</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Rows with data -->
+                      <tr>
+                        <td>2024-07-15</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$200.03</td>
+                        <td>403,974</td>
+                        <td>928,029,899</td>
+                        <td class="negative-change">-0.04%</td>
+                        <td>$80,806,193</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$230.12</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$177.73</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$109.1</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+1.60%</td>
+                        <td>$399,442.32</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$100</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+0.99%</td>
+                        <td>$399,442.23</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>M - Exercise/Convert</td>
+                        <td>$200.12</td>
+                        <td>800</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>M - Exercise/Convert</td>
+                        <td>$0</td>
+                        <td>700</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$0</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$0</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+0.21%</td>
+                        <td>$0</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$0</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+1.44%</td>
+                        <td>$0</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$0</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+2.44%</td>
+                        <td>$0</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>G - Gift</td>
+                        <td>$200.12</td>
+                        <td>1,996,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+0.44%</td>
+                        <td>$399,442.32</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>G - Gift</td>
+                        <td>$200.12</td>
+                        <td>1015</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$200.12</td>
+                        <td>1,996</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$200.12</td>
+                        <td>3,015</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$177.73</td>
+                        <td>5,000</td>
+                        <td>928,700,269</td>
+                        <td class="negative-change">-0.21%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                      <tr>
+                        <td>2024-07-11</td>
+                        <td>AMZN</td>
+                        <td>BEZOS JEFFREY P</td>
+                        <td>Director</td>
+                        <td>S - Sale</td>
+                        <td>$100</td>
+                        <td>8,015</td>
+                        <td>928,700,269</td>
+                        <td class="positive-change">+1.99%</td>
+                        <td>$399,442,123</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                
+            </div>
+            <div class="pagination">
+                <a href="#"><i class="ri-arrow-left-s-fill"></i></a>
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#"><i class="ri-arrow-right-s-fill"></i></a>
+            </div>
+           </div>
+          
+
+             <!-- Key Metrics Summary -->
+              <div id="component-key-matrics">
+                <div class="component-box2" id="key-matrics">
+                    <div class="blur1"></div>
+                <div class="blur2"></div>
+                <h1 class="component-heading">Key Metrics Summary</h1>
+                <div id="key-matrics-box">
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>Market Cap</span></h4>
+                        <h5>1.8 trillion</h5>
+                    </div>
+
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>P/E Ratio</span></h4>
+                        <h5>40.07</h5>
+                    </div>
+
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>52 Week Range</span></h4>
+                        <h5>118.35 201.20</h5>
+                    </div>
+
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>Forward P/E</span></h4>
+                        <h5>31.09</h5>
+                    </div>
+
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>EPS (TTM)</span></h4>
+                        <h5>4.19</h5>
+                    </div>
+
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>Shares Outstanding</span></h4>
+                        <h5>10.4 billion</h5>
+                    </div>
+
+                    
+                </div>
+                </div>
+              </div>
+
+              <!-- Stock Chart  -->
+              <div id="component-stock-chart">
+                <div class="component-box" >
+                    <div class="blur1"></div>
+                    <div class="blur2"></div>
+                    <h1 class="component-heading">Stock Chart</h1>
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                
+                </div>
+              </div>
+
+
+              <!-- Key Statistics -->
+              <div id="component-key-stats">
+                <div class="component-box2" id="key-stats">
+                    <div class="blur1"></div>
+                <div class="blur2"></div>
+                <h1 class="component-heading">Key Statistics</h1>
+                <div id="key-matrics-box">
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>Latest Price</span></h4>
+                        <h5>167.90</h5>
+                    </div>
+
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>Price Change</span></h4>
+                        <h5 class="key-profit">38.99 (30.25%)</h5>
+                    </div>
+
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>52 Period High Range</span></h4>
+                        <h5>118.35 201.20</h5>
+                    </div>
+
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>Period Low</span></h4>
+                        <h5>119.57</h5>
+                    </div>
+
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>Average Price</span></h4>
+                        <h5>161.48</h5>
+                    </div>
+
+                    <div class="key-metric">
+                        <h4><span><i class="ri-star-s-fill"></i></span> <span>Total Trading Days</span></h4>
+                        <h5>252</h5>
+                    </div>
+
+                  
+
+                    
+                </div>
+                </div>
+              </div>
+
+              <!-- Volume Analysis -->
+              <div id="component-volume-analysis">
+                <div class="component-box3" id="Volume-analysis">
+                    <h1 class="component-heading">Volume Analysis</h1>
+
+                    <div id="volume-box">
+                        <div class="volume">
+                            <div class="volume1"></div>
+                            <div class="volume2">
+                                <p>Average Volume</p>
+                                <h1>46,912,535</h1>
+                            </div>
+                        </div>
+
+                        <div class="volume">
+                            <div class="volume1"></div>
+                            <div class="volume2">
+                                <p>Latest Volume</p>
+                                <h1>141,276,100
+                                </h1>
+                            </div>
+                        </div>
+
+                        <div class="volume">
+                            <div class="volume1"></div>
+                            <div class="volume2">
+                                <p>Volume Trend</p>
+                                <h1 class="key-profit">Above Average</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          
+
+
+        <!-- end--------------------------------------------------------------- -->
+     </div> 
+
+    <!-- footer------------------------------------------------ -->
+    <footer class="footer footer-dark">
+        <div class="footer-content">
+          <div class="footer-left">
+            <img
+              id="footer-logo"
+              src="./images/logo.png"
+              alt="Logo"
+            />
+            <p class="footer-left-para">
+              Insider Trading Track Ltd.<br />Providing reliable trading insights
+              since 2024
+            </p>
+          </div>
+          <div class="footer-right">
+            <ul class="footer-nav">
+              <li><a href="#">HOME</a></li>
+              <li><a href="#">ABOUT</a></li>
+              <li><a href="#">CONTACT</a></li>
+            </ul>
+            <div class="footer-social">
+              <a href="#"><i id="icon" class="ri-facebook-fill"></i></i></a>
+              <a href="#"><i id="icon" class="ri-instagram-line"></i></a>
+              <a href="#"><i id="icon" class="ri-twitter-fill"></i></a>
+              <a href="#"><i id="icon" class="ri-linkedin-box-fill"></i></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="footer-hr"></div>
+        <div class="footer-bottom">
+          <p>&copy;2022, All rights reserved.</p>
+          <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </footer>      
+    <!-- -------------------------------------------------------  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/ScrollTrigger.min.js"></script>
+    <script src="mainPage.js"></script>
+  </body>
+</html>
