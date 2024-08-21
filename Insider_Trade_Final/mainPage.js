@@ -214,8 +214,8 @@ const ctx = document.getElementById("myChart").getContext("2d");
 
 // Create gradient fill
 const gradient = ctx.createLinearGradient(0, 0, 0, 400);
-gradient.addColorStop(0, "rgba(34, 139, 34, 0.5)"); // Forest green with transparency
-gradient.addColorStop(1, "rgba(34, 139, 34, 0)"); // Forest green with more transparency
+gradient.addColorStop(0, "rgba(11, 121, 148, 0.5)"); // Blue with transparency
+gradient.addColorStop(1, "rgba(11, 121, 148, 0)"); // Blue with more transparency
 
 // Data for each point, including signals
 const chartData = [
@@ -250,7 +250,7 @@ const data = {
       label: "MSFT Stock Price",
       data: chartData.map((point) => point.price),
       backgroundColor: gradient,
-      borderColor: "rgba(34, 139, 34, 1)", // Forest green color for the line
+      borderColor: "rgba(11, 121, 148, 1)", // Blue color for the line
       borderWidth: 2,
       fill: true,
       tension: 0.4, // this makes the line curved
@@ -258,7 +258,7 @@ const data = {
       pointHoverRadius: 8,
       pointStyle: chartData.map((point) => (point.signal ? "" : "circle")),
       pointBackgroundColor: chartData.map((point) => {
-        return point.signal ? "transparent" : "rgba(34, 139, 34, 1)";
+        return point.signal ? "transparent" : "rgba(11, 121, 148, 1)";
       }),
     },
   ],
@@ -305,13 +305,13 @@ const options = {
   },
 };
 
-// Custom plugin to draw shadows with green color
+// Custom plugin to draw shadows with blue color
 const shadowPlugin = {
   id: "shadowPlugin",
   beforeDatasetsDraw: (chart, args, options) => {
     const ctx = chart.ctx;
     ctx.save();
-    ctx.shadowColor = "rgba(34, 139, 34, 0.5)"; // Forest green shadow
+    ctx.shadowColor = "rgba(11, 121, 148, 0.5)"; // Blue shadow
     ctx.shadowBlur = 10;
     ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 5;
@@ -352,10 +352,10 @@ const signalPlugin = {
         ctx.font = "24px Arial";
         ctx.textAlign = "center";
         if (signal === "up") {
-          ctx.fillStyle = "rgba(50, 205, 50, 1)"; // Lighter green color
+          ctx.fillStyle = "rgba(11, 121, 148, 1)"; // Blue color for up arrow
           ctx.fillText("▲", point.x, point.y); // Up arrow
         } else if (signal === "down") {
-          ctx.fillStyle = "rgba(255, 99, 71, 1)"; // Lighter red color
+          ctx.fillStyle = "rgba(255, 99, 71, 1)"; // Red color for down arrow
           ctx.fillText("▼", point.x, point.y + 6); // Down arrow
         }
         ctx.restore();
