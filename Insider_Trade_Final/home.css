@@ -11,19 +11,20 @@ htm {
 }
 
 :root {
-  --primary: #011001;
-  --secondary: #137213;
-  --light-green-1: rgba(19, 114, 19, 0.5);
-  --light-green-2: rgba(19, 114, 19, 0.09);
+  --primary: #000203;
+  --secondary: #0B7994;
+  --light-green-1: #0b799474;
+  --light-green-2: #0b799421;
   --white: #f6f6f6;
   --white-80: rgba(246, 246, 246, 0.8);
   --white-70: rgba(246, 246, 246, 0.5);
   --white-50: rgba(246, 246, 246, 0.3);
   --white-40: rgba(246, 246, 246, 0.4);
   --white-08: rgba(246, 246, 246, 0.08);
-  --golden: goldenrod;
+  --golden: #ffffff;
+  --border-color: #0b799441;
 }
-
+/* 
 body.dark-mode {
   --primary: #ffffff;
   --secondary: #137213;
@@ -37,14 +38,14 @@ body.dark-mode {
   --white-08: rgba(22, 22, 22, 0.08);
   --golden: goldenrod;
   --slate: #f6f6f6;
-}
+} */
 
 html,
 body {
   width: 100%;
   min-height: 100vh;
   font-family: "Lato", sans-serif;
-  background-color: #011001;
+  background-color: #000203;
   color: var(--secondary);
   transition: background-color 0.3s, color 0.3s;
   /* overflow-x: hidden; */
@@ -160,7 +161,7 @@ body.scrolled .navbar {
 /* Login Button Styling */
 #loginBtn {
   text-decoration: none;
-  background-color: goldenrod;
+  background-color: #0B7994;
   padding: 7.5px 18px;
   color: white;
   text-transform: uppercase;
@@ -173,7 +174,7 @@ body.scrolled .navbar {
 
 #loginBtn:hover {
   cursor: pointer;
-  background-color: rgb(178, 131, 14);
+  background-color: #034f62;
 }
 
 .hamburger {
@@ -341,8 +342,8 @@ body.scrolled .navbar {
   justify-content: center;
   gap: 13px;
   padding: 8px 20px;
-  border: 1px solid var(--golden);
-  color: var(--golden);
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
   text-transform: uppercase;
   text-decoration: none;
   font-size: 0.9rem;
@@ -368,7 +369,7 @@ body.scrolled .navbar {
   border-radius: 5px;
   transform: translateX(-120%);
   z-index: -1;
-  background-color: var(--golden);
+  background-color: var(--secondary);
   transition: transform 0.3s ease;
 }
 
@@ -377,7 +378,8 @@ body.scrolled .navbar {
 }
 
 .hero-button:hover {
-  color: black;
+  color: white;
+  border: 1px solid var(--secondary);
   font-weight: 500;
   background-color: #ffbf0000;
 }
@@ -429,7 +431,7 @@ body.scrolled .navbar {
   /* background-color: var(--light-green-2); */
   background-color: transparent;
   border-radius: 10px;
-  border: 1px solid rgba(5, 82, 5, 0.412);
+  border: 1px solid var(--border-color);
   position: relative;
   z-index: 100;
 }
@@ -469,7 +471,7 @@ body.scrolled .navbar {
 
 .search-container a input {
   width: 100%;
-  background-color: var(--white-08);
+  background-color: #0b799425;
   border: none;
   outline: none;
   color: var(--primary);
@@ -537,7 +539,7 @@ body.scrolled .navbar {
   align-items: center;
   gap: 5px;
   background-color: var(--light-green-2);
-  border: 1px solid rgba(5, 82, 5, 0.412);
+  border: 1px solid var(--border-color);
   border-bottom-left-radius: 60px;
   border-top-left-radius: 60px;
   border-top-right-radius: 10px;
@@ -707,7 +709,7 @@ body.scrolled .navbar {
 
 .fdiv {
   background-color: var(--light-green-2);
-  border: 1px solid rgba(5, 82, 5, 0.412);
+  border: 1px solid var(--border-color);
   border-radius: 30px;
   padding: 4rem 0rem;
   height: 85%;
@@ -892,7 +894,7 @@ body.scrolled .navbar {
   width: 97%;
   height: 300px;
   background-color: var(--light-green-2);
-  border: 1px solid rgba(5, 82, 5, 0.412);
+  border: 1px solid var(--border-color);
   position: relative;
 }
 
@@ -1048,7 +1050,7 @@ body.scrolled .navbar {
   padding: 1.5rem 2rem;
   margin-top: 1rem;
   background-color: var(--light-green-2);
-  border: 1px solid rgba(5, 82, 5, 0.412);
+  border: 1px solid var(--border-color);
   border-radius: 10px;
 }
 
@@ -1218,7 +1220,7 @@ body.scrolled .navbar {
   border-radius: 10px;
   padding: 30px;
   background: var(--light-green-2);
-  border: 1px solid rgba(5, 82, 5, 0.412);
+  border: 1px solid var(--border-color);
   position: relative;
   z-index: 100;
 }
@@ -1297,8 +1299,8 @@ body.scrolled .navbar {
   align-items: center;
   justify-content: center;
   gap: 13px;
-  border: 1px solid var(--golden);
-  color: var(--golden);
+  border: 1px solid var(--secondary);
+  color: var(--secondary);
   text-transform: uppercase;
   text-decoration: none;
   font-size: 0.9rem;
@@ -1319,7 +1321,7 @@ body.scrolled .navbar {
   border-radius: 5px;
   transform: translateX(-120%);
   z-index: -1;
-  background-color: var(--golden);
+  background-color: var(--secondary);
   transition: transform 0.3s ease;
 }
 
@@ -1328,7 +1330,8 @@ body.scrolled .navbar {
 }
 
 .contactContainer button:hover {
-  color: black;
+  color: white;
+  border: 1px solid var(--border-color);
   font-weight: 520;
 }
 
@@ -1430,7 +1433,7 @@ body.scrolled .navbar {
 }
 
 .footer-dark {
-  background-color: #062d06; /* Dark mode footer color */
+  background-color: #001d24; /* Dark mode footer color */
 }
 
 .footer-content {
