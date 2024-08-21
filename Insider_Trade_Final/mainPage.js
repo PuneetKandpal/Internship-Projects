@@ -269,13 +269,13 @@ const options = {
     x: {
       beginAtZero: false,
       ticks: {
-        color: "goldenrod",
+        color: "#ffffff",
       },
     },
     y: {
       beginAtZero: false,
       ticks: {
-        color: "goldenrod",
+        color: "#ffffff",
       },
     },
   },

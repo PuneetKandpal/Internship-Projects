@@ -12,6 +12,21 @@
 }
 
 :root {
+  --primary: #000203;
+  --secondary: #0B7994;
+  --light-green-1: #0b799474;
+  --light-green-2: #0b799421;
+  --white: #f6f6f6;
+  --white-80: rgba(246, 246, 246, 0.8);
+  --white-70: rgba(246, 246, 246, 0.5);
+  --white-50: rgba(246, 246, 246, 0.3);
+  --white-40: rgba(246, 246, 246, 0.4);
+  --white-08: rgba(246, 246, 246, 0.08);
+  --golden: #ffffff;
+  --border-color: #0b799441;
+}
+
+/* :root {
   --primary: #011001;
   --secondary: #137213;
   --light-green-1: rgba(19, 114, 19, 0.5);
@@ -23,9 +38,9 @@
   --white-40: rgba(246, 246, 246, 0.4);
   --white-08: rgba(246, 246, 246, 0.08);
   --golden: #c2a404;
-}
+} */
 
-body.dark-mode {
+/* body.dark-mode {
   --primary: #ffffff;
   --secondary: #137213;
   --light-green-1: rgba(19, 114, 19, 0.5);
@@ -38,7 +53,7 @@ body.dark-mode {
   --white-08: rgba(22, 22, 22, 0.08);
   --golden: #c2a404;
   --slate: #f6f6f6;
-}
+} */
 
 html,
 body {
@@ -57,7 +72,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.2rem 2%;
-  background-color: rgba(0, 0, 0, 0.5); /* Default background as a fallback */
+  background-color: #00171c; /* Default background as a fallback */
   transition: background-color 0.3s, backdrop-filter 0.3s ease;
   position: sticky;
   top: 0;
@@ -68,7 +83,7 @@ body {
 /* Check for support of backdrop-filter */
 @supports ((-webkit-backdrop-filter: blur(20px)) or (backdrop-filter: blur(20px))) {
   .navbar {
-    background-color: #031903; /* Slightly more transparent for the blur effect */
+    background-color: #001318; /* Slightly more transparent for the blur effect */
     backdrop-filter: blur(20px); /* Apply blur if supported */
     -webkit-backdrop-filter: blur(20px); /* Safari support */
   }
@@ -284,6 +299,12 @@ body.scrolled .navbar {
   font-size: 15px;
 }
 
+#NYSE{
+  color: white;
+}
+
+
+
 .selected {
   background-color: var(--secondary) !important;
   color: var(--slate) !important;
@@ -489,7 +510,7 @@ body.scrolled .navbar {
 }
 
 .footer-dark {
-  background-color: #062d06; /* Dark mode footer color */
+  background-color: #00171c; /* Dark mode footer color */
 }
 
 .footer-content {

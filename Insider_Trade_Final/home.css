@@ -78,7 +78,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0.2rem 2%;
-  background-color: rgba(0, 0, 0, 0.5); /* Default background as a fallback */
+  background-color: #001318; /* Default background as a fallback */
   transition: background-color 0.3s, backdrop-filter 0.3s ease;
   position: sticky;
   top: 0;
@@ -1495,7 +1495,7 @@ body.scrolled .navbar {
 }
 
 .footer-dark {
-  background-color: #001d24; /* Dark mode footer color */
+  background-color: #00171c; /* Dark mode footer color */
 }
 
 .footer-content {
