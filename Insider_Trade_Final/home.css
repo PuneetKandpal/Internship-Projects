@@ -12,7 +12,7 @@ htm {
 
 :root {
   --primary: #000203;
-  --secondary: #0B7994;
+  --secondary: #0b7994;
   --light-green-1: #0b799474;
   --light-green-2: #0b799421;
   --white: #f6f6f6;
@@ -161,7 +161,7 @@ body.scrolled .navbar {
 /* Login Button Styling */
 #loginBtn {
   text-decoration: none;
-  background-color: #0B7994;
+  background-color: #0b7994;
   padding: 7.5px 18px;
   color: white;
   text-transform: uppercase;
@@ -510,6 +510,68 @@ body.scrolled .navbar {
 
   .search-container a input {
     padding: 7px;
+  }
+}
+
+/* Latest Insider Transactions Section Styles */
+#latestTransactions {
+  padding: 2rem 2.5rem;
+  margin-top: 2rem;
+}
+
+#latestTransactions .component-heading {
+  margin-bottom: 1.5rem;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.transaction-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.transaction-table th,
+.transaction-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--secondary);
+}
+
+.transaction-table th {
+  background-color: var(--light-green-1);
+  font-weight: bold;
+  color: var(--white-80);
+}
+
+.transaction-table tr:nth-child(even) {
+  background-color: var(--light-green-2);
+}
+
+.transaction-table tr:hover {
+  background-color: var(--light-green-3);
+}
+
+@media (max-width: 768px) {
+  #latestTransactions {
+    padding: 1.5rem;
+  }
+
+  .transaction-table {
+    font-size: 0.8rem;
+  }
+
+  .transaction-table th,
+  .transaction-table td {
+    padding: 0.5rem;
+  }
+}
+
+@media (max-width: 500px) {
+  #latestTransactions {
+    padding: 1rem 0.8rem;
   }
 }
 
