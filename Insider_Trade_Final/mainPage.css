@@ -1029,7 +1029,7 @@ body.scrolled .navbar {
 
 /* <!-- Key Metrics Summary -->  */
 .component-box2 {
-  border: 1px solid #0655064d;
+  border: 1px solid var(--border-color);
   padding: 2rem 2.5rem;
   border-radius: 5px;
   position: relative;
