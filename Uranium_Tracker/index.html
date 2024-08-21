@@ -1,27 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <title>Uranium Tracker</title>
-</head>
-<body>
-    <h1>started</h1>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: "#002201",
+              primary: "#50bc48",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Navbar ================================================================================  -->
+    <nav class="bg-bg px-[2rem] py-5 flex justify-between items-center">
+      <div class="logo">
+        <a href="/" class="no-underline"
+          ><h1 class="text-primary font-bold text-2xl">
+            Uranium<span class="text-white">Tracker</span>
+          </h1></a
+        >
+      </div>
 
+      <div class="nav-links">
+        <ul class="flex items-center mt-2 space-x-9">
+          <a
+            class="active no-underline transition-all duration-200"
+            href="#home"
+            >Home</a
+          >
+          <a
+            class="no-underline text-white/70 hover:text-white transition-all duration-200"
+            href="#community"
+            >Community</a
+          >
+          <a
+            class="no-underline text-white/70 hover:text-white transition-all duration-200"
+            href="#library"
+            >Library</a
+          >
+          <a
+            class="no-underline text-white/70 hover:text-white transition-all duration-200"
+            href="#contact"
+            >Contact Us</a
+          >
+        </ul>
+      </div>
 
-
-
-
-
-
-
-
-
-
-
+      <div class="subscribe-btn mt-1">
+        <button
+          class="bg-primary px-4 py-1 text-white text-[15px] rounded-sm hover:bg-green-600 transition-all duration-200"
+        >
+          Subscribe
+        </button>
+      </div>
+    </nav>
 
     <!-- js file----------------------------------------  -->
-     <script src="index.js"></script>
-</body>
+    <script src="index.js"></script>
+  </body>
 </html>

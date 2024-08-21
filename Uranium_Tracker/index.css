@@ -8,11 +8,29 @@
   box-sizing: border-box;
 }
 
+:root {
+  --bg: #002201;
+  --primary: #50bc48;
+  --white: white;
+  --white-08: rgba(255, 255, 255, 0.8);
+  --white-06: rgba(255, 255, 255, 0.6);
+  --white-05: rgba(255, 255, 255, 0.5);
+  --white-04: rgba(255, 255, 255, 0.4);
+  --white-03: rgba(255, 255, 255, 0.3);
+}
+
 body,
 html {
   width: 100%;
   height: 100%;
   font-family: "Open Sans", sans-serif;
-  background-color: #001a01;
-  color: #3b8136;
+  background-color: var(--bg);
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* nav-------------------  */
+.active {
+  color: var(--primary);
+  padding-bottom: 2px;
+  border-bottom: 1.5px solid var(--primary);
 }
