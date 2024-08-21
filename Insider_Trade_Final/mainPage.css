@@ -6,11 +6,6 @@
   box-sizing: border-box;
 }
 
-::selection {
-  background-color: #0c560c;
-  color: #f6f6f6;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -228,6 +223,7 @@ body.scrolled .navbar {
   width: 100%;
   display: flex;
   justify-content: start;
+  flex-wrap: wrap;
   /* align-items: center; */
   gap: 2rem;
 }
@@ -352,6 +348,15 @@ body.scrolled .navbar {
 
   .company-name p {
     font-size: 0.9rem;
+  }
+
+  .company-website {
+    font-size: 12px;
+    padding: 0;
+  }
+
+  .company-website {
+    margin-left: 0rem;
   }
 }
 

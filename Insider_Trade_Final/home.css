@@ -763,7 +763,7 @@ body.scrolled .navbar {
 
 .featureImg {
   width: 45%;
-  height: 90%;
+  height: 89%;
   overflow-x: hidden;
   display: flex;
   align-items: center;
@@ -776,7 +776,7 @@ body.scrolled .navbar {
   padding: 4rem 0rem;
   height: 85%;
   width: 100%;
-  transform: translateX(-18%);
+  transform: translateX(-20%);
   position: relative;
 }
 
@@ -804,6 +804,7 @@ body.scrolled .navbar {
 }
 
 .fdiv img {
+  margin-top: 6px;
   height: 100%;
   width: 100%;
   scale: 1.15;
@@ -1139,7 +1140,7 @@ body.scrolled .navbar {
   height: 30px;
 }
 
-.title i{
+.title i {
   /* padding: 1px; */
   display: flex;
   justify-content: center;
