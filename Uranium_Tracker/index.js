@@ -25,3 +25,13 @@ navToggle.addEventListener("click", () => {
     });
   }
 });
+
+const marquee = document.getElementById("stock-marquee");
+
+marquee.addEventListener("mouseover", () => {
+  marquee.stop();
+});
+
+marquee.addEventListener("mouseout", () => {
+  marquee.start();
+});
