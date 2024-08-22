@@ -28,6 +28,13 @@ html {
   color: rgba(255, 255, 255, 0.3);
 }
 
+.roboto{
+  font-family: 'Roboto';
+}
+.oxanium{
+  font-family: 'Oxanium';
+}
+
 /* nav-------------------  */
 .active {
   color: var(--primary);
