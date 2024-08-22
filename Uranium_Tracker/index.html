@@ -25,10 +25,12 @@
   </head>
   <body>
     <!-- Navbar ================================================================================  -->
-    <nav class="bg-bg px-[10rem] py-7 flex justify-between items-center">
+    <nav
+      class="bg-bg px-3 lg:px-[10rem] py-7 flex justify-between items-center"
+    >
       <div class="logo">
         <a href="/" class="no-underline">
-          <h1 class="text-primary font-bold text-2xl">
+          <h1 class="text-primary font-bold text-[1.3rem] lg:text-2xl">
             Uranium<span class="text-white">Tracker</span>
           </h1>
         </a>
@@ -56,13 +58,15 @@
 
       <!-- Navigation Links -->
       <div
-        class="nav-links hidden md:flex items-center mt-2 space-x-7"
+        class="nav-links text-sm lg:text-[16px] hidden md:flex items-center mt-2 space-x-4 lg:space-x-7"
         id="nav-links"
       >
-      <a class="active no-underline transition-all duration-200" href="#home"
+        <a class="active no-underline transition-all duration-200" href="#home"
           >Home</a
         >
-        <a class="no-underline text-white/70 hover:text-white transition-all duration-200" href="#screener"
+        <a
+          class="no-underline text-white/70 hover:text-white transition-all duration-200"
+          href="#screener"
           >Screener Database</a
         >
         <a
@@ -84,7 +88,7 @@
 
       <div class="subscribe-btn mt-1 hidden md:block">
         <button
-          class="bg-primary px-4 py-1 text-white text-[15px] rounded-sm hover:bg-green-600 transition-all duration-200"
+          class="bg-primary px-4 py-1 text-white text-[14px] lg:text-[15px] rounded-sm hover:bg-green-600 transition-all duration-200"
         >
           Subscribe
         </button>
@@ -93,11 +97,10 @@
     <!-- Styled Mobile Menu -->
     <div class="md:hidden">
       <div
-        class="nav-links flex-col items-center space-y-4 mt-4 hidden bg-bg px-6 py-4 rounded-lg shadow-lg transition-transform transform origin-top scale-y-0"
+        class="nav-links flex-col items-center space-y-4 mt-4 hidden bg-bg px-6 py-4 shadow-lg transition-transform transform origin-top scale-y-0"
         id="mobile-menu"
       >
-
-      <a
+        <a
           class="no-underline text-white hover:text-primary transition-all duration-200"
           href="#home"
           >Home</a
@@ -140,163 +143,464 @@
     <!-- Navber End ============================================================================ -->
 
     <!-- marquee ===========================  -->
-     <div class="mt-1 bg-primary w-full h-[35px]">
-
-     </div>
+    <div class="mt-1 bg-primary w-full h-[35px]"></div>
 
     <!-- main ============================================================  -->
-     <div class="main px-[10rem]">
 
-      <!-- hero====================  -->
-      <div class="flex justify-between mt-12 mb-28">
-        <!-- left -------------  -->
-        <div class="w-[58%] min-h-[100vh] ">
-          <!-- left card-1 -->
-           <div class="">
-              <img class="w-full h-[410px] object-cover" src="https://images.prismic.io/trackinsight/ZhTxVRrFxhpPBYwA_Uranium-THOBS-09.04.2024.png?auto=compress%2Cformat&q=85&w=3840&max-w=3840&max-h=2133&fit=crop&crop=edges" alt="">
-              <h1 class="text-[1.6rem] mt-3 tracking-[-0.4px] leading-[1.8rem] font-semibold text-white/90">Uranium Electrons Revolving Around Atom Stock Footage Complete Video</h1>
+    <!-- hero====================  -->
+    <div
+      class="px-4 md:px-[5rem] lg:px-[10rem] flex flex-col lg:flex-row justify-between mt-12 mb-12 md:mb-28"
+    >
+      <!-- left section  -->
+      <div class="w-full lg:w-[58%]">
+        <!-- left card-1 -->
+        <div>
+          <img
+            class="w-full h-[300px] md:h-[410px] object-cover"
+            src="https://images.prismic.io/trackinsight/ZhTxVRrFxhpPBYwA_Uranium-THOBS-09.04.2024.png?auto=compress%2Cformat&q=85&w=3840&max-w=3840&max-h=2133&fit=crop&crop=edges"
+            alt=""
+          />
+          <h1
+            class="text-[1.25rem] md:text-[1.6rem] mt-3 tracking-[-0.4px] leading-[1.5rem] md:leading-[1.8rem] font-semibold text-white/90"
+          >
+            Uranium Electrons Revolving Around Atom Stock Footage Complete Video
+          </h1>
 
-              <p class="text-[12px] roboto mt-3 font-normal text-white/35"><span><i class="ri-time-line mr-1"></i> 2 hrs ago</span> &nbsp; | &nbsp; <span>Bloomberg</span></p>
+          <p
+            class="text-[11px] md:text-[12px] roboto mt-3 font-normal text-white/35"
+          >
+            <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span> &nbsp; |
+            &nbsp; <span>Bloomberg</span>
+          </p>
 
-              <p class="text-[14.5px] text-white/60 mt-3 leading-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. A corrupti reiciendis similique ullam. Ullam obcaecati illo impedit, cupiditate ex in provident eveniet quibusdam est, reiciend.</p>
-           </div>
+          <p
+            class="text-[13px] md:text-[14.5px] text-white/60 mt-3 leading-4 md:leading-5"
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. A corrupti
+            reiciendis similique ullam. Ullam obcaecati illo impedit, cupiditate
+            ex in provident eveniet quibusdam est, reiciend.
+          </p>
+        </div>
 
-          <!-- left card-2  -->
-           <div class="mt-24">
-            <div class="relative w-full h-[280px]">
-              <img class="w-full h-full object-cover" src="https://i.insider.com/65116fcfe2c0220019ef40a6?width=700" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent">
-                <div class="absolute bottom-5 left-4 text-white">
-                  <h1 class="text-[1.55rem] mt-3 tracking-[-0.4px] leading-[1.8rem] font-semibold text-white/90">Stay ahead with real-time uranium news, prices and analysis</h1>
-                </div>
+        <!-- left card-2 -->
+        <div class="mt-16 md:mt-24">
+          <div class="relative w-full h-[200px] md:h-[280px]">
+            <img
+              class="w-full h-full object-cover"
+              src="https://i.insider.com/65116fcfe2c0220019ef40a6?width=700"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+            >
+              <div class="absolute bottom-5 left-4 text-white">
+                <h1
+                  class="text-[1.25rem] md:text-[1.55rem] mt-3 tracking-[-0.4px] leading-[1.5rem] md:leading-[1.8rem] font-semibold text-white/90"
+                >
+                  Stay ahead with real-time uranium news, prices and analysis
+                </h1>
               </div>
             </div>
+          </div>
 
-            <div class="flex space-x-3 mt-3">
-              <div class="bg-white/5 p-3 px-5">
-                <h1 class="text-white/90 font-semibold text-[16px]">Curent Uranium Spot Price</h1>
-                <h2 class="text-[16px] text-primary font-bold mt-1 oxanium">$50.25 per pound</h2>
-              </div>
-
-              <div class="bg-white/5 p-3 px-5">
-                <h1 class="text-white/90 font-semibold text-[16px]">1-month Price Change</h1>
-                <h2 class="text-[16px] text-primary font-bold mt-1 oxanium">+3.2%</h2>
-              </div>
+          <div class="flex flex-wrap space-x-3">
+            <div class="bg-white/5 w-fit p-3 px-6 mt-3">
+              <h1
+                class="text-white/90 font-semibold text-[15px] md:text-[16px]"
+              >
+                Current Uranium Spot Price
+              </h1>
+              <h2
+                class="text-[15px] md:text-[16px] text-primary font-bold mt-1 oxanium"
+              >
+                $50.25 per pound
+              </h2>
             </div>
-            
-           </div>
-        </div>
-        
-        <!-- right ---------------------  -->
-        <div class="w-[35%] min-h-[100vh] ">
-          <!-- <h1 class="border-l-2 border-primary pl-2 text-primary text-[1.3rem] ">Latest Uranium News</h1> -->
-           <img class="w-full h-[220px] object-cover mb-8" src="https://www.renovablesverdes.com/wp-content/uploads/2021/05/contaminacion-nuclear.jpg" alt="">
 
-           <div class="border-b-2 border-white/15 pb-5">
-            <h2 class="mt-5 text-[17px] font-semibold leading-6 text-white/70">Roubini accuses Treasury of manipulationg bond market to lower rates</h2>
-            <p class="text-[12px] roboto mt-2 font-normal text-white/35"><span><i class="ri-time-line mr-1"></i> 32 mins ago</span> &nbsp; | &nbsp; <span>The Street</span></p>
-           </div>
-
-           <div class="border-b-2 border-white/15 pb-5">
-            <h2 class="mt-5 text-[17px] font-semibold leading-6 text-white/70">Oil steadies near seven-week low with demand concerns mounting</h2>
-            <p class="text-[12px] roboto mt-2 font-normal text-white/35"><span><i class="ri-time-line mr-1"></i> 42 mins ago</span> &nbsp; | &nbsp; <span>Bloomberg</span></p>
-           </div>
-
-           <div class="border-b-2 border-white/15 pb-5">
-            <h2 class="mt-5 text-[17px] font-semibold leading-6 text-white/70">Appeals court blocks US airlines fee disclosure rule declared to citizens</h2>
-            <p class="text-[12px] roboto mt-2 font-normal text-white/35"><span><i class="ri-time-line mr-1"></i> 1 hr ago</span> &nbsp; | &nbsp; <span>Bloomberg</span></p>
-           </div>
-
-           <div class="border-b-2 border-white/15 pb-5">
-            <h2 class="mt-5 text-[17px] font-semibold leading-6 text-white/70">Roubini accuses Treasury of manipulationg bond market to lower rates</h2>
-            <p class="text-[12px] roboto mt-2 font-normal text-white/35"><span><i class="ri-time-line mr-1"></i> 2 hrs ago</span> &nbsp; | &nbsp; <span>The Streets</span></p>
-           </div>
-
-           <div class="border-b-2 border-white/15 pb-5">
-            <h2 class="mt-5 text-[17px] font-semibold leading-6 text-white/70">Oil steadies near seven-week low with demand concerns mounting</h2>
-            <p class="text-[12px] roboto mt-2 font-normal text-white/35"><span><i class="ri-time-line mr-1"></i> 2 hrs ago</span> &nbsp; | &nbsp; <span>Bloomberg</span></p>
-           </div>
-
-           <div class="border-b-2 border-white/15 pb-5">
-            <h2 class="mt-5 text-[17px] font-semibold leading-6 text-white/70">Roubini accuses Treasury of manipulationg bond market to lower rates</h2>
-            <p class="text-[12px] roboto mt-2 font-normal text-white/35"><span><i class="ri-time-line mr-1"></i> 32 mins ago</span> &nbsp; | &nbsp; <span>The Street</span></p>
-           </div>
-
-           <div class="border-b-2 border-white/15 pb-5">
-            <h2 class="mt-5 text-[17px] font-semibold leading-6 text-white/70">Oil steadies near seven-week low with demand concerns mounting</h2>
-            <p class="text-[12px] roboto mt-2 font-normal text-white/35"><span><i class="ri-time-line mr-1"></i> 42 mins ago</span> &nbsp; | &nbsp; <span>Bloomberg</span></p>
-           </div>
-
-        
-        </div>
-      </div>
-     </div>
-          <!-- Latest Uranium Blogs Section -->
-  <div class="py-10 px-[7rem] mx-auto mt-16">
-    <!-- Latest Uranium Blogs Section -->
-    <div class="bg-black/80 p-10 shadow-lg">
-      <div class="flex justify-between items-center mb-10">
-        <h2 class="text-2xl font-bold text-primary">| Latest Uranium Blogs</h2>
-        <a href="#" class="text-white/40 hover:underline text-sm flex items-center">
-          VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
-        </a>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <!-- Blog Post 1 -->
-        <div class="bg-black rounded-lg overflow-hidden relative w-full h-64">
-          <img src="https://img.freepik.com/free-photo/3d-view-sun-space_23-2150953783.jpg?t=st=1724317773~exp=1724321373~hmac=9e0ce33345dfbe21f55fbca0b7fcc63185c15b826739dae413999f9b1d307945&w=1060" alt="NASA Data" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-          <div class="absolute bottom-4 left-4 z-10 text-white">
-            <span class="text-white/80 text-xs flex items-center mb-4">
-              <i class="ri-time-line mr-1"></i> 2 min read
-            </span>
-            <h3 class="font-semibold text-sm mt-1">NASA Data Shows July 22 Was Earth's Hottest Day on Record</h3>
+            <div class="bg-white/5 w-fit p-3 px-6 mt-3">
+              <h1
+                class="text-white/90 font-semibold text-[15px] md:text-[16px]"
+              >
+                1-month Price Change
+              </h1>
+              <h2
+                class="text-[15px] md:text-[16px] text-primary font-bold mt-1 oxanium"
+              >
+                +3.2%
+              </h2>
+            </div>
           </div>
         </div>
+      </div>
 
-        <!-- Blog Post 2 -->
-        <div class="bg-black rounded-lg overflow-hidden relative w-full h-64">
-          <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758" alt="NASA Virtual Activities" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-          <div class="absolute bottom-4 left-4 z-10 text-white">
-            <span class="text-white/80 text-xs flex items-center mb-4">
-              <i class="ri-time-line mr-1"></i> 1 min read
-            </span>
-            <h3 class="font-semibold text-sm mt-1">NASA Offers Virtual Activities for 21st Northrop Grumman Resupply Mission</h3>
-          </div>
+      <!-- right section -->
+      <div class="w-full lg:w-[35%] mt-24 lg:mt-0">
+        <img
+          class="w-full h-[180px] md:h-[220px] object-cover mb-8"
+          src="https://www.renovablesverdes.com/wp-content/uploads/2021/05/contaminacion-nuclear.jpg"
+          alt=""
+        />
+
+        <div class="border-b-2 border-white/15 pb-5">
+          <h2
+            class="mt-5 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
+          >
+            Roubini accuses Treasury of manipulating bond market to lower rates
+          </h2>
+          <p
+            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
+          >
+            <span><i class="ri-time-line mr-1"></i> 32 mins ago</span> &nbsp; |
+            &nbsp; <span>The Street</span>
+          </p>
         </div>
 
-        <!-- Blog Post 3 -->
-        <div class="bg-black rounded-lg overflow-hidden relative w-full h-64">
-          <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa" alt="Space Station Research" class="w-full h-full object-cover">
-          <div class="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent"></div>
-          <div class="absolute bottom-4 left-4 z-10 text-white">
-            <span class="text-white/80 text-xs flex items-center mb-4">
-              <i class="ri-time-line mr-1"></i> 4 min read
-            </span>
-            <h3 class="font-semibold text-sm mt-1">NASA To Highlight 13th Space Station Research, Development Conference</h3>
+        <!-- Repeat this block for other news items -->
+        <div class="border-b-2 border-white/15 pb-5">
+          <h2
+            class="mt-5 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
+          >
+            Oil steadies near seven-week low with demand concerns mounting
+          </h2>
+          <p
+            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
+          >
+            <span><i class="ri-time-line mr-1"></i> 42 mins ago</span> &nbsp; |
+            &nbsp; <span>Bloomberg</span>
+          </p>
+        </div>
+
+        <div class="border-b-2 border-white/15 pb-5">
+          <h2
+            class="mt-5 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
+          >
+            Roubini accuses Treasury of manipulating bond market to lower rates
+          </h2>
+          <p
+            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
+          >
+            <span><i class="ri-time-line mr-1"></i> 32 mins ago</span> &nbsp; |
+            &nbsp; <span>The Street</span>
+          </p>
+        </div>
+
+        <div class="border-b-2 border-white/15 pb-5">
+          <h2
+            class="mt-5 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
+          >
+            Oil steadies near seven-week low with demand concerns mounting
+          </h2>
+          <p
+            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
+          >
+            <span><i class="ri-time-line mr-1"></i> 42 mins ago</span> &nbsp; |
+            &nbsp; <span>Bloomberg</span>
+          </p>
+        </div>
+
+        <div class="border-b-2 border-white/15 pb-5">
+          <h2
+            class="mt-5 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
+          >
+            Roubini accuses Treasury of manipulating bond market to lower rates
+          </h2>
+          <p
+            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
+          >
+            <span><i class="ri-time-line mr-1"></i> 32 mins ago</span> &nbsp; |
+            &nbsp; <span>The Street</span>
+          </p>
+        </div>
+
+        <div class="border-b-2 border-white/15 pb-5">
+          <h2
+            class="mt-5 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
+          >
+            Oil steadies near seven-week low with demand concerns mounting
+          </h2>
+          <p
+            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
+          >
+            <span><i class="ri-time-line mr-1"></i> 42 mins ago</span> &nbsp; |
+            &nbsp; <span>Bloomberg</span>
+          </p>
+        </div>
+
+        <div class="border-b-2 border-white/15 pb-5">
+          <h2
+            class="mt-5 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
+          >
+            Roubini accuses Treasury of manipulating bond market to lower rates
+          </h2>
+          <p
+            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
+          >
+            <span><i class="ri-time-line mr-1"></i> 32 mins ago</span> &nbsp; |
+            &nbsp; <span>The Street</span>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Latest Uranium Blogs Section ============================================  -->
+    <div class="py-10 px-2 lg:px-[10rem] mx-auto mt-5 md:mt-16">
+      <!-- Latest Uranium Blogs Section -->
+      <div class="bg-primary/5 px-2 py-4 lg:p-10 shadow-lg">
+        <div class="flex justify-between items-center mb-6 md:mb-10">
+          <h2 class="text-[1rem] md:text-2xl font-semibold text-primary">
+            | Latest Uranium Blogs
+          </h2>
+          <a
+            href="#"
+            class="text-white/40 hover:text-primary text-[11px] md:text-[13px] flex items-center"
+          >
+            VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <!-- Blog Post 1 -->
+          <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
+            <img
+              src="https://img.freepik.com/free-photo/3d-view-sun-space_23-2150953783.jpg?t=st=1724317773~exp=1724321373~hmac=9e0ce33345dfbe21f55fbca0b7fcc63185c15b826739dae413999f9b1d307945&w=1060"
+              alt="NASA Data"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+            ></div>
+            <div
+              class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
+            >
+              <span
+                class="text-white/80 text-xs flex items-center mb-2 md:mb-4 roboto"
+              >
+                <i class="ri-time-line mr-1"></i> 2 min read
+              </span>
+              <h3
+                class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+              >
+                NASA Data Shows July 22 Was Earth's Hottest Day on Record
+              </h3>
+            </div>
+          </div>
+
+          <!-- Blog Post 2 -->
+          <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
+            <img
+              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758"
+              alt="NASA Virtual Activities"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+            ></div>
+            <div
+              class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
+            >
+              <span
+                class="text-white/80 text-xs flex items-center mb-2 md:mb-4 roboto"
+              >
+                <i class="ri-time-line mr-1"></i> 1 min read
+              </span>
+              <h3
+                class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+              >
+                NASA Offers Virtual Activities for 21st Northrop Grumman
+                Resupply Mission
+              </h3>
+            </div>
+          </div>
+
+          <!-- Blog Post 3 -->
+          <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
+            <img
+              src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
+              alt="Space Station Research"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+            ></div>
+            <div
+              class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
+            >
+              <span
+                class="text-white/80 text-xs flex items-center mb-2 md:mb-4 roboto"
+              >
+                <i class="ri-time-line mr-1"></i> 4 min read
+              </span>
+              <h3
+                class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+              >
+                NASA To Highlight 13th Space Station Research, Development
+                Conference
+              </h3>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+
+    <!-- Featured News===============================================  -->
+    <div
+      class="mt-10 md:mt-28 w-full min-h-[100vh] py-5 flex flex-col lg:flex-row justify-between px-6 md:px-10 lg:px-[10rem]"
+    >
+      <div class="w-full lg:w-[55%] h-full mb-10 lg:mb-0">
+        <h2 class="text-[1rem] md:text-2xl font-semibold text-primary mb-10">
+          | Featured News
+        </h2>
+        <!-- cards---  -->
+        <div class="flex flex-col gap-y-12">
+          <div
+            class="flex flex-col mt-2 md:mt-0 md:flex-row justify-between h-auto md:h-[140px] space-y-4 md:space-y-0"
+          >
+            <div class="w-full md:w-[25%] h-[150px] md:h-full overflow-hidden">
+              <img
+                class="w-full h-full scale-125 object-contain"
+                src="https://www.nasa.gov/wp-content/uploads/2024/07/merra2-geos-fp-daily-record.png"
+                alt=""
+              />
+            </div>
+            <div
+              class="w-full md:w-[70%] flex flex-col gap-y-2 md:gap-y-0 justify-between pb-1"
+            >
+              <h1
+                class="text-white/80 font-semibold leading-6 text-[1rem] md:text-[1.25rem]"
+              >
+                NASA Data Shows July 22 Was Earth’s Hottest Day on Record
+              </h1>
+              <p
+                class="text-xs md:text-[12px] roboto font-normal text-white/35"
+              >
+                <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span> &nbsp;
+                | &nbsp; <span>Bloomberg</span>
+              </p>
+              <p
+                class="text-[12px] md:text-[13px] leading-4 text-white/50 font-normal"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus nisi accusantium, perferendis veritatis rem est iste
+                error porro laudantium voluptate eius quae ea mollitia dolor
+                velit ad laborum delectus facilis!
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col mt-2 md:mt-0 md:flex-row justify-between h-auto md:h-[140px] space-y-4 md:space-y-0"
+          >
+            <div class="w-full md:w-[25%] h-[150px] md:h-full overflow-hidden">
+              <img
+                class="w-full h-full scale-125 object-contain"
+                src="data:image/jpeg;base64,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"
+                alt=""
+              />
+            </div>
+            <div class="w-full md:w-[70%] flex flex-col justify-between pb-1">
+              <h1
+                class="text-white/80 font-semibold leading-6 text-[1rem] md:text-[1.2rem] capitalize"
+              >
+                NASA Offers virtual activities for 21st northrop grumman
+                resupply mission
+              </h1>
+              <p
+                class="text-xs md:text-[12px] roboto font-normal text-white/35"
+              >
+                <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span> &nbsp;
+                | &nbsp; <span>Bloomberg</span>
+              </p>
+              <p
+                class="text-[12px] md:text-[13px] leading-4 text-white/50 font-normal"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus nisi accusantium, perferendis veritatis rem est iste
+                error porro laudantium voluptate eius quae ea mollitia dolor
+                velit ad laborum delectus facilis!
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col mt-2 md:mt-0 md:flex-row justify-between h-auto md:h-[140px] space-y-4 md:space-y-0"
+          >
+            <div class="w-full md:w-[25%] h-[150px] md:h-full overflow-hidden">
+              <img
+                class="w-full h-full scale-125 object-contain"
+                src="data:image/jpeg;base64,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"
+                alt=""
+              />
+            </div>
+            <div class="w-full md:w-[70%] flex flex-col justify-between pb-1">
+              <h1
+                class="text-white/80 font-semibold leading-6 text-[1rem] md:text-[1.2rem] capitalize"
+              >
+                nasa to highlight 13th space station research, development
+                conference
+              </h1>
+              <p
+                class="text-xs md:text-[12px] roboto font-normal text-white/35"
+              >
+                <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span> &nbsp;
+                | &nbsp; <span>Bloomberg</span>
+              </p>
+              <p
+                class="text-[12px] md:text-[13px] leading-4 text-white/50 font-normal"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus nisi accusantium, perferendis veritatis rem est iste
+                error porro laudantium voluptate eius quae ea mollitia dolor
+                velit ad laborum delectus facilis!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="w-full md:mt-20 lg:mt-0 mt-10 lg:w-[37%] h-full">
+        <h2
+          class="text-[1rem] md:text-2xl font-semibold text-primary mb-5 md:mb-10"
+        >
+          | Latest Uranium Tweets
+        </h2>
+        <!-- tweets  -->
+        <div class="flex flex-col gap-y-4">
+          <div class="w-full h-[110px] bg-white"></div>
+          <div class="w-full h-[110px] bg-white"></div>
+          <div class="w-full h-[110px] bg-white"></div>
+          <div class="w-full h-[110px] bg-white"></div>
+          <h4 class="flex justify-end mr-[-4px]">
+            <a
+              href="#"
+              class="text-white/40 uppercase hover:text-primary text-[11px] md:text-[13px] flex items-center"
+            >
+              MORE Tweets<i class="ri-arrow-right-s-line ml-1 text-lg"></i>
+            </a>
+          </h4>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer ================================================================================ -->
-    <footer class="w-full bg-black text-white py-12 px-[9.4rem] mt-7">
-      <div class="container mx-auto px-4 flex justify-between items-center">
+    <footer
+      class="w-full bg-black text-white py-12 px-6 lg:px-[9.4rem] mt-7"
+    >
+      <div
+        class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center"
+      >
         <!-- Newsletter Subscription -->
-        <div class="">
-          <p class="text-[1rem]"></p>
-            Subscribe to our newsletter for updates and <br> special offers
+        <div class="text-center md:text-left mb-6 md:mb-0">
+          <p class="text-sm md:text-[1rem]">
+            Subscribe to our newsletter for updates and
+            <br class="hidden sm:block" />
+            special offers
           </p>
-          <div class="flex mt-6">
+          <div class="flex justify-center md:justify-start mt-6">
             <input
               type="email"
               placeholder="Enter your email"
-              class="px-4 py-[5px] bg-white/15 text-[14px] text-white rounded-l-sm focus:outline-none"
+              class="px-4 py-[5px] bg-white/15 text-[12px] sm:text-[14px] text-white rounded-l-sm focus:outline-none"
             />
             <button
-              class="bg-primary  text-white px-4 py-[5px] text-[13px] rounded-r-sm hover:bg-green-600"
+              class="bg-primary text-white px-4 py-[5px] text-[11px] sm:text-[13px] rounded-r-sm hover:bg-green-600"
             >
               SUBSCRIBE
             </button>
@@ -304,38 +608,51 @@
         </div>
 
         <!-- Links and Copyright -->
-        <div class="flex flex-col space-y-7 items-end">
-          
+        <div
+          class="flex flex-col space-y-6 md:space-y-7 items-center md:items-end"
+        >
           <!-- Social Icons -->
           <div class="flex space-x-4">
-            <a href="#" class="text-white/60 hover:text-white/90 transition-all duration-200">
-              <i class="ri-instagram-line text-xl"></i>
+            <a
+              href="#"
+              class="text-white/60 hover:text-white/90 transition-all duration-200"
+            >
+              <i class="ri-instagram-line text-lg sm:text-xl"></i>
             </a>
-            <a href="#" class="text-white/60 hover:text-white/90 transition-all duration-200">
-              <i class="ri-pinterest-line text-xl"></i>
+            <a
+              href="#"
+              class="text-white/60 hover:text-white/90 transition-all duration-200"
+            >
+              <i class="ri-pinterest-line text-lg sm:text-xl"></i>
             </a>
-            <a href="#" class="text-white/60 hover:text-white/90 transition-all duration-200">
-              <i class="ri-facebook-circle-line text-xl"></i>
+            <a
+              href="#"
+              class="text-white/60 hover:text-white/90 transition-all duration-200"
+            >
+              <i class="ri-facebook-circle-line text-lg sm:text-xl"></i>
             </a>
-            <a href="#" class="text-white/60  hover:text-white/90 transition-all duration-200">
-              <i class="ri-close-line text-xl"></i>
+            <a
+              href="#"
+              class="text-white/60 hover:text-white/90 transition-all duration-200"
+            >
+              <i class="ri-close-line text-lg sm:text-xl"></i>
             </a>
           </div>
 
-          <div class="hidden md:flex text-[14px] text-white/70  space-x-6">
+          <div
+            class="hidden md:flex text-[12px] md:text-[14px] text-white/70 space-x-4 md:space-x-5"
+          >
             <a href="#" class="hover:underline">HOME</a>
             <a href="#" class="hover:underline">COMMUNITY</a>
             <a href="#" class="hover:underline">LIBRARY</a>
             <a href="#" class="hover:underline">CONTACT US</a>
           </div>
 
-          <p class="text-[13.5px] text-white/50">© Copyright 2024 | UraniumTracker</p>
-
-          
+          <p class="text-[12px] sm:text-[13.5px] text-white/50">
+            © Copyright 2024 | UraniumTracker
+          </p>
         </div>
       </div>
-
-     
     </footer>
 
     <!-- js file----------------------------------------  -->
