@@ -15,8 +15,8 @@
         theme: {
           extend: {
             colors: {
-              bg: "#002201",
-              primary: "#50bc48",
+              bg: "#011301",
+              primary: "#05B821",
             },
           },
         },
@@ -25,7 +25,7 @@
   </head>
   <body>
     <!-- Navbar ================================================================================  -->
-    <nav class="bg-bg px-[2rem] py-5 flex justify-between items-center">
+    <nav class="bg-bg px-[8rem] py-7 flex justify-between items-center">
       <div class="logo">
         <a href="/" class="no-underline">
           <h1 class="text-primary font-bold text-2xl">
@@ -56,11 +56,14 @@
 
       <!-- Navigation Links -->
       <div
-        class="nav-links hidden md:flex items-center mt-2 space-x-9"
+        class="nav-links hidden md:flex items-center mt-2 space-x-7"
         id="nav-links"
       >
-        <a class="active no-underline transition-all duration-200" href="#home"
+      <a class="active no-underline transition-all duration-200" href="#home"
           >Home</a
+        >
+        <a class="no-underline text-white/70 hover:text-white transition-all duration-200" href="#screener"
+          >Screener Database</a
         >
         <a
           class="no-underline text-white/70 hover:text-white transition-all duration-200"
@@ -93,10 +96,16 @@
         class="nav-links flex-col items-center space-y-4 mt-4 hidden bg-bg px-6 py-4 rounded-lg shadow-lg transition-transform transform origin-top scale-y-0"
         id="mobile-menu"
       >
-        <a
+
+      <a
           class="no-underline text-white hover:text-primary transition-all duration-200"
           href="#home"
           >Home</a
+        >
+        <a
+          class="no-underline text-white hover:text-primary transition-all duration-200"
+          href="#screener"
+          >Screener Database</a
         >
         <br />
         <br />
@@ -129,6 +138,34 @@
       </div>
     </div>
     <!-- Navber End ============================================================================ -->
+
+    <!-- marquee ===========================  -->
+     <div class="mt-1 bg-primary w-full h-[35px]">
+
+     </div>
+
+    <!-- main ============================================================  -->
+     <div class="main px-[8rem]">
+
+      <!-- hero====================  -->
+      <div class="flex justify-between mt-12">
+        <!-- left -------------  -->
+        <div class="w-[55%] min-h-[100vh] ">
+          <!-- left card-1 -->
+           <div class="">
+              <img class="w-full h-[420px] object-cover" src="https://images.prismic.io/trackinsight/ZhTxVRrFxhpPBYwA_Uranium-THOBS-09.04.2024.png?auto=compress%2Cformat&q=85&w=3840&max-w=3840&max-h=2133&fit=crop&crop=edges" alt="">
+              <h1 class="text-[1.8rem] mt-4 leading-9 font-bold text-white/90">Uranium Electons Revolving Around Atom Stock Footage Video</h1>
+           </div>
+
+          <!-- left card-2  -->
+        </div>
+        
+        <!-- right ---------------------  -->
+        <div class="w-[38%] min-h-[100vh] bg-cyan-200">
+   
+        </div>
+      </div>
+     </div>
 
     <!-- Footer ================================================================================ -->
     <footer class="w-full bg-black text-white py-12 px-[1.4rem] mt-7">
