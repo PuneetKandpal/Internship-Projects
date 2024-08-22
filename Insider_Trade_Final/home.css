@@ -518,9 +518,10 @@ body.scrolled .navbar {
 #component-insider-trade {
   padding: 3rem;
   width: 80%;
-  margin: auto;
+  margin: 0 auto 5rem auto;
 }
 .insider-transations-heading {
+  margin-top: 6rem;
   color: var(--secondary);
   text-align: center;
   font-size: 2rem;
