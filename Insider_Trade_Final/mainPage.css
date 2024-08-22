@@ -671,7 +671,7 @@ body.scrolled .navbar {
   border-radius: 5px;
   position: relative;
   z-index: 10;
-  background-color: var(--light-green-2);
+  /* background-color: var(--light-green-2); */
 }
 
 .component-box1-heading {
@@ -726,7 +726,7 @@ tbody td.industry {
 }
 
 .dropdown-wrapper {
-  background-color: var(--light-green-1);
+  /* background-color: var(--light-green-1); */
   position: relative;
   display: flex;
   flex-direction: column;
@@ -736,7 +736,7 @@ tbody td.industry {
   position: absolute;
   top: -8px;
   left: 8px;
-  background-color: #011216;
+  background-color: #000203;
   padding: 0 6px;
   font-size: 0.66rem;
   border-radius: 20px;
@@ -745,14 +745,12 @@ tbody td.industry {
 }
 
 .custom-dropdown {
-  /* background-color: crimson; */
   padding: 8px 13px;
   font-weight: 300;
-  /* border: 1px solid var(--secondary); */
   border: none;
   border-radius: 4px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--light-green-1);
+  background-color: #142427;
   color: white;
   font-size: 0.87rem;
   min-width: 120px;
@@ -958,18 +956,19 @@ td.negative {
 .pagination a {
   color: var(--dark-text);
   float: left;
-  padding: 6px 12px;
+  padding: 6px 10px;
   text-decoration: none;
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--white-70);
   border-radius: 5px;
-  transition: background-color 0.3s, var(--secondary) 0.3s;
-  color: var(--secondary);
+  transition: background-color 0.3s, var(--white-70) 0.3s;
+  color: var(--white-70);
   font-size: 0.9rem;
 }
 
 .pagination a.active {
   background-color: var(--secondary);
   color: var(--primary);
+  border: 1px solid var(--border-color);
 }
 
 .pagination a:hover:not(.active) {
@@ -978,7 +977,7 @@ td.negative {
 }
 
 .pagination i {
-  color: var(--secondary);
+  color: var(--white-70);
   font-weight: bolder;
 }
 .pagination i:hover {
