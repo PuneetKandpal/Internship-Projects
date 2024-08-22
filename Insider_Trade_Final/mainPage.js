@@ -56,132 +56,111 @@ document.querySelectorAll(".second-nav a").forEach((anchor) => {
 // dropdown for table ----------------------------
 document.addEventListener("DOMContentLoaded", () => {
   const rowsPerPageDropdown = document.querySelector("#entries");
+  const searchInput = document.querySelector(".search-bar input");
+  const tableBody = document.querySelector(".transactions-table tbody");
+  const paginationLinks = document.querySelector(".pagination");
+
   let rowsPerPage = parseInt(rowsPerPageDropdown.value); // Default number of rows per page
   let currentPage = 1;
-  let allRows = []; // Store all rows for reference
-  let filteredRows = []; // Store filtered rows based on search
+  let totalPages = 1;
 
-  const tableBody = document.querySelector(".transactions-table tbody");
-  const paginationLinks = document.querySelectorAll(".pagination a");
-  const searchInput = document.querySelector(".search-bar input");
+  // Load initial data
+  loadRows();
 
-  // Load all rows initially
-  loadAllRows();
-
-  searchInput.addEventListener("input", filterRows);
-  rowsPerPageDropdown.addEventListener("change", updateRowsPerPage);
-  paginationLinks.forEach((link) => {
-    link.addEventListener("click", (event) => {
+  // Event listeners
+  searchInput.addEventListener("input", () => {
+    currentPage = 1; // Reset to first page on new search
+    loadRows();
+  });
+  rowsPerPageDropdown.addEventListener("change", () => {
+    rowsPerPage = parseInt(rowsPerPageDropdown.value);
+    loadRows();
+  });
+  paginationLinks.addEventListener("click", (event) => {
+    if (event.target.tagName === "A") {
       event.preventDefault();
-      if (
-        link.querySelector("i") &&
-        link.querySelector("i").classList.contains("ri-arrow-left-s-fill")
-      ) {
-        currentPage = Math.max(currentPage - 1, 1);
-      } else if (
-        link.querySelector("i") &&
-        link.querySelector("i").classList.contains("ri-arrow-right-s-fill")
-      ) {
-        const totalPages = Math.ceil(filteredRows.length / rowsPerPage);
-        currentPage = Math.min(currentPage + 1, totalPages);
-      } else {
-        currentPage = parseInt(link.textContent);
+      const pageNumber = event.target.dataset.page;
+      if (pageNumber) {
+        currentPage = parseInt(pageNumber);
+        loadRows();
       }
-      displayRows();
-      updatePaginationLinks();
-    });
+    }
   });
 
-  function loadAllRows() {
-    allRows = Array.from(tableBody.querySelectorAll("tr"));
-    filteredRows = allRows; // Initialize filtered rows with all rows
-    displayRows();
-    updatePaginationLinks();
+  // Function to load rows from the backend
+  function loadRows() {
+    const searchTerm = searchInput.value;
+
+    fetch(
+      `/api/transactions?page=${currentPage}&limit=${rowsPerPage}&search=${encodeURIComponent(
+        searchTerm
+      )}`
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        totalPages = data.totalPages;
+        updateTable(data.rows);
+        updatePagination();
+      })
+      .catch((error) => console.error("Error loading rows:", error));
   }
 
-  function updateRowsPerPage() {
-    rowsPerPage = parseInt(rowsPerPageDropdown.value);
-    filterRows();
-  }
-
-  function filterRows() {
-    const searchTerm = searchInput.value.toLowerCase();
-
-    filteredRows = allRows.filter((row) => {
-      return Array.from(row.querySelectorAll("td")).some((cell) =>
-        cell.textContent.toLowerCase().includes(searchTerm)
-      );
-    });
-
-    if (searchTerm === "") {
-      filteredRows = allRows; // Reset to all rows when search input is empty
-    }
-
-    if (filteredRows.length === 0 && searchTerm !== "") {
-      alert("No results found");
-      searchInput.value = ""; // Clear the search input
-      filteredRows = allRows; // Reset filtered rows to all rows
-      currentPage = 1;
-    }
-
-    displayRows();
-    updatePaginationLinks();
-  }
-
-  function displayRows() {
+  // Function to update table with new rows
+  function updateTable(rows) {
     tableBody.innerHTML = "";
 
-    if (filteredRows.length === 0) {
+    if (rows.length === 0) {
       const noResultRow = document.createElement("tr");
       const noResultCell = document.createElement("td");
-      noResultCell.colSpan = 10; // Assuming 10 columns in the table
+      noResultCell.colSpan = 9; // Adjust based on number of columns
       noResultCell.textContent = "No results found";
       noResultCell.style.textAlign = "center";
       noResultRow.appendChild(noResultCell);
       tableBody.appendChild(noResultRow);
-
       return;
     }
 
-    const start = (currentPage - 1) * rowsPerPage;
-    const end = start + rowsPerPage;
-
-    const rowsToDisplay = filteredRows.slice(start, end);
-
-    rowsToDisplay.forEach((row) => {
-      tableBody.appendChild(row);
+    rows.forEach((row) => {
+      const rowElement = document.createElement("tr");
+      rowElement.innerHTML = `
+        <td class="company-head">${row.company} <p class="company-fullName">${
+        row.fullName
+      }</p></td>
+        <td>${row.lastPrice}</td>
+        <td class="${row.sevenDReturn > 0 ? "positive" : "negative"}">${
+        row.sevenDReturn
+      }%</td>
+        <td>${row.marketCap}</td>
+        <td>${row.analystTarget}</td>
+        <td>${row.valuation}</td>
+        <td>${row.growth}</td>
+        <td>${row.divYield}</td>
+        <td class="industry">${row.industry}</td>
+      `;
+      tableBody.appendChild(rowElement);
     });
   }
 
-  function updatePaginationLinks() {
-    const totalPages = Math.ceil(filteredRows.length / rowsPerPage);
-
-    paginationLinks.forEach((link) => {
-      link.classList.remove("active");
-      if (link.textContent == currentPage) {
-        link.classList.add("active");
-      }
-
-      if (
-        link.querySelector("i") &&
-        link.querySelector("i").classList.contains("ri-arrow-left-s-fill")
-      ) {
-        link.style.display = currentPage === 1 ? "none" : "inline";
-      } else if (
-        link.querySelector("i") &&
-        link.querySelector("i").classList.contains("ri-arrow-right-s-fill")
-      ) {
-        link.style.display = currentPage === totalPages ? "none" : "inline";
-      } else if (isNaN(link.textContent)) {
-        link.style.display = "none";
-      } else {
-        link.style.display = link.textContent <= totalPages ? "inline" : "none";
-      }
-    });
+  // Function to update pagination
+  function updatePagination() {
+    const paginationHtml = `
+      <a href="#" data-page="${currentPage - 1}" class="${
+      currentPage === 1 ? "disabled" : ""
+    }"><i class="ri-arrow-left-s-fill"></i></a>
+      ${Array.from(
+        { length: totalPages },
+        (_, i) => `
+        <a href="#" data-page="${i + 1}" class="${
+          i + 1 === currentPage ? "active" : ""
+        }">${i + 1}</a>
+      `
+      ).join("")}
+      <a href="#" data-page="${currentPage + 1}" class="${
+      currentPage === totalPages ? "disabled" : ""
+    }"><i class="ri-arrow-right-s-fill"></i></a>
+    `;
+    paginationLinks.innerHTML = paginationHtml;
   }
-
-  // Initial setup
-  filterRows();
 });
 
 // dropdown-filter for stock chart ----------------------------
