@@ -497,7 +497,7 @@ body.scrolled .navbar {
 
 @media (max-width: 500px) {
   #search {
-    padding: 4rem;
+    padding: 1rem;
   }
   .search-container h2 {
     font-size: 1.2rem;
@@ -544,7 +544,7 @@ body.scrolled .navbar {
   }
 
   .component-box1-heading {
-    padding: 2rem 0.5rem;
+    padding: 0.1rem 2.5rem;
   }
 }
 
@@ -646,6 +646,9 @@ tbody td.industry {
   .component-box1-heading {
     padding: 2rem 0.5rem;
   }
+  .insider-transations-heading{
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 500px) {
@@ -661,6 +664,10 @@ tbody td.industry {
     color: white;
     font-size: 0.8rem;
     min-width: 119px;
+  }
+
+  .insider-transations-heading{
+    font-size: 1.3rem;
   }
 }
 
@@ -796,6 +803,11 @@ td.negative {
   .transactions-table td {
     font-size: 0.7rem;
   }
+
+  #component-insider-trade {
+    padding: 1rem;
+    width: 100%;
+    margin: 1rem auto 5rem auto;}
 }
 
 /* Additional styles for responsiveness */
