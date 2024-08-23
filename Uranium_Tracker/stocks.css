@@ -30,19 +30,49 @@ html {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.roboto{
-  font-family: 'Roboto';
+.roboto {
+  font-family: "Roboto";
 }
-.oxanium{
-  font-family: 'Oxanium';
+.oxanium {
+  font-family: "Oxanium";
 }
-.inter{
+.inter {
   font-family: "Inter";
 }
-.publicsans{
+.publicsans {
   font-family: "Public Sans";
 }
+.header-text {
+  color: var(--white);
+}
 
+.card {
+  /* border: 1px solid var(--white-03); */
+  padding: 20px;
+  /* background-color: var(); */
+  text-align: center;
+}
+
+.card-value {
+  font-size: 1.5rem;
+  font-family: "Oxanium", sans-serif;
+  color: var(--white);
+  font: bold;
+  margin-bottom: 5px;
+}
+
+.card-label {
+  font-size: 1rem;
+  color: var(--white-03);
+}
+
+.performance-positive {
+  color: var(--primary);
+}
+
+.performance-negative {
+  color: #ff4d4f;
+}
 /* nav-------------------  */
 .active {
   color: var(--primary);
@@ -233,7 +263,7 @@ tbody tr .symbol {
 }
 
 .uranium-stocks-table th {
-  background-color: #FFBD41;
+  background-color: #ffbd41;
   /* color: #f6f6f6; */
   color: var(--bg);
   font-weight: 600;
@@ -251,8 +281,8 @@ tbody tr .symbol {
   color: #fff;
 }
 
-.symbol{
-  color: #FFBD41;
+.symbol {
+  color: #ffbd41;
 }
 
 /* Responsive Table */
