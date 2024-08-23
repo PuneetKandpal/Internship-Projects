@@ -25,3 +25,19 @@ navToggle.addEventListener("click", () => {
     });
   }
 });
+
+
+// search 
+function filterCards() {
+  const input = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
+
+  cards.forEach(card => {
+    const title = card.getAttribute('data-title').toLowerCase();
+    if (title.includes(input)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
