@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>uranium Tracker | Atomic Glossary</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Uranium Tracker</title>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              bg: "#142135",
+              primary: "#05B821",
+              yellow: "#FFBD41",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- Navbar ================================================================================  -->
+    <nav
+      class="bg-bg lg:w-[90%] mx-auto w-[100%] px-3 lg:px-[1rem] py-7 flex justify-between items-center"
+    >
+      <div class="logo">
+        <a href="/" class="no-underline">
+          <h1 class="text-primary font-bold text-[1.3rem] lg:text-2xl">
+            Uranium<span class="text-white">Tracker</span>
+          </h1>
+        </a>
+      </div>
+
+      <!-- Hamburger Menu Icon -->
+      <div class="block md:hidden">
+        <button class="text-white focus:outline-none" id="nav-toggle">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div
+        class="nav-links text-sm lg:text-[16px] hidden md:flex items-center mt-2 space-x-4 lg:space-x-7"
+        id="nav-links"
+      >
+        <a
+          class="text-white/70 no-underline transition-all duration-200"
+          href="index.html"
+          >Home</a
+        >
+        <a
+          class="no-underline text-white/70 hover:text-white transition-all duration-200"
+          href="news.html"
+          >News</a
+        >
+        <a
+          class="no-underline text-white/70 hover:text-white transition-all duration-200"
+          href="stocks.html"
+          >Stocks</a
+        >
+        <a
+          class="no-underline active hover:text-white transition-all duration-200"
+          href="glossary.html"
+          >Atomic Glossary</a
+        >
+        <a
+          class="no-underline text-white/70 hover:text-white transition-all duration-200"
+          href="contact.html"
+          >Contact Us</a
+        >
+      </div>
+
+      <div class="subscribe-btn mt-1 hidden md:block">
+        <button
+          class="bg-primary px-4 py-1 text-white text-[14px] lg:text-[15px] rounded-sm hover:bg-green-600 transition-all duration-200"
+        >
+          Subscribe
+        </button>
+      </div>
+    </nav>
+    <!-- Styled Mobile Menu -->
+    <div class="md:hidden">
+      <div
+        class="nav-links flex-col items-center space-y-4 mt-4 hidden bg-bg px-6 py-4 shadow-lg transition-transform transform origin-top scale-y-0"
+        id="mobile-menu"
+      >
+        <a
+          class="no-underline text-white hover:text-primary transition-all duration-200"
+          href="index.html"
+          >Home</a
+        >
+        <br />
+        <br />
+        <a
+          class="no-underline text-white hover:text-primary transition-all duration-200"
+          href="news.html"
+          >News</a
+        >
+        <br />
+        <br />
+        <a
+          class="no-underline text-white hover:text-primary transition-all duration-200"
+          href="stocks.html"
+          >Stocks</a
+        >
+        <br />
+        <br />
+        <a
+          class="no-underline text-white hover:text-primary transition-all duration-200"
+          href="glossary.html"
+          >Atomic Glossary</a
+        >
+        <br />
+        <br />
+        <a
+          class="no-underline text-white hover:text-primary transition-all duration-200"
+          href="contact.html"
+          >Contact Us</a
+        >
+        <br />
+        <br />
+        <button
+          class="bg-primary w-full py-2 text-white text-[15px] rounded-sm hover:bg-green-600 transition-all duration-200"
+        >
+          Subscribe
+        </button>
+      </div>
+    </div>
+    <!-- Navber End ============================================================================ -->
+
+    <!-- Main=============================  -->
+    <div class="px-2 pb-20 mt-14 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]">
+      <h2
+        class="text-[1rem] md:text-[1.25rem] font-semibold uppercase tracking-tight text-white"
+      >
+        Uranium Glossary
+      </h2>
+
+      <!-- Search -->
+      <div
+        class="w-full mt-6 flex items-center bg-gray-800 shadow-lg overflow-hidden"
+      >
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Enrich your knowledge"
+          class="bg-gray-800 text-white placeholder-gray-400 px-4 py-2 w-full focus:outline-none"
+          onkeyup="filterCards()"
+        />
+        <button
+          class="bg-primary text-white px-4 py-2 whitespace-nowrap hover:bg-green-500 focus:outline-none"
+          onclick="filterCards()"
+        >
+          Fission Search
+        </button>
+      </div>
+
+      <!-- Cards =================  -->
+      <div
+        id="cardContainer"
+        class="mt-8 flex flex-wrap justify-between gap-y-8"
+      >
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+          data-title="Actinide"
+        >
+          <i class="ri-book-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Actinide
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            Elements with atomic numbers from 89 (actinium) to 103.
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#"
+            >Read More <i class="ri-arrow-right-line ml-1"></i
+          ></a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+          data-title="Activation product"
+        >
+          <i class="ri-flashlight-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Activation product
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            A radioactive isotope formed when a stable element, such as...
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#"
+            >Read More <i class="ri-arrow-right-line ml-1"></i
+          ></a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+          data-title="Activity"
+        >
+          <i class="ri-fire-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Activity
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            The rate of disintegration (decay) per unit time within a
+            radioactive...
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#"
+            >Read More <i class="ri-arrow-right-line ml-1"></i
+          ></a>
+        </div>
+
+        <!-- Add more cards here with similar structure -->
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-color-filter-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            ALARA (As Low As Reasonably Achievable)
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            A principle of radiation protection that aims to minimize radiation
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <svg
+            class="text-yellow text-[19px]"
+            xmlns="http://www.w3.org/2000/svg"
+            width="21px"
+            height="21px"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <!-- Atom icon -->
+            <path
+              d="M196.12,128c24.65-34.61,37.22-70.38,19.74-87.86S162.61,35.23,128,59.88C93.39,35.23,57.62,22.66,40.14,40.14S35.23,93.39,59.88,128c-24.65,34.61-37.22,70.38-19.74,87.86h0c5.63,5.63,13.15,8.14,21.91,8.14,18.48,0,42.48-11.17,66-27.88C151.47,212.83,175.47,224,194,224c8.76,0,16.29-2.52,21.91-8.14h0C233.34,198.38,220.77,162.61,196.12,128Zm8.43-76.55c7.64,7.64,2.48,32.4-18.52,63.28a300.33,300.33,0,0,0-21.19-23.57A300.33,300.33,0,0,0,141.27,70C172.15,49,196.91,43.8,204.55,51.45ZM176.29,128a289.14,289.14,0,0,1-22.76,25.53A289.14,289.14,0,0,1,128,176.29a289.14,289.14,0,0,1-25.53-22.76A289.14,289.14,0,0,1,79.71,128,298.62,298.62,0,0,1,128,79.71a289.14,289.14,0,0,1,25.53,22.76A289.14,289.14,0,0,1,176.29,128ZM51.45,51.45c2.2-2.21,5.83-3.35,10.62-3.35C73.89,48.1,92.76,55,114.72,70A304,304,0,0,0,91.16,91.16,300.33,300.33,0,0,0,70,114.73C49,83.85,43.81,59.09,51.45,51.45Zm0,153.1C43.81,196.91,49,172.15,70,141.27a300.33,300.33,0,0,0,21.19,23.57A304.18,304.18,0,0,0,114.73,186C83.85,207,59.09,212.2,51.45,204.55Zm153.1,0c-7.64,7.65-32.4,2.48-63.28-18.52a304.18,304.18,0,0,0,23.57-21.19A300.33,300.33,0,0,0,186,141.27C207,172.15,212.19,196.91,204.55,204.55ZM140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+            ></path>
+          </svg>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Alpha particle
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            A positively charged particle emitted from an atom's nucleus
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-fire-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Atom
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            The smallest particle of an element that retains its chemical
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-filter-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Background radiation
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            Ionizing radiation from natural sources that everyone is exposed
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-color-filter-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Barn
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            A unit of measure for the cross-sectional area of a nucleus,
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-fire-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Base load
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            The continuous, minimum level of demand on an electrical
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <svg
+            class="text-yellow text-[19px]"
+            xmlns="http://www.w3.org/2000/svg"
+            width="21px"
+            height="21px"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <!-- Atom icon -->
+            <path
+              d="M196.12,128c24.65-34.61,37.22-70.38,19.74-87.86S162.61,35.23,128,59.88C93.39,35.23,57.62,22.66,40.14,40.14S35.23,93.39,59.88,128c-24.65,34.61-37.22,70.38-19.74,87.86h0c5.63,5.63,13.15,8.14,21.91,8.14,18.48,0,42.48-11.17,66-27.88C151.47,212.83,175.47,224,194,224c8.76,0,16.29-2.52,21.91-8.14h0C233.34,198.38,220.77,162.61,196.12,128Zm8.43-76.55c7.64,7.64,2.48,32.4-18.52,63.28a300.33,300.33,0,0,0-21.19-23.57A300.33,300.33,0,0,0,141.27,70C172.15,49,196.91,43.8,204.55,51.45ZM176.29,128a289.14,289.14,0,0,1-22.76,25.53A289.14,289.14,0,0,1,128,176.29a289.14,289.14,0,0,1-25.53-22.76A289.14,289.14,0,0,1,79.71,128,298.62,298.62,0,0,1,128,79.71a289.14,289.14,0,0,1,25.53,22.76A289.14,289.14,0,0,1,176.29,128ZM51.45,51.45c2.2-2.21,5.83-3.35,10.62-3.35C73.89,48.1,92.76,55,114.72,70A304,304,0,0,0,91.16,91.16,300.33,300.33,0,0,0,70,114.73C49,83.85,43.81,59.09,51.45,51.45Zm0,153.1C43.81,196.91,49,172.15,70,141.27a300.33,300.33,0,0,0,21.19,23.57A304.18,304.18,0,0,0,114.73,186C83.85,207,59.09,212.2,51.45,204.55Zm153.1,0c-7.64,7.65-32.4,2.48-63.28-18.52a304.18,304.18,0,0,0,23.57-21.19A300.33,300.33,0,0,0,186,141.27C207,172.15,212.19,196.91,204.55,204.55ZM140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+            ></path>
+          </svg>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Becquerel (Bq)
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            Elements with atomic numbers from 89 (actinium) to 103.
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-triangle-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Beta particle
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            A particle emitted from an atom during radioactive decay, which
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-color-filter-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Biological shield
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            Material, often thick concrete, used to protect humans from
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-bubble-chart-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Boiling water reactor (BWR)
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            A type of light water reactor where water is boiled directly in
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-flashlight-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Breed
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            The process of producing fissile material in a reactor. This
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <svg
+            class="text-yellow text-[19px]"
+            xmlns="http://www.w3.org/2000/svg"
+            width="21px"
+            height="21px"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <!-- Atom icon -->
+            <path
+              d="M196.12,128c24.65-34.61,37.22-70.38,19.74-87.86S162.61,35.23,128,59.88C93.39,35.23,57.62,22.66,40.14,40.14S35.23,93.39,59.88,128c-24.65,34.61-37.22,70.38-19.74,87.86h0c5.63,5.63,13.15,8.14,21.91,8.14,18.48,0,42.48-11.17,66-27.88C151.47,212.83,175.47,224,194,224c8.76,0,16.29-2.52,21.91-8.14h0C233.34,198.38,220.77,162.61,196.12,128Zm8.43-76.55c7.64,7.64,2.48,32.4-18.52,63.28a300.33,300.33,0,0,0-21.19-23.57A300.33,300.33,0,0,0,141.27,70C172.15,49,196.91,43.8,204.55,51.45ZM176.29,128a289.14,289.14,0,0,1-22.76,25.53A289.14,289.14,0,0,1,128,176.29a289.14,289.14,0,0,1-25.53-22.76A289.14,289.14,0,0,1,79.71,128,298.62,298.62,0,0,1,128,79.71a289.14,289.14,0,0,1,25.53,22.76A289.14,289.14,0,0,1,176.29,128ZM51.45,51.45c2.2-2.21,5.83-3.35,10.62-3.35C73.89,48.1,92.76,55,114.72,70A304,304,0,0,0,91.16,91.16,300.33,300.33,0,0,0,70,114.73C49,83.85,43.81,59.09,51.45,51.45Zm0,153.1C43.81,196.91,49,172.15,70,141.27a300.33,300.33,0,0,0,21.19,23.57A304.18,304.18,0,0,0,114.73,186C83.85,207,59.09,212.2,51.45,204.55Zm153.1,0c-7.64,7.65-32.4,2.48-63.28-18.52a304.18,304.18,0,0,0,23.57-21.19A300.33,300.33,0,0,0,186,141.27C207,172.15,212.19,196.91,204.55,204.55ZM140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+            ></path>
+          </svg>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Breeder reactor
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            A nuclear reactor designed to produce more fissile material
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-color-filter-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Burnup
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            A measure of how much energy is extracted from nuclear fuel,
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-book-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Chain reaction
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            A series of nuclear fissions where neutrons released in one fission
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-fire-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Cladding
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            The outer layer of nuclear fuel rods, typically made of a
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <i class="ri-book-line text-yellow text-[19px]"></i>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Control rods
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            Devices inserted into a reactor core to absorb neutrons and
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+
+        <div
+          class="w-full sm:w-[48%] lg:w-[23%] bg-gray-800 hover:bg-gray-900/50 transition-all duration-200 p-4 py-4 card"
+        >
+          <svg
+            class="text-yellow text-[19px]"
+            xmlns="http://www.w3.org/2000/svg"
+            width="21px"
+            height="21px"
+            fill="currentColor"
+            viewBox="0 0 256 256"
+          >
+            <!-- Atom icon -->
+            <path
+              d="M196.12,128c24.65-34.61,37.22-70.38,19.74-87.86S162.61,35.23,128,59.88C93.39,35.23,57.62,22.66,40.14,40.14S35.23,93.39,59.88,128c-24.65,34.61-37.22,70.38-19.74,87.86h0c5.63,5.63,13.15,8.14,21.91,8.14,18.48,0,42.48-11.17,66-27.88C151.47,212.83,175.47,224,194,224c8.76,0,16.29-2.52,21.91-8.14h0C233.34,198.38,220.77,162.61,196.12,128Zm8.43-76.55c7.64,7.64,2.48,32.4-18.52,63.28a300.33,300.33,0,0,0-21.19-23.57A300.33,300.33,0,0,0,141.27,70C172.15,49,196.91,43.8,204.55,51.45ZM176.29,128a289.14,289.14,0,0,1-22.76,25.53A289.14,289.14,0,0,1,128,176.29a289.14,289.14,0,0,1-25.53-22.76A289.14,289.14,0,0,1,79.71,128,298.62,298.62,0,0,1,128,79.71a289.14,289.14,0,0,1,25.53,22.76A289.14,289.14,0,0,1,176.29,128ZM51.45,51.45c2.2-2.21,5.83-3.35,10.62-3.35C73.89,48.1,92.76,55,114.72,70A304,304,0,0,0,91.16,91.16,300.33,300.33,0,0,0,70,114.73C49,83.85,43.81,59.09,51.45,51.45Zm0,153.1C43.81,196.91,49,172.15,70,141.27a300.33,300.33,0,0,0,21.19,23.57A304.18,304.18,0,0,0,114.73,186C83.85,207,59.09,212.2,51.45,204.55Zm153.1,0c-7.64,7.65-32.4,2.48-63.28-18.52a304.18,304.18,0,0,0,23.57-21.19A300.33,300.33,0,0,0,186,141.27C207,172.15,212.19,196.91,204.55,204.55ZM140,128a12,12,0,1,1-12-12A12,12,0,0,1,140,128Z"
+            ></path>
+          </svg>
+          <h1
+            class="text-white capitalize text-[19px] font-semibold publicsans mt-2"
+          >
+            Coolant
+          </h1>
+          <p class="publicsans text-white/50 text-sm mt-1 mb-1">
+            The substance used to transfer heat from the reactor core to
+          </p>
+          <a class="text-[13px] text-blue-400 hover:text-blue-700" href="#">
+            Read More <i class="ri-arrow-right-line ml-1"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer ================================================================================ -->
+    <footer class="bg-black text-white py-14 px-6 lg:px-[1.2rem] mt-7">
+      <div class="lg:w-[90%] mx-auto w-[100%]">
+        <div
+          class="container mx-auto flex flex-col md:flex-row justify-between items-center"
+        >
+          <!-- Newsletter Subscription -->
+          <div class="text-center md:text-left mb-6 md:mb-0">
+            <p class="text-sm md:text-[1rem]">
+              Subscribe to our newsletter for updates and
+              <br class="hidden sm:block" />
+              special offers
+            </p>
+            <div class="flex justify-center md:justify-start mt-6">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="px-4 py-[5px] bg-white/15 text-[12px] sm:text-[14px] text-white rounded-l-sm focus:outline-none"
+              />
+              <button
+                class="bg-primary text-white px-4 py-[5px] text-[11px] sm:text-[13px] rounded-r-sm hover:bg-green-600"
+              >
+                SUBSCRIBE
+              </button>
+            </div>
+          </div>
+
+          <!-- Links and Copyright -->
+          <div
+            class="flex flex-col space-y-6 md:space-y-7 items-center md:items-end"
+          >
+            <!-- Social Icons -->
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-white/60 hover:text-white/90 transition-all duration-200"
+              >
+                <i class="ri-instagram-line text-lg sm:text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white/60 hover:text-white/90 transition-all duration-200"
+              >
+                <i class="ri-pinterest-line text-lg sm:text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white/60 hover:text-white/90 transition-all duration-200"
+              >
+                <i class="ri-facebook-circle-line text-lg sm:text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white/60 hover:text-white/90 transition-all duration-200"
+              >
+                <i class="ri-close-line text-lg sm:text-xl"></i>
+              </a>
+            </div>
+
+            <div
+              class="hidden md:flex text-[12px] md:text-[14px] text-white/70 space-x-4 md:space-x-5"
+            >
+              <a href="#" class="hover:underline">HOME</a>
+              <a href="#" class="hover:underline">Stocks</a>
+              <a href="#" class="hover:underline">Atomic Glossary</a>
+              <a href="#" class="hover:underline">CONTACT US</a>
+            </div>
+
+            <p class="text-[12px] sm:text-[13.5px] text-white/50">
+              © Copyright 2024 | UraniumTracker
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- js file----------------------------------------  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="glossary.js"></script>
+  </body>
+</html>
