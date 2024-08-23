@@ -26,18 +26,28 @@ navToggle.addEventListener("click", () => {
   }
 });
 
+// search filter
 
-// search 
 function filterCards() {
-  const input = document.getElementById('searchInput').value.toLowerCase();
-  const cards = document.querySelectorAll('.card');
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const cards = document.querySelectorAll("#cardContainer .card");
+  let hasMatch = false;
 
-  cards.forEach(card => {
-    const title = card.getAttribute('data-title').toLowerCase();
+  cards.forEach((card) => {
+    const title = card.querySelector("h1").textContent.toLowerCase();
     if (title.includes(input)) {
-      card.style.display = '';
+      card.style.display = "block";
+      hasMatch = true;
     } else {
-      card.style.display = 'none';
+      card.style.display = "none";
     }
   });
+
+  // Show or hide the "No results found" message
+  const noResultsMessage = document.getElementById("noResults");
+  if (hasMatch) {
+    noResultsMessage.classList.add("hidden");
+  } else {
+    noResultsMessage.classList.remove("hidden");
+  }
 }
