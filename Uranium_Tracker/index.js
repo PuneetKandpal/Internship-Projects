@@ -26,6 +26,9 @@ navToggle.addEventListener("click", () => {
   }
 });
 
+
+
+// marquee 
 const marquee = document.getElementById("stock-marquee");
 
 marquee.addEventListener("mouseover", () => {

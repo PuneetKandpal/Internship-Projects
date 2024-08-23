@@ -8,9 +8,9 @@
 
 :root {
   --primary: #000203;
-  --secondary: #0b7994;
-  --light-green-1: #0b799474;
-  --light-green-2: #0b799421;
+  --secondary: #025889;
+  --light-green-1: #02588974;
+  --light-green-2: #02588921;
   --white: #f6f6f6;
   --white-80: rgba(246, 246, 246, 0.8);
   --white-70: rgba(246, 246, 246, 0.5);
@@ -18,7 +18,7 @@
   --white-40: rgba(246, 246, 246, 0.4);
   --white-08: rgba(246, 246, 246, 0.08);
   --golden: #ffffff;
-  --border-color: #0b799441;
+  --border-color: #02588941;
 }
 
 /* :root {
