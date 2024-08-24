@@ -23,6 +23,17 @@
         },
       };
     </script>
+    <style>
+      .fullscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 1000;
+        background: rgba(0, 0, 0, 0.8);
+      }
+    </style>
   </head>
   <body>
     <!-- Navbar ================================================================================  -->
@@ -100,7 +111,7 @@
     <!-- Styled Mobile Menu -->
     <div class="md:hidden">
       <div
-        class="nav-links flex-col items-center space-y-4 mt-4 hidden bg-bg px-6 py-4 shadow-lg transition-transform transform origin-top scale-y-0"
+        class="nav-links flex-col items-center space-y-4 mt-4 hidden bg-bg px-6 py-4 transition-transform transform origin-top scale-y-0"
         id="mobile-menu"
       >
         <a
@@ -464,7 +475,7 @@
             </div>
           </div>
 
-          <div class="flex flex-wrap gap-x-3 ">
+          <div class="flex flex-wrap gap-x-3">
             <div class="bg-white/5 w-fit p-3 px-6 mt-3">
               <h1
                 class="text-white/90 font-semibold text-[15px] md:text-[16px]"
@@ -599,17 +610,16 @@
         </div>
 
         <a
-              href="news.html"
-              class="text-white/45 flex -mr-1 mt-2 justify-end hover:text-primary text-[11px] md:text-[13px] items-center"
-            >
-              VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
-            </a>
+          href="news.html"
+          class="text-white/45 flex -mr-1 mt-2 justify-end hover:text-primary text-[11px] md:text-[13px] items-center"
+        >
+          VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
+        </a>
       </div>
     </div>
 
-
     <!-- bg white  -->
-     <div class="bg-white">
+    <div class="bg-white">
       <!-- Featured News===============================================  -->
       <div
         class="mt-10 md:mt-18 lg:w-[90%] mx-auto w-[100%] md:py-20 pt-14 md:pt-24 flex flex-col lg:flex-row justify-between px-6 md:px-10 lg:px-[1rem]"
@@ -764,9 +774,9 @@
           </div>
         </div>
       </div>
-     </div>
+    </div>
 
-     <div class="bg-bg">
+    <div class="bg-bg">
       <!-- Latest Uranium Blogs Section ============================================  -->
       <div
         class="py-10 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-5 md:mt-5"
@@ -868,82 +878,298 @@
             </div>
           </div>
         </div>
+
+        <!-- =====================================  -->
+        <!-- Latest Uranium Videos Section -->
+        <div class="px-2 mt-5 py-4 lg:py-10">
+          <div class="flex justify-between items-center mb-4 md:mb-6">
+            <h2
+              class="text-[1rem] md:text-[1.25rem] font-semibold uppercase tracking-tight text-white"
+            >
+              Latest Uranium Videos
+            </h2>
+            <a
+              href="#"
+              class="text-white/45 hover:text-primary text-[11px] md:text-[13px] flex items-center"
+            >
+              VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+            <!-- Video Card 1 -->
+            <div class="video-card bg-gray-900 overflow-hidden h-[250px]">
+              <div class="relative h-full">
+                <!-- Video Container -->
+                <video
+                  class="video-player w-full h-full object-cover"
+                  data-video-id="1"
+                  poster="https://www.shutterstock.com/shutterstock/videos/3417494171/thumb/11.jpg?ip=x480"
+                >
+                  <source
+                    src="https://www.w3schools.com/html/mov_bbb.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+
+                <!-- Gradient Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
+                >
+                  <!-- Video Title and Description -->
+                  <div class="absolute bottom-0 p-4 text-white">
+                    <h3
+                      class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+                    >
+                      Uranium - THE MOST DANGEROUS METAL ON EARTH!
+                    </h3>
+                  </div>
+                </div>
+
+                <!-- Play/Pause Controls -->
+                <div
+                  class="controls absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black/50 transition-opacity duration-300"
+                >
+                  <button
+                    class="play-button bg-white/10 text-white p-2 rounded-full focus:outline-none"
+                    title="Play"
+                  >
+                    <svg
+                      class="play-icon h-8 w-8"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14.752 11.168l-5.508-3.16A1 1 0 008 8.893v6.214a1 1 0 001.244.964l5.508-1.91a1 1 0 00.748-.963V12.13a1 1 0 00-.748-.963z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Fullscreen Toggle Button -->
+                <button
+                  class="fullscreen-button absolute top-2 right-2 bg-black/70 text-white p-1 px-2 rounded-full focus:outline-none"
+                  title="Fullscreen"
+                >
+                  <i class="ri-expand-diagonal-2-line text-sm"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Video Card 2 -->
+            <div class="video-card bg-gray-900 overflow-hidden h-[250px]">
+              <div class="relative h-full">
+                <!-- Video Container -->
+                <video
+                  class="video-player w-full h-full object-cover"
+                  data-video-id="2"
+                  poster="https://149358047.v2.pressablecdn.com/wp-content/uploads/2022/05/uranium-ore-like-that-which-navajo-miners-mined-1080x675.jpeg"
+                >
+                  <source
+                    src="https://www.w3schools.com/html/mov_bbb.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+
+                <!-- Gradient Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
+                >
+                  <!-- Video Title and Description -->
+                  <div class="absolute bottom-0 p-4 text-white">
+                    <h3
+                      class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+                    >
+                      Hyped up uranium investors face political fallout risk |
+                      Reuters
+                    </h3>
+                  </div>
+                </div>
+
+                <!-- Play/Pause Controls -->
+                <div
+                  class="controls absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black/50 transition-opacity duration-300"
+                >
+                  <button
+                    class="play-button bg-white/10 text-white p-2 rounded-full focus:outline-none"
+                    title="Play"
+                  >
+                    <svg
+                      class="play-icon h-8 w-8"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14.752 11.168l-5.508-3.16A1 1 0 008 8.893v6.214a1 1 0 001.244.964l5.508-1.91a1 1 0 00.748-.963V12.13a1 1 0 00-.748-.963z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Fullscreen Toggle Button -->
+                <button
+                  class="fullscreen-button absolute top-2 right-2 bg-black/70 text-white p-1 px-2 rounded-full focus:outline-none"
+                  title="Fullscreen"
+                >
+                  <i class="ri-expand-diagonal-2-line text-sm"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Video Card 3 -->
+            <div class="video-card bg-gray-900 overflow-hidden h-[250px]">
+              <div class="relative h-full">
+                <!-- Video Container -->
+                <video
+                  class="video-player w-full h-full object-cover"
+                  data-video-id="3"
+                  poster="https://i.ytimg.com/vi/ifsDeNXk0_E/maxresdefault.jpg"
+                >
+                  <source
+                    src="https://www.w3schools.com/html/mov_bbb.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+
+                <!-- Gradient Overlay -->
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
+                >
+                  <!-- Video Title and Description -->
+                  <div class="absolute bottom-0 p-4 text-white">
+                    <h3
+                      class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+                    >
+                      Terra Uranium secures strategic agreement for major
+                      drilling campaign
+                    </h3>
+                  </div>
+                </div>
+
+                <!-- Play/Pause Controls -->
+                <div
+                  class="controls absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black/50 transition-opacity duration-300"
+                >
+                  <button
+                    class="play-button bg-white/10 text-white p-2 rounded-full focus:outline-none"
+                    title="Play"
+                  >
+                    <svg
+                      class="play-icon h-8 w-8"
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M14.752 11.168l-5.508-3.16A1 1 0 008 8.893v6.214a1 1 0 001.244.964l5.508-1.91a1 1 0 00.748-.963V12.13a1 1 0 00-.748-.963z"
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                <!-- Fullscreen Toggle Button -->
+                <button
+                  class="fullscreen-button absolute top-2 right-2 bg-black/70 text-white p-1 px-2 rounded-full focus:outline-none"
+                  title="Fullscreen"
+                >
+                  <i class="ri-expand-diagonal-2-line text-sm"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
     <!-- Footer ================================================================================ -->
-    <footer class=" bg-black text-white py-14 px-6 lg:px-[1.2rem] mt-7">
+    <footer class="bg-black text-white py-14 px-6 lg:px-[1.2rem] mt-7">
       <div class="lg:w-[90%] mx-auto w-[100%]">
         <div
-        class="container mx-auto flex flex-col md:flex-row justify-between items-center"
-      >
-        <!-- Newsletter Subscription -->
-        <div class="text-center md:text-left mb-6 md:mb-0">
-          <p class="text-sm md:text-[1rem]">
-            Subscribe to our newsletter for updates and
-            <br class="hidden sm:block" />
-            special offers
-          </p>
-          <div class="flex justify-center md:justify-start mt-6">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              class="px-4 py-[5px] bg-white/15 text-[12px] sm:text-[14px] text-white rounded-l-sm focus:outline-none"
-            />
-            <button
-              class="bg-primary text-white px-4 py-[5px] text-[11px] sm:text-[13px] rounded-r-sm hover:bg-green-600"
-            >
-              SUBSCRIBE
-            </button>
-          </div>
-        </div>
-
-        <!-- Links and Copyright -->
-        <div
-          class="flex flex-col space-y-6 md:space-y-7 items-center md:items-end"
+          class="container mx-auto flex flex-col md:flex-row justify-between items-center"
         >
-          <!-- Social Icons -->
-          <div class="flex space-x-4">
-            <a
-              href="#"
-              class="text-white/60 hover:text-white/90 transition-all duration-200"
-            >
-              <i class="ri-instagram-line text-lg sm:text-xl"></i>
-            </a>
-            <a
-              href="#"
-              class="text-white/60 hover:text-white/90 transition-all duration-200"
-            >
-              <i class="ri-pinterest-line text-lg sm:text-xl"></i>
-            </a>
-            <a
-              href="#"
-              class="text-white/60 hover:text-white/90 transition-all duration-200"
-            >
-              <i class="ri-facebook-circle-line text-lg sm:text-xl"></i>
-            </a>
-            <a
-              href="#"
-              class="text-white/60 hover:text-white/90 transition-all duration-200"
-            >
-              <i class="ri-close-line text-lg sm:text-xl"></i>
-            </a>
+          <!-- Newsletter Subscription -->
+          <div class="text-center md:text-left mb-6 md:mb-0">
+            <p class="text-sm md:text-[1rem]">
+              Subscribe to our newsletter for updates and
+              <br class="hidden sm:block" />
+              special offers
+            </p>
+            <div class="flex justify-center md:justify-start mt-6">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="px-4 py-[5px] bg-white/15 text-[12px] sm:text-[14px] text-white rounded-l-sm focus:outline-none"
+              />
+              <button
+                class="bg-primary text-white px-4 py-[5px] text-[11px] sm:text-[13px] rounded-r-sm hover:bg-green-600"
+              >
+                SUBSCRIBE
+              </button>
+            </div>
           </div>
 
+          <!-- Links and Copyright -->
           <div
-            class="hidden md:flex text-[12px] md:text-[14px] text-white/70 space-x-4 md:space-x-5"
+            class="flex flex-col space-y-6 md:space-y-7 items-center md:items-end"
           >
-            <a href="#" class="hover:underline">HOME</a>
-            <a href="#" class="hover:underline">Stocks</a>
-            <a href="#" class="hover:underline">Atomic Glossary</a>
-            <a href="#" class="hover:underline">CONTACT US</a>
-          </div>
+            <!-- Social Icons -->
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="text-white/60 hover:text-white/90 transition-all duration-200"
+              >
+                <i class="ri-instagram-line text-lg sm:text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white/60 hover:text-white/90 transition-all duration-200"
+              >
+                <i class="ri-pinterest-line text-lg sm:text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white/60 hover:text-white/90 transition-all duration-200"
+              >
+                <i class="ri-facebook-circle-line text-lg sm:text-xl"></i>
+              </a>
+              <a
+                href="#"
+                class="text-white/60 hover:text-white/90 transition-all duration-200"
+              >
+                <i class="ri-close-line text-lg sm:text-xl"></i>
+              </a>
+            </div>
 
-          <p class="text-[12px] sm:text-[13.5px] text-white/50">
-            © Copyright 2024 | UraniumTracker
-          </p>
+            <div
+              class="hidden md:flex text-[12px] md:text-[14px] text-white/70 space-x-4 md:space-x-5"
+            >
+              <a href="#" class="hover:underline">HOME</a>
+              <a href="#" class="hover:underline">Stocks</a>
+              <a href="#" class="hover:underline">Atomic Glossary</a>
+              <a href="#" class="hover:underline">CONTACT US</a>
+            </div>
+
+            <p class="text-[12px] sm:text-[13.5px] text-white/50">
+              © Copyright 2024 | UraniumTracker
+            </p>
+          </div>
         </div>
-      </div>
       </div>
     </footer>
 
