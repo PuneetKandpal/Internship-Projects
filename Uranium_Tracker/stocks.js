@@ -1,5 +1,4 @@
 // Price Trends Chart
-// Price Trends Chart
 const priceCtx = document.getElementById("priceChart").getContext("2d");
 new Chart(priceCtx, {
   type: "line",
@@ -108,13 +107,22 @@ const mostFollowedStocks = {
 };
 
 const topGainers = {
-  labels: ["AEC.V", "UROY", "DNN", "UEC", "DML.TO", "FMC.V"],
-  data: [0.07, 2.32, 1.71, 5.37, 2.29, 0.09],
+  labels: ["AEC.V", "UROY", "DNN", "UEC", "DML.TO", "FMC.V", "LMRXF", "NXE"],
+  data: [0.07, 2.32, 1.71, 5.37, 2.29, 0.09, 0.42, 6.4],
 };
 
 const topLosers = {
-  labels: ["CUL.AX", "GTR.AX", "ENR.AX", "RDM.AX", "ERA.AX"],
-  data: [0.0, 0.0, 0.47, 0.13, 0.02],
+  labels: [
+    "CUL.AX",
+    "GTR.AX",
+    "ENR.AX",
+    "RDM.AX",
+    "ERA.AX",
+    "DYL.AX",
+    "PDN.AX",
+    "TOE.AX",
+  ],
+  data: [0.0, 0.0, 0.47, 0.13, 0.02, 1.0, 9.73, 0.24],
 };
 
 // Function to create a radar chart
@@ -207,8 +215,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-//=========================================================
-
+// =================================================================================
+// Sidenav scrolling
+// =================================================================================
 document.querySelectorAll(".sidenav a").forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
