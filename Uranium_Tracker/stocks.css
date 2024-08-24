@@ -121,87 +121,7 @@ tbody tr .symbol {
   font-weight: 800;
 }
 
-/* .filters {
-  padding: 1.7rem 0 0 0;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-} */
-
-/* .dropdown-container {
-  width: 100%;
-  
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: flex-start;
-  padding: 10px 0;
-  scrollbar-width: thin;
- 
-  flex-wrap: nowrap; 
-  overflow-x: auto;
-} */
-
-/* .dropdown-wrapper {
-  
-  position: relative;
-  display: flex;
-  flex-direction: column;
-} */
-
-/* .dropdown-label {
-  position: absolute;
-  top: -8px;
-  left: 8px;
-  background-color: var(--light-green-2);
-  padding: 0 6px;
-  font-size: 0.66rem;
-  border-radius: 20px;
-  font-weight: 300;
-  color: rgba(255, 255, 255, 0.797);
-} */
-
-/* .custom-dropdown {
-  
-  padding: 8px 13px;
-  font-weight: 300;
-  
-  border: none;
-  border-radius: 4px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: var(--white-08);
-  color: var(--white);
-  font-size: 0.87rem;
-  min-width: 120px;
-} */
-
-/* .export-btn {
-  align-self: flex-end;
-  padding: 10px 15px;
-  background-color: var(--golden);
-  color: #011216;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.86rem;
-  font-weight: 600;
-  white-space: nowrap;
-} */
-
 @media (max-width: 768px) {
-  /* .dropdown-container {
-    flex-wrap: nowrap; 
-    overflow-x: auto; 
-    -webkit-overflow-scrolling: touch;
-  } */
-
-  /* .custom-dropdown,
-  .export-btn {
-    flex-shrink: 0; 
-  } */
-
   .uranium-heading {
     padding: 2rem 0.5rem;
   }
@@ -211,20 +131,6 @@ tbody tr .symbol {
 }
 
 @media (max-width: 500px) {
-  /* .custom-dropdown {
-    
-    padding: 8px 9px;
-    font-weight: 300;
-   
-    border: none;
-    border-radius: 4px;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background-color: var(--light-green-1);
-    color: white;
-    font-size: 0.8rem;
-    min-width: 119px;
-  } */
-
   .uranium-stocks-heading {
     font-size: 1.3rem;
   }
@@ -321,53 +227,3 @@ tbody tr .symbol {
     margin: 1rem auto 5rem auto;
   }
 }
-
-/* .pagination {
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  margin-top: 1rem;
-  gap: 0.5rem;
-}
-
-.pagination a {
-  color: var(--dark-text);
-  float: left;
-  padding: 6px 10px;
-  text-decoration: none;
-  border: 1px solid var(--white-70);
-  border-radius: 5px;
-  transition: background-color 0.3s, var(--white-70) 0.3s;
-  color: var(--white-70);
-  font-size: 0.9rem;
-}
-
-.pagination a.active {
-  background-color: var(--secondary);
-  color: var(--primary);
-  border: 1px solid var(--secondary);
-}
-
-.pagination a:hover:not(.active) {
-  background-color: var(--secondary);
-  color: var(--primary);
-}
-
-.pagination i {
-  color: var(--white-70);
-  font-weight: bolder;
-}
-.pagination i:hover {
-  color: white;
-}
-@media (max-width: 600px) {
-  .pagination {
-    justify-content: center;
-    gap: 0.3rem;
-  }
-
-  .pagination a {
-    padding: 4px 8px;
-    font-size: 0.8rem;
-  }
-} */
