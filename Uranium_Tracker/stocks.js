@@ -36,9 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
   percentageCells.forEach((cell) => {
     const value = parseFloat(cell.textContent.replace("%", "")); // Get numeric value of percentage
     if (value > 0) {
-      cell.style.color = "green"; // Apply green color for positive values
+      cell.style.color = "#50BC48"; // Apply green color for positive values
     } else if (value < 0) {
-      cell.style.color = "red"; // Apply red color for negative values
+      cell.style.color = "#FF4D4F"; // Apply red color for negative values
     }
   });
 });
