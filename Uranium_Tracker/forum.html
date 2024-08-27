@@ -257,51 +257,50 @@
                 <h2 class="text-2xl inter font-bold text-[var(--yellow)]">
                   Recent Fission Discussions
                 </h2>
-                <div
-                  class="mt-4 flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0"
-                >
+                <div class="mt-4 flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
                   <!-- Search Input -->
                   <div class="relative w-full md:w-1/2">
                     <input
+                      id="search"
                       type="text"
                       placeholder="Search for Topics"
                       class="bg-gray-900 text-white/50 focus:outline-none pl-10 pr-4 py-2 text-[14px] rounded-sm w-full"
+                      oninput="filterDiscussions()"
                     />
-                    <i
-                      class="ri-search-line absolute top-1/2 transform -translate-y-1/2 left-3 text-white/30"
-                    ></i>
+                    <i class="ri-search-line absolute top-1/2 transform -translate-y-1/2 left-3 text-white/30"></i>
                   </div>
-  
+            
                   <!-- Sort By Dropdown -->
                   <div class="flex items-center space-x-2 w-full md:w-auto">
                     <span class="text-white/60 text-sm">Sort by:</span>
-                    <select
-                      class="bg-gray-900 text-white text-[14.5px] py-2 px-3 rounded-sm"
-                    >
-                      <option>Newest</option>
-                      <option>Most Viewed</option>
-                      <option>Most Replied</option>
+                    <select id="sortBy" class="bg-gray-900 text-white text-[14.5px] py-2 px-3 rounded-sm" onchange="sortDiscussions()">
+                      <option value="newest">Newest</option>
+                      <option value="mostViewed">Most Viewed</option>
+                      <option value="mostReplied">Most Replied</option>
                     </select>
                   </div>
                 </div>
-  
+            
+                <!-- Start a New Discussion -->
                 <div class="mb-5">
                   <div class="bg-gray-900 p-6 rounded-sm">
-                    <h2
-                      class="text-[1rem] capitalize md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white"
-                    >
+                    <h2 class="text-[1rem] capitalize md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white">
                       Start a New Discussion
                     </h2>
-                    <form class="">
+                    <form onsubmit="postDiscussion(event)">
                       <input
                         type="text"
+                        id="discussionTitle"
                         placeholder="Title"
                         class="w-full bg-gray-800/50 text-white px-4 py-2 rounded-sm mb-4 shadow-inner focus:ring-2 focus:outline-none"
+                        required
                       />
                       <textarea
+                        id="discussionMessage"
                         placeholder="Your message"
                         class="w-full bg-gray-800/50 text-white px-4 py-2 rounded-sm mb-4 shadow-inner focus:ring-2 focus:outline-none"
                         rows="4"
+                        required
                       ></textarea>
                       <button
                         type="submit"
@@ -312,167 +311,14 @@
                     </form>
                   </div>
                 </div>
-  
+            
                 <!-- Discussion threads -->
-                
-  
-                <div class="space-y-4 mb-5">
-                  <div class="bg-gray-900 p-6 rounded-lg flex">
-                    <div class="mr-6 flex flex-col items-center">
-                      <button class="text-xl text-gray-400 hover:text-green-600">
-                        <i class="ri-arrow-up-s-line"></i>
-                      </button>
-                      <span class="my-1 text-[15px] font-bold">56</span>
-                      <button class="text-xl text-gray-400 hover:text-red-500">
-                        <i class="ri-arrow-down-s-line"></i>
-                      </button>
-                    </div>
-                    <div class="flex-grow">
-                      <h2
-                        class="text-[1rem] capitalize md:text-[1.25rem] lg:mb-3 font-semibold inter tracking-tight text-white"
-                      >
-                        What does the fox say?
-                      </h2>
-                      <p class="text-white/60 text-[16px] mb-5">
-                        Guys! So I was in the shower last day and it just popped
-                        in my head. What does the fox say? Like really. How do
-                        they sound when they speak. I know about dogs, cats,
-                        mouse, cow, etc but fox! Never heard of it.
-                      </p>
-                      <div class="text-white/40 text-[15px] mb-4">
-                        Posted by Aakash Raj Dahal • 12hr ago
-                      </div>
-                      <div class="flex space-x-6">
-                        <button
-                          class="flex text-[14.5px] items-center text-white/40 hover:text-white"
-                        >
-                          <i class="ri-chat-1-fill mr-2 mt-[1px]"></i>Comment
-                        </button>
-                        <button
-                          class="flex text-[14.5px] items-center justify-center text-white/40 hover:text-white"
-                        >
-                          <i
-                            class="ri-share-forward-fill mr-2 text-[17px] mt-[1px]"
-                          ></i
-                          >Share
-                        </button>
-                        <button
-                        class="flex text-[14.5px] items-center justify-center text-white/40 hover:text-white"
-                      >
-                        <i
-                          class="ri-eye-fill mr-2 text-[15px] mt-[1px]"
-                        ></i
-                        >100 Views
-                      </button>
-                      </div>
-                    </div>
-                  </div>
-  
-                  <div class="bg-gray-900 p-6 rounded-lg flex">
-                      <div class="mr-6 flex flex-col items-center">
-                        <button class="text-xl text-gray-400 hover:text-green-600">
-                          <i class="ri-arrow-up-s-line"></i>
-                        </button>
-                        <span class="my-1 text-[15px] font-bold">1k</span>
-                        <button class="text-xl text-gray-400 hover:text-red-500">
-                          <i class="ri-arrow-down-s-line"></i>
-                        </button>
-                      </div>
-                      <div class="flex-grow">
-                        <h2
-                          class="text-[1rem] capitalize md:text-[1.25rem] lg:mb-3 font-semibold inter tracking-tight text-white"
-                        >
-                        COVID-19 Mega Thread Apr 2020
-                        </h2>
-                        <p class="text-white/60 text-[16px] mb-5">
-                          Post all the news, spoofs and everything related to the COVID
-                          Virus in this topic. This allows others to quickly go though all the information
-                          related to the virus in an much easier manner.
-                        </p>
-                        <div class="text-white/40 text-[15px] mb-4">
-                          Posted by Rajan Neupane • 06hr ago
-                        </div>
-                        <div class="flex space-x-6">
-                          <button
-                            class="flex text-[14.5px] items-center text-white/40 hover:text-white"
-                          >
-                            <i class="ri-chat-1-fill mr-2 mt-[1px]"></i>Comment
-                          </button>
-                          <button
-                            class="flex text-[14.5px] items-center justify-center text-white/40 hover:text-white"
-                          >
-                            <i
-                              class="ri-share-forward-fill mr-2 text-[17px] mt-[1px]"
-                            ></i
-                            >Share
-                          </button>
-                          <button
-                          class="flex text-[14.5px] items-center justify-center text-white/40 hover:text-white"
-                        >
-                          <i
-                            class="ri-eye-fill mr-2 text-[15px] mt-[1px]"
-                          ></i
-                          >3k Views
-                        </button>
-                        </div>
-                      </div>
-                    </div>
-  
-                    <div class="bg-gray-900 p-6 rounded-lg flex">
-                      <div class="mr-6 flex flex-col items-center">
-                        <button class="text-xl text-gray-400 hover:text-green-600">
-                          <i class="ri-arrow-up-s-line"></i>
-                        </button>
-                        <span class="my-1 text-[15px] font-bold">121</span>
-                        <button class="text-xl text-gray-400 hover:text-red-500">
-                          <i class="ri-arrow-down-s-line"></i>
-                        </button>
-                      </div>
-                      <div class="flex-grow">
-                        <h2
-                          class="text-[1rem] capitalize md:text-[1.25rem] lg:mb-3 font-semibold inter tracking-tight text-white"
-                        >
-                        How to start learning programming?
-                        </h2>
-                        <p class="text-white/60 text-[16px] mb-5">
-                          Hi all! I'm interested in learning how to code but I'm not
-                          sure where to start. What programming language should I learn
-                          first? Are there any good online resources or courses you'd
-                          recommend?
-                        </p>
-                        <div class="text-white/40 text-[15px] mb-4">
-                          Posted by FutureDev • 8hr ago
-                        </div>
-                        <div class="flex space-x-6">
-                          <button
-                            class="flex text-[14.5px] items-center text-white/40 hover:text-white"
-                          >
-                            <i class="ri-chat-1-fill mr-2 mt-[1px]"></i>Comment
-                          </button>
-                          <button
-                            class="flex text-[14.5px] items-center justify-center text-white/40 hover:text-white"
-                          >
-                            <i
-                              class="ri-share-forward-fill mr-2 text-[17px] mt-[1px]"
-                            ></i
-                            >Share
-                          </button>
-                          <button
-                          class="flex text-[14.5px] items-center justify-center text-white/40 hover:text-white"
-                        >
-                          <i
-                            class="ri-eye-fill mr-2 text-[15px] mt-[1px]"
-                          ></i
-                          >1k Views
-                        </button>
-                        </div>
-                      </div>
-                    </div>
+                <div id="discussionContainer" class="space-y-4 mb-5">
+                  <!-- Example Discussions will be generated dynamically here -->
                 </div>
               </div>
-  
-          
             </div>
+            
   
             <!-- Right Sidebar -->
             <div class="space-y-5">
