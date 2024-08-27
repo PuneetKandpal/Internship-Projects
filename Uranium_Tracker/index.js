@@ -78,3 +78,7 @@ document.querySelectorAll('.fullscreen-button').forEach((button) => {
     }
   });
 });
+
+
+
+// animation 
