@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uranium Atom Animation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes orbit {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes electron-move {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .atom-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+      }
+
+      .nucleus {
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(circle, #fbbf24, #d97706);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 20px #fbbf24;
+      }
+
+      .orbit {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px dashed rgba(255, 255, 255, 0.4);
+        animation: orbit linear infinite;
+      }
+
+      .orbit:nth-child(2) {
+        width: 260px;
+        height: 260px;
+        top: 6.5%;
+        left: 6.5%;
+        transform: translate(-50%, -50%);
+        animation-duration: 8s;
+      }
+
+      .orbit:nth-child(3) {
+        width: 200px;
+        height: 200px;
+        top: 16%;
+        left: 16%;
+        transform: translate(-50%, -50%);
+        animation-duration: 12s;
+      }
+
+      .orbit:nth-child(4) {
+        width: 140px;
+        height: 140px;
+        top: 26.5%;
+        left: 26.1%;
+        transform: translate(-50%, -50%);
+        animation-duration: 16s;
+      }
+
+      .electron {
+        width: 12px;
+        height: 12px;
+        background-color: #60a5fa;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px #60a5fa;
+        animation: electron-move 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 flex items-center justify-center h-screen">
+    <div class="atom-container">
+      <div class="nucleus"></div>
+
+      <!-- Electron Orbits -->
+      <div class="orbit">
+        <div class="electron"></div>
+      </div>
+      <div class="orbit">
+        <div class="electron"></div>
+      </div>
+      <div class="orbit">
+        <div class="electron"></div>
+      </div>
+    </div>
+  </body>
+</html>

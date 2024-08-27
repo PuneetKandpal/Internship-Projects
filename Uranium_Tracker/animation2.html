@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Uranium Atom Animation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      @keyframes orbit {
+        0% {
+          transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+        }
+        100% {
+          transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        }
+      }
+
+      @keyframes electron-move {
+        0%, 100% {
+          transform: translate(-50%, -50%) scale(1);
+        }
+        50% {
+          transform: translate(-50%, -50%) scale(1.2);
+        }
+      }
+
+      .atom-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+        perspective: 1000px;
+      }
+
+      .nucleus {
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(circle, #02a715, #037b11);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 20px green;
+      }
+
+      .orbit {
+        position: absolute;
+        border-radius: 50%;
+        border: 1.5px solid rgba(255, 255, 255, 0.4);
+        animation: orbit linear infinite;
+        transform-style: preserve-3d;
+      }
+
+      .orbit:nth-child(2) {
+        width: 260px;
+        height: 260px;
+        top: 6.5%;
+        left: 6.5%;
+        animation-duration: 8s;
+      }
+
+      .orbit:nth-child(3) {
+        width: 220px;
+        height: 220px;
+        top: 13.3%;
+        left: 13.3%;
+        animation-duration: 10s;
+      }
+
+      .orbit:nth-child(4) {
+        width: 180px;
+        height: 180px;
+        top: 20%;
+        left: 20%;
+        animation-duration: 12s;
+      }
+
+      .orbit:nth-child(5) {
+        width: 140px;
+        height: 140px;
+        top: 26.5%;
+        left: 26.5%;
+        animation-duration: 14s;
+      }
+
+      .orbit:nth-child(6) {
+        width: 100px;
+        height: 100px;
+        top: 33.3%;
+        left: 33.3%;
+        animation-duration: 16s;
+      }
+
+      .orbit:nth-child(7) {
+        width: 60px;
+        height: 60px;
+        top: 40%;
+        left: 40%;
+        animation-duration: 18s;
+      }
+
+      .electron {
+        width: 12px;
+        height: 12px;
+        background-color: goldenrod;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px goldenrod;
+        animation: electron-move 2s ease-in-out infinite;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 flex items-center justify-center h-screen">
+    <div class="atom-container">
+      <div class="nucleus"></div>
+
+      <!-- Electron Orbits with 3D Effect -->
+      <div class="orbit" style="transform: rotateX(60deg);">
+        <div class="electron"></div>
+      </div>
+      <div class="orbit" style="transform: rotateY(60deg);">
+        <div class="electron"></div>
+      </div>
+      <div class="orbit" style="transform: rotateZ(60deg);">
+        <div class="electron"></div>
+      </div>
+      <div class="orbit" style="transform: rotateX(120deg);">
+        <div class="electron"></div>
+      </div>
+      <div class="orbit" style="transform: rotateY(120deg);">
+        <div class="electron"></div>
+      </div>
+      <div class="orbit" style="transform: rotateZ(120deg);">
+        <div class="electron"></div>
+      </div>
+      <!-- <div class="orbit" style="transform: rotateX(180deg);">
+        <div class="electron"></div>
+      </div> -->
+    </div>
+  </body>
+</html>
