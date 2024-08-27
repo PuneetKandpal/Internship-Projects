@@ -1,113 +1,172 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('searchInput');
-    const searchButton = document.getElementById('searchButton');
-    const newPostButton = document.getElementById('newPostButton');
-    const sortSelect = document.getElementById('sortSelect');
-    const discussionContainer = document.getElementById('discussionContainer');
+const discussions = [
+  {
+    title: "What does the fox say?",
+    message:
+      "Guys! So I was in the shower last day and it just popped in my head. What does the fox say? Like really. How do they sound when they speak.",
+    votes: 56,
+    views: 100,
+    replies: 12,
+    postedBy: "Aakash Raj Dahal",
+    postedTime: "12hr ago",
+  },
+  {
+    title: "COVID-19 Mega Thread Apr 2020",
+    message:
+      "Post all the news, spoofs and everything related to the COVID Virus in this topic. This allows others to quickly go though all the information related to the virus in an much easier manner.",
+    votes: 90,
+    views: 300,
+    replies: 300,
+    postedBy: "Rajan Neupane",
+    postedTime: "6hr ago",
+  },
+  {
+    title: "How to start learning programming?",
+    message:
+      "Hi all! I'm interested in learning how to code but I'm not sure where to start. What programming language should I learn first?",
+    votes: 121,
+    views: 1000,
+    replies: 50,
+    postedBy: "FutureDev",
+    postedTime: "8hr ago",
+  },
+];
 
-    let discussions = [
-        {
-            id: 1,
-            title: "Future Concerns",
-            author: "S_RISHINARAYAN",
-            date: "August 16, 2024 20:07",
-            content: "As we look to address climate change and meet growing global energy demands, nuclear energy is once again entering the spotlight as a potential clean energy solution. I'd like to start a discussion on the future prospects for nuclear power, considering both the opportunities and challenges ahead",
-            reactions: 1
-        },
-        {
-            id: 2,
-            title: "Technological developments",
-            author: "NuclearEnthusiast",
-            date: "August 17, 2024 15:30",
-            content: "Advanced reactor designs and fusion research progress are showing promising results. What are your thoughts on these recent developments?",
-            reactions: 3
-        }
-    ];
+function renderDiscussions() {
+  const container = document.getElementById("discussionContainer");
+  container.innerHTML = "";
 
-    function renderDiscussions(discussionsToRender) {
-        discussionContainer.innerHTML = '';
-        discussionsToRender.forEach(discussion => {
-            const discussionElement = document.createElement('div');
-            discussionElement.className = 'bg-[#1e2a3a] p-4 rounded';
-            discussionElement.innerHTML = `
-                <h3 class="font-bold">${discussion.title}</h3>
-                <p class="text-sm text-gray-400">Fissioned by ${discussion.author} on ${discussion.date}</p>
-                <p class="mt-2">${discussion.content}</p>
-                <div class="flex justify-between items-center mt-2">
-                    <span>${discussion.reactions} Chain Reactions</span>
-                    <div>
-                        <button class="text-gray-400 hover:text-white upvote" data-id="${discussion.id}">▲</button>
-                        <button class="text-gray-400 hover:text-white downvote" data-id="${discussion.id}">▼</button>
-                    </div>
-                </div>
-            `;
-            discussionContainer.appendChild(discussionElement);
-        });
+  discussions.forEach((discussion, index) => {
+    const discussionElement = `
+          <div class="bg-gray-900 p-6 rounded-lg flex">
+            <div class="mr-6 flex flex-col items-center">
+              <button class="text-xl text-gray-400 hover:text-green-600" onclick="upvote(${index})">
+                <i class="ri-arrow-up-s-line"></i>
+              </button>
+              <span class="my-1 text-[15px] font-bold">${discussion.votes}</span>
+              <button class="text-xl text-gray-400 hover:text-red-500" onclick="downvote(${index})">
+                <i class="ri-arrow-down-s-line"></i>
+              </button>
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-[1rem] capitalize md:text-[1.25rem] lg:mb-3 font-semibold inter tracking-tight text-white">
+                ${discussion.title}
+              </h2>
+              <p class="text-white/60 text-[16px] mb-5">${discussion.message}</p>
+              <div class="text-white/40 text-[15px] mb-4">Posted by ${discussion.postedBy} • ${discussion.postedTime}</div>
+              <div class="flex space-x-6">
+                <button class="flex text-[14.5px] items-center text-white/40 hover:text-white">
+                  <i class="ri-chat-1-fill mr-2 mt-[1px]"></i>Comment
+                </button>
+                <button class="flex text-[14.5px] items-center justify-center text-white/40 hover:text-white">
+                  <i class="ri-share-forward-fill mr-2 text-[17px] mt-[1px]"></i>Share
+                </button>
+                <button class="flex text-[14.5px] items-center justify-center text-white/40 hover:text-white">
+                  <i class="ri-eye-fill mr-2 text-[15px] mt-[1px]"></i>${discussion.views} Views
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
 
-        // Add event listeners for upvote/downvote buttons
-        document.querySelectorAll('.upvote, .downvote').forEach(button => {
-            button.addEventListener('click', handleVote);
-        });
-    }
+    container.innerHTML += discussionElement;
+  });
+}
 
-    function handleVote(event) {
-        const discussionId = parseInt(event.target.getAttribute('data-id'));
-        const isUpvote = event.target.classList.contains('upvote');
-        const discussion = discussions.find(d => d.id === discussionId);
+function upvote(index) {
+  discussions[index].votes++;
+  renderDiscussions();
+}
 
-        if (discussion) {
-            discussion.reactions += isUpvote ? 1 : -1;
-            renderDiscussions(discussions);
-        }
-    }
+function downvote(index) {
+  discussions[index].votes--;
+  renderDiscussions();
+}
 
-    function sortDiscussions(method) {
-        if (method === 'newest') {
-            discussions.sort((a, b) => new Date(b.date) - new Date(a.date));
-        } else if (method === 'popular') {
-            discussions.sort((a, b) => b.reactions - a.reactions);
-        }
-        renderDiscussions(discussions);
-    }
+function postDiscussion(event) {
+  event.preventDefault();
 
-    function searchDiscussions(term) {
-        const filteredDiscussions = discussions.filter(discussion => 
-            discussion.title.toLowerCase().includes(term.toLowerCase()) || 
-            discussion.content.toLowerCase().includes(term.toLowerCase())
-        );
-        renderDiscussions(filteredDiscussions);
-    }
+  const title = document.getElementById("discussionTitle").value;
+  const message = document.getElementById("discussionMessage").value;
 
-    function addNewDiscussion(title, content) {
-        const newDiscussion = {
-            id: discussions.length + 1,
-            title: title,
-            author: "Current User",
-            date: new Date().toLocaleString(),
-            content: content,
-            reactions: 0
-        };
-        discussions.unshift(newDiscussion);
-        renderDiscussions(discussions);
-    }
+  discussions.unshift({
+    title: title,
+    message: message,
+    votes: 0,
+    views: 0,
+    replies: 0,
+    postedBy: "You",
+    postedTime: "Just now",
+  });
 
-    // Event Listeners
-    sortSelect.addEventListener('change', function() {
-        sortDiscussions(this.value);
-    });
+  document.getElementById("discussionTitle").value = "";
+  document.getElementById("discussionMessage").value = "";
 
-    searchButton.addEventListener('click', function() {
-        searchDiscussions(searchInput.value);
-    });
+  renderDiscussions();
+}
 
-    newPostButton.addEventListener('click', function() {
-        const title = prompt("Enter discussion title:");
-        const content = prompt("Enter discussion content:");
-        if (title && content) {
-            addNewDiscussion(title, content);
-        }
-    });
+function filterDiscussions() {
+  const searchQuery = document.getElementById("search").value.toLowerCase();
+  const filteredDiscussions = discussions.filter((discussion) =>
+    discussion.title.toLowerCase().includes(searchQuery)
+  );
 
-    // Initial render
-    renderDiscussions(discussions);
-});
+  renderFilteredDiscussions(filteredDiscussions);
+}
+
+function renderFilteredDiscussions(filteredDiscussions) {
+  const container = document.getElementById("discussionContainer");
+  container.innerHTML = "";
+
+  filteredDiscussions.forEach((discussion, index) => {
+    const discussionElement = `
+          <div class="bg-gray-900 p-6 rounded-lg flex">
+            <div class="mr-6 flex flex-col items-center">
+              <button class="text-xl text-gray-400 hover:text-green-600" onclick="upvote(${index})">
+                <i class="ri-arrow-up-s-line"></i>
+              </button>
+              <span class="my-1 text-[15px] font-bold">${discussion.votes}</span>
+              <button class="text-xl text-gray-400 hover:text-red-500" onclick="downvote(${index})">
+                <i class="ri-arrow-down-s-line"></i>
+              </button>
+            </div>
+            <div class="flex-grow">
+              <h2 class="text-[1rem] capitalize md:text-[1.25rem] lg:mb-3 font-semibold inter tracking-tight text-white">
+                ${discussion.title}
+              </h2>
+              <p class="text-white/60 text-[16px] mb-5">${discussion.message}</p>
+              <div class="text-white/40 text-[15px] mb-4">Posted by ${discussion.postedBy} • ${discussion.postedTime}</div>
+              <div class="flex space-x-6">
+                <button class="flex text-[14.5px] items-center text-white/40 hover:text-white">
+                  <i class="ri-chat-1-fill mr-2 mt-[1px]"></i>Comment
+                </button>
+                <button class="flex text-[14.5px] items-center justify-center text-white/40 hover:text-white">
+                  <i class="ri-share-forward-fill mr-2 text-[17px] mt-[1px]"></i>Share
+                </button>
+                <button class="flex text-[14.5px] items-center justify-center text-white/40 hover:text-white">
+                  <i class="ri-eye-fill mr-2 text-[15px] mt-[1px]"></i>${discussion.views} Views
+                </button>
+              </div>
+            </div>
+          </div>
+        `;
+
+    container.innerHTML += discussionElement;
+  });
+}
+
+function sortDiscussions() {
+  const sortBy = document.getElementById("sortBy").value;
+
+  if (sortBy === "newest") {
+    discussions.sort((a, b) => new Date(b.postedTime) - new Date(a.postedTime));
+  } else if (sortBy === "mostViewed") {
+    discussions.sort((a, b) => b.views - a.views);
+  } else if (sortBy === "mostReplied") {
+    discussions.sort((a, b) => b.replies - a.replies);
+  }
+
+  renderDiscussions();
+}
+
+// Initial render
+renderDiscussions();
