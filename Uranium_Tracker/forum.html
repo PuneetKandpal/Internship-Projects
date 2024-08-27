@@ -62,6 +62,26 @@
       .sidebar-item:hover {
         color: var(--primary);
       }
+      /* Hide scrollbar for Chrome, Safari, and Opera */
+      .main-content::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for Firefox */
+      .main-content {
+        scrollbar-width: none; /* Firefox */
+      }
+
+      /* Ensure the main content area is scrollable */
+      .main-content {
+        height: calc(100vh - 50px); /* Adjust height as necessary */
+        overflow-y: auto;
+      }
+
+      /* Optional smooth scroll */
+      .main-content {
+        scroll-behavior: smooth;
+      }
     </style>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -214,186 +234,205 @@
     <!-- Navber End ============================================================================ -->
 
     <!-- forum  -->
-    <div class="px-4 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]">
-        <div class="container mx-auto mt-3">
-          <header class="mb-4 flex justify-end items-center">
-            <div class="flex space-x-4">
-              <button
-                class="bg-bg text-[15px] font-light hover:bg-yellow hover:text-bg border border-yellow text-yellow px-4 py-[4px] rounded-sm transition-all duration-300"
+
+    <div
+      class="px-4 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] h-screen overflow-hidden"
+    >
+      <div class="container mx-auto mt-3 h-full">
+        <header class="mb-4 flex justify-end items-center">
+          <div class="flex space-x-4">
+            <button
+              class="bg-bg text-[15px] font-light hover:bg-yellow hover:text-bg border border-yellow text-yellow px-4 py-[4px] rounded-sm transition-all duration-300"
+            >
+              Enrich Your Access
+            </button>
+          </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 h-full">
+          <!-- Left Sidebar -->
+          <div class="bg-gray-900 h-fit p-8 rounded-sm sticky top-0 self-start">
+            <ul class="space-y-6">
+              <li class="flex items-center text-[16px] text-white/80">
+                <i class="fas fa-atom mr-4 text-yellow"></i>Reactor Core
+              </li>
+              <li class="flex items-center text-[16px] text-white/80">
+                <i class="fas fa-radiation mr-4 text-yellow"></i>Fission
+                Questions
+              </li>
+              <li class="flex items-center text-[16px] text-white/80">
+                <i class="fas fa-tag mr-4 text-yellow"></i>Isotope Tags
+              </li>
+              <li class="flex items-center text-[16px] text-white/80">
+                <i class="fas fa-user-graduate mr-4 text-yellow"></i>Nuclear
+                Scientists
+              </li>
+              <li class="flex items-center text-[16px] text-white/80">
+                <i class="fas fa-exclamation-triangle mr-4 text-yellow"></i
+                >Unstable Isotopes
+              </li>
+            </ul>
+          </div>
+
+          <!-- Main Content -->
+          <div class="md:col-span-2 overflow-y-scroll max-h-full main-content">
+            <div class="mb-1">
+              <h2 class="text-2xl inter font-bold text-[var(--yellow)]">
+                Recent Fission Discussions
+              </h2>
+              <div
+                class="mt-4 flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0"
               >
-                Enrich Your Access
-              </button>
+                <!-- Search Input -->
+                <div class="relative w-full md:w-1/2">
+                  <input
+                    id="search"
+                    type="text"
+                    placeholder="Search for Topics"
+                    class="bg-gray-900 text-white/50 focus:outline-none pl-10 pr-4 py-2 text-[14px] rounded-sm w-full"
+                    oninput="filterDiscussions()"
+                  />
+                  <i
+                    class="ri-search-line absolute top-1/2 transform -translate-y-1/2 left-3 text-white/30"
+                  ></i>
+                </div>
+
+                <!-- Sort By Dropdown -->
+                <div class="flex items-center space-x-1 w-full md:w-auto mr-2">
+                  <span class="text-white/60 text-sm">Sort by:</span>
+                  <select
+                    id="sortBy"
+                    class="bg-gray-900 text-white text-[14.5px] py-2 px-3 rounded-sm"
+                    onchange="sortDiscussions()"
+                  >
+                    <option value="newest">Newest</option>
+                    <option value="mostViewed">Most Viewed</option>
+                    <option value="mostReplied">Most Replied</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Start a New Discussion -->
+              <div class="mb-5">
+                <div class="bg-gray-900 p-6 rounded-sm">
+                  <h2
+                    class="text-[1rem] capitalize md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white"
+                  >
+                    Start a New Discussion
+                  </h2>
+                  <form onsubmit="postDiscussion(event)">
+                    <input
+                      type="text"
+                      id="discussionTitle"
+                      placeholder="Title"
+                      class="w-full bg-gray-800/50 text-white px-4 py-2 rounded-sm mb-4 shadow-inner focus:ring-2 focus:outline-none"
+                      required
+                    />
+                    <textarea
+                      id="discussionMessage"
+                      placeholder="Your message"
+                      class="w-full bg-gray-800/50 text-white px-4 py-2 rounded-sm mb-4 shadow-inner focus:ring-2 focus:outline-none"
+                      rows="4"
+                      required
+                    ></textarea>
+                    <button
+                      type="submit"
+                      class="bg-green-700 hover:bg-green-800 text-white px-4 py-[4px] rounded-sm text-[16px] transition-all duration-300"
+                    >
+                      <i class="fas fa-paper-plane mr-2 text-sm"></i> Post
+                    </button>
+                  </form>
+                </div>
+              </div>
+
+              <!-- Discussion threads -->
+              <div id="discussionContainer" class="space-y-4 mb-5">
+                <!-- Example Discussions will be generated dynamically here -->
+              </div>
             </div>
-          </header>
-  
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <!-- Left Sidebar -->
-            <div class="bg-gray-900 h-fit p-8 rounded-sm">
-              <ul class="space-y-6">
-                <li class="flex items-center text-[16px] text-white/80">
-                  <i class="fas fa-atom mr-4 text-yellow"></i>Reactor Core
+          </div>
+
+          <!-- Right Sidebar -->
+          <div class="space-y-5">
+            <!-- Critical Mass Questions -->
+            <div
+              class="bg-gray-900 p-6 rounded-sm transition-shadow duration-300"
+            >
+              <h2
+                class="text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white"
+              >
+                Critical Mass Questions
+              </h2>
+              <ul class="space-y-4 text-white/60">
+                <li class="flex items-start">
+                  <i class="ri-question-fill mr-3"></i>How does uranium
+                  enrichment work?
                 </li>
-                <li class="flex items-center text-[16px] text-white/80">
-                  <i class="fas fa-radiation mr-4 text-yellow"></i>Fission
-                  Questions
+                <li class="flex items-start">
+                  <i class="ri-question-fill mr-3"></i>Latest developments in
+                  nuclear fusion?
                 </li>
-                <li class="flex items-center text-[16px] text-white/80">
-                  <i class="fas fa-tag mr-4 text-yellow"></i>Isotope Tags
-                </li>
-                <li class="flex items-center text-[16px] text-white/80">
-                  <i class="fas fa-user-graduate mr-4 text-yellow"></i>Nuclear
-                  Scientists
-                </li>
-                <li class="flex items-center text-[16px] text-white/80">
-                  <i class="fas fa-exclamation-triangle mr-4 text-yellow"></i
-                  >Unstable Isotopes
+                <li class="flex items-start">
+                  <i class="ri-question-fill mr-3"></i>Comparing thorium and
+                  uranium reactors
                 </li>
               </ul>
             </div>
-  
-            <!-- Main Content -->
-            <div class="md:col-span-2">
-              <div class="mb-1">
-                <h2 class="text-2xl inter font-bold text-[var(--yellow)]">
-                  Recent Fission Discussions
-                </h2>
-                <div class="mt-4 flex flex-col md:flex-row justify-between items-center mb-4 space-y-4 md:space-y-0">
-                  <!-- Search Input -->
-                  <div class="relative w-full md:w-1/2">
-                    <input
-                      id="search"
-                      type="text"
-                      placeholder="Search for Topics"
-                      class="bg-gray-900 text-white/50 focus:outline-none pl-10 pr-4 py-2 text-[14px] rounded-sm w-full"
-                      oninput="filterDiscussions()"
-                    />
-                    <i class="ri-search-line absolute top-1/2 transform -translate-y-1/2 left-3 text-white/30"></i>
-                  </div>
-            
-                  <!-- Sort By Dropdown -->
-                  <div class="flex items-center space-x-2 w-full md:w-auto">
-                    <span class="text-white/60 text-sm">Sort by:</span>
-                    <select id="sortBy" class="bg-gray-900 text-white text-[14.5px] py-2 px-3 rounded-sm" onchange="sortDiscussions()">
-                      <option value="newest">Newest</option>
-                      <option value="mostViewed">Most Viewed</option>
-                      <option value="mostReplied">Most Replied</option>
-                    </select>
-                  </div>
-                </div>
-            
-                <!-- Start a New Discussion -->
-                <div class="mb-5">
-                  <div class="bg-gray-900 p-6 rounded-sm">
-                    <h2 class="text-[1rem] capitalize md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white">
-                      Start a New Discussion
-                    </h2>
-                    <form onsubmit="postDiscussion(event)">
-                      <input
-                        type="text"
-                        id="discussionTitle"
-                        placeholder="Title"
-                        class="w-full bg-gray-800/50 text-white px-4 py-2 rounded-sm mb-4 shadow-inner focus:ring-2 focus:outline-none"
-                        required
-                      />
-                      <textarea
-                        id="discussionMessage"
-                        placeholder="Your message"
-                        class="w-full bg-gray-800/50 text-white px-4 py-2 rounded-sm mb-4 shadow-inner focus:ring-2 focus:outline-none"
-                        rows="4"
-                        required
-                      ></textarea>
-                      <button
-                        type="submit"
-                        class="bg-green-700 hover:bg-green-800 text-white px-4 py-[4px] rounded-sm text-[16px] transition-all duration-300"
-                      >
-                        <i class="fas fa-paper-plane mr-2 text-sm"></i> Post
-                      </button>
-                    </form>
-                  </div>
-                </div>
-            
-                <!-- Discussion threads -->
-                <div id="discussionContainer" class="space-y-4 mb-5">
-                  <!-- Example Discussions will be generated dynamically here -->
-                </div>
+
+            <!-- Top Isotope Tags -->
+            <div
+              class="bg-gray-900 p-6 rounded-sm transition-shadow duration-300"
+            >
+              <h2
+                class="text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white"
+              >
+                Top Isotope Tags
+              </h2>
+              <div class="flex flex-wrap gap-3">
+                <span
+                  class="bg-green-700 text-white px-3 py-1 rounded-sm text-sm"
+                  >uranium-235</span
+                >
+                <span
+                  class="bg-green-700 text-white px-3 py-1 rounded-sm text-sm"
+                  >plutonium</span
+                >
+                <span
+                  class="bg-green-700 text-white px-3 py-1 rounded-sm text-sm"
+                  >thorium</span
+                >
+                <span
+                  class="bg-green-700 text-white px-3 py-1 rounded-sm text-sm"
+                  >fusion</span
+                >
               </div>
             </div>
-            
-  
-            <!-- Right Sidebar -->
-            <div class="space-y-5">
-              <div
-                class="bg-gray-900 p-6 rounded-sm transition-shadow duration-300"
-              >
-              <h2
-              class="text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white"
+
+            <!-- Top Nuclear Scientists -->
+            <div
+              class="bg-gray-900 p-6 rounded-sm hover:shadow-xl transition-shadow duration-300"
             >
-              Critical Mass Questions
-            </h2>
-                <ul class="space-y-4 text-white/60">
-                  <li class="flex items-start">
-                    <i class="ri-question-fill mr-3"></i></i>How does uranium
-                    enrichment work?
-                  </li>
-                  <li class="flex items-start">
-                    <i class="ri-question-fill mr-3"></i></i>Latest developments
-                    in nuclear fusion?
-                  </li>
-                  <li class="flex items-start">
-                    <i class="ri-question-fill mr-3"></i></i>Comparing thorium
-                    and uranium reactors
-                  </li>
-                </ul>
-              </div>
-  
-              <div
-                class="bg-gray-900 p-6 rounded-sm  transition-shadow duration-300"
+              <h2
+                class="text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white"
               >
-                <h2 class="text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white">
-                  Top Isotope Tags
-                </h2>
-                <div class="flex flex-wrap gap-3">
-                  <span
-                    class="bg-green-700 text-white px-3 py-1 rounded-sm text-sm"
-                    >uranium-235</span
-                  >
-                  <span
-                    class="bg-green-700 text-white px-3 py-1 rounded-sm text-sm"
-                    >plutonium</span
-                  >
-                  <span
-                    class="bg-green-700 text-white px-3 py-1 rounded-sm text-sm"
-                    >thorium</span
-                  >
-                  <span
-                    class="bg-green-700 text-white px-3 py-1 rounded-sm text-sm"
-                    >fusion</span
-                  >
-                </div>
-              </div>
-  
-              <div
-                class="bg-gray-900 p-6 rounded-sm hover:shadow-xl transition-shadow duration-300"
-              >
-                <h2 class="text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white">
-                  Top Nuclear Scientists
-                </h2>
-                <ul class="space-y-4 text-white/60">
-                  <li class="flex items-center">
-                    <i class="ri-user-3-fill mr-3 text-sm"></i></i>Marie Curie
-                  </li>
-                  <li class="flex items-center">
-                    <i class="ri-user-3-fill mr-3 text-sm"></i></i>Enrico Fermi
-                  </li>
-                  <li class="flex items-center">
-                    <i class="ri-user-3-fill mr-3 text-sm"></i></i>Lise Meitner
-                  </li>
-                </ul>
-              </div>
+                Top Nuclear Scientists
+              </h2>
+              <ul class="space-y-4 text-white/60">
+                <li class="flex items-center">
+                  <i class="ri-user-3-fill mr-3 text-sm"></i>Marie Curie
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-user-3-fill mr-3 text-sm"></i>Enrico Fermi
+                </li>
+                <li class="flex items-center">
+                  <i class="ri-user-3-fill mr-3 text-sm"></i>Lise Meitner
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
+    </div>
 
     <!-- Footer ================================================================================ -->
     <footer class="bg-black text-white py-14 px-6 lg:px-[1.2rem] mt-7">
