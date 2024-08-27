@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css?family=Oxanium:200,300,regular,500,600,700,800); /* for numbers */
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
 @import url(https://fonts.googleapis.com/css?family=Public+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300,300italic,regular,italic,500,500italic,700,700italic);
 
 * {
   margin: 0;
@@ -41,6 +42,9 @@ html {
 }
 .publicsans{
   font-family: "Public Sans";
+}
+.ubuntu{
+  font-family: "Ubuntu";
 }
 
 /* nav-------------------  */
