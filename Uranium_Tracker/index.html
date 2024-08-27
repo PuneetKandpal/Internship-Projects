@@ -542,14 +542,71 @@
 
     <!-- table and uranium price trends ============================================================= -->
     <div
-      class="bg-bg mt-20 py-16 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] flex justify-between items-center"
+      class="bg-bg mt-20 py-16 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] flex justify-between items-stretch"
     >
-      <div class="w-[47%]">
-        
+      <div class="w-[53%] flex flex-col">
+        <div class="bg-gray-800/50 rounded-sm p-4 flex-grow">
+          <h3 class="text-xl text-white inter font-bold mb-4">
+            Uranium Prices
+          </h3>
+          <table
+            class="w-full text-left text-white border-separate border-spacing-y-4"
+          >
+            <thead class="bg-[#FFBD41] text-bg">
+              <tr>
+                <th class="px-3 py-1 border-b border-white-04">LiveU3O8</th>
+                <th class="px-3 py-1 border-b border-white-04">BidLoc</th>
+                <th class="px-3 py-1 border-b border-white-04">Bid$/lbs</th>
+                <th class="px-3 py-1 border-b border-white-04">Indic$/lbs</th>
+                <th class="px-3 py-1 border-b border-white-04">Change$/lbs</th>
+                <th class="px-3 py-1 border-b border-white-04">Ask$/lbs</th>
+                <th class="px-3 py-1 border-b border-white-04">AskLoc</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="hover:bg-white-05">
+                <td class="px-3 py-1 border-b border-gray-700">Aug-24</td>
+                <td class="px-3 py-1 border-b border-gray-700">CMX</td>
+                <td class="px-3 py-1 border-b border-gray-700">81.00</td>
+                <td class="px-3 py-1 border-b border-gray-700">81.30</td>
+                <td class="px-3 py-1 border-b border-gray-700">1.35</td>
+                <td class="px-3 py-1 border-b border-gray-700">81.75</td>
+                <td class="px-3 py-1 border-b border-gray-700">CMO</td>
+              </tr>
+              <tr class="hover:bg-white-05">
+                <td class="px-3 py-1 border-b border-gray-700">Sep-24</td>
+                <td class="px-3 py-1 border-b border-gray-700">CMX</td>
+                <td class="px-3 py-1 border-b border-gray-700">81.00</td>
+                <td class="px-3 py-1 border-b border-gray-700">81.32</td>
+                <td class="px-3 py-1 border-b border-gray-700">1.35</td>
+                <td class="px-3 py-1 border-b border-gray-700">81.75</td>
+                <td class="px-3 py-1 border-b border-gray-700">CMO</td>
+              </tr>
+              <tr class="hover:bg-white-05">
+                <td class="px-3 py-1 border-b border-gray-700">Oct-24</td>
+                <td class="px-3 py-1 border-b border-gray-700">CMX</td>
+                <td class="px-3 py-1 border-b border-gray-700">81.00</td>
+                <td class="px-3 py-1 border-b border-gray-700">81.76</td>
+                <td class="px-3 py-1 border-b border-gray-700">1.36</td>
+                <td class="px-3 py-1 border-b border-gray-700">82.50</td>
+                <td class="px-3 py-1 border-b border-gray-700">CMO</td>
+              </tr>
+              <tr class="">
+                <td class="px-3 py-1 border-b border-gray-700">Nov-24</td>
+                <td class="px-3 py-1 border-b border-gray-700">CMX</td>
+                <td class="px-3 py-1 border-b border-gray-700">81.00</td>
+                <td class="px-3 py-1 border-b border-gray-700">82.51</td>
+                <td class="px-3 py-1 border-b border-gray-700">1.37</td>
+                <td class="px-3 py-1 border-b border-gray-700">83.25</td>
+                <td class="px-3 py-1 border-b border-gray-700">IND</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div class="w-[45%]">
-        <div class="bg-gray-800/50 rounded-sm p-4">
+      <div class="w-[43%] flex flex-col">
+        <div class="bg-gray-800/50 rounded-sm p-4 flex-grow">
           <h3 class="text-xl text-white inter font-bold mb-4">
             Uranium Price Trends
           </h3>
