@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Uranium Tracker</title>
     <script>
       tailwind.config = {
@@ -32,6 +33,42 @@
         height: 100vh;
         z-index: 1000;
         background: rgba(0, 0, 0, 0.8);
+      }
+
+      .electron {
+        width: 8px;
+        height: 8px;
+        background-color: #00ff00;
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform-origin: -120px;
+      }
+
+      .orbit1 {
+        animation: spin 6s linear infinite;
+      }
+
+      .orbit2 {
+        animation: spin 4s linear infinite;
+        animation-delay: -2s;
+        transform-origin: -90px;
+      }
+
+      .orbit3 {
+        animation: spin 3s linear infinite;
+        animation-delay: -1s;
+        transform-origin: -60px;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg) translate(-50%, -50%);
+        }
+        100% {
+          transform: rotate(360deg) translate(-50%, -50%);
+        }
       }
     </style>
   </head>
@@ -434,199 +471,90 @@
 
     <!-- hero====================  -->
     <div
-      class="px-4 lg:w-[90%] mx-auto w-[100%] md:px-[5rem] lg:px-[1rem] flex flex-col lg:flex-row justify-between mt-12 mb-12 md:mb-28"
+      class="bg-bg py-[3rem] px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-5"
     >
-      <!-- left section  -->
-      <div class="w-full lg:w-[58%]">
-        <!-- left card-1 -->
-        <div>
-          <img
-            class="w-full h-[300px] md:h-[410px] object-cover"
-            src="https://images.prismic.io/trackinsight/ZhTxVRrFxhpPBYwA_Uranium-THOBS-09.04.2024.png?auto=compress%2Cformat&q=85&w=3840&max-w=3840&max-h=2133&fit=crop&crop=edges"
-            alt=""
-          />
+      <div class="flex justify-between items-center">
+        <!-- heading  -->
+        <div class="w-[47%]">
           <h1
-            class="text-[1.25rem] md:text-[1.6rem] mt-3 tracking-[-0.4px] leading-[1.5rem] md:leading-[1.8rem] font-semibold text-white/90"
+            class="publicsans tracking-tight leading-[57px] italic text-6xl text-white uppercase font-bold"
           >
-            Uranium Electrons Revolving Around Atom Stock Footage Complete Video
+            Stay ahead with real-time uranium news, price & analysis
           </h1>
-
-          <p
-            class="text-[11px] md:text-[12px] roboto mt-3 font-normal text-white/35"
-          >
-            <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span> &nbsp; |
-            &nbsp; <span>Bloomberg</span>
-          </p>
-
-          <p
-            class="text-[13px] publicsans md:text-[14.5px] text-white/60 mt-3 leading-4 md:leading-5"
-          >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. A corrupti
-            reiciendis similique ullam. Ullam obcaecati illo impedit, cupiditate
-            ex in provident eveniet quibusdam est, reiciend.
-          </p>
         </div>
 
-        <!-- left card-2 -->
-        <div class="mt-16 md:mt-24">
-          <div class="relative w-full h-[200px] md:h-[280px]">
-            <img
-              class="w-full h-full object-cover"
-              src="https://i.insider.com/65116fcfe2c0220019ef40a6?width=700"
-            />
-            <div
-              class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
-            >
-              <div class="absolute bottom-5 left-4 text-white">
-                <h1
-                  class="text-[1.25rem] md:text-[1.55rem] mt-3 tracking-[-0.4px] leading-[1.5rem] md:leading-[1.8rem] font-semibold text-white/90"
-                >
-                  Stay ahead with real-time uranium news, prices and analysis
-                </h1>
-              </div>
-            </div>
-          </div>
+        <!-- animation  -->
+        <div class="w-[46%]">
+          <div class="atom-container">
+            <div class="nucleus"></div>
 
-          <div class="flex flex-wrap gap-x-3">
-            <div class="bg-white/5 w-fit p-3 px-6 mt-3">
-              <h1
-                class="text-white/90 font-semibold text-[15px] md:text-[16px]"
-              >
-                Current Uranium Spot Price
-              </h1>
-              <h2
-                class="text-[15px] md:text-[16px] text-primary font-bold mt-1 oxanium"
-              >
-                $50.25 per pound
-              </h2>
+            <!-- Electron Orbits with 3D Effect -->
+            <div class="orbit" style="transform: rotateX(60deg)">
+              <div class="electron"></div>
             </div>
-
-            <div class="bg-white/5 w-fit p-3 px-6 mt-3">
-              <h1
-                class="text-white/90 font-semibold text-[15px] md:text-[16px]"
-              >
-                1-month Price Change
-              </h1>
-              <h2
-                class="text-[15px] md:text-[16px] text-primary font-bold mt-1 oxanium"
-              >
-                +3.2%
-              </h2>
+            <div class="orbit" style="transform: rotateY(60deg)">
+              <div class="electron"></div>
             </div>
+            <div class="orbit" style="transform: rotateZ(60deg)">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit" style="transform: rotateX(120deg)">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit" style="transform: rotateY(120deg)">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit" style="transform: rotateZ(120deg)">
+              <div class="electron"></div>
+            </div>
+            <!-- <div class="orbit" style="transform: rotateX(180deg);">
+          <div class="electron"></div>
+        </div> -->
           </div>
         </div>
       </div>
 
-      <!-- right section -->
-      <div class="w-full lg:w-[35%] mt-24 lg:mt-0">
-        <img
-          class="w-full h-[180px] md:h-[220px] object-cover mb-8"
-          src="https://www.renovablesverdes.com/wp-content/uploads/2021/05/contaminacion-nuclear.jpg"
-          alt=""
-        />
-
-        <div class="border-b-2 border-white/15 pb-5">
-          <p
-            class="text-[10.5px] mt-7 font-medium publicsans bg-primary pt-[3px] py-[2px] px-2 text-white w-fit uppercase"
-          >
-            Technology
-          </p>
+      <!-- price box  -->
+      <div class="flex flex-wrap gap-x-3 mt-10">
+        <div class="bg-gray-900 w-fit p-3 px-6 mt-3">
+          <h1 class="text-white/90 font-semibold text-[15px] md:text-[16px]">
+            Current Uranium Spot Price
+          </h1>
           <h2
-            class="mt-3 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
+            class="text-[15px] md:text-[16px] text-primary font-bold mt-1 oxanium"
           >
-            Roubini accuses Treasury of manipulating bond market to lower rates
+            $50.25 per pound
           </h2>
-          <p
-            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
-          >
-            <span><i class="ri-time-line mr-1"></i> 32 mins ago</span> &nbsp; |
-            &nbsp; <span>The Street</span>
-          </p>
         </div>
 
-        <!-- Repeat this block for other news items -->
-        <div class="border-b-2 border-white/15 pb-5">
-          <p
-            class="text-[10.5px] mt-7 font-medium publicsans bg-primary pt-[3px] py-[2px] px-2 text-white w-fit uppercase"
-          >
-            Technology
-          </p>
+        <div class="bg-gray-900 w-fit p-3 px-6 mt-3">
+          <h1 class="text-white/90 font-semibold text-[15px] md:text-[16px]">
+            1-month Price Change
+          </h1>
           <h2
-            class="mt-3 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
+            class="text-[15px] md:text-[16px] text-primary font-bold mt-1 oxanium"
           >
-            Oil steadies near seven-week low with demand concerns mounting
+            +3.2%
           </h2>
-          <p
-            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
-          >
-            <span><i class="ri-time-line mr-1"></i> 42 mins ago</span> &nbsp; |
-            &nbsp; <span>Bloomberg</span>
-          </p>
         </div>
+      </div>
+    </div>
 
-        <div class="border-b-2 border-white/15 pb-5">
-          <p
-            class="text-[10.5px] mt-7 font-medium publicsans bg-primary pt-[3px] py-[2px] px-2 text-white w-fit uppercase"
-          >
-            Technology
-          </p>
-          <h2
-            class="mt-3 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
-          >
-            Roubini accuses Treasury of manipulating bond market to lower rates
-          </h2>
-          <p
-            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
-          >
-            <span><i class="ri-time-line mr-1"></i> 32 mins ago</span> &nbsp; |
-            &nbsp; <span>The Street</span>
-          </p>
+    <!-- table and uranium price trends ============================================================= -->
+    <div
+      class="bg-bg mt-20 py-16 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] flex justify-between items-center"
+    >
+      <div class="w-[47%]">
+        
+      </div>
+
+      <div class="w-[45%]">
+        <div class="bg-gray-800/50 rounded-sm p-4">
+          <h3 class="text-xl text-white inter font-bold mb-4">
+            Uranium Price Trends
+          </h3>
+          <canvas id="priceChart"></canvas>
         </div>
-
-        <div class="border-b-2 border-white/15 pb-5">
-          <p
-            class="text-[10.5px] mt-7 font-medium publicsans bg-primary pt-[3px] py-[2px] px-2 text-white w-fit uppercase"
-          >
-            Technology
-          </p>
-          <h2
-            class="mt-3 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
-          >
-            Oil steadies near seven-week low with demand concerns mounting
-          </h2>
-          <p
-            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
-          >
-            <span><i class="ri-time-line mr-1"></i> 42 mins ago</span> &nbsp; |
-            &nbsp; <span>Bloomberg</span>
-          </p>
-        </div>
-
-        <div class="border-b-2 border-white/15 pb-5">
-          <p
-            class="text-[10.5px] mt-7 font-medium publicsans bg-primary pt-[3px] py-[2px] px-2 text-white w-fit uppercase"
-          >
-            Technology
-          </p>
-          <h2
-            class="mt-3 text-[15px] md:text-[17px] font-semibold leading-5 md:leading-6 text-white/70"
-          >
-            Roubini accuses Treasury of manipulating bond market to lower rates
-          </h2>
-          <p
-            class="text-[11px] md:text-[12px] roboto mt-2 font-normal text-white/35"
-          >
-            <span><i class="ri-time-line mr-1"></i> 32 mins ago</span> &nbsp; |
-            &nbsp; <span>The Street</span>
-          </p>
-        </div>
-
-        <a
-          href="news.html"
-          class="text-white/45 flex -mr-1 mt-2 justify-end hover:text-primary text-[11px] md:text-[13px] items-center"
-        >
-          VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
-        </a>
       </div>
     </div>
 
