@@ -12,7 +12,7 @@
 }
 
 :root {
-  --bg: #151B24;
+  --bg: #151b24;
   --primary: #57fec7;
   --white: white;
   --white-08: rgba(255, 255, 255, 0.8);
@@ -31,19 +31,19 @@ html {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.roboto{
-  font-family: 'Roboto';
+.roboto {
+  font-family: "Roboto";
 }
-.oxanium{
-  font-family: 'Oxanium';
+.oxanium {
+  font-family: "Oxanium";
 }
-.inter{
+.inter {
   font-family: "Inter";
 }
-.publicsans{
+.publicsans {
   font-family: "Public Sans";
 }
-.ubuntu{
+.ubuntu {
   font-family: "Ubuntu";
 }
 
@@ -53,7 +53,6 @@ html {
   padding-bottom: 2px;
   border-bottom: 1.5px solid var(--primary);
 }
-
 
 /* hero animation  */
 @keyframes orbit {
@@ -66,7 +65,8 @@ html {
 }
 
 @keyframes electron-move {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, -50%) scale(1);
   }
   50% {
@@ -161,4 +161,15 @@ html {
   transform: translate(-50%, -50%);
   box-shadow: 0 0 10px gold;
   animation: electron-move 2s ease-in-out infinite;
+}
+
+/* animations for blogs section images*/
+.image-container img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.image-container:hover img {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
