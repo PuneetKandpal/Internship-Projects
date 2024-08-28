@@ -1962,7 +1962,8 @@
     <div
       class="py-10 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-5 md:mt-8"
     >
-      <!-- Latest Uranium Blogs Section -->
+      <!-- Blogs Section -->
+
       <div class="px-2 py-4 lg:py-10">
         <div class="flex justify-between items-center mb-4 md:mb-6">
           <h2
@@ -1977,9 +1978,11 @@
             VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
           </a>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          <!-- Blog Post 1 -->
-          <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
+        <div class="flex gap-4 md:gap-6">
+          <!-- First Image (Left) -->
+          <div
+            class="flex-1 md:flex-[1.5] bg-white overflow-hidden relative h-[20rem] flex-shrink-0 image-container"
+          >
             <img
               src="https://img.freepik.com/free-photo/3d-view-sun-space_23-2150953783.jpg?t=st=1724317773~exp=1724321373~hmac=9e0ce33345dfbe21f55fbca0b7fcc63185c15b826739dae413999f9b1d307945&w=1060"
               alt="NASA Data"
@@ -2004,8 +2007,10 @@
             </div>
           </div>
 
-          <!-- Blog Post 2 -->
-          <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
+          <!-- Second Image (Middle) -->
+          <div
+            class="flex-1 md:flex-[1] bg-white overflow-hidden relative h-[20rem] flex-shrink-0 image-container"
+          >
             <img
               src="https://images.unsplash.com/photo-1581092160607-ee22621dd758"
               alt="NASA Virtual Activities"
@@ -2031,30 +2036,63 @@
             </div>
           </div>
 
-          <!-- Blog Post 3 -->
-          <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
-            <img
-              src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
-              alt="Space Station Research"
-              class="w-full h-full object-cover"
-            />
+          <!-- Two Stacked Images (Right) -->
+          <div class="flex-1 md:flex-[1] flex flex-col space-y-4">
+            <!-- Top Image -->
             <div
-              class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
-            ></div>
-            <div
-              class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
+              class="bg-white overflow-hidden relative h-[9.5rem] flex-shrink-0 image-container"
             >
-              <span
-                class="text-white/80 text-xs flex items-center mb-2 md:mb-4 roboto"
+              <img
+                src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
+                alt="Space Station Research"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+              ></div>
+              <div
+                class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
               >
-                <i class="ri-time-line mr-1"></i> 4 min read
-              </span>
-              <h3
-                class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+                <span
+                  class="text-white/80 text-xs flex items-center mb-2 roboto"
+                >
+                  <i class="ri-time-line mr-1"></i> 4 min read
+                </span>
+                <h3
+                  class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+                >
+                  NASA To Highlight 13th Space Station Research, Development
+                  Conference
+                </h3>
+              </div>
+            </div>
+
+            <!-- Bottom Image -->
+            <div
+              class="bg-white overflow-hidden relative h-[9.5rem] flex-shrink-0 image-container"
+            >
+              <img
+                src="https://akm-img-a-in.tosshub.com/indiatoday/styles/medium_crop_simple/public/2023-08/space_station_5.jpg?VersionId=MBv_hEFhlSV.QkIqEJOGKbjkRb_AqauD&size=750:*"
+                alt="SpaceX Launch"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+              ></div>
+              <div
+                class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
               >
-                NASA To Highlight 13th Space Station Research, Development
-                Conference
-              </h3>
+                <span
+                  class="text-white/80 text-xs flex items-center mb-2 roboto"
+                >
+                  <i class="ri-time-line mr-1"></i> 3 min read
+                </span>
+                <h3
+                  class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+                >
+                  SpaceX and NASA to Launch Crew-7 Mission to ISS
+                </h3>
+              </div>
             </div>
           </div>
         </div>
