@@ -175,7 +175,7 @@
           <li>
             <a
               href="#performers"
-              class="text-white/90 hover:bg-gray-800/50 flex items-center py-2 px-4 rounded"
+              class="text-white/90 hover:bg-bg flex items-center py-2 px-4 rounded"
             >
               <i class="text-yellow ri-bar-chart-fill text-[18px] mr-4"></i>
               Top Performers
@@ -185,7 +185,7 @@
           <li>
             <a
               href="#portfolio"
-              class="text-white/90 hover:bg-gray-800/50 flex items-center py-2 px-4 rounded"
+              class="text-white/90 hover:bg-bg flex items-center py-2 px-4 rounded"
             >
               <i class="text-yellow ri-pie-chart-line text-[18px] mr-4"></i>
               Atomic Portfolio
@@ -195,7 +195,7 @@
           <li>
             <a
               href="#stocks"
-              class="text-white/90 hover:bg-gray-800/50 flex items-center py-2 px-4 rounded"
+              class="text-white/90 hover:bg-bg flex items-center py-2 px-4 rounded"
             >
               <i class="text-yellow ri-funds-line text-[18px] mr-4"></i>
               Uranium Stocks
@@ -206,11 +206,12 @@
       <div class="w-[78%] mt-[5.5rem] ml-[24%] overflow-y-auto">
         <div>
           <!-- Top Performers Section -->
-          <div id="performers" class="bg-gray-800/20 p-8">
+          <div id="performers" class="bg-gray-800/20 p-8 rounded-md">
             <h2
               class="text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white"
             >
               Top Performers
+              <span class="text-base text-gray-600"> (Last 30 days)</span>
             </h2>
 
             <!-- Cards  -->
@@ -221,36 +222,38 @@
                 <p class="font-normal text-[14.5px] text-white/50 mb-1">
                   CVVUF
                 </p>
-                <p class="text-gray-200 mb-1 text-[16px]">
+                <p class="text-white/90 mb-1 text-[16px]">
                   CanAlaska Uranium Ltd.
                 </p>
                 <p class="text-lg text-green-600">+11.11%</p>
               </div>
-              <div class="bg-gray-800/50 p-4 rounded-sm shadow-sm">
+              <div class="bg-bg p-4 rounded-sm shadow-sm">
                 <p class="font-normal text-[14.5px] text-white/50 mb-1">
                   YCA.L
                 </p>
-                <p class="text-white mb-1 text-[16px]">Yellow Cake plc</p>
+                <p class="text-white/90 mb-1 text-[16px]">Yellow Cake plc</p>
                 <p class="text-lg text-green-600">+8.04%</p>
               </div>
               <div class="bg-bg p-4 rounded-sm shadow-sm">
                 <p class="font-normal text-[14.5px] text-white/50 mb-1">
                   EBR.AX
                 </p>
-                <p class="text-white mb-1 text-[16px]">EBR Systems, Inc.</p>
+                <p class="text-white/90 mb-1 text-[16px]">EBR Systems, Inc.</p>
                 <p class="text-lg text-green-600">+5.56%</p>
               </div>
               <div class="bg-bg p-4 rounded-sm shadow-sm">
                 <p class="font-normal text-[14.5px] text-white/50 mb-1">
                   U-UN.TO
                 </p>
-                <p class="text-white mb-1 text-[16px]">Sprott Inc.</p>
-                <p class="text-lg text-green-400">+3.27%</p>
+                <p class="text-white/90 mb-1 text-[16px]">Sprott Inc.</p>
+                <p class="text-lg text-green-600">+3.27%</p>
               </div>
               <div class="bg-bg p-4 rounded-sm shadow-sm">
                 <p class="font-normal text-[14.5px] text-white/50 mb-1">UROY</p>
-                <p class="text-white mb-1 text-[16px]">Uranium Royalty Corp.</p>
-                <p class="text-lg text-green-400">+3.11%</p>
+                <p class="text-white/90 mb-1 text-[16px]">
+                  Uranium Royalty Corp.
+                </p>
+                <p class="text-lg text-green-600">+3.11%</p>
               </div>
             </div>
           </div>
@@ -294,44 +297,44 @@
                   <thead class="bg-bg text-white/40 border-b border-white/10">
                     <tr>
                       <th
-                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase tracking-wider"
+                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase"
                       >
                         Country
                       </th>
                       <th
-                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase tracking-wider"
+                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase"
                       >
                         Symbol
                       </th>
                       <th
-                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase tracking-wider"
+                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase"
                       >
                         Name
                       </th>
                       <th
-                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase tracking-wider"
+                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase"
                       >
                         Current Price
                       </th>
                       <th
-                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase tracking-wider"
+                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase"
                       >
                         Last Price
                       </th>
                       <th
-                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase tracking-wider"
+                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase"
                       >
-                        Change (1M)
+                        Return (1M)
                       </th>
                       <th
-                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase tracking-wider"
+                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase"
                       >
-                        Change (1Y)
+                        Return (Daily)
                       </th>
                       <th
-                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase tracking-wider"
+                        class="px-4 py-[11px] text-left text-[11px] font-sm uppercase"
                       >
-                        Volume
+                        Volume (Daily)
                       </th>
                     </tr>
                   </thead>
