@@ -16,8 +16,8 @@
         theme: {
           extend: {
             colors: {
-              bg: "#142135",
-              primary: "#05B821",
+              bg: "#151B24",
+              primary: "#57fec7",
               yellow: "#FFBD41",
             },
           },
@@ -33,42 +33,6 @@
         height: 100vh;
         z-index: 1000;
         background: rgba(0, 0, 0, 0.8);
-      }
-
-      .electron {
-        width: 8px;
-        height: 8px;
-        background-color: #00ff00;
-        border-radius: 50%;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform-origin: -120px;
-      }
-
-      .orbit1 {
-        animation: spin 6s linear infinite;
-      }
-
-      .orbit2 {
-        animation: spin 4s linear infinite;
-        animation-delay: -2s;
-        transform-origin: -90px;
-      }
-
-      .orbit3 {
-        animation: spin 3s linear infinite;
-        animation-delay: -1s;
-        transform-origin: -60px;
-      }
-
-      @keyframes spin {
-        0% {
-          transform: rotate(0deg) translate(-50%, -50%);
-        }
-        100% {
-          transform: rotate(360deg) translate(-50%, -50%);
-        }
       }
     </style>
   </head>
@@ -144,7 +108,7 @@
 
       <div class="subscribe-btn mt-1 hidden md:block">
         <button
-          class="bg-primary px-4 py-1 text-white text-[14px] lg:text-[15px] rounded-sm hover:bg-green-600 transition-all duration-200"
+          class="bg-primary px-4 py-1 text-bg font-medium text-[14px] lg:text-[15px] rounded-sm hover:bg-green-600 transition-all duration-200"
         >
           Subscribe
         </button>
@@ -199,7 +163,7 @@
         <br />
         <br />
         <button
-          class="bg-primary w-full py-2 text-white text-[15px] rounded-sm hover:bg-green-600 transition-all duration-200"
+          class="bg-primary w-full py-2 text-bg font-medium text-[15px] rounded-sm hover:bg-green-600 transition-all duration-200"
         >
           Subscribe
         </button>
@@ -471,7 +435,7 @@
 
     <!-- hero====================  -->
     <div
-      class="bg-bg py-[3rem] px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-5"
+      class="bg-bg py-[3rem] px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-2"
     >
       <div class="flex justify-between items-center">
         <!-- heading  -->
@@ -484,8 +448,8 @@
         </div>
 
         <!-- animation  -->
-        <div class="w-[46%]">
-          <div class="atom-container">
+        <div class="w-[46%] pt-10">
+          <div class="atom-container scale-125">
             <div class="nucleus"></div>
 
             <!-- Electron Orbits with 3D Effect -->
@@ -508,33 +472,24 @@
               <div class="electron"></div>
             </div>
             <!-- <div class="orbit" style="transform: rotateX(180deg);">
-          <div class="electron"></div>
-        </div> -->
+              <div class="electron"></div>
+            </div> -->
           </div>
         </div>
       </div>
 
       <!-- price box  -->
-      <div class="flex flex-wrap gap-x-3 mt-10">
-        <div class="bg-gray-900 w-fit p-3 px-6 mt-3">
-          <h1 class="text-white/90 font-semibold text-[15px] md:text-[16px]">
-            Current Uranium Spot Price
+      <div class="flex flex-wrap gap-x-3 mt-5">
+        <div class="bg-gray-800/20 w-fit p-3 px-6">
+          <h1
+            class="text-yellow capitalize font-semibold text-[15px] md:text-[18px]"
+          >
+            Spot Uranium &nbsp;
           </h1>
           <h2
-            class="text-[15px] md:text-[16px] text-primary font-bold mt-1 oxanium"
+            class="text-[15px] md:text-[18px] not-italic text-white/90 font-semibold mt-[6px] oxanium"
           >
-            $50.25 per pound
-          </h2>
-        </div>
-
-        <div class="bg-gray-900 w-fit p-3 px-6 mt-3">
-          <h1 class="text-white/90 font-semibold text-[15px] md:text-[16px]">
-            1-month Price Change
-          </h1>
-          <h2
-            class="text-[15px] md:text-[16px] text-primary font-bold mt-1 oxanium"
-          >
-            +3.2%
+            8175/8300 USc/Lb U3O8 (+12c, +0.15%)
           </h2>
         </div>
       </div>
@@ -545,116 +500,79 @@
       class="bg-bg mt-20 py-16 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] flex justify-between items-stretch"
     >
       <div class="w-[50%] flex flex-col">
-        <div class="bg-gray-800/50 rounded-sm p-4 flex-grow">
-          <h3 class="text-xl text-yellow inter font-bold mb-4">
-            Uranium Prices
-          </h3>
+        <div class="bg-gray-800/0 rounded-sm p-4 flex-grow">
+          <h3 class="text-xl text-yellow font-bold mb-4">Uranium Prices</h3>
           <table
-            class="w-full text-left text-white border-separate border-spacing-y-4"
+            class="w-full text-left text-white border-separate border-spacing-y-0"
           >
-            <thead class="text-normal text-white/50 text-xs">
+            <thead
+              class="text-xs font-light text-white/30 uppercase tracking-wider py-1"
+            >
               <tr>
-                <th class="px-3 py-2 border-b border-white/10">LiveU3O8</th>
-                <th class="px-3 py-2 border-b border-white/10">BidLoc</th>
-                <th class="px-3 py-2 border-b border-white/10">Bid$/lbs</th>
-                <th class="px-3 py-2 border-b border-white/10">Indic$/lbs</th>
-                <th class="px-3 py-2 border-b border-white/10">Change$/lbs</th>
-                <th class="px-3 py-2 border-b border-white/10">Ask$/lbs</th>
-                <th class="px-3 py-2 border-b border-white/10">AskLoc</th>
+                <th class="px-3 py-4 border-b border-white/5">LiveU3O8</th>
+                <th class="px-3 py-4 border-b border-white/5">BidLoc</th>
+                <th class="px-3 py-4 border-b border-white/5">Bid$/lbs</th>
+                <th class="px-3 py-4 border-b border-white/5">Indic$/lbs</th>
+                <th class="px-3 py-4 border-b border-white/5">Change$/lbs</th>
+                <th class="px-3 py-4 border-b border-white/5">Ask$/lbs</th>
+                <th class="px-3 py-4 border-b border-white/5">AskLoc</th>
               </tr>
             </thead>
-            <tbody>
-              <tr class="hover:bg-white-05">
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
+            <tbody class="text-[13px] text-white/90">
+              <tr class="hover:bg-gray-700/10">
+                <td class="px-3 py-4 border-b border-white/5 text-white/60">
                   Aug-24
                 </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  CMX
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  81.00
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  81.30
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  1.35
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  81.75
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  CMO
-                </td>
+                <td class="px-3 py-4 border-b border-white/5">CMX</td>
+                <td class="px-3 py-4 border-b border-white/5">81.00</td>
+                <td class="px-3 py-4 border-b border-white/5">81.30</td>
+                <td class="px-3 py-4 border-b border-white/5">1.35</td>
+                <td class="px-3 py-4 border-b border-white/5">81.75</td>
+                <td class="px-3 py-4 border-b border-white/5">CMO</td>
               </tr>
-              <tr class="hover:bg-white-05">
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
+              <tr class="hover:bg-gray-700/10">
+                <td class="px-3 py-4 border-b border-white/5 text-white/60">
                   Sep-24
                 </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  CMX
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  81.00
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  81.32
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  1.35
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  81.75
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  CMO
-                </td>
+                <td class="px-3 py-4 border-b border-white/5">CMX</td>
+                <td class="px-3 py-4 border-b border-white/5">81.00</td>
+                <td class="px-3 py-4 border-b border-white/5">81.32</td>
+                <td class="px-3 py-4 border-b border-white/5">1.35</td>
+                <td class="px-3 py-4 border-b border-white/5">81.75</td>
+                <td class="px-3 py-4 border-b border-white/5">CMO</td>
               </tr>
-              <tr class="hover:bg-white-05">
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
+              <tr class="hover:bg-gray-700/10">
+                <td class="px-3 py-4 border-b border-white/5 text-white/60">
                   Oct-24
                 </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  CMX
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  81.00
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  81.76
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  1.36
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  82.50
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  CMO
-                </td>
+                <td class="px-3 py-4 border-b border-white/5">CMX</td>
+                <td class="px-3 py-4 border-b border-white/5">81.00</td>
+                <td class="px-3 py-4 border-b border-white/5">81.76</td>
+                <td class="px-3 py-4 border-b border-white/5">1.36</td>
+                <td class="px-3 py-4 border-b border-white/5">82.50</td>
+                <td class="px-3 py-4 border-b border-white/5">CMO</td>
               </tr>
-              <tr class="">
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
+              <tr class="hover:bg-gray-700/10">
+                <td class="px-3 py-4 border-b border-white/5 text-white/60">
                   Nov-24
                 </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  CMX
+                <td class="px-3 py-4 border-b border-white/5">CMX</td>
+                <td class="px-3 py-4 border-b border-white/5">81.00</td>
+                <td class="px-3 py-4 border-b border-white/5">82.51</td>
+                <td class="px-3 py-4 border-b border-white/5">1.37</td>
+                <td class="px-3 py-4 border-b border-white/5">83.25</td>
+                <td class="px-3 py-4 border-b border-white/5">IND</td>
+              </tr>
+              <tr class="hover:bg-gray-700/10">
+                <td class="px-3 py-4 border-b border-white/5 text-white/60">
+                  Oct-24
                 </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  81.00
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  82.51
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  1.37
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  83.25
-                </td>
-                <td class="px-3 py-2 border-b border-white/10 text-[13px]">
-                  IND
-                </td>
+                <td class="px-3 py-4 border-b border-white/5">CMX</td>
+                <td class="px-3 py-4 border-b border-white/5">81.00</td>
+                <td class="px-3 py-4 border-b border-white/5">81.76</td>
+                <td class="px-3 py-4 border-b border-white/5">1.36</td>
+                <td class="px-3 py-4 border-b border-white/5">82.50</td>
+                <td class="px-3 py-4 border-b border-white/5">CMO</td>
               </tr>
             </tbody>
           </table>
@@ -662,8 +580,8 @@
       </div>
 
       <div class="w-[43%] flex flex-col">
-        <div class="bg-gray-800/50 rounded-sm p-4 flex-grow">
-          <h3 class="text-xl text-yellow inter font-bold mb-4">
+        <div class="bg-gray-800/20 rounded-sm p-4 px-6 flex-grow">
+          <h3 class="text-xl text-yellow inter font-bold mb-9">
             Uranium Price Trends
           </h3>
           <canvas id="priceChart"></canvas>
@@ -679,10 +597,13 @@
         Invest in the energy of the future
       </h1>
 
-      <p class="text-white text-xl mt-4">
+      <p class="text-white/90 text-[19px] mt-4 publicsans">
         Uranium is at the heart of the clean energy transition. With rising
         global demand and constrained supply, it's a unique opportunity to
-        invest in aresource that will power the planet for generations to come!
+        invest in a resource that will power the planet for generations to come!
+        As countries around the world commit to reducing carbon emissions and
+        transitioning away from fossil fuels, nuclear energy, powered by
+        uranium, is emerging as a key player in the global energy mix.
       </p>
     </div>
 
@@ -1410,7 +1331,7 @@
 
         <div class="border-b-2 border-white/15 pb-5">
           <p
-            class="text-[10.5px] mt-7 font-medium publicsans bg-primary pt-[3px] py-[2px] px-2 text-white w-fit uppercase"
+            class="text-[10.5px] mt-7 font-medium puboldns bg-primary pt-[3px] py-[2px] px-2 text-bg w-fit uppercase"
           >
             Technology
           </p>
@@ -1430,7 +1351,7 @@
         <!-- Repeat this block for other news items -->
         <div class="border-b-2 border-white/15 pb-5">
           <p
-            class="text-[10.5px] mt-7 font-medium publicsans bg-primary pt-[3px] py-[2px] px-2 text-white w-fit uppercase"
+            class="text-[10.5px] mt-7 font-medium puboldns bg-primary pt-[3px] py-[2px] px-2 text-bg w-fit uppercase"
           >
             Technology
           </p>
@@ -1449,7 +1370,7 @@
 
         <div class="border-b-2 border-white/15 pb-5">
           <p
-            class="text-[10.5px] mt-7 font-medium publicsans bg-primary pt-[3px] py-[2px] px-2 text-white w-fit uppercase"
+            class="text-[10.5px] mt-7 font-medium puboldns bg-primary pt-[3px] py-[2px] px-2 text-bg w-fit uppercase"
           >
             Technology
           </p>
@@ -1468,7 +1389,7 @@
 
         <div class="border-b-2 border-white/15 pb-5">
           <p
-            class="text-[10.5px] mt-7 font-medium publicsans bg-primary pt-[3px] py-[2px] px-2 text-white w-fit uppercase"
+            class="text-[10.5px] mt-7 font-medium puboldns bg-primary pt-[3px] py-[2px] px-2 text-bg w-fit uppercase"
           >
             Technology
           </p>
@@ -1487,479 +1408,478 @@
       </div>
     </div>
 
-    <!-- bg white  -->
-    <div class="bg-white">
-      <!-- Featured News===============================================  -->
-      <div
-        class="mt-10 md:mt-18 lg:w-[90%] mx-auto w-[100%] md:py-20 pt-14 md:pt-24 flex flex-col lg:flex-row justify-between px-6 md:px-10 lg:px-[1rem]"
-      >
-        <div class="w-full lg:w-[55%] h-full mb-10">
-          <h2
-            class="text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold uppercase tracking-tight text-black"
+    <!-- Featured News===============================================  -->
+    <div
+      class="mt-10 md:mt-18 lg:w-[90%] mx-auto w-[100%] md:py-20 pt-14 md:pt-24 flex flex-col lg:flex-row justify-between px-6 md:px-10 lg:px-[1rem]"
+    >
+      <div class="w-full lg:w-[50%] h-full mb-10">
+        <h2
+          class="text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold uppercase tracking-tight text-yellow"
+        >
+          Featured News
+        </h2>
+        <!-- cards---  -->
+        <div class="flex flex-col gap-y-12">
+          <div
+            class="flex flex-col mt-2 md:mt-0 md:flex-row justify-between h-auto md:h-[160px] space-y-4 md:space-y-0"
           >
-            Featured News
-          </h2>
-          <!-- cards---  -->
-          <div class="flex flex-col gap-y-12">
-            <div
-              class="flex flex-col mt-2 md:mt-0 md:flex-row justify-between h-auto md:h-[160px] space-y-4 md:space-y-0"
-            >
-              <div class="w-full md:w-[27%] h-[140px] md:h-full">
-                <img
-                  class="w-full h-full object-cover"
-                  src="https://www.nasa.gov/wp-content/uploads/2024/07/merra2-geos-fp-daily-record.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="w-full md:w-[70%] flex flex-col gap-y-2 md:gap-y-0 justify-between pb-1"
-              >
-                <p
-                  class="text-[10px] font-medium publicsans bg-primary py-[2px] px-2 text-white w-fit uppercase"
-                >
-                  Technology
-                </p>
-                <h1
-                  class="text-black font-bold leading-6 text-[1rem] md:text-[1.25rem]"
-                >
-                  NASA Data Shows July 22 Was Earth’s Hottest Day on Record
-                </h1>
-                <p
-                  class="text-xs md:text-[12px] roboto font-medium text-black/50"
-                >
-                  <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span>
-                  &nbsp; | &nbsp; <span>Bloomberg</span>
-                </p>
-                <p
-                  class="text-[12px] publicsans md:text-[14.5px] leading-5 text-black/55 font-medium"
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Repellendus nisi accusantium, perferendis veritatis rem est
-                  iste...
-                </p>
-              </div>
+            <div class="w-full md:w-[27%] h-[140px] md:h-full">
+              <img
+                class="w-full h-full object-cover"
+                src="https://www.nasa.gov/wp-content/uploads/2024/07/merra2-geos-fp-daily-record.png"
+                alt=""
+              />
             </div>
-
             <div
-              class="flex flex-col mt-2 md:mt-0 md:flex-row justify-between h-auto md:h-[160px] space-y-4 md:space-y-0"
+              class="w-full md:w-[70%] flex flex-col gap-y-2 md:gap-y-0 justify-between pb-1"
             >
-              <div class="w-full md:w-[27%] h-[140px] md:h-full">
-                <img
-                  class="w-full h-full object-cover"
-                  src="https://www.nasa.gov/wp-content/uploads/2024/07/merra2-geos-fp-daily-record.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="w-full md:w-[70%] flex flex-col gap-y-2 md:gap-y-0 justify-between pb-1"
+              <p
+                class="text-[10px] font-bold publicsans bg-primary py-[2px] px-2 text-bg w-fit uppercase"
               >
-                <p
-                  class="text-[10px] font-medium publicsans bg-primary py-[2px] px-2 text-white w-fit uppercase"
-                >
-                  Technology
-                </p>
-                <h1
-                  class="text-black font-bold leading-6 text-[1rem] md:text-[1.25rem]"
-                >
-                  NASA Data Shows July 22 Was Earth’s Hottest Day on Record
-                </h1>
-                <p
-                  class="text-xs md:text-[12px] roboto font-medium text-black/50"
-                >
-                  <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span>
-                  &nbsp; | &nbsp; <span>Bloomberg</span>
-                </p>
-                <p
-                  class="text-[12px] publicsans md:text-[14.5px] leading-5 text-black/55 font-medium"
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Repellendus nisi accusantium, perferendis veritatis rem est
-                  iste...
-                </p>
-              </div>
+                Technology
+              </p>
+              <h1
+                class="text-white/90 font-bold leading-6 text-[1rem] md:text-[1.2rem] capitalize"
+              >
+                NASA Data Shows July 22 Was Earth’s Hottest Day on Record
+              </h1>
+              <p
+                class="text-xs md:text-[12px] roboto font-medium text-white/25"
+              >
+                <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span>
+                &nbsp; | &nbsp; <span>Bloomberg</span>
+              </p>
+              <p
+                class="text-[12px] publicsans md:text-[14.5px] leading-5 text-white/45 font-normal"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus nisi accusantium, perferendis veritatis rem est
+                iste...
+              </p>
             </div>
+          </div>
 
+          <div
+            class="flex flex-col mt-2 md:mt-0 md:flex-row justify-between h-auto md:h-[160px] space-y-4 md:space-y-0"
+          >
+            <div class="w-full md:w-[27%] h-[140px] md:h-full">
+              <img
+                class="w-full h-full object-cover"
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS--ZBx2gpKr8U_L9E21lwnDHVgiQA9plfS-A&s"
+                alt=""
+              />
+            </div>
             <div
-              class="flex flex-col mt-2 md:mt-0 md:flex-row justify-between h-auto md:h-[160px] space-y-4 md:space-y-0"
+              class="w-full md:w-[70%] flex flex-col gap-y-2 md:gap-y-0 justify-between pb-1"
             >
-              <div class="w-full md:w-[27%] h-[140px] md:h-full">
-                <img
-                  class="w-full h-full object-cover"
-                  src="https://www.nasa.gov/wp-content/uploads/2024/07/merra2-geos-fp-daily-record.png"
-                  alt=""
-                />
-              </div>
-              <div
-                class="w-full md:w-[70%] flex flex-col gap-y-2 md:gap-y-0 justify-between pb-1"
+              <p
+                class="text-[10px] font-bold publicsans bg-primary py-[2px] px-2 text-bg w-fit uppercase"
               >
-                <p
-                  class="text-[10px] font-medium publicsans bg-primary py-[2px] px-2 text-white w-fit uppercase"
-                >
-                  Technology
-                </p>
-                <h1
-                  class="text-black font-bold leading-6 text-[1rem] md:text-[1.25rem]"
-                >
-                  NASA Data Shows July 22 Was Earth’s Hottest Day on Record
-                </h1>
-                <p
-                  class="text-xs md:text-[12px] roboto font-medium text-black/50"
-                >
-                  <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span>
-                  &nbsp; | &nbsp; <span>Bloomberg</span>
-                </p>
-                <p
-                  class="text-[12px] publicsans md:text-[14.5px] leading-5 text-black/55 font-medium"
-                >
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Repellendus nisi accusantium, perferendis veritatis rem est
-                  iste...
-                </p>
-              </div>
+                Technology
+              </p>
+              <h1
+                class="text-white/90 font-bold leading-6 text-[1rem] md:text-[1.2rem] capitalize"
+              >
+                NASA to highlight 13th space station research, development
+                conference
+              </h1>
+              <p
+                class="text-xs md:text-[12px] roboto font-medium text-white/25"
+              >
+                <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span>
+                &nbsp; | &nbsp; <span>Bloomberg</span>
+              </p>
+              <p
+                class="text-[12px] publicsans md:text-[14.5px] leading-5 text-white/45 font-normal"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus nisi accusantium, perferendis veritatis rem est
+                iste...
+              </p>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col mt-2 md:mt-0 md:flex-row justify-between h-auto md:h-[160px] space-y-4 md:space-y-0"
+          >
+            <div class="w-full md:w-[27%] h-[140px] md:h-full">
+              <img
+                class="w-full h-full object-cover"
+                src="data:image/jpeg;base64,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"
+                alt=""
+              />
+            </div>
+            <div
+              class="w-full md:w-[70%] flex flex-col gap-y-2 md:gap-y-0 justify-between pb-1"
+            >
+              <p
+                class="text-[10px] font-bold publicsans bg-primary py-[2px] px-2 text-bg w-fit uppercase"
+              >
+                Technology
+              </p>
+              <h1
+                class="text-white/90 font-bold leading-6 text-[1rem] md:text-[1.2rem] capitalize"
+              >
+                NASA offes virtual activities for 21st northrop grumman resupply
+                mission
+              </h1>
+              <p
+                class="text-xs md:text-[12px] roboto font-medium text-white/25"
+              >
+                <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span>
+                &nbsp; | &nbsp; <span>Bloomberg</span>
+              </p>
+              <p
+                class="text-[12px] publicsans md:text-[14.5px] leading-5 text-white/45 font-normal"
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus nisi accusantium, perferendis veritatis rem est
+                iste...
+              </p>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="w-full md:mt-20 lg:mt-0 mt-10 lg:w-[37%] h-full">
-          <h2
-            class="text-[1rem] md:text-[1.25rem] font-semibold uppercase tracking-tight text-black lg:mb-6"
-          >
-            Latest Uranium Tweets
-          </h2>
-          <!-- tweets  -->
-          <div class="flex flex-col gap-y-4">
-            <div class="w-full h-[110px] bg-white border-2"></div>
-            <div class="w-full h-[110px] bg-white border-2"></div>
-            <div class="w-full h-[110px] bg-white border-2"></div>
-            <div class="w-full h-[110px] bg-white border-2"></div>
-            <h4 class="flex justify-end mr-[-4px]">
-              <a
-                href="#"
-                class="text-white/40 uppercase hover:text-primary text-[11px] md:text-[13px] flex items-center"
-              >
-                MORE Tweets<i class="ri-arrow-right-s-line ml-1 text-lg"></i>
-              </a>
-            </h4>
-          </div>
+      <div class="w-full md:mt-20 lg:mt-0 mt-10 lg:w-[37%] h-full">
+        <h2
+          class="text-[1rem] md:text-[1.25rem] font-semibold uppercase tracking-tight text-yellow lg:mb-6"
+        >
+          Latest Uranium Tweets
+        </h2>
+        <!-- tweets  -->
+        <div class="flex flex-col gap-y-4">
+          <div class="w-full h-[110px] bg-white border-2"></div>
+          <div class="w-full h-[110px] bg-white border-2"></div>
+          <div class="w-full h-[110px] bg-white border-2"></div>
+          <div class="w-full h-[110px] bg-white border-2"></div>
+          <h4 class="flex justify-end mr-[-4px]">
+            <a
+              href="#"
+              class="text-white/40 uppercase hover:text-primary text-[11px] md:text-[13px] flex items-center"
+            >
+              MORE Tweets<i class="ri-arrow-right-s-line ml-1 text-lg"></i>
+            </a>
+          </h4>
         </div>
       </div>
     </div>
 
-    <div class="bg-bg">
-      <!-- Latest Uranium Blogs Section ============================================  -->
-      <div
-        class="py-10 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-5 md:mt-5"
-      >
-        <!-- Latest Uranium Blogs Section -->
-        <div class="px-2 py-4 lg:py-10">
-          <div class="flex justify-between items-center mb-4 md:mb-6">
-            <h2
-              class="text-[1rem] md:text-[1.25rem] font-semibold uppercase tracking-tight text-white"
+    
+
+    <!-- Latest Uranium Blogs Section ============================================  -->
+    <div
+      class="py-10 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-5 md:mt-5"
+    >
+      <!-- Latest Uranium Blogs Section -->
+      <div class="px-2 py-4 lg:py-10">
+        <div class="flex justify-between items-center mb-4 md:mb-6">
+          <h2
+            class="text-[1rem] md:text-[1.25rem] font-semibold uppercase tracking-tight text-white"
+          >
+            Latest Uranium Blogs
+          </h2>
+          <a
+            href="#"
+            class="text-white/45 hover:text-primary text-[11px] md:text-[13px] flex items-center"
+          >
+            VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <!-- Blog Post 1 -->
+          <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
+            <img
+              src="https://img.freepik.com/free-photo/3d-view-sun-space_23-2150953783.jpg?t=st=1724317773~exp=1724321373~hmac=9e0ce33345dfbe21f55fbca0b7fcc63185c15b826739dae413999f9b1d307945&w=1060"
+              alt="NASA Data"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+            ></div>
+            <div
+              class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
             >
-              Latest Uranium Blogs
-            </h2>
-            <a
-              href="#"
-              class="text-white/45 hover:text-primary text-[11px] md:text-[13px] flex items-center"
-            >
-              VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
-            </a>
+              <span
+                class="text-white/80 text-xs flex items-center mb-2 md:mb-4 roboto"
+              >
+                <i class="ri-time-line mr-1"></i> 2 min read
+              </span>
+              <h3
+                class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+              >
+                NASA Data Shows July 22 Was Earth's Hottest Day on Record
+              </h3>
+            </div>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            <!-- Blog Post 1 -->
-            <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
-              <img
-                src="https://img.freepik.com/free-photo/3d-view-sun-space_23-2150953783.jpg?t=st=1724317773~exp=1724321373~hmac=9e0ce33345dfbe21f55fbca0b7fcc63185c15b826739dae413999f9b1d307945&w=1060"
-                alt="NASA Data"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
-              ></div>
-              <div
-                class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
-              >
-                <span
-                  class="text-white/80 text-xs flex items-center mb-2 md:mb-4 roboto"
-                >
-                  <i class="ri-time-line mr-1"></i> 2 min read
-                </span>
-                <h3
-                  class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
-                >
-                  NASA Data Shows July 22 Was Earth's Hottest Day on Record
-                </h3>
-              </div>
-            </div>
 
-            <!-- Blog Post 2 -->
-            <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
-              <img
-                src="https://images.unsplash.com/photo-1581092160607-ee22621dd758"
-                alt="NASA Virtual Activities"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
-              ></div>
-              <div
-                class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
+          <!-- Blog Post 2 -->
+          <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
+            <img
+              src="https://images.unsplash.com/photo-1581092160607-ee22621dd758"
+              alt="NASA Virtual Activities"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+            ></div>
+            <div
+              class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
+            >
+              <span
+                class="text-white/80 text-xs flex items-center mb-2 md:mb-4 roboto"
               >
-                <span
-                  class="text-white/80 text-xs flex items-center mb-2 md:mb-4 roboto"
-                >
-                  <i class="ri-time-line mr-1"></i> 1 min read
-                </span>
-                <h3
-                  class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
-                >
-                  NASA Offers Virtual Activities for 21st Northrop Grumman
-                  Resupply Mission
-                </h3>
-              </div>
+                <i class="ri-time-line mr-1"></i> 1 min read
+              </span>
+              <h3
+                class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+              >
+                NASA Offers Virtual Activities for 21st Northrop Grumman
+                Resupply Mission
+              </h3>
             </div>
+          </div>
 
-            <!-- Blog Post 3 -->
-            <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
-              <img
-                src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
-                alt="Space Station Research"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
-              ></div>
-              <div
-                class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
+          <!-- Blog Post 3 -->
+          <div class="bg-black overflow-hidden relative w-full h-56 md:h-64">
+            <img
+              src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
+              alt="Space Station Research"
+              class="w-full h-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"
+            ></div>
+            <div
+              class="absolute bottom-3 md:bottom-4 left-3 md:left-4 z-10 text-white"
+            >
+              <span
+                class="text-white/80 text-xs flex items-center mb-2 md:mb-4 roboto"
               >
-                <span
-                  class="text-white/80 text-xs flex items-center mb-2 md:mb-4 roboto"
-                >
-                  <i class="ri-time-line mr-1"></i> 4 min read
-                </span>
-                <h3
-                  class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
-                >
-                  NASA To Highlight 13th Space Station Research, Development
-                  Conference
-                </h3>
-              </div>
+                <i class="ri-time-line mr-1"></i> 4 min read
+              </span>
+              <h3
+                class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+              >
+                NASA To Highlight 13th Space Station Research, Development
+                Conference
+              </h3>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- =====================================  -->
-        <!-- Latest Uranium Videos Section -->
-        <div class="px-2 mt-5 py-4 lg:py-10">
-          <div class="flex justify-between items-center mb-4 md:mb-6">
-            <h2
-              class="text-[1rem] md:text-[1.25rem] font-semibold uppercase tracking-tight text-white"
-            >
-              Latest Uranium Videos
-            </h2>
-            <a
-              href="#"
-              class="text-white/45 hover:text-primary text-[11px] md:text-[13px] flex items-center"
-            >
-              VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
-            </a>
+      <!-- =====================================  -->
+      <!-- Latest Uranium Videos Section -->
+      <div class="px-2 mt-5 py-4 lg:py-10">
+        <div class="flex justify-between items-center mb-4 md:mb-6">
+          <h2
+            class="text-[1rem] md:text-[1.25rem] font-semibold uppercase tracking-tight text-white"
+          >
+            Latest Uranium Videos
+          </h2>
+          <a
+            href="#"
+            class="text-white/45 hover:text-primary text-[11px] md:text-[13px] flex items-center"
+          >
+            VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
+          </a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+          <!-- Video Card 1 -->
+          <div class="video-card bg-gray-900 overflow-hidden h-[250px]">
+            <div class="relative h-full">
+              <!-- Video Container -->
+              <video
+                class="video-player w-full h-full object-cover"
+                data-video-id="1"
+                poster="https://www.shutterstock.com/shutterstock/videos/3417494171/thumb/11.jpg?ip=x480"
+              >
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+
+              <!-- Gradient Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
+              >
+                <!-- Video Title and Description -->
+                <div class="absolute bottom-0 p-4 text-white">
+                  <h3
+                    class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
+                  >
+                    Uranium - THE MOST DANGEROUS METAL ON EARTH!
+                  </h3>
+                </div>
+              </div>
+
+              <!-- Play/Pause Controls -->
+              <div
+                class="controls absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black/50 transition-opacity duration-300"
+              >
+                <button
+                  class="play-button bg-white/10 text-white p-2 rounded-full focus:outline-none"
+                  title="Play"
+                >
+                  <svg
+                    class="play-icon h-8 w-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14.752 11.168l-5.508-3.16A1 1 0 008 8.893v6.214a1 1 0 001.244.964l5.508-1.91a1 1 0 00.748-.963V12.13a1 1 0 00-.748-.963z"
+                    />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Fullscreen Toggle Button -->
+              <button
+                class="fullscreen-button absolute top-2 right-2 bg-black/70 text-white p-1 px-2 rounded-full focus:outline-none"
+                title="Fullscreen"
+              >
+                <i class="ri-expand-diagonal-2-line text-sm"></i>
+              </button>
+            </div>
           </div>
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-            <!-- Video Card 1 -->
-            <div class="video-card bg-gray-900 overflow-hidden h-[250px]">
-              <div class="relative h-full">
-                <!-- Video Container -->
-                <video
-                  class="video-player w-full h-full object-cover"
-                  data-video-id="1"
-                  poster="https://www.shutterstock.com/shutterstock/videos/3417494171/thumb/11.jpg?ip=x480"
-                >
-                  <source
-                    src="https://www.w3schools.com/html/mov_bbb.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
 
-                <!-- Gradient Overlay -->
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
-                >
-                  <!-- Video Title and Description -->
-                  <div class="absolute bottom-0 p-4 text-white">
-                    <h3
-                      class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
-                    >
-                      Uranium - THE MOST DANGEROUS METAL ON EARTH!
-                    </h3>
-                  </div>
-                </div>
+          <!-- Video Card 2 -->
+          <div class="video-card bg-gray-900 overflow-hidden h-[250px]">
+            <div class="relative h-full">
+              <!-- Video Container -->
+              <video
+                class="video-player w-full h-full object-cover"
+                data-video-id="2"
+                poster="https://149358047.v2.pressablecdn.com/wp-content/uploads/2022/05/uranium-ore-like-that-which-navajo-miners-mined-1080x675.jpeg"
+              >
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
 
-                <!-- Play/Pause Controls -->
-                <div
-                  class="controls absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black/50 transition-opacity duration-300"
-                >
-                  <button
-                    class="play-button bg-white/10 text-white p-2 rounded-full focus:outline-none"
-                    title="Play"
+              <!-- Gradient Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
+              >
+                <!-- Video Title and Description -->
+                <div class="absolute bottom-0 p-4 text-white">
+                  <h3
+                    class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
                   >
-                    <svg
-                      class="play-icon h-8 w-8"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M14.752 11.168l-5.508-3.16A1 1 0 008 8.893v6.214a1 1 0 001.244.964l5.508-1.91a1 1 0 00.748-.963V12.13a1 1 0 00-.748-.963z"
-                      />
-                    </svg>
-                  </button>
+                    Hyped up uranium investors face political fallout risk |
+                    Reuters
+                  </h3>
                 </div>
+              </div>
 
-                <!-- Fullscreen Toggle Button -->
+              <!-- Play/Pause Controls -->
+              <div
+                class="controls absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black/50 transition-opacity duration-300"
+              >
                 <button
-                  class="fullscreen-button absolute top-2 right-2 bg-black/70 text-white p-1 px-2 rounded-full focus:outline-none"
-                  title="Fullscreen"
+                  class="play-button bg-white/10 text-white p-2 rounded-full focus:outline-none"
+                  title="Play"
                 >
-                  <i class="ri-expand-diagonal-2-line text-sm"></i>
+                  <svg
+                    class="play-icon h-8 w-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14.752 11.168l-5.508-3.16A1 1 0 008 8.893v6.214a1 1 0 001.244.964l5.508-1.91a1 1 0 00.748-.963V12.13a1 1 0 00-.748-.963z"
+                    />
+                  </svg>
                 </button>
               </div>
+
+              <!-- Fullscreen Toggle Button -->
+              <button
+                class="fullscreen-button absolute top-2 right-2 bg-black/70 text-white p-1 px-2 rounded-full focus:outline-none"
+                title="Fullscreen"
+              >
+                <i class="ri-expand-diagonal-2-line text-sm"></i>
+              </button>
             </div>
+          </div>
 
-            <!-- Video Card 2 -->
-            <div class="video-card bg-gray-900 overflow-hidden h-[250px]">
-              <div class="relative h-full">
-                <!-- Video Container -->
-                <video
-                  class="video-player w-full h-full object-cover"
-                  data-video-id="2"
-                  poster="https://149358047.v2.pressablecdn.com/wp-content/uploads/2022/05/uranium-ore-like-that-which-navajo-miners-mined-1080x675.jpeg"
-                >
-                  <source
-                    src="https://www.w3schools.com/html/mov_bbb.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
+          <!-- Video Card 3 -->
+          <div class="video-card bg-gray-900 overflow-hidden h-[250px]">
+            <div class="relative h-full">
+              <!-- Video Container -->
+              <video
+                class="video-player w-full h-full object-cover"
+                data-video-id="3"
+                poster="https://i.ytimg.com/vi/ifsDeNXk0_E/maxresdefault.jpg"
+              >
+                <source
+                  src="https://www.w3schools.com/html/mov_bbb.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
 
-                <!-- Gradient Overlay -->
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
-                >
-                  <!-- Video Title and Description -->
-                  <div class="absolute bottom-0 p-4 text-white">
-                    <h3
-                      class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
-                    >
-                      Hyped up uranium investors face political fallout risk |
-                      Reuters
-                    </h3>
-                  </div>
-                </div>
-
-                <!-- Play/Pause Controls -->
-                <div
-                  class="controls absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black/50 transition-opacity duration-300"
-                >
-                  <button
-                    class="play-button bg-white/10 text-white p-2 rounded-full focus:outline-none"
-                    title="Play"
+              <!-- Gradient Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
+              >
+                <!-- Video Title and Description -->
+                <div class="absolute bottom-0 p-4 text-white">
+                  <h3
+                    class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
                   >
-                    <svg
-                      class="play-icon h-8 w-8"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M14.752 11.168l-5.508-3.16A1 1 0 008 8.893v6.214a1 1 0 001.244.964l5.508-1.91a1 1 0 00.748-.963V12.13a1 1 0 00-.748-.963z"
-                      />
-                    </svg>
-                  </button>
+                    Terra Uranium secures strategic agreement for major drilling
+                    campaign
+                  </h3>
                 </div>
+              </div>
 
-                <!-- Fullscreen Toggle Button -->
+              <!-- Play/Pause Controls -->
+              <div
+                class="controls absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black/50 transition-opacity duration-300"
+              >
                 <button
-                  class="fullscreen-button absolute top-2 right-2 bg-black/70 text-white p-1 px-2 rounded-full focus:outline-none"
-                  title="Fullscreen"
+                  class="play-button bg-white/10 text-white p-2 rounded-full focus:outline-none"
+                  title="Play"
                 >
-                  <i class="ri-expand-diagonal-2-line text-sm"></i>
+                  <svg
+                    class="play-icon h-8 w-8"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M14.752 11.168l-5.508-3.16A1 1 0 008 8.893v6.214a1 1 0 001.244.964l5.508-1.91a1 1 0 00.748-.963V12.13a1 1 0 00-.748-.963z"
+                    />
+                  </svg>
                 </button>
               </div>
-            </div>
 
-            <!-- Video Card 3 -->
-            <div class="video-card bg-gray-900 overflow-hidden h-[250px]">
-              <div class="relative h-full">
-                <!-- Video Container -->
-                <video
-                  class="video-player w-full h-full object-cover"
-                  data-video-id="3"
-                  poster="https://i.ytimg.com/vi/ifsDeNXk0_E/maxresdefault.jpg"
-                >
-                  <source
-                    src="https://www.w3schools.com/html/mov_bbb.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
-                </video>
-
-                <!-- Gradient Overlay -->
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"
-                >
-                  <!-- Video Title and Description -->
-                  <div class="absolute bottom-0 p-4 text-white">
-                    <h3
-                      class="font-semibold text-white/90 text-[14px] md:text-[14.8px] mt-0"
-                    >
-                      Terra Uranium secures strategic agreement for major
-                      drilling campaign
-                    </h3>
-                  </div>
-                </div>
-
-                <!-- Play/Pause Controls -->
-                <div
-                  class="controls absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 bg-black/50 transition-opacity duration-300"
-                >
-                  <button
-                    class="play-button bg-white/10 text-white p-2 rounded-full focus:outline-none"
-                    title="Play"
-                  >
-                    <svg
-                      class="play-icon h-8 w-8"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M14.752 11.168l-5.508-3.16A1 1 0 008 8.893v6.214a1 1 0 001.244.964l5.508-1.91a1 1 0 00.748-.963V12.13a1 1 0 00-.748-.963z"
-                      />
-                    </svg>
-                  </button>
-                </div>
-
-                <!-- Fullscreen Toggle Button -->
-                <button
-                  class="fullscreen-button absolute top-2 right-2 bg-black/70 text-white p-1 px-2 rounded-full focus:outline-none"
-                  title="Fullscreen"
-                >
-                  <i class="ri-expand-diagonal-2-line text-sm"></i>
-                </button>
-              </div>
+              <!-- Fullscreen Toggle Button -->
+              <button
+                class="fullscreen-button absolute top-2 right-2 bg-black/70 text-white p-1 px-2 rounded-full focus:outline-none"
+                title="Fullscreen"
+              >
+                <i class="ri-expand-diagonal-2-line text-sm"></i>
+              </button>
             </div>
           </div>
         </div>
