@@ -12,8 +12,8 @@
 }
 
 :root {
-  --bg: #142135;
-  --primary: #50bc48;
+  --bg: #151B24;
+  --primary: #57fec7;
   --white: white;
   --white-08: rgba(255, 255, 255, 0.8);
   --white-06: rgba(255, 255, 255, 0.6);
@@ -55,7 +55,7 @@ html {
 }
 
 
-/* animation  */
+/* hero animation  */
 @keyframes orbit {
   0% {
     transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
@@ -85,13 +85,13 @@ html {
 .nucleus {
   width: 50px;
   height: 50px;
-  background: radial-gradient(circle, #02a715, #037b11);
+  background: radial-gradient(circle, #28c691, #0da975);
   border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 20px green;
+  box-shadow: 0 0 20px #57fec7;
 }
 
 .orbit {
@@ -151,14 +151,14 @@ html {
 }
 
 .electron {
-  /* width: 12px; */
-  /* height: 12px; */
-  /* background-color: goldenrod; */
+  width: 12px;
+  height: 12px;
+  background-color: goldenrod;
   border-radius: 50%;
   position: absolute;
-  /* top: 50%; */
-  /* left: 50%; */
-  /* transform: translate(-50%, -50%); */
-  /* box-shadow: 0 0 10px goldenrod; */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px gold;
   animation: electron-move 2s ease-in-out infinite;
 }
