@@ -11,10 +11,9 @@
 }
 
 :root {
-  --bg: #142135;
-  --primary: #50bc48;
+  --bg: #151b24;
+  --primary: #57fec7;
   --white: white;
-  --yellow: #ffbd41;
   --white-08: rgba(255, 255, 255, 0.8);
   --white-06: rgba(255, 255, 255, 0.6);
   --white-05: rgba(255, 255, 255, 0.5);
@@ -118,7 +117,15 @@ html {
 
 tbody tr .symbol {
   color: var(--yellow);
-  font-weight: 800;
+  font-weight: 600;
+}
+
+tbody tr .data-positive {
+  color: rgb(52, 154, 52);
+}
+
+tbody tr .data-negative {
+  color: rgb(222, 64, 64);
 }
 
 @media (max-width: 768px) {
@@ -160,6 +167,7 @@ tbody tr .symbol {
   color: var(--bg);
   font-weight: 600;
   vertical-align: top;
+  font-size: small;
 }
 
 .uranium-stocks-table td {
@@ -171,9 +179,9 @@ tbody tr .symbol {
 
 .uranium-stocks-table tr:hover td {
   /* background-color: var(--light-green-2); */
-  background-color: rgba(17, 24, 39, 0.5);
+  background-color: #171e28;
   transition: background-color 0.2s ease;
-  color: #fff;
+  /* color: #fff; */
 }
 .symbol {
   color: #ffbd41;
@@ -227,6 +235,5 @@ tbody tr .symbol {
     margin: 1rem auto 5rem auto;
   }
 }
-
 
 /* ============================  */
