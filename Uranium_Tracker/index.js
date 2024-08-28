@@ -123,55 +123,7 @@ new Chart(priceCtx, {
   },
 });
 
-// Bid vs Ask Comparison Chart
-const bidAskCtx = document.getElementById("bidAskChart").getContext("2d");
-new Chart(bidAskCtx, {
-  type: "bar",
-  data: {
-    labels: ["Aug-24", "Sep-24", "Oct-24", "Nov-24"],
-    datasets: [
-      {
-        label: "Bid$/lbs",
-        data: [81.0, 81.0, 81.0, 81.0],
-        backgroundColor: "rgba(255, 205, 86, 0.5)",
-        borderColor: "rgb(255, 205, 86)",
-        borderWidth: 1,
-      },
-      {
-        label: "Ask$/lbs",
-        data: [81.75, 81.75, 82.5, 83.25],
-        backgroundColor: "rgba(75, 192, 192, 0.5)",
-        borderColor: "rgb(75, 192, 192)",
-        borderWidth: 1,
-      },
-    ],
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: {
-        position: "top",
-      },
-      title: {
-        display: true,
-        text: "Bid vs Ask Comparison",
-      },
-    },
-    scales: {
-      x: {
-        ticks: {
-          color: "#ffffffb5", // Change x-axis ticks to #ffffffb5
-        },
-      },
-      y: {
-        ticks: {
-          color: "#ffffffb5", // Change y-axis ticks to #ffffffb5
-        },
-        beginAtZero: false,
-      },
-    },
-  },
-});
+
 
 // Add animation to elements
 document.addEventListener("DOMContentLoaded", (event) => {
