@@ -434,24 +434,23 @@
     </div>
 
     <!-- hero====================  -->
-    <div
-      class="bg-bg py-[3rem] px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-2"
-    >
+    <div class="bg-bg py-[3rem] px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-2">
       <div class="flex justify-between items-center">
         <!-- heading  -->
         <div class="w-[47%]">
           <h1
             class="oxanium tracking-tight leading-[57px] italic text-6xl text-white uppercase font-bold"
+            id="hero-heading"
           >
-            Stay ahead with real-time uranium news, price & analysis
+            Stay <span class="word">ahead</span> with <span class="word">real-time</span> uranium <span class="word">news,</span> <span class="word">price</span> & <span class="word">analysis</span>
           </h1>
         </div>
-
+    
         <!-- animation  -->
         <div class="w-[46%] pt-10">
-          <div class="atom-container scale-125">
+          <div class="atom-container scale-125" id="hero-atom">
             <div class="nucleus"></div>
-
+    
             <!-- Electron Orbits with 3D Effect -->
             <div class="orbit" style="transform: rotateX(60deg)">
               <div class="electron"></div>
@@ -471,21 +470,16 @@
             <div class="orbit" style="transform: rotateZ(120deg)">
               <div class="electron"></div>
             </div>
-            <!-- <div class="orbit" style="transform: rotateX(180deg);">
-              <div class="electron"></div>
-            </div> -->
           </div>
         </div>
       </div>
-
+    
       <!-- price box  -->
-      <div class="flex flex-wrap gap-x-3 mt-5">
+      <div class="flex flex-wrap gap-x-3 mt-5" id="price-box">
         <div
           class="bg-gray-800/20 hover:transform hover:-translate-y-1 transition-all duration-200 hover:bg-gray-800/30 w-fit p-3 px-6"
         >
-          <h1
-            class="text-yellow capitalize font-semibold text-[15px] md:text-[18px]"
-          >
+          <h1 class="text-yellow capitalize font-semibold text-[15px] md:text-[18px]">
             Spot Uranium &nbsp;
           </h1>
           <h2
@@ -496,6 +490,7 @@
         </div>
       </div>
     </div>
+    
 
     <!-- table and uranium price trends ============================================================= -->
     <div
@@ -2409,6 +2404,8 @@
 
     <!-- js file----------------------------------------  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+
     <script src="index.js"></script>
   </body>
 </html>
