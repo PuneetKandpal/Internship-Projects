@@ -26,9 +26,7 @@ navToggle.addEventListener("click", () => {
   }
 });
 
-
-
-// marquee 
+// marquee
 const marquee = document.getElementById("stock-marquee");
 
 marquee.addEventListener("mouseover", () => {
@@ -39,14 +37,14 @@ marquee.addEventListener("mouseout", () => {
   marquee.start();
 });
 
-
-
-// video--------------------------- 
+// video---------------------------
 // Play/Pause Functionality
-document.querySelectorAll('.play-button').forEach((button) => {
+document.querySelectorAll(".play-button").forEach((button) => {
   button.addEventListener("click", () => {
-    const videoPlayer = button.closest('.video-card').querySelector('.video-player');
-    const playIcon = button.querySelector('.play-icon');
+    const videoPlayer = button
+      .closest(".video-card")
+      .querySelector(".video-player");
+    const playIcon = button.querySelector(".play-icon");
 
     if (videoPlayer.paused) {
       videoPlayer.play();
@@ -63,9 +61,11 @@ document.querySelectorAll('.play-button').forEach((button) => {
 });
 
 // Fullscreen Toggle Functionality
-document.querySelectorAll('.fullscreen-button').forEach((button) => {
+document.querySelectorAll(".fullscreen-button").forEach((button) => {
   button.addEventListener("click", () => {
-    const videoPlayer = button.closest('.video-card').querySelector('.video-player');
+    const videoPlayer = button
+      .closest(".video-card")
+      .querySelector(".video-player");
 
     if (videoPlayer.requestFullscreen) {
       videoPlayer.requestFullscreen();
@@ -78,8 +78,6 @@ document.querySelectorAll('.fullscreen-button').forEach((button) => {
     }
   });
 });
-
-
 
 // Price Trends Chart
 const priceCtx = document.getElementById("priceChart").getContext("2d");
@@ -123,8 +121,6 @@ new Chart(priceCtx, {
   },
 });
 
-
-
 // Add animation to elements
 document.addEventListener("DOMContentLoaded", (event) => {
   document.querySelectorAll(".animate__animated").forEach((element, index) => {
@@ -132,6 +128,129 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 });
 
+// animations====================================================================================
+// hero section animation =======================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  // Split the heading into individual words
+  // const heroHeading = document.querySelector("#hero-heading");
+  // heroHeading.innerHTML = heroHeading.textContent
+  //   .split(" ")
+  //   .map((word) => `<span class='word'>${word}</span>`)
+  //   .join(" ");
 
+  // GSAP timeline for staggered word animation
+  const timeline = gsap.timeline({ delay: 0.5 });
 
-// table
+  // Animate the heading words with a more elegant entrance
+  timeline.fromTo(
+    "#hero-heading ",
+    {
+      y: 90,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power4.out",
+      // stagger: 0.1,
+    }
+  );
+
+  // Animate the atom container with a floating effect
+  timeline.fromTo(
+    ".atom-container",
+    {
+      scale: 0.8,
+      opacity: 0,
+      y: 100,
+    },
+    {
+      scale: 1.1,
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power4.out",
+    },
+    "-=0.6"
+  );
+
+  // Smooth fade-in and float effect for the price box
+  gsap.fromTo(
+    "#price-box",
+    {
+      opacity: 0,
+      y: 50,
+    },
+    {
+      opacity: 1,
+      y: 0,
+      duration: 1,
+      ease: "power4.out",
+      delay: 1,
+    }
+  );
+});
+
+// table and uranium price trends =================================
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animate the entire uranium-section when it comes into view
+  gsap.from(".uranium-section", {
+    opacity: 0,
+    y: 40,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".uranium-section",
+      start: "top 80%", // Start the animation when the top of .uranium-section is 80% down the viewport
+      toggleActions: "play none none none", // Only play the animation when the section enters the viewport
+      scrub: true,
+    },
+  });
+
+  // Animate the Uranium Prices heading
+  gsap.from(".uranium-heading", {
+    opacity: 0,
+    y: 20,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".uranium-section",
+      start: "top 80%",
+      toggleActions: "play none none none",
+      scrub: true,
+    },
+  });
+
+  // Animate the table
+  gsap.from(".uranium-table", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.3,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".uranium-section",
+      start: "top 80%",
+      toggleActions: "play none none none",
+      scrub: true,
+    },
+  });
+
+  // Animate the chart
+  gsap.from(".uranium-chart", {
+    opacity: 0,
+    y: 30,
+    duration: 1,
+    delay: 0.3,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".uranium-section",
+      start: "top 80%",
+      toggleActions: "play none none none",
+      scrub: true,
+    },
+  });
+});
