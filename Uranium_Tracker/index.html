@@ -434,7 +434,9 @@
     </div>
 
     <!-- hero====================  -->
-    <div class="bg-bg py-[3rem] px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-2">
+    <div
+      class="bg-bg py-[3rem] px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] mt-2"
+    >
       <div class="flex justify-between items-center">
         <!-- heading  -->
         <div class="w-[47%]">
@@ -442,15 +444,18 @@
             class="oxanium tracking-tight leading-[57px] italic text-6xl text-white uppercase font-bold"
             id="hero-heading"
           >
-            Stay <span class="word">ahead</span> with <span class="word">real-time</span> uranium <span class="word">news,</span> <span class="word">price</span> & <span class="word">analysis</span>
+            Stay <span class="word">ahead</span> with
+            <span class="word">real-time</span> uranium
+            <span class="word">news,</span> <span class="word">price</span> &
+            <span class="word">analysis</span>
           </h1>
         </div>
-    
+
         <!-- animation  -->
         <div class="w-[46%] pt-10">
           <div class="atom-container scale-125" id="hero-atom">
             <div class="nucleus"></div>
-    
+
             <!-- Electron Orbits with 3D Effect -->
             <div class="orbit" style="transform: rotateX(60deg)">
               <div class="electron"></div>
@@ -473,13 +478,15 @@
           </div>
         </div>
       </div>
-    
+
       <!-- price box  -->
       <div class="flex flex-wrap gap-x-3 mt-5" id="price-box">
         <div
           class="bg-gray-800/20 hover:transform hover:-translate-y-1 transition-all duration-200 hover:bg-gray-800/30 w-fit p-3 px-6"
         >
-          <h1 class="text-yellow capitalize font-semibold text-[15px] md:text-[18px]">
+          <h1
+            class="text-yellow capitalize font-semibold text-[15px] md:text-[18px]"
+          >
             Spot Uranium &nbsp;
           </h1>
           <h2
@@ -490,17 +497,20 @@
         </div>
       </div>
     </div>
-    
 
     <!-- table and uranium price trends ============================================================= -->
     <div
-      class="bg-bg mt-20 py-16 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] flex justify-between items-stretch"
+      class="bg-bg mt-20 py-16 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem] flex justify-between items-stretch uranium-section"
     >
-      <div class="w-[50%] flex flex-col">
-        <div class="bg-gray-800/0 rounded-sm p-4 flex-grow">
-          <h3 class="text-xl text-yellow font-bold mb-4">Uranium Prices</h3>
+      <div class="w-[50%] flex flex-col uranium-prices">
+        <div
+          class="bg-gray-800/0 rounded-sm p-4 flex-grow uranium-table-container"
+        >
+          <h3 class="text-xl text-yellow font-bold mb-4 uranium-heading">
+            Uranium Prices
+          </h3>
           <table
-            class="w-full text-left text-white border-separate border-spacing-y-0"
+            class="w-full text-left text-white border-separate border-spacing-y-0 uranium-table"
           >
             <thead
               class="text-xs font-light text-white/30 uppercase tracking-wider py-1"
@@ -516,6 +526,7 @@
               </tr>
             </thead>
             <tbody class="text-[13px] text-white/90">
+              <!-- Table rows here -->
               <tr class="hover:bg-gray-700/10">
                 <td class="px-3 py-4 border-b border-white/5 text-white/60">
                   Aug-24
@@ -576,12 +587,12 @@
         </div>
       </div>
 
-      <div class="w-[43%] flex flex-col">
+      <div class="w-[43%] flex flex-col uranium-chart-container">
         <div class="bg-gray-800/20 rounded-sm p-4 px-6 flex-grow">
-          <h3 class="text-xl text-yellow inter font-bold mb-9">
+          <h3 class="text-xl text-yellow inter font-bold mb-9 uranium-heading">
             Uranium Price Trends
           </h3>
-          <canvas id="priceChart"></canvas>
+          <canvas id="priceChart" class="uranium-chart"></canvas>
         </div>
       </div>
     </div>
