@@ -206,7 +206,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".uranium-section",
       start: "top 80%", // Start the animation when the top of .uranium-section is 80% down the viewport
       toggleActions: "play none none none", // Only play the animation when the section enters the viewport
-      scrub: true,
     },
   });
 
@@ -220,7 +219,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".uranium-section",
       start: "top 80%",
       toggleActions: "play none none none",
-      scrub: true,
     },
   });
 
@@ -235,7 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".uranium-section",
       start: "top 80%",
       toggleActions: "play none none none",
-      scrub: true,
     },
   });
 
@@ -250,7 +247,6 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: ".uranium-section",
       start: "top 80%",
       toggleActions: "play none none none",
-      scrub: true,
     },
   });
 });
