@@ -435,75 +435,73 @@
     </div>
 
     <!-- Footer ================================================================================ -->
-    <footer class="bg-black text-white py-14 px-6 lg:px-[1.2rem] mt-7">
-      <div class="lg:w-[90%] mx-auto w-[100%]">
+    <footer class="bg-[#0f141b] text-white py-14 px-6 lg:px-[1.2rem] mt-7">
+      <div class="lg:w-[90%] mx-auto w-full">
         <div
-          class="container mx-auto flex flex-col md:flex-row justify-between items-center"
+          class="container mx-auto flex flex-col justify-center items-center text-center"
         >
-          <!-- Newsletter Subscription -->
-          <div class="text-center md:text-left mb-6 md:mb-0">
-            <p class="text-sm md:text-[1rem]">
-              Subscribe to our newsletter for updates and
-              <br class="hidden sm:block" />
-              special offers
-            </p>
-            <div class="flex justify-center md:justify-start mt-6">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                class="px-4 py-[5px] bg-white/15 text-[12px] sm:text-[14px] text-white rounded-l-sm focus:outline-none"
-              />
-              <button
-                class="bg-primary text-white px-4 py-[5px] text-[11px] sm:text-[13px] rounded-r-sm hover:bg-green-600"
-              >
-                SUBSCRIBE
-              </button>
-            </div>
+          <!-- Newsletter Subscription Section -->
+          <h2 class="text-[17px] inter sm:text-[23px] font-bold">
+            Sign Up For Our Newsletter
+          </h2>
+          <p class="text-sm publicsans mt-3 font-light text-white/50">
+            Receive uranium market updates and 70% off our premium reports.
+          </p>
+
+          <!-- Email Subscription Form -->
+          <div
+            class="flex flex-col sm:flex-row justify-center items-center mt-6 w-full max-w-[600px]"
+          >
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-[#151B24] text-white focus:outline-none placeholder:text-[14px]"
+            />
+            <button
+              class="bg-[#57fec7] rounded-sm text-[#0b0f14] text-[15px] font-medium px-6 py-2 hover:bg-[#46d7aa] hover:bg-[#0da975] transition-all duration-200"
+            >
+              Subscribe
+            </button>
           </div>
 
-          <!-- Links and Copyright -->
+          <!-- Social Media Icons -->
+          <div class="flex justify-center space-x-5 mt-6">
+            <a href="#" class="text-gray-400 hover:text-white/80">
+              <i class="ri-facebook-fill text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white/80">
+              <i class="ri-twitter-fill text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white/80">
+              <i class="ri-instagram-line text-xl"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-white/80">
+              <i class="ri-linkedin-box-fill text-xl"></i>
+            </a>
+          </div>
+
+          <!-- Horizontal Line -->
+          <hr class="w-full border-t border-gray-600 mt-10" />
+
+          <!-- Footer Links and Copyright -->
           <div
-            class="flex flex-col space-y-6 md:space-y-7 items-center md:items-end"
+            class="flex flex-col sm:flex-row justify-between items-center w-full mt-4 text-sm"
           >
-            <!-- Social Icons -->
-            <div class="flex space-x-4">
-              <a
-                href="#"
-                class="text-white/60 hover:text-white/90 transition-all duration-200"
+            <!-- Footer links aligned to the end -->
+            <div class="sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+              <a href="#" class="hover:underline text-gray-400">Home</a>
+              <a href="#" class="hover:underline text-gray-400">News</a>
+              <a href="#" class="hover:underline text-gray-400"
+                >Uranium Investments</a
               >
-                <i class="ri-instagram-line text-lg sm:text-xl"></i>
-              </a>
-              <a
-                href="#"
-                class="text-white/60 hover:text-white/90 transition-all duration-200"
+              <a href="#" class="hover:underline text-gray-400"
+                >Uranium Essentials</a
               >
-                <i class="ri-pinterest-line text-lg sm:text-xl"></i>
-              </a>
-              <a
-                href="#"
-                class="text-white/60 hover:text-white/90 transition-all duration-200"
-              >
-                <i class="ri-facebook-circle-line text-lg sm:text-xl"></i>
-              </a>
-              <a
-                href="#"
-                class="text-white/60 hover:text-white/90 transition-all duration-200"
-              >
-                <i class="ri-close-line text-lg sm:text-xl"></i>
-              </a>
+              <a href="#" class="hover:underline text-gray-400">Forum</a>
             </div>
-
-            <div
-              class="hidden md:flex text-[12px] md:text-[14px] text-white/70 space-x-4 md:space-x-5"
-            >
-              <a href="#" class="hover:underline">HOME</a>
-              <a href="#" class="hover:underline">Uranium Investments</a>
-              <a href="#" class="hover:underline">Uranium Essentials</a>
-              <a href="#" class="hover:underline">CONTACT US</a>
-            </div>
-
-            <p class="text-[12px] sm:text-[13.5px] text-white/50">
-              © Copyright 2024 | UraniumTracker
+            <!-- All rights reserved aligned with HR line -->
+            <p class="text-gray-400 mb-4 sm:mb-0">
+              UraniumTracker. All rights reserved 2024
             </p>
           </div>
         </div>
