@@ -24,13 +24,915 @@
         },
       };
     </script>
+    <style>
+      @keyframes orbit {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes electron-move {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .atom-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+      }
+
+      .nucleus {
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(circle, #57fec7, #278566);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 20px #57fec7;
+      }
+
+      .orbit {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: orbit linear infinite;
+      }
+
+      .orbit:nth-child(2) {
+        width: 260px;
+        height: 260px;
+        top: 6.5%;
+        left: 6.5%;
+        transform: translate(-50%, -50%);
+        animation-duration: 8s;
+      }
+
+      .orbit:nth-child(3) {
+        width: 200px;
+        height: 200px;
+        top: 16%;
+        left: 16%;
+        transform: translate(-50%, -50%);
+        animation-duration: 12s;
+      }
+
+      .orbit:nth-child(4) {
+        width: 140px;
+        height: 140px;
+        top: 26.5%;
+        left: 26.1%;
+        transform: translate(-50%, -50%);
+        animation-duration: 16s;
+      }
+
+      .electron {
+        width: 12px;
+        height: 12px;
+        background-color: gold;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px gold;
+        animation: electron-move 2s ease-in-out infinite;
+      }
+    </style>
   </head>
   <body>
     <!-- main  -->
-    <div class="mt-20 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]"></div>
+    <div class="pt-10">
+      <!-- sec 1  -->
+      <div
+        class="flex justify-between flex-wrap items-center py-10 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]"
+      >
+        <div class="w-[53%]">
+          <h1
+            class="oxanium tracking-tight leading-[51px] italic text-5xl text-primary uppercase font-bold"
+          >
+            NATURAL OCCURRENCE OF URANIUM
+          </h1>
+
+          <p class="publicsans italic w-[90%] text-white/50 mt-2 ml-1">
+            Uranium is a naturally occurring element found throughout the
+            Earth's crust, though it is not evenly distributed. Its presence in
+            the environment, along with the geological processes that
+            concentrate it into economically viable deposits, makes it a key
+            resource for energy production and other industrial uses.
+          </p>
+        </div>
+
+        <div class="w-[43%]">
+          <div class="atom-container">
+            <div class="nucleus"></div>
+
+            <!-- Electron Orbits -->
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sec 2  -->
+      <div class="py-32 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]">
+        <h1
+          class="relative inline-block text-[27px] font-bold oxanium text-white capitalize"
+        >
+          <span class="relative z-10 shadow-lg"
+            >The Science Of Nuclear Fission</span
+          >
+          <span
+            class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20"
+          ></span>
+        </h1>
+
+        <p class="publicsans text-white/50 mt-1 ml-1">
+          Nuclear fission is the process by which the nucleus of an atom splits
+          into two or more smaller nuclei, along with the release of a
+          significant amount of energy. This process is the basis of both
+          nuclear power generation and nuclear weapons, and Uranium is the
+          primary element used in fission reactions due to its unique atomic
+          properties.
+        </p>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div
+            class="flex flex-col bg-gray-800/20 p-5 rounded-sm border border-white/5 transform transition-transform duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03]"
+          >
+            <h1
+              class="text-white text-[22px] border-white/20 pb-1.5 font-semibold mb-2"
+            >
+              <span class="text-primary mr-2"> | </span> The Process of Fission
+            </h1>
+            <p class="text-white/40 pl-6 text-sm leading-relaxed">
+              When a Uranium-235 (U-235) nucleus absorbs a neutron, it becomes
+              unstable and splits into two smaller nuclei, known as fission
+              fragments. This splitting process releases a considerable amount
+              of energy in the form of heat, along with gamma radiation and
+              additional neutrons. These newly released neutrons can then
+              initiate further fission reactions in other U-235 nuclei, creating
+              a self-sustaining chain reaction. The ability to control this
+              chain reaction is what makes nuclear reactors & weapons possible.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="flex flex-col bg-gray-800/20 p-5 rounded-sm border border-white/5 transform transition-transform duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03]"
+          >
+            <h1
+              class="text-white text-[22px] border-white/20 pb-1.5 font-semibold mb-2"
+            >
+              <span class="text-primary mr-2"> | </span> Energy Release and
+              Efficiency
+            </h1>
+            <p class="text-white/40 pl-6 text-sm leading-relaxed">
+              The energy released during nuclear fission is immense, with each
+              fission event of a U-235 atom releasing about 200 MeV (million
+              electron volts) of energy. This energy is approximately a million
+              times greater than that released in typical chemical reactions,
+              such as the burning of fossil fuels. The high energy density of
+              Uranium makes it an exceptionally efficient fuel for power
+              generation, capable of producing vast amounts of electricity from
+              relatively small quantities of fuel.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="flex flex-col bg-gray-800/20 p-5 rounded-sm border border-white/5 transform transition-transform duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.03]"
+          >
+            <h1
+              class="text-white text-[22px] border-white/20 pb-1.5 font-semibold mb-2"
+            >
+              <span class="text-primary mr-2"> | </span> Chain Reactions and
+              Criticality
+            </h1>
+            <p class="text-white/40 pl-6 text-sm leading-relaxed">
+              A key concept in nuclear fission is criticality, which refers to
+              the state of a nuclear chain reaction. A reactor is said to be
+              "critical" when each fission event causes, on average, exactly one
+              additional fission event, sustaining a steady state of energy
+              production. If the reaction is "subcritical," it gradually dies
+              out, while a "supercritical" reaction leads to an increasing rate
+              of fission events, which is the principle behind nuclear
+              explosions. Managing criticality is essential for the safe and
+              effective operation of nuclear reactors.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- sec 3 -->
+      <!-- <div class="pb-28 mt-4 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]">
+        <h1
+          class="relative inline-block text-[27px] font-bold oxanium text-white capitalize"
+        >
+          <span class="relative z-10 shadow-lg"
+            >The Science Of Nuclear Fission</span
+          >
+          <span
+            class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20"
+          ></span>
+        </h1>
+
+        <div class="mt-8">
+          <div class="flex flex-col md:flex-row gap-6">
+           
+            <div
+              class="bg-gray-800/20 rounded-lg shadow-lg p-6 flex flex-col justify-between md:w-[32%] hover: transition-shadow duration-300"
+            >
+              <div class="flex items-center mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#57fec7"
+                  class="w-12 h-12 mr-4"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 1L7.5 8h9L12 1zM12 12l9 7H3l9-7zm0 2l-7.5 5h15L12 14z"
+                  />
+                </svg>
+                <h1 class="text-xl text-white font-semibold">
+                  The Process of Fission
+                </h1>
+              </div>
+              <p class="text-sm text-white/50 leading-relaxed">
+                When a Uranium-235 (U-235) nucleus absorbs a neutron, it becomes
+                unstable and splits into two smaller nuclei, known as fission
+                fragments. This splitting process releases a considerable amount
+                of energy in the form of heat, along with gamma radiation and
+                additional neutrons. These newly released neutrons can then
+                initiate further fission reactions in other U-235 nuclei,
+                creating a self-sustaining chain reaction. The ability to
+                control this chain reaction is what makes nuclear reactors and
+                weapons possible
+              </p>
+            </div>
+
+            
+            <div
+              class="bg-gray-800/20 rounded-lg shadow-lg p-6 flex flex-col justify-between md:w-[32%] hover:shadow-xl transition-shadow duration-300"
+            >
+              <div class="flex items-center mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#FFBD41"
+                  class="w-12 h-12 mr-4"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M11.998 2L1 7.99v8.019L12 22l10.998-6V7.99L11.998 2zM10.998 14.865V9.133l6 3.867-6 3.865z"
+                  />
+                </svg>
+                <h1 class="text-xl text-white font-semibold">
+                  Energy Release & Efficiency
+                </h1>
+              </div>
+              <p class="text-sm text-white/50 leading-relaxed">
+                The energy released during nuclear fission is immense, with each
+                fission event of a U-235 atom releasing about 200 MeV (million
+                electron volts) of energy. This energy is approximately a
+                million times greater than that released in typical chemical
+                reactions, such as the burning of fossil fuels. The high energy
+                density of Uranium makes it an exceptionally efficient fuel for
+                power generation, capable of producing vast amounts of
+                electricity from relatively small quantities of fuel, with
+                minimal environmental impact compared to fossil fuels.
+              </p>
+            </div>
+
+            
+            <div
+              class="bg-gray-800/20 rounded-lg shadow-lg p-6 flex flex-col justify-between md:w-[32%] hover:shadow-xl transition-shadow duration-300"
+            >
+              <div class="flex items-center mb-4">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="#f97316"
+                  class="w-12 h-12 mr-4"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 2C6.48 2 2 6.48 2 12c0 5.53 4.48 10 10 10s10-4.47 10-10c0-5.52-4.48-10-10-10zm0 18c-4.41 0-8-3.59-8-8 0-4.41 3.59-8 8-8 4.41 0 8 3.59 8 8 0 4.41-3.59 8-8 8zm-1-12v6h2V8h-2zm0 8h2v2h-2z"
+                  />
+                </svg>
+                <h1 class="text-xl text-white font-semibold">
+                  Chain Reactions and Criticality
+                </h1>
+              </div>
+              <p class="text-sm text-white/50 leading-relaxed">
+                A key concept in nuclear fission is criticality, which refers to
+                the state of a nuclear chain reaction. A reactor is said to be
+                "critical" when each fission event causes, on average, exactly
+                one additional fission event, sustaining a steady state of
+                energy production. If the reaction is "subcritical," it
+                gradually dies out, while a "supercritical" reaction leads to an
+                increasing rate of fission events, which is the principle behind
+                nuclear explosions. Managing criticality is essential for the
+                safe & effective operation of nuclear reactors. being provided
+                here.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- sec 4  -->
+      <div class="py-32 bg-gray-800/20 w-[100%]">
+        <div class="px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]">
+          <div class="flex justify-between">
+            <div class="w-[25.7%]">
+              <!-- heading  -->
+              <div>
+                <h1
+                  class="relative inline-block text-[27px] font-bold oxanium text-white capitalize"
+                >
+                  <span class="relative z-10 shadow-lg"
+                    >The properties of uranium</span
+                  >
+                  <span
+                    class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20"
+                  ></span>
+                </h1>
+
+                <h1
+                  class="relative -mt-1 inline-block text-[27px] font-bold oxanium text-white capitalize"
+                >
+                  <span class="relative z-10 shadow-lg"
+                    >That enable fission</span
+                  >
+                  <span
+                    class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20"
+                  ></span>
+                </h1>
+              </div>
+
+              <p class="publicsans text-white/50 mt-3 ml-1">
+                Uranium’s ability to undergo nuclear fission is rooted in its
+                unique atomic structure and the specific characteristics of its
+                isotopes, particularly Uranium-235 (U-235) and Uranium-238
+                (U-238).
+              </p>
+            </div>
+
+            <div class="w-[68%]">
+              <div class="border-b pb-4 border-white/10">
+                <h1
+                  class="text-white flex items-center text-[18px] capitalize font-semibold inter"
+                >
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-target text-primary mr-3"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle cx="12" cy="12" r="10"></circle>
+                      <circle cx="12" cy="12" r="6"></circle>
+                      <circle cx="12" cy="12" r="2"></circle></svg
+                  ></span>
+                  Isotopic Composition
+                </h1>
+                <p
+                  class="text-[14.5px] text-white/35 font-normal ml-[2.1rem] mt-2"
+                >
+                  Natural Uranium consists primarily of two isotopes: U-238,
+                  which makes up about 99.3% of natural Uranium, and U-235,
+                  which constitutes about 0.7%. U-235 is the isotope that is
+                  fissile, meaning it can sustain a nuclear chain reaction.
+                  U-238, while not fissile, is fertile, meaning it can absorb
+                  neutrons and transform into plutonium-239 (Pu-239), another
+                  fissile material used in both reactors and nuclear weapons
+                </p>
+              </div>
+
+              <div class="border-b py-4 border-white/10">
+                <h1
+                  class="text-white flex items-center text-[18px] capitalize font-semibold inter"
+                >
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="21"
+                      height="21"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-git-branch text-primary mr-3"
+                      viewBox="0 0 24 24"
+                    >
+                      <line x1="6" y1="3" x2="6" y2="15"></line>
+                      <circle cx="18" cy="6" r="3"></circle>
+                      <circle cx="6" cy="18" r="3"></circle>
+                      <path d="M18 9a9 9 0 0 1-9 9"></path></svg
+                  ></span>
+                  Fissile vs. Fertile
+                </h1>
+                <p
+                  class="text-[14.5px] text-white/35 font-normal ml-[2.1rem] mt-2"
+                >
+                  The distinction between fissile and fertile isotopes is
+                  critical in nuclear science. Fissile isotopes, like U-235, can
+                  be split by thermal (slowmoving) neutrons, making them
+                  directly useful in nuclear reactors and weapons. Fertile
+                  isotopes, like U-238, can be converted into fissile materials
+                  through neutron capture and subsequent nuclear reactions. This
+                  conversion process is a key component of breeder reactors,
+                  which are designed to create more fissile material than they
+                  consume, enhancing the efficiency and sustainability of
+                  nuclear fuel cycles.
+                </p>
+              </div>
+
+              <div class="border-b py-4 border-white/10">
+                <h1
+                  class="text-white flex items-center text-[18px] capitalize font-semibold inter"
+                >
+                  <span
+                    ><svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="feather feather-radio text-primary mr-3"
+                      viewBox="0 0 24 24"
+                    >
+                      <circle cx="12" cy="12" r="2"></circle>
+                      <path d="M16.24 7.76a6 6 0 1 1-8.48 0"></path>
+                      <path d="M2.05 13a10 10 0 1 1 19.9 0"></path>
+                    </svg>
+                  </span>
+                  Neutron Cross Section
+                </h1>
+                <p
+                  class="text-[14.5px] text-white/35 font-normal ml-[2.1rem] mt-2"
+                >
+                  The effectiveness of Uranium-235 in sustaining a chain
+                  reaction is partly due to its neutron cross-section, a measure
+                  of the probability that a neutron will interact with the
+                  nucleus. U-235 has a high cross section for thermal neutrons,
+                  making it highly efficient at capturing neutrons and
+                  undergoing fission. In contrast, U-238 has a low cross section
+                  for thermal neutrons but can capture fast neutrons to
+                  eventually form Pu-239, which is also fissile. This difference
+                  in neutron behavior is what makes U-235 so valuable for
+                  reactor fuel and U-238 important in breeding processes.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sec 5  -->
+      <div class="py-0">
+        <div
+          class="relative bg-[url('https://www.mining.com/wp-content/uploads/2024/02/nuclear-reactor.jpeg')] bg-cover bg-center h-[500px] flex items-center"
+        >
+          <div class="px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]">
+            <div
+              class="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-transparent opacity-80"
+            ></div>
+            <div
+              class="relative z-10 flex items-center justify-end py-8 max-w-[60%] w-full text-white"
+            >
+              <div>
+                <h1
+                  class="relative inline-block text-[27px] font-bold oxanium text-white capitalize"
+                >
+                  <span class="relative z-10 shadow-lg"
+                    >Uranium Minerals: Types, Formation,</span
+                  >
+                  <span
+                    class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20"
+                  ></span>
+                </h1>
+
+                <h1
+                  class="relative -mt-1 inline-block text-[27px] font-bold oxanium text-white capitalize"
+                >
+                  <span class="relative z-10 shadow-lg"
+                    >and Economic Significance</span
+                  >
+                  <span
+                    class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20"
+                  ></span>
+                </h1>
+                <p class="text-white/50 mt-4 text-[15px] leading-relaxed">
+                  Uranium, while relatively abundant in the Earth's crust, is
+                  not usually found in its pure metallic form but rather as part
+                  of various minerals. These Uranium-bearing minerals are
+                  crucial not only for mining and resource extraction but also
+                  for understanding the geochemical behavior of Uranium in
+                  different environments. For investors and those involved in
+                  the nuclear industry, knowledge of these minerals is essential
+                  for evaluating the potential of Uranium deposits, the
+                  efficiency of extraction methods, and the environmental
+                  considerations associated with mining operations.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sec 6  -->
+      <div class="py-32">
+        <div class="max-w-7xl mx-auto">
+          <h1
+            class="relative inline-block text-[24px] font-bold oxanium text-white capitalize"
+          >
+            <span class="relative z-10 shadow-lg"
+              >Primary Uranium Minerals</span
+            >
+            <span
+              class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20"
+            ></span>
+          </h1>
+          <p class="text-white/40 mt-2 text-[15px] leading-relaxed">
+            <b>Primary Uranium minerals</b> are those in which Uranium is a
+            major component of the mineral’s composition. These minerals are
+            typically formed during the initial cooling and solidification of
+            magmas or during hydrothermal processes and are the primary source
+            of Uranium in most deposits
+          </p>
+          <div class="overflow-x-auto mt-8">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr
+                  class="border-b border-white/10 py-3 bg-primary/15 text-[13px] inter text-white/60 uppercase"
+                >
+                  <th class="px-4 py-4 text-left">Properties</th>
+                  <th class="px-4 py-4 text-left">Uraninite (UO2)</th>
+                  <th class="px-4 py-4 text-left">
+                    Coffinite (U(SiO4)1-x(OH)4x)
+                  </th>
+                  <th class="px-4 py-4 text-left">Brannerite (UTi2O6)</th>
+                </tr>
+              </thead>
+              <tbody class="bg-gray-800/30 text-[15px] publicsans">
+                <tr class="border-b border-white/10 py-3 hover:bg-gray-800/40">
+                  <td class="px-4 py-4 font-semibold text-primary/70">
+                    Primary Composition
+                  </td>
+                  <td class="px-4 py-4">
+                    Composed mainly of Uranium dioxide (UO2), with small amounts
+                    of lead, thorium, and rare earth elements.
+                  </td>
+                  <td class="px-4 py-4">
+                    Composed of Uranium silicate; structurally similar to zircon
+                    with Uranium substituting for zirconium.
+                  </td>
+                  <td class="px-4 py-4">
+                    Complex oxide of Uranium, titanium, and oxygen; often
+                    includes iron and thorium.
+                  </td>
+                </tr>
+                <tr class="border-b border-white/10 py-3 hover:bg-gray-800/40">
+                  <td class="px-4 py-4 font-semibold text-primary/70">
+                    Crystal Structure
+                  </td>
+                  <td class="px-4 py-4">
+                    Cubic crystal structure; typically black or dark brown with
+                    a submetallic luster.
+                  </td>
+                  <td class="px-4 py-4">
+                    Typically black or dark brown with a vitreous to dull
+                    luster.
+                  </td>
+                  <td class="px-4 py-4">
+                    Forms as brown to black crystals with a submetallic to
+                    vitreous luster; less radioactive than Uraninite.
+                  </td>
+                </tr>
+                <tr class="border-b border-white/10 py-3 hover:bg-gray-800/40">
+                  <td class="px-4 py-4 font-semibold text-primary/70">
+                    Formation
+                  </td>
+                  <td class="px-4 py-4">
+                    Found in granitic pegmatites, hydrothermal veins, and
+                    sedimentary rocks; often with other heavy metal minerals.
+                  </td>
+                  <td class="px-4 py-4">
+                    Forms in low-temperature hydrothermal environments, often in
+                    reducing conditions with organic matter or sulfides.
+                  </td>
+                  <td class="px-4 py-4">
+                    Found in granitic pegmatites, metamorphic rocks, and
+                    hydrothermal veins, often with refractory minerals like
+                    ilmenite and rutile.
+                  </td>
+                </tr>
+                <tr class="border-b border-white/10 py-3 hover:bg-gray-800/40">
+                  <td class="px-4 py-4 font-semibold text-primary/70">
+                    Key Locations
+                  </td>
+                  <td class="px-4 py-4">
+                    Canada's Athabasca Basin, Namibia's Rössing deposit, and
+                    South Africa's Witwatersrand Basin.
+                  </td>
+                  <td class="px-4 py-4">
+                    Found in sandstone-hosted deposits, notably in the United
+                    States, Kazakhstan, and Canada.
+                  </td>
+                  <td class="px-4 py-4">
+                    Notable deposits in Australia's Olympic Dam and Canada's
+                    Athabasca Basin.
+                  </td>
+                </tr>
+                <tr class="border-b border-white/10 py-3 hover:bg-gray-800/40">
+                  <td class="px-4 py-4 font-semibold text-primary/70">
+                    Economic Value
+                  </td>
+                  <td class="px-4 py-4">
+                    Main Uranium ore targeted in mining due to its high Uranium
+                    content and economic significance.
+                  </td>
+                  <td class="px-4 py-4">
+                    Important ore in sandstone-hosted Uranium deposits,
+                    especially in in-situ recovery (ISR) mining methods.
+                  </td>
+                  <td class="px-4 py-4">
+                    Important Uranium source in polymetallic deposits; complex
+                    chemistry makes extraction challenging, but technology
+                    improvements aid recovery.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto mt-32">
+          <h1
+            class="relative inline-block text-[24px] font-bold oxanium text-white capitalize"
+          >
+            <span class="relative z-10 shadow-lg"
+              >Secondary Uranium Minerals</span
+            >
+            <span
+              class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20"
+            ></span>
+          </h1>
+          <p class="text-white/40 mt-2 text-[15px] leading-relaxed">
+            <b>Secondary Uranium minerals</b> are formed through the weathering
+            and alteration of primary Uranium minerals. These minerals often
+            occur near the surface and are the product of complex geochemical
+            interactions between Uranium, oxygen, water, and other elements in
+            the environment.
+          </p>
+          <div class="overflow-x-auto mt-8">
+            <table class="w-full border-collapse">
+              <thead>
+                <tr
+                  class="border-b border-white/10 py-3 bg-primary/15 text-[13px] inter text-white/60 uppercase"
+                >
+                  <th class="px-4 py-4 text-left">Properties</th>
+                  <th class="px-4 py-4 text-left">
+                    Autunite (Ca(UO2)2(PO4)2·10-12H2O)
+                  </th>
+                  <th class="px-4 py-4 text-left">
+                    Torbernite (Cu(UO2)2(PO4)2·8-12H2O)
+                  </th>
+                  <th class="px-4 py-4 text-left">
+                    Carnotite (K2(UO2)2(VO4)2·3H2O)
+                  </th>
+                  <th class="px-4 py-4 text-left">
+                    Meta-Autunite (Ca(UO2)2(PO4)2·8H2O)
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="bg-gray-800/30 text-[15px] publicsans">
+                <tr class="border-b border-white/10 py-3 hover:bg-gray-800/40">
+                  <td class="px-4 py-4 font-semibold text-primary/70">
+                    Primary Composition
+                  </td>
+                  <td class="px-4 py-4">
+                    Hydrated calcium Uranium phosphate; bright yellow to
+                    greenish-yellow color with a tabular crystal habit.
+                  </td>
+                  <td class="px-4 py-4">
+                    Hydrated copper Uranium phosphate; vibrant green color, with
+                    platy crystals often in fan-shaped aggregates.
+                  </td>
+                  <td class="px-4 py-4">
+                    Potassium Uranium vanadate; bright yellow color, typically
+                    forming in fine-grained, earthy masses.
+                  </td>
+                  <td class="px-4 py-4">
+                    Dehydration product of Autunite; similar chemical
+                    composition with less water, bright yellow color, and
+                    fluorescence.
+                  </td>
+                </tr>
+                <tr class="border-b border-white/10 py-3 hover:bg-gray-800/40">
+                  <td class="px-4 py-4 font-semibold text-primary/70">
+                    Fluorescence / Crystal Structure
+                  </td>
+                  <td class="px-4 py-4">
+                    Fluoresces under ultraviolet light, aiding field
+                    identification.
+                  </td>
+                  <td class="px-4 py-4">
+                    Fluoresces under ultraviolet light, aiding in
+                    identification.
+                  </td>
+                  <td class="px-4 py-4"></td>
+                  <td class="px-4 py-4">
+                    Forms smaller, more brittle crystals compared to Autunite
+                  </td>
+                </tr>
+                <tr class="border-b border-white/10 py-3 hover:bg-gray-800/40">
+                  <td class="px-4 py-4 font-semibold text-primary/70">
+                    Formation
+                  </td>
+                  <td class="px-4 py-4">
+                    Forms in oxidized zones of Uranium deposits, commonly found
+                    in weathered granitic rocks, pegmatites, and sedimentary
+                    rocks.
+                  </td>
+                  <td class="px-4 py-4">
+                    Forms in oxidized zones of Uranium deposits, associated with
+                    copper minerals; found in granitic pegmatites, hydrothermal
+                    veins, and phosphate-rich sedimentary rocks.
+                  </td>
+                  <td class="px-4 py-4">
+                    Forms as a secondary mineral in the oxidized zones of
+                    sedimentary Uranium-vanadium deposits, particularly in
+                    sandstone-hosted environments.
+                  </td>
+                  <td class="px-4 py-4">
+                    Develops from Autunite in arid environments or over time;
+                    found in granitic rocks, pegmatites, and sedimentary
+                    deposits.
+                  </td>
+                </tr>
+                <tr class="border-b border-white/10 py-3 hover:bg-gray-800/40">
+                  <td class="px-4 py-4 font-semibold text-primary/70">
+                    Key Locations
+                  </td>
+                  <td class="px-4 py-4">
+                    Found in Uranium-bearing regions such as France, the United
+                    States, and the Czech Republic.
+                  </td>
+                  <td class="px-4 py-4">
+                    Notable deposits in the Democratic Republic of the Congo,
+                    France, and the United States.
+                  </td>
+                  <td class="px-4 py-4"></td>
+                  <td class="px-4 py-4">
+                    Notable deposits in the United States, Germany, and
+                    Portugal.
+                  </td>
+                </tr>
+                <tr class="border-b border-white/10 py-3 hover:bg-gray-800/40">
+                  <td class="px-4 py-4 font-semibold text-primary/70">
+                    Economic Value
+                  </td>
+                  <td class="px-4 py-4">
+                    Not a major Uranium source globally but valuable in
+                    near-surface deposits and small-scale operations due to easy
+                    extraction.
+                  </td>
+                  <td class="px-4 py-4">
+                    Similar to Autunite, significant in small, near-surface
+                    deposits; also valued as a mineral specimen due to its
+                    striking color.
+                  </td>
+                  <td class="px-4 py-4">
+                    Once a major source of Uranium and vanadium, especially in
+                    the U.S.; still valuable in regions where vanadium is
+                    economically significant.
+                  </td>
+                  <td class="px-4 py-4">
+                    Significant in local mining operations; presence in oxidized
+                    zones can indicate potential for economic extraction,
+                    especially in surface mining regions.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- sec 7  -->
+      <div class="py-32 bg-gray-800/30">
+        <div class="px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]">
+          <h1
+            class="relative inline-block text-[27px] font-bold oxanium text-white capitalize"
+          >
+            <span class="relative z-10 shadow-lg"
+              >geological formations hosting uranium deposits</span
+            >
+            <span
+              class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20"
+            ></span>
+          </h1>
+
+          <p class="publicsans text-white/50 mt-1 ml-1">
+            Uranium deposits are found in a variety of geological formations
+            around the world. These formations are the result of complex
+            geological processes that concentrate uranium from its widespread,
+            low-concentration presence in the Earth's crust into economically
+            viable deposits. Understanding the types of geological formations
+            that host uranium deposits is crucial for identifying potential
+            mining opportunities, evaluating the viability of known deposits,
+            and understanding the global distribution of uranium resources.
+          </p>
+
+          <div class="mt-12">
+            <h1
+              class="mt-3 text-white inter font-semibold capitalize text-[17px]"
+            >
+              Key Geological formations That host uranium deposits
+            </h1>
+            <div class="flex flex-wrap gap-3 mt-3">
+              <div
+                class="border border-teal-400 p-3 px-5 rounded-sm text-[14.2px] publicsans hover:bg-gray-800 transition duration-300"
+              >
+                <h2 class="text-teal-400 font-semibold">
+                  1. Unconformity-Related Uranium Deposits
+                </h2>
+              </div>
+              <div
+                class="border border-teal-400 p-3 px-5 rounded-sm text-[14.2px] publicsans hover:bg-gray-800 transition duration-300"
+              >
+                <h2 class="text-teal-400 font-semibold">
+                  2. Sandstone-Hosted Uranium Deposits
+                </h2>
+              </div>
+              <div
+                class="border border-teal-400 p-3 px-5 rounded-sm text-[14.2px] publicsans hover:bg-gray-800 transition duration-300"
+              >
+                <h2 class="text-teal-400 font-semibold">
+                  3. Intrusive-Related Uranium Deposits
+                </h2>
+              </div>
+              <div
+                class="border border-teal-400 p-3 px-5 rounded-sm text-[14.2px] publicsans hover:bg-gray-800 transition duration-300"
+              >
+                <h2 class="text-teal-400 font-semibold">
+                  4. Breccia Complex Uranium Deposits
+                </h2>
+              </div>
+              <div
+                class="border border-teal-400 p-3 px-5 rounded-sm text-[14.2px] publicsans hover:bg-gray-800 transition duration-300"
+              >
+                <h2 class="text-teal-400 font-semibold">
+                  5. Lignite and Phosphate Uranium Deposits
+                </h2>
+              </div>
+              <div
+                class="border border-teal-400 p-3 px-5 rounded-sm text-[14.2px] publicsans hover:bg-gray-800 transition duration-300"
+              >
+                <h2 class="text-teal-400 font-semibold">
+                  6. Other Uranium-Bearing Geological Formations
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Footer ================================================================================ -->
-    <footer class="bg-[#0f141b] text-white py-14 px-6 lg:px-[1.2rem] mt-7">
+    <footer class="bg-[#0f141b] text-white py-14 px-6 lg:px-[1.2rem]">
       <div class="lg:w-[90%] mx-auto w-full">
         <div
           class="container mx-auto flex flex-col justify-center items-center text-center"
@@ -50,7 +952,7 @@
             <input
               type="email"
               placeholder="Enter your email address"
-              class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-[#151B24] text-white focus:outline-none placeholder:text-[14px]"
+              class="px-4 py-4 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-[#151B24] text-white focus:outline-none placeholder:text-[14px]"
             />
             <button
               class="bg-[#57fec7] rounded-sm text-[#0b0f14] text-[15px] font-medium px-6 py-2 hover:bg-[#0da975] transition-all duration-200"
