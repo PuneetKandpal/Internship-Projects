@@ -111,10 +111,10 @@ const elements = [
     number: 13,
     symbol: "Al",
     name: "Aluminum",
-    weight: 26.982,
+    weight: 26.9815,
     group: 13,
     period: 3,
-    category: "post-transition metal",
+    category: "post-transition metal", // Aluminum is a post-transition metal
   },
   {
     number: 14,
@@ -1014,7 +1014,7 @@ const elements = [
     weight: 286,
     group: 13,
     period: 7,
-    category: "post-transition metal",
+    category: "unknown properties",
   },
   {
     number: 114,
@@ -1023,7 +1023,7 @@ const elements = [
     weight: 289,
     group: 14,
     period: 7,
-    category: "post-transition metal",
+    category: "unknown properties",
   },
   {
     number: 115,
@@ -1032,7 +1032,7 @@ const elements = [
     weight: 290,
     group: 15,
     period: 7,
-    category: "post-transition metal",
+    category: "unknown properties",
   },
   {
     number: 116,
@@ -1041,7 +1041,7 @@ const elements = [
     weight: 293,
     group: 16,
     period: 7,
-    category: "post-transition metal",
+    category: "unknown properties",
   },
   {
     number: 117,
@@ -1064,15 +1064,17 @@ const elements = [
 ];
 
 const categories = {
-  nonmetal: "bg-green-400",
-  "noble gas": "bg-purple-400",
-  "alkali metal": "bg-red-400",
-  "alkaline earth metal": "bg-orange-400",
-  "transition metal": "bg-blue-400",
-  "post-transition metal": "bg-yellow-400",
-  metalloid: "bg-teal-400",
-  lanthanide: "bg-indigo-400",
-  actinide: "bg-pink-400",
+  nonmetal: "bg-[#ffb6c1]",
+  "noble gas": "bg-[#e6e6fa]",
+  "alkali metal": "bg-[#ffd700]",
+  "alkaline earth metal": "bg-[#ffdab9]",
+  "transition metal": "bg-[#90ee90]",
+  "post-transition metal": "bg-[#ffe4b5]",
+  metalloid: "bg-[#d8bfd8]",
+  lanthanide: "bg-[#ffcccb]",
+  actinide: "bg-[#ffcccb]",
+  "other metal": "bg-lime-400", // Additional category
+  "unknown properties": "bg-gray-400", // Additional category for elements with unknown properties
 };
 
 const periodicTable = document.getElementById("periodic-table");
@@ -1082,8 +1084,16 @@ const uraniumHighlight = document.getElementById("uranium-highlight");
 
 function createElementDiv(element, container, col) {
   const elementDiv = document.createElement("div");
-  let baseClassName = `element p-1 text-center border border-gray-600 text-xs text-white ${
-    categories[element.category]
+
+  // Debugging: Log category and background color
+  console.log(
+    `Element: ${element.name}, Category: ${element.category}, Background: ${
+      categories[element.category]
+    }`
+  );
+
+  let baseClassName = `element p-1 text-center border border-gray-600 text-xs text-black ${
+    categories[element.category] || "bg-black"
   } hover:scale-125 transition-transform duration-200`;
 
   // Apply specific styles for Uranium
@@ -1104,11 +1114,11 @@ function createElementDiv(element, container, col) {
   }
 
   elementDiv.innerHTML = `
-        <div class="text-xs">${element.number}</div>
-        <div class="text-sm font-bold">${element.symbol}</div>
-        <div class="text-xs truncate">${element.name}</div>
-        <div class="text-xs">${element.weight}</div>
-      `;
+      <div class="text-lg">${element.number}</div>
+      <div class="text-xl font-bold">${element.symbol}</div>
+      
+      
+    `;
 
   elementDiv.addEventListener("click", () => {
     alert(
