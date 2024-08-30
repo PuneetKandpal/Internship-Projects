@@ -1,10 +1,9 @@
 .periodic-table-container {
   transform: scale(0.7);
-  transform-origin: top left;
-  position: relative;
+  /* position: relative; */
 }
 .element {
-  width: 4.5rem;
+  width: 5rem;
   height: 5rem;
 }
 #uranium-highlight {
