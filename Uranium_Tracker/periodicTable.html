@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Periodic Table</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #151b24;
+        padding: 8rem 0;
+      }
+      .periodic-table {
+        display: grid;
+        grid-template-columns: repeat(18, 1fr);
+        gap: 2px;
+        margin: 20px auto;
+        max-width: 1000px;
+      }
+      .element {
+        padding: 10px;
+        text-align: center;
+        font-size: 12px;
+        border: 1px solid #ddd;
+      }
+      .alkali-metal {
+        background-color: #ffd700; /* Yellow */
+      }
+      .alkaline-earth-metal {
+        background-color: #ffdab9; /* Light Pink */
+      }
+      .transition-metal {
+        background-color: #90ee90; /* Light Green */
+      }
+      .post-transition-metal {
+        background-color: #ffe4b5; /* Moccasin */
+      }
+      .metalloid {
+        background-color: #d8bfd8; /* Thistle */
+      }
+      .nonmetal {
+        background-color: #ffb6c1; /* Light Pink */
+      }
+      .halogen {
+        background-color: #ffffe0; /* Light Yellow */
+      }
+      .noble-gas {
+        background-color: #e6e6fa; /* Lavender */
+      }
+      .lanthanide {
+        background-color: #ffcccb; /* Light Red */
+      }
+      .actinide {
+        background-color: #ffcccb; /* Light Red */
+      }
+      .empty {
+        background-color: transparent;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="periodic-table">
+      <!-- Row 1 -->
+      <div class="element nonmetal">H</div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element noble-gas">He</div>
+
+      <!-- Row 2 -->
+      <div class="element alkali-metal">Li</div>
+      <div class="element alkaline-earth-metal">Be</div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element metalloid">B</div>
+      <div class="element nonmetal">C</div>
+      <div class="element nonmetal">N</div>
+      <div class="element nonmetal">O</div>
+      <div class="element halogen">F</div>
+      <div class="element noble-gas">Ne</div>
+
+      <!-- Row 3 -->
+      <div class="element alkali-metal">Na</div>
+      <div class="element alkaline-earth-metal">Mg</div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element empty"></div>
+      <div class="element metalloid">Al</div>
+      <div class="element metalloid">Si</div>
+      <div class="element nonmetal">P</div>
+      <div class="element nonmetal">S</div>
+      <div class="element halogen">Cl</div>
+      <div class="element noble-gas">Ar</div>
+
+      <!-- Row 4 -->
+      <div class="element alkali-metal">K</div>
+      <div class="element alkaline-earth-metal">Ca</div>
+      <div class="element transition-metal">Sc</div>
+      <div class="element transition-metal">Ti</div>
+      <div class="element transition-metal">V</div>
+      <div class="element transition-metal">Cr</div>
+      <div class="element transition-metal">Mn</div>
+      <div class="element transition-metal">Fe</div>
+      <div class="element transition-metal">Co</div>
+      <div class="element transition-metal">Ni</div>
+      <div class="element transition-metal">Cu</div>
+      <div class="element transition-metal">Zn</div>
+      <div class="element metalloid">Ga</div>
+      <div class="element metalloid">Ge</div>
+      <div class="element metalloid">As</div>
+      <div class="element nonmetal">Se</div>
+      <div class="element halogen">Br</div>
+      <div class="element noble-gas">Kr</div>
+
+      <!-- Row 5 -->
+      <div class="element alkali-metal">Rb</div>
+      <div class="element alkaline-earth-metal">Sr</div>
+      <div class="element transition-metal">Y</div>
+      <div class="element transition-metal">Zr</div>
+      <div class="element transition-metal">Nb</div>
+      <div class="element transition-metal">Mo</div>
+      <div class="element transition-metal">Tc</div>
+      <div class="element transition-metal">Ru</div>
+      <div class="element transition-metal">Rh</div>
+      <div class="element transition-metal">Pd</div>
+      <div class="element transition-metal">Ag</div>
+      <div class="element transition-metal">Cd</div>
+      <div class="element metalloid">In</div>
+      <div class="element metalloid">Sn</div>
+      <div class="element metalloid">Sb</div>
+      <div class="element nonmetal">Te</div>
+      <div class="element halogen">I</div>
+      <div class="element noble-gas">Xe</div>
+
+      <!-- Row 6 -->
+      <div class="element alkali-metal">Cs</div>
+      <div class="element alkaline-earth-metal">Ba</div>
+      <div class="element lanthanide">La</div>
+      <div class="element transition-metal">Hf</div>
+      <div class="element transition-metal">Ta</div>
+      <div class="element transition-metal">W</div>
+      <div class="element transition-metal">Re</div>
+      <div class="element transition-metal">Os</div>
+      <div class="element transition-metal">Ir</div>
+      <div class="element transition-metal">Pt</div>
+      <div class="element transition-metal">Au</div>
+      <div class="element transition-metal">Hg</div>
+      <div class="element post-transition-metal">Tl</div>
+      <div class="element post-transition-metal">Pb</div>
+      <div class="element post-transition-metal">Bi</div>
+      <div class="element metalloid">Po</div>
+      <div class="element halogen">At</div>
+      <div class="element noble-gas">Rn</div>
+
+      <!-- Row 7 -->
+      <div class="element alkali-metal">Fr</div>
+      <div class="element alkaline-earth-metal">Ra</div>
+      <div class="element actinide">Ac</div>
+      <div class="element transition-metal">Rf</div>
+      <div class="element transition-metal">Db</div>
+      <div class="element transition-metal">Sg</div>
+      <div class="element transition-metal">Bh</div>
+      <div class="element transition-metal">Hs</div>
+      <div class="element transition-metal">Mt</div>
+      <div class="element transition-metal">Ds</div>
+      <div class="element transition-metal">Rg</div>
+      <div class="element transition-metal">Cn</div>
+      <div class="element post-transition-metal">Nh</div>
+      <div class="element post-transition-metal">Fl</div>
+      <div class="element post-transition-metal">Mc</div>
+      <div class="element post-transition-metal">Lv</div>
+      <div class="element post-transition-metal">Ts</div>
+      <div class="element noble-gas">Og</div>
+
+      <!-- Lanthanides Continued -->
+      <div class="element lanthanide">Ce</div>
+      <div class="element lanthanide">Pr</div>
+      <div class="element lanthanide">Nd</div>
+      <div class="element lanthanide">Pm</div>
+      <div class="element lanthanide">Sm</div>
+      <div class="element lanthanide">Eu</div>
+      <div class="element lanthanide">Gd</div>
+      <div class="element lanthanide">Tb</div>
+      <div class="element lanthanide">Dy</div>
+      <div class="element lanthanide">Ho</div>
+      <div class="element lanthanide">Er</div>
+      <div class="element lanthanide">Tm</div>
+      <div class="element lanthanide">Yb</div>
+      <div class="element lanthanide">Lu</div>
+
+      <!-- Actinides -->
+      <div class="element actinide">Th</div>
+      <div class="element actinide">Pa</div>
+      <div class="element actinide">U</div>
+      <div class="element actinide">Np</div>
+      <div class="element actinide">Pu</div>
+      <div class="element actinide">Am</div>
+      <div class="element actinide">Cm</div>
+      <div class="element actinide">Bk</div>
+      <div class="element actinide">Cf</div>
+      <div class="element actinide">Es</div>
+      <div class="element actinide">Fm</div>
+      <div class="element actinide">Md</div>
+      <div class="element actinide">No</div>
+      <div class="element actinide">Lr</div>
+    </div>
+  </body>
+</html>
