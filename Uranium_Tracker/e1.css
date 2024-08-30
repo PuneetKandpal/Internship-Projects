@@ -1,7 +1,5 @@
 .periodic-table-container {
   transform: scale(0.7);
-  transform-origin: top left;
-  position: relative;
 }
 .element {
   width: 4.5rem;
