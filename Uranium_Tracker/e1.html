@@ -5,9 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Uranium Essentials</title>
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="e1.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
       rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -27,13 +35,219 @@
   </head>
   <body>
     <!-- main  -->
-    <div class="mt-20 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]"></div>
+    <div class="mt-20 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]">
+      <!-- sec 1  -->
+      <div class="flex justify-between flex-wrap items-center mb-16">
+        <div class="w-[53%]">
+          <h1
+            class="oxanium tracking-tight leading-[51px] italic text-5xl text-primary uppercase font-bold"
+          >
+            WHAT IS URANIUM ?
+          </h1>
 
+          <p class="publicsans italic w-[90%] text-white/50 mt-2 ml-1">
+            Uranium is a naturally occurring element with the symbol U and
+            atomic number 92. It is a dense, metallic element that plays a
+            crucial role in the nuclear industry due to its unique properties,
+            particularly its ability to sustain nuclear fission—a process where
+            the nucleus of an atom splits into two smaller nuclei, releasing a
+            significant amount of energy. This ability makes uranium the primary
+            fuel used in nuclear reactors and a key material in nuclear weapons.
+          </p>
+        </div>
 
+        <div class="w-[43%]">
+          <div class="atom-container">
+            <div class="nucleus"></div>
 
+            <!-- Electron Orbits -->
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+          </div>
+        </div>
+              
+      </div>
 
-     <!-- Footer ================================================================================ -->
-     <footer class="bg-[#0f141b] text-white py-14 px-6 lg:px-[1.2rem] mt-7">
+      <!------------------------ URANIUM PROPERTIES SECTION---------------- -->
+
+      <section class="pt-20">
+        <h1
+          class="relative inline-block text-[27px] font-bold oxanium text-white capitalize mb-5"
+        >
+          <span class="relative z-10 shadow-lg">Uranium Properties</span>
+          <span
+            class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20 w-[16rem]"
+          ></span>
+                  
+        </h1>
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Physical Properties Card -->
+          <div
+            class="bg-gray-800/20 rounded-md p-8 shadow-lg transform transition duration-500 hover:scale-105 flex-1"
+          >
+            <div class="text-primary mb-4">
+              <i class="ri-weight-line text-4xl"></i>
+            </div>
+            <h2 class="text-2xl font-semibold text-yellow mb-4 oxanium">
+              Physical Properties
+            </h2>
+            <p class="text-white/50 leading-relaxed text-[15px]">
+              Uranium is a silvery-grey metal that has a density of 19.1 g/cm³,
+              which is about 1.7 times denser than lead. Its malleability allows
+              it to be shaped with ease, though in natural settings, it tends to
+              oxidize quickly. Due to its high density, uranium has applications
+              in both civilian and military sectors, particularly in
+              armor-piercing shells.
+            </p>
+          </div>
+
+          <!-- Chemical Properties Card -->
+          <div
+            class="bg-gray-800/20 rounded-md p-9 shadow-lg transform transition duration-500 hover:scale-105 flex-1"
+          >
+            <div class="text-primary mb-4">
+              <i class="ri-flask-line text-4xl"></i>
+            </div>
+            <h2 class="text-2xl font-semibold text-yellow mb-4 oxanium">
+              Chemical Properties
+            </h2>
+            <p class="text-white/50 leading-relaxed text-[15px]">
+              Uranium is chemically reactive and forms oxides when exposed to
+              oxygen. Uranium dioxide (UO2) is the most stable oxide and is a
+              key component in nuclear fuel. Another oxide, triuranium octoxide
+              (U3O8), is used for transportation and storage because of its
+              stability.
+            </p>
+          </div>
+
+          <!-- Isotopes Card -->
+          <div
+            class="bg-gray-800/20 rounded-md p-9 shadow-lg transform transition duration-500 hover:scale-105 flex-1"
+          >
+            <div class="text-primary mb-4">
+              <i class="fa-solid fa-atom text-4xl"></i>
+            </div>
+            <h2 class="text-2xl font-semibold text-yellow mb-4 oxanium">
+              Isotopes
+            </h2>
+            <p class="text-white/50 leading-relaxed text-[15px]">
+              Uranium-238 (U-238) and Uranium-235 (U-235) are the most abundant.
+              U-238 accounts for about 99.3% of natural uranium, while U-235
+              makes up approximately 0.7%. U-235 is the isotope that is fissile,
+              meaning it can sustain a nuclear chain reaction. This makes it
+              critical for nuclear power generation and weapons.
+            </p>
+          </div>
+        </div>
+
+        <div class="periodic-table-container mt-20 ml-40">
+          <!-- Uranium Info -->
+          <div id="uranium-all-info" class="flex flex-col items-center">
+            <div class="text-xs text-center uranium-info">
+              <h2 class="text-xl font-bold">92</h2>
+              <h2 class="text-black font-extrabold text-3xl">U</h2>
+              <p class="text-xl font-base">Uranium</p>
+              <p class="text-xl font-base">238.03</p>
+            </div>
+            <div class="text-lg">
+              <p class="mt-2 text-white/80">
+                Weight of 238.03 = One of the heaviest occurring elements
+              </p>
+            </div>
+          </div>
+
+          <!-- Periodic Table Grid -->
+          <div id="periodic-table" class="grid grid-cols-18 gap-0.5">
+            <!-- Uranium Highlight -->
+            <div id="uranium-highlight"></div>
+          </div>
+
+          <!-- Lanthanide and Actinide Rows -->
+          <div class="grid grid-cols-18 gap-0.5 max-w-7xl">
+            <div class="col-span-3"></div>
+            <div
+              id="lanthanide-row"
+              class="col-span-15 grid grid-cols-15 gap-0.5"
+            ></div>
+          </div>
+          <div class="grid grid-cols-18 gap-0.5 max-w-7xl mt-0.5">
+            <div class="col-span-3"></div>
+            <div
+              id="actinide-row"
+              class="col-span-15 grid grid-cols-15 gap-0.5"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- early uses of uranium -->
+
+      <section class="w-full py-24">
+        <div class="flex flex-col md:flex-row gap-8">
+          <!-- Image Section (Shifted to Left with Space on the Right) -->
+          <div class="relative w-22 max-w-md mr-[11rem]">
+            <!-- Adjust the mr-[14rem] value as needed -->
+            <img
+              src="https://rinconeducativo.org/wp-content/uploads/2024/01/Strassmann_Fritz_Laboratorio.png"
+              alt="Laboratory with Uranium Experiment"
+              class="w-[600px] h-[430px] shadow-lg ml-36"
+            />
+            <!-- Absolute Positioned Text Div -->
+            <div
+              class="absolute top-4 left-4 text-white font-bold text-[18px] oxanium"
+            >
+              <p
+                class="text-6xl font-extrabold tracking-wider text-gray-300 mb-2"
+              >
+                EARLY
+              </p>
+              <p
+                class="text-6xl font-extrabold tracking-wider mb-2 text-primary"
+              >
+                URANIUM
+              </p>
+              <p
+                class="text-6xl font-extrabold tracking-wider text-gray-300 mb-2"
+              >
+                USES
+              </p>
+            </div>
+          </div>
+
+          <!-- Descriptive Text Section (Narrower Width) -->
+          <div class="w-[90%] text-white">
+            <p class="text-white/50 leading-relaxed text-[16px] mb-8">
+              In the 19th century, <br />
+              Uranium was primarily used as a coloring agent in ceramics and
+              glass, giving them a characteristic YELLOW or GREEN hue.
+            </p>
+            <p class="text-white/50 leading-relaxed text-[16px] mb-8">
+              Its radioactive properties were not understood at this time, and
+              it was considered a relatively obscure element with limited
+              industrial use.
+            </p>
+            <p class="text-white/50 leading-relaxed text-[16px]">
+              By the late 19th and early 20th centuries, uranium began to be
+              used in early radiological studies and some medical treatments,
+              despite its hazardous nature being only partially understood. Its
+              significance grew exponentially with the discovery of nuclear
+              fission in the 1930s, which paved the way for its use in nuclear
+              reactors and weapons.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer ================================================================================ -->
+    <footer class="bg-[#0f141b] text-white py-14 px-6 lg:px-[1.2rem] mt-7">
       <div class="lg:w-[90%] mx-auto w-full">
         <div
           class="container mx-auto flex flex-col justify-center items-center text-center"
@@ -110,5 +324,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="essentials.js"></script>
+    <script src="e1.js"></script>
   </body>
 </html>
