@@ -167,9 +167,6 @@
       <!------------------------ URANIUM PROPERTIES SECTION---------------- -->
 
       <section class="pt-20">
-
-      <section class="pt-16 flex flex-col">
-
         <h1
           class="relative inline-block text-[27px] font-bold oxanium text-white capitalize mb-5"
         >
@@ -177,14 +174,8 @@
           <span
             class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20 w-[16rem]"
           ></span>
-
-        
         </h1>
         <div class="flex flex-col md:flex-row gap-8 pb-10 mb-10">
-
-        </h1>
-        <div class="flex flex-col md:flex-row gap-8 pb-16 w-full max-w-7xl">
-
           <!-- Physical Properties Card -->
           <div
             class="bg-gray-800/20 rounded-md p-8 shadow-lg transform transition duration-500 hover:scale-105 flex-1"
@@ -245,53 +236,48 @@
         </div>
       </section>
 
+      <section
+        class="periodic-table-container mt-20 mb-14 flex flex-col items-center"
+      >
+        <!-- Uranium Info -->
+        <div id="uranium-all-info" class="flex flex-col items-center mb-8">
+          <div class="text-xs text-center uranium-info">
+            <h2 class="text-xl font-bold">92</h2>
+            <h2 class="text-black font-extrabold text-3xl">U</h2>
+            <p class="text-xl font-base">Uranium</p>
+            <p class="text-xl font-base">238.03</p>
+          </div>
+          <div class="text-lg">
+            <p class="mt-2 text-white/80">
+              Weight of 238.03 = One of the heaviest occurring elements
+            </p>
+          </div>
+        </div>
 
-        <div class="periodic-table-container mt-20 mb-14">
-
-      <section class="periodic-table-section pb-16 flex justify-center">
-        <div
-          class="periodic-table-container w-full max-w-7xl flex flex-col items-center"
-        >
-
-          <!-- Uranium Info -->
-          <div id="uranium-all-info" class="flex flex-col items-center mb-10">
-            <div class="text-xs text-center uranium-info">
-              <h2 class="text-xl font-bold">92</h2>
-              <h2 class="text-black font-extrabold text-3xl">U</h2>
-              <p class="text-xl font-base">Uranium</p>
-              <p class="text-xl font-base">238.03</p>
+        <!-- Centering the whole periodic table -->
+        <div class="flex justify-center w-full">
+          <div id="periodic-table-wrapper" class="grid gap-0.5">
+            <!-- Periodic Table Grid -->
+            <div id="periodic-table" class="grid grid-cols-18 gap-0.5">
+              <!-- Uranium Highlight -->
+              <div id="uranium-highlight"></div>
             </div>
-            <div class="text-lg">
-              <p class="mt-2 text-white/80">
-                Weight of 238.03 = One of the heaviest occurring elements
-              </p>
+
+            <!-- Lanthanide and Actinide Rows -->
+            <div class="grid grid-cols-18 gap-0.5 max-w-7xl mt-5">
+              <div class="col-span-3"></div>
+              <div
+                id="lanthanide-row"
+                class="col-span-15 grid grid-cols-15 gap-0.5"
+              ></div>
             </div>
-          </div>
-
-          <!-- Periodic Table Grid -->
-
-          <div id="periodic-table" class="grid grid-cols-18 gap-0.5  w-fit mx-auto">
-
-          <div id="periodic-table" class="grid grid-cols-18 gap-0.5 max-w-7xl">
-
-            <!-- Uranium Highlight -->
-            <div id="uranium-highlight"></div>
-          </div>
-
-          <!-- Lanthanide and Actinide Rows -->
-          <div class="grid grid-cols-18 gap-0.5 max-w-7xl mt-5">
-            <div class="col-span-3"></div>
-            <div
-              id="lanthanide-row"
-              class="col-span-15 grid grid-cols-15 gap-0.5"
-            ></div>
-          </div>
-          <div class="grid grid-cols-18 gap-0.5 max-w-7xl mt-0.5">
-            <div class="col-span-3"></div>
-            <div
-              id="actinide-row"
-              class="col-span-15 grid grid-cols-15 gap-0.5"
-            ></div>
+            <div class="grid grid-cols-18 gap-0.5 max-w-7xl mt-0.5">
+              <div class="col-span-3"></div>
+              <div
+                id="actinide-row"
+                class="col-span-15 grid grid-cols-15 gap-0.5"
+              ></div>
+            </div>
           </div>
         </div>
       </section>
@@ -335,7 +321,9 @@
             <p class="text-white/50 leading-6 text-[16px] mb-6">
               In the 19th century, <br />
               Uranium was primarily used as a coloring agent in ceramics and
-              glass, giving them a characteristic YELLOW or GREEN hue.
+              glass, giving them a characteristic
+              <span class="text-yellow">YELLOW </span>or
+              <span class="text-green-400">GREEN hue</span>.
             </p>
             <p class="text-white/50 leading-6 text-[16px] mb-6">
               Its radioactive properties were not understood at this time, and
@@ -434,5 +422,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script src="essentials.js"></script>
     <script src="e1.js"></script>
+     
   </body>
 </html>
