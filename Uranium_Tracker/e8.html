@@ -11,6 +11,8 @@
     />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Flowbite -->
+<script src="https://unpkg.com/flowbite@1.4.7/dist/flowbite.js"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -24,15 +26,403 @@
         },
       };
     </script>
+    <style>
+      @keyframes orbit {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes electron-move {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .atom-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+      }
+
+      .nucleus {
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(circle, #57fec7, #278566);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 20px #57fec7;
+      }
+
+      .orbit {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: orbit linear infinite;
+      }
+
+      .orbit:nth-child(2) {
+        width: 260px;
+        height: 260px;
+        top: 6.5%;
+        left: 6.5%;
+        transform: translate(-50%, -50%);
+        animation-duration: 8s;
+      }
+
+      .orbit:nth-child(3) {
+        width: 200px;
+        height: 200px;
+        top: 16%;
+        left: 16%;
+        transform: translate(-50%, -50%);
+        animation-duration: 12s;
+      }
+
+      .orbit:nth-child(4) {
+        width: 140px;
+        height: 140px;
+        top: 26.5%;
+        left: 26.1%;
+        transform: translate(-50%, -50%);
+        animation-duration: 16s;
+      }
+
+      .electron {
+        width: 12px;
+        height: 12px;
+        background-color: gold;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px gold;
+        animation: electron-move 2s ease-in-out infinite;
+      }
+    </style>
   </head>
   <body>
     <!-- main  -->
-    <div class="mt-20 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]"></div>
+    <div class="mt-10">
+      <!-- sec 1  -->
+      <div class="flex justify-between flex-wrap items-center py-12 pb-24 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]">
+        <div class="w-[53%]">
+          <h1
+            class="oxanium tracking-tight leading-[51px] italic text-5xl text-primary uppercase font-bold"
+          >
+            Uranium GLOSSARY
+          </h1>
+
+          <p class="publicsans italic w-[90%] text-white/50 mt-2 ml-1">
+            This glossary provides clear definitions of important terms in nuclear science and technology. It covers foundational concepts like actinides and activation products, as well as details about radiation types, such as alpha and beta particles. You'll also find explanations of reactor types, including boiling water reactors (BWRs) and breeder reactors, and essential metrics like burnup and activity. This guide is a useful resource for understanding the core principles and terminology in the field.
+          </p>
+        </div>
+
+        <div class="w-[43%]">
+          <div class="atom-container">
+            <div class="nucleus"></div>
+
+            <!-- Electron Orbits -->
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sec 2  -->
+       <div class="pb-24 pt-16  bg-gray-800/20">
+
+      <!-- Cards =================  -->
+      <div
+        id="cardContainer"
+        class="mt-8 flex flex-wrap justify-between gap-y-8 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]"
+      >
+      
+      <!-- left -->
+      <div class="w-[47%]  px-5">
+      
+
+        <div class="max-w-2xl mx-auto space-y-4 pb-10 pt-4">
+          <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Actinide">
+              <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+                  <h2 class="text-[18px] inter font-medium">Actinide</h2>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </div>
+              <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+                  <p>Elements with atomic numbers from 89 (actinium) to 103. Typically refers to those beyond uranium (93
+                    and up, known as transuranics). Actinides are radioactive, have long half-lives, and are significant in nuclear
+                    fission waste, such as used fuel. They are fissionable in fast reactors. Minor actinides include americium, curium,
+                    and neptunium.</p>
+              </div>
+          </div>
+  
+          <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Uranium">
+              <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+                  <h2 class="text-[18px] inter font-medium">Activation Product</h2>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </div>
+              <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+                  <p>A radioactive isotope formed when an element, such as steel in a reactor core, is bombarded
+                    by neutrons.</p>
+              </div>
+          </div>
+  
+          <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Plutonium">
+              <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+                  <h2 class="text-[18px] inter font-medium">Activity</h2>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </div>
+              <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+                  <p>The rate of disintegration per unit time within a radioactive source, measured in becquerels. ALARA (As Low As Reasonably Achievable): A principle of radiation protection that takes into account economic
+                    and social factors to minimize radiation exposure.
+                    </p>
+              </div>
+          </div>
+  
+          <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+              <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+                  <h2 class="text-[18px] inter font-medium">Alpha Particle</h2>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </div>
+              <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+                  <p>A positively charged particle emitted from an atom's nucleus during radioactive decay, consisting
+                    of 2 protons and 2 neutrons.
+                    </p>
+              </div>
+          </div>
+
+          <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+            <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+                <h2 class="text-[18px] inter font-medium">Atom</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+            <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+                <p>The smallest particle of an element that retains its chemical properties. Atoms consist of a nucleus of
+                  protons and neutrons, surrounded by electrons.
+                  </p>
+            </div>
+        </div>
+
+        <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+          <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+              <h2 class="text-[18px] inter font-medium">Background Radiation</h2>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+          </div>
+          <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+              <p> Ionizing radiation from natural sources that everyone is exposed to, including cosmic
+                radiation and radon from the Earth's crust.
+                
+                </p>
+          </div>
+      </div>
+
+      <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+        <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+            <h2 class="text-[18px] inter font-medium">Barn</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </div>
+        <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+            <p>A unit of measure for the cross-sectional area of a nucleus, representing the probability of interaction with
+              particles such as neutrons.
+              </p>
+        </div>
+    </div>
+
+    <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+      <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+          <h2 class="text-[18px] inter font-medium">Base Load</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+      </div>
+      <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+          <p>The continuous, minimum level of demand on an electrical supply system over a 24-hour period. Becquerel (Bq): The unit of intrinsic radioactivity, where one Bq equals one disintegration per second. Beta particle: A particle emitted from an atom during radioactive decay, which can be either an electron (negative
+            charge) or a positron.
+            </p>
+      </div>
+  </div>
+
+  <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+    <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+        <h2 class="text-[18px] inter font-medium">Biological Shield</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
+    </div>
+    <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+        <p> Material, often thick concrete, used to protect humans from radiation by absorbing neutrons and
+          gamma rays.
+          </p>
+    </div>
+</div>
+      </div>
+        
+        
+
+      </div>
+
+      <!-- right  -->
+      <div class="w-[47%]  px-5">
+      
+
+        <div class="max-w-2xl mx-auto space-y-4 pb-10 pt-4">
+          <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Actinide">
+              <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+                  <h2 class="text-[18px] inter font-medium">Boiling Water Reactor (BWR)</h2>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </div>
+              <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+                  <p>A type of light water reactor where water is boiled directly in the reactor core to
+                    generate steam.
+                    </p>
+              </div>
+          </div>
+  
+          <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Uranium">
+              <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+                  <h2 class="text-[18px] inter font-medium">Breed</h2>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </div>
+              <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+                  <p>The formation of fissile material from fertile material, usually through neutron capture followed by
+                    radioactive decay.</p>
+              </div>
+          </div>
+  
+          <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Plutonium">
+              <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+                  <h2 class="text-[18px] inter font-medium">Breeder Reactor</h2>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </div>
+              <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+                  <p>A reactor that produces more fissile material than it consumes, often using depleted uranium as a
+                    blanket around the core.</p>
+              </div>
+          </div>
+  
+          <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+              <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+                  <h2 class="text-[18px] inter font-medium">Burn</h2>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+              </div>
+              <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+                  <p>The process of undergoing fission or becoming denatured in the reactor core. Burnable absorber, burnable poison: A neutron absorber that is included in the fuel and progressively consumed
+                    to compensate for the loss of reactivity as the fuel is burned. Common materials include gadolinium and erbium.
+                    </p>
+              </div>
+          </div>
+
+          <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+            <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+                <h2 class="text-[18px] inter font-medium">Burnup</h2>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+            </div>
+            <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+                <p>A measure of energy produced by nuclear fuel relative to its mass, typically expressed in gigawatt days
+                  per tonne (GWd/t).</p>
+            </div>
+        </div>
+
+        <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+          <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+              <h2 class="text-[18px] inter font-medium">Calandria</h2>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+          </div>
+          <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+              <p>The cylindrical reactor vessel in a PHWR that contains heavy water moderator and is penetrated by
+                calandria tubes holding the fuel and coolant.
+                .</p>
+          </div>
+      </div>
+
+      <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+        <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+            <h2 class="text-[18px] inter font-medium">CANDU</h2>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+        </div>
+        <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+            <p>A type of heavy water reactor (PHWR) developed in Canada, moderated and cooled by heavy water. Centrifuge: A device that spins at high speeds to separate gas components of different masses, such as uranium
+              hexafluoride.</p>
+        </div>
+    </div>
+
+    <div class="w-full bg-transparent border-b border-white/10  transition-all duration-200 px-1 pb-[25px] py-2" data-title="Americium">
+      <div class="accordion cursor-pointer flex justify-between items-center text-white hover:text-primary transition-all duration-200">
+          <h2 class="text-[18px] inter font-medium">Chain Reaction</h2>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-6 transform transition-transform duration-200 text-white/50 hover:text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+      </div>
+      <div class="content hidden mt-4 text-white/50 text-[15px] font-light">
+          <p>A self-sustaining series of fission reactions where neutrons from fission cause additional fissions.</p>
+      </div>
+  </div>
+      </div>
+        
+        
+
+      </div>
+     
 
 
+
+    </div>  
+
+    </div>
+
+  
 
      <!-- Footer ================================================================================ -->
-     <footer class="bg-[#0f141b] text-white py-14 px-6 lg:px-[1.2rem] mt-7">
+     <footer class="bg-[#0f141b] text-white py-14 px-6 lg:px-[1.2rem] mt-0">
       <div class="lg:w-[90%] mx-auto w-full">
         <div
           class="container mx-auto flex flex-col justify-center items-center text-center"
@@ -108,6 +498,13 @@
     <!-- js file----------------------------------------  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
-    <script src="essentials.js"></script>
+    <script>
+      document.querySelectorAll('.accordion').forEach(accordion => {
+          accordion.addEventListener('click', function() {
+              this.querySelector('svg').classList.toggle('rotate-180');
+              this.nextElementSibling.classList.toggle('hidden');
+          });
+      });
+  </script>
   </body>
 </html>
