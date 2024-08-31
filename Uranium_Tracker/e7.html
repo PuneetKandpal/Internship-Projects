@@ -9,6 +9,10 @@
       href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
@@ -24,15 +28,441 @@
         },
       };
     </script>
+    <style>
+      @keyframes orbit {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      @keyframes electron-move {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      .atom-container {
+        position: relative;
+        width: 300px;
+        height: 300px;
+        margin: auto;
+      }
+
+      .nucleus {
+        width: 50px;
+        height: 50px;
+        background: radial-gradient(circle, #57fec7, #278566);
+        border-radius: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 20px #57fec7;
+      }
+
+      .orbit {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: orbit linear infinite;
+      }
+
+      .orbit:nth-child(2) {
+        width: 260px;
+        height: 260px;
+        top: 6.5%;
+        left: 6.5%;
+        transform: translate(-50%, -50%);
+        animation-duration: 8s;
+      }
+
+      .orbit:nth-child(3) {
+        width: 200px;
+        height: 200px;
+        top: 16%;
+        left: 16%;
+        transform: translate(-50%, -50%);
+        animation-duration: 12s;
+      }
+
+      .orbit:nth-child(4) {
+        width: 140px;
+        height: 140px;
+        top: 26.5%;
+        left: 26.1%;
+        transform: translate(-50%, -50%);
+        animation-duration: 16s;
+      }
+
+      .electron {
+        width: 12px;
+        height: 12px;
+        background-color: gold;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px gold;
+        animation: electron-move 2s ease-in-out infinite;
+      }
+    </style>
   </head>
   <body>
     <!-- main  -->
-    <div class="mt-20 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]"></div>
+    <div class="mt-20 px-2 lg:w-[90%] mx-auto w-[100%] lg:px-[1rem]">
+      <!-- sec 1  -->
+      <div class="flex justify-between flex-wrap items-center pb-10">
+        <div class="w-[53%]">
+          <h1
+            class="oxanium tracking-tight leading-[51px] italic text-5xl text-primary uppercase font-bold"
+          >
+            URANIUM Processing
+          </h1>
 
+          <p class="publicsans italic w-[90%] text-white/50 mt-2 ml-1">
+            Uranium processing is the critical step that transforms raw uranium
+            ore into a refined form capable of fueling nuclear reactors. This
+            intricate process ensures that uranium's immense energy potential is
+            harnessed efficiently, powering the world with clean and reliable
+            energy
+          </p>
+        </div>
 
+        <div class="w-[43%]">
+          <div class="atom-container">
+            <div class="nucleus"></div>
 
-     <!-- Footer ================================================================================ -->
-     <footer class="bg-[#0f141b] text-white py-14 px-6 lg:px-[1.2rem] mt-7">
+            <!-- Electron Orbits -->
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+            <div class="orbit">
+              <div class="electron"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- sec 2 cards  -->
+      <div class="pt-24 pb-20 overflow-x-hidden">
+        <h1
+          class="relative inline-block text-[27px] font-bold oxanium text-white capitalize"
+        >
+          <span class="relative z-10 shadow-lg"
+            >Steps Of Uranium Processing</span
+          >
+          <span
+            class="absolute inset-x-0 bottom-[7px] h-2.5 bg-primary/20"
+          ></span>
+        </h1>
+
+        <div class="container mx-auto py-8">
+          <div class="grid grid-cols-1 md:grid-cols-1 gap-7">
+            <!-- Mining -->
+            <div class="inline-flex space-x-5">
+              <!-- <h1
+                class="bg-primary w-fit h-fit text-bg rounded-md py-2 px-4 text-xl font-extrabold"
+              >
+                1
+              </h1> -->
+              <div class="bg-gray-800/20 p-6 rounded-sm shadow-lg w-full">
+                <div class="flex space-x-3 mb-3 items-start">
+                  <i class="ri-hammer-fill text-xl text-teal-400 mt-[1px]"></i>
+                  <h2
+                    class="text-xl font-semibold text-teal-400 mb-2 text-start"
+                  >
+                    Mining
+                  </h2>
+                </div>
+
+                <p class="text-sm mb-4 text-white/50">
+                  Uranium mining involves extracting uranium ore from the
+                  ground. There are three primary methods:
+                </p>
+                <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
+                  <li>
+                    <strong>Open-Pit Mining:</strong> Used when uranium ore is
+                    located near the surface. Large quantities of overburden are
+                    removed to access the ore.
+                  </li>
+                  <li>
+                    <strong>Underground Mining:</strong> Employed when the
+                    uranium ore is deeper underground. Tunnels and shafts are
+                    constructed to reach the ore.
+                  </li>
+                  <li>
+                    <strong>In-Situ Leaching (ISL):</strong> Involves injecting
+                    a solution into the ground to dissolve uranium from the ore
+                    body, then pumping it to the surface for processing.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Milling -->
+            <div class="inline-flex space-x-5 transform translate-x-[7rem] w-[91.5%]">
+              <div class="bg-gray-800/20 p-6 rounded-sm shadow-lg w-full">
+                <div class="flex space-x-3 mb-3 items-start">
+                  <i
+                    class="ri-building-3-fill text-xl text-teal-400 mt-[-1px]"
+                  ></i>
+                  <h2
+                    class="text-xl font-semibold text-teal-400 mb-2 text-start"
+                  >
+                    Milling
+                  </h2>
+                </div>
+                <p class="text-sm mb-4 text-white/50">
+                  Milling is the process of extracting uranium from the mined
+                  ore.
+                </p>
+                <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
+                  <li>
+                    <strong>Crushing and Grinding:</strong> The ore is crushed
+                    and ground into fine particles to increase the surface area
+                    for chemical extraction.
+                  </li>
+                  <li>
+                    <strong>Leaching:</strong> The ground ore is treated with
+                    acid or alkaline solutions to dissolve uranium, separating
+                    it from the remaining rock.
+                  </li>
+                  <li>
+                    <strong>Precipitation and Drying:</strong> The uranium-rich
+                    solution is chemically treated to precipitate uranium as
+                    uranium oxide concentrate, known as yellowcake
+                    (U<sub>3</sub>O<sub>8</sub>).
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Conversion -->
+            <div class="inline-flex space-x-5">
+              <div class="bg-gray-800/20 p-6 rounded-sm shadow-lg w-full">
+                <div class="flex space-x-3 mb-3 items-start">
+                  <i class="ri-group-3-fill text-xl text-teal-400 mt-[0px]"></i>
+                  <h2
+                    class="text-xl font-semibold text-teal-400 mb-2 text-start"
+                  >
+                    Conversion
+                  </h2>
+                </div>
+
+                <p class="text-sm mb-4 text-white/50">
+                  Conversion is the process of transforming yellowcake into
+                  uranium hexafluoride (UF<sub>6</sub>), which is suitable for
+                  enrichment.
+                </p>
+                <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
+                  <li>
+                    <strong>Chemical Conversion:</strong> Yellowcake is
+                    chemically converted into uranium dioxide (UO<sub>2</sub>)
+                    and then into uranium hexafluoride (UF<sub>6</sub>) in a
+                    high-temperature process.
+                  </li>
+                  <li>
+                    <strong>UF<sub>6</sub> Properties:</strong> Uranium
+                    hexafluoride is a gas at slightly elevated temperatures,
+                    making it suitable for enrichment.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Reprocessing (Optional) -->
+            <div class="inline-flex space-x-5 transform translate-x-[7rem] w-[91.5%]">
+              <div class="bg-gray-800/20 p-6 rounded-sm shadow-lg w-full">
+                <div class="flex space-x-3 mb-3 items-start">
+                  <i
+                    class="ri-settings-4-fill text-xl text-teal-400 mt-[px]"
+                  ></i>
+                  <h2
+                    class="text-xl font-semibold text-teal-400 mb-2 text-start"
+                  >
+                    Reprocessing (Optional)
+                  </h2>
+                </div>
+                <p class="text-sm mb-4 text-white/50">
+                  Reprocessing involves treating spent nuclear fuel to extract
+                  usable materials.
+                </p>
+                <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
+                  <li>
+                    <strong>Dissolution:</strong> Spent fuel rods are dissolved
+                    in acid to separate the uranium and plutonium from the waste
+                    products.
+                  </li>
+                  <li>
+                    <strong>Separation and Recycling:</strong> The uranium and
+                    plutonium can be chemically separated and recycled into new
+                    fuel. The remaining high-level waste is vitrified (turned
+                    into glass) for long-term storage.
+                  </li>
+                  <li>
+                    <strong>MOX Fuel:</strong> Mixed oxide (MOX) fuel, which
+                    contains a mix of uranium and plutonium, can be fabricated
+                    from reprocessed materials and used in reactors.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Fuel Fabrication -->
+            <div class="inline-flex space-x-5">
+              <div class="bg-gray-800/20 p-6 rounded-sm shadow-lg w-full">
+                <div class="flex space-x-3 mb-3 items-start">
+                  <i
+                    class="ri-gas-station-fill text-xl text-teal-400 mt-[0px]"
+                  ></i>
+                  <h2
+                    class="text-xl font-semibold text-teal-400 mb-2 text-start"
+                  >
+                    Fuel Fabrication
+                  </h2>
+                </div>
+
+                <p class="text-sm mb-4 text-white/50">
+                  Enriched uranium is fabricated into fuel assemblies for use in
+                  nuclear reactors.
+                </p>
+                <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
+                  <li>
+                    <strong>Pelletization:</strong> Uranium dioxide powder is
+                    pressed into small pellets and sintered at high
+                    temperatures.
+                  </li>
+                  <li>
+                    <strong>Assembly:</strong> The pellets are inserted into
+                    metal tubes, which are then bundled together to form fuel
+                    assemblies.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Enrichment -->
+            <div class="inline-flex space-x-5 transform translate-x-[7rem] w-[91.5%]">
+              <div class="bg-gray-800/20 p-6 rounded-sm shadow-lg w-full">
+                <div class="flex space-x-3 mb-3 items-start">
+                  <i
+                    class="ri-hand-coin-fill text-xl text-teal-400 mt-[-1px]"
+                  ></i>
+                  <h2
+                    class="text-xl font-semibold text-teal-400 mb-2 text-start"
+                  >
+                    Enrichment
+                  </h2>
+                </div>
+                <p class="text-sm mb-4 text-white/50">
+                  Enrichment increases the concentration of uranium-235 isotope
+                  in uranium hexafluoride (UF<sub>6</sub>).
+                </p>
+                <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
+                  <li>
+                    <strong>Gas Centrifuge:</strong> UF<sub>6</sub> gas is fed
+                    into centrifuges, where the heavier uranium-238 isotope is
+                    separated from the lighter uranium-235 isotope.
+                  </li>
+                  <li>
+                    <strong>Gaseous Diffusion:</strong> UF<sub>6</sub> is passed
+                    through semi-permeable membranes to separate uranium-235
+                    based on molecular size and weight.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Waste Management -->
+            <div class="inline-flex space-x-5">
+              <div class="bg-gray-800/20 p-6 rounded-sm shadow-lg w-full">
+                <div class="flex space-x-3 mb-3 items-start">
+                  <i
+                    class="ri-delete-bin-6-fill text-[18.5px] text-teal-400 mt-[0px]"
+                  ></i>
+                  <h2
+                    class="text-xl font-semibold text-teal-400 mb-2 text-start"
+                  >
+                    Waste Management
+                  </h2>
+                </div>
+
+                <p class="text-sm mb-4 text-white/50">
+                  Management of radioactive waste generated during the nuclear
+                  fuel cycle.
+                </p>
+                <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
+                  <li>
+                    <strong>Temporary Storage:</strong> Spent fuel is stored in
+                    pools or dry casks at the reactor site.
+                  </li>
+                  <li>
+                    <strong>Reprocessing:</strong> Spent fuel is chemically
+                    treated to recover uranium and plutonium for reuse.
+                  </li>
+                  <li>
+                    <strong>Disposal:</strong> Long-term disposal of radioactive
+                    waste in deep geological repositories.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Safety and Environmental Consideration -->
+            <div class="inline-flex space-x-5 transform translate-x-[7rem] w-[93%]">
+              <div class="bg-gray-800/20 p-6 rounded-sm shadow-lg w-full">
+                <div class="flex space-x-3 mb-3 items-start">
+                  <i
+                    class="ri-shield-check-fill text-xl text-teal-400 mt-[-1px]"
+                  ></i>
+                  <h2
+                    class="text-xl font-semibold text-teal-400 mb-2 text-start"
+                  >
+                  Safety and Environmental Consideration
+                  </h2>
+                </div>
+                <p class="text-sm mb-4 text-white/50">
+                  Throughout each stage, strict safety protocols and
+environmental protections are in place to minimize
+radiation exposure and environmental impact.
+                </p>
+                <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
+                  <li>
+                    <strong>Radiation Protection: Workers are monitored for
+                      radiation exposure, and facilities are designed to
+                      contain and control radioactive materials
+                  </li>
+                  <li>
+                    <strong>Environmental Safeguards:</strong> Measures are taken to
+                      prevent contamination of soil, water, and air,
+                      including waste treatment, containment, and
+                      monitoring
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+          
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer ================================================================================ -->
+    <footer class="bg-[#0f141b] text-white py-14 px-6 lg:px-[1.2rem] mt-0">
       <div class="lg:w-[90%] mx-auto w-full">
         <div
           class="container mx-auto flex flex-col justify-center items-center text-center"
