@@ -154,8 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-// table and news sec 
+// table and news sec
 // GSAP and ScrollTrigger Animations
 gsap.registerPlugin(ScrollTrigger);
 
