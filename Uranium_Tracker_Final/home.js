@@ -62,5 +62,37 @@ window.addEventListener("resize", () => {
     toggleMenu();
   }
 });
-
 // navbar end ===================
+
+// hero sec animation -----------------------------------------------------------------------------------------------
+window.onload = function () {
+  // Animate navbar coming from top to bottom
+  gsap.from("nav", { y: -100, duration: 1, ease: "power2.out" });
+
+  // Animate hero section elements
+  gsap
+    .timeline()
+    .from(".relative.z-10 h1", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      ease: "power2.out",
+    })
+    .from(
+      ".relative.z-10 .flex",
+      { opacity: 0, y: 50, duration: 1, ease: "power2.out" },
+      "-=0.8"
+    )
+    .from(
+      ".relative.z-10 a",
+      { opacity: 0, y: 10, duration: 1, ease: "power2.out", clearProps: "all" },
+      "-=1"
+    );
+
+  // Subtle zoom-in for background image
+  gsap.from(".absolute.inset-0 img", {
+    scale: 1.1,
+    duration: 1.5,
+    ease: "power2.out",
+  });
+};
