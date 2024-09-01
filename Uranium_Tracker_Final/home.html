@@ -411,44 +411,38 @@
     </div>
 
     <!-- uranium price chart and info  -->
-    <div class="pb-32 pt-10 flex justify-between items-center px-20">
-      <!-- price chart  -->
-      <div class="w-[47%] flex flex-col uranium-prices">
-        <div
-          class="bg-lime1/1 rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.07)] p-6 flex-grow uranium-table-container"
-        >
-          <h3 class="text-2xl text-black play font-medium mb-5 uranium-heading">
-            Uranium Prices
-          </h3>
-          <table
-            class="w-full bg-lime1/0 text-left text-black border-separate border-spacing-y-0 uranium-table"
-          >
-            <thead
-              class="text-xs font-light text-black/30 uppercase tracking-wider py-1"
-            >
-              <tr>
-                <th class="px-3 py-4 border-b border-white/5">LiveU3O8</th>
-                <th class="px-3 py-4 border-b border-white/5">BidLoc</th>
-                <th class="px-3 py-4 border-b border-white/5">Bid$/lbs</th>
-                <th class="px-3 py-4 border-b border-white/5">Indic$/lbs</th>
-                <th class="px-3 py-4 border-b border-white/5">Change$/lbs</th>
-                <th class="px-3 py-4 border-b border-white/5">Ask$/lbs</th>
-                <th class="px-3 py-4 border-b border-white/5">AskLoc</th>
-              </tr>
-            </thead>
-            <tbody class="text-[13px] text-black/90">
-              <!-- Table rows here -->
-              <tr class="hover:bg-lime1/10">
-                <td class="px-3 py-4 border-b border-white/5 text-black/60">
-                  Aug-24
-                </td>
-                <td class="px-3 py-4 border-b border-white/5">CMX</td>
-                <td class="px-3 py-4 border-b border-white/5">81.00</td>
-                <td class="px-3 py-4 border-b border-white/5">81.30</td>
-                <td class="px-3 py-4 border-b border-white/5">1.35</td>
-                <td class="px-3 py-4 border-b border-white/5">81.75</td>
-                <td class="px-3 py-4 border-b border-white/5">CMO</td>
-              </tr>
+    <!-- Section with Uranium Prices and Information -->
+<div class="pb-32 pt-10 flex justify-between items-center px-20 uranium-section overflow-hidden">
+  <!-- price chart  -->
+  <div class="w-[47%] flex flex-col uranium-prices">
+    <div class="bg-lime1/1 rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.07)] p-6 flex-grow uranium-table-container">
+      <h3 class="text-2xl text-black play font-medium mb-5 uranium-heading">
+        Uranium Prices
+      </h3>
+      <table class="w-full bg-lime1/0 text-left text-black border-separate border-spacing-y-0 uranium-table">
+        <thead class="text-xs font-light text-black/30 uppercase tracking-wider py-1">
+          <tr>
+            <th class="px-3 py-4 border-b border-white/5">LiveU3O8</th>
+            <th class="px-3 py-4 border-b border-white/5">BidLoc</th>
+            <th class="px-3 py-4 border-b border-white/5">Bid$/lbs</th>
+            <th class="px-3 py-4 border-b border-white/5">Indic$/lbs</th>
+            <th class="px-3 py-4 border-b border-white/5">Change$/lbs</th>
+            <th class="px-3 py-4 border-b border-white/5">Ask$/lbs</th>
+            <th class="px-3 py-4 border-b border-white/5">AskLoc</th>
+          </tr>
+        </thead>
+        <tbody class="text-[13px] text-black/90">
+          <!-- Table rows here -->
+          <!-- Example row -->
+          <tr class="hover:bg-lime1/10">
+            <td class="px-3 py-4 border-b border-white/5 text-black/60">Aug-24</td>
+            <td class="px-3 py-4 border-b border-white/5">CMX</td>
+            <td class="px-3 py-4 border-b border-white/5">81.00</td>
+            <td class="px-3 py-4 border-b border-white/5">81.30</td>
+            <td class="px-3 py-4 border-b border-white/5">1.35</td>
+            <td class="px-3 py-4 border-b border-white/5">81.75</td>
+            <td class="px-3 py-4 border-b border-white/5">CMO</td>
+          </tr>
               <tr class="hover:bg-lime1/10">
                 <td class="px-3 py-4 border-b border-white/5 text-black/60">
                   Sep-24
@@ -493,36 +487,27 @@
                 <td class="px-3 py-4 border-b border-white/5">82.50</td>
                 <td class="px-3 py-4 border-b border-white/5">CMO</td>
               </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-
-      <!-- info  -->
-      <div class="w-[47%] ">
-        <h1
-        class="w-[80%] text-bg play  leading-[57px] text-[3rem] text-black  font-medium mb-7"
-      >
-        Invest in the energy of the future
-      </h1>
-
-      <p class="text-black/80 text-[17px] lato mb-11">
-        Uranium is at the heart of the clean energy transition. With rising
-        global demand and constrained supply, it's a unique opportunity to
-        invest in a resource that will power the planet for generations to come!
-        As countries around the world commit to reducing carbon emissions and
-        transitioning away from fossil fuels, nuclear energy, powered by
-        uranium, is emerging as a key player in the global energy mix.
-      </p>
-
-      <a
-          href="investments.html"
-          class="bg-lime1 text-black text-[14px] sm:text-[15px] px-4 sm:px-7 py-2 sm:py-3 lato font-medium hover:bg-lime2 transition-all"
-          >Know More</a
-        >
-
-      </div>
+        </tbody>
+      </table>
     </div>
+  </div>
+
+  <!-- info  -->
+  <div class="w-[47%] uranium-info">
+    <h1 class="w-[80%] text-bg play leading-[57px] text-[3rem] text-black font-medium mb-7 uranium-heading">
+      Invest in the energy of the future
+    </h1>
+
+    <p class="text-black/80 text-[17px] lato mb-11">
+      Uranium is at the heart of the clean energy transition. With rising global demand and constrained supply, it's a unique opportunity to invest in a resource that will power the planet for generations to come! As countries around the world commit to reducing carbon emissions and transitioning away from fossil fuels, nuclear energy, powered by uranium, is emerging as a key player in the global energy mix.
+    </p>
+
+    <a href="investments.html" class="bg-lime1 text-black text-[14px] sm:text-[15px] px-4 sm:px-7 py-2 sm:py-3 lato font-medium hover:bg-lime2 transition-all">
+      Know More
+    </a>
+  </div>
+</div>
+
 
     <!-- js  -->
     <!-- GSAP CDN -->
