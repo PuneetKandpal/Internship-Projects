@@ -97,7 +97,6 @@ window.onload = function () {
   });
 };
 
-
 // marquee
 const marquee = document.getElementById("stock-marquee");
 
@@ -107,4 +106,50 @@ marquee.addEventListener("mouseover", () => {
 
 marquee.addEventListener("mouseout", () => {
   marquee.start();
+});
+
+// price chart sec animation
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animation for Uranium Prices Section
+  gsap.from(".uranium-prices", {
+    scrollTrigger: {
+      trigger: ".uranium-section",
+      start: "top 60%", // Adjust start point
+      toggleActions: "play none none none", // When to play the animation
+      // markers: true,
+    },
+    x: -100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  // Animation for Uranium Info Section
+  gsap.from(".uranium-info", {
+    scrollTrigger: {
+      trigger: ".uranium-section",
+      start: "top 80%", // Adjust start point
+      toggleActions: "play none none none",
+    },
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    ease: "power2.out",
+  });
+
+  // Animation for Uranium Heading
+  gsap.from(".uranium-heading", {
+    scrollTrigger: {
+      trigger: ".uranium-section",
+      start: "top 90%", // Adjust start point
+      toggleActions: "play none none none",
+    },
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    ease: "power2.out",
+    delay: 0.2,
+  });
 });
