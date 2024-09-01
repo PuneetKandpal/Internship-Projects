@@ -30,7 +30,7 @@
   <body>
     <!-- navbar  -->
     <nav
-      class="bg-white py-6 px-4 md:px-12 flex justify-between items-center shadow-sm relative"
+      class="z-[1000] bg-white py-6 px-4 md:px-12 flex justify-between items-center shadow-sm relative"
     >
       <!-- logo  -->
       <h1 class="play font-semibold text-[22px] md:text-2xl flex items-center">
@@ -98,7 +98,323 @@
       </div>
     </nav>
 
+    <!-- Hero Section -->
+    <div
+      class="relative overflow-x-hidden px-5 sm:px-8 md:px-20 lg:px-32 xl:px-40 w-full h-[88vh] flex items-center justify-start bg-black"
+    >
+      <!-- Background image and gradient overlay -->
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1637775297458-7443ffd545b2?q=80&w=1854&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Background"
+          class="w-full h-full object-cover object-top opacity-90"
+        />
+        <div
+          class="absolute inset-0 bg-gradient-to-r from-[#111111]/80 via-black/35 to-lime1/10"
+        ></div>
+      </div>
+
+      <!-- Text content -->
+      <div
+        class="relative z-10 text-white w-full sm:w-[90%] md:w-[80%] lg:w-[72%]"
+      >
+        <h1
+          class="text-[30px] sm:text-[40px] md:text-[48px] lg:text-[55px] frank font-medium capitalize tracking-[-0.5px] leading-[36px] sm:leading-[46px] md:leading-[58px] lg:leading-[67px] sm:mb-5"
+        >
+          Stay ahead with real-time uranium news, price And analysis
+        </h1>
+
+        <div
+          class="flex flex-col sm:flex-row gap-y-2 sm:gap-x-3 items-start sm:items-center mb-10 sm:mb-12 justify-start ml-1"
+        >
+          <h1
+            class="text-lime1 capitalize font-semibold text-[14px] sm:text-[15px] md:text-[17px] lg:text-[19px]"
+          >
+            Spot Uranium :
+          </h1>
+          <h2
+            class="text-[13px] mt-[-7px] sm:mt-0 sm:text-[14px] md:text-[16px] lg:text-[17.5px] text-white/90 font-medium lato"
+          >
+            8175/8300 USc/Lb U3O8 (+12c, +0.15%)
+          </h2>
+        </div>
+        <a
+          href="investments.html"
+          class="bg-lime1 ml-1 text-black text-[14px] sm:text-[15px] px-4 sm:px-6 py-2 sm:py-3 lato font-medium hover:bg-lime2 transition-all"
+          >Get Started</a
+        >
+      </div>
+    </div>
+
+    <!-- marquee  -->
+    <div
+      class="my-0 py-14 sm:py-20 pb-20 sm:pb-28 lato w-full h-[35px] overflow-hidden"
+    >
+      <marquee
+        id="stock-marquee"
+        behavior="scroll"
+        direction="left"
+        scrollamount="12"
+        class="text-black bg-yellow py-1 whitespace-nowrap text-[1rem]"
+      >
+        <span class="font-semibold">URA </span>$25.73<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.35%</span
+        >
+        <span class="ml-4 font-semibold">CCJ </span>$41.41<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.07%</span
+        >
+        <span class="ml-4 font-semibold">DNN </span>$1.57<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.64%</span
+        >
+        <span class="ml-4 font-semibold">UUUU </span>$4.86<span
+          class="text-green-600 font-semibold"
+        >
+          ▲2.97%</span
+        >
+        <span class="ml-4 font-semibold">UEC </span>$5.04<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.40%</span
+        >
+        <span class="ml-4 font-semibold">NXE </span>$5.99<span
+          class="text-red-600 font-semibold"
+        >
+          ▼0.17%</span
+        >
+        <span class="ml-4 font-semibold">UROY </span>$2.10<span
+          class="text-red-600 font-semibold"
+        >
+          ▼1.87%</span
+        >
+        <span class="ml-4 font-semibold">U-UN.TO </span>$23.57<span
+          class="text-green-600 font-semibold"
+        >
+          ▲1.20%</span
+        >
+        <span class="ml-4 font-semibold">CCO.TO </span>$56.30<span
+          class="text-red-600 font-semibold"
+        >
+          ▼0.14%</span
+        >
+        <span class="ml-4 font-semibold">DML.TO </span>$2.15<span
+          class="text-green-600 font-semibold"
+        >
+          ▲1.42%</span
+        >
+        <span class="ml-4 font-semibold">FCU.TO </span>$0.97<span
+          class="text-red-600 font-semibold"
+        >
+          ▼1.02%</span
+        >
+        <span class="ml-4 font-semibold">LAM.TO </span>$0.56<span
+          class="text-green-600 font-semibold"
+        >
+          ▲5.66%</span
+        >
+        <span class="ml-4 font-semibold">CVV.V </span>$0.64<span
+          class="text-green-600 font-semibold"
+        >
+          ▲3.23%</span
+        >
+        <span class="ml-4 font-semibold">AEC.V </span>$0.07<span
+          class="text-green-600 font-semibold"
+        >
+          ▲16.67%</span
+        >
+        <span class="ml-4 font-semibold">AL.V </span>$0.02<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">FMC.V </span>$0.09<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">ISO.V </span>$3.00<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.33%</span
+        >
+        <span class="ml-4 font-semibold">SYH.V </span>$0.36<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">GXU.V </span>$0.05<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">BKUCF </span>$0.03<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">CVVUF </span>$0.46<span
+          class="text-green-600 font-semibold"
+        >
+          ▲4.55%</span
+        >
+        <span class="ml-4 font-semibold">FCUUF </span>$0.70<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">LMRXF </span>$0.39<span
+          class="text-green-600 font-semibold"
+        >
+          ▲2.63%</span
+        >
+        <span class="ml-4 font-semibold">NATKY </span>$36.79<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">PDN.AX </span>$10.02<span
+          class="text-red-600 font-semibold"
+        >
+          ▼0.79%</span
+        >
+        <span class="ml-4 font-semibold">BOE.AX </span>$2.93<span
+          class="text-red-600 font-semibold"
+        >
+          ▼0.68%</span
+        >
+        <span class="ml-4 font-semibold">DYL.AX </span>$1.03<span
+          class="text-red-600 font-semibold"
+        >
+          ▼2.37%</span
+        >
+        <span class="ml-4 font-semibold">BMN.AX </span>$2.30<span
+          class="text-red-600 font-semibold"
+        >
+          ▼2.95%</span
+        >
+        <span class="ml-4 font-semibold">LOT.AX </span>$0.22<span
+          class="text-red-600 font-semibold"
+        >
+          ▼6.38%</span
+        >
+        <span class="ml-4 font-semibold">ERA.AX </span>$0.02<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">TOE.AX </span>$0.25<span
+          class="text-red-600 font-semibold"
+        >
+          ▼5.77%</span
+        >
+        <span class="ml-4 font-semibold">NFL.AX </span>$0.09<span
+          class="text-red-600 font-semibold"
+        >
+          ▼6.06%</span
+        >
+        <span class="ml-4 font-semibold">BKY.AX </span>$0.31<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">GTR.AX </span>$0.00<span
+          class="text-green-600 font-semibold"
+        >
+          ▲16.67%</span
+        >
+        <span class="ml-4 font-semibold">HAV.AX </span>$0.17<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">MEU.AX </span>$0.04<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">MHC.AX </span>$0.00<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">RIO.AX </span>$112.17<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.21%</span
+        >
+        <span class="ml-4 font-semibold">ENR.AX </span>$0.50<span
+          class="text-green-600 font-semibold"
+        >
+          ▲7.61%</span
+        >
+        <span class="ml-4 font-semibold">POW.AX </span>$0.01<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">RDM.AX </span>$0.13<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">RLC.AX </span>$0.00<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">AND.AX </span>$2.49<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.40%</span
+        >
+        <span class="ml-4 font-semibold">CUL.AX </span>$0.01<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">EBR.AX </span>$1.10<span
+          class="text-green-600 font-semibold"
+        >
+          ▲2.33%</span
+        >
+        <span class="ml-4 font-semibold">GLA.AX </span>$0.01<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+        <span class="ml-4 font-semibold">BHP.L </span>£2083.00<span
+          class="text-red-600 font-semibold"
+        >
+          ▼1.28%</span
+        >
+        <span class="ml-4 font-semibold">RIO.L </span>£4780.50<span
+          class="text-red-600 font-semibold"
+        >
+          ▼1.14%</span
+        >
+        <span class="ml-4 font-semibold">YCA.L </span>£514.70<span
+          class="text-red-600 font-semibold"
+        >
+          ▼0.06%</span
+        >
+        <span class="ml-4 font-semibold">BKY.L </span>£16.50<span
+          class="text-green-600 font-semibold"
+        >
+          ▲0.00%</span
+        >
+      </marquee>
+    </div>
+
     <!-- js  -->
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
     <script src="home.js"></script>
   </body>
 </html>
