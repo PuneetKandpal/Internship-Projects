@@ -153,3 +153,36 @@ document.addEventListener("DOMContentLoaded", () => {
     delay: 0.2,
   });
 });
+
+
+// table and news sec 
+// GSAP and ScrollTrigger Animations
+gsap.registerPlugin(ScrollTrigger);
+
+// Table Section Animation
+gsap.from("#uranium-table-section", {
+  scrollTrigger: {
+    trigger: "#uranium-table-section",
+    start: "top 80%", // Starts the animation when the top of the section reaches 80% of the viewport
+    end: "bottom 20%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: 50,
+  duration: 1.5,
+  ease: "power2.out",
+});
+
+// News Section Animation
+gsap.from("#uranium-news-section", {
+  scrollTrigger: {
+    trigger: "#uranium-news-section",
+    start: "top 80%",
+    end: "bottom 20%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  x: 50,
+  duration: 1.5,
+  ease: "power2.out",
+});
