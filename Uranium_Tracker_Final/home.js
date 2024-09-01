@@ -96,3 +96,15 @@ window.onload = function () {
     ease: "power2.out",
   });
 };
+
+
+// marquee
+const marquee = document.getElementById("stock-marquee");
+
+marquee.addEventListener("mouseover", () => {
+  marquee.stop();
+});
+
+marquee.addEventListener("mouseout", () => {
+  marquee.start();
+});
