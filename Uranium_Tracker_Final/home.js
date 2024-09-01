@@ -185,3 +185,35 @@ gsap.from("#uranium-news-section", {
   duration: 1.5,
   ease: "power2.out",
 });
+
+// did you know sec animation
+gsap.registerPlugin(ScrollTrigger);
+
+// Animate the left section
+gsap.from(".did-you-know-left", {
+  scrollTrigger: {
+    trigger: ".did-you-know-left",
+    start: "top 80%",
+    end: "bottom 20%",
+    // scrub: true,
+  },
+  opacity: 0,
+  x: -100,
+  duration: 1.5,
+  ease: "power2.out",
+});
+
+// Animate the images in the right section
+gsap.from(".did-you-know-images > div", {
+  scrollTrigger: {
+    trigger: ".did-you-know-images",
+    start: "top 80%",
+    end: "bottom 20%",
+    // scrub: true,
+  },
+  opacity: 0,
+  scale: 0.8,
+  stagger: 0.3,
+  duration: 1.5,
+  ease: "power2.out",
+});
