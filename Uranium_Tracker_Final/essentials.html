@@ -21,10 +21,48 @@
               lime1: "#57fec7",
               lime2: "#27ecab",
               black: "#19310B",
+              black1:"#000000"
             },
           },
         },
       };
+       document.addEventListener("DOMContentLoaded", function () {
+    gsap.registerPlugin(ScrollTrigger);
+
+    // Animate each card individually as it enters the viewport
+    gsap.from(".card", {
+      scrollTrigger: {
+        trigger: ".card",
+        start: "top 85%", // Start animation when the top of the card is 85% from the top of the viewport
+        end: "bottom 25%", // End animation when the bottom of the card is 25% from the top of the viewport
+        toggleActions: "play none none reverse", // Play the animation when entering, reverse when leaving
+      },
+      duration: 0.8,
+      opacity: 0,
+      scale: 0.8,
+      ease: "power3.out",
+      stagger: {
+        each: 0.2, // Stagger animation of each card by 0.2 seconds
+      },
+    });
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+      // Animate the heading and paragraph
+      gsap.from('.custom-heading', {
+        duration: 1,          // animation duration in seconds
+        y: -50,               // starting position 50px above its original position
+        opacity: 0,           // start with the element completely transparent
+        ease: 'power3.out'    // easing function for smooth animation
+      });
+
+      gsap.from('.custom-paragraph', {
+        duration: 1.5,        // animation duration in seconds
+        y: 50,                // starting position 50px below its original position
+        opacity: 0,           // start with the element completely transparent
+        ease: 'power3.out',   // easing function for smooth animation
+        delay: 0.5            // delay before the animation starts
+      });
+    });
     </script>
   </head>
   <body>
@@ -97,6 +135,290 @@
         >
       </div>
     </nav>
+    <!-- Main=============================  -->
+    <div class="relative w-full h-auto">
+      <div class="absolute inset-0">
+        <img
+          class="w-full h-full object-cover"
+          src="https://images.pexels.com/photos/6634140/pexels-photo-6634140.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+          style="transition: none;" 
+        />
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-r from-black1 to-transparent"></div>
+      </div>
+      <div class="relative z-10 flex justify-between  flex-wrap h-full lg:p-[5.8rem] md:p-[4rem] sm:p-[2.7rem] p-[2rem]">
+        <div class="lg:w-[70%] md:w-[90%] w-[90%]">
+          <h2
+            class="custom-heading text-[0.7rem] sm:text-[0.9rem] md:text-[1rem]  font-semibold bg-lime1 inline-block px-2"
+          >
+            Understanding Uranium
+          </h2>
+          <p
+            class=" custom-paragraph play leading-[40px] sm:leading-[50px] md:text-[2rem] text-[1.4rem] sm:text-[1.7rem] lg:text-[2.3rem] text-white font-medium mt-2"
+          >
+            Explore the Latest Insights, Market Data, and Key Information on Uranium.
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    
+      <!-- Cards =================  -->
+      <div
+      class="px-2 pb-20 mt-14 lg:mt-16 lg:w-[90%] mx-auto w-[90%] lg:px-[1rem]"
+    >
+      <div class="container mt-[3rem] lg:mt-28">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+
+          <a
+            href="e8.html"
+            class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+          >
+            <!-- Top half with background image -->
+            <div
+              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              style="
+                background-image: url('https://mineralsmakelife.org/wp-content/uploads/2017/03/Uranium.jpg');
+              "
+            ></div>
+
+            <!-- Bottom half with content -->
+            <div
+              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+            >
+              <!-- Text Content -->
+              <div class="relative z-10">
+                <h2 class="text-[16px] font-semibold mb-2 frank">
+                  What is Uranium?
+                </h2>
+                <p class="text-sm text-left mb-2 text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                  nobis totam...
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+
+          <a
+            href="e8.html"
+            class=" card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+          >
+            <!-- Top half with background image -->
+            <div
+              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              style="
+                background-image: url('https://qph.cf2.quoracdn.net/main-qimg-b771f870b0afb6c0703e5707258bed5d-lq');
+              "
+            ></div>
+
+            <!-- Bottom half with content -->
+            <div
+              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+            >
+              <!-- Text Content -->
+              <div class="relative z-10">
+                <h2 class="text-[16px] font-semibold mb-2 frank">
+                  Natural Occurence of Uranium?
+                </h2>
+                <p class="text-sm text-left mb-2 text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                  nobis totam...
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 3 -->
+
+          <a
+            href="e8.html"
+            class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+          >
+            <!-- Top half with background image -->
+            <div
+              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              style="
+                background-image: url('https://g.foolcdn.com/editorial/images/459568/ranger-uranium-mine-in-australia.jpg');
+              "
+            ></div>
+
+            <!-- Bottom half with content -->
+            <div
+              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+            >
+              <!-- Text Content -->
+              <div class="relative z-10">
+                <h2 class="text-[16px] font-semibold mb-2 frank">
+                  Global Distribution of uranium Resources?
+                </h2>
+                <p class="text-sm text-left mb-2 text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                  nobis totam...
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 4 -->
+
+          <a
+            href="e8.html"
+            class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+          >
+            <!-- Top half with background image -->
+            <div
+              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              style="
+                background-image: url('https://www.ausimm.com/globalassets/bulletin/plummer-figure4.png');
+              "
+            ></div>
+
+            <!-- Bottom half with content -->
+            <div
+              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+            >
+              <!-- Text Content -->
+              <div class="relative z-10">
+                <h2 class="text-[16px] font-semibold mb-2 frank">
+                  Where can uranium be found?
+                </h2>
+                <p class="text-sm text-left mb-2 text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                  nobis totam...
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 5 -->
+
+          <a
+          href="e8.html"
+          class=" card relative block w-full h-[260px] overflow-hidden rounded-sm shadow-lg group"
+        >
+          <!-- Top half with background image -->
+          <div
+            class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+            style="
+              background-image: url('https://ahf.nuclearmuseum.org/wp-content/uploads/2018/07/Shinkolobwe_mine.jpg');
+            "
+          ></div>
+        
+          <!-- Bottom half with content -->
+          <div
+            class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-colors duration-300 ease-in-out group-hover:bg-[#161616] group-hover:text-white"
+          >
+            <!-- Text Content -->
+            <div class="relative z-10">
+              <h2 class="text-[16px] font-semibold mb-2">
+                The history of uranium
+              </h2>
+              <p class="text-sm  text-left mb-2 text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...
+              </p>
+            </div>
+          </div>
+        </a>
+        
+
+          <!-- Card 6 -->
+          <a
+          href="e8.html"
+          class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+        >
+          <!-- Top half with background image -->
+          <div
+            class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+            style="
+              background-image: url('https://cardinalnews.org/wp-content/uploads/2022/11/WhatsApp-Image-2022-11-21-at-3.16.03-PM.jpeg');
+            "
+          ></div>
+        
+          <!-- Bottom half with content -->
+          <div
+            class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-colors duration-500 group-hover:bg-[#161616] group-hover:text-white"
+          >
+            <!-- Text Content -->
+            <div class="relative z-10">
+              <h2 class="text-[16px] font-semibold mb-2 frank ">
+                Environmental impact of uranium
+              </h2>
+              <p class="text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                nobis totam...
+              </p>
+            </div>
+          </div>
+        </a>
+        
+          <!-- Card 7 -->
+
+          <a
+            href="e8.html"
+            class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+          >
+            <!-- Top half with background image -->
+            <div
+              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              style="
+                background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/48/Uranium_Processing_Facility_001.jpg');
+              "
+            ></div>
+
+            <!-- Bottom half with content -->
+            <div
+              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+            >
+              <!-- Text Content -->
+              <div class="relative z-10">
+                <h2 class="text-[16px] font-semibold mb-2 frank">
+                  Uranium Pocessing
+                </h2>
+                <p class="text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                  nobis totam...
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <!-- Card 8 -->
+
+          <a
+            href="e8.html"
+            class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+          >
+            <!-- Top half with background image -->
+            <div
+              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              style="
+                background-image: url('https://www.energyportal.in/images/nuclear/nuclear02.jpg');
+              "
+            ></div>
+
+            <!-- Bottom half with content -->
+            <div
+              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+            >
+              <!-- Text Content -->
+              <div class="relative z-10">
+                <h2 class="text-[16px] font-semibold mb-2 frank">
+                  Uranium Glossary
+                </h2>
+                <p class="text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                  nobis totam...
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
 
     <!-- Footer ================================================================================ -->
     <footer class="bg-[#161616] text-white py-14 px-6 lg:px-[1.2rem] mt-">
