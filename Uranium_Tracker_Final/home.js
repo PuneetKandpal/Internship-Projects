@@ -238,3 +238,82 @@ document.addEventListener("DOMContentLoaded", () => {
     delay: 0.3, // Slight delay before the animation starts
   });
 });
+
+// featured news sec animation ===================================
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".featured-news", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".featured-news",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+});
+
+gsap.from(".news-card", {
+  opacity: 0,
+  x: -50,
+  duration: 1,
+  stagger: 0.2,
+  scrollTrigger: {
+    trigger: ".news-card",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+});
+
+gsap.from(".tweets", {
+  opacity: 0,
+  x: 50,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".tweets",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+});
+
+gsap.from(".tweet-cards > div", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  stagger: 0.3,
+  scrollTrigger: {
+    trigger: ".tweet-cards",
+    start: "top 80%",
+    toggleActions: "play none none reverse",
+  },
+});
+
+// blog section Animation
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".title-section", {
+  scrollTrigger: {
+    trigger: ".title-section",
+    start: "top 80%",
+    end: "bottom 60%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: -50,
+  duration: 1,
+  ease: "power2.out",
+});
+
+gsap.from(".image-animate", {
+  scrollTrigger: {
+    trigger: ".images-section",
+    start: "top 80%",
+    end: "bottom 60%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  scale: 0.9,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power2.out",
+});
