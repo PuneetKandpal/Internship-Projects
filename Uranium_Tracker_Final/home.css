@@ -18,6 +18,15 @@ html {
   color: #19310b;
 }
 
+/* scrollbar ============   */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #27ecab;
+  border-radius: 10px;
+}
+
 .play {
   font-family: "Playfair Display", serif;
 }
@@ -35,4 +44,13 @@ html {
 /* cards-svg css */
 .card-container:hover .svg-icon {
   transform: translateY(-10px);
+}
+
+/* active link  ===========================================*/
+.active {
+  color: #0fd090;
+  border-bottom: 2px solid #27ecaa97;
+}
+.active:hover {
+  color: #0fd090;
 }
