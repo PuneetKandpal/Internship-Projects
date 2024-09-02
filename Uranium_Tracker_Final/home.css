@@ -43,7 +43,7 @@ html {
 
 /* cards-svg css */
 .card-container:hover .svg-icon {
-  transform: translateY(-10px);
+  transform: scale(1.1);
 }
 
 /* active link  ===========================================*/
