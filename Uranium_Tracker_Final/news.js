@@ -41,9 +41,10 @@ gsap.from(".trending-block", {
   stagger: 0.3,
   ease: "power2.out",
   scrollTrigger: {
-    trigger: ".py-12",
+    trigger: ".py-16",
     start: "top 80%",
     end: "bottom 60%",
     toggleActions: "play none none reverse",
+    // markers:true
   },
 });
