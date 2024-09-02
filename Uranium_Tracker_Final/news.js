@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: ".uranium-news-headline",
       start: "top 80%",
-      toggleActions: "play none none reverse",
+      //   toggleActions: "play none none reverse",
     },
     y: 50,
     opacity: 0,
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: ".uranium-news-background",
       start: "top 80%",
-      toggleActions: "play none none reverse",
+      //   toggleActions: "play none none reverse",
     },
     scale: 1.1,
     opacity: 0,
@@ -83,7 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
     scrollTrigger: {
       trigger: ".news-card",
       start: "top 80%",
-      toggleActions: "play none none reverse",
+      //   toggleActions: "play none none reverse",
     },
     y: 50,
     opacity: 0,
