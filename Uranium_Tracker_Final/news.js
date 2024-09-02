@@ -27,3 +27,23 @@ gsap.from(".animate-small-imgs > *", {
     toggleActions: "play none none none",
   },
 });
+
+
+// trending sec Animation 
+// Include GSAP and ScrollTrigger first
+gsap.registerPlugin(ScrollTrigger);
+
+// Apply animations to each featured block
+gsap.from(".trending-block", {
+  opacity: 0,
+  y: 50,
+  duration: 1,
+  stagger: 0.3,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".py-12",
+    start: "top 80%",
+    end: "bottom 60%",
+    toggleActions: "play none none reverse",
+  },
+});
