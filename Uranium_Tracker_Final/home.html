@@ -1839,7 +1839,7 @@
     <div class="md:pt-32 md:pb-28 md:px-20 px-6 py-16 bg-[#161616]">
       <div class="flex flex-col lg:flex-row justify-between gap-10">
         <!-- featured news  -->
-        <div class="w-full lg:w-[60%] h-full mb-10 featured-news">
+        <div class="w-full lg:w-[50%] h-full mb-10 featured-news">
           <h2
             class="flex items-center text-[1rem] md:text-[1.4rem] frank mb-6 lg:mb-12 font-medium text-white capitalize"
           >
@@ -1978,25 +1978,27 @@
     <!-- uranium blogs  -->
     <div class="py-24 md:px-20 px-6">
       <div class="px-2 py-4 lg:py-10">
-        <div class="flex justify-between items-center -mb-5 title-section">
+        <div
+          class="flex flex-col md:flex-row justify-between items-start md:items-center mb-5 md:mb-10 title-section"
+        >
           <h2
-            class="ml-[-7px] flex items-center text-[1rem] md:text-[1.4rem] frank mb-6 lg:mb-12 font-semibold text-black capitalize"
+            class="ml-0 flex items-center text-[1rem] md:text-[1.4rem] frank mb-4 md:mb-6 font-semibold text-black capitalize"
           >
-            <i class="ri-menu-4-fill text-lime2 text-bold text-xl mr-3"></i>
+            <i class="ri-menu-4-fill text-lime2 font-bold text-xl mr-3"></i>
             Latest Uranium Blogs
           </h2>
           <a
             href="#"
-            class="text-black/45 hover:text-lime2 text-[11px] md:text-[13px] flex items-center"
+            class="hidden md:flex text-black/45 hover:text-lime2 text-[11px] md:text-[13px] items-center"
           >
             VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
           </a>
         </div>
-        <div class="flex gap-4 md:gap-4 images-section">
+        <div class="flex flex-col lg:flex-row gap-4 md:gap-4 images-section">
           <!-- First Image (Left) -->
           <a href="#">
             <div
-              class="group rounded-sm flex-1 md:flex-[1.5] bg-white overflow-hidden relative h-[20rem] flex-shrink-0 image-container image-animate"
+              class="group rounded-sm flex-1 md:flex-[1.5] bg-white overflow-hidden relative h-[15rem] md:h-[20rem] flex-shrink-0 image-container image-animate"
             >
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxswzclsJarTltvp_eOlVjyR8YM3lyL04VDA&s"
@@ -2022,11 +2024,11 @@
               </div>
             </div>
           </a>
-    
+
           <!-- Second Image (Middle) -->
           <a href="#">
             <div
-              class="group rounded-sm flex-1 md:flex-[1] bg-white overflow-hidden relative h-[20rem] flex-shrink-0 image-container image-animate"
+              class="group rounded-sm flex-1 md:flex-[1] bg-white overflow-hidden relative h-[15rem] md:h-[20rem] flex-shrink-0 image-container image-animate"
             >
               <img
                 src="https://images.unsplash.com/photo-1581092160607-ee22621dd758"
@@ -2053,13 +2055,13 @@
               </div>
             </div>
           </a>
-    
+
           <!-- Two Stacked Images (Right) -->
-          <div class="flex-1 md:flex-[1] flex flex-col space-y-4">
+          <div class="flex-1 md:flex-[1] flex flex-col gap-4">
             <!-- Top Image -->
             <a href="#">
               <div
-                class="group rounded-sm bg-white overflow-hidden relative h-[9.5rem] flex-shrink-0 image-container image-animate"
+                class="group rounded-sm bg-white overflow-hidden relative h-[9rem] md:h-[9.5rem] flex-shrink-0 image-container image-animate"
               >
                 <img
                   src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa"
@@ -2086,11 +2088,11 @@
                 </div>
               </div>
             </a>
-    
+
             <!-- Bottom Image -->
-            <a href="#"
-              ><div
-                class="group bg-white rounded-sm overflow-hidden relative h-[9.5rem] flex-shrink-0 image-container image-animate"
+            <a href="#">
+              <div
+                class="group bg-white rounded-sm overflow-hidden relative h-[9rem] md:h-[9.5rem] flex-shrink-0 image-container image-animate"
               >
                 <img
                   src="https://akm-img-a-in.tosshub.com/indiatoday/styles/medium_crop_simple/public/2023-08/space_station_5.jpg?VersionId=MBv_hEFhlSV.QkIqEJOGKbjkRb_AqauD&size=750:*"
@@ -2114,13 +2116,18 @@
                     SpaceX and NASA to Launch Crew-7 Mission to ISS
                   </h3>
                 </div>
-              </div></a
-            >
+              </div>
+            </a>
           </div>
         </div>
+        <a
+          href="#"
+          class="flex mt-4 md:hidden text-black/45 hover:text-lime2 text-[11px] md:text-[13px] items-center"
+        >
+          VIEW MORE <i class="ri-arrow-right-s-line ml-1 text-lg"></i>
+        </a>
       </div>
     </div>
-    
 
     <!-- Footer ================================================================================ -->
     <footer class="bg-[#161616] text-white py-14 px-6 lg:px-[1.2rem] mt-10">
