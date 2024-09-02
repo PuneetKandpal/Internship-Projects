@@ -287,3 +287,33 @@ gsap.from(".tweet-cards > div", {
     toggleActions: "play none none reverse",
   },
 });
+
+// blog section Animation
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".title-section", {
+  scrollTrigger: {
+    trigger: ".title-section",
+    start: "top 80%",
+    end: "bottom 60%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  y: -50,
+  duration: 1,
+  ease: "power2.out",
+});
+
+gsap.from(".image-animate", {
+  scrollTrigger: {
+    trigger: ".images-section",
+    start: "top 80%",
+    end: "bottom 60%",
+    toggleActions: "play none none reverse",
+  },
+  opacity: 0,
+  scale: 0.9,
+  duration: 1,
+  stagger: 0.2,
+  ease: "power2.out",
+});
