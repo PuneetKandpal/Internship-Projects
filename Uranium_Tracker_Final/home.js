@@ -217,3 +217,24 @@ gsap.from(".did-you-know-images > div", {
   duration: 1.5,
   ease: "power2.out",
 });
+
+//card-section-animation
+document.addEventListener("DOMContentLoaded", () => {
+  gsap.registerPlugin(ScrollTrigger);
+
+  // Animation for cards on scroll
+  gsap.from(".card-container", {
+    scrollTrigger: {
+      trigger: ".card-container",
+      start: "top 80%", // Trigger animation when the top of the card is 80% from the top of the viewport
+      toggleActions: "play none none none", // Start animation when the card is in view
+      // markers: true // Uncomment to see the trigger points for debugging
+    },
+    opacity: 0,
+    scale: 0.9, // Slightly less scale to make the effect smoother
+    duration: 1.5, // Increased duration for smoother transition
+    stagger: 0.2, // Increased stagger to space out animations
+    ease: "power3.out", // Smoother easing function
+    delay: 0.3, // Slight delay before the animation starts
+  });
+});
