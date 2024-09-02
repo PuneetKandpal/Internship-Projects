@@ -100,19 +100,21 @@
 
     <!-- hero sec  -->
     <div>
-      <div class="container mx-auto py h-[80vh]">
+      <div class="container mx-auto py w-full">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-1 h-full">
           <!-- Left Section - Large Image -->
           <div class="lg:col-span-2 h-full">
             <a href="#" class="block h-full">
-              <div class="relative h-[560px] group overflow-hidden">
+              <div
+                class="relative h-[559px] group overflow-hidden animate-large-img"
+              >
                 <img
                   src="https://images.unsplash.com/photo-1610720707798-6fe21dc165ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bnVjbGVhcnxlbnwwfHwwfHx8MA%3D%3D"
                   alt="Oculus Quest X Headset"
                   class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 object-bottom"
                 />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-[#161616]/40 to-transparent"
+                  class="absolute inset-0 bg-gradient-to-t from-[#161616] via-[#161616]/40 to-transparent"
                 ></div>
                 <div class="absolute bottom-6 left-5 text-white z-10">
                   <span
@@ -134,17 +136,17 @@
           </div>
 
           <!-- Right Section - Stacked Smaller Images -->
-          <div class="flex flex-col space-y-1">
+          <div class="flex flex-col space-y-1 animate-small-imgs">
             <!-- Top Small Image -->
-            <a href="#"
-              ><div class="relative w-full h-[277px] group overflow-hidden">
+            <a href="#">
+              <div class="relative w-full h-[277px] group overflow-hidden">
                 <img
                   src="https://www.mining.com/wp-content/uploads/2024/01/Uranium_Energy_Corp_Uranium_Energy_Corp_Completes_Restart_Progra-300x207.jpg"
-                  alt="iPhone Pro 13 Rumored"
+                  alt="Uranium Energy"
                   class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                 />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-[#161616]/40 to-transparent"
+                  class="absolute inset-0 bg-gradient-to-t from-[#161616] via-[#161616]/40 to-transparent"
                 ></div>
                 <div class="absolute bottom-6 left-5 text-white z-10">
                   <span
@@ -161,18 +163,18 @@
                     Mining.com Doe – Aug 21, 2024
                   </p>
                 </div>
-              </div></a
-            >
+              </div>
+            </a>
             <!-- Bottom Small Image -->
-            <a href="#"
-              ><div class="relative w-full h-[277px] group overflow-hidden">
+            <a href="#">
+              <div class="relative w-full h-[277px] group overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1567665202038-6c5e97837696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dXJhbml1bXxlbnwwfHwwfHx8MA%3D%3D"
                   alt="Fujifilm’s 102-Megapixel Camera"
                   class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
                 />
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-black via-[#161616]/40 to-transparent"
+                  class="absolute inset-0 bg-gradient-to-t from-[#161616] via-[#161616]/40 to-transparent"
                 ></div>
                 <div class="absolute bottom-6 left-5 text-white z-10">
                   <span
@@ -189,15 +191,15 @@
                     Mining.com Doe – Aug 21, 2024
                   </p>
                 </div>
-              </div></a
-            >
+              </div>
+            </a>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Footer ================================================================================ -->
-    <footer class="bg-[#161616] text-white py-14 px-6 lg:px-[1.2rem] mt-">
+    <footer class="bg-[#161616] text-white py-14 px-6 lg:px-[1.2rem] mt-10">
       <div class="lg:w-[90%] mx-auto w-full">
         <div
           class="container mx-auto flex flex-col justify-center items-center text-center"
@@ -275,5 +277,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="home.js"></script>
+    <script src="news.js"></script>
   </body>
 </html>
