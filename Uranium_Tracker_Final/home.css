@@ -18,6 +18,10 @@ html {
   color: #19310b;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /* scrollbar ============   */
 ::-webkit-scrollbar {
   width: 8px;
