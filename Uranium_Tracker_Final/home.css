@@ -28,6 +28,11 @@ html {
   font-family: "Poppins", sans-serif;
   color: #27ecab;
 }
-.frank{
-    font-family: "Raleway", sans-serif;
+.frank {
+  font-family: "Raleway", sans-serif;
+}
+
+/* cards-svg css */
+.card-container:hover .svg-icon {
+  transform: translateY(-10px);
 }
