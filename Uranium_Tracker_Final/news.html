@@ -30,12 +30,14 @@
   <body>
     <!-- navbar  -->
     <nav
-      class="sticky top-0 z-[1000] bg-white py-6 px-4 md:px-12 flex justify-between items-center shadow-sm"
+      class="fixed top-0 left-0 right-0 z-[1000] bg-white py-6 px-4 md:px-12 flex justify-between items-center shadow-sm"
     >
-      <!-- logo  -->
-      <h1 class="play font-semibold text-[22px] md:text-2xl flex items-center">
+      <!-- logo -->
+      <h1
+        class="play font-semibold text-black frank text-[22px] md:text-2xl flex items-center"
+      >
         <i
-          class="ri-compass-fill text-[17px] md:text-[19px] text-black bg-lime1 flex justify-center items-center w-7 h-7 md:w-8 md:h-8 rounded-full mt-1 mr-2"
+          class="ri-compass-fill text-[15px] md:text-[19px] text-black bg-lime1 flex justify-center items-center pt-[2px] w-6 h-6 md:w-7 md:h-7 rounded-full mr-2"
         ></i>
         UraniumTracker
       </h1>
@@ -45,10 +47,10 @@
         <i class="ri-menu-3-line"></i>
       </button>
 
-      <!-- links  -->
+      <!-- links -->
       <div
         id="menu"
-        class="hidden h-screen md:h-fit md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-7 absolute md:relative top-full left-0 right-0 bg-white md:bg-transparent pb-4 md:pb-0 shadow-md md:shadow-none w-full md:w-auto"
+        class="hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-7 absolute md:relative top-full left-0 right-0 bg-white md:bg-transparent pb-4 md:pb-0 shadow-md md:shadow-none w-full md:w-auto"
       >
         <ul
           class="lato text-black tracking-wide capitalize text-[16.2px] pl-10 md:pl-0 mb-4 md:mb-0 font-medium flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:gap-x-5 w-full md:w-auto"
@@ -98,17 +100,543 @@
       </div>
     </nav>
 
+    <!-- hero sec  -->
+    <div>
+      <div class="container mx-auto py w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-1 h-full">
+          <!-- Left Section - Large Image -->
+          <div class="lg:col-span-2 h-full">
+            <a href="#" class="block h-full">
+              <div
+                class="relative h-[559px] group overflow-hidden animate-large-img"
+              >
+                <img
+                  src="https://images.unsplash.com/photo-1610720707798-6fe21dc165ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bnVjbGVhcnxlbnwwfHwwfHx8MA%3D%3D"
+                  alt="Oculus Quest X Headset"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 object-bottom"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#161616] via-[#161616]/40 to-transparent"
+                ></div>
+                <div class="absolute bottom-6 left-5 text-white z-10">
+                  <span
+                    class="bg-lime1 text-black font-semibold text-xs px-2 py-1 uppercase"
+                  >
+                    Nuclear-Grade trending News
+                  </span>
+                  <h2 class="text-2xl font-semibold pr-6 mt-4 leading-[35px]">
+                    Nuclear Power Market Size is Projected to Reach USD 45.31
+                    billion by 2032, Growing at a CAGR of 3.10%: Straits
+                    Research
+                  </h2>
+                  <p class="text-[13.5px] lato text-white/80 mt-5">
+                    Globe Newswire – Aug 21, 2024
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          <!-- Right Section - Stacked Smaller Images -->
+          <div class="flex flex-col space-y-1 animate-small-imgs">
+            <!-- Top Small Image -->
+            <a href="#">
+              <div class="relative w-full h-[277px] group overflow-hidden">
+                <img
+                  src="https://www.mining.com/wp-content/uploads/2024/01/Uranium_Energy_Corp_Uranium_Energy_Corp_Completes_Restart_Progra-300x207.jpg"
+                  alt="Uranium Energy"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#161616] via-[#161616]/40 to-transparent"
+                ></div>
+                <div class="absolute bottom-6 left-5 text-white z-10">
+                  <span
+                    class="bg-lime1 text-black font-semibold text-[11px] px-2 py-1 uppercase"
+                  >
+                    Technology
+                  </span>
+                  <h3
+                    class="text-[20px] leading-[25px] font-semibold mt-2 pr-4"
+                  >
+                    Uranium Energy restarts uranium production in Wyoming
+                  </h3>
+                  <p class="text-xs mt-3 text-white/80 lato">
+                    Mining.com Doe – Aug 21, 2024
+                  </p>
+                </div>
+              </div>
+            </a>
+            <!-- Bottom Small Image -->
+            <a href="#">
+              <div class="relative w-full h-[277px] group overflow-hidden">
+                <img
+                  src="https://images.unsplash.com/photo-1567665202038-6c5e97837696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dXJhbml1bXxlbnwwfHwwfHx8MA%3D%3D"
+                  alt="Fujifilm’s 102-Megapixel Camera"
+                  class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-[#161616] via-[#161616]/40 to-transparent"
+                ></div>
+                <div class="absolute bottom-6 left-5 text-white z-10">
+                  <span
+                    class="bg-lime1 text-black font-semibold text-[11px] px-2 py-1 uppercase"
+                  >
+                    Technology
+                  </span>
+                  <h3
+                    class="text-[20px] leading-[25px] font-semibold mt-2 pr-4"
+                  >
+                    ERA scores win in battle to keep Jabikula uranium lease
+                  </h3>
+                  <p class="text-xs mt-3 text-white/80 lato">
+                    Mining.com Doe – Aug 21, 2024
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- trending news -->
+    <div class="py-16 px-6 md:px-20 md:py-28">
+      <h2
+        class="flex items-center ml-[-2px] text-[1rem] md:text-[1.4rem] frank mb-6 lg:mb-9 font-semibold text-black capitalize"
+      >
+        <i class="ri-menu-4-fill text-green-500 text-bold text-xl mr-2"></i>
+        Trending News
+      </h2>
+
+      <div class="flex justify-between flex-wrap">
+        <!-- First Block -->
+        <div class="trending-block w-full sm:w-[48%] lg:w-[31%] mb-6">
+          <div class="w-full h-[210px] overflow-hidden">
+            <a href="#">
+              <img
+                class="w-full h-full object-cover hover:scale-105 hover:opacity-95 transition-all duration-300"
+                src="https://world-nuclear-news.org/uploadedImages/wnn/Images/south%20inkai.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <div class="py-2">
+            <a href="#">
+              <h1
+                class="text-[16px] md:text-xl leading-[25px] capitalize text-black/90 font-bold frank hover:text-black"
+              >
+                Uranium Energy restarts uranium production in Wyoming
+              </h1>
+            </a>
+            <p
+              class="text-[11px] md:text-[12px] lato font-medium text-black/70 mt-2"
+            >
+              <span>09 August, 2024</span>
+              &nbsp; | &nbsp; <span>Mining.com</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Second Block -->
+        <div class="trending-block w-full sm:w-[48%] lg:w-[31%] mb-6">
+          <div class="w-full h-[210px] overflow-hidden">
+            <a href="#">
+              <img
+                class="w-full h-full object-cover hover:scale-105 hover:opacity-95 transition-all duration-300"
+                src="https://www.mining.com/wp-content/uploads/2024/08/Australia-Northern-Territory-300x167.jpeg"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <div class="py-2">
+            <a href="#">
+              <h1
+                class="text-[16px] md:text-xl leading-[25px] capitalize text-black/90 font-bold frank hover:text-black"
+              >
+                ERA scores win in battle to keep Jabikula uranium lease
+              </h1>
+            </a>
+            <p
+              class="text-[11px] md:text-[12px] lato font-medium text-black/70 mt-2"
+            >
+              <span>09 August, 2024</span>
+              &nbsp; | &nbsp; <span>Mining.com</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Third Block -->
+        <div class="trending-block w-full sm:w-[48%] lg:w-[31%] mb-6">
+          <div class="w-full h-[210px] overflow-hidden">
+            <a href="#">
+              <img
+                class="w-full h-full object-cover hover:scale-105 hover:opacity-95 transition-all duration-300"
+                src="https://www.mining.com/wp-content/uploads/2024/08/Uranium-Royalty-CEO-Scott-Melbye-300x169.png"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <div class="py-2">
+            <a href="#">
+              <h1
+                class="text-[16px] md:text-xl leading-[25px] capitalize text-black/90 font-bold frank hover:text-black"
+              >
+                Uranium Royalty capitalizes on market resurgence
+              </h1>
+            </a>
+            <p
+              class="text-[11px] md:text-[12px] lato font-medium text-black/70 mt-2"
+            >
+              <span>09 August, 2024</span>
+              &nbsp; | &nbsp; <span>Mining.com</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- fission fresh uranium news  -->
+    <div class="py-16 px-6 md:px-20 md:pb-32 md:pt-10">
+      <h2
+        class="uranium-news-headline flex items-center ml-[-2px] text-[1rem] md:text-[1.4rem] frank mb-6 lg:mb-9 font-semibold text-black capitalize"
+      >
+        <i class="ri-menu-4-fill text-green-500 text-bold text-xl mr-2"></i>
+        Fission Fresh Uranium News
+      </h2>
+
+      <div class="flex flex-wrap md:flex-nowrap md:justify-between">
+        <div
+          class="uranium-news-background relative w-full md:w-[58%] h-[400px] md:h-auto overflow-hidden group"
+        >
+          <!-- Background Image -->
+          <img
+            src="https://www.renovablesverdes.com/wp-content/uploads/2021/05/contaminacion-nuclear.jpg"
+            alt="Background"
+            class="w-full h-full object-cover group-hover:scale-105 transition-all duration-500"
+          />
+
+          <!-- Gradient Overlay -->
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-[#161616] to-transparent"
+          ></div>
+
+          <!-- Text at the Bottom -->
+          <a href="#">
+            <div
+              class="uranium-news-overlay absolute bottom-2 left-3 text-start w-full text-white p-4"
+            >
+              <span
+                class="bg-lime1 text-black font-semibold text-xs px-2 py-1 uppercase"
+              >
+                Technology
+              </span>
+              <h2
+                class="text-2xl font-semibold pr-6 mt-4 leading-[35px] hover:text-lime2 transition-all duration-200"
+              >
+                Arizona governor negotiates pause in hauling of uranium ore
+                across Navajo Nation
+              </h2>
+              <p class="text-[13.5px] lato text-white/80 mt-5">
+                Globe Newswire – Aug 21, 2024
+              </p>
+            </div>
+          </a>
+        </div>
+
+        <div class="w-full md:w-[38%] mt-8 md:mt-0">
+          <div class="text-black">
+            <div class="max-w-4xl mx-auto">
+              <!-- News Card 1 -->
+              <div
+                class="news-card flex flex-col sm:flex-row border-b border-black/15 mb-4"
+              >
+                <div class="flex-shrink-0 w-44 h-28">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjSNoe0C1BihCNTwAKcYecbdUqS7GwOdHAlA&s"
+                    alt="News"
+                    class="w-full h-full object-cover hover:opacity-80 transition-all duration-200"
+                  />
+                </div>
+                <div class="mt-4 sm:mt-0 sm:ml-6 flex flex-col justify-between">
+                  <div>
+                    <span
+                      class="text-white tracking-wider uppercase text-[10px] px-2 py-1 bg-lime2 font-bold"
+                    >
+                      Technology
+                    </span>
+                    <a href="#">
+                      <h2
+                        class="text-lg md:text-[17px] font-semibold mt-2 leading-[23px] hover:text-lime1 transition-all duration-200"
+                      >
+                        Uranium Is the Commodity Market’s Deadliest Metal and
+                        It’s Having a Moment
+                      </h2>
+                    </a>
+                  </div>
+                  <p
+                    class="text-xs mt-4 md:mb-[18px] md:text-[12px] roboto font-medium text-black/60 pb-3 md:pb-0"
+                  >
+                    <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span>
+                    &nbsp; | &nbsp; <span>Bloomberg</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- News Card 2 -->
+              <div
+                class="flex flex-col sm:flex-row pt-4 border-b border-black/15"
+              >
+                <div class="flex-shrink-0 w-44 h-28">
+                  <img
+                    src="https://www.oecd-nea.org/upload/docs/image/jpeg/2024-02/img_6105.jpg.associated/th-960x540-img_6105.jpg.jpg"
+                    alt="Apple Patent"
+                    class="w-full h-full object-cover hover:opacity-80 transition-all duration-200"
+                  />
+                </div>
+                <div class="mt-4 sm:mt-0 sm:ml-6 flex flex-col justify-between">
+                  <div>
+                    <span
+                      class="text-white tracking-wider uppercase text-[10px] px-2 py-1 bg-lime2 font-bold"
+                    >
+                      Technology
+                    </span>
+                    <a href="#">
+                      <h2
+                        class="text-lg md:text-[17px] font-semibold mt-2 leading-[23px] hover:text-lime1 transition-all duration-200"
+                      >
+                        Discussing developments in the global uranium sector
+                      </h2>
+                    </a>
+                  </div>
+                  <p
+                    class="text-xs mt-4 md:mb-[18px] md:text-[12px] roboto font-medium text-black/60 pb-3 md:pb-0"
+                  >
+                    <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span>
+                    &nbsp; | &nbsp; <span>Bloomberg</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- News Card 3 -->
+              <div
+                class="flex flex-col sm:flex-row pt-4 border-b border-black/15"
+              >
+                <div class="flex-shrink-0 w-44 h-28">
+                  <img
+                    src="https://www.power-technology.com/wp-content/uploads/sites/21/2024/01/uranium-63095_19202.jpg"
+                    alt="Apple Patent"
+                    class="w-full h-full object-cover hover:opacity-80 transition-all duration-200"
+                  />
+                </div>
+                <div class="mt-4 sm:mt-0 sm:ml-6 flex flex-col justify-between">
+                  <div>
+                    <span
+                      class="text-white tracking-wider uppercase text-[10px] px-2 py-1 bg-lime2 font-bold"
+                    >
+                      Technology
+                    </span>
+                    <a href="#">
+                      <h2
+                        class="text-lg md:text-[17px] font-semibold mt-2 leading-[23px] hover:text-lime1 transition-all duration-200"
+                      >
+                        US ready to replace Russian uranium imports, official
+                        says
+                      </h2>
+                    </a>
+                  </div>
+                  <p
+                    class="text-xs mt-4 md:mb-[18px] md:text-[12px] roboto font-medium text-black/60 pb-3 md:pb-0"
+                  >
+                    <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span>
+                    &nbsp; | &nbsp; <span>Bloomberg</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- News Card 4 -->
+              <div
+                class="flex flex-col sm:flex-row pt-4 border-b border-black/15"
+              >
+                <div class="flex-shrink-0 w-44 h-28">
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjSNoe0C1BihCNTwAKcYecbdUqS7GwOdHAlA&s"
+                    alt="Apple Patent"
+                    class="w-full h-full object-cover hover:opacity-80 transition-all duration-200"
+                  />
+                </div>
+                <div class="mt-4 sm:mt-0 sm:ml-6 flex flex-col justify-between">
+                  <div>
+                    <span
+                      class="text-white tracking-wider uppercase text-[10px] px-2 py-1 bg-lime2 font-bold"
+                    >
+                      NASA
+                    </span>
+                    <a href="#">
+                      <h2
+                        class="text-lg md:text-[17px] font-semibold mt-2 leading-[23px] hover:text-lime1 transition-all duration-200"
+                      >
+                        NASA offers virtual activities for 21st Northrop Grumman
+                        resupply mission
+                      </h2>
+                    </a>
+                  </div>
+                  <p
+                    class="text-xs mt-4 md:mb-[18px] md:text-[12px] roboto font-medium text-black/60 pb-3 md:pb-0"
+                  >
+                    <span><i class="ri-time-line mr-1"></i> 2 hrs ago</span>
+                    &nbsp; | &nbsp; <span>Bloomberg</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- global uranium chain reaction  -->
+    <div class="py-16 px-6 md:px-20 md:pb-28 md:pt-7">
+      <h2
+        class="uranium-news-headline flex items-center ml-[-2px] text-[1rem] md:text-[1.4rem] frank mb-6 lg:mb-9 font-semibold text-black capitalize"
+      >
+        <i class="ri-menu-4-fill text-green-500 text-bold text-xl mr-2"></i>
+        Global Uranium Chain Reaction
+      </h2>
+
+      <div class="flex justify-between flex-wrap">
+        <!-- First Block -->
+        <div class="trending-block w-full sm:w-[48%] lg:w-[22%] mb-6">
+          <div class="w-full h-[170px] overflow-hidden">
+            <a href="#">
+              <img
+                class="w-full h-full object-cover hover:scale-105 hover:opacity-95 transition-all duration-300"
+                src="https://world-nuclear-news.org/uploadedImages/wnn/Images/south%20inkai.jpg"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <div class="py-2">
+            <a href="#">
+              <h1
+                class="text-[15px] md:text-lg leading-[20px] capitalize text-black/90 font-bold frank hover:text-black"
+              >
+                Uranium Energy restarts uranium production in Wyoming
+              </h1>
+            </a>
+            <p
+              class="text-[11px] md:text-[12px] lato font-medium text-black/70 mt-1"
+            >
+              <span>09 August, 2024</span>
+              &nbsp; | &nbsp; <span>Mining.com</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Second Block -->
+        <div class="trending-block w-full sm:w-[48%] lg:w-[22%] mb-6">
+          <div class="w-full h-[170px] overflow-hidden">
+            <a href="#">
+              <img
+                class="w-full h-full object-cover hover:scale-105 hover:opacity-95 transition-all duration-300"
+                src="https://www.mining.com/wp-content/uploads/2024/08/Australia-Northern-Territory-300x167.jpeg"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <div class="py-2">
+            <a href="#">
+              <h1
+                class="text-[15px] md:text-lg leading-[20px] capitalize text-black/90 font-bold frank hover:text-black"
+              >
+                ERA scores win in battle to keep Jabikula uranium lease
+              </h1>
+            </a>
+            <p
+              class="text-[11px] md:text-[12px] lato font-medium text-black/70 mt-1"
+            >
+              <span>09 August, 2024</span>
+              &nbsp; | &nbsp; <span>Mining.com</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Third Block -->
+        <div class="trending-block w-full sm:w-[48%] lg:w-[22%] mb-6">
+          <div class="w-full h-[170px] overflow-hidden">
+            <a href="#">
+              <img
+                class="w-full h-full object-cover hover:scale-105 hover:opacity-95 transition-all duration-300"
+                src="https://www.mining.com/wp-content/uploads/2024/08/Uranium-Royalty-CEO-Scott-Melbye-300x169.png"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <div class="py-2">
+            <a href="#">
+              <h1
+                class="text-[15px] md:text-lg leading-[20px] capitalize text-black/90 font-bold frank hover:text-black"
+              >
+                Uranium Royalty capitalizes on market resurgence
+              </h1>
+            </a>
+            <p
+              class="text-[11px] md:text-[12px] lato font-medium text-black/70 mt-1"
+            >
+              <span>09 August, 2024</span>
+              &nbsp; | &nbsp; <span>Mining.com</span>
+            </p>
+          </div>
+        </div>
+
+        <!-- Fourth Block -->
+        <div class="trending-block w-full sm:w-[48%] lg:w-[22%] mb-6">
+          <div class="w-full h-[170px] overflow-hidden">
+            <a href="#">
+              <img
+                class="w-full h-full object-cover hover:scale-105 hover:opacity-95 transition-all duration-300"
+                src="https://dims.apnews.com/dims4/default/567e4f8/2147483647/strip/true/crop/4000x2250+0+208/resize/1440x810!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2F%5B3%2F7%2C%2F%20-54%2C%201%2C%20-67%2C%20-76%2C%20-91%2C%2023%2C%2086%2C%2093%2C%2031%2C%20-100%2C%2052%2C%2011%2C%20-69%2C%20-98%2C%20-92%2C%2019%2C%20-111%2C%20-22%2C%20-66%2C%2025%2C%20-41%2C%20-56%2C%2086%2C%20-110%2C%20120%2C%2061%2C%20106%5D%2F84f535bc93344053b056ef1f4a29f78b"
+                alt=""
+              />
+            </a>
+          </div>
+
+          <div class="py-2">
+            <a href="#">
+              <h1
+                class="text-[15px] md:text-lg leading-[20px] capitalize text-black/90 font-bold frank hover:text-black"
+              >
+                Arizona governor negotiates pause in hauling of uranium ore
+              </h1>
+            </a>
+            <p
+              class="text-[11px] md:text-[12px] lato font-medium text-black/70 mt-1"
+            >
+              <span>09 August, 2024</span>
+              &nbsp; | &nbsp; <span>Mining.com</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- Footer ================================================================================ -->
-    <footer class="bg-[#161616] text-white py-14 px-6 lg:px-[1.2rem] mt-">
+    <footer class="bg-white text-black py-14 px-6 lg:px-[1.2rem] mt-16">
       <div class="lg:w-[90%] mx-auto w-full">
         <div
           class="container mx-auto flex flex-col justify-center items-center text-center"
         >
           <!-- Newsletter Subscription Section -->
-          <h2 class="text-[17px] frank sm:text-[23px] font-normal">
+          <h2 class="text-[17px] frank sm:text-[23px] font-semibold">
             Sign Up For Our Newsletter
           </h2>
-          <p class="text-sm publicsans mt-3 font-light text-white/50">
+          <p class="text-sm publicsans mt-3 font-normal text-black/50">
             Receive uranium market updates and 70% off our premium reports.
           </p>
 
@@ -119,10 +647,10 @@
             <input
               type="email"
               placeholder="Enter your email address"
-              class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-[#ffffff0c] text-white focus:outline-none placeholder:text-[14px]"
+              class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-black1/5 text-black focus:outline-none placeholder:text-[14px]"
             />
             <button
-              class="bg-lime1 rounded-sm text-black text-[15px] font-bold px-6 py-2 hover:bg-[#0da975] transition-all duration-200"
+              class="bg-lime1 rounded-sm text-black text-[15px] font-bold px-6 py-2 hover:bg-lime2 transition-all duration-200"
             >
               Subscribe
             </button>
@@ -130,16 +658,28 @@
 
           <!-- Social Media Icons -->
           <div class="flex justify-center space-x-5 mt-6">
-            <a href="#" class="text-gray-400 hover:text-white/80">
+            <a
+              href="#"
+              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+            >
               <i class="ri-facebook-fill text-xl"></i>
             </a>
-            <a href="#" class="text-gray-400 hover:text-white/80">
+            <a
+              href="#"
+              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+            >
               <i class="ri-twitter-fill text-xl"></i>
             </a>
-            <a href="#" class="text-gray-400 hover:text-white/80">
+            <a
+              href="#"
+              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+            >
               <i class="ri-instagram-line text-xl"></i>
             </a>
-            <a href="#" class="text-gray-400 hover:text-white/80">
+            <a
+              href="#"
+              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+            >
               <i class="ri-linkedin-box-fill text-xl"></i>
             </a>
           </div>
@@ -177,5 +717,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="home.js"></script>
+    <script src="news.js"></script>
   </body>
 </html>

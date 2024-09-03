@@ -21,7 +21,7 @@
               lime1: "#57fec7",
               lime2: "#27ecab",
               black: "#19310B",
-              black1:"#000000"
+              black1:"#161616"
             },
           },
         },
@@ -33,34 +33,35 @@
     gsap.from(".card", {
       scrollTrigger: {
         trigger: ".card",
-        start: "top 85%", // Start animation when the top of the card is 85% from the top of the viewport
-        end: "bottom 25%", // End animation when the bottom of the card is 25% from the top of the viewport
-        toggleActions: "play none none reverse", // Play the animation when entering, reverse when leaving
+        start: "top 93%", 
+        end: "bottom 25%", 
+        toggleActions: "play none none reverse",
+        // markers: true, 
       },
       duration: 0.8,
       opacity: 0,
       scale: 0.8,
       ease: "power3.out",
       stagger: {
-        each: 0.2, // Stagger animation of each card by 0.2 seconds
+        each: 0.2, 
       },
     });
   });
   document.addEventListener('DOMContentLoaded', () => {
       // Animate the heading and paragraph
       gsap.from('.custom-heading', {
-        duration: 1,          // animation duration in seconds
-        y: -50,               // starting position 50px above its original position
-        opacity: 0,           // start with the element completely transparent
-        ease: 'power3.out'    // easing function for smooth animation
+        duration: 1,          
+        y: -50,               
+        opacity: 0,           
+        ease: 'power3.out'    
       });
 
       gsap.from('.custom-paragraph', {
-        duration: 1.5,        // animation duration in seconds
-        y: 50,                // starting position 50px below its original position
-        opacity: 0,           // start with the element completely transparent
-        ease: 'power3.out',   // easing function for smooth animation
-        delay: 0.5            // delay before the animation starts
+        duration: 1.5,        
+        y: 50,                
+        opacity: 0,           
+        ease: 'power3.out',   
+        delay: 0.5      
       });
     });
     </script>
@@ -68,12 +69,14 @@
   <body>
     <!-- navbar  -->
     <nav
-      class="sticky top-0 z-[1000] bg-white py-6 px-4 md:px-12 flex justify-between items-center shadow-sm"
+      class="fixed top-0 left-0 right-0 z-[1000] bg-white py-6 px-4 md:px-12 flex justify-between items-center shadow-sm"
     >
-      <!-- logo  -->
-      <h1 class="play font-semibold text-[22px] md:text-2xl flex items-center">
+      <!-- logo -->
+      <h1
+        class="play font-semibold text-black frank text-[22px] md:text-2xl flex items-center"
+      >
         <i
-          class="ri-compass-fill text-[17px] md:text-[19px] text-black bg-lime1 flex justify-center items-center w-7 h-7 md:w-8 md:h-8 rounded-full mt-1 mr-2"
+          class="ri-compass-fill text-[15px] md:text-[19px] text-black bg-lime1 flex justify-center items-center pt-[2px] w-6 h-6 md:w-7 md:h-7 rounded-full mr-2"
         ></i>
         UraniumTracker
       </h1>
@@ -83,10 +86,10 @@
         <i class="ri-menu-3-line"></i>
       </button>
 
-      <!-- links  -->
+      <!-- links -->
       <div
         id="menu"
-        class="hidden h-screen md:h-fit md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-7 absolute md:relative top-full left-0 right-0 bg-white md:bg-transparent pb-4 md:pb-0 shadow-md md:shadow-none w-full md:w-auto"
+        class="hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-7 absolute md:relative top-full left-0 right-0 bg-white md:bg-transparent pb-4 md:pb-0 shadow-md md:shadow-none w-full md:w-auto"
       >
         <ul
           class="lato text-black tracking-wide capitalize text-[16.2px] pl-10 md:pl-0 mb-4 md:mb-0 font-medium flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:gap-x-5 w-full md:w-auto"
@@ -107,14 +110,14 @@
           </li>
           <li>
             <a
-              class="hover:text-black/70 transition-all duration-300 block py-2 px-4 md:p-0"
+              class=" hover:text-black/70 transition-all duration-300 block py-2 px-4 md:p-0"
               href="investments.html"
               >Uranium Investments</a
             >
           </li>
           <li>
             <a
-              class="active hover:text-black/70 transition-all duration-300 block py-2 px-4 md:p-0"
+              class="active transition-all duration-300 block py-2 px-4 md:p-0"
               href="essentials.html"
               >Uranium Essentials</a
             >
@@ -135,8 +138,9 @@
         >
       </div>
     </nav>
+
     <!-- Main=============================  -->
-    <div class="relative w-full h-auto">
+    <div class="relative w-full h-full md:h-[60vh] overflow-hidden">
       <div class="absolute inset-0">
         <img
           class="w-full h-full object-cover"
@@ -144,17 +148,17 @@
           style="transition: none;" 
         />
         <!-- Gradient overlay -->
-        <div class="absolute inset-0 bg-gradient-to-r from-black1 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-black1 via-black1/70 to-transparent"></div>
       </div>
-      <div class="relative z-10 flex justify-between  flex-wrap h-full lg:p-[5.8rem] md:p-[4rem] sm:p-[2.7rem] p-[2rem]">
+      <div class="relative z-10 flex justify-between  flex-wrap h-full lg:p-[5.8rem] md:p-[4rem] sm:p-[2.7rem] p-[2rem] md:mt-12">
         <div class="lg:w-[70%] md:w-[90%] w-[90%]">
           <h2
-            class="custom-heading text-[0.7rem] sm:text-[0.9rem] md:text-[1rem]  font-semibold bg-lime1 inline-block px-2"
+            class="custom-heading frank text-[0.7rem] sm:text-[0.9rem] md:text-[1rem]  font-semibold bg-lime1 inline-block px-2"
           >
             Understanding Uranium
           </h2>
           <p
-            class=" custom-paragraph play leading-[40px] sm:leading-[50px] md:text-[2rem] text-[1.4rem] sm:text-[1.7rem] lg:text-[2.3rem] text-white font-medium mt-2"
+            class=" custom-paragraph frank leading-[40px] sm:leading-[57px] md:text-[2rem] text-[1.4rem] sm:text-[1.7rem] lg:text-[45px] text-white font-medium mt-3"
           >
             Explore the Latest Insights, Market Data, and Key Information on Uranium.
           </p>
@@ -168,16 +172,16 @@
       class="px-2 pb-20 mt-14 lg:mt-16 lg:w-[90%] mx-auto w-[90%] lg:px-[1rem]"
     >
       <div class="container mt-[3rem] lg:mt-28">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           <!-- Card 1 -->
 
           <a
             href="e8.html"
-            class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+            class="card relative group  w-full h-[290px] overflow-hidden rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)] flex flex-col"
           >
             <!-- Top half with background image -->
             <div
-              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              class="w-full h-[62%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
               style="
                 background-image: url('https://mineralsmakelife.org/wp-content/uploads/2017/03/Uranium.jpg');
               "
@@ -185,14 +189,14 @@
 
             <!-- Bottom half with content -->
             <div
-              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+              class="w-full h-[37%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-300 group-hover:bg-[#161616] group-hover:text-white"
             >
               <!-- Text Content -->
               <div class="relative z-10">
-                <h2 class="text-[16px] font-semibold mb-2 frank">
+                <h2 class="text-[18px] capitalize font-semibold mb-2 frank">
                   What is Uranium?
                 </h2>
-                <p class="text-sm text-left mb-2 text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                <p class="text-sm text-left text-black/65 group-hover:text-white/50 transition-colors duration-500">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
                   nobis totam...
                 </p>
@@ -204,11 +208,11 @@
 
           <a
             href="e8.html"
-            class=" card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+            class=" card relative group w-full h-[290px] overflow-hidden rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)] flex flex-col"
           >
             <!-- Top half with background image -->
             <div
-              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              class="w-full h-[62%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
               style="
                 background-image: url('https://qph.cf2.quoracdn.net/main-qimg-b771f870b0afb6c0703e5707258bed5d-lq');
               "
@@ -216,14 +220,14 @@
 
             <!-- Bottom half with content -->
             <div
-              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+              class="w-full h-[37%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-300 group-hover:bg-[#161616] group-hover:text-white"
             >
               <!-- Text Content -->
               <div class="relative z-10">
-                <h2 class="text-[16px] font-semibold mb-2 frank">
+                <h2 class="text-[18px] capitalize font-semibold mb-2 frank">
                   Natural Occurence of Uranium?
                 </h2>
-                <p class="text-sm text-left mb-2 text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                <p class="text-sm text-left  text-black/65 group-hover:text-white/50 transition-colors duration-500">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
                   nobis totam...
                 </p>
@@ -235,11 +239,11 @@
 
           <a
             href="e8.html"
-            class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+            class="card relative group  w-full h-[290px] overflow-hidden rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)] flex flex-col"
           >
             <!-- Top half with background image -->
             <div
-              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              class="w-full h-[62%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
               style="
                 background-image: url('https://g.foolcdn.com/editorial/images/459568/ranger-uranium-mine-in-australia.jpg');
               "
@@ -247,14 +251,14 @@
 
             <!-- Bottom half with content -->
             <div
-              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+              class="w-full h-[37%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-300 group-hover:bg-[#161616] group-hover:text-white"
             >
               <!-- Text Content -->
               <div class="relative z-10">
-                <h2 class="text-[16px] font-semibold mb-2 frank">
+                <h2 class="text-[18px] capitalize font-semibold mb-2 frank">
                   Global Distribution of uranium Resources?
                 </h2>
-                <p class="text-sm text-left mb-2 text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                <p class="text-sm text-left  text-black/65 group-hover:text-white/50 transition-colors duration-500">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
                   nobis totam...
                 </p>
@@ -266,11 +270,11 @@
 
           <a
             href="e8.html"
-            class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+            class="card relative group  w-full h-[290px] overflow-hidden rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)] flex flex-col"
           >
             <!-- Top half with background image -->
             <div
-              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              class="w-full h-[62%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
               style="
                 background-image: url('https://www.ausimm.com/globalassets/bulletin/plummer-figure4.png');
               "
@@ -278,14 +282,14 @@
 
             <!-- Bottom half with content -->
             <div
-              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+              class="w-full h-[37%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-300 group-hover:bg-[#161616] group-hover:text-white"
             >
               <!-- Text Content -->
               <div class="relative z-10">
-                <h2 class="text-[16px] font-semibold mb-2 frank">
+                <h2 class="text-[18px] capitalize font-semibold mb-2 frank">
                   Where can uranium be found?
                 </h2>
-                <p class="text-sm text-left mb-2 text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                <p class="text-sm text-left  text-black/65 group-hover:text-white/50 transition-colors duration-500">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
                   nobis totam...
                 </p>
@@ -297,11 +301,11 @@
 
           <a
           href="e8.html"
-          class=" card relative block w-full h-[260px] overflow-hidden rounded-sm shadow-lg group"
+          class=" card relative block w-full h-[290px] overflow-hidden rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)] group"
         >
           <!-- Top half with background image -->
           <div
-            class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+            class="w-full h-[62%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
             style="
               background-image: url('https://ahf.nuclearmuseum.org/wp-content/uploads/2018/07/Shinkolobwe_mine.jpg');
             "
@@ -309,14 +313,14 @@
         
           <!-- Bottom half with content -->
           <div
-            class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-colors duration-300 ease-in-out group-hover:bg-[#161616] group-hover:text-white"
+            class="w-full h-[37%] bg-white text-black flex flex-col justify-center p-4 relative transition-colors duration-300 ease-in-out group-hover:bg-[#161616] group-hover:text-white"
           >
             <!-- Text Content -->
             <div class="relative z-10">
-              <h2 class="text-[16px] font-semibold mb-2">
+              <h2 class="text-[18px] capitalize frank font-semibold mb-2">
                 The history of uranium
               </h2>
-              <p class="text-sm  text-left mb-2 text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+              <p class="text-sm  text-left  text-black/65 group-hover:text-white/50 transition-colors duration-500">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...
               </p>
             </div>
@@ -327,11 +331,11 @@
           <!-- Card 6 -->
           <a
           href="e8.html"
-          class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+          class="card relative group  w-full h-[290px] overflow-hidden rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)] flex flex-col"
         >
           <!-- Top half with background image -->
           <div
-            class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+            class="w-full h-[62%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
             style="
               background-image: url('https://cardinalnews.org/wp-content/uploads/2022/11/WhatsApp-Image-2022-11-21-at-3.16.03-PM.jpeg');
             "
@@ -339,14 +343,14 @@
         
           <!-- Bottom half with content -->
           <div
-            class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-colors duration-500 group-hover:bg-[#161616] group-hover:text-white"
+            class="w-full h-[37%] bg-white text-black flex flex-col justify-center p-4 relative transition-colors duration-500 group-hover:bg-[#161616] group-hover:text-white"
           >
             <!-- Text Content -->
             <div class="relative z-10">
-              <h2 class="text-[16px] font-semibold mb-2 frank ">
+              <h2 class="text-[18px] capitalize font-semibold mb-2 frank ">
                 Environmental impact of uranium
               </h2>
-              <p class="text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+              <p class="text-sm text-left text-black/65 group-hover:text-white/50 transition-colors duration-500">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
                 nobis totam...
               </p>
@@ -358,11 +362,11 @@
 
           <a
             href="e8.html"
-            class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+            class="card relative group  w-full h-[290px] overflow-hidden rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)] flex flex-col"
           >
             <!-- Top half with background image -->
             <div
-              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              class="w-full h-[62%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
               style="
                 background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/48/Uranium_Processing_Facility_001.jpg');
               "
@@ -370,14 +374,14 @@
 
             <!-- Bottom half with content -->
             <div
-              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+              class="w-full h-[37%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-300 group-hover:bg-[#161616] group-hover:text-white"
             >
               <!-- Text Content -->
               <div class="relative z-10">
-                <h2 class="text-[16px] font-semibold mb-2 frank">
+                <h2 class="text-[18px] capitalize font-semibold mb-2 frank">
                   Uranium Pocessing
                 </h2>
-                <p class="text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                <p class="text-sm text-left text-black/65 group-hover:text-white/50 transition-colors duration-500">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
                   nobis totam...
                 </p>
@@ -389,11 +393,11 @@
 
           <a
             href="e8.html"
-            class="card relative group block w-full h-[260px] overflow-hidden rounded-sm shadow-lg flex flex-col"
+            class="card relative group w-full h-[290px] overflow-hidden rounded-sm shadow-[0_8px_30px_rgb(0,0,0,0.09)] flex flex-col"
           >
             <!-- Top half with background image -->
             <div
-              class="w-full h-[55%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
+              class="w-full h-[62%] bg-center bg-cover bg-no-repeat transition-transform duration-300 ease-in-out group-hover:scale-105"
               style="
                 background-image: url('https://www.energyportal.in/images/nuclear/nuclear02.jpg');
               "
@@ -401,14 +405,14 @@
 
             <!-- Bottom half with content -->
             <div
-              class="w-full h-[45%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-500 group-hover:bg-[#161616] group-hover:text-white"
+              class="w-full h-[37%] bg-white text-black flex flex-col justify-center p-4 relative transition-all duration-300 group-hover:bg-[#161616] group-hover:text-white"
             >
               <!-- Text Content -->
               <div class="relative z-10">
-                <h2 class="text-[16px] font-semibold mb-2 frank">
+                <h2 class="text-[18px] capitalize font-semibold mb-2 frank">
                   Uranium Glossary
                 </h2>
-                <p class="text-sm text-left mb-2 text-black/70 group-hover:text-white transition-colors duration-500">
+                <p class="text-sm text-left text-black/65 group-hover:text-white/50 transition-colors duration-500">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
                   nobis totam...
                 </p>
@@ -421,16 +425,16 @@
     </div>
 
     <!-- Footer ================================================================================ -->
-    <footer class="bg-[#161616] text-white py-14 px-6 lg:px-[1.2rem] mt-">
+    <footer class="bg-white text-black py-14 px-6 lg:px-[1.2rem] mt-16">
       <div class="lg:w-[90%] mx-auto w-full">
         <div
           class="container mx-auto flex flex-col justify-center items-center text-center"
         >
           <!-- Newsletter Subscription Section -->
-          <h2 class="text-[17px] frank sm:text-[23px] font-normal">
+          <h2 class="text-[17px] frank sm:text-[23px] font-semibold">
             Sign Up For Our Newsletter
           </h2>
-          <p class="text-sm publicsans mt-3 font-light text-white/50">
+          <p class="text-sm publicsans mt-3 font-normal text-black/50">
             Receive uranium market updates and 70% off our premium reports.
           </p>
 
@@ -441,10 +445,10 @@
             <input
               type="email"
               placeholder="Enter your email address"
-              class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-[#ffffff0c] text-white focus:outline-none placeholder:text-[14px]"
+              class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-black1/5 text-black focus:outline-none placeholder:text-[14px]"
             />
             <button
-              class="bg-lime1 rounded-sm text-black text-[15px] font-bold px-6 py-2 hover:bg-[#0da975] transition-all duration-200"
+              class="bg-lime1 rounded-sm text-black text-[15px] font-bold px-6 py-2 hover:bg-lime2 transition-all duration-200"
             >
               Subscribe
             </button>
@@ -452,16 +456,28 @@
 
           <!-- Social Media Icons -->
           <div class="flex justify-center space-x-5 mt-6">
-            <a href="#" class="text-gray-400 hover:text-white/80">
+            <a
+              href="#"
+              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+            >
               <i class="ri-facebook-fill text-xl"></i>
             </a>
-            <a href="#" class="text-gray-400 hover:text-white/80">
+            <a
+              href="#"
+              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+            >
               <i class="ri-twitter-fill text-xl"></i>
             </a>
-            <a href="#" class="text-gray-400 hover:text-white/80">
+            <a
+              href="#"
+              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+            >
               <i class="ri-instagram-line text-xl"></i>
             </a>
-            <a href="#" class="text-gray-400 hover:text-white/80">
+            <a
+              href="#"
+              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+            >
               <i class="ri-linkedin-box-fill text-xl"></i>
             </a>
           </div>
