@@ -137,3 +137,23 @@ document.querySelectorAll(".sidenav a").forEach((anchor) => {
     });
   });
 });
+
+// animation 
+// Ensure GSAP and ScrollTrigger are included
+gsap.registerPlugin(ScrollTrigger);
+
+// Apply the animation to the sidenav
+gsap.from(".sidenav-animation", {
+  y: -100,
+  opacity: 0,
+  duration: 1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".sidenav-animation",
+    start: "top 80%",
+    end: "top 60%",
+    toggleActions: "play none none reverse",
+  },
+});
+
+// =================================================================================
