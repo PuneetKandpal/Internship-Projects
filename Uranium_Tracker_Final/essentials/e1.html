@@ -165,11 +165,16 @@
       </ul>
     </div>
 
-    <!-- main  -->
-    <div class="px-6 md:px-20 py-10 md:pt-20 flex justify-between items-center">
-      <div class="w-[53%]">
-        <h1 class="frank text-5xl font-bold text-lime2">What Is Uranium ?</h1>
-        <p class="mt-5 font-normal text-white/60 text-[17px]">
+    <!-- main -->
+    <div
+      class="hero px-6 md:px-20 py-10 md:pt-20 flex flex-col md:flex-row justify-between items-center mt-10"
+    >
+      <!-- Left Content -->
+      <div class="w-full md:w-[53%]">
+        <h1 class="frank text-4xl md:text-5xl font-bold text-lime2">
+          What Is Uranium?
+        </h1>
+        <p class="mt-5 font-normal text-white/60 text-[16px] md:text-[17px]">
           Uranium is a naturally occurring element with the symbol U and atomic
           number 92. It is a dense, metallic element that plays a crucial role
           in the nuclear industry due to its unique properties, particularly its
@@ -180,7 +185,8 @@
         </p>
       </div>
 
-      <div class="w-[45%]">
+      <!-- Right Animated Atom (hidden on small screens) -->
+      <div class="w-full md:w-[45%] hidden md:block">
         <div class="atom-container">
           <div class="nucleus"></div>
 
@@ -199,17 +205,20 @@
     </div>
 
     <!-- sec 1  -->
-    <div class="px-6 md:px-20 py-10 md:py-20 mt-10">
+    <div class="px-6 md:px-20 py-10 md:py-20 mt-10 overflow-hidden sec-1">
+      <!-- Heading -->
       <h2
-        class="ml-0 flex items-center text-[1rem] md:text-[1.4rem] frank mb-4 md:mb-9 font-semibold text-white capitalize"
+        class="ml-0 flex items-center text-[1rem] md:text-[1.4rem] frank mb-4 md:mb-9 font-semibold text-white capitalize heading-uranium"
       >
         <i class="ri-menu-4-fill text-lime2 font-bold text-xl mr-3"></i>
         Uranium Properties
       </h2>
-      <div class="flex flex-col md:flex-row gap-8 pb-10 mb-10">
+
+      <!-- Cards Section -->
+      <div class="flex flex-col md:flex-row gap-8 pb-10 mb-10 cards-uranium">
         <!-- Physical Properties Card -->
         <div
-          class="bg-zinc-800/30 rounded-md p-8 transform transition duration-500 hover:scale-105 flex-1"
+          class="bg-zinc-800/30 rounded-md p-8 transform transition duration-500 hover:scale-105 flex-1 card-physical"
         >
           <div class="text-lime2 mb-4">
             <i class="ri-weight-line text-4xl"></i>
@@ -229,7 +238,7 @@
 
         <!-- Chemical Properties Card -->
         <div
-          class="bg-zinc-800/30 rounded-md p-9 transform transition duration-500 hover:scale-105 flex-1"
+          class="bg-zinc-800/30 rounded-md p-9 transform transition duration-500 hover:scale-105 flex-1 card-chemical"
         >
           <div class="text-lime2 mb-4">
             <i class="ri-flask-line text-4xl"></i>
@@ -248,7 +257,7 @@
 
         <!-- Isotopes Card -->
         <div
-          class="bg-zinc-800/30 rounded-md p-9 transform transition duration-500 hover:scale-105 flex-1"
+          class="bg-zinc-800/30 rounded-md p-9 transform transition duration-500 hover:scale-105 flex-1 card-isotopes"
         >
           <div class="text-lime2 mb-4">
             <i class="ri-reactjs-line text-4xl"></i>
