@@ -132,7 +132,7 @@ document.querySelectorAll(".sidenav a").forEach((anchor) => {
     const targetId = this.getAttribute("href").substring(1);
     const targetElement = document.getElementById(targetId);
     window.scrollTo({
-      top: targetElement.offsetTop - 85, // Adjust 70 to your fixed header height
+      top: targetElement.offsetTop - 110, // Adjust 70 to your fixed header height
       behavior: "smooth",
     });
   });

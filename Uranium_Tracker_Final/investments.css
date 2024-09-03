@@ -14,8 +14,8 @@ html {
   width: 100%;
   height: 100%;
   font-family: "Lato", sans-serif;
-  background-color: #ffffff;
-  color: #19310b;
+  background-color: #161616;
+  color: #ffffff;
 }
 
 html {
@@ -177,7 +177,7 @@ tbody tr .data-negative {
 }
 
 .uranium-stocks-table th {
-  background-color: var(--bg);
+  background-color: #161616;
   color: rgba(219, 217, 217, 0.8);
   font-weight: 600;
   vertical-align: top;
@@ -187,12 +187,12 @@ tbody tr .data-negative {
   color: rgba(255, 255, 255, 0.7);
   font-weight: 300;
   /* background-color: gray; */
-  background-color: var(--bg);
+  background-color: #161616;
 }
 
 .uranium-stocks-table tr:hover td {
   /* background-color: var(--light-green-2); */
-  background-color: #171e28;
+  background-color: #1B1B1C;
   transition: background-color 0.2s ease;
   /* color: #fff; */
 }
