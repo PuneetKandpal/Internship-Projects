@@ -54,6 +54,8 @@ html {
 .active {
   color: #0fd090;
   border-bottom: 2px solid #27ecaa97;
+  width: fit-content;
+  
 }
 .active:hover {
   color: #0fd090;
