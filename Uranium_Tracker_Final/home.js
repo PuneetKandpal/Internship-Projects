@@ -85,9 +85,15 @@ window.onload = function () {
       "-=0.8"
     )
     .from(
-      ".relative.z-10 a",
-      { opacity: 0, y: 10, duration: 1, ease: "power2.out", clearProps: "all" },
-      "-=1"
+      ".hero-btn",
+      {
+        opacity: 0,
+        y: 100,
+        duration: 1,
+        ease: "power2.out",
+        clearProps: "all",
+      },
+      "-=0.8"
     );
 
   // Subtle zoom-in for background image
@@ -98,7 +104,7 @@ window.onload = function () {
   });
 };
 
-// marquee
+// marquee ==========================================================================================
 const marquee = document.getElementById("stock-marquee");
 
 marquee.addEventListener("mouseover", () => {
@@ -109,7 +115,7 @@ marquee.addEventListener("mouseout", () => {
   marquee.start();
 });
 
-// price chart sec animation
+// price chart sec animation =======================================================================
 document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
 
