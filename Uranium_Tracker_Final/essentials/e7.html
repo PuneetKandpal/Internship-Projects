@@ -120,9 +120,9 @@
   <body>
     <!-- back link  -->
     <div
-      class="bg-black1 px-6 md:px-20 py-5 fixed top-0 left-0 w-full z-50"
+      class="bg-black1 shadow-lg px-6 md:px-20 py-5 fixed top-0 left-0 w-full z-50"
     >
-      <ul class="flex gap-x-2 text-sm text-white/40 lato tracking-[0.3px]">
+      <ul class="flex gap-x-1 md:gap-x-2 text-[12px] md:text-sm text-white/40 lato tracking-[0.3px]">
         <a
           class="hover:text-lime2 font-medium transition-all duration-200"
           href="../essentials.html"
@@ -139,11 +139,11 @@
 
     <!-- main  -->
     <div
-      class="px-6 md:px-20 py-10 md:pt-20 flex justify-between items-center mt-10"
+      class="hero px-6 md:px-20 py-10 md:pt-20 flex flex-col md:flex-row justify-between items-center mt-10"
     >
-      <div class="w-[53%]">
-        <h1 class="frank text-5xl font-bold text-lime2">Uranium Processing</h1>
-        <p class="mt-5 font-normal text-white/60 text-[17px]">
+      <div class="w-full md:w-[53%]">
+        <h1 class="frank text-2xl md:text-5xl font-bold text-lime2">Uranium Processing</h1>
+        <p class="mt-5 font-normal text-white/60 text-[16px] md:text-[17px]">
           Uranium processing is the critical step that transforms raw uranium
           ore into a refined form capable of fueling nuclear reactors. This
           intricate process ensures that uranium's immense energy potential is
@@ -152,7 +152,7 @@
         </p>
       </div>
 
-      <div class="w-[45%]">
+      <div class="w-full md:w-[45%] hidden md:block">
         <div class="atom-container">
           <div class="nucleus"></div>
 
@@ -171,393 +171,264 @@
     </div>
 
     <!-- sec 1 cards  -->
-     <div class="px-6 md:px-20 py-10 md:py-20 mt-5">
-      <div class=" overflow-x-hidden">
-        
-
+    <div class="px-4 sm:px-6 md:px-20 py-8 sm:py-10 md:py-20 sec-1">
+      <div class="overflow-x-hidden">
         <h2
-        class="ml-0 flex items-center text-[1rem] md:text-[1.4rem] frank mb-4 md:mb-2 font-semibold text-white capitalize"
-      >
-        <i class="ri-menu-4-fill text-lime2 font-bold text-xl mr-3"></i>
-        Steps Of Uranium Processing
-      </h2>
-  
+          class="ml-0 flex items-center text-[1rem] sm:text-[1.2rem] md:text-[1.4rem] frank mb-4 md:mb-2 font-semibold text-white capitalize"
+        >
+          <i class="ri-menu-4-fill text-lime2 font-bold text-xl mr-3"></i>
+          Steps Of Uranium Processing
+        </h2>
+    
         <div class="container mx-auto py-8">
-          <div class="grid grid-cols-1 md:grid-cols-1 gap-7">
+          <div class="grid grid-cols-1 gap-7">
             <!-- Mining -->
-            <div class="inline-flex space-x-5">
-              
+            <div class="inline-flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5">
               <div class="bg-zinc-800/30 p-6 rounded-sm w-full">
                 <div class="flex space-x-3 mb-3 items-start">
                   <i class="ri-hammer-fill text-xl text-lime2 mt-[1px]"></i>
-                  <h2
-                    class="text-xl font-semibold text-white mb-2 text-start frank"
-                  >
+                  <h2 class="text-xl font-semibold text-white mb-2 text-start frank">
                     Mining
                   </h2>
                 </div>
-  
                 <p class="text-sm mb-4 text-white/50">
-                  Uranium mining involves extracting uranium ore from the
-                  ground. There are three primary methods:
+                  Uranium mining involves extracting uranium ore from the ground. There are three primary methods:
                 </p>
                 <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
                   <li>
-                    <strong>Open-Pit Mining:</strong> Used when uranium ore is
-                    located near the surface. Large quantities of overburden are
-                    removed to access the ore.
+                    <strong>Open-Pit Mining:</strong> Used when uranium ore is located near the surface. Large quantities of overburden are removed to access the ore.
                   </li>
                   <li>
-                    <strong>Underground Mining:</strong> Employed when the
-                    uranium ore is deeper underground. Tunnels and shafts are
-                    constructed to reach the ore.
+                    <strong>Underground Mining:</strong> Employed when the uranium ore is deeper underground. Tunnels and shafts are constructed to reach the ore.
                   </li>
                   <li>
-                    <strong>In-Situ Leaching (ISL):</strong> Involves injecting
-                    a solution into the ground to dissolve uranium from the ore
-                    body, then pumping it to the surface for processing.
+                    <strong>In-Situ Leaching (ISL):</strong> Involves injecting a solution into the ground to dissolve uranium from the ore body, then pumping it to the surface for processing.
                   </li>
                 </ul>
               </div>
             </div>
-  
+    
             <!-- Milling -->
-            <div class="inline-flex space-x-5 transform translate-x-[7rem] w-[91.5%]">
+            <div class="inline-flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5 transform md:translate-x-[7rem] md:pr-5 w-full md:w-[91.5%]">
               <div class="bg-zinc-800/30 p-6 rounded-sm w-full">
                 <div class="flex space-x-3 mb-3 items-start">
-                  <i
-                    class="ri-building-3-fill text-xl text-lime2 mt-[-1px]"
-                  ></i>
-                  <h2
-                    class="text-xl font-semibold text-white mb-2 text-start frank"
-                  >
+                  <i class="ri-building-3-fill text-xl text-lime2 mt-[-1px]"></i>
+                  <h2 class="text-xl font-semibold text-white mb-2 text-start frank">
                     Milling
                   </h2>
                 </div>
                 <p class="text-sm mb-4 text-white/50">
-                  Milling is the process of extracting uranium from the mined
-                  ore.
+                  Milling is the process of extracting uranium from the mined ore.
                 </p>
                 <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
                   <li>
-                    <strong>Crushing and Grinding:</strong> The ore is crushed
-                    and ground into fine particles to increase the surface area
-                    for chemical extraction.
+                    <strong>Crushing and Grinding:</strong> The ore is crushed and ground into fine particles to increase the surface area for chemical extraction.
                   </li>
                   <li>
-                    <strong>Leaching:</strong> The ground ore is treated with
-                    acid or alkaline solutions to dissolve uranium, separating
-                    it from the remaining rock.
+                    <strong>Leaching:</strong> The ground ore is treated with acid or alkaline solutions to dissolve uranium, separating it from the remaining rock.
                   </li>
                   <li>
-                    <strong>Precipitation and Drying:</strong> The uranium-rich
-                    solution is chemically treated to precipitate uranium as
-                    uranium oxide concentrate, known as yellowcake
-                    (U<sub>3</sub>O<sub>8</sub>).
+                    <strong>Precipitation and Drying:</strong> The uranium-rich solution is chemically treated to precipitate uranium as uranium oxide concentrate, known as yellowcake (U<sub>3</sub>O<sub>8</sub>).
                   </li>
                 </ul>
               </div>
             </div>
-  
+    
             <!-- Conversion -->
-            <div class="inline-flex space-x-5">
+            <div class="inline-flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5">
               <div class="bg-zinc-800/30 p-6 rounded-sm w-full">
                 <div class="flex space-x-3 mb-3 items-start">
                   <i class="ri-group-3-fill text-xl text-lime2 mt-[0px]"></i>
-                  <h2
-                    class="text-xl font-semibold text-white mb-2 text-start frank"
-                  >
+                  <h2 class="text-xl font-semibold text-white mb-2 text-start frank">
                     Conversion
                   </h2>
                 </div>
-  
                 <p class="text-sm mb-4 text-white/50">
-                  Conversion is the process of transforming yellowcake into
-                  uranium hexafluoride (UF<sub>6</sub>), which is suitable for
-                  enrichment.
+                  Conversion is the process of transforming yellowcake into uranium hexafluoride (UF<sub>6</sub>), which is suitable for enrichment.
                 </p>
                 <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
                   <li>
-                    <strong>Chemical Conversion:</strong> Yellowcake is
-                    chemically converted into uranium dioxide (UO<sub>2</sub>)
-                    and then into uranium hexafluoride (UF<sub>6</sub>) in a
-                    high-temperature process.
+                    <strong>Chemical Conversion:</strong> Yellowcake is chemically converted into uranium dioxide (UO<sub>2</sub>) and then into uranium hexafluoride (UF<sub>6</sub>) in a high-temperature process.
                   </li>
                   <li>
-                    <strong>UF<sub>6</sub> Properties:</strong> Uranium
-                    hexafluoride is a gas at slightly elevated temperatures,
-                    making it suitable for enrichment.
+                    <strong>UF<sub>6</sub> Properties:</strong> Uranium hexafluoride is a gas at slightly elevated temperatures, making it suitable for enrichment.
                   </li>
                 </ul>
               </div>
             </div>
-  
+    
             <!-- Reprocessing (Optional) -->
-            <div class="inline-flex space-x-5 transform translate-x-[7rem] w-[91.5%]">
+            <div class="inline-flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5 transform md:translate-x-[7rem] md:pr-5 w-full md:w-[91.5%]">
               <div class="bg-zinc-800/30 p-6 rounded-sm w-full">
                 <div class="flex space-x-3 mb-3 items-start">
-                  <i
-                    class="ri-settings-4-fill text-xl text-lime2 mt-[px]"
-                  ></i>
-                  <h2
-                    class="text-xl font-semibold text-white mb-2 text-start frank"
-                  >
+                  <i class="ri-settings-4-fill text-xl text-lime2 mt-[px]"></i>
+                  <h2 class="text-xl font-semibold text-white mb-2 text-start frank">
                     Reprocessing (Optional)
                   </h2>
                 </div>
                 <p class="text-sm mb-4 text-white/50">
-                  Reprocessing involves treating spent nuclear fuel to extract
-                  usable materials.
+                  Reprocessing involves treating spent nuclear fuel to extract usable materials.
                 </p>
                 <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
                   <li>
-                    <strong>Dissolution:</strong> Spent fuel rods are dissolved
-                    in acid to separate the uranium and plutonium from the waste
-                    products.
+                    <strong>Dissolution:</strong> Spent fuel rods are dissolved in acid to separate the uranium and plutonium from the waste products.
                   </li>
                   <li>
-                    <strong>Separation and Recycling:</strong> The uranium and
-                    plutonium can be chemically separated and recycled into new
-                    fuel. The remaining high-level waste is vitrified (turned
-                    into glass) for long-term storage.
+                    <strong>Separation and Recycling:</strong> The uranium and plutonium can be chemically separated and recycled into new fuel. The remaining high-level waste is vitrified (turned into glass) for long-term storage.
                   </li>
                   <li>
-                    <strong>MOX Fuel:</strong> Mixed oxide (MOX) fuel, which
-                    contains a mix of uranium and plutonium, can be fabricated
-                    from reprocessed materials and used in reactors.
+                    <strong>MOX Fuel:</strong> Mixed oxide (MOX) fuel, which contains a mix of uranium and plutonium, can be fabricated from reprocessed materials and used in reactors.
                   </li>
                 </ul>
               </div>
             </div>
-  
+    
             <!-- Fuel Fabrication -->
-            <div class="inline-flex space-x-5">
+            <div class="inline-flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5">
               <div class="bg-zinc-800/30 p-6 rounded-sm w-full">
                 <div class="flex space-x-3 mb-3 items-start">
-                  <i
-                    class="ri-gas-station-fill text-xl text-lime2 mt-[0px]"
-                  ></i>
-                  <h2
-                    class="text-xl font-semibold text-white mb-2 text-start frank"
-                  >
+                  <i class="ri-gas-station-fill text-xl text-lime2 mt-[0px]"></i>
+                  <h2 class="text-xl font-semibold text-white mb-2 text-start frank">
                     Fuel Fabrication
                   </h2>
                 </div>
-  
                 <p class="text-sm mb-4 text-white/50">
-                  Enriched uranium is fabricated into fuel assemblies for use in
-                  nuclear reactors.
+                  Enriched uranium is fabricated into fuel assemblies for use in nuclear reactors.
                 </p>
                 <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
                   <li>
-                    <strong>Pelletization:</strong> Uranium dioxide powder is
-                    pressed into small pellets and sintered at high
-                    temperatures.
+                    <strong>Pelletization:</strong> Uranium dioxide powder is pressed into small pellets and sintered at high temperatures.
                   </li>
                   <li>
-                    <strong>Assembly:</strong> The pellets are inserted into
-                    metal tubes, which are then bundled together to form fuel
-                    assemblies.
+                    <strong>Assembly:</strong> The pellets are inserted into metal tubes, which are then bundled together to form fuel assemblies.
                   </li>
                 </ul>
               </div>
             </div>
-  
+    
             <!-- Enrichment -->
-            <div class="inline-flex space-x-5 transform translate-x-[7rem] w-[91.5%]">
+            <div class="inline-flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5 transform md:translate-x-[7rem] md:pr-5 w-full md:w-[91.5%]">
               <div class="bg-zinc-800/30 p-6 rounded-sm w-full">
                 <div class="flex space-x-3 mb-3 items-start">
-                  <i
-                    class="ri-hand-coin-fill text-xl text-lime2 mt-[-1px]"
-                  ></i>
-                  <h2
-                    class="text-xl font-semibold text-white mb-2 text-start frank"
-                  >
+                  <i class="ri-hand-coin-fill text-xl text-lime2 mt-[-1px]"></i>
+                  <h2 class="text-xl font-semibold text-white mb-2 text-start frank">
                     Enrichment
                   </h2>
                 </div>
                 <p class="text-sm mb-4 text-white/50">
-                  Enrichment increases the concentration of uranium-235 isotope
-                  in uranium hexafluoride (UF<sub>6</sub>).
+                  Enrichment increases the concentration of uranium-235 isotope in uranium hexafluoride (UF<sub>6</sub>).
                 </p>
                 <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
                   <li>
-                    <strong>Gas Centrifuge:</strong> UF<sub>6</sub> gas is fed
-                    into centrifuges, where the heavier uranium-238 isotope is
-                    separated from the lighter uranium-235 isotope.
+                    <strong>Gas Centrifugation:</strong> Uranium hexafluoride gas is spun at high speeds in centrifuges to separate uranium-235 from uranium-238.
                   </li>
                   <li>
-                    <strong>Gaseous Diffusion:</strong> UF<sub>6</sub> is passed
-                    through semi-permeable membranes to separate uranium-235
-                    based on molecular size and weight.
+                    <strong>Enriched UF<sub>6</sub>:</strong> The enriched uranium hexafluoride is converted back into uranium dioxide for fuel fabrication.
                   </li>
                 </ul>
               </div>
             </div>
-  
-            <!-- Waste Management -->
-            <div class="inline-flex space-x-5">
-              <div class="bg-zinc-800/30 p-6 rounded-sm w-full">
-                <div class="flex space-x-3 mb-3 items-start">
-                  <i
-                    class="ri-delete-bin-6-fill text-[18.5px] text-lime2 mt-[0px]"
-                  ></i>
-                  <h2
-                    class="text-xl font-semibold text-white mb-2 text-start frank"
-                  >
-                    Waste Management
-                  </h2>
-                </div>
-  
-                <p class="text-sm mb-4 text-white/50">
-                  Management of radioactive waste generated during the nuclear
-                  fuel cycle.
-                </p>
-                <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
-                  <li>
-                    <strong>Temporary Storage:</strong> Spent fuel is stored in
-                    pools or dry casks at the reactor site.
-                  </li>
-                  <li>
-                    <strong>Reprocessing:</strong> Spent fuel is chemically
-                    treated to recover uranium and plutonium for reuse.
-                  </li>
-                  <li>
-                    <strong>Disposal:</strong> Long-term disposal of radioactive
-                    waste in deep geological repositories.
-                  </li>
-                </ul>
+
+            <!-- Waste Management --> 
+             <div class="inline-flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5"> <div class="bg-zinc-800/30 p-6 rounded-sm w-full"> <div class="flex space-x-3 mb-3 items-start"> <i class="ri-delete-bin-6-fill text-[18.5px] text-lime2 mt-[0px]" ></i> <h2 class="text-xl font-semibold text-white mb-2 text-start frank" > Waste Management </h2> </div> <p class="text-sm mb-4 text-white/50"> Management of radioactive waste generated during the nuclear fuel cycle. </p> <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50"> <li> <strong>Temporary Storage:</strong> Spent fuel is stored in pools or dry casks at the reactor site. </li> <li> <strong>Reprocessing:</strong> Spent fuel is chemically treated to recover uranium and plutonium for reuse. </li> <li> <strong>Disposal:</strong> Long-term disposal of radioactive waste in deep geological repositories. </li> </ul> </div> 
+            </div> 
+
+             <!-- Safety and Environmental Consideration -->
+               <div class="inline-flex flex-col md:flex-row space-y-5 md:space-y-0 md:space-x-5 transform md:translate-x-[7rem] md:pr-5 w-full md:w-[91.5%]"> <div class="bg-zinc-800/30 p-6 rounded-sm w-full"> <div class="flex space-x-3 mb-3 items-start"> <i class="ri-shield-check-fill text-xl text-lime2 mt-[-1px]" ></i> <h2 class="text-xl font-semibold text-white mb-2 text-start frank" > Safety and Environmental Consideration </h2> </div> <p class="text-sm mb-4 text-white/50"> Throughout each stage, strict safety protocols and environmental protections are in place to minimize radiation exposure and environmental impact. </p> <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50"> <li> <strong>Radiation Protection: Workers are monitored for radiation exposure, and facilities are designed to contain and control radioactive materials </li> <li> <strong>Environmental Safeguards:</strong> Measures are taken to prevent contamination of soil, water, and air, including waste treatment, containment, and monitoring </li> </ul> </div> 
               </div>
-            </div>
-  
-            <!-- Safety and Environmental Consideration -->
-            <div class="inline-flex space-x-5 transform translate-x-[7rem] w-[93%]">
-              <div class="bg-zinc-800/30 p-6 rounded-sm w-full">
-                <div class="flex space-x-3 mb-3 items-start">
-                  <i
-                    class="ri-shield-check-fill text-xl text-lime2 mt-[-1px]"
-                  ></i>
-                  <h2
-                    class="text-xl font-semibold text-white mb-2 text-start frank"
-                  >
-                  Safety and Environmental Consideration
-                  </h2>
-                </div>
-                <p class="text-sm mb-4 text-white/50">
-                  Throughout each stage, strict safety protocols and
-  environmental protections are in place to minimize
-  radiation exposure and environmental impact.
-                </p>
-                <ul class="text-[15px] font-light list-disc pl-5 space-y-2 text-white/50">
-                  <li>
-                    <strong>Radiation Protection: Workers are monitored for
-                      radiation exposure, and facilities are designed to
-                      contain and control radioactive materials
-                  </li>
-                  <li>
-                    <strong>Environmental Safeguards:</strong> Measures are taken to
-                      prevent contamination of soil, water, and air,
-                      including waste treatment, containment, and
-                      monitoring
-                  </li>
-                </ul>
-              </div>
-            </div>
-  
-          
           </div>
         </div>
       </div>
-     </div>
+    </div>
     
+    
+<!-- Footer ================================================================================ -->
+<footer class="bg-[#111111] text-white py-14 px-6 lg:px-[1.2rem] ">
+  <div class="lg:w-[90%] mx-auto w-full">
+    <div
+      class="container mx-auto flex flex-col justify-center items-center text-center"
+    >
+      <!-- Newsletter Subscription Section -->
+      <h2 class="text-[17px] frank sm:text-[23px] font-semibold">
+        Sign Up For Our Newsletter
+      </h2>
+      <p class="text-sm publicsans mt-3 font-normal text-white/50">
+        Receive uranium market updates and 70% off our premium reports.
+      </p>
 
-  
-
-    <!-- Footer ================================================================================ -->
-    <footer class="bg-white text-black py-14 px-6 lg:px-[1.2rem] mt-0">
-      <div class="lg:w-[90%] mx-auto w-full">
-        <div
-          class="container mx-auto flex flex-col justify-center items-center text-center"
+      <!-- Email Subscription Form -->
+      <div
+        class="flex flex-col sm:flex-row justify-center items-center mt-6 w-full max-w-[600px]"
+      >
+        <input
+          type="email"
+          placeholder="Enter your email address"
+          class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-white/5 text-black focus:outline-none placeholder:text-[14px]"
+        />
+        <button
+          class="bg-lime1 rounded-sm text-black text-[15px] font-bold px-6 py-2 hover:bg-lime2 transition-all duration-200"
         >
-          <!-- Newsletter Subscription Section -->
-          <h2 class="text-[17px] frank sm:text-[23px] font-semibold">
-            Sign Up For Our Newsletter
-          </h2>
-          <p class="text-sm publicsans mt-3 font-normal text-black/50">
-            Receive uranium market updates and 70% off our premium reports.
-          </p>
-
-          <!-- Email Subscription Form -->
-          <div
-            class="flex flex-col sm:flex-row justify-center items-center mt-6 w-full max-w-[600px]"
-          >
-            <input
-              type="email"
-              placeholder="Enter your email address"
-              class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-black1/5 text-black focus:outline-none placeholder:text-[14px]"
-            />
-            <button
-              class="bg-lime1 rounded-sm text-black text-[15px] font-bold px-6 py-2 hover:bg-lime2 transition-all duration-200"
-            >
-              Subscribe
-            </button>
-          </div>
-
-          <!-- Social Media Icons -->
-          <div class="flex justify-center space-x-5 mt-6">
-            <a
-              href="#"
-              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
-            >
-              <i class="ri-facebook-fill text-xl"></i>
-            </a>
-            <a
-              href="#"
-              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
-            >
-              <i class="ri-twitter-fill text-xl"></i>
-            </a>
-            <a
-              href="#"
-              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
-            >
-              <i class="ri-instagram-line text-xl"></i>
-            </a>
-            <a
-              href="#"
-              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
-            >
-              <i class="ri-linkedin-box-fill text-xl"></i>
-            </a>
-          </div>
-
-          <!-- Horizontal Line -->
-          <hr class="w-full border-t border-zinc-400 mt-10" />
-
-          <!-- Footer Links and Copyright -->
-          <div
-            class="flex flex-col sm:flex-row justify-between items-center w-full mt-4 text-sm"
-          >
-            <!-- Footer links aligned to the end -->
-            <div class="sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
-              <a href="#" class="hover:underline text-gray-400">Home</a>
-              <a href="#" class="hover:underline text-gray-400">News</a>
-              <a href="#" class="hover:underline text-gray-400"
-                >Uranium Investments</a
-              >
-              <a href="#" class="hover:underline text-gray-400"
-                >Uranium Essentials</a
-              >
-              <a href="#" class="hover:underline text-gray-400">Forum</a>
-            </div>
-            <!-- All rights reserved aligned with HR line -->
-            <p class="text-gray-400 mb-4 sm:mb-0">
-              UraniumTracker. All rights reserved 2024
-            </p>
-          </div>
-        </div>
+          Subscribe
+        </button>
       </div>
-    </footer>
+
+      <!-- Social Media Icons -->
+      <div class="flex justify-center space-x-5 mt-6">
+        <a
+          href="#"
+          class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
+        >
+          <i class="ri-facebook-fill text-xl"></i>
+        </a>
+        <a
+          href="#"
+          class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
+        >
+          <i class="ri-twitter-fill text-xl"></i>
+        </a>
+        <a
+          href="#"
+          class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
+        >
+          <i class="ri-instagram-line text-xl"></i>
+        </a>
+        <a
+          href="#"
+          class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
+        >
+          <i class="ri-linkedin-box-fill text-xl"></i>
+        </a>
+      </div>
+
+      <!-- Horizontal Line -->
+      <hr class="w-full border-t border-zinc-600 mt-10" />
+
+      <!-- Footer Links and Copyright -->
+      <div
+        class="flex flex-col sm:flex-row justify-between items-center w-full mt-4 text-sm"
+      >
+        <!-- Footer links aligned to the end -->
+        <div class="sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+          <a href="home.html" class="hover:underline text-gray-400">Home</a>
+          <a href="news.html" class="hover:underline text-gray-400">News</a>
+          <a href="investments.html" class="hover:underline text-gray-400"
+            >Uranium Investments</a
+          >
+          <a href="essentials.html" class="hover:underline text-gray-400"
+            >Uranium Essentials</a
+          >
+          <a href="forum.html" class="hover:underline text-gray-400"
+            >Forum</a
+          >
+        </div>
+        <!-- All rights reserved aligned with HR line -->
+        <p class="text-gray-400 mb-4 sm:mb-0">
+          UraniumTracker. All rights reserved 2024
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
 
     <!-- js  -->
     <!-- GSAP CDN -->

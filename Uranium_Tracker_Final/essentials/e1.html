@@ -150,7 +150,7 @@
     <div
       class="bg-black1 shadow-lg px-6 md:px-20 py-5 fixed top-0 left-0 w-full z-50"
     >
-      <ul class="flex gap-x-2 text-sm text-white/40 lato tracking-[0.3px]">
+      <ul class="flex gap-x-1 md:gap-x-2 text-[12px] md:text-sm text-white/40 lato tracking-[0.3px]">
         <a
           class="hover:text-lime2 font-medium transition-all duration-200"
           href="../essentials.html"
@@ -165,11 +165,16 @@
       </ul>
     </div>
 
-    <!-- main  -->
-    <div class="px-6 md:px-20 py-10 md:pt-20 flex justify-between items-center">
-      <div class="w-[53%]">
-        <h1 class="frank text-5xl font-bold text-lime2">What Is Uranium ?</h1>
-        <p class="mt-5 font-normal text-white/60 text-[17px]">
+    <!-- main -->
+    <div
+      class="hero px-6 md:px-20 py-10 md:pt-20 flex flex-col md:flex-row justify-between items-center mt-10"
+    >
+      <!-- Left Content -->
+      <div class="w-full md:w-[53%]">
+        <h1 class="frank text-2xl md:text-5xl font-bold text-lime2">
+          What Is Uranium?
+        </h1>
+        <p class="mt-5 font-normal text-white/60 text-[16px] md:text-[17px]">
           Uranium is a naturally occurring element with the symbol U and atomic
           number 92. It is a dense, metallic element that plays a crucial role
           in the nuclear industry due to its unique properties, particularly its
@@ -180,7 +185,8 @@
         </p>
       </div>
 
-      <div class="w-[45%]">
+      <!-- Right Animated Atom (hidden on small screens) -->
+      <div class="w-full md:w-[45%] hidden md:block">
         <div class="atom-container">
           <div class="nucleus"></div>
 
@@ -199,17 +205,20 @@
     </div>
 
     <!-- sec 1  -->
-    <div class="px-6 md:px-20 py-10 md:py-20 mt-10">
+    <div class="px-6 md:px-20 py-10 md:py-20 mt-10 overflow-hidden sec-1">
+      <!-- Heading -->
       <h2
-        class="ml-0 flex items-center text-[1rem] md:text-[1.4rem] frank mb-4 md:mb-9 font-semibold text-white capitalize"
+        class="ml-0 flex items-center text-[1rem] md:text-[1.4rem] frank mb-4 md:mb-9 font-semibold text-white capitalize heading-uranium"
       >
         <i class="ri-menu-4-fill text-lime2 font-bold text-xl mr-3"></i>
         Uranium Properties
       </h2>
-      <div class="flex flex-col md:flex-row gap-8 pb-10 mb-10">
+
+      <!-- Cards Section -->
+      <div class="flex flex-col md:flex-row gap-8 pb-10 mb-10 cards-uranium">
         <!-- Physical Properties Card -->
         <div
-          class="bg-zinc-800/30 rounded-md p-8 transform transition duration-500 hover:scale-105 flex-1"
+          class="bg-zinc-800/30 rounded-md p-8 transform transition duration-500 hover:scale-105 flex-1 card-physical"
         >
           <div class="text-lime2 mb-4">
             <i class="ri-weight-line text-4xl"></i>
@@ -229,7 +238,7 @@
 
         <!-- Chemical Properties Card -->
         <div
-          class="bg-zinc-800/30 rounded-md p-9 transform transition duration-500 hover:scale-105 flex-1"
+          class="bg-zinc-800/30 rounded-md p-9 transform transition duration-500 hover:scale-105 flex-1 card-chemical"
         >
           <div class="text-lime2 mb-4">
             <i class="ri-flask-line text-4xl"></i>
@@ -248,7 +257,7 @@
 
         <!-- Isotopes Card -->
         <div
-          class="bg-zinc-800/30 rounded-md p-9 transform transition duration-500 hover:scale-105 flex-1"
+          class="bg-zinc-800/30 rounded-md p-9 transform transition duration-500 hover:scale-105 flex-1 card-isotopes"
         >
           <div class="text-lime2 mb-4">
             <i class="ri-reactjs-line text-4xl"></i>
@@ -266,7 +275,7 @@
     </div>
 
     <!-- sec 2  -->
-    <div class="px-6 md:px-20 py-10 md:pb-20 mt-[-5rem]">
+    <div class="px-6 md:px-20 py-10 md:pb-20 mt-[-5rem] hidden md:block">
       <section class="periodic-table-container flex flex-col items-center">
         <!-- Uranium Info -->
         <div id="uranium-all-info" class="flex flex-col items-center mb-8">
@@ -316,63 +325,62 @@
     <div class="px-6 md:px-20 py-10 md:py-20 mt-3">
       <div class="flex flex-col md:flex-row gap-8">
         <!-- Image Section (Shifted to Left with Space on the Right) -->
-        <div class="relative w-22 max-w-md mr-[11rem]">
+        <div class="relative w-full md:w-auto max-w-md md:mr-[11rem] mx-auto md:mx-0">
           <!-- Adjust the mr-[14rem] value as needed -->
           <img
             src="https://rinconeducativo.org/wp-content/uploads/2024/01/Strassmann_Fritz_Laboratorio.png"
             alt="Laboratory with Uranium Experiment"
-            class="w-[630px] h-[450px] shadow-lg ml-40"
+            class="w-full h-auto md:w-[630px] md:h-[450px] shadow-lg md:ml-40 mx-auto"
           />
           <!-- Absolute Positioned Text Div -->
           <div
             class="absolute top-4 left-4 text-white font-bold text-[18px] frank"
           >
             <p
-              class="text-6xl font-extrabold tracking-wide frank shadow-lg text-gray-300 mb-2"
+              class="text-4xl md:text-6xl font-extrabold tracking-wide frank shadow-lg text-gray-300 mb-2"
             >
               EARLY
             </p>
             <p
-              class="text-6xl font-extrabold tracking-wide frank shadow-lg mb-2 text-lime2"
+              class="text-4xl md:text-6xl font-extrabold tracking-wide frank shadow-lg mb-2 text-lime2"
             >
               URANIUM
             </p>
             <p
-              class="text-6xl font-extrabold tracking-wide frank shadow-lg text-gray-300 mb-2"
+              class="text-4xl md:text-6xl font-extrabold tracking-wide frank shadow-lg text-gray-300 mb-2"
             >
               USES
             </p>
           </div>
         </div>
-
+    
         <!-- Descriptive Text Section (Narrower Width) -->
-        <div class="w-[85%] text-white">
+        <div class="w-full md:w-[85%] text-white">
           <p class="text-white/50 leading-6 text-[17px] lato mb-6">
             In the 19th century, <br />
-            Uranium was primarily used as a coloring agent in ceramics and
-            glass, giving them a characteristic
+            Uranium was primarily used as a coloring agent in ceramics and glass,
+            giving them a characteristic
             <span class="text-yellow">YELLOW </span>or
             <span class="text-green-400">GREEN hue</span>.
           </p>
           <p class="text-white/50 leading-6 text-[17px] lato mb-6">
-            Its radioactive properties were not understood at this time, and it
-            was considered a relatively obscure element with limited industrial
-            use.
+            Its radioactive properties were not understood at this time, and it was
+            considered a relatively obscure element with limited industrial use.
           </p>
           <p class="text-white/50 leading-6 text-[17px] lato">
-            By the late 19th and early 20th centuries, uranium began to be used
-            in early radiological studies and some medical treatments, despite
-            its hazardous nature being only partially understood. Its
-            significance grew exponentially with the discovery of nuclear
-            fission in the 1930s, which paved the way for its use in nuclear
-            reactors and weapons.
+            By the late 19th and early 20th centuries, uranium began to be used in
+            early radiological studies and some medical treatments, despite its
+            hazardous nature being only partially understood. Its significance grew
+            exponentially with the discovery of nuclear fission in the 1930s, which
+            paved the way for its use in nuclear reactors and weapons.
           </p>
         </div>
       </div>
     </div>
+    
 
     <!-- Footer ================================================================================ -->
-    <footer class="bg-white text-black py-14 px-6 lg:px-[1.2rem] mt-32">
+    <footer class="bg-[#111111] text-white py-14 px-6 lg:px-[1.2rem] mt-24">
       <div class="lg:w-[90%] mx-auto w-full">
         <div
           class="container mx-auto flex flex-col justify-center items-center text-center"
@@ -381,7 +389,7 @@
           <h2 class="text-[17px] frank sm:text-[23px] font-semibold">
             Sign Up For Our Newsletter
           </h2>
-          <p class="text-sm publicsans mt-3 font-normal text-black/50">
+          <p class="text-sm publicsans mt-3 font-normal text-white/50">
             Receive uranium market updates and 70% off our premium reports.
           </p>
 
@@ -392,7 +400,7 @@
             <input
               type="email"
               placeholder="Enter your email address"
-              class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-black1/5 text-black focus:outline-none placeholder:text-[14px]"
+              class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-white/5 text-black focus:outline-none placeholder:text-[14px]"
             />
             <button
               class="bg-lime1 rounded-sm text-black text-[15px] font-bold px-6 py-2 hover:bg-lime2 transition-all duration-200"
@@ -405,32 +413,32 @@
           <div class="flex justify-center space-x-5 mt-6">
             <a
               href="#"
-              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+              class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
             >
               <i class="ri-facebook-fill text-xl"></i>
             </a>
             <a
               href="#"
-              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+              class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
             >
               <i class="ri-twitter-fill text-xl"></i>
             </a>
             <a
               href="#"
-              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+              class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
             >
               <i class="ri-instagram-line text-xl"></i>
             </a>
             <a
               href="#"
-              class="text-zinc-400 transition ease-in-out duration-300 hover:text-black/90"
+              class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
             >
               <i class="ri-linkedin-box-fill text-xl"></i>
             </a>
           </div>
 
           <!-- Horizontal Line -->
-          <hr class="w-full border-t border-zinc-400 mt-10" />
+          <hr class="w-full border-t border-zinc-600 mt-10" />
 
           <!-- Footer Links and Copyright -->
           <div
@@ -438,15 +446,17 @@
           >
             <!-- Footer links aligned to the end -->
             <div class="sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
-              <a href="#" class="hover:underline text-gray-400">Home</a>
-              <a href="#" class="hover:underline text-gray-400">News</a>
-              <a href="#" class="hover:underline text-gray-400"
+              <a href="home.html" class="hover:underline text-gray-400">Home</a>
+              <a href="news.html" class="hover:underline text-gray-400">News</a>
+              <a href="investments.html" class="hover:underline text-gray-400"
                 >Uranium Investments</a
               >
-              <a href="#" class="hover:underline text-gray-400"
+              <a href="essentials.html" class="hover:underline text-gray-400"
                 >Uranium Essentials</a
               >
-              <a href="#" class="hover:underline text-gray-400">Forum</a>
+              <a href="forum.html" class="hover:underline text-gray-400"
+                >Forum</a
+              >
             </div>
             <!-- All rights reserved aligned with HR line -->
             <p class="text-gray-400 mb-4 sm:mb-0">
