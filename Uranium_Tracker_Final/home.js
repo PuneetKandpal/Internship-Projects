@@ -438,3 +438,86 @@ function togglePlayPause(event, videoId, buttonId) {
     pauseIcon.classList.add("hidden");
   }
 }
+
+// video section ======================================
+function openFullScreen(videoId) {
+  const video = document.getElementById(videoId);
+  const fullscreenVideo = document.getElementById("fullscreen-video");
+  const modal = document.getElementById("fullscreen-video-modal");
+
+  fullscreenVideo.src = video.src;
+  fullscreenVideo.play();
+  modal.classList.remove("hidden");
+}
+
+function closeFullScreen(event) {
+  const fullscreenVideo = document.getElementById("fullscreen-video");
+  const modal = document.getElementById("fullscreen-video-modal");
+
+  // Check if the click was outside the video or on the close button
+  if (event.target === modal || event.target.closest("button")) {
+    fullscreenVideo.pause();
+    fullscreenVideo.currentTime = 0;
+    modal.classList.add("hidden");
+  }
+}
+
+// video section animation 
+gsap.registerPlugin(ScrollTrigger);
+
+  // Animation for the Trending Section
+  gsap.from('.trending-section', {
+    scrollTrigger: {
+      trigger: '.trending-section',
+      start: 'top 80%',
+      end: 'bottom 30%',
+      // scrub: true,
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.5,
+    ease: 'power2.out',
+  });
+
+  // Animation for the Main Video
+  gsap.from('.main-video', {
+    scrollTrigger: {
+      trigger: '.main-video',
+      start: 'top 90%',
+      end: 'bottom 30%',
+      // scrub: true,
+    },
+    opacity: 0,
+    scale: 0.8,
+    duration: 1.5,
+    ease: 'power2.out',
+  });
+
+  // Animation for the Side Videos
+  gsap.from('.side-video', {
+    scrollTrigger: {
+      trigger: '.side-videos',
+      start: 'top 90%',
+      end: 'bottom 30%',
+      // scrub: true,
+    },
+    opacity: 0,
+    x: 50,
+    stagger: 0.3,
+    duration: 1.5,
+    ease: 'power2.out',
+  });
+
+  // Animation for the Text Content Over Video
+  gsap.from('.text-content', {
+    scrollTrigger: {
+      trigger: '.main-video',
+      start: 'top 80%',
+      end: 'bottom 30%',
+      // scrub: true,
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.5,
+    ease: 'power2.out',
+  });

@@ -2189,14 +2189,16 @@
     </div>
 
     <!-- video section -->
-    <div class="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-20">
+    <div
+      class="py-12 sm:py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-20 overflow-x-hidden"
+    >
       <!-- Trending Videos Section -->
-      <div class="mb-8 py-4 lg:py-10">
+      <div class="mb-8 py-4 lg:py-10 trending-section">
         <div
           class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-5 sm:mb-10 title-section"
         >
           <h2
-            class="ml-0 flex items-center text-base sm:text-lg md:text-xl lg:text-2xl frank mb-4 sm:mb-0 font-semibold text-black capitalize"
+            class="ml-0 flex items-center text-base sm:text-lg md:text-xl lg:text-2xl frank mb-4 sm:mb-0 font-semibold text-white capitalize"
           >
             <i class="ri-menu-4-fill text-lime2 font-bold text-xl mr-3"></i>
             Latest Uranium Videos
@@ -2210,306 +2212,279 @@
         </div>
         <div class="flex flex-col lg:flex-row lg:space-x-6">
           <!-- Main Video -->
-          <a
-            href="URL-TO-NEWS-ARTICLE"
-            class="group block w-full lg:w-2/3 mb-6 lg:mb-0 relative"
+          <div
+            class="group block w-full lg:w-2/3 mb-6 lg:mb-0 relative cursor-pointer overflow-hidden main-video"
+            onclick="openFullScreen('main-video')"
           >
             <div class="relative">
+              <!-- Video Element -->
               <video
                 id="main-video"
-                class="w-full h-48 sm:h-64 md:h-80 lg:h-[400px] object-cover"
+                class="w-full h-[320px] md:h-80 lg:h-[535px] object-cover group-hover:scale-110 transition-all duration-500"
                 src="https://media.istockphoto.com/id/2155913298/video/the-train-is-heading-towards-toronto-along-lake-ontariocanada.mp4?s=mp4-640x640-is&k=20&c=lfcc3urts0LHfGZTVgVXnA1Lq_amRDtE1xl4Y8U1qFU="
                 type="video/mp4"
               >
                 Your browser does not support the video tag.
               </video>
-              <div
-                class="absolute bottom-4 left-4 right-4 bg-black bg-opacity-75 p-2"
-              >
-                <span class="bg-yellow-400 text-black text-xs px-2 py-1">
-                  NUCLEAR ENERGY
-                </span>
-                <h3
-                  class="text-base sm:text-lg md:text-xl lg:text-xl font-bold mt-2 line-clamp-2 text-white frank group-hover:underline"
-                >
-                  Breakthrough in Uranium Enrichment: Next-Gen Reactors on the
-                  Horizon
-                </h3>
-                <div
-                  class="flex items-center text-xs sm:text-sm space-x-2 mt-1 text-white"
-                >
-                  <img
-                    src="https://via.placeholder.com/24"
-                    alt="Author"
-                    class="w-6 h-6 rounded-full"
-                  />
-                  <span>Dr. Elena Volkov</span>
-                  <span>•</span>
-                  <span>Nov 15, 2023</span>
-                </div>
-              </div>
+
+              <!-- Play Icon -->
               <div class="absolute inset-0 flex items-center justify-center">
-                <button
-                  id="play-pause-btn"
-                  class="play-pause-btn"
-                  onclick="togglePlayPause(event, 'main-video', 'play-pause-btn')"
+                <i
+                  class="ri-play-circle-fill text-white/50 text-6xl group-hover:text-white/60 transition-all duration-200"
+                ></i>
+              </div>
+
+              <!-- Gradient Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-[#000000] via-black1/60 to-transparent"
+              ></div>
+
+              <!-- Text Content Over Video -->
+              <div
+                class="absolute bottom-0 left-0 right-0 p-4 bg-opacity-75 text-content"
+              >
+                <span
+                  class="bg-lime1 text-black font-semibold text-[10px] md:text-xs px-2 py-1 uppercase"
                 >
-                  <svg
-                    id="play-icon-main"
-                    class="w-12 h-12 sm:w-16 sm:h-16 text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M8 5v14l11-7L8 5z" />
-                  </svg>
-                  <svg
-                    id="pause-icon-main"
-                    class="w-12 h-12 sm:w-16 sm:h-16 hidden text-white"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M6 19h2V5H6v14zm10-14h-2v14h2V5z" />
-                  </svg>
-                </button>
+                  Nuclear-Grade trending News
+                </span>
+                <h2
+                  class="text-xl md:text-2xl font-medium md:font-semibold pr-6 mt-4 leading-[22px] md:leading-[35px]"
+                >
+                  Nuclear Power Market Size is Projected to Reach USD 45.31
+                  billion by 2032, Growing at a CAGR of 3.10%: Straits Research
+                </h2>
+                <p class="text-[12.5pxmd:text-[13.5px] lato text-white/80 mt-5">
+                  Globe Newswire – Aug 21, 2024
+                </p>
               </div>
             </div>
-          </a>
+          </div>
 
           <!-- Side Videos -->
-          <div class="w-full lg:w-1/3 space-y-4 sm:space-y-6">
+          <div
+            class="w-full lg:w-1/3 space-y-4 sm:space-y-7 side-videos mt-5 md:mt-0"
+          >
             <!-- Video 1 -->
-            <a href="#video1" class="block">
-              <div class="relative flex items-center space-x-4">
-                <div class="flex-1 space-y-2">
-                  <h4
-                    class="text-sm sm:text-base md:text-[16px] font-semibold leading-tight line-clamp-2 frank hover:underline"
-                  >
-                    Exploring Uranium Mining: A Deep Dive into Modern Extraction
-                    Techniques
-                  </h4>
-                  <div
-                    class="flex items-center text-xs text-gray-500 space-x-2"
-                  >
-                    <span>Dr. Emma Radcliffe</span>
-                    <span>•</span>
-                    <span>Aug 15, 2023</span>
-                  </div>
-                </div>
-                <div class="relative flex-shrink-0">
-                  <video
-                    id="side-video-1"
-                    class="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover"
-                    src="https://cdn.pixabay.com/video/2020/04/24/37079-413229597_large.mp4"
-                    type="video/mp4"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                  <div
-                    class="absolute inset-0 flex items-center justify-center"
-                  >
-                    <button
-                      id="play-pause-btn-side-1"
-                      class="play-pause-btn"
-                      onclick="togglePlayPause('side-video-1', 'play-pause-btn-side-1')"
-                    >
-                      <svg
-                        id="play-icon-side-1"
-                        class="w-4 h-4 sm:w-6 sm:h-6"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8 5v14l11-7L8 5z" />
-                      </svg>
-                      <svg
-                        id="pause-icon-side-1"
-                        class="w-4 h-4 sm:w-6 sm:h-6 hidden"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M6 19h2V5H6v14zm10-14h-2v14h2V5z" />
-                      </svg>
-                    </button>
-                  </div>
+            <div
+              class="relative flex items-center space-x-4 cursor-pointer group side-video"
+              onclick="openFullScreen('side-video-1')"
+            >
+              <div class="relative flex-shrink-0">
+                <video
+                  id="side-video-1"
+                  class="w-22 h-16 sm:w-24 sm:h-16 md:w-32 md:h-[84px] opacity-70 object-cover group-hover:opacity-40 transition-all duration-500"
+                  src="https://cdn.pixabay.com/video/2020/04/24/37079-413229597_large.mp4"
+                  type="video/mp4"
+                >
+                  Your browser does not support the video tag.
+                </video>
+
+                <!-- Play Icon -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <i
+                    class="ri-play-circle-fill text-white/50 shadow-xl group-hover:text-white/60 transition-all duration-200 text-3xl"
+                  ></i>
                 </div>
               </div>
-            </a>
+              <div class="flex-1 space-y-2">
+                <h4
+                  class="text-[13px] sm:text-base md:text-[16px] font-medium md:font-semibold leading-tight line-clamp-2 frank text-white/90"
+                >
+                  Exploring Uranium Mining: A Deep Dive into Modern Extraction
+                  Techniques
+                </h4>
+                <div
+                  class="flex items-center text-[10px] md:text-xs text-gray-500 space-x-2"
+                >
+                  <span>Dr. Emma Radcliffe</span>
+                  <span>•</span>
+                  <span>Aug 15, 2023</span>
+                </div>
+              </div>
+            </div>
 
             <!-- Video 2 -->
-            <a href="#video2" class="block">
-              <div class="relative flex items-center space-x-4">
-                <div class="flex-1 space-y-2">
-                  <h4
-                    class="text-sm sm:text-base md:text-[16px] font-semibold leading-tight line-clamp-2 frank hover:underline"
-                  >
-                    The Future of Nuclear Energy: Advancements in Uranium Fuel
-                    Technology
-                  </h4>
-                  <div
-                    class="flex items-center text-xs text-gray-500 space-x-2"
-                  >
-                    <span>Prof. Alex Chen</span>
-                    <span>•</span>
-                    <span>Sep 3, 2023</span>
-                  </div>
-                </div>
-                <div class="relative flex-shrink-0">
-                  <video
-                    id="side-video-2"
-                    class="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover"
-                    src="https://cdn.pixabay.com/video/2022/05/01/115598-705414886_large.mp4"
-                    type="video/mp4"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                  <div
-                    class="absolute inset-0 flex items-center justify-center"
-                  >
-                    <button
-                      id="play-pause-btn-side-2"
-                      class="play-pause-btn"
-                      onclick="togglePlayPause('side-video-2', 'play-pause-btn-side-2')"
-                    >
-                      <svg
-                        id="play-icon-side-2"
-                        class="w-4 h-4 sm:w-6 sm:h-6"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8 5v14l11-7L8 5z" />
-                      </svg>
-                      <svg
-                        id="pause-icon-side-2"
-                        class="w-4 h-4 sm:w-6 sm:h-6 hidden"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M6 19h2V5H6v14zm10-14h-2v14h2V5z" />
-                      </svg>
-                    </button>
-                  </div>
+            <div
+              class="relative flex items-center space-x-4 cursor-pointer overflow-hidden group"
+              onclick="openFullScreen('side-video-1')"
+            >
+              <div class="relative flex-shrink-0">
+                <video
+                  id="side-video-1"
+                  class="w-22 h-16 sm:w-24 sm:h-16 md:w-32 md:h-[84px] opacity-70 object-cover group-hover:opacity-40 transition-all duration-500"
+                  src="https://cdn.pixabay.com/video/2020/04/24/37079-413229597_large.mp4"
+                  type="video/mp4"
+                >
+                  Your browser does not support the video tag.
+                </video>
+
+                <!-- Play Icon -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <i
+                    class="ri-play-circle-fill text-white/50 shadow-xl group-hover:text-white/60 transition-all duration-200 text-3xl"
+                  ></i>
                 </div>
               </div>
-            </a>
-
+              <div class="flex-1 space-y-2">
+                <h4
+                  class="text-[13px] sm:text-base md:text-[16px] font-medium md:font-semibold leading-tight line-clamp-2 frank text-white/90"
+                >
+                  Exploring Uranium Mining: A Deep Dive into Modern Extraction
+                  Techniques
+                </h4>
+                <div
+                  class="flex items-center text-[10px] md:text-xs text-gray-500 space-x-2"
+                >
+                  <span>Dr. Emma Radcliffe</span>
+                  <span>•</span>
+                  <span>Aug 15, 2023</span>
+                </div>
+              </div>
+            </div>
             <!-- Video 3 -->
-            <a href="#video3" class="block">
-              <div class="relative flex items-center space-x-4">
-                <div class="flex-1 space-y-2">
-                  <h4
-                    class="text-sm sm:text-base md:text-[16px] font-semibold leading-tight line-clamp-2 frank hover:underline"
-                  >
-                    Uranium Enrichment Explained: From Yellowcake to Nuclear
-                    Fuel
-                  </h4>
-                  <div
-                    class="flex items-center text-xs text-gray-500 space-x-2"
-                  >
-                    <span>Dr. Samantha Lee</span>
-                    <span>•</span>
-                    <span>Oct 7, 2023</span>
-                  </div>
-                </div>
-                <div class="relative flex-shrink-0">
-                  <video
-                    id="side-video-3"
-                    class="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover"
-                    src="https://cdn.pixabay.com/video/2017/07/29/11016-228113782_large.mp4"
-                    type="video/mp4"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                  <div
-                    class="absolute inset-0 flex items-center justify-center"
-                  >
-                    <button
-                      id="play-pause-btn-side-3"
-                      class="play-pause-btn"
-                      onclick="togglePlayPause('side-video-3', 'play-pause-btn-side-3')"
-                    >
-                      <svg
-                        id="play-icon-side-3"
-                        class="w-4 h-4 sm:w-6 sm:h-6"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8 5v14l11-7L8 5z" />
-                      </svg>
-                      <svg
-                        id="pause-icon-side-3"
-                        class="w-4 h-4 sm:w-6 sm:h-6 hidden"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M6 19h2V5H6v14zm10-14h-2v14h2V5z" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </a>
+            <div
+              class="relative flex items-center space-x-4 cursor-pointer overflow-hidden group"
+              onclick="openFullScreen('side-video-1')"
+            >
+              <div class="relative flex-shrink-0">
+                <video
+                  id="side-video-1"
+                  class="w-22 h-16 sm:w-24 sm:h-16 md:w-32 md:h-[84px] opacity-70 object-cover group-hover:opacity-40 transition-all duration-500"
+                  src="https://cdn.pixabay.com/video/2020/04/24/37079-413229597_large.mp4"
+                  type="video/mp4"
+                >
+                  Your browser does not support the video tag.
+                </video>
 
-            <!-- Video 4 -->
-            <a href="#video4" class="block">
-              <div class="relative flex items-center space-x-4">
-                <div class="flex-1 space-y-2">
-                  <h4
-                    class="text-sm sm:text-base md:text-[16px] font-semibold leading-tight line-clamp-2 frank hover:underline"
-                  >
-                    Innovations in Uranium Fuel Recycling: A Sustainable
-                    Approach
-                  </h4>
-                  <div
-                    class="flex items-center text-xs text-gray-500 space-x-2"
-                  >
-                    <span>Dr. Lucas Wright</span>
-                    <span>•</span>
-                    <span>Jul 25, 2023</span>
-                  </div>
-                </div>
-                <div class="relative flex-shrink-0">
-                  <video
-                    id="side-video-4"
-                    class="w-20 h-14 sm:w-24 sm:h-16 md:w-28 md:h-20 object-cover"
-                    src="https://cdn.pixabay.com/video/2021/10/05/90962-629483674_large.mp4"
-                    type="video/mp4"
-                  >
-                    Your browser does not support the video tag.
-                  </video>
-                  <div
-                    class="absolute inset-0 flex items-center justify-center"
-                  >
-                    <button
-                      id="play-pause-btn-side-4"
-                      class="play-pause-btn"
-                      onclick="togglePlayPause('side-video-4', 'play-pause-btn-side-4')"
-                    >
-                      <svg
-                        id="play-icon-side-4"
-                        class="w-4 h-4 sm:w-6 sm:h-6"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M8 5v14l11-7L8 5z" />
-                      </svg>
-                      <svg
-                        id="pause-icon-side-4"
-                        class="w-4 h-4 sm:w-6 sm:h-6 hidden"
-                        fill="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path d="M6 19h2V5H6v14zm10-14h-2v14h2V5z" />
-                      </svg>
-                    </button>
-                  </div>
+                <!-- Play Icon -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <i
+                    class="ri-play-circle-fill text-white/50 shadow-xl group-hover:text-white/60 transition-all duration-200 text-3xl"
+                  ></i>
                 </div>
               </div>
-            </a>
+              <div class="flex-1 space-y-2">
+                <h4
+                  class="text-[13px] sm:text-base md:text-[16px] font-medium md:font-semibold leading-tight line-clamp-2 frank text-white/90"
+                >
+                  Exploring Uranium Mining: A Deep Dive into Modern Extraction
+                  Techniques
+                </h4>
+                <div
+                  class="flex items-center text-[10px] md:text-xs text-gray-500 space-x-2"
+                >
+                  <span>Dr. Emma Radcliffe</span>
+                  <span>•</span>
+                  <span>Aug 15, 2023</span>
+                </div>
+              </div>
+            </div>
+            <!-- Video 4 -->
+            <div
+              class="relative flex items-center space-x-4 cursor-pointer overflow-hidden group"
+              onclick="openFullScreen('side-video-1')"
+            >
+              <div class="relative flex-shrink-0">
+                <video
+                  id="side-video-1"
+                  class="w-22 h-16 sm:w-24 sm:h-16 md:w-32 md:h-[84px] opacity-70 object-cover group-hover:opacity-40 transition-all duration-500"
+                  src="https://cdn.pixabay.com/video/2020/04/24/37079-413229597_large.mp4"
+                  type="video/mp4"
+                >
+                  Your browser does not support the video tag.
+                </video>
+
+                <!-- Play Icon -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <i
+                    class="ri-play-circle-fill text-white/50 shadow-xl group-hover:text-white/60 transition-all duration-200 text-3xl"
+                  ></i>
+                </div>
+              </div>
+              <div class="flex-1 space-y-2">
+                <h4
+                  class="text-[13px] sm:text-base md:text-[16px] font-medium md:font-semibold leading-tight line-clamp-2 frank text-white/90"
+                >
+                  Exploring Uranium Mining: A Deep Dive into Modern Extraction
+                  Techniques
+                </h4>
+                <div
+                  class="flex items-center text-[10px] md:text-xs text-gray-500 space-x-2"
+                >
+                  <span>Dr. Emma Radcliffe</span>
+                  <span>•</span>
+                  <span>Aug 15, 2023</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Video 5 -->
+            <div
+              class="relative flex items-center space-x-4 cursor-pointer overflow-hidden group"
+              onclick="openFullScreen('side-video-1')"
+            >
+              <div class="relative flex-shrink-0">
+                <video
+                  id="side-video-1"
+                  class="w-22 h-16 sm:w-24 sm:h-16 md:w-32 md:h-[84px] opacity-70 object-cover group-hover:opacity-40 transition-all duration-500"
+                  src="https://cdn.pixabay.com/video/2020/04/24/37079-413229597_large.mp4"
+                  type="video/mp4"
+                >
+                  Your browser does not support the video tag.
+                </video>
+
+                <!-- Play Icon -->
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <i
+                    class="ri-play-circle-fill text-white/50 shadow-xl group-hover:text-white/60 transition-all duration-200 text-3xl"
+                  ></i>
+                </div>
+              </div>
+              <div class="flex-1 space-y-2">
+                <h4
+                  class="text-[13px] sm:text-base md:text-[16px] font-medium md:font-semibold leading-tight line-clamp-2 frank text-white/90"
+                >
+                  Exploring Uranium Mining: A Deep Dive into Modern Extraction
+                  Techniques
+                </h4>
+                <div
+                  class="flex items-center text-[10px] md:text-xs text-gray-500 space-x-2"
+                >
+                  <span>Dr. Emma Radcliffe</span>
+                  <span>•</span>
+                  <span>Aug 15, 2023</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- Fullscreen Video Modal -->
+      <div
+        id="fullscreen-video-modal"
+        class="hidden fixed inset-0 z-50 flex items-center justify-center bg- bg-opacity-90"
+        onclick="closeFullScreen(event)"
+      >
+        <div class="relative w-[80vw] h-[80vh] bg-[#000000]/50 mt-12">
+          <video
+            id="fullscreen-video"
+            class="w-full h-full object-cover"
+            controls
+          ></video>
+          <button
+            onclick="closeFullScreen(event)"
+            class="absolute top-4 right-4 text-white text-3xl font-bold"
+          >
+            &times;
+          </button>
+        </div>
+      </div>
     </div>
+
     <!-- Footer ================================================================================ -->
-    <footer class="bg-[#111111] text-white py-14 px-6 lg:px-[1.2rem] mt-24">
+    <footer class="bg-[#111111] text-white py-14 px-6 lg:px-[1.2rem] mt-">
       <div class="lg:w-[90%] mx-auto w-full">
         <div
           class="container mx-auto flex flex-col justify-center items-center text-center"
