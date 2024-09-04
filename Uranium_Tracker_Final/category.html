@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forum-Category</title>
+    <link rel="stylesheet" href="home.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- tailwind  -->
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              white: "#FFFFFF",
+              lime1: "#57fec7",
+              lime2: "#27ecab",
+              black: "#19310B",
+              black1: "#161616",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <!-- navbar  -->
+    <nav
+      class="fixed top-0 left-0 right-0 z-[1000] bg-black1 py-6 px-4 md:px-12 flex justify-between items-center shadow-lg"
+    >
+      <!-- logo -->
+      <a href="home.html">
+        <h1
+          class="play font-semibold text-white frank text-[22px] md:text-2xl flex items-center"
+        >
+          <i
+            class="ri-compass-fill text-[15px] md:text-[19px] text-black1 bg-lime1 flex justify-center items-center pt-[2px] w-6 h-6 md:w-7 md:h-7 rounded-full mr-2"
+          ></i>
+          UraniumTracker
+        </h1>
+      </a>
+
+      <!-- hamburger menu for mobile -->
+      <button id="menu-toggle" class="md:hidden text-white text-2xl">
+        <i class="ri-menu-3-line"></i>
+      </button>
+
+      <!-- links -->
+      <div
+        id="menu"
+        class="hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-7 absolute md:relative top-full left-0 right-0 bg-black1 md:bg-transparent pb-4 md:pb-0 shadow-md md:shadow-none w-full md:w-auto"
+      >
+        <ul
+          class="lato text-white tracking-wide capitalize text-[16.2px] pl-10 md:pl-0 mb-4 md:mb-0 font-light flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:gap-x-5 w-full md:w-auto"
+        >
+          <li>
+            <a
+              class="hover:text-white/70 transition-all duration-300 block py-2 px-4 md:p-0"
+              href="home.html"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-white/70 transition-all duration-300 block py-2 px-4 md:p-0"
+              href="news.html"
+              >News</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-white/70 transition-all duration-300 block py-2 px-4 md:p-0"
+              href="investments.html"
+              >Uranium Investments</a
+            >
+          </li>
+          <li>
+            <a
+              class="hover:text-white/70 transition-all duration-300 block py-2 px-4 md:p-0"
+              href="essentials.html"
+              >Uranium Essentials</a
+            >
+          </li>
+          <li>
+            <a
+              class="active transition-all duration-300 block py-2 px-4 md:p-0"
+              href="forum.html"
+              >Forum</a
+            >
+          </li>
+        </ul>
+
+        <a
+          href="#"
+          class="bg-lime1 text-black font-semibold ml-14 md:ml-0 px-3 py-1 hover:bg-lime2 transition-all duration-300 w-full md:w-auto text-center"
+          >Subscribe</a
+        >
+      </div>
+    </nav>
+
+    <!-- Wrapper Div -->
+    <div class="bg-black1 min-h-screen mt-20">
+      <!-- Header Container -->
+      <div class="w-full px-6 md:px-20 pt-6">
+        <!-- Background Image with Consistent Black Overlay -->
+        <div class="relative">
+          <img
+            src="https://images.pexels.com/photos/440731/pexels-photo-440731.jpeg?auto=compress&cs=tinysrgb&w=600"
+            alt="Background"
+            class="w-full h-96 object-cover rounded-lg"
+          />
+          <div class="absolute inset-0 bg-black opacity-60 rounded-lg"></div>
+          <!-- Circular Image and Text Overlay -->
+          <div
+            class="absolute top-[14rem] left-4 md:left-10 flex items-center space-x-4"
+          >
+            <div class="relative">
+              <img
+                src="https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376_640.jpg"
+                alt="Profile"
+                class="w-[6rem] h-[6rem] md:w-32 md:h-32 rounded-full border-4 border-white"
+              />
+            </div>
+            <div class="ml-4">
+              <h2 class="text-xl md:text-3xl font-bold text-white frank">
+                Recent News
+              </h2>
+              <p class="text-sm md:text-lg text-white">@RecentNews</p>
+              <div class="flex space-x-4 mt-2">
+                <a href="#" class="text-white text-xl"
+                  ><i class="ri-facebook-fill"></i
+                ></a>
+                <a href="#" class="text-white text-xl"
+                  ><i class="ri-twitter-fill"></i
+                ></a>
+                <a href="#" class="text-white text-xl"
+                  ><i class="ri-instagram-fill"></i
+                ></a>
+                <a href="#" class="text-white text-xl"
+                  ><i class="ri-youtube-fill"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <!-- Group Type, Posts, Members -->
+          <div
+            class="absolute bottom-[2.8rem] right-4 md:right-10 flex space-x-4 text-white text-xl frank"
+          >
+            <p>Group Type: <span class="font-bold">Public</span></p>
+            <p>Posts: <span class="font-bold">30</span></p>
+            <p>Members: <span class="font-bold">2,590</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Section -->
+      <div
+        class="flex flex-col md:flex-row px-6 md:px-20 mt-6 space-y-6 md:space-y-0 md:space-x-6"
+      >
+        <!-- Left Side - Post Sections -->
+        <div class="flex-1 space-y-6 md:mb-28">
+          <!-- Original Post Section -->
+          <div class="bg-zinc-800/30 p-6 rounded-md shadow-md">
+            <div class="flex flex-col">
+              <div class="flex items-start space-x-4 mb-4">
+                <img
+                  src="https://cdn.pixabay.com/photo/2024/06/13/05/31/men-8826710_640.jpg"
+                  alt="Avatar"
+                  class="w-12 h-12 rounded-full object-cover"
+                />
+                <textarea
+                  rows="4"
+                  placeholder="Share what are you thinking here..."
+                  class="bg-black1 text-white w-full p-4 border-none focus:outline-none resize-y rounded-md placeholder-gray-400"
+                ></textarea>
+              </div>
+              <hr class="my-4 border-zinc-600" />
+              <div class="flex items-center justify-between">
+                <div class="flex space-x-4">
+                  <label
+                    for="galleryInput"
+                    class="cursor-pointer text-white/50"
+                  >
+                    <i class="ri-image-fill text-2xl hover:text-lime2"></i>
+                  </label>
+                  <input
+                    type="file"
+                    id="galleryInput"
+                    accept="image/*"
+                    class="hidden"
+                  />
+                  <label for="pinInput" class="cursor-pointer text-white/50">
+                    <i class="ri-attachment-2 text-2xl hover:text-lime2"></i>
+                  </label>
+                  <input type="file" id="pinInput" class="hidden" />
+                </div>
+                <button
+                  class="bg-lime1 flex items-center px-5 py-2 rounded-sm text-black hover:bg-lime2 cursor-pointer"
+                >
+                  <i class="ri-send-plane-fill text-lg mr-3"></i>
+                  Post
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- New Social Media Post Section -->
+          <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
+            <!-- User Profile and Post Header -->
+            <div class="flex items-center mb-6">
+              <img
+                src="https://cdn.pixabay.com/photo/2016/11/23/00/57/adult-1851571_640.jpg"
+                alt="Profile"
+                class="w-12 h-12 rounded-full mr-3 object-cover"
+              />
+              <div>
+                <h2 class="font-semibold text-white mb-1">Ethan Blake</h2>
+                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                  <i class="ri-earth-fill"></i>
+                  <span>Public</span>
+                  <span>•</span>
+                  <span>2 hours ago</span>
+                </p>
+              </div>
+            </div>
+
+            <!-- Post Content -->
+            <p class="text-white/80 mb-6 px-1">
+              Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Omnis officia maxime voluptatibus
+              perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+              voluptatum molestias incidunt fugit amet obcaecati, magnam ex,
+              cumque nihil, doloribus nisi eos? Est, quam? Eligendi molestiae
+              accusantium dolores animi sed excepturi commodi doloremque
+              recusandae, eos dolorem! Nam nisi quas dolorem. 😊
+            </p>
+
+            <!-- Post Image -->
+            <img
+              src="https://cdn.pixabay.com/photo/2022/12/31/14/32/cat-7688749_640.jpg"
+              alt="Desk setup"
+              class="w-full rounded-lg mb-4 object-cover"
+              style="height: 300px"
+            />
+
+            <!-- Comments and Share Section -->
+            <div
+              class="flex items-center justify-between text-sm text-gray-400 mb-4"
+            >
+              <div class="flex gap-2">
+                <span>👍😆❤️ 20</span>
+              </div>
+              <div class="flex gap-3 items-center">
+                <span>12 Comments</span>
+                <span class="mx-2">•</span>
+                <span>5 Share</span>
+              </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="my-4 border-zinc-600" />
+
+            <!-- Like, Comment, and Share Buttons -->
+            <div class="flex gap-2">
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+              >
+                <i class="ri-thumb-up-line mr-1"></i> Like
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-chat-3-line mr-1"></i> Comment
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-share-forward-line mr-1"></i> Share
+              </button>
+            </div>
+          </div>
+
+          <!-- New Text-Only Section (Added Below the Image Post) -->
+          <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
+                alt="Profile"
+                class="w-12 h-12 rounded-full mr-3 object-cover"
+              />
+              <div>
+                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
+                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                  <i class="ri-earth-fill"></i>
+                  <span>Public</span>
+                  <span>•</span>
+                  <span>2 minutes ago</span>
+                </p>
+              </div>
+            </div>
+            <p class="text-white/80 mb-4 px-1">
+              Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Omnis officia maxime voluptatibus
+              perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+              voluptatum molestias incidunt fugit amet obcaecati, magnam ex,
+              cumque nihil, doloribus nisi eos? Est, quam? Eligendi molestiae
+              accusantium dolores animi sed excepturi commodi doloremque
+              recusandae, eos dolorem! Nam nisi quas dolorem. 😊
+            </p>
+
+            <!-- Adjusted Comments and Share section with dot separator -->
+            <div
+              class="flex items-center justify-between text-sm text-gray-400"
+            >
+              <div class="flex gap-2">
+                <span>👍😆❤️ 20</span>
+              </div>
+              <div class="flex gap-3 items-center">
+                <span>09 Comments</span>
+                <span class="">•</span>
+                <span>05 Share</span>
+              </div>
+            </div>
+            <hr class="my-4 border-zinc-600" />
+
+            <!-- Added icons for Like, Comment, and Share -->
+            <div class="flex gap-1">
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+              >
+                <i class="ri-thumb-up-line mr-1"></i> Like
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-chat-3-line mr-1"></i> Comment
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-share-forward-line mr-1"></i> Share
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side - Member Section and Tags -->
+        <div class="w-full md:w-1/3 space-y-6">
+          <!-- Member Section -->
+
+          <div class="bg-zinc-800/30 py-6 px-8 rounded-md shadow-sm">
+            <h2 class="text-lg font-semibold text-white mb-8 frank">Members</h2>
+            <ul class="space-y-6">
+              <!-- Member 1 -->
+              <li class="flex items-center space-x-4">
+                <img
+                  src="https://cdn.pixabay.com/photo/2016/11/23/00/57/adult-1851571_640.jpg"
+                  alt="Member 1"
+                  class="w-11 h-11 rounded-full order-white object-cover"
+                />
+                <div>
+                  <p
+                    class="text-sm font-medium frank tracking-wide text-white/90"
+                  >
+                    Ethan Blake
+                  </p>
+                  <p class="text-[13px] text-white/40">@ethanblake</p>
+                </div>
+              </li>
+              <!-- Member 2 -->
+              <li class="flex items-center space-x-4 mt-4">
+                <img
+                  src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
+                  alt="Membert 2"
+                  class="w-11 h-11 rounded-full order-white object-cover"
+                />
+                <div>
+                  <p
+                    class="text-sm font-medium frank tracking-wide text-white/90"
+                  >
+                    Michelle Jones
+                  </p>
+                  <p class="text-[13px] text-white/40">@michellejones</p>
+                </div>
+              </li>
+              <!-- Member 3 -->
+              <li class="flex items-center space-x-4 mt-4">
+                <img
+                  src="https://cdn.pixabay.com/photo/2024/08/13/08/52/ai-generated-8965482_640.jpg"
+                  alt="Member 3"
+                  class="w-11 h-11 rounded-full order-white object-cover"
+                />
+                <div>
+                  <p
+                    class="text-sm font-medium frank tracking-wide text-white/90"
+                  >
+                    Liam Johnson
+                  </p>
+                  <p class="text-[13px] text-white/40">@liamjohnson</p>
+                </div>
+              </li>
+              <!-- Member 4 -->
+              <li class="flex items-center space-x-4">
+                <img
+                  src="https://cdn.pixabay.com/photo/2024/06/22/22/56/man-8847069_640.jpg"
+                  alt="Member 4"
+                  class="w-11 h-11 rounded-full order-white object-cover"
+                />
+                <div>
+                  <p
+                    class="text-sm font-medium frank tracking-wide text-white/90"
+                  >
+                    Ethan Smith
+                  </p>
+                  <p class="text-[13px] text-white/40">@ethansmith</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Tags Container -->
+          <div
+            class="flex gap-2 ml-[2px] flex-wrap mt-4"
+            style="margin-bottom: 6rem"
+          >
+            <a
+              href="#"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              >Uranium</a
+            >
+            <a
+              href="#"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              >NuclearEnergy</a
+            >
+            <a
+              href="#"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              >Radioactivity</a
+            >
+            <a
+              href="#"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              >Fission</a
+            >
+            <a
+              href="#"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              >NuclearPhysics</a
+            >
+            <a
+              href="#"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              >Isotopes</a
+            >
+            <a
+              href="#"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              >Uranium235</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer ================================================================================ -->
+    <footer class="bg-[#111111] text-white py-14 px-6 lg:px-[1.2rem]">
+      <div class="lg:w-[90%] mx-auto w-full">
+        <div
+          class="container mx-auto flex flex-col justify-center items-center text-center"
+        >
+          <!-- Newsletter Subscription Section -->
+          <h2 class="text-[17px] frank sm:text-[23px] font-semibold">
+            Sign Up For Our Newsletter
+          </h2>
+          <p class="text-sm publicsans mt-3 font-normal text-white/50">
+            Receive uranium market updates and 70% off our premium reports.
+          </p>
+
+          <!-- Email Subscription Form -->
+          <div
+            class="flex flex-col sm:flex-row justify-center items-center mt-6 w-full max-w-[600px]"
+          >
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              class="px-4 py-2 rounded-sm mb-4 sm:mb-0 sm:mr-2 w-full bg-white/5 text-black focus:outline-none placeholder:text-[14px]"
+            />
+            <button
+              class="bg-lime1 rounded-sm text-black text-[15px] font-bold px-6 py-2 hover:bg-lime2 transition-all duration-200"
+            >
+              Subscribe
+            </button>
+          </div>
+
+          <!-- Social Media Icons -->
+          <div class="flex justify-center space-x-5 mt-6">
+            <a
+              href="#"
+              class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
+            >
+              <i class="ri-facebook-fill text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
+            >
+              <i class="ri-twitter-fill text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
+            >
+              <i class="ri-instagram-line text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="text-white/40 transition ease-in-out duration-300 hover:text-black/90"
+            >
+              <i class="ri-linkedin-box-fill text-xl"></i>
+            </a>
+          </div>
+
+          <!-- Horizontal Line -->
+          <hr class="w-full border-t border-zinc-600 mt-10" />
+
+          <!-- Footer Links and Copyright -->
+          <div
+            class="flex flex-col sm:flex-row justify-between items-center w-full mt-4 text-sm"
+          >
+            <!-- Footer links aligned to the end -->
+            <div class="sm:flex-row space-y-2 sm:space-y-0 sm:space-x-3">
+              <a href="home.html" class="hover:underline text-gray-400">Home</a>
+              <a href="news.html" class="hover:underline text-gray-400">News</a>
+              <a href="investments.html" class="hover:underline text-gray-400"
+                >Uranium Investments</a
+              >
+              <a href="essentials.html" class="hover:underline text-gray-400"
+                >Uranium Essentials</a
+              >
+              <a href="forum.html" class="hover:underline text-gray-400"
+                >Forum</a
+              >
+            </div>
+            <!-- All rights reserved aligned with HR line -->
+            <p class="text-gray-400 mb-4 sm:mb-0">
+              UraniumTracker. All rights reserved 2024
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- js  -->
+    <!-- GSAP CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <script src="home.js"></script>
+  </body>
+</html>
