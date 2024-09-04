@@ -249,10 +249,21 @@ document.addEventListener("DOMContentLoaded", () => {
 // featured news sec animation ===================================
 gsap.registerPlugin(ScrollTrigger);
 
+function setOverflowHidden(selector) {
+  document.querySelector(selector).style.overflow = "hidden";
+}
+
+function resetOverflow(selector) {
+  document.querySelector(selector).style.overflow = "";
+}
+
+// Featured News Section Animation
 gsap.from(".featured-news", {
   opacity: 0,
   y: 50,
   duration: 1,
+  onStart: () => setOverflowHidden(".featured-news"),
+  onComplete: () => resetOverflow(".featured-news"),
   scrollTrigger: {
     trigger: ".featured-news",
     start: "top 80%",
@@ -260,11 +271,14 @@ gsap.from(".featured-news", {
   },
 });
 
+// News Cards Animation
 gsap.from(".news-card", {
   opacity: 0,
   x: -50,
   duration: 1,
   stagger: 0.2,
+  onStart: () => setOverflowHidden(".featured-news"),
+  onComplete: () => resetOverflow(".featured-news"),
   scrollTrigger: {
     trigger: ".news-card",
     start: "top 80%",
@@ -272,10 +286,13 @@ gsap.from(".news-card", {
   },
 });
 
+// Tweets Section Animation
 gsap.from(".tweets", {
   opacity: 0,
   x: 50,
   duration: 1,
+  onStart: () => setOverflowHidden(".tweets"),
+  onComplete: () => resetOverflow(".tweets"),
   scrollTrigger: {
     trigger: ".tweets",
     start: "top 80%",
@@ -283,11 +300,14 @@ gsap.from(".tweets", {
   },
 });
 
+// Tweet Cards Animation
 gsap.from(".tweet-cards > div", {
   opacity: 0,
   y: 50,
   duration: 1,
   stagger: 0.3,
+  onStart: () => setOverflowHidden(".tweets"),
+  onComplete: () => resetOverflow(".tweets"),
   scrollTrigger: {
     trigger: ".tweet-cards",
     start: "top 80%",
