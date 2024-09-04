@@ -27,6 +27,18 @@
         },
       };
     </script>
+    <style>
+      /* Hide scrollbar for Chrome, Safari and Opera */
+      .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+      }
+
+      /* Hide scrollbar for IE, Edge and Firefox */
+      .scrollbar-hide {
+        -ms-overflow-style: none; /* IE and Edge */
+        scrollbar-width: none; /* Firefox */
+      }
+    </style>
   </head>
   <body>
     <!-- navbar  -->
@@ -163,7 +175,9 @@
         class="flex flex-col md:flex-row px-6 md:px-20 mt-6 space-y-6 md:space-y-0 md:space-x-6"
       >
         <!-- Left Side - Post Sections -->
-        <div class="flex-1 space-y-6 md:mb-28">
+        <div
+          class="flex-1 space-y-6 md:mb-28 h-screen overflow-y-auto scrollbar-hide"
+        >
           <!-- Original Post Section -->
           <div class="bg-zinc-800/30 p-6 rounded-md shadow-md">
             <div class="flex flex-col">
@@ -287,6 +301,316 @@
           </div>
 
           <!-- New Text-Only Section (Added Below the Image Post) -->
+          <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
+                alt="Profile"
+                class="w-12 h-12 rounded-full mr-3 object-cover"
+              />
+              <div>
+                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
+                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                  <i class="ri-earth-fill"></i>
+                  <span>Public</span>
+                  <span>•</span>
+                  <span>2 minutes ago</span>
+                </p>
+              </div>
+            </div>
+            <p class="text-white/80 mb-4 px-1">
+              Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Omnis officia maxime voluptatibus
+              perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+              voluptatum molestias incidunt fugit amet obcaecati, magnam ex,
+              cumque nihil, doloribus nisi eos? Est, quam? Eligendi molestiae
+              accusantium dolores animi sed excepturi commodi doloremque
+              recusandae, eos dolorem! Nam nisi quas dolorem. 😊
+            </p>
+
+            <!-- Adjusted Comments and Share section with dot separator -->
+            <div
+              class="flex items-center justify-between text-sm text-gray-400"
+            >
+              <div class="flex gap-2">
+                <span>👍😆❤️ 20</span>
+              </div>
+              <div class="flex gap-3 items-center">
+                <span>09 Comments</span>
+                <span class="">•</span>
+                <span>05 Share</span>
+              </div>
+            </div>
+            <hr class="my-4 border-zinc-600" />
+
+            <!-- Added icons for Like, Comment, and Share -->
+            <div class="flex gap-1">
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+              >
+                <i class="ri-thumb-up-line mr-1"></i> Like
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-chat-3-line mr-1"></i> Comment
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-share-forward-line mr-1"></i> Share
+              </button>
+            </div>
+          </div>
+          <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
+                alt="Profile"
+                class="w-12 h-12 rounded-full mr-3 object-cover"
+              />
+              <div>
+                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
+                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                  <i class="ri-earth-fill"></i>
+                  <span>Public</span>
+                  <span>•</span>
+                  <span>2 minutes ago</span>
+                </p>
+              </div>
+            </div>
+            <p class="text-white/80 mb-4 px-1">
+              Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Omnis officia maxime voluptatibus
+              perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+              voluptatum molestias incidunt fugit amet obcaecati, magnam ex,
+              cumque nihil, doloribus nisi eos? Est, quam? Eligendi molestiae
+              accusantium dolores animi sed excepturi commodi doloremque
+              recusandae, eos dolorem! Nam nisi quas dolorem. 😊
+            </p>
+
+            <!-- Adjusted Comments and Share section with dot separator -->
+            <div
+              class="flex items-center justify-between text-sm text-gray-400"
+            >
+              <div class="flex gap-2">
+                <span>👍😆❤️ 20</span>
+              </div>
+              <div class="flex gap-3 items-center">
+                <span>09 Comments</span>
+                <span class="">•</span>
+                <span>05 Share</span>
+              </div>
+            </div>
+            <hr class="my-4 border-zinc-600" />
+
+            <!-- Added icons for Like, Comment, and Share -->
+            <div class="flex gap-1">
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+              >
+                <i class="ri-thumb-up-line mr-1"></i> Like
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-chat-3-line mr-1"></i> Comment
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-share-forward-line mr-1"></i> Share
+              </button>
+            </div>
+          </div>
+          <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
+                alt="Profile"
+                class="w-12 h-12 rounded-full mr-3 object-cover"
+              />
+              <div>
+                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
+                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                  <i class="ri-earth-fill"></i>
+                  <span>Public</span>
+                  <span>•</span>
+                  <span>2 minutes ago</span>
+                </p>
+              </div>
+            </div>
+            <p class="text-white/80 mb-4 px-1">
+              Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Omnis officia maxime voluptatibus
+              perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+              voluptatum molestias incidunt fugit amet obcaecati, magnam ex,
+              cumque nihil, doloribus nisi eos? Est, quam? Eligendi molestiae
+              accusantium dolores animi sed excepturi commodi doloremque
+              recusandae, eos dolorem! Nam nisi quas dolorem. 😊
+            </p>
+
+            <!-- Adjusted Comments and Share section with dot separator -->
+            <div
+              class="flex items-center justify-between text-sm text-gray-400"
+            >
+              <div class="flex gap-2">
+                <span>👍😆❤️ 20</span>
+              </div>
+              <div class="flex gap-3 items-center">
+                <span>09 Comments</span>
+                <span class="">•</span>
+                <span>05 Share</span>
+              </div>
+            </div>
+            <hr class="my-4 border-zinc-600" />
+
+            <!-- Added icons for Like, Comment, and Share -->
+            <div class="flex gap-1">
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+              >
+                <i class="ri-thumb-up-line mr-1"></i> Like
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-chat-3-line mr-1"></i> Comment
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-share-forward-line mr-1"></i> Share
+              </button>
+            </div>
+          </div>
+          <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
+                alt="Profile"
+                class="w-12 h-12 rounded-full mr-3 object-cover"
+              />
+              <div>
+                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
+                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                  <i class="ri-earth-fill"></i>
+                  <span>Public</span>
+                  <span>•</span>
+                  <span>2 minutes ago</span>
+                </p>
+              </div>
+            </div>
+            <p class="text-white/80 mb-4 px-1">
+              Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Omnis officia maxime voluptatibus
+              perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+              voluptatum molestias incidunt fugit amet obcaecati, magnam ex,
+              cumque nihil, doloribus nisi eos? Est, quam? Eligendi molestiae
+              accusantium dolores animi sed excepturi commodi doloremque
+              recusandae, eos dolorem! Nam nisi quas dolorem. 😊
+            </p>
+
+            <!-- Adjusted Comments and Share section with dot separator -->
+            <div
+              class="flex items-center justify-between text-sm text-gray-400"
+            >
+              <div class="flex gap-2">
+                <span>👍😆❤️ 20</span>
+              </div>
+              <div class="flex gap-3 items-center">
+                <span>09 Comments</span>
+                <span class="">•</span>
+                <span>05 Share</span>
+              </div>
+            </div>
+            <hr class="my-4 border-zinc-600" />
+
+            <!-- Added icons for Like, Comment, and Share -->
+            <div class="flex gap-1">
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+              >
+                <i class="ri-thumb-up-line mr-1"></i> Like
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-chat-3-line mr-1"></i> Comment
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-share-forward-line mr-1"></i> Share
+              </button>
+            </div>
+          </div>
+          <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
+            <div class="flex items-center mb-4">
+              <img
+                src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
+                alt="Profile"
+                class="w-12 h-12 rounded-full mr-3 object-cover"
+              />
+              <div>
+                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
+                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                  <i class="ri-earth-fill"></i>
+                  <span>Public</span>
+                  <span>•</span>
+                  <span>2 minutes ago</span>
+                </p>
+              </div>
+            </div>
+            <p class="text-white/80 mb-4 px-1">
+              Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
+              consectetur adipisicing elit. Omnis officia maxime voluptatibus
+              perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+              voluptatum molestias incidunt fugit amet obcaecati, magnam ex,
+              cumque nihil, doloribus nisi eos? Est, quam? Eligendi molestiae
+              accusantium dolores animi sed excepturi commodi doloremque
+              recusandae, eos dolorem! Nam nisi quas dolorem. 😊
+            </p>
+
+            <!-- Adjusted Comments and Share section with dot separator -->
+            <div
+              class="flex items-center justify-between text-sm text-gray-400"
+            >
+              <div class="flex gap-2">
+                <span>👍😆❤️ 20</span>
+              </div>
+              <div class="flex gap-3 items-center">
+                <span>09 Comments</span>
+                <span class="">•</span>
+                <span>05 Share</span>
+              </div>
+            </div>
+            <hr class="my-4 border-zinc-600" />
+
+            <!-- Added icons for Like, Comment, and Share -->
+            <div class="flex gap-1">
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+              >
+                <i class="ri-thumb-up-line mr-1"></i> Like
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-chat-3-line mr-1"></i> Comment
+              </button>
+              <button
+                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+              >
+                <i class="ri-share-forward-line mr-1"></i> Share
+              </button>
+            </div>
+          </div>
           <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
             <div class="flex items-center mb-4">
               <img
