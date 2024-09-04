@@ -344,3 +344,97 @@ gsap.from(".image-animate", {
   stagger: 0.2,
   ease: "power2.out",
 });
+
+/*videos section*/
+// JavaScript for main video play/pause toggle
+function togglePlayPause(videoId) {
+  const video = document.getElementById(videoId);
+  const playIcon = document.getElementById("play-icon-main");
+  const pauseIcon = document.getElementById("pause-icon-main");
+
+  if (video.paused) {
+    video.play();
+    playIcon.classList.add("hidden");
+    pauseIcon.classList.remove("hidden");
+  } else {
+    video.pause();
+    playIcon.classList.remove("hidden");
+    pauseIcon.classList.add("hidden");
+  }
+}
+
+// JavaScript for side video play/pause toggle
+function togglePlayPauseSide(videoId, btnId) {
+  const video = document.getElementById(videoId);
+  const playIcon = document.querySelector(`#${btnId} #play-icon-${videoId}`);
+  const pauseIcon = document.querySelector(`#${btnId} #pause-icon-${videoId}`);
+
+  if (video.paused) {
+    video.play();
+    playIcon.classList.add("hidden");
+    pauseIcon.classList.remove("hidden");
+  } else {
+    video.pause();
+    playIcon.classList.remove("hidden");
+    pauseIcon.classList.add("hidden");
+  }
+}
+
+// Update button states when the video ends
+document.getElementById("main-video").addEventListener("ended", function () {
+  const playIcon = document.getElementById("play-icon-main");
+  const pauseIcon = document.getElementById("pause-icon-main");
+  playIcon.classList.remove("hidden");
+  pauseIcon.classList.add("hidden");
+});
+
+document.getElementById("side-video-1").addEventListener("ended", function () {
+  const playIcon = document.querySelector(
+    "#play-pause-btn-side-1 #play-icon-side-1"
+  );
+  const pauseIcon = document.querySelector(
+    "#play-pause-btn-side-1 #pause-icon-side-1"
+  );
+  playIcon.classList.remove("hidden");
+  pauseIcon.classList.add("hidden");
+});
+
+function togglePlayPause(videoId, btnId) {
+  const video = document.getElementById(videoId);
+  const playIcon = document.querySelector(`#${btnId} svg[id^="play-icon"]`);
+  const pauseIcon = document.querySelector(`#${btnId} svg[id^="pause-icon"]`);
+
+  if (video.paused) {
+    video.play();
+    playIcon.classList.add("hidden");
+    pauseIcon.classList.remove("hidden");
+  } else {
+    video.pause();
+    playIcon.classList.remove("hidden");
+    pauseIcon.classList.add("hidden");
+  }
+}
+
+// Update button states when the video ends
+document.getElementById("side-video-1").addEventListener("ended", function () {
+  document.getElementById("play-icon-side-1").classList.remove("hidden");
+  document.getElementById("pause-icon-side-1").classList.add("hidden");
+});
+
+//videos section
+function togglePlayPause(event, videoId, buttonId) {
+  event.stopPropagation(); // Prevent the click event from propagating to the anchor tag
+  const video = document.getElementById(videoId);
+  const playIcon = document.getElementById("play-icon-main");
+  const pauseIcon = document.getElementById("pause-icon-main");
+
+  if (video.paused) {
+    video.play();
+    playIcon.classList.add("hidden");
+    pauseIcon.classList.remove("hidden");
+  } else {
+    video.pause();
+    playIcon.classList.remove("hidden");
+    pauseIcon.classList.add("hidden");
+  }
+}
