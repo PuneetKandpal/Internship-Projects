@@ -1240,3 +1240,4 @@ gsap.from(".sec-1", {
     // toggleActions: "play none none reverse",
   },
 });
+
