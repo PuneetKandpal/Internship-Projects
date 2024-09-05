@@ -111,7 +111,7 @@
     </nav>
 
     <!-- Wrapper Div -->
-    <div class="bg-black1 min-h-screen mt-20">
+    <div class="bg-black1 min-h-screen mt-[84px] sec-1">
       <!-- Header Container -->
 
       <!-- Content Section -->
@@ -119,7 +119,7 @@
         class="flex flex-col md:flex-row px-6 md:px-20 mt-6 space-y-6 md:space-y-0 md:space-x-6"
       >
         <!-- Left Side - Post Sections -->
-        <div class="flex-1 space-y-6 md:mb-28 mt-5">
+        <div class="flex-1 space-y-6 md:mb-24 mt-5">
           <!-- Original Post Section -->
           <div class="bg-zinc-800/30 p-6 rounded-md shadow-md">
             <div class="flex flex-col">
@@ -127,22 +127,22 @@
                 <img
                   src="https://cdn.pixabay.com/photo/2024/06/13/05/31/men-8826710_640.jpg"
                   alt="Avatar"
-                  class="w-12 h-12 rounded-full object-cover"
+                  class="w-10 h-10 rounded-full object-cover"
                 />
                 <textarea
-                  rows="4"
+                  rows="5"
                   placeholder="Share what are you thinking here..."
-                  class="bg-black1 text-white w-full p-4 border-none focus:outline-none resize-y rounded-md placeholder-gray-400"
+                  class="bg-black1 text-white w-full p-4 border-none focus:outline-none resize-y rounded-md placeholder-white/20"
                 ></textarea>
               </div>
-              <hr class="my-4 border-zinc-600" />
+              <hr class="my-4 border-white/10" />
               <div class="flex items-center justify-between">
                 <div class="flex space-x-4">
                   <label
                     for="galleryInput"
-                    class="cursor-pointer text-white/50"
+                    class="cursor-pointer text-white/30"
                   >
-                    <i class="ri-image-fill text-2xl hover:text-lime2"></i>
+                    <i class="ri-image-fill text-xl hover:text-lime2"></i>
                   </label>
                   <input
                     type="file"
@@ -150,15 +150,15 @@
                     accept="image/*"
                     class="hidden"
                   />
-                  <label for="pinInput" class="cursor-pointer text-white/50">
-                    <i class="ri-attachment-2 text-2xl hover:text-lime2"></i>
+                  <label for="pinInput" class="cursor-pointer text-white/30">
+                    <i class="ri-attachment-2 text-xl hover:text-lime2"></i>
                   </label>
                   <input type="file" id="pinInput" class="hidden" />
                 </div>
                 <button
-                  class="bg-lime1 flex items-center px-5 py-2 rounded-sm text-black hover:bg-lime2 cursor-pointer"
+                  class="bg-lime1 flex items-center px-3 pr-[14px] py-[3px] font-medium rounded-sm text-black hover:bg-lime2 cursor-pointer"
                 >
-                  <i class="ri-send-plane-fill text-lg mr-3"></i>
+                  <i class="ri-send-plane-fill text-[18px] mt-1 mr-2"></i>
                   Post
                 </button>
               </div>
@@ -172,11 +172,15 @@
               <img
                 src="https://cdn.pixabay.com/photo/2016/11/23/00/57/adult-1851571_640.jpg"
                 alt="Profile"
-                class="w-12 h-12 rounded-full mr-3 object-cover"
+                class="w-10 h-10 rounded-full mr-4 object-cover"
               />
               <div>
-                <h2 class="font-semibold text-white mb-1">Ethan Blake</h2>
-                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                <h2 class="font-medium frank text-white/95 mb-[2px]">
+                  Ethan Blake
+                </h2>
+                <p
+                  class="text-[13px] text-white/40 font-normal flex items-center space-x-1"
+                >
                   <i class="ri-earth-fill"></i>
                   <span>Public</span>
                   <span>•</span>
@@ -186,7 +190,7 @@
             </div>
 
             <!-- Post Content -->
-            <p class="text-white/80 mb-6 px-1">
+            <p class="text-white/60 lato font-normal mb-6 px-1">
               Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Omnis officia maxime voluptatibus
               perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
@@ -207,12 +211,14 @@
 
             <!-- Comments and Share Section -->
             <div
-              class="flex items-center justify-between text-sm text-gray-400 mb-4"
+              class="flex items-center justify-between text-sm text-white/60 mb-4"
             >
               <div class="flex gap-2">
-                <span>👍😆❤️ 20</span>
+                <span>❤️ 20</span>
               </div>
-              <div class="flex gap-3 items-center">
+              <div
+                class="flex gap-3 font-normal text-white/50 lato items-center"
+              >
                 <span>12 Comments</span>
                 <span class="mx-2">•</span>
                 <span>5 Share</span>
@@ -220,24 +226,24 @@
             </div>
 
             <!-- Divider -->
-            <hr class="my-4 border-zinc-600" />
+            <hr class="my-4 border-white/10" />
 
             <!-- Like, Comment, and Share Buttons -->
             <div class="flex gap-2">
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 pr-2 py-2 rounded"
               >
-                <i class="ri-thumb-up-line mr-1"></i> Like
+                <i class="ri-thumb-up-line mr-2"></i> Like
               </button>
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 px-4 py-2 rounded"
               >
-                <i class="ri-chat-3-line mr-1"></i> Comment
+                <i class="ri-chat-3-line mr-2"></i> Comment
               </button>
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 px-4 py-2 rounded"
               >
-                <i class="ri-share-forward-line mr-1"></i> Share
+                <i class="ri-share-forward-line mr-2"></i> Share
               </button>
             </div>
           </div>
@@ -248,11 +254,15 @@
               <img
                 src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
                 alt="Profile"
-                class="w-12 h-12 rounded-full mr-3 object-cover"
+                class="w-10 h-10 rounded-full mr-4 object-cover"
               />
               <div>
-                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
-                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                <h2 class="font-medium frank text-white/95 mb-[2px]">
+                  Michelle Jones
+                </h2>
+                <p
+                  class="text-[13px] text-white/40 font-normal flex items-center space-x-1"
+                >
                   <i class="ri-earth-fill"></i>
                   <span>Public</span>
                   <span>•</span>
@@ -260,7 +270,7 @@
                 </p>
               </div>
             </div>
-            <p class="text-white/80 mb-4 px-1">
+            <p class="text-white/60 lato font-normal mb-6 px-1">
               Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Omnis officia maxime voluptatibus
               perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
@@ -273,12 +283,12 @@
 
             <!-- Adjusted Comments and Share section with dot separator -->
             <div
-              class="flex items-center justify-between text-sm text-gray-400"
+              class="flex items-center justify-between text-sm text-white/60 mb-4"
             >
               <div class="flex gap-2">
-                <span>👍😆❤️ 20</span>
+                <span>❤️ 20</span>
               </div>
-              <div class="flex gap-3 items-center">
+              <div class="flex gap-3 font-normal text-white/50 items-center">
                 <span>09 Comments</span>
                 <span class="">•</span>
                 <span>05 Share</span>
@@ -287,34 +297,39 @@
             <hr class="my-4 border-zinc-600" />
 
             <!-- Added icons for Like, Comment, and Share -->
-            <div class="flex gap-1">
+            <div class="flex gap-2">
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 pr-2 py-2 rounded"
               >
-                <i class="ri-thumb-up-line mr-1"></i> Like
+                <i class="ri-thumb-up-line mr-2"></i> Like
               </button>
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 px-4 py-2 rounded"
               >
-                <i class="ri-chat-3-line mr-1"></i> Comment
+                <i class="ri-chat-3-line mr-2"></i> Comment
               </button>
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 px-4 py-2 rounded"
               >
-                <i class="ri-share-forward-line mr-1"></i> Share
+                <i class="ri-share-forward-line mr-2"></i> Share
               </button>
             </div>
           </div>
+
           <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
             <div class="flex items-center mb-4">
               <img
                 src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
                 alt="Profile"
-                class="w-12 h-12 rounded-full mr-3 object-cover"
+                class="w-10 h-10 rounded-full mr-4 object-cover"
               />
               <div>
-                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
-                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                <h2 class="font-medium frank text-white/95 mb-[2px]">
+                  Michelle Jones
+                </h2>
+                <p
+                  class="text-[13px] text-white/40 font-normal flex items-center space-x-1"
+                >
                   <i class="ri-earth-fill"></i>
                   <span>Public</span>
                   <span>•</span>
@@ -322,7 +337,7 @@
                 </p>
               </div>
             </div>
-            <p class="text-white/80 mb-4 px-1">
+            <p class="text-white/60 lato font-normal mb-6 px-1">
               Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Omnis officia maxime voluptatibus
               perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
@@ -335,12 +350,12 @@
 
             <!-- Adjusted Comments and Share section with dot separator -->
             <div
-              class="flex items-center justify-between text-sm text-gray-400"
+              class="flex items-center justify-between text-sm text-white/60 mb-4"
             >
               <div class="flex gap-2">
-                <span>👍😆❤️ 20</span>
+                <span>❤️ 20</span>
               </div>
-              <div class="flex gap-3 items-center">
+              <div class="flex gap-3 font-normal text-white/50 items-center">
                 <span>09 Comments</span>
                 <span class="">•</span>
                 <span>05 Share</span>
@@ -349,34 +364,39 @@
             <hr class="my-4 border-zinc-600" />
 
             <!-- Added icons for Like, Comment, and Share -->
-            <div class="flex gap-1">
+            <div class="flex gap-2">
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 pr-2 py-2 rounded"
               >
-                <i class="ri-thumb-up-line mr-1"></i> Like
+                <i class="ri-thumb-up-line mr-2"></i> Like
               </button>
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 px-4 py-2 rounded"
               >
-                <i class="ri-chat-3-line mr-1"></i> Comment
+                <i class="ri-chat-3-line mr-2"></i> Comment
               </button>
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 px-4 py-2 rounded"
               >
-                <i class="ri-share-forward-line mr-1"></i> Share
+                <i class="ri-share-forward-line mr-2"></i> Share
               </button>
             </div>
           </div>
+
           <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
             <div class="flex items-center mb-4">
               <img
                 src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
                 alt="Profile"
-                class="w-12 h-12 rounded-full mr-3 object-cover"
+                class="w-10 h-10 rounded-full mr-4 object-cover"
               />
               <div>
-                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
-                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                <h2 class="font-medium frank text-white/95 mb-[2px]">
+                  Michelle Jones
+                </h2>
+                <p
+                  class="text-[13px] text-white/40 font-normal flex items-center space-x-1"
+                >
                   <i class="ri-earth-fill"></i>
                   <span>Public</span>
                   <span>•</span>
@@ -384,7 +404,7 @@
                 </p>
               </div>
             </div>
-            <p class="text-white/80 mb-4 px-1">
+            <p class="text-white/60 lato font-normal mb-6 px-1">
               Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Omnis officia maxime voluptatibus
               perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
@@ -397,12 +417,12 @@
 
             <!-- Adjusted Comments and Share section with dot separator -->
             <div
-              class="flex items-center justify-between text-sm text-gray-400"
+              class="flex items-center justify-between text-sm text-white/60 mb-4"
             >
               <div class="flex gap-2">
-                <span>👍😆❤️ 20</span>
+                <span>❤️ 20</span>
               </div>
-              <div class="flex gap-3 items-center">
+              <div class="flex gap-3 font-normal text-white/50 items-center">
                 <span>09 Comments</span>
                 <span class="">•</span>
                 <span>05 Share</span>
@@ -411,34 +431,39 @@
             <hr class="my-4 border-zinc-600" />
 
             <!-- Added icons for Like, Comment, and Share -->
-            <div class="flex gap-1">
+            <div class="flex gap-2">
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 pr-2 py-2 rounded"
               >
-                <i class="ri-thumb-up-line mr-1"></i> Like
+                <i class="ri-thumb-up-line mr-2"></i> Like
               </button>
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 px-4 py-2 rounded"
               >
-                <i class="ri-chat-3-line mr-1"></i> Comment
+                <i class="ri-chat-3-line mr-2"></i> Comment
               </button>
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 px-4 py-2 rounded"
               >
-                <i class="ri-share-forward-line mr-1"></i> Share
+                <i class="ri-share-forward-line mr-2"></i> Share
               </button>
             </div>
           </div>
+
           <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
             <div class="flex items-center mb-4">
               <img
                 src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
                 alt="Profile"
-                class="w-12 h-12 rounded-full mr-3 object-cover"
+                class="w-10 h-10 rounded-full mr-4 object-cover"
               />
               <div>
-                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
-                <p class="text-sm text-gray-400 flex items-center space-x-1">
+                <h2 class="font-medium frank text-white/95 mb-[2px]">
+                  Michelle Jones
+                </h2>
+                <p
+                  class="text-[13px] text-white/40 font-normal flex items-center space-x-1"
+                >
                   <i class="ri-earth-fill"></i>
                   <span>Public</span>
                   <span>•</span>
@@ -446,7 +471,7 @@
                 </p>
               </div>
             </div>
-            <p class="text-white/80 mb-4 px-1">
+            <p class="text-white/60 lato font-normal mb-6 px-1">
               Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
               consectetur adipisicing elit. Omnis officia maxime voluptatibus
               perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
@@ -459,12 +484,12 @@
 
             <!-- Adjusted Comments and Share section with dot separator -->
             <div
-              class="flex items-center justify-between text-sm text-gray-400"
+              class="flex items-center justify-between text-sm text-white/60 mb-4"
             >
               <div class="flex gap-2">
-                <span>👍😆❤️ 20</span>
+                <span>❤️ 20</span>
               </div>
-              <div class="flex gap-3 items-center">
+              <div class="flex gap-3 font-normal text-white/50 items-center">
                 <span>09 Comments</span>
                 <span class="">•</span>
                 <span>05 Share</span>
@@ -473,145 +498,21 @@
             <hr class="my-4 border-zinc-600" />
 
             <!-- Added icons for Like, Comment, and Share -->
-            <div class="flex gap-1">
+            <div class="flex gap-2">
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 pr-2 py-2 rounded"
               >
-                <i class="ri-thumb-up-line mr-1"></i> Like
+                <i class="ri-thumb-up-line mr-2"></i> Like
               </button>
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 px-4 py-2 rounded"
               >
-                <i class="ri-chat-3-line mr-1"></i> Comment
+                <i class="ri-chat-3-line mr-2"></i> Comment
               </button>
               <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
+                class="flex items-center text-white/40 font-normal hover:text-lime1 px-4 py-2 rounded"
               >
-                <i class="ri-share-forward-line mr-1"></i> Share
-              </button>
-            </div>
-          </div>
-          <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
-            <div class="flex items-center mb-4">
-              <img
-                src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
-                alt="Profile"
-                class="w-12 h-12 rounded-full mr-3 object-cover"
-              />
-              <div>
-                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
-                <p class="text-sm text-gray-400 flex items-center space-x-1">
-                  <i class="ri-earth-fill"></i>
-                  <span>Public</span>
-                  <span>•</span>
-                  <span>2 minutes ago</span>
-                </p>
-              </div>
-            </div>
-            <p class="text-white/80 mb-4 px-1">
-              Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Omnis officia maxime voluptatibus
-              perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-              voluptatum molestias incidunt fugit amet obcaecati, magnam ex,
-              cumque nihil, doloribus nisi eos? Est, quam? Eligendi molestiae
-              accusantium dolores animi sed excepturi commodi doloremque
-              recusandae, eos dolorem! Nam nisi quas dolorem. 😊
-            </p>
-
-            <!-- Adjusted Comments and Share section with dot separator -->
-            <div
-              class="flex items-center justify-between text-sm text-gray-400"
-            >
-              <div class="flex gap-2">
-                <span>👍😆❤️ 20</span>
-              </div>
-              <div class="flex gap-3 items-center">
-                <span>09 Comments</span>
-                <span class="">•</span>
-                <span>05 Share</span>
-              </div>
-            </div>
-            <hr class="my-4 border-zinc-600" />
-
-            <!-- Added icons for Like, Comment, and Share -->
-            <div class="flex gap-1">
-              <button
-                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
-              >
-                <i class="ri-thumb-up-line mr-1"></i> Like
-              </button>
-              <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
-              >
-                <i class="ri-chat-3-line mr-1"></i> Comment
-              </button>
-              <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
-              >
-                <i class="ri-share-forward-line mr-1"></i> Share
-              </button>
-            </div>
-          </div>
-          <div class="bg-zinc-800/30 rounded-md shadow-md p-4">
-            <div class="flex items-center mb-4">
-              <img
-                src="https://cdn.pixabay.com/photo/2022/10/24/17/22/girl-7543957_640.jpg"
-                alt="Profile"
-                class="w-12 h-12 rounded-full mr-3 object-cover"
-              />
-              <div>
-                <h2 class="font-semibold text-white mb-1">Michelle Jones</h2>
-                <p class="text-sm text-gray-400 flex items-center space-x-1">
-                  <i class="ri-earth-fill"></i>
-                  <span>Public</span>
-                  <span>•</span>
-                  <span>2 minutes ago</span>
-                </p>
-              </div>
-            </div>
-            <p class="text-white/80 mb-4 px-1">
-              Dhaka is wonderful no matter what! Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Omnis officia maxime voluptatibus
-              perspiciatis vitae aliquam voluptatum at, minima deleniti nobis.
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-              voluptatum molestias incidunt fugit amet obcaecati, magnam ex,
-              cumque nihil, doloribus nisi eos? Est, quam? Eligendi molestiae
-              accusantium dolores animi sed excepturi commodi doloremque
-              recusandae, eos dolorem! Nam nisi quas dolorem. 😊
-            </p>
-
-            <!-- Adjusted Comments and Share section with dot separator -->
-            <div
-              class="flex items-center justify-between text-sm text-gray-400"
-            >
-              <div class="flex gap-2">
-                <span>👍😆❤️ 20</span>
-              </div>
-              <div class="flex gap-3 items-center">
-                <span>09 Comments</span>
-                <span class="">•</span>
-                <span>05 Share</span>
-              </div>
-            </div>
-            <hr class="my-4 border-zinc-600" />
-
-            <!-- Added icons for Like, Comment, and Share -->
-            <div class="flex gap-1">
-              <button
-                class="flex items-center text-gray-400 hover:text-lime1 pr-2 py-2 rounded"
-              >
-                <i class="ri-thumb-up-line mr-1"></i> Like
-              </button>
-              <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
-              >
-                <i class="ri-chat-3-line mr-1"></i> Comment
-              </button>
-              <button
-                class="flex items-center text-gray-400 hover:text-lime1 px-4 py-2 rounded"
-              >
-                <i class="ri-share-forward-line mr-1"></i> Share
+                <i class="ri-share-forward-line mr-2"></i> Share
               </button>
             </div>
           </div>
@@ -619,7 +520,7 @@
 
         <!-- Right Side - Member Section and Tags -->
         <div
-          class="right w-full md:w-1/3 space-y-6 sticky overflow-y-auto top-[5rem]"
+          class="right w-full md:w-1/4 space-y-6 sticky overflow-y-auto top-[5rem]"
         >
           <!-- Member Section -->
 
@@ -700,37 +601,37 @@
           >
             <a
               href="#"
-              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-normal"
               >Uranium</a
             >
             <a
               href="#"
-              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-normal"
               >NuclearEnergy</a
             >
             <a
               href="#"
-              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-normal"
               >Radioactivity</a
             >
             <a
               href="#"
-              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-normal"
               >Fission</a
             >
             <a
               href="#"
-              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-normal"
               >NuclearPhysics</a
             >
             <a
               href="#"
-              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-normal"
               >Isotopes</a
             >
             <a
               href="#"
-              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-medium"
+              class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-normal"
               >Uranium235</a
             >
           </div>
@@ -831,5 +732,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script src="home.js"></script>
+    <script>
+      gsap.from(".sec-1", {
+        y: -60,
+        opacity: 0,
+        duration: 1.7,
+        ease: "power2.out",
+        delay: 0.3,
+        scrollTrigger: {
+          trigger: ".sec-1",
+          start: "top 80%",
+          end: "top 60%",
+          // toggleActions: "play none none reverse",
+        },
+      });
+    </script>
   </body>
 </html>

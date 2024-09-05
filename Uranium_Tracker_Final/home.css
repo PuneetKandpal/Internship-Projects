@@ -31,6 +31,11 @@ html {
   border-radius: 10px;
 }
 
+::selection {
+  background-color: #27ecab;
+  color: #161616;
+}
+
 .play {
   font-family: "Playfair Display", serif;
 }
