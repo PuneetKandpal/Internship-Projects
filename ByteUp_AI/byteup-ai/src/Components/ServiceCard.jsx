@@ -48,13 +48,13 @@ const ServiceCard = () => {
               {s.name}
             </h3>
             <p
-              className={`mb-6 text-[17px] font-normal leading-6 ${
+              className={`mb-4 text-[17px] font-normal leading-6 ${
                 theme === "light" ? " text-black/50" : " text-white/40"
               } font-Archivo`}
             >
               {s.description}
             </p>
-            <ul className="mb-6 space-y-2">
+            <ul className="mb-5 space-y-2">
               <li className="flex flex-col items-start">
                 <h2
                   className={`animate-heading text-[12px] uppercase font-Syne leading-4 ml-1 tracking-[.03em] ${
@@ -67,7 +67,7 @@ const ServiceCard = () => {
                 </h2>{" "}
                 <p
                   className={`ml-0 text-2xl font-bold ${
-                    theme === "light" ? "text-black/50" : "text-white/45"
+                    theme === "light" ? "text-black/45" : "text-white/45"
                   }`}
                 >
                   {s.estimatedTime} mins
