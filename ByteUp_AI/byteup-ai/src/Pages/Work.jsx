@@ -1,11 +1,12 @@
 import Navbar from "../Components/Navbar"
+import WorkHero from "../Components/workHero"
 
 
 const Work = () => {
   return (
     <div>
         <Navbar/>
-      Work
+        <WorkHero/>
     </div>
   )
 }
