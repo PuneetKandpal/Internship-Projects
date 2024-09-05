@@ -127,29 +127,40 @@
 
           <!-- header info  -->
           <div class="pb-4 flex-1 space-y-4">
+            <!-- Category Label -->
             <p
-              class="px-3 py-1 bg-lime2 w-fit text-black1 font-semibold uppercase text-[13px]"
+              class="px-3 py-1 bg-lime2 w-fit text-black1 font-semibold uppercase text-xs sm:text-[13px]"
             >
               Technology
             </p>
-            <h1 class="text-[30px] font-extrabold leading-[40px] text-white/90">
+
+            <!-- Article Heading -->
+            <h1
+              class="text-xl sm:text-2xl md:text-[30px] font-extrabold leading-snug sm:leading-[35px] md:leading-[40px] text-white/90"
+            >
               Nuclear Power Market Size is Projected to Reach USD 45.31 billion
               by 2032, Growing at a CAGR of 3.10%: Straits Research
             </h1>
 
-            <div class="text-white py-4 flex items-center justify-between">
-              <!-- Author Info -->
+            <!-- Author Info Section -->
+            <div
+              class="text-white py-4 flex flex-col sm:flex-row items-start sm:items-center justify-between space-y-4 sm:space-y-0"
+            >
+              <!-- Author and Date Info -->
               <div class="flex items-center space-x-3">
                 <img
                   class="w-7 h-7 rounded-full object-cover"
                   src="https://images.pexels.com/photos/428364/pexels-photo-428364.jpeg?cs=srgb&dl=pexels-spencer-selover-142259-428364.jpg&fm=jpg"
                   alt="Author image"
                 />
-                <div class="flex gap-x-4 items-center text-xs">
+                <div
+                  class="flex gap-x-4 gap-y-2 md:gap-y-0 items-center text-xs flex-wrap sm:flex-nowrap"
+                >
                   <p>By <span class="font-semibold">Globe NewsWire -</span></p>
                   <p class="text-white/60">
                     Aug 21, 2024 - Updated: Feb 15, 2021
                   </p>
+                  <!-- Comments and Reading Time -->
                   <div class="flex items-center text-white/60">
                     <i class="ri-chat-3-line"></i>
                     <span class="ml-1">3 Comments</span>
@@ -161,28 +172,37 @@
                 </div>
               </div>
             </div>
+
             <!-- Social Share Buttons -->
-            <div class="text-white flex space-x-2">
+            <div
+              class="text-white flex flex-wrap space-x-2 space-y-2 sm:space-y-0"
+            >
               <button
-                class="bg-[#1A6DD4] hover:bg-blue-700 transition-all duration-200 px-6 text-sm font-semibold py-[1px] flex items-center space-x-2"
+                class="bg-[#1A6DD4] hover:bg-blue-700 transition-all duration-200 px-3 sm:px-6 text-xs sm:text-sm font-semibold py-1 md:py-2 flex items-center space-x-2"
               >
-                <i class="ri-facebook-fill text-[16px] ml-[-3px]"></i>
+                <i
+                  class="ri-facebook-fill text-[14px] sm:text-[16px] ml-[-3px]"
+                ></i>
                 <span>Facebook</span>
               </button>
               <button
-                class="bg-[#55ACEF] hover:bg-cyan-400 transition-all duration-200 px-6 text-sm font-semibold py-[1px] flex items-center space-x-2"
+                class="bg-[#55ACEF] hover:bg-cyan-400 transition-all duration-200 px-3 sm:px-6 text-xs sm:text-sm font-semibold py-1 md:py-2 flex items-center space-x-2"
               >
-                <i class="ri-twitter-fill text-[16px] ml-[-3px]"></i>
+                <i
+                  class="ri-twitter-fill text-[14px] sm:text-[16px] ml-[-3px]"
+                ></i>
                 <span>Twitter</span>
               </button>
               <button
-                class="bg-[#FB2544] hover:bg-red-800 transition-all duration-200 px-6 text-sm font-semibold py-[1px] flex items-center space-x-2"
+                class="bg-[#FB2544] hover:bg-red-800 transition-all duration-200 px-3 sm:px-6 text-xs sm:text-sm font-semibold py-1 md:py-2 flex items-center space-x-2"
               >
-                <i class="ri-pinterest-fill text-[16px] ml-[-3px]"></i>
+                <i
+                  class="ri-pinterest-fill text-[14px] sm:text-[16px] ml-[-3px]"
+                ></i>
                 <span>Pinterest</span>
               </button>
               <button
-                class="border border-white/10 px-4 py-2 group group-hover:bg-zinc-800/30 transition-all duration-200"
+                class="border border-white/10 px-4 py-1 md:py-2 group group-hover:bg-zinc-800/30 transition-all duration-200"
               >
                 <i
                   class="ri-share-forward-fill text-lg text-white/60 group-hover:text-white/90"
