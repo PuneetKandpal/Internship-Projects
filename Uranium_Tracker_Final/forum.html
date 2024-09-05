@@ -27,6 +27,14 @@
         },
       };
     </script>
+    <style>
+      .right{
+        position: -webkit-sticky;
+        top: 0;
+        height: fit-content;
+
+      }
+    </style>
   </head>
   <body>
     <!-- navbar  -->
@@ -550,7 +558,7 @@
         </div>
       </div>
       <!-- Right Side (Scientists and Tags) -->
-      <div class="space-y-6 mt-2 md:mt-6 mb-28 md:mb-0">
+      <div class="space-y-6 mt-2 md:mt-6 mb-28 md:mb-0 right sticky  overflow-y-auto top-[6.5rem] " style="margin-bottom: 6rem">
         <!-- Scientist Container -->
         <div class="bg-zinc-800/30 py-6 px-8 rounded-lg shadow-sm">
           <h2 class="text-lg font-semibold text-white mb-8 frank">Nuclear Scientists</h2>
@@ -609,7 +617,7 @@
         
 
 
-<div class="flex gap-2 ml-[2px] flex-wrap mt-5 md:mt-4">
+<div class="flex gap-2 ml-[2px] flex-wrap mt-5 md:mt-4" >
 <a href="#" class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-normal">Uranium</a>
 <a href="#" class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-normal">NuclearEnergy</a>
 <a href="#" class="bg-zinc-800/50 text-[13.3px] tracking-[0.3px] lato text-white/50 hover:text-black1 hover:bg-lime2 transition-all duration-200 px-3 rounded-sm py-1 font-normal">Radioactivity</a>
@@ -733,3 +741,4 @@
     </script>
   </body>
 </html>
+
