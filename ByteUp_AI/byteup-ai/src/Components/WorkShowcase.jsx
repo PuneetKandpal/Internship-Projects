@@ -71,7 +71,7 @@ const WorkShowcase = () => {
       <h1
         onMouseEnter={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`animate-heading text-5xl font-semibold mb-12 leading-tight font-Syne inline-block ${
+        className={`animate-heading text-[40px] font-semibold mb-12 leading-tight font-Syne inline-block ${
           theme === "light" ? "text-black" : "text-white"
         }`}
       >
