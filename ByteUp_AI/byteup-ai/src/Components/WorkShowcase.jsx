@@ -71,13 +71,13 @@ const WorkShowcase = () => {
       <h1
         onMouseEnter={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`animate-heading text-[40px] font-semibold mb-12 leading-tight font-Syne inline-block ${
+        className={`font-Syne w-fit text-[40px] font-bold text-start mb-10 ${
           theme === "light" ? "text-black" : "text-white"
         }`}
       >
         Our Portfolio
       </h1>
-      <div className="grid grid-cols-3 gap-3 p-1">
+      <div className="grid grid-cols-3 gap-2 p-1">
         {projects.map((project) => (
           <div
             key={project.id}
