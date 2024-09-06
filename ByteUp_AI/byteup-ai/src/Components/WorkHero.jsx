@@ -78,7 +78,7 @@ const WorkHero = () => {
           className="text-5xl font-bold leading-10 mb-3"
         >
           <span className="text-white font-Syne text-5xl">
-            Showcasing Our Proven Success Stories
+          We build top-notch solutions for brand , web and mobile apps.
           </span>
         </h1>
 
