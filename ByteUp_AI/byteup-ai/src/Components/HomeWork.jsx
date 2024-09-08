@@ -34,32 +34,6 @@ const HomeWork = () => {
   }, []);
 
   useEffect(() => {
-    // Animate cards
-    // const cards = gsap.utils.toArray(".card");
-
-    // cards.forEach((card, index) => {
-    //   gsap.fromTo(
-    //     card,
-    //     {
-    //       opacity: 0,
-    //       y: 50,
-    //     },
-    //     {
-    //       opacity: 1,
-    //       y: 0,
-    //       duration: 1,
-    //       ease: "power3.out",
-    //       scrollTrigger: {
-    //         trigger: card,
-    //         start: "top bottom-=100",
-    //         toggleActions: "play none none reverse",
-    //       },
-    //       delay: index * 0.2,
-    //     }
-    //   );
-    // });
-
-    // Animate headings
     gsap.fromTo(
       ".animate-heading",
       {
@@ -161,9 +135,8 @@ const HomeWork = () => {
   return (
     <div
       ref={containerRef}
-      className={`font-['Archivo', sans-serif] pb-8 ml-14 ${
-        theme === "light" ? "bg-white" : "bg-black"
-      }`}
+      className={`font-Archivo mt-[-3rem] md:mt-0
+         pb-8 ml-4 lg:ml-14 ${theme === "light" ? "bg-white" : "bg-black"}`}
     >
       <AnimatedCursor isHovered={isHovered} />
 
@@ -177,7 +150,7 @@ const HomeWork = () => {
       <h1
         onMouseEnter={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`animate-heading text-5xl font-semibold mb-12 leading-tight font-Syne inline-block ${
+        className={`animate-heading text-4xl md:text-5xl font-semibold mb-8 md:mb-12 leading-tight font-Syne inline-block ${
           theme === "light" ? "text-black" : "text-white"
         }`}
       >
@@ -188,11 +161,14 @@ const HomeWork = () => {
       <div className="overflow-hidden">
         <div
           ref={cardsRef}
-          className="flex gap-8 transition-all duration-1000 ease-in-out"
+          className="flex gap-4 md:gap-8 transition-all duration-1000 ease-in-out"
         >
           {cardData.map((card, index) => (
-            <div key={index} className="flex-shrink-0 w-[500px] card">
-              <div className="relative h-[300px] mb-4 group overflow-hidden">
+            <div
+              key={index}
+              className="flex-shrink-0 w-[300px] md:w-[500px] card"
+            >
+              <div className="relative h-[200px] md:h-[300px] mb-4 group overflow-hidden">
                 <img
                   src={card.image}
                   alt={card.label}
@@ -201,16 +177,16 @@ const HomeWork = () => {
                 <div
                   className={`absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 ease-out flex flex-col justify-end p-4 text-white`}
                 >
-                  <div className="text-xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
+                  <div className="text-lg md:text-xl font-bold mb-2 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out">
                     • {card.label}
                   </div>
-                  <div className="text-lg font-Syne transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out delay-100">
+                  <div className="text-base md:text-lg font-Syne transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 ease-out delay-100">
                     {card.description}
                   </div>
                 </div>
               </div>
               <div
-                className={`card-label text-[26px] font-Syne font-semibold leading-8 ${
+                className={`card-label text-[18px] md:text-[26px] font-Syne font-semibold leading-8 ${
                   theme === "light" ? "text-black" : "text-white"
                 }`}
               >
