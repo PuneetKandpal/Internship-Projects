@@ -128,24 +128,23 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div
-      className={`w-full h-[90vh] mt-40 bg-cover bg-center relative bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]`}
-    >
+    <div className="w-full min-h-[55vh] md:min-h-[90vh] mt-40 bg-cover bg-center relative bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]">
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-      <div className="absolute inset-0 flex justify-between items-center px-20 py-10 z-10">
-        <div className="w-[40%] h-[80%] text-white flex flex-col justify-center">
-          <h1 ref={countRef} className="text-[9rem] mt-[-20px] font-extrabold">
+      <div className="absolute inset-0 flex flex-col lg:flex-row justify-between items-center px-4 sm:px-10 lg:px-20 py-10 z-10">
+        <div className="w-full lg:w-[40%] h-auto lg:h-[80%] text-white flex flex-col justify-center mb-10 lg:mb-0">
+          <h1
+            ref={countRef}
+            className="text-6xl sm:text-8xl lg:text-[9rem] mt-[-20px] font-extrabold"
+          >
             1+
           </h1>
-          <h2
-            className={`text-[13px] uppercase font-Syne leading-4 font-normal ml-1 tracking-[.20em] text-white/70`}
-          >
+          <h2 className="text-[13px] uppercase font-Syne leading-4 font-normal ml-1 tracking-[.20em] text-white/70">
             Happy Clients
           </h2>
-          <h1 className="mt-3 text-[1.7rem] font-Syne font-bold">
+          <h1 className="mt-3 text-xl sm:text-2xl lg:text-[1.7rem] font-Syne font-bold">
             All About Our Success
           </h1>
-          <p className="mt-3 text-[15px] tracking-[0.6px] text-white/70 font-normal">
+          <p className="mt-3 text-sm lg:text-[15px] tracking-[0.6px] text-white/70 font-normal">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. eveniet
             magnam sunt animi sint iusto sapiente voluptas Lorem ipsum dolor sit
             amet consectetur adipisicing elit. Soluta distin
@@ -155,21 +154,21 @@ const Testimonials = () => {
           ref={testimonialRef}
           className={`${
             theme === "light" ? "bg-white" : "bg-black"
-          } w-[50%] py-10 px-20 h-[80%] flex flex-col justify-center items-start shadow-lg  relative`}
+          } w-full lg:w-[50%] py-10 px-6 sm:px-10 lg:px-20 h-auto lg:h-[80%] flex flex-col justify-center items-start shadow-lg relative`}
         >
           <img
             src={testimonials[currentTestimonialIndex].image}
             alt={testimonials[currentTestimonialIndex].author}
-            className="w-24 h-24 rounded-full object-cover mb-6"
+            className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full object-cover mb-6"
           />
           <p
-            className={`text-[18px] ${
+            className={`text-base sm:text-lg lg:text-[18px] ${
               theme === "light" ? "text-gray-600" : "text-zinc-400"
             } italic leading-relaxed mb-6`}
           >
             "{testimonials[currentTestimonialIndex].quote}"
           </p>
-          <p className="mt-6 text-start font-semibold ">
+          <p className="mt-6 text-start font-semibold">
             <p className="text-gradient-css">
               {testimonials[currentTestimonialIndex].author}
             </p>
@@ -190,7 +189,7 @@ const Testimonials = () => {
                 theme === "light"
                   ? "bg-black/10 text-black/60"
                   : "bg-white/15 text-white/60"
-              } text-[14px] p-2 rounded-full shadow-md hover:bg-gradient-to-br from-purple to-sky hover:text-white  transition duration-300`}
+              } text-[14px] p-2 rounded-full shadow-md hover:bg-gradient-to-br from-purple to-sky hover:text-white transition duration-300`}
             >
               <FaChevronLeft />
             </button>
@@ -200,7 +199,7 @@ const Testimonials = () => {
                 theme === "light"
                   ? "bg-black/10 text-black/60"
                   : "bg-white/15 text-white/60"
-              } text-[14px] p-2 rounded-full shadow-md hover:bg-gradient-to-br from-purple to-sky hover:text-white  transition duration-300`}
+              } text-[14px] p-2 rounded-full shadow-md hover:bg-gradient-to-br from-purple to-sky hover:text-white transition duration-300`}
             >
               <FaChevronRight />
             </button>
