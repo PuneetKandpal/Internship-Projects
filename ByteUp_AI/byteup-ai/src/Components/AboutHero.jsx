@@ -61,7 +61,7 @@ const AboutHero = () => {
       </div>
       <div className="w-full md:w-[45%] text-center md:text-left">
         <h2
-          className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
+          className={`animate-heading text-start md:text-center text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
             theme === "light" ? "text-gradient-css opacity-90" : "text-white/30"
           }`}
         >
@@ -71,7 +71,7 @@ const AboutHero = () => {
           ref={headingRef}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="text-3xl text-start md:text-center md:text-5xl font-semibold mb-6 leading-[3rem] font-Syne"
+          className="text-3xl text-start md:text-center md:text-5xl font-semibold mb-6 leading-[40px] md:leading-[3rem] font-Syne"
         >
           We Help You Accelerate Growth with Social Media
         </h1>
