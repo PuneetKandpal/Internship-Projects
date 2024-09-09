@@ -27,7 +27,7 @@ const MarqueeDiv = () => {
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className={`text-6xl font-bold font-Syne pr-16`}
+          className={`text-2xl md:text-6xl font-bold font-Syne pr-12 md:pr-16`}
         >
           Generative AI
         </h1>
@@ -38,7 +38,7 @@ const MarqueeDiv = () => {
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className={`text-6xl font-bold font-Syne pr-16`}
+          className={`text-2xl md:text-6xl font-bold font-Syne pr-12 md:pr-16`}
         >
           Web scrapping
         </h1>
@@ -49,7 +49,7 @@ const MarqueeDiv = () => {
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className={`text-6xl font-bold font-Syne pr-16`}
+          className={`text-2xl md:text-6xl font-bold font-Syne pr-12 md:pr-16`}
         >
           Automation
         </h1>
@@ -60,7 +60,7 @@ const MarqueeDiv = () => {
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className={`text-6xl font-bold font-Syne pr-16`}
+          className={`text-2xl md:text-6xl font-bold font-Syne pr-12 md:pr-16`}
         >
           Python API Development
         </h1>
@@ -71,7 +71,7 @@ const MarqueeDiv = () => {
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className={`text-6xl font-bold font-Syne pr-16`}
+          className={`text-2xl md:text-6xl font-bold font-Syne pr-12 md:pr-16`}
         >
           SaaS Development
         </h1>

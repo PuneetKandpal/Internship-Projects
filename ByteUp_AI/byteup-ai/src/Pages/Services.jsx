@@ -9,7 +9,7 @@ const Services = () => {
     <div>
       <Navbar />
       <ServiceHero />
-      <div className="mt-[-40px]">
+      <div className="mt-[-70px] md:mt-[-40px]">
         <Marquee />
       </div>
 
