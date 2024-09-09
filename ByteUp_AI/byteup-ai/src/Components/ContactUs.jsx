@@ -99,14 +99,14 @@ const ContactUs = () => {
 
   return (
     <div
-      className={`w-full px-[5.5rem] overflow-x-hidden mt-14 pb-20 ${
+      className={`w-full px-6 lg:px-[5.5rem] overflow-x-hidden mt-14 pb-20 ${
         theme === "dark" ? "bg-black" : "bg-white"
       }`}
     >
       <AnimatedCursor isHovered={isHovered} />
       <div className="w-full flex flex-col lg:flex-row justify-between">
-        {/* Left Side Image */}
-        <div className="h-fit w-full lg:w-[42%]" ref={imageRef}>
+        {/* Left Side Image (hidden on small screens) */}
+        <div className="hidden lg:block h-fit w-full lg:w-[42%]" ref={imageRef}>
           <img
             src={imageUrl}
             alt="Contact Us"
@@ -119,7 +119,7 @@ const ContactUs = () => {
         <div className="w-full lg:w-[50%]" ref={formRef}>
           <div>
             <h2
-              className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
+              className={`animate-heading text-[10px] sm:text-[12px] lg:text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
                 theme === "light"
                   ? "text-gradient-css opacity-90"
                   : "text-white/30"
@@ -130,21 +130,18 @@ const ContactUs = () => {
 
             <h2
               ref={headingRef}
-              onMouseEnter={() => {
-                setIsHovered(true);
-              }}
-              onMouseLeave={() => {
-                setIsHovered(false);
-              }}
-              className="text-4xl w-fit font-semibold mb-10 font-Syne"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+              className="text-2xl sm:text-3xl lg:text-4xl w-fit font-semibold mb-10 font-Syne"
             >
               Let's Be Social
             </h2>
+
             <form onSubmit={handleSubmit}>
               {/* Form Layout */}
               <div className="flex flex-col gap-6 mt-5">
                 {/* First Row: Full Name and Email */}
-                <div className="flex text-[16px] flex-col lg:flex-row justify-between font-Archivo">
+                <div className="flex flex-col lg:flex-row justify-between gap-4 font-Archivo text-sm lg:text-[16px]">
                   <input
                     required
                     type="text"
@@ -156,7 +153,7 @@ const ContactUs = () => {
                         fullName: e.target.value,
                       }))
                     }
-                    className="py-2 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[46%]"
+                    className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
                   />
 
                   <input
@@ -170,12 +167,12 @@ const ContactUs = () => {
                         email: e.target.value,
                       }))
                     }
-                    className="py-2 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[46%]"
+                    className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
                   />
                 </div>
 
                 {/* Second Row: Company Name and Phone Number */}
-                <div className="flex flex-col lg:flex-row justify-between font-Archivo">
+                <div className="flex flex-col lg:flex-row justify-between gap-4 font-Archivo text-sm lg:text-[16px]">
                   <input
                     type="text"
                     placeholder="Company name"
@@ -186,7 +183,7 @@ const ContactUs = () => {
                         companyName: e.target.value,
                       }))
                     }
-                    className="py-2 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[46%]"
+                    className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
                   />
                   <input
                     type="text"
@@ -198,12 +195,12 @@ const ContactUs = () => {
                         phoneNumber: e.target.value,
                       }))
                     }
-                    className="py-2 bg-transparent border-b border-gray-300 outline-none w-full lg:w-[46%]"
+                    className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
                   />
                 </div>
 
-                {/* Third Row: Website URL and Tell Us About Your Project */}
-                <div className="flex flex-col lg:flex-row justify-between font-Archivo">
+                {/* Third Row: Website URL and Project Description */}
+                <div className="flex flex-col gap-4 font-Archivo text-sm lg:text-[16px]">
                   <input
                     type="text"
                     placeholder="Website URL"
@@ -216,19 +213,20 @@ const ContactUs = () => {
                     }
                     className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
                   />
+
+                  <textarea
+                    rows="3"
+                    placeholder="Tell us about your project"
+                    value={formData.projectDescription}
+                    onChange={(e) =>
+                      setFormData((prev) => ({
+                        ...prev,
+                        projectDescription: e.target.value,
+                      }))
+                    }
+                    className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
+                  ></textarea>
                 </div>
-                <textarea
-                  rows="3"
-                  placeholder="Tell us about your project"
-                  value={formData.projectDescription}
-                  onChange={(e) =>
-                    setFormData((prev) => ({
-                      ...prev,
-                      projectDescription: e.target.value,
-                    }))
-                  }
-                  className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
-                ></textarea>
 
                 {/* Selection Options */}
                 <div className="flex flex-col gap-4 font-Archivo mt-4">
@@ -266,7 +264,7 @@ const ContactUs = () => {
                             theme === "light"
                               ? "border-gray-300 text-black"
                               : "border-white/30 text-white font-normal"
-                          } text-[14px] px-4 py-1 cursor-pointer transition-all duration-300 ease-in-out ${
+                          } text-[12px] sm:text-[14px] px-4 py-1 cursor-pointer transition-all duration-300 ease-in-out ${
                             formData.interests.includes(interest)
                               ? "bg-gradient-to-r from-[#a270c9] to-[#637eb2] text-white"
                               : "hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
@@ -311,7 +309,7 @@ const ContactUs = () => {
                             theme === "light"
                               ? "border-gray-300 text-black"
                               : "border-white/30 text-white font-normal"
-                          } text-[14px] px-4 py-1 cursor-pointer transition-all duration-300 ease-in-out ${
+                          } text-[12px] sm:text-[14px] px-4 py-1 cursor-pointer transition-all duration-300 ease-in-out ${
                             formData.budget === budgetOption
                               ? "bg-gradient-to-r from-[#a270c9] to-[#637eb2] text-white"
                               : "hover:bg-gradient-to-r hover:from-[#a270c9] hover:to-[#637eb2] hover:text-white"
@@ -333,7 +331,9 @@ const ContactUs = () => {
                 <div className="flex justify-start font-Archivo">
                   <button
                     type="submit"
-                    className="w-full mt-6 bg-gradient-to-r from-purple to-sky text-white px-6 py-3 uppercase tracking-[0.05rem] transition-all duration-300 ease-in-out hover:opacity-80"
+                    className="w-full mt-6 bg-gradient-to-r from-purple to-sky text-white 
+             px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base 
+             uppercase tracking-[0.05rem] transition-all duration-300 ease-in-out hover:opacity-80"
                   >
                     Send message
                   </button>
