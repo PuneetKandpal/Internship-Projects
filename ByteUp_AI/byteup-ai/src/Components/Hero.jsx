@@ -71,7 +71,7 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/60 to-transparent"></div>
 
-      <div className="absolute px-8 inset-0 w-full md:w-[45%] md:ml-56 flex flex-col items-start justify-center">
+      <div className="absolute px-5 inset-0 w-full md:w-[45%] md:ml-56 flex flex-col items-start justify-center">
         <h1
           onMouseEnter={() => {
             setIsHovered(true);
@@ -79,12 +79,12 @@ const Hero = () => {
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className="cursor-hover text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-Syne text-white font-bold text-start"
+          className="cursor-hover text-[35px] leading-[40px] md:leading-normal md:text-4xl lg:text-5xl xl:text-6xl font-Syne text-white font-bold text-start"
         >
           {slides[currentSlide].text}
         </h1>
         <div className="mt-6 md:mt-10">
-          <Link to="/services">
+          <Link to="/contact">
             <PrimaryBtn btn="Get Started" />
           </Link>
         </div>

@@ -69,7 +69,7 @@ const Navbar = ({ withHeroSection }) => {
     >
       <div className="font-Syne h-[55px] w-[210px] flex justify-center items-center object-cover">
         <img
-          className="object-cover ml-[-2rem] md:ml-0 h-[100%] w-[100%] mt-[-2px]"
+          className="object-cover  ml-[-4rem] md:ml-0 h-[100%] w-[100%] mt-[-2px]"
           src={
             scrolled || !withHeroSection
               ? theme === "light"

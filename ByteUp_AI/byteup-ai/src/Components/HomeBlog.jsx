@@ -117,7 +117,7 @@ const HomeBlog = () => {
               Blog Layouts
             </h2>
             <h1
-              className="text-4xl md:text-5xl font-semibold mb-5 leading-tight font-Syne inline-block"
+              className="text-[35px] md:text-5xl font-semibold mb-5 leading-tight font-Syne inline-block"
               onMouseEnter={() => setIsHeadingHovered(true)}
               onMouseLeave={() => setIsHeadingHovered(false)}
             >

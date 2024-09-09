@@ -150,7 +150,7 @@ const HomeWork = () => {
       <h1
         onMouseEnter={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`animate-heading text-4xl md:text-5xl font-semibold mb-8 md:mb-12 leading-tight font-Syne inline-block ${
+        className={`animate-heading text-[35px] md:text-5xl font-semibold mb-8 md:mb-12 leading-tight font-Syne inline-block ${
           theme === "light" ? "text-black" : "text-white"
         }`}
       >
