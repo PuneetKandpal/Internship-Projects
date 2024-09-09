@@ -43,14 +43,6 @@ const projects = [
       "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29ya3xlbnwwfHwwfHx8Mg%3D%3D",
     className: "col-span-1 row-span-1",
   },
-  // {
-  //   id: 6,
-  //   title: "Portrait Session",
-  //   category: "People",
-  //   image:
-  //     "https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHdvcmt8ZW58MHx8MHx8fDI%3D",
-  //   className: "col-span-1 row-span-1",
-  // },
 ];
 
 const WorkShowcase = () => {
@@ -66,18 +58,18 @@ const WorkShowcase = () => {
   };
 
   return (
-    <div className="container mx-auto p-8 px-[5.5rem]  py-12 mt-[-2rem]">
+    <div className="container mx-auto p-8 md:px-[5.5rem] py-12 mt-[-2rem]">
       <AnimatedCursor isHovered={isHovered} />
       <h1
         onMouseEnter={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        className={`font-Syne w-fit text-[40px] font-bold text-start mb-10 ${
+        className={`font-Syne w-fit text-[30px] md:text-[40px] font-bold text-start mb-10 ${
           theme === "light" ? "text-black" : "text-white"
         }`}
       >
         Our Portfolio
       </h1>
-      <div className="grid grid-cols-3 gap-2 p-1">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-1">
         {projects.map((project) => (
           <div
             key={project.id}
