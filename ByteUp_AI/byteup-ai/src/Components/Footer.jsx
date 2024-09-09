@@ -5,33 +5,34 @@ import logoDark from "../assets/logo-dark.svg";
 import { MdEmail } from "react-icons/md";
 import { FaPhone } from "react-icons/fa6";
 import { Link } from "react-router-dom";
-import { FaLinkedin } from "react-icons/fa6";
-import { FaTwitter } from "react-icons/fa";
+import { FaLinkedin, FaTwitter } from "react-icons/fa";
 import { AiFillInstagram } from "react-icons/ai";
 
 const Footer = () => {
   const { theme } = useContext(ThemeContext);
+
   return (
     <div
-      className={`w-full px-20 py-14 mt-[10rem]   ${
+      className={`w-full px-6 md:px-12 lg:px-20 py-14 mt-[10rem] ${
         theme === "light" ? "bg-black text-white/90" : "bg-white text-black/90"
       }`}
     >
-      <div className="flex justify-between items-center ">
-        <div className="w-[30%] h-full">
-          <div className="w-1/2 h-[3rem] ml-[-35px]">
+      <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center space-y-8 lg:space-y-0">
+        {/* Left Section */}
+        <div className="w-full lg:w-[30%] h-full mb-8 sm:mb-0">
+          <div className="ml-[-1.85rem] w-[190px] h-[3rem]">
             <img
               className="w-full h-full object-cover"
               src={`${theme === "light" ? logoLight : logoDark}`}
-              alt=""
+              alt="logo"
             />
           </div>
-          <div className="pl-0 mt-2">
+          <div className="pl-0 mt-4">
             <p className="text-[15px] opacity-80">
               123 Fake Street Anytown, CA 12345 <br /> United States
             </p>
             <p
-              className={`flex items-center text-[15.5px] mt-14 font-normal ${
+              className={`flex items-center text-[15.5px] mt-6 font-normal ${
                 theme === "light" ? "text-white/60" : "text-black/60"
               }`}
             >
@@ -48,11 +49,13 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="w-[46%] h-full flex flex-wrap justify-between items-start">
-          <div className="w-[25%] h-full ">
+        {/* Middle Section */}
+        <div className="w-full lg:w-[46%] h-full flex flex-wrap justify-between font-light items-start">
+          {/* Company Section */}
+          <div className="w-1/2 sm:w-[25%] mb-12 sm:mb-0">
             <h3 className="font-Syne uppercase">Company</h3>
             <ul
-              className={`mt-6 flex flex-col gap-y-[5px] text-[15.5px] font-normal list-none ${
+              className={`mt-6 flex flex-col gap-y-[5px] text-[15.5px] font-normal ${
                 theme === "light" ? "text-white/45" : "text-black/55"
               }`}
             >
@@ -67,7 +70,7 @@ const Footer = () => {
                 Work
               </Link>
               <Link
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -77,7 +80,7 @@ const Footer = () => {
                 Services
               </Link>
               <Link
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -87,7 +90,7 @@ const Footer = () => {
                 Blog
               </Link>
               <Link
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -97,7 +100,7 @@ const Footer = () => {
                 About Us
               </Link>
               <Link
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -108,15 +111,17 @@ const Footer = () => {
               </Link>
             </ul>
           </div>
-          <div className="w-[28%] h-full ">
+
+          {/* Services Section */}
+          <div className="w-1/2 sm:w-[28%] mb-12 sm:mb-0">
             <h3 className="font-Syne uppercase">Services</h3>
             <ul
-              className={`mt-6 flex flex-col gap-y-[5px] text-[15.5px] font-normal list-none ${
+              className={`mt-6 flex flex-col gap-y-[5px] text-[15.5px] font-normal ${
                 theme === "light" ? "text-white/45" : "text-black/55"
               }`}
             >
               <Link
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -126,17 +131,17 @@ const Footer = () => {
                 Generative AI
               </Link>
               <Link
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
                 }`}
                 to="/services"
               >
-                Web Scrapping
+                Web Scraping
               </Link>
               <Link
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -146,7 +151,7 @@ const Footer = () => {
                 Automation
               </Link>
               <Link
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -156,7 +161,7 @@ const Footer = () => {
                 Python API development
               </Link>
               <Link
-                className={` transition ease-linear duration-200 w-fit ${
+                className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
@@ -167,10 +172,12 @@ const Footer = () => {
               </Link>
             </ul>
           </div>
-          <div className="w-[20%] h-full ">
+
+          {/* Get in Touch Section */}
+          <div className="w-full sm:w-[20%]">
             <h3 className="font-Syne uppercase">Get in touch</h3>
             <ul
-              className={`mt-6 flex flex-col gap-y-[5px] text-[15.5px] font-normal list-none ${
+              className={`mt-6 flex flex-col gap-y-[5px] text-[15.5px] font-normal ${
                 theme === "light" ? "text-white/45" : "text-black/55"
               }`}
             >
@@ -185,66 +192,67 @@ const Footer = () => {
                 <FaLinkedin
                   className={`text-[19px] ml-[1px] ${
                     theme === "light" ? "text-white/70" : "text-black/80"
-                  } `}
+                  }`}
                 />{" "}
                 <span>LinkedIn</span>
-              </a>{" "}
+              </a>
               <a
                 className={`transition ease-linear duration-200 w-fit flex items-center space-x-3 ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
-                } mt-[5px]`}
+                }`}
                 href="#"
               >
                 <FaTwitter
-                  className={`text-[18px] ml-[1px]] ${
+                  className={`text-[18px] ml-[1px] ${
                     theme === "light" ? "text-white/70" : "text-black/80"
                   }`}
                 />{" "}
                 <span>Twitter</span>
-              </a>{" "}
+              </a>
               <a
                 className={`transition ease-linear duration-200 w-fit flex items-center space-x-3 ${
                   theme === "light"
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
-                } mt-[5px]`}
+                }`}
                 href="#"
               >
                 <AiFillInstagram
-                  className={`text-[20px] ml-[1px]] ${
+                  className={`text-[20px] ml-[1px] ${
                     theme === "light" ? "text-white/70" : "text-black/80"
                   }`}
                 />{" "}
                 <span>Instagram</span>
-              </a>{" "}
+              </a>
             </ul>
           </div>
         </div>
       </div>
 
-      {/* line---------  */}
+      {/* Divider */}
       <div
         className={`mt-16 h-[0.5px] ${
           theme === "light" ? "bg-white/25" : "bg-black/20"
         }`}
       ></div>
 
-      <div className=" mt-5 w-full py-1 flex justify-between">
+      {/* Footer Bottom */}
+      <div className="mt-5 w-full py-1 flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
         <p
-          className={`text-[14px] font-medium ${
+          className={`text-[14px] font-medium mb-2 sm:mb-0 ${
             theme === "light" ? "text-white/40" : "text-black/40"
           }`}
         >
-          2024 © ByteUp AI | All Rights Reserved
+          © 2024 ByteUpAI. All Rights Reserved.
         </p>
         <p
           className={`text-[14px] font-medium ${
             theme === "light" ? "text-white/40" : "text-black/40"
           }`}
         >
-          Terms Conditions & Policy
+          Privacy Policy | Terms of Service
         </p>
       </div>
     </div>

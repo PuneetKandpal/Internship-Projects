@@ -34,22 +34,22 @@ const ServiceCard = () => {
   }, []);
 
   return (
-    <div>
+    <div className="container mx-auto px-4 sm:px-6 lg:px-8  md:mt-0 mt-[-9rem]">
       {services.map((s, i) => (
         <div
           key={i}
-          className={`service-card w-full h-[50vh] mt-10 mb-36 px-[5.5rem] mx-auto flex justify-between flex-col md:flex-row items-center overflow-hidden ${
+          className={`service-card w-full h-auto md:h-[50vh] mt-10 mb-24 md:mb-36 px-6 md:px-[5.5rem] mx-auto flex flex-col md:flex-row items-center justify-between ${
             theme === "light" ? "bg-white text-black" : "bg-black text-white"
-          } ${i % 2 !== 0 ? "flex-row-reverse" : ""}`}
+          } ${i % 2 !== 0 ? "md:flex-row-reverse" : ""}`}
         >
           {/* Left Div - Service Info */}
-          <div className="w-full md:w-[42%] p-6">
-            <h3 className="text-[26px] font-Syne font-semibold mb-4">
+          <div className="w-full md:w-[42%] p-4 md:p-6">
+            <h3 className="text-[20px] md:text-[26px] font-Syne font-semibold mb-4">
               {s.name}
             </h3>
             <p
-              className={`mb-4 text-[17px] font-normal leading-6 ${
-                theme === "light" ? " text-black/50" : " text-white/40"
+              className={`mb-4 text-[16px] md:text-[17px] font-normal leading-6 ${
+                theme === "light" ? "text-black/50" : "text-white/40"
               } font-Archivo`}
             >
               {s.description}
@@ -57,7 +57,7 @@ const ServiceCard = () => {
             <ul className="mb-5 space-y-2">
               <li className="flex flex-col items-start">
                 <h2
-                  className={`animate-heading text-[12px] uppercase font-Syne leading-4 ml-1 tracking-[.03em] ${
+                  className={`text-[12px] uppercase font-Syne leading-4 ml-1 tracking-[.03em] ${
                     theme === "light"
                       ? "text-gradient-css opacity-90 font-normal"
                       : "text-gradient-css font-medium"
@@ -66,7 +66,7 @@ const ServiceCard = () => {
                   Worked on
                 </h2>{" "}
                 <p
-                  className={`ml-0 text-2xl font-bold ${
+                  className={`ml-0 text-xl md:text-2xl font-bold ${
                     theme === "light" ? "text-black/45" : "text-white/45"
                   }`}
                 >
@@ -80,11 +80,11 @@ const ServiceCard = () => {
           </div>
 
           {/* Right Div - Image */}
-          <div className="w-full md:w-1/2">
+          <div className="w-full md:w-1/2 mt-6 md:mt-0">
             <img
               src={s.image}
               alt={s.name}
-              className="w-full h-full object-cover"
+              className="w-full h-64 md:h-full object-cover"
             />
           </div>
         </div>
