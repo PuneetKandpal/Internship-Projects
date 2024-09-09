@@ -63,7 +63,7 @@ const Team = () => {
   return (
     <div
       ref={sectionRef}
-      className={`w-full py-10 px-[5.4rem] mt-52 ${
+      className={`w-full py-10 px-6 md:px-[5.4rem] mt-52 ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
@@ -80,11 +80,12 @@ const Team = () => {
         Our Team
       </h1>
 
-      <div className="flex justify-between mt-10">
+      {/* Responsive Flexbox Adjustment */}
+      <div className="flex flex-wrap justify-between mt-10 gap-6">
         {teamMembers.map((person, i) => (
           <div
             key={i}
-            className="team-member w-[30%] h-[560px] relative opacity-0"
+            className="team-member w-full sm:w-[45%] md:w-[30%] h-[400px] md:h-[560px] relative opacity-0"
           >
             <div className="w-full h-[80%] relative overflow-hidden group">
               <img
