@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logoLight from "../assets/logo-light.svg";
@@ -46,9 +46,11 @@ const Navbar = ({ withHeroSection }) => {
       if (scrolled) {
         return theme === "light"
           ? "text-black hover:text-gray-600"
-          : "text-white hover:text-gray-300";
+          : "text-white  hover:text-gray-300";
       } else {
-        return "text-white hover:text-gray-300";
+        return theme === "light"
+        ? "text-white hover:text-gray-600"
+        : "text-white  hover:text-gray-300";
       }
     } else {
       return theme === "light"
@@ -67,7 +69,7 @@ const Navbar = ({ withHeroSection }) => {
     >
       <div className="font-Syne h-[55px] w-[210px] flex justify-center items-center object-cover">
         <img
-          className="object-cover ml-[-2rem] md:ml-0 h-[100%] w-[100%] mt-[-2px]"
+          className="object-cover  ml-[-4rem] md:ml-0 h-[100%] w-[100%] mt-[-2px]"
           src={
             scrolled || !withHeroSection
               ? theme === "light"
@@ -79,11 +81,25 @@ const Navbar = ({ withHeroSection }) => {
         />
       </div>
       <div className="md:hidden">
-        <button onClick={toggleMenu}>
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        <button onClick={toggleMenu} className="focus:outline-none">
+          {isMenuOpen ? (
+            <X size={24} className={getLinkStyles()} />
+          ) : (
+            <Menu size={24} className={getLinkStyles()} />
+          )}
         </button>
       </div>
-      <ul className={`md:flex items-center space-y-4 md:space-y-0 md:space-x-8 uppercase tracking-[2px] font-Archivo text-[13px] font-normal ${isMenuOpen ? 'flex flex-col absolute top-[110px] py-20 left-0 right-0 bg-black dark:bg-black p-4' : 'hidden'}`}>
+      <ul
+        className={`md:flex items-center space-y-4 md:space-y-0 md:space-x-8 uppercase tracking-[2px] font-Archivo text-[13px] font-normal ${
+          isMenuOpen
+            ? "flex flex-col absolute top-full left-0 right-0 p-4 shadow-lg"
+            : "hidden"
+        } ${
+          theme === "light"
+            ? "bg-white text-black"
+            : "bg-black text-white"
+        } md:bg-transparent md:static md:shadow-none`}
+      >
         <NavLink
           to="/"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}
@@ -126,12 +142,14 @@ const Navbar = ({ withHeroSection }) => {
         >
           Contact
         </NavLink>
-        <input
-          onClick={toggleTheme}
-          type="checkbox"
-          className="theme-checkbox"
-          checked={theme === "dark"}
-        />
+        <div className="md:ml-4">
+          <input
+            onClick={toggleTheme}
+            type="checkbox"
+            className="theme-checkbox"
+            checked={theme === "dark"}
+          />
+        </div>
       </ul>
     </div>
   );

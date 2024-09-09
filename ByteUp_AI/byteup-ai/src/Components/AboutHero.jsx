@@ -46,22 +46,22 @@ const AboutHero = () => {
 
   return (
     <div
-      className={`w-full h-[85vh] flex flex-col md:flex-row justify-between items-center px-[5.5rem] py-20 ${
+      className={`w-full h-auto md:h-[85vh] flex flex-col md:flex-row justify-between items-center px-4 md:px-[5.5rem] py-10 md:py-20 ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
       <AnimatedCursor isHovered={isHovered} />
-      <div className="md:w-[47%] w-full h-full ">
+      <div className="w-full md:w-[47%] h-auto mb-8 md:mb-0">
         <img
           ref={imageRef} // Assign the ref to the image
           src="https://media.istockphoto.com/id/1827291486/photo/a-dedicated-mentor-is-explaining-mentees-importance-of-project-while-sitting-at-the-boardroom.webp?b=1&s=612x612&w=0&k=20&c=C4KGssB_GUCjYp_XFzhHJcI1TX35Q6gM9hl0YwfgKWo="
           alt="Calendar Planning"
-          className="w-[100%] h-[100%] object-cover"
+          className="w-full h-auto object-cover"
         />
       </div>
-      <div className="md:w-[45%] w-full mt-8 md:mt-0 md:ml-8 text-center md:text-left ">
+      <div className="w-full md:w-[45%] text-center md:text-left">
         <h2
-          className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
+          className={`animate-heading text-start md:text-center text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
             theme === "light" ? "text-gradient-css opacity-90" : "text-white/30"
           }`}
         >
@@ -71,14 +71,14 @@ const AboutHero = () => {
           ref={headingRef}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="text-5xl font-semibold mb-6 leading-[3rem] font-Syne"
+          className="text-3xl text-start md:text-center md:text-5xl font-semibold mb-6 leading-[40px] md:leading-[3rem] font-Syne"
         >
           We Help You Accelerate Growth with Social Media
         </h1>
         <p
           ref={paragraphRef1}
-          className={`mb-2 text-[17px] font-normal leading-6 ${
-            theme === "light" ? " text-black/50" : " text-white/40"
+          className={`mb-2 text-start md:text-center text-base md:text-[17px] font-normal leading-6 ${
+            theme === "light" ? "text-black/50" : "text-white/40"
           } font-Archivo`}
         >
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid
@@ -89,8 +89,8 @@ const AboutHero = () => {
         </p>
         <p
           ref={paragraphRef2}
-          className={`mb-6 text-[17px] font-normal leading-6 ${
-            theme === "light" ? " text-black/50" : " text-white/40"
+          className={`mb-6 text-start md:text-center text-base md:text-[17px] font-normal leading-6 ${
+            theme === "light" ? "text-black/50" : "text-white/40"
           } font-Archivo`}
         >
           Our team of experienced social media experts understands the
@@ -98,7 +98,7 @@ const AboutHero = () => {
           latest trends, algorithms, and best practices. the latest trends,
           algorithms, and best practices.
         </p>
-        <Link to="/services">
+        <Link to="/services" className="flex justify-start">
           <SecondaryBtn btn="Learn more" />
         </Link>
       </div>

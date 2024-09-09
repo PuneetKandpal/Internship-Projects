@@ -27,7 +27,6 @@ const AboutClients = () => {
           trigger: ".about-clients-container",
           start: "top 80%",
           end: "top 60%",
-          // scrub: true, // Uncomment if you want to sync animation with scroll
         },
       }
     );
@@ -45,7 +44,6 @@ const AboutClients = () => {
           trigger: ".animate-heading",
           start: "top 80%",
           end: "top 60%",
-          // scrub: true, // Uncomment if you want to sync animation with scroll
         },
       }
     );
@@ -63,7 +61,6 @@ const AboutClients = () => {
           trigger: ".about-clients-description",
           start: "top 80%",
           end: "top 60%",
-          // scrub: true, // Uncomment if you want to sync animation with scroll
         },
       }
     );
@@ -82,7 +79,6 @@ const AboutClients = () => {
           trigger: ".client-logo",
           start: "top 80%",
           end: "top 60%",
-          // scrub: true, // Uncomment if you want to sync animation with scroll
         },
       }
     );
@@ -100,10 +96,10 @@ const AboutClients = () => {
     <>
       {/* Render AnimatedCursor component globally or ensure it is rendered only once */}
       <AnimatedCursor isHovered={isHovered} />
-      <div className="about-clients-container w-full px-[5.5rem] mt-20 flex justify-between flex-wrap items-center">
-        <div className="w-[35%]">
+      <div className="about-clients-container w-full px-4 md:px-[5.5rem] mt-10 md:mt-20 flex flex-col md:flex-row justify-between flex-wrap items-center">
+        <div className="w-full md:w-[35%] mb-8 md:mb-0">
           <h2
-            className={`animate-heading text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
+            className={`animate-heading text-xs md:text-[13px] uppercase mb-1 font-Syne leading-4 font-normal ml-1 tracking-[.20em] ${
               theme === "light" ? "text-gradient-css opacity-90" : "text-white/30"
             }`}
           >
@@ -112,13 +108,13 @@ const AboutClients = () => {
           <h1
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
-            className="text-5xl font-semibold mb-6 leading-[3rem] font-Syne"
+            className="text-3xl md:text-5xl font-semibold mb-6 leading-[2.5rem] md:leading-[3rem] font-Syne"
           >
             Trusted by Leading Brands
           </h1>
 
           <p
-            className={`about-clients-description mb-6 text-[17px] font-normal leading-6 ${
+            className={`about-clients-description mb-6 text-base md:text-[17px] font-normal leading-6 ${
               theme === "light" ? " text-black/50" : " text-white/40"
             } font-Archivo`}
           >
@@ -130,7 +126,7 @@ const AboutClients = () => {
           </Link>
         </div>
 
-        <div className="w-[50%] py-10 flex gap-10 justify-center items-center flex-wrap">
+        <div className="w-full md:w-[50%] py-8 md:py-10 flex gap-6 md:gap-10 justify-start md:justify-center items-center flex-wrap">
           {[
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-wqpSLAWFF5R26T_-89JGwcHhDpJhOHSJJQ&s",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIBAhZrbAUM5zuAZgw8BGT0CvDzqsdxUFf-A&s",
@@ -140,7 +136,7 @@ const AboutClients = () => {
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGd1EUfsLW_2cVV1MGbetwkXawbnnfFO5lzg&s",
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiOfiIm-_efhRPMly_MWfsDlNgtzPtNDY34g&s",
           ].map((src, index) => (
-            <div key={index} className="client-logo w-auto h-[70px]">
+            <div key={index} className="client-logo w-[70px] h-[70px] md:w-[100px] md:h-[100px] flex items-center justify-center">
               <img
                 className="w-full h-full object-cover"
                 src={src}
