@@ -8,7 +8,6 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HomeServices = () => {
   const { theme } = useContext(ThemeContext);
-  
 
   const services = [
     {
@@ -76,25 +75,25 @@ const HomeServices = () => {
     <div
       className={`${
         theme === "light" ? "bg-white text-black/80" : "bg-black text-white/80"
-      } w-full min-h-[100vh] mt-28 py-24 px-10 flex justify-around`}
+      } w-full min-h-[70vh] mt-10 md:mt-28 py-20 md:py-24 px-4 md:px-10 flex flex-col lg:flex-row justify-around`}
     >
-      <div className="w-[45%] px-5 pr-10 services-container">
+      <div className="w-full lg:w-[45%] px-5 pr-10 services-container">
         {services.map((ser, index) => (
           <div
             key={index}
-            className={`border-b py-9 pb-6 service-item ${
+            className={`border-b py-6 pb-4 service-item ${
               theme === "light"
                 ? "border-black/15 service-hover-white"
                 : "border-white/15 service-hover-black"
             }`}
           >
             <h1
-              className={`text-[26px] font-semibold font-Syne transition ease-in duration-200`}
+              className={`text-[22px] lg:text-[26px] font-semibold font-Syne transition ease-in duration-200`}
             >
               {ser.name}
             </h1>
             <p
-              className={`w-[85%] text-[14px] mt-2 font-light tracking-[0.7px] font-Heebo ${
+              className={`w-full lg:w-[85%] text-[14px] mt-2 font-light tracking-[0.7px] font-Heebo ${
                 theme === "light" ? "text-black/60 " : "text-white/30 "
               }`}
             >
@@ -104,7 +103,7 @@ const HomeServices = () => {
         ))}
       </div>
 
-      <div className="w-[48%] p-2 relative overflow-hidden carousel-container">
+      <div className="w-full lg:w-[48%] p-2 relative overflow-hidden carousel-container mt-10 lg:mt-0">
         {images.map((img, index) => (
           <div
             key={index}
@@ -128,7 +127,7 @@ const HomeServices = () => {
         <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
           <NavLink to="/services">
             <button
-              className={`absolute inset-0 flex items-center justify-center  text-white py-2 px-4 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-500 text-sm uppercase font-Archivo tracking-[1.5px] font-light`}
+              className={`absolute inset-0 flex items-center justify-center text-white py-2 px-4 bg-black bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-500 text-sm uppercase font-Archivo tracking-[1.5px] font-light`}
             >
               Learn More
             </button>
