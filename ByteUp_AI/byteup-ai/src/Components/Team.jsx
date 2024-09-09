@@ -63,7 +63,7 @@ const Team = () => {
   return (
     <div
       ref={sectionRef}
-      className={`w-full py-10 px-6 md:px-[5.4rem] mt-52 ${
+      className={`w-full py-10 px-6 md:px-[5.4rem] mt-20 md:mt-52 ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
