@@ -18,10 +18,6 @@ const HomeBlog = () => {
   const imageContainerStyles =
     theme === "light" ? "bg-white shadow-lg" : "bg-black shadow-xl";
 
-
-  // const descriptionColor =
-  //   theme === "light" ? "rgba(0, 0, 0, 0.6)" : "rgba(255, 255, 255, 0.3)";
-
   // Refs for the animated elements
   const textRef = useRef(null);
   const imagesRef = useRef(null);
@@ -82,17 +78,13 @@ const HomeBlog = () => {
 
         /* Define width and height for image containers */
         .image-container {
-          width: 710px;
-          height: 380px;
-          left: 11rem;
-          bottom: 5rem;
+          width: 100%;
+          height: 300px;
         }
 
         .secondary-image-container {
-          width: 600px;
-          height: 350px;
-          left: 1rem;
-          top: 5rem;
+          width: 90%;
+          height: 250px;
         }
 
         /* Gradient border and background for button in light mode */
@@ -106,7 +98,7 @@ const HomeBlog = () => {
       `}</style>
 
       <div
-        className={`h-[100vh] mt-[4rem] px-[5.5rem] flex items-center  ${containerStyles}`}
+        className={`h-auto mt-[4rem] px-6 md:px-[5.5rem] flex flex-col items-center ${containerStyles}`}
       >
         <AnimatedCursor isHovered={isHeadingHovered} />
         <div
@@ -125,14 +117,14 @@ const HomeBlog = () => {
               Blog Layouts
             </h2>
             <h1
-              className="text-5xl font-semibold mb-5 leading-tight font-Syne inline-block"
+              className="text-4xl md:text-5xl font-semibold mb-5 leading-tight font-Syne inline-block"
               onMouseEnter={() => setIsHeadingHovered(true)}
               onMouseLeave={() => setIsHeadingHovered(false)}
             >
               Tech Blog for Your Latest IT Updates
             </h1>
             <p
-              className={`mb-5 text-[17px] font-normal leading-6 ${
+              className={`mb-5 text-base md:text-[17px] font-normal leading-6 ${
                 theme === "light" ? " text-black/50" : " text-white/40"
               } font-Archivo`}
             >
@@ -150,7 +142,7 @@ const HomeBlog = () => {
           {/* Images Section */}
           <div
             ref={imagesRef} // Attach ref to the images section
-            className="relative w-full md:w-3/5 flex items-center justify-center mt-8 md:mt-0"
+            className="relative w-full md:w-3/5 flex items-center justify-center mt-10 md:mt-0"
           >
             {/* Main image positioned above, crossing to the right */}
             <div
