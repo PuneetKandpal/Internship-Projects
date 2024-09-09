@@ -25,36 +25,36 @@ const MarqueeLogo = () => {
         gradientColor={`${theme === "light" ? "white" : "black"}`}
         className="flex space-x-0 overflow-y-hidden"
       >
-        <div className="h-[6rem] w-auto  px-12">
-          <img className="w-full h-full " src={python} alt="" />
+        <div className=" w-auto px-6 md:px-12 md:h-[4.5rem] h-[3.5rem]">
+          <img className="w-full h-full" src={python} alt="Python Logo" />
         </div>
 
-        <div className="h-[8.7rem] w-auto px-12">
-          <img className="w-full h-full " src={django} alt="" />
+        <div className=" w-auto px-6 md:px-12 md:h-[6.5rem] h-[5rem]">
+          <img className="w-full h-full" src={django} alt="Django Logo" />
         </div>
 
-        <div className="h-[9.8rem] w-auto px-12">
-          <img className="w-full h-full" src={flask} alt="" />
+        <div className=" w-auto px-6 md:px-12 md:h-[7rem] h-[6rem]">
+          <img className="w-full h-full" src={flask} alt="Flask Logo" />
         </div>
 
-        <div className="h-[9rem] mt-[-20px] w-auto px-12">
-          <img className="w-full h-full" src={gemini} alt="" />
+        <div className=" mt-[-20px] w-auto px-6 md:px-12 md:h-[7rem] h-[6rem]">
+          <img className="w-full h-full" src={gemini} alt="Gemini Logo" />
         </div>
 
-        <div className="h-[10rem] w-auto px-8">
-          <img className="w-full h-full" src={langchain} alt="" />
+        <div className=" w-auto px-8 md:h-[7.5rem] h-[6rem]">
+          <img className="w-full h-full" src={langchain} alt="LangChain Logo" />
         </div>
 
-        <div className="h-20 w-auto px-12">
-          <img className="w-full h-full" src={mistral} alt="" />
+        <div className=" w-auto px-6 md:px-12 md:h-16 h-14">
+          <img className="w-full h-full" src={mistral} alt="Mistral Logo" />
         </div>
 
-        <div className="h-[4.9rem] w-auto ml-5 px-12">
-          <img className="w-full h-full" src={selenium} alt="" />
+        <div className="w-auto ml-5 px-6 md:px-12 md:h-[3.8rem] h-[3rem]">
+          <img className="w-full h-full" src={selenium} alt="Selenium Logo" />
         </div>
 
-        <div className="h-[5.3rem] w-auto px-16">
-          <img className="w-full h-full" src={chatgpt} alt="" />
+        <div className="w-auto px-8 md:px-16 md:h-[4.2rem] h-[3.5rem]">
+          <img className="w-full h-full" src={chatgpt} alt="ChatGPT Logo" />
         </div>
       </Marquee>
     </div>

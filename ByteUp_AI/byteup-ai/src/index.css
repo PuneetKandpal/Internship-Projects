@@ -139,3 +139,10 @@
   -webkit-text-fill-color: transparent;
   transition: all 0.2s;
 }
+
+
+@media (max-width: 768px) {
+  body.menu-open {
+    overflow: hidden;
+  }
+}

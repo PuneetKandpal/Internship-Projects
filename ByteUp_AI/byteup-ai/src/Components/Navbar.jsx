@@ -1,12 +1,14 @@
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import logoLight from "../assets/logo-light.svg";
 import logoDark from "../assets/logo-dark.svg";
+import { Menu, X } from "lucide-react";
 
 const Navbar = ({ withHeroSection }) => {
   const { theme, toggleTheme } = useContext(ThemeContext);
   const [scrolled, setScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -55,13 +57,17 @@ const Navbar = ({ withHeroSection }) => {
     }
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div
-      className={`w-full px-12 fixed top-0 left-0 right-0 z-50 flex justify-between items-center transition-all duration-300 ${getNavStyles()}`}
+      className={`w-full px-4 md:px-12 fixed top-0 left-0 right-0 z-50 flex justify-between items-center transition-all duration-300 ${getNavStyles()}`}
     >
       <div className="font-Syne h-[55px] w-[210px] flex justify-center items-center object-cover">
         <img
-          className="object-cover h-[100%] w-[100%] mt-[-2px]"
+          className="object-cover ml-[-2rem] md:ml-0 h-[100%] w-[100%] mt-[-2px]"
           src={
             scrolled || !withHeroSection
               ? theme === "light"
@@ -72,40 +78,51 @@ const Navbar = ({ withHeroSection }) => {
           alt="Logo"
         />
       </div>
-      <ul className="flex items-center space-x-8 uppercase tracking-[2px] font-Archivo text-[13px] font-normal">
+      <div className="md:hidden">
+        <button onClick={toggleMenu}>
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+      <ul className={`md:flex items-center space-y-4 md:space-y-0 md:space-x-8 uppercase tracking-[2px] font-Archivo text-[13px] font-normal ${isMenuOpen ? 'flex flex-col absolute top-[110px] py-20 left-0 right-0 bg-black dark:bg-black p-4' : 'hidden'}`}>
         <NavLink
           to="/"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}
+          onClick={() => setIsMenuOpen(false)}
         >
           Home
         </NavLink>
         <NavLink
           to="/services"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}
+          onClick={() => setIsMenuOpen(false)}
         >
           Services
         </NavLink>
         <NavLink
           to="/work"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}
+          onClick={() => setIsMenuOpen(false)}
         >
           Work
         </NavLink>
         <NavLink
           to="/blogs"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}
+          onClick={() => setIsMenuOpen(false)}
         >
           Blogs
         </NavLink>
         <NavLink
           to="/about"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}
+          onClick={() => setIsMenuOpen(false)}
         >
           About
         </NavLink>
         <NavLink
           to="/contact"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}
+          onClick={() => setIsMenuOpen(false)}
         >
           Contact
         </NavLink>

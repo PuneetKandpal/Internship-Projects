@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import { Link } from "react-router-dom";
 import "../../src/index.css";
@@ -25,37 +25,37 @@ const Hero = () => {
   ];
 
   const handleNext = () => {
-    setIsScaled(false); // Reset scale before changing slide
+    setIsScaled(false);
     setTimeout(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 200); // Adjust timing if necessary
+    }, 200);
   };
 
   const handlePrev = () => {
-    setIsScaled(false); // Reset scale before changing slide
+    setIsScaled(false);
     setTimeout(() => {
       setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
-    }, 200); // Adjust timing if necessary
+    }, 200);
   };
 
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 4000); // Change slide every 5 seconds
+    }, 4000);
 
-    return () => clearInterval(interval); // Clear interval on component unmount
+    return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
     setIsScaled(false);
     setTimeout(() => {
       setIsScaled(true);
-    }, 50); // Small delay to ensure the transition is visible
+    }, 50);
   }, [currentSlide]);
 
   return (
     <div
-      className={`relative w-full h-[100vh] overflow-hidden transition-opacity duration-1000 ${
+      className={`relative w-full h-screen overflow-hidden transition-opacity duration-1000 ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       } ${isScaled ? "opacity-100" : "opacity-0"}`}
     >
@@ -71,7 +71,7 @@ const Hero = () => {
 
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/60 to-transparent"></div>
 
-      <div className="absolute inset-0 w-[45%] ml-56 flex flex-col items-start justify-center">
+      <div className="absolute px-8 inset-0 w-full md:w-[45%] md:ml-56 flex flex-col items-start justify-center">
         <h1
           onMouseEnter={() => {
             setIsHovered(true);
@@ -79,11 +79,11 @@ const Hero = () => {
           onMouseLeave={() => {
             setIsHovered(false);
           }}
-          className="cursor-hover text-[2rem]  font-Syne text-white md:text-6xl font-bold text-start"
+          className="cursor-hover text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-Syne text-white font-bold text-start"
         >
           {slides[currentSlide].text}
         </h1>
-        <div className="mt-10">
+        <div className="mt-6 md:mt-10">
           <Link to="/services">
             <PrimaryBtn btn="Get Started" />
           </Link>
@@ -93,13 +93,13 @@ const Hero = () => {
       <div className="absolute bottom-6 right-6 flex space-x-4">
         <button
           onClick={handlePrev}
-          className="bg-white/15 text-white w-10 h-10 rounded-full hover:bg-gradient-to-r from-purple to-sky transition duration-300"
+          className="bg-white/15 text-white w-8 h-8 md:w-10 md:h-10 rounded-full hover:bg-gradient-to-r from-purple to-sky transition duration-300 flex items-center justify-center"
         >
           &#8592;
         </button>
         <button
           onClick={handleNext}
-          className="bg-white/15 text-white w-10 h-10 rounded-full hover:bg-gradient-to-r from-purple to-sky transition duration-300"
+          className="bg-white/15 text-white w-8 h-8 md:w-10 md:h-10 rounded-full hover:bg-gradient-to-r from-purple to-sky transition duration-300 flex items-center justify-center"
         >
           &#8594;
         </button>
