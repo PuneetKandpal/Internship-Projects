@@ -103,7 +103,7 @@ const HomeServices = () => {
         ))}
       </div>
 
-      <div className="w-full lg:w-[48%] p-2 relative overflow-hidden carousel-container mt-10 lg:mt-0">
+      <div className="w-full h-[450px] md:h-auto lg:w-[48%] p-2 relative overflow-hidden carousel-container mt-10 lg:mt-0 mb-20 lg:mb-0">
         {images.map((img, index) => (
           <div
             key={index}
