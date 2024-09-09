@@ -15,9 +15,6 @@ const HomeBlog = () => {
   const containerStyles =
     theme === "light" ? "bg-white text-black" : "bg-black text-gray-100";
 
-  const imageContainerStyles =
-    theme === "light" ? "bg-white shadow-lg" : "bg-black shadow-xl";
-
   // Refs for the animated elements
   const textRef = useRef(null);
   const imagesRef = useRef(null);
@@ -58,51 +55,75 @@ const HomeBlog = () => {
 
   return (
     <div>
-      {/* Internal CSS */}
       <style>{`
-        @keyframes float {
-          0% {
-            transform: translateY(0);
-          }
-          50% {
-            transform: translateY(-10px);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
 
-        .animate-float {
-          animation: float 3s ease-in-out infinite;
-        }
+    .animate-float {
+      animation: float 3s ease-in-out infinite;
+    }
 
-        /* Define width and height for image containers */
-        .image-container {
-          width: 100%;
-          height: 300px;
-        }
+    .image-container {
+      width: 100%;
+      height: 400px;
+      left: 11rem;
+      bottom: 5rem;
+    }
 
-        .secondary-image-container {
-          width: 90%;
-          height: 250px;
-        }
+    .secondary-image-container {
+      width: 80%;
+      height: 300px;
+      left: 1rem;
+      top: 6rem;
+    }
 
-        /* Gradient border and background for button in light mode */
-        .light-button-gradient {
-          border-image: linear-gradient(to right, #a270c9, #637eb2) 1;
-        }
+    /* For smaller screens */
+    @media (max-width: 768px) {
+      .images-container {
+        flex-direction: column;
+        align-items: center;
+      }
 
-        .light-button-gradient:hover {
-          background: linear-gradient(to right, #a270c9, #637eb2);
-        }
-      `}</style>
+      /* Reduce image sizes for small screens */
+      .image-container {
+        width: 90%;  /* Reduce main image width */
+        height: 220px;  /* Reduce main image height */
+        left: 0;  /* Center the main image */
+        bottom: 0; /* Position relative to the top image */
+      }
+
+      .secondary-image-container {
+        width: 80%;  /* Reduce secondary image width */
+        height: 200px;  /* Reduce secondary image height */
+        top: -30px;  /* Adjust the overlap */
+        left: 0;     /* Align to center */
+      }
+    }
+
+    .light-button-gradient {
+      border-image: linear-gradient(to right, #a270c9, #637eb2) 1;
+    }
+
+    .light-button-gradient:hover {
+      background: linear-gradient(to right, #a270c9, #637eb2);
+    }
+  `}</style>
 
       <div
-        className={`h-auto mt-[4rem] px-6 md:px-[5.5rem] flex flex-col items-center ${containerStyles}`}
+        className={`h-auto mt-[3rem] md:mt-[4rem] px-6 md:px-[5.5rem] flex flex-col items-center ${containerStyles}`}
       >
         <AnimatedCursor isHovered={isHeadingHovered} />
         <div
-          ref={textRef} // Attach ref to the text section
+          ref={textRef}
           className="w-full overflow-hidden mx-auto flex flex-col md:flex-row gap-2"
         >
           {/* Text Section */}
@@ -128,9 +149,9 @@ const HomeBlog = () => {
                 theme === "light" ? " text-black/50" : " text-white/40"
               } font-Archivo`}
             >
-              Share the latest from the IT field with a set <br />
-              of cutting-edge blog list layouts and <br />
-              diverse post single types.
+              Share the latest from the IT field with a set <br /> of
+              cutting-edge blog list layouts and <br /> diverse post single
+              types.
             </p>
             <div>
               <Link to="/blogs">
@@ -141,23 +162,19 @@ const HomeBlog = () => {
 
           {/* Images Section */}
           <div
-            ref={imagesRef} // Attach ref to the images section
-            className="relative w-full md:w-3/5 flex items-center justify-center mt-10 md:mt-0"
+            ref={imagesRef}
+            className="relative w-full md:w-3/5 flex items-center justify-center mt-20 md:mt-0 images-container"
           >
-            {/* Main image positioned above, crossing to the right */}
-            <div
-              className={` ${imageContainerStyles} animate-float image-container relative`}
-            >
+            {/* Main Image */}
+            <div className="animate-float image-container relative">
               <img
                 src="https://static.wixstatic.com/media/0e0314_856bdf8b5611413aad5e1f2559656d2f~mv2.png/v1/fill/w_924,h_533,al_c,q_90,enc_auto/0e0314_856bdf8b5611413aad5e1f2559656d2f~mv2.png"
                 alt="Main blog post"
                 className="w-full h-full object-cover"
               />
             </div>
-            {/* Overlapping image positioned lower, crossing to the left */}
-            <div
-              className={`absolute left-0 ${imageContainerStyles} animate-float secondary-image-container`}
-            >
+            {/* Secondary Image */}
+            <div className="absolute left-0 animate-float secondary-image-container">
               <img
                 src="https://web-images6.pixpa.com/Obc1JDeEgJ8fErXagBz4Z6EjVhs-cgTRI-nxCjivB38/rs:fit:1200:0/q:80/aHR0cHM6Ly9waXhwYWNvbS1pbWcucGl4cGEuY29tL2NvbS9hcnRpY2xlcy8xNTc0Njc1MDM3LTg3MTA2My1hLWJlYXV0aWZ1bC1tZXNzanBnLmpwZw=="
                 alt="Secondary blog post"
