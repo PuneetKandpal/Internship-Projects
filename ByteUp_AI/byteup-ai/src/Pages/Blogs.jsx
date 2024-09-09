@@ -43,18 +43,18 @@ const Blogs = () => {
       </div>
 
       {/* Pagination Controls */}
-      <div className="flex justify-center mt-10">
+      <div className="flex justify-center mt-12 sm:mt-10">
         <button
           onClick={() => handlePageChange(currentPage - 1)}
           disabled={currentPage === 1}
-          className="px-3 py-1 text-sm mx-2 text-white bg-gradient-to-br from-purple to-sky disabled:opacity-40"
+          className="px-3 py-1 text-[12px] sm:text-sm mx-2 text-white bg-gradient-to-br from-purple to-sky disabled:opacity-40"
         >
           Previous
         </button>
         <button
           onClick={() => handlePageChange(currentPage + 1)}
           disabled={currentPage === Math.ceil(blogs.length / blogsPerPage)}
-          className="px-3 py-1 text-sm mx-2 text-white bg-gradient-to-br from-purple to-sky disabled:opacity-40"
+          className="px-3 py-1 text-[12px] sm:text-sm mx-2 text-white bg-gradient-to-br from-purple to-sky disabled:opacity-40"
         >
           Next
         </button>
