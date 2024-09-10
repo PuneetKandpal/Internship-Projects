@@ -119,7 +119,7 @@ const HomeBlog = () => {
   `}</style>
 
       <div
-        className={`h-auto mt-[3rem] md:mt-[4rem] px-6 md:px-[5.5rem] flex flex-col items-center ${containerStyles}`}
+        className={`h-auto py-0 md:py-20 mt-[1rem] md:mt-[5rem] px-6 md:px-[5.5rem] flex flex-col items-center ${containerStyles}`}
       >
         <AnimatedCursor isHovered={isHeadingHovered} />
         <div
