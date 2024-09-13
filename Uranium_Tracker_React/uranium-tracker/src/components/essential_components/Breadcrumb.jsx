@@ -9,7 +9,7 @@ const Breadcrumb = ({ link, title }) => {
           >
             Uranium Essentials
           </a>
-          <span> > </span>
+          <span> &gt; </span>
           <a
             class="hover:text-lime2 font-medium transition-all duration-200"
             href={link}
