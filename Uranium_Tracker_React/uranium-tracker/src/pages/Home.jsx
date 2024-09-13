@@ -1,5 +1,6 @@
 import HomeHero from "../components/HomeHero";
 import HomePriceChart from "../components/HomePriceChart";
+import HomeTableNews from "../components/HomeTableNews";
 import Marquee from "../components/Marquee";
 import Navbar from "../components/Navbar";
 
@@ -10,6 +11,7 @@ const Home = () => {
       <HomeHero />
       <Marquee />
       <HomePriceChart />
+      <HomeTableNews/>
     </div>
   );
 };
