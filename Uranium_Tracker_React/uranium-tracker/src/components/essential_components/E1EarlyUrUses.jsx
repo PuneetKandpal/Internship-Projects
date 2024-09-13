@@ -31,8 +31,8 @@ const E1EarlyUrUses = () => {
               In the 19th century, <br />
               Uranium was primarily used as a coloring agent in ceramics and
               glass, giving them a characteristic
-              <span className="text-yellow">YELLOW </span>or
-              <span className="text-green-400">GREEN hue</span>.
+              <span className="text-yellow-400"> YELLOW </span> or
+              <span className="text-green-400"> GREEN hue</span>.
             </p>
             <p className="text-white/50 leading-6 text-[17px] lato mb-6">
               Its radioactive properties were not understood at this time, and
