@@ -6,6 +6,14 @@ import Investments from "./pages/Investments";
 import Essentials from "./pages/Essentials";
 import Forum from "./pages/Forum";
 import NewsPage from "./components/NewsPage";
+import Eone from "./pages/essential_subpages/eone";
+import Etwo from "./pages/essential_subpages/Etwo";
+import Ethree from "./pages/essential_subpages/Ethree";
+import Efour from "./pages/essential_subpages/Efour";
+import Efive from "./pages/essential_subpages/Efive";
+import Esix from "./pages/essential_subpages/Esix";
+import Eseven from "./pages/essential_subpages/Eseven";
+import Eeight from "./pages/essential_subpages/Eeight";
 
 const App = () => {
   return (
@@ -38,6 +46,14 @@ const App = () => {
               </div>
             }
           />
+          <Route path="/essentials/e1" element={<Eone />} />
+          <Route path="/essentials/e2" element={<Etwo />} />
+          <Route path="/essentials/e3" element={<Ethree />} />
+          <Route path="/essentials/e4" element={<Efour />} />
+          <Route path="/essentials/e5" element={<Efive />} />
+          <Route path="/essentials/e6" element={<Esix />} />
+          <Route path="/essentials/e7" element={<Eseven />} />
+          <Route path="/essentials/e8" element={<Eeight />} />
           <Route
             path="/forum"
             element={
