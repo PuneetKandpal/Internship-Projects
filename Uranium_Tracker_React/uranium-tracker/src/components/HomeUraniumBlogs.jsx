@@ -46,9 +46,9 @@ const HomeUraniumBlogs = () => {
           </h2>
           <a
             href="#"
-            className="hidden md:flex text-black/45 hover:text-lime2 text-[11px] md:text-[13px] items-center"
+            className="hidden md:flex text-white/40 hover:text-lime2 text-[11px] md:text-[14px] items-center"
           >
-            VIEW MORE <i className="ri-arrow-right-s-line ml-1 text-lg"></i>
+            View More <i className="ri-arrow-right-s-line ml-1 text-lg"></i>
           </a>
         </div>
 
