@@ -1,4 +1,4 @@
-import Main from "../../../ByteUp_AI/byteup-ai/src/Pages/Main";
+import Main from "./pages/Main";
 import { Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import News from "./pages/News";
