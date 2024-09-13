@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Link } from "react-router-dom";
 
 const NewsHero = () => {
   useEffect(() => {
@@ -35,12 +36,14 @@ const NewsHero = () => {
   }, []);
 
   return (
-    <div className="py-16 px-6 md:px-20 md:py-20 ">
+    <div className="py-16 px-6 md:px-20 md:py-20">
       <div className="container mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-[2px] h-full">
           {/* Left Section - Large Image */}
           <div className="lg:col-span-2 h-full">
-            <a href="newspage.html" className="block h-full">
+            <Link to="/news/1" className="block h-full">
+              {" "}
+              {/* Link to individual news page */}
               <div className="relative h-[559px] group overflow-hidden animate-large-img">
                 <img
                   src="https://images.unsplash.com/photo-1610720707798-6fe21dc165ba?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bnVjbGVhcnxlbnwwfHwwfHx8MA%3D%3D"
@@ -62,13 +65,13 @@ const NewsHero = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
 
           {/* Right Section - Stacked Smaller Images */}
           <div className="flex flex-col space-y-1 animate-small-imgs">
             {/* Top Small Image */}
-            <a href="newspage.html">
+            <Link to="/news/2">
               <div className="relative w-full h-[277px] group overflow-hidden">
                 <img
                   src="https://www.mining.com/wp-content/uploads/2024/01/Uranium_Energy_Corp_Uranium_Energy_Corp_Completes_Restart_Progra-300x207.jpg"
@@ -88,10 +91,10 @@ const NewsHero = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
 
             {/* Bottom Small Image */}
-            <a href="newspage.html">
+            <Link to="/news/3">
               <div className="relative w-full h-[277px] group overflow-hidden">
                 <img
                   src="https://images.unsplash.com/photo-1567665202038-6c5e97837696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dXJhbml1bXxlbnwwfHwwfHx8MA%3D%3D"
@@ -111,7 +114,7 @@ const NewsHero = () => {
                   </p>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>
