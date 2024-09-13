@@ -5,7 +5,7 @@ import News from "./pages/News";
 import Investments from "./pages/Investments";
 import Essentials from "./pages/Essentials";
 import Forum from "./pages/Forum";
-import NewsPage from "./components/NewsPage";
+import NewsPage from "./pages/NewsPage";
 import Eone from "./pages/essential_subpages/eone";
 import Etwo from "./pages/essential_subpages/Etwo";
 import Ethree from "./pages/essential_subpages/Ethree";
