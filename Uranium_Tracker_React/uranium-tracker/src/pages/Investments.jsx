@@ -9,9 +9,9 @@ const Investments = () => {
   return (
     <div>
       <Navbar />
-      <div class="px-6 md:px-20 mx-auto w-full flex justify-between relative">
+      <div className="px-6 md:px-20 mx-auto w-full flex justify-between relative">
         <InvestmentsSidenav />
-        <div class="sidenav-animation w-full md:w-[78%] mt-[6.9rem] md:ml-[24%] overflow-y-auto">
+        <div className="sidenav-animation w-full md:w-[78%] mt-[6.6rem] md:ml-[24%] overflow-y-auto -mb-3">
           <InvestmentsTopPerformers />
           <InvestmentsAtomicPortfolio />
           <InvestmentUraniumTable />

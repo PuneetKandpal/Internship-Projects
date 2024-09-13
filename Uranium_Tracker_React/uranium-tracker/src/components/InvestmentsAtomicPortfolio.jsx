@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 
 const InvestmentsAtomicPortfolio = () => {
   const mostFollowedStocks = {
@@ -115,7 +115,7 @@ const InvestmentsAtomicPortfolio = () => {
   }, []);
 
   return (
-    <div id="portfolio" className="bg-zinc-800/30 p-8 mt-5 rounded-md">
+    <div id="portfolio" className="bg-zinc-800/30 p-8 mt-5 mb-8 rounded-md">
       <h2 className="frank text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white">
         The Atomic Portfolio
       </h2>

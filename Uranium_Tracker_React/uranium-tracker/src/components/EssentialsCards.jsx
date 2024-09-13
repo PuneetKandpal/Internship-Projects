@@ -1,4 +1,4 @@
-import  { useEffect } from "react";
+import { useEffect } from "react";
 import { gsap } from "gsap";
 import e1 from "../assets/e1.jpg";
 import e2 from "../assets/e2.jpg";
@@ -9,49 +9,61 @@ const cardData = [
     href: "essentials/e1.html",
     image: e1,
     title: "What is Uranium?",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
     href: "essentials/e2.html",
     image: e2,
     title: "Natural Occurence of Uranium",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
     href: "essentials/e3.html",
-    image: "https://g.foolcdn.com/editorial/images/459568/ranger-uranium-mine-in-australia.jpg",
+    image:
+      "https://g.foolcdn.com/editorial/images/459568/ranger-uranium-mine-in-australia.jpg",
     title: "Global Distribution of uranium Resources",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
     href: "essentials/e4.html",
     image: "https://www.ausimm.com/globalassets/bulletin/plummer-figure4.png",
     title: "Where can uranium be found?",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
     href: "essentials/e5.html",
-    image: "https://ahf.nuclearmuseum.org/wp-content/uploads/2018/07/Shinkolobwe_mine.jpg",
+    image:
+      "https://ahf.nuclearmuseum.org/wp-content/uploads/2018/07/Shinkolobwe_mine.jpg",
     title: "The history of uranium",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
     href: "essentials/e6.html",
-    image: "https://cardinalnews.org/wp-content/uploads/2022/11/WhatsApp-Image-2022-11-21-at-3.16.03-PM.jpeg",
+    image:
+      "https://cardinalnews.org/wp-content/uploads/2022/11/WhatsApp-Image-2022-11-21-at-3.16.03-PM.jpeg",
     title: "Environmental impact of uranium",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
     href: "essentials/e7.html",
-    image: "https://upload.wikimedia.org/wikipedia/commons/4/48/Uranium_Processing_Facility_001.jpg",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/4/48/Uranium_Processing_Facility_001.jpg",
     title: "Uranium Processing",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
     href: "essentials/e8.html",
     image: e8,
     title: "Uranium Glossary",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
 ];
 
