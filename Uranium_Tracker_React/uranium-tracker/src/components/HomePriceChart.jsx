@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HomePriceChart = () => {
   useEffect(() => {
-    gsap.from(".uranium-info", {
+    gsap.from(".hero-uranium-info", {
       scrollTrigger: {
         trigger: ".uranium-section",
         start: "top 80%", // Adjust start point
@@ -39,7 +39,7 @@ const HomePriceChart = () => {
       {/* Uranium Prices Section */}
       <PriceChart /> {/* Include PriceChart Component */}
       {/* Uranium Info Section */}
-      <div className="w-full mt-4 lg:mt-0 lg:w-[45%] uranium-info">
+      <div className="w-full mt-4 lg:mt-0 lg:w-[45%] hero-uranium-info">
         <h1 className="mt-[-6px] w-full lg:w-[80%] text-bg frank leading-[45px] sm:leading-[57px] text-[2rem] sm:text-[3rem] text-white font-medium mb-7 uranium-heading">
           Invest in the energy of the future
         </h1>
