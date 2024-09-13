@@ -6,21 +6,21 @@ import e8 from "../assets/e8.jpg";
 
 const cardData = [
   {
-    href: "essentials/e1.html",
+    href: "/essentials/e1",
     image: e1,
     title: "What is Uranium?",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
-    href: "essentials/e2.html",
+    href: "/essentials/e2",
     image: e2,
     title: "Natural Occurence of Uranium",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
-    href: "essentials/e3.html",
+    href: "/essentials/e3",
     image:
       "https://g.foolcdn.com/editorial/images/459568/ranger-uranium-mine-in-australia.jpg",
     title: "Global Distribution of uranium Resources",
@@ -28,14 +28,14 @@ const cardData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
-    href: "essentials/e4.html",
+    href: "/essentials/e4",
     image: "https://www.ausimm.com/globalassets/bulletin/plummer-figure4.png",
     title: "Where can uranium be found?",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
-    href: "essentials/e5.html",
+    href: "/essentials/e5",
     image:
       "https://ahf.nuclearmuseum.org/wp-content/uploads/2018/07/Shinkolobwe_mine.jpg",
     title: "The history of uranium",
@@ -43,7 +43,7 @@ const cardData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
-    href: "essentials/e6.html",
+    href: "/essentials/e6",
     image:
       "https://cardinalnews.org/wp-content/uploads/2022/11/WhatsApp-Image-2022-11-21-at-3.16.03-PM.jpeg",
     title: "Environmental impact of uranium",
@@ -51,7 +51,7 @@ const cardData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
-    href: "essentials/e7.html",
+    href: "/essentials/e7",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/4/48/Uranium_Processing_Facility_001.jpg",
     title: "Uranium Processing",
@@ -59,7 +59,7 @@ const cardData = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, nobis totam...",
   },
   {
-    href: "essentials/e8.html",
+    href: "/essentials/e8",
     image: e8,
     title: "Uranium Glossary",
     description:
