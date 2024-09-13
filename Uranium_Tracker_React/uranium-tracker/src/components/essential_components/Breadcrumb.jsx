@@ -1,4 +1,4 @@
-const Breadcrumb = ({ link }) => {
+const Breadcrumb = ({ link, title }) => {
   return (
     <div>
       <div class="bg-black1 shadow-lg px-6 md:px-20 py-5 fixed top-0 left-0 w-full z-50">
@@ -14,7 +14,7 @@ const Breadcrumb = ({ link }) => {
             class="hover:text-lime2 font-medium transition-all duration-200"
             href={link}
           >
-            What Is Uranium
+            {title}
           </a>
         </ul>
       </div>
