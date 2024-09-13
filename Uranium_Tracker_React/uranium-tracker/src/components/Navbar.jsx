@@ -104,7 +104,7 @@ const Navbar = () => {
         className="hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-7 absolute md:relative top-full left-0 right-0 bg-black1 md:bg-transparent pb-4 md:pb-0 shadow-md md:shadow-none w-full md:w-auto"
       >
         <ul className="lato text-white tracking-wide capitalize text-[16.2px] pl-10 md:pl-0 mb-4 md:mb-0 font-light flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:gap-x-5 w-full md:w-auto">
-          <NavLink to="/home">
+          <NavLink to="/">
             <a className="active transition-all duration-300 block py-2 px-4 md:p-0">
               Home
             </a>
@@ -131,12 +131,12 @@ const Navbar = () => {
           </NavLink>
         </ul>
 
-        <a
+        <NavLink
           href="#"
           className="bg-lime1 text-black font-semibold ml-14 md:ml-0 px-3 py-1 hover:bg-lime2 transition-all duration-300 w-full md:w-auto text-center"
         >
           Subscribe
-        </a>
+        </NavLink>
       </div>
     </nav>
   );
