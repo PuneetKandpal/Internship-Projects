@@ -98,3 +98,10 @@ html {
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*NewsPage*/
+.right {
+  position: -webkit-sticky;
+  top: 0;
+  height: fit-content;
+}

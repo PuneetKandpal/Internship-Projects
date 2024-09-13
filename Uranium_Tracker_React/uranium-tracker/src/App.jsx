@@ -5,6 +5,7 @@ import News from "./pages/News";
 import Investments from "./pages/Investments";
 import Essentials from "./pages/Essentials";
 import Forum from "./pages/Forum";
+import NewsPage from "./components/NewsPage";
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
               </div>
             }
           />
+          <Route path="/news/:id" element={<NewsPage />} />
           <Route
             path="/investments"
             element={
