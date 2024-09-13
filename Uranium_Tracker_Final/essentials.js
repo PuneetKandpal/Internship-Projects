@@ -17,18 +17,7 @@ gsap.from(".hero", {
   },
 });
 
-// gsap.from("p", {
-//   y: -100,
-//   opacity: 0,
-//   duration: 1.2,
-//   ease: "power2.out",
-//   scrollTrigger: {
-//     trigger: "p",
-//     start: "top 80%",
-//     end: "top 60%",
-//     toggleActions: "play none none reverse",
-//   },
-// });
+
 
 // Right content animation (atom container)
 gsap.from(".atom-container", {

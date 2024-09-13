@@ -1,8 +1,8 @@
-import React from "react";
+
 
 const InvestmentsTopPerformers = () => {
   return (
-    <div id="performers" className="bg-zinc-800/30 p-8 rounded-md">
+    <div id="performers" className="bg-zinc-800/30 p-8 rounded-md mb-7">
       <h2 className="frank text-[1rem] md:text-[1.25rem] lg:mb-6 font-semibold inter tracking-tight text-white">
         Top Performers
         <span className="text-base text-gray-600"> (Last 30 days)</span>

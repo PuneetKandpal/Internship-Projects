@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import  { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -16,7 +16,7 @@ const InvestmentsSidenav = () => {
         trigger: ".sidenav-animation",
         start: "top 80%",
         end: "top 60%",
-        toggleActions: "play none none reverse",
+        // toggleActions: "play none none reverse",
       },
     });
 
@@ -33,7 +33,7 @@ const InvestmentsSidenav = () => {
         // Scroll to the target element with an offset for fixed headers
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 90, // Adjust based on header height
+            top: targetElement.offsetTop - 1, // Adjust based on header height
             behavior: "smooth",
           });
         }
@@ -49,7 +49,7 @@ const InvestmentsSidenav = () => {
   }, []);
 
   return (
-    <div className="hidden md:block sidenav sidenav-animation rounded-md h-fit z-10 w-[20%] bg-zinc-800/30 fixed top-[5.6rem] bottom-0 overflow-y-auto mt-5">
+    <div className="hidden md:block sidenav sidenav-animation rounded-md h-fit z-10 w-[20%] bg-zinc-800/30 fixed top-[5.4rem] bottom-0 overflow-y-auto mt-5">
       <ul className="space-y-3 p-4">
         <li>
           <a
