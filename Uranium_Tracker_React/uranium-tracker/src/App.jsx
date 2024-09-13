@@ -9,7 +9,6 @@ import Forum from "./pages/Forum";
 const App = () => {
   return (
     <div>
-      App
       <Routes>
         <Route path="/" element={<Main />}>
           <Route index element={<Home />} />
