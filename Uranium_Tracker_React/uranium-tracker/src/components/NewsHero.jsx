@@ -36,7 +36,7 @@ const NewsHero = () => {
   }, []);
 
   return (
-    <div className="py-16 px-6 md:px-20 md:py-20">
+    <div className="py-16 px-0 md:px-0 md:py-20">
       <div className="container mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-[2px] h-full">
           {/* Left Section - Large Image */}

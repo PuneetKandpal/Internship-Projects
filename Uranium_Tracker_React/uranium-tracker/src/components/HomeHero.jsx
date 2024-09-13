@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import herovdo from "../assets/hero.mp4";
+import { NavLink } from "react-router-dom";
 
 const HomeHero = () => {
   const heroRef = useRef(null);
@@ -81,13 +82,13 @@ const HomeHero = () => {
             8175/8300 USc/Lb U3O8 (+12c, +0.15%)
           </h2>
         </div>
-        <a
+        <NavLink
+          to="/investments"
           ref={buttonRef}
-          href="investments.html"
           className="hero-btn bg-lime1 ml-1 text-black text-[14px] sm:text-[15px] px-3 sm:px-6 py-2 sm:py-3 lato font-semibold hover:bg-lime2 transition-all"
         >
           Get Started
-        </a>
+        </NavLink>
       </div>
     </div>
   );
