@@ -1,7 +1,7 @@
 import Breadcrumb from "../../components/essential_components/breadcrumb";
 import E1EarlyUrUses from "../../components/essential_components/E1EarlyUrUses";
 import E1NuclearFuelCycle from "../../components/essential_components/E1NuclearFuelCycle";
-// import E1PeriodicTable from "../../components/essential_components/E1PeriodicTable";
+import E1PeriodicTable from "../../components/essential_components/E1PeriodicTable";
 import E1UraniumProp from "../../components/essential_components/E1UraniumProp";
 import EssentialSubHero from "../../components/essential_components/EssentialSubHero";
 import Footer from "../../components/Footer";
@@ -17,7 +17,7 @@ const Eone = () => {
         }
       />
       <E1UraniumProp />
-      {/* <E1PeriodicTable /> */}
+      <E1PeriodicTable />
       <E1EarlyUrUses />
       <E1NuclearFuelCycle />
       <Footer />
