@@ -62,7 +62,14 @@ const NewsHero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-[2px] h-full">
           {/* Left Section - Large Image */}
           <div className="lg:col-span-2 h-full">
-            <Link to="/news/1" className="block h-full">
+            <Link
+              to={`${
+                newsData.featured_news.link
+                  ? newsData.featured_news.link
+                  : "https://www.mining-technology.com/news/putin-calls-for-export-limits-on-russian-nickel-uranium-and-titanium/"
+              } `}
+              className="block h-full"
+            >
               {" "}
               {/* Link to individual news page */}
               <div className="relative h-[559px] group overflow-hidden animate-large-img">
