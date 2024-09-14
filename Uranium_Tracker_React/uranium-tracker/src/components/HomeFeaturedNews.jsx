@@ -1,44 +1,53 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchHomeData } from "../store/slices/apiSlice";
+import Loader from "./Loader"; // Import your loader component
 
 gsap.registerPlugin(ScrollTrigger);
 
 const HomeFeaturedNews = () => {
+  const dispatch = useDispatch();
+  const homeData = useSelector((state) => state.api.home);
+  const status = useSelector((state) => state.api.status);
+  const [isLoading, setIsLoading] = useState(true);
+
   useEffect(() => {
-    // Featured News Section Animation
+    if (status === "idle") {
+      dispatch(fetchHomeData());
+    }
+
+    if (status === "succeeded") {
+      setIsLoading(false);
+    }
+
+    // Animations
     gsap.from(".featured-news", {
       opacity: 0,
       y: 50,
       duration: 1,
-      onStart: () =>
-        (document.querySelector(".featured-news").style.overflow = "hidden"),
-      onComplete: () =>
-        (document.querySelector(".featured-news").style.overflow = ""),
       scrollTrigger: {
         trigger: ".featured-news",
         start: "top 80%",
-        // toggleActions: 'play none none reverse',
       },
     });
 
-    // News Cards Animation
     gsap.from(".news-card", {
       opacity: 0,
       x: -50,
       duration: 1,
       stagger: 0.2,
-      onStart: () =>
-        (document.querySelector(".featured-news").style.overflow = "hidden"),
-      onComplete: () =>
-        (document.querySelector(".featured-news").style.overflow = ""),
       scrollTrigger: {
         trigger: ".news-card",
         start: "top 80%",
-        // toggleActions: 'play none none reverse',
       },
     });
-  }, []);
+  }, [status, dispatch]);
+
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div className="w-full lg:w-[50%] h-full mb-10 featured-news overflow-x-hidden">
@@ -47,91 +56,44 @@ const HomeFeaturedNews = () => {
         Featured News
       </h2>
 
-      {/* News Cards */}
       <div className="text-white">
         <div className="max-w-4xl mx-auto">
-          {/* News Card 1 */}
-          <div className="flex flex-col sm:flex-row pb-7 border-b border-white/10 news-card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmvqSwchXqV_TXotA-8Afc4SB6_15IMZns-g&s"
-              alt="Technology Image"
-              className="w-full sm:w-52 h-32 md:h-[140px] object-cover hover:opacity-80 transition-all duration-200"
-            />
-            <div className="mt-4 sm:mt-0 sm:ml-6 flex flex-col justify-between">
-              <div>
-                <span className="text-lime1 uppercase text-xs font-bold">
-                  Technology
-                </span>
-                <a href="#">
-                  <h2 className="text-lg md:text-xl font-semibold text-white/90 mt-2 tracking-[0.5px] hover:text-lime1 transition-all duration-200">
-                    NASA Data Shows July 22 Was Earth’s Hottest Day on Record
-                  </h2>
-                </a>
+          {homeData.featured_news.map((newsItem) => (
+            <div
+              key={newsItem.id}
+              className="flex flex-col sm:flex-row py-7 border-b border-white/10 news-card"
+            >
+              <img
+                src={newsItem.image_url}
+                alt={newsItem.title}
+                className="w-52 h-32 md:h-[140px] object-cover hover:opacity-80 transition-all duration-200"
+                style={{ minWidth: "13rem" }} // You can use a fixed width here
+              />
+              <div className="mt-4 sm:mt-0 sm:ml-6 flex flex-col justify-between">
+                <div>
+                  <span className="text-lime1 uppercase text-xs font-bold">
+                    {newsItem.publisher}
+                  </span>
+                  <a
+                    href={newsItem.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <h2 className="text-lg md:text-xl font-semibold text-white/90 mt-2 tracking-[0.5px] hover:text-lime1 transition-all duration-200">
+                      {newsItem.title}
+                    </h2>
+                  </a>
+                </div>
+                <p className="text-xs mt-4 md:mb-[7px] md:text-[12px] font-medium text-white/25">
+                  <span>
+                    <i className="ri-time-line mr-1"></i>{" "}
+                    {newsItem.published_date}
+                  </span>{" "}
+                  &nbsp; | &nbsp; <span>{newsItem.author}</span>
+                </p>
               </div>
-              <p className="text-xs mt-4 md:mb-[7px] md:text-[12px] font-medium text-white/25">
-                <span>
-                  <i className="ri-time-line mr-1"></i> 2 hrs ago
-                </span>{" "}
-                &nbsp; | &nbsp; <span>Bloomberg</span>
-              </p>
             </div>
-          </div>
-
-          {/* News Card 2 */}
-          <div className="flex flex-col sm:flex-row py-7 border-b border-white/10 news-card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNhe9IWtYeL1StChO_X_OB58yn1UlXYtNlPg&s"
-              alt="PlayStation vs Xbox"
-              className="w-full sm:w-52 h-32 md:h-[140px] object-cover hover:opacity-80 transition-all duration-200"
-            />
-            <div className="mt-4 sm:mt-0 sm:ml-6 flex flex-col justify-between">
-              <div>
-                <span className="text-lime1 uppercase text-xs font-bold">
-                  Technology
-                </span>
-                <a href="#">
-                  <h2 className="text-lg md:text-xl font-semibold text-white/90 mt-2 tracking-[0.5px] hover:text-lime1 transition-all duration-200">
-                    NASA to highlight 13th space station research, development
-                    conference
-                  </h2>
-                </a>
-              </div>
-              <p className="text-xs mt-4 md:mb-[7px] md:text-[12px] font-medium text-white/25">
-                <span>
-                  <i className="ri-time-line mr-1"></i> 2 hrs ago
-                </span>{" "}
-                &nbsp; | &nbsp; <span>Bloomberg</span>
-              </p>
-            </div>
-          </div>
-
-          {/* News Card 3 */}
-          <div className="flex flex-col sm:flex-row py-7 border-b border-white/10 news-card">
-            <img
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjSNoe0C1BihCNTwAKcYecbdUqS7GwOdHAlA&s"
-              alt="Apple Patent"
-              className="w-full sm:w-52 h-32 md:h-[140px] object-cover hover:opacity-80 transition-all duration-200"
-            />
-            <div className="mt-4 sm:mt-0 sm:ml-6 flex flex-col justify-between">
-              <div>
-                <span className="text-lime1 uppercase text-xs font-bold">
-                  Gadgets
-                </span>
-                <a href="#">
-                  <h2 className="text-lg md:text-xl font-semibold text-white/90 mt-2 tracking-[0.5px] hover:text-lime1 transition-all duration-200">
-                    NASA offers virtual activities for 21st Northrop Grumman
-                    resupply mission
-                  </h2>
-                </a>
-              </div>
-              <p className="text-xs mt-4 md:mb-[7px] md:text-[12px] font-medium text-white/25">
-                <span>
-                  <i className="ri-time-line mr-1"></i> 2 hrs ago
-                </span>{" "}
-                &nbsp; | &nbsp; <span>Bloomberg</span>
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
