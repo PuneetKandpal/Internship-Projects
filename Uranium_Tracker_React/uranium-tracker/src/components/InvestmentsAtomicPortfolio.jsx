@@ -1,28 +1,37 @@
-import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchStocksData } from "../store/slices/apiSlice";
+import Loader from "./Loader"; // Import your loader component
+import { useEffect, useState } from "react";
+// import Chart from "chart.js/auto";
 
 const InvestmentsAtomicPortfolio = () => {
-  const mostFollowedStocks = {
-    labels: ["DNN", "NXE", "UEC", "LOT.AX", "CCJ"],
-    data: [1.71, 6.4, 5.37, 0.22, 42.61],
+  const dispatch = useDispatch();
+  const stocksData = useSelector((state) => state.api.stocks);
+  const status = useSelector((state) => state.api.status);
+  const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
+  const [topGainers, setTopGainers] = useState({ labels: [], data: [] });
+  const [topLosers, setTopLosers] = useState({ labels: [], data: [] });
+  const [mostFollowed, setMostFollowed] = useState({ labels: [], data: [] });
+
+  // Extract labels and data from stocksData.top_gainers
+  const extractTopGainers = (topGainersData) => {
+    const labels = topGainersData.map((item) => item[0]); // Extract stock symbols
+    const data = topGainersData.map((item) => item[1].current_price); // Extract current prices
+    return { labels, data };
   };
 
-  const topGainers = {
-    labels: ["AEC.V", "UROY", "DNN", "UEC", "DML.TO", "FMC.V", "LMRXF", "NXE"],
-    data: [0.07, 2.32, 1.71, 5.37, 2.29, 0.09, 0.42, 6.4],
+  // Extract labels and data from stocksData.top_losers
+  const extractTopLosers = (topLosersData) => {
+    const labels = topLosersData.map((item) => item[0]); // Extract stock symbols
+    const data = topLosersData.map((item) => item[1].current_price); // Extract current prices
+    return { labels, data };
   };
 
-  const topLosers = {
-    labels: [
-      "CUL.AX",
-      "GTR.AX",
-      "ENR.AX",
-      "RDM.AX",
-      "ERA.AX",
-      "DYL.AX",
-      "PDN.AX",
-      "TOE.AX",
-    ],
-    data: [0.0, 0.0, 0.47, 0.13, 0.02, 1.0, 9.73, 0.24],
+  // Extract labels and data from stocksData.top_performing_stocks
+  const extractMostFollowed = (mostFollowedData) => {
+    const labels = mostFollowedData.map((item) => item[0]); // Extract stock symbols
+    const data = mostFollowedData.map((item) => item[1].current_price); // Extract current prices
+    return { labels, data };
   };
 
   const createRadarChart = (
@@ -75,44 +84,76 @@ const InvestmentsAtomicPortfolio = () => {
     });
   };
 
+  // Fetch stocks data when component mounts
   useEffect(() => {
-    const mostFollowedCtx = document
-      .getElementById("mostFollowedChart")
-      .getContext("2d");
-    const topGainersCtx = document
-      .getElementById("topGainersChart")
-      .getContext("2d");
-    const topLosersCtx = document
-      .getElementById("topLosersChart")
-      .getContext("2d");
+    if (status === "idle") {
+      dispatch(fetchStocksData());
+    }
 
-    createRadarChart(
-      mostFollowedCtx,
-      mostFollowedStocks.labels,
-      mostFollowedStocks.data,
-      "Most Followed Stocks",
-      "rgba(255, 193, 7, 0.5)",
-      "rgba(255, 193, 7, 1)"
-    );
+    if (status === "succeeded") {
+      const extractedTopGainers = extractTopGainers(stocksData.top_gainers);
+      setTopGainers(extractedTopGainers);
 
-    createRadarChart(
-      topGainersCtx,
-      topGainers.labels,
-      topGainers.data,
-      "Top Gainers",
-      "rgba(40, 167, 69, 0.5)",
-      "rgba(40, 167, 69, 1)"
-    );
+      const extractedTopLosers = extractTopLosers(stocksData.top_losers);
+      setTopLosers(extractedTopLosers);
 
-    createRadarChart(
-      topLosersCtx,
-      topLosers.labels,
-      topLosers.data,
-      "Top Losers",
-      "rgba(220, 53, 69, 0.5)",
-      "rgba(220, 53, 69, 1)"
-    );
-  }, []);
+      const extractedMostFollowed = extractMostFollowed(
+        stocksData.top_performing_stocks
+      );
+      setMostFollowed(extractedMostFollowed);
+
+      setIsLoading(false); // Set loading to false when data is fetched
+    }
+  }, [status, dispatch, stocksData]);
+
+  // Create charts after the data is fetched
+  useEffect(() => {
+    if (!isLoading) {
+      const topGainersCtx = document
+        .getElementById("topGainersChart")
+        .getContext("2d");
+
+      createRadarChart(
+        topGainersCtx,
+        topGainers.labels,
+        topGainers.data,
+        "Top Gainers",
+        "rgba(40, 167, 69, 0.5)",
+        "rgba(40, 167, 69, 1)"
+      );
+
+      const topLosersCtx = document
+        .getElementById("topLosersChart")
+        .getContext("2d");
+
+      createRadarChart(
+        topLosersCtx,
+        topLosers.labels,
+        topLosers.data,
+        "Top Losers",
+        "rgba(220, 53, 69, 0.5)",
+        "rgba(220, 53, 69, 1)"
+      );
+
+      const mostFollowedCtx = document
+        .getElementById("mostFollowedChart")
+        .getContext("2d");
+
+      createRadarChart(
+        mostFollowedCtx,
+        mostFollowed.labels,
+        mostFollowed.data,
+        "Most Followed Stocks",
+        "rgba(234, 255, 0, 0.311)",
+        "#d8ca00"
+      );
+    }
+  }, [isLoading, topGainers, topLosers, mostFollowed]);
+
+  // Show the loader while loading is true
+  if (isLoading) {
+    return <Loader />;
+  }
 
   return (
     <div id="portfolio" className="bg-zinc-800/30 p-8 mt-5 mb-8 rounded-md">

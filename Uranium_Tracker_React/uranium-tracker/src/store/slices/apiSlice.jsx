@@ -12,6 +12,14 @@ export const fetchNewsData = createAsyncThunk("api/fetchNewsData", async () => {
   return response.data;
 });
 
+export const fetchStocksData = createAsyncThunk(
+  "api/fetchStocksData",
+  async () => {
+    const response = await axiosInstance.get("/stocks");
+    return response.data;
+  }
+);
+
 // API Slice
 const apiSlice = createSlice({
   name: "api",
@@ -32,6 +40,10 @@ const apiSlice = createSlice({
       })
       .addCase(fetchNewsData.fulfilled, (state, action) => {
         state.news = action.payload;
+        state.status = "succeeded";
+      })
+      .addCase(fetchStocksData.fulfilled, (state, action) => {
+        state.stocks = action.payload;
         state.status = "succeeded";
       });
   },
