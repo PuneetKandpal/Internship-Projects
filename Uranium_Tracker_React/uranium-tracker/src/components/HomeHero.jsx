@@ -1,15 +1,17 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import herovdo from "../assets/hero.mp4";
 import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHomeData } from "../store/slices/apiSlice";
+import Loader from "./Loader"; // Import your loader component
 
 const HomeHero = () => {
   const dispatch = useDispatch();
   const homeData = useSelector((state) => state.api.home);
   const status = useSelector((state) => state.api.status);
-  const error = useSelector((state) => state.api.error);
+  const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
+
   const heroRef = useRef(null);
   const titleRef = useRef(null);
   const flexRef = useRef(null);
@@ -17,51 +19,55 @@ const HomeHero = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    // Data fetching logic
     if (status === "idle") {
       dispatch(fetchHomeData());
     }
 
-    // Animate hero section elements on load
-    const tl = gsap.timeline();
-    tl.from(titleRef.current, {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: "power2.out",
-    })
-      .from(
-        flexRef.current,
-        { opacity: 0, y: 50, duration: 1, ease: "power2.out" },
-        "-=0.8"
-      )
-      .from(
-        buttonRef.current,
-        {
-          opacity: 0,
-          y: 100,
-          duration: 1,
-          ease: "power2.out",
-          clearProps: "all",
-        },
-        "-=0.8"
-      );
+    if (status === "succeeded") {
+      setIsLoading(false); // Set loading to false when data is fetched
+    }
 
-    // Subtle zoom-in effect for background video
-    gsap.from(videoRef.current, {
-      scale: 1.1,
-      duration: 1.5,
-      ease: "power2.out",
-    });
-  }, [status, dispatch]);
+    // GSAP animations
+    if (!isLoading) {
+      const tl = gsap.timeline();
+      tl.from(titleRef.current, {
+        opacity: 0,
+        y: 50,
+        duration: 1,
+        ease: "power2.out",
+      })
+        .from(
+          flexRef.current,
+          { opacity: 0, y: 50, duration: 1, ease: "power2.out" },
+          "-=0.8"
+        )
+        .from(
+          buttonRef.current,
+          {
+            opacity: 0,
+            y: 100,
+            duration: 1,
+            ease: "power2.out",
+            clearProps: "all",
+          },
+          "-=0.8"
+        );
 
-  if (status === "loading") {
-    return <p>Loading...</p>;
+      // Subtle zoom-in effect for background video
+      gsap.from(videoRef.current, {
+        scale: 1.1,
+        duration: 1.5,
+        ease: "power2.out",
+      });
+    }
+  }, [status, dispatch, isLoading]);
+
+  // Show the loader while loading is true
+  if (isLoading) {
+    return <Loader />;
   }
 
-  if (status === "failed") {
-    return <p>Error: {error}</p>;
-  }
+  // If not loading, return the default component
   return (
     <div
       ref={heroRef}
