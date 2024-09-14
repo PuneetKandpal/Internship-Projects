@@ -20,6 +20,14 @@ export const fetchStocksData = createAsyncThunk(
   }
 );
 
+export const fetchGlossaryData = createAsyncThunk(
+  "api/fetchGlossaryData",
+  async () => {
+    const response = await axiosInstance.get("/glossary");
+    return response.data;
+  }
+);
+
 // API Slice
 const apiSlice = createSlice({
   name: "api",
@@ -27,7 +35,7 @@ const apiSlice = createSlice({
     home: null,
     news: null,
     stocks: null,
-    blogs: null,
+    glossary: null,
     status: "idle",
     error: null,
   },
@@ -44,6 +52,9 @@ const apiSlice = createSlice({
       })
       .addCase(fetchStocksData.fulfilled, (state, action) => {
         state.stocks = action.payload;
+        state.status = "succeeded";
+      }).addCase(fetchGlossaryData.fulfilled, (state, action) => {
+        state.glossary = action.payload;
         state.status = "succeeded";
       });
   },
