@@ -19,18 +19,6 @@ const UraniumTableLosers = () => {
       setIsLoading(false);
     }
 
-    // GSAP animation
-    // gsap.from("#uranium-table-section", {
-    //   scrollTrigger: {
-    //     trigger: "#uranium-table-section",
-    //     start: "top 80%",
-    //     end: "bottom 20%",
-    //   },
-    //   opacity: 0,
-    //   x: -50,
-    //   duration: 1.5,
-    //   ease: "power2.out",
-    // });
   }, [status, dispatch, isLoading]);
 
   // Helper function to determine the color based on the value
@@ -55,29 +43,29 @@ const UraniumTableLosers = () => {
           <table className="w-full uranium-stocks-table min-w-[600px]">
             <thead className="bg-bg text-white/30 border-b border-white/10">
               <tr>
-                <th className="px-2 py-2 md:px-4 md:py-[13px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
+                <th className="px-2 py-2 md:px-4 md:py-[16px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
                   Country
                 </th>
-                <th className="px-2 py-2 md:px-4 md:py-[13px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
+                <th className="px-2 py-2 md:px-4 md:py-[16px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
                   Symbol
                 </th>
-                <th className="px-2 py-2 md:px-4 md:py-[13px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
+                <th className="px-2 py-2 md:px-5 md:py-[16px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
                   Name
                 </th>
-                <th className="px-2 py-2 md:px-4 md:py-[13px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
+                <th className="px-2 py-2 md:px-5 md:py-[16px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
                   Current Price
                 </th>
-                <th className="px-2 py-2 md:px-4 md:py-[13px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
+                <th className="px-2 py-2 md:px-4 md:py-[16px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
                   Last Price
                 </th>
-                <th className="px-2 py-2 md:px-4 md:py-[13px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
+                <th className="px-2 py-2 md:px-4 md:py-[16px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
                   Return (1M)
                 </th>
-                <th className="px-2 py-2 md:px-4 md:py-[13px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
-                  Return (Daily)
+                <th className="px-2 py-2 md:px-4 md:py-[16px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
+                  Return (1Y)
                 </th>
-                <th className="px-2 py-2 md:px-4 md:py-[13px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
-                  Volume (Daily)
+                <th className="px-2 py-2 md:px-4 md:py-[16px] text-left text-[10px] md:text-[11px] font-medium uppercase tracking-wider">
+                  Volume
                 </th>
               </tr>
             </thead>
@@ -87,7 +75,7 @@ const UraniumTableLosers = () => {
                   key={index}
                   className="hover:bg-zinc-800/30 py-2 border-b border-white/10 text-[13px] text-start"
                 >
-                  <td className="px-4 py-[13px]">
+                  <td className="px-4 py-[16px]">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="26"
@@ -167,29 +155,29 @@ const UraniumTableLosers = () => {
                       ></path>
                     </svg>
                   </td>
-                  <td className="px-5 py-[13px] font-semibold">{symbol}</td>
-                  <td className="px-5 py-[13px]  text-[14px]">{data.name}</td>
-                  <td className="px-4 py-[13px]">
+                  <td className="px-5 py-[16px] font-semibold">{symbol}</td>
+                  <td className="px-5 py-[16px]  text-[14px]">{data.name}</td>
+                  <td className="px-4 py-[16px]">
                     ${data.current_price.toFixed(2)}
                   </td>
-                  <td className="px-4 py-[13px]">
+                  <td className="px-4 py-[16px]">
                     ${data.last_price.toFixed(2)}
                   </td>
                   <td
-                    className={`px-4 py-[13px] ${getColorClass(
+                    className={`px-4 py-[16px] ${getColorClass(
                       data.change_1m
                     )}`}
                   >
                     {data.change_1m.toFixed(2)}%
                   </td>
                   <td
-                    className={`px-4 py-[13px] ${getColorClass(
-                      data.change_1d
+                    className={`px-4 py-[16px] ${getColorClass(
+                      data.change_1y
                     )}`}
                   >
-                    {data.change_1d.toFixed(2)}%
+                    {data.change_1y.toFixed(2)}%
                   </td>
-                  <td className="px-4 py-[13px]">{data.volume}</td>
+                  <td className="px-4 py-[16px]">{data.volume}</td>
                 </tr>
               ))}
             </tbody>
