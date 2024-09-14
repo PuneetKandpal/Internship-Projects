@@ -44,8 +44,8 @@ const StockMarquee = () => {
               <span className={`${changeColor} font-semibold`}>
                 {" "}
                 {change_1m >= 0
-                  ? `▲${(change_1m * 100).toFixed(2)}%`
-                  : `▼${Math.abs(change_1m * 100).toFixed(2)}%`}
+                  ? `▲${(change_1m * 1).toFixed(2)}%`
+                  : `▼${Math.abs(change_1m * 1).toFixed(2)}%`}
               </span>
             </span>
           );
