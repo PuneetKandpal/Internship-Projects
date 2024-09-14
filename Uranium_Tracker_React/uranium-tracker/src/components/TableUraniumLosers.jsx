@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import gsap from "gsap";
+// import gsap from "gsap";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchHomeData } from "../store/slices/apiSlice";
 import Loader from "./Loader"; // Import your loader component
 
-const UraniumTableGainers = () => {
+const UraniumTableLosers = () => {
   const dispatch = useDispatch();
   const homeData = useSelector((state) => state.api.home);
   const status = useSelector((state) => state.api.status);
@@ -20,17 +20,17 @@ const UraniumTableGainers = () => {
     }
 
     // GSAP animation
-    gsap.from("#uranium-table-section", {
-      scrollTrigger: {
-        trigger: "#uranium-table-section",
-        start: "top 80%",
-        end: "bottom 20%",
-      },
-      opacity: 0,
-      x: -50,
-      duration: 1.5,
-      ease: "power2.out",
-    });
+    // gsap.from("#uranium-table-section", {
+    //   scrollTrigger: {
+    //     trigger: "#uranium-table-section",
+    //     start: "top 80%",
+    //     end: "bottom 20%",
+    //   },
+    //   opacity: 0,
+    //   x: -50,
+    //   duration: 1.5,
+    //   ease: "power2.out",
+    // });
   }, [status, dispatch, isLoading]);
 
   // Helper function to determine the color based on the value
@@ -47,7 +47,7 @@ const UraniumTableGainers = () => {
     <div className="w-full lg:w-[60%] mb-10 lg:mb-0" id="uranium-table-section">
       <h2 className="flex items-center text-[1rem] md:text-[1.4rem] frank mb-6 lg:mb-12 font-medium text-white capitalize">
         <i className="ri-menu-4-fill text-lime1 text-bold text-xl mr-2"></i>
-        Uranium top gainers today
+        Uranium top losers today
       </h2>
 
       <div id="uranium-compo" className="overflow-x-auto">
@@ -82,7 +82,7 @@ const UraniumTableGainers = () => {
               </tr>
             </thead>
             <tbody className="bg-bg text-gray-300">
-              {homeData.top_gainers.map(([symbol, data], index) => (
+              {homeData.top_losers.map(([symbol, data], index) => (
                 <tr
                   key={index}
                   className="hover:bg-zinc-800/30 py-2 border-b border-white/10 text-[13px] text-start"
@@ -200,4 +200,4 @@ const UraniumTableGainers = () => {
   );
 };
 
-export default UraniumTableGainers;
+export default UraniumTableLosers;

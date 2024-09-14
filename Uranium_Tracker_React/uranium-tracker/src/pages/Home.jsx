@@ -2,6 +2,7 @@ import Footer from "../components/Footer";
 import DidYouKnow from "../components/HomeDidYouKnow";
 import HomeFeaturedNewsTweets from "../components/HomeFeaturedNewsTweets";
 import HomeHero from "../components/HomeHero";
+import HomeLosarsTableSec from "../components/HomeLosersTableSec";
 import HomePriceChart from "../components/HomePriceChart";
 import HomeTableNews from "../components/HomeTableNews";
 import HomeUraniumBlogs from "../components/HomeUraniumBlogs";
@@ -18,6 +19,7 @@ const Home = () => {
       <Marquee />
       <HomePriceChart />
       <HomeTableNews />
+      <HomeLosarsTableSec />
       <UraniumElementOfOpp />
       <DidYouKnow />
       <HomeFeaturedNewsTweets />
