@@ -2,8 +2,14 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import herovdo from "../assets/hero.mp4";
 import { NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchHomeData } from "../store/slices/apiSlice";
 
 const HomeHero = () => {
+  const dispatch = useDispatch();
+  const homeData = useSelector((state) => state.api.home);
+  const status = useSelector((state) => state.api.status);
+  const error = useSelector((state) => state.api.error);
   const heroRef = useRef(null);
   const titleRef = useRef(null);
   const flexRef = useRef(null);
@@ -11,6 +17,11 @@ const HomeHero = () => {
   const videoRef = useRef(null);
 
   useEffect(() => {
+    // Data fetching logic
+    if (status === "idle") {
+      dispatch(fetchHomeData());
+    }
+
     // Animate hero section elements on load
     const tl = gsap.timeline();
     tl.from(titleRef.current, {
@@ -42,8 +53,15 @@ const HomeHero = () => {
       duration: 1.5,
       ease: "power2.out",
     });
-  }, []);
+  }, [status, dispatch]);
 
+  if (status === "loading") {
+    return <p>Loading...</p>;
+  }
+
+  if (status === "failed") {
+    return <p>Error: {error}</p>;
+  }
   return (
     <div
       ref={heroRef}
@@ -79,7 +97,7 @@ const HomeHero = () => {
             Spot Uranium:
           </h1>
           <h2 className="text-[13px] mt-[-7px] sm:mt-0 sm:text-[14px] md:text-[16px] lg:text-[17.5px] text-white/90 font-medium lato">
-            8175/8300 USc/Lb U3O8 (+12c, +0.15%)
+            {homeData.uranium_spot_price}
           </h2>
         </div>
         <NavLink
