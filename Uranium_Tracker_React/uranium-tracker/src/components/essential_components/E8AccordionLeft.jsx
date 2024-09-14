@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchGlossaryData } from "../../store/slices/apiSlice";
+import Loader from "../Loader"; // Import your loader component
+import { useEffect, useState } from "react";
 
+// Accordion Item Component
 const AccordionItemLeft = ({ title, content }) => {
   // State to track whether the accordion is open
   const [isOpen, setIsOpen] = useState(false);
@@ -48,46 +52,43 @@ const AccordionItemLeft = ({ title, content }) => {
   );
 };
 
+// Accordion Component to map over glossary terms
 const AccordionLeft = () => {
+  const dispatch = useDispatch();
+  const glossaryData = useSelector((state) => state.api.glossary);
+  const status = useSelector((state) => state.api.status);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchGlossaryData());
+    }
+
+    if (status === "succeeded") {
+      setIsLoading(false); // Set loading to false when data is fetched
+    }
+  }, [status, dispatch]);
+
+  // Show loader if data is still being fetched
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  // Get glossary terms from API data
+  const glossaryTerms = glossaryData.glossary_terms || [];
+
+  // Calculate half of the array length
+  const halfLength = Math.ceil(glossaryTerms.length / 2);
+
   return (
     <div className="accordion-container">
-      <AccordionItemLeft
-        title="Actinide"
-        content="Elements with atomic numbers from 89 (actinium) to 103. Typically refers to those beyond uranium (93 and up, known as transuranics). Actinides are radioactive, have long half-lives, and are significant in nuclear fission waste, such as used fuel. They are fissionable in fast reactors. Minor actinides include americium, curium, and neptunium."
-      />
-      <AccordionItemLeft
-        title="Activation Product"
-        content="A radioactive isotope formed when an element, such as steel in a reactor core, is bombarded by neutrons."
-      />
-      <AccordionItemLeft
-        title="Activity"
-        content="The rate of disintegration per unit time within a radioactive source, measured in becquerels. ALARA (As Low As Reasonably Achievable): A principle of radiation protection that takes into account economic and social factors to minimize radiation exposure."
-      />
-      <AccordionItemLeft
-        title="Alpha Particle"
-        content="A positively charged particle emitted from an atom's nucleus during radioactive decay, consisting of 2 protons and 2 neutrons."
-      />
-      <AccordionItemLeft
-        title="Atom"
-        content="The smallest particle of an element that retains its chemical properties. Atoms consist of a nucleus of protons and neutrons, surrounded by electrons."
-      />
-      <AccordionItemLeft
-        title="Background Radiation"
-        content="Ionizing radiation from natural sources that everyone is exposed to, including cosmic radiation and radon from the Earth's crust."
-      />
-      <AccordionItemLeft
-        title="Barn"
-        content="A unit of measure for the cross-sectional area of a nucleus, representing the probability of interaction with particles such as neutrons."
-      />
-      <AccordionItemLeft
-        title="Base Load"
-        content="The continuous, minimum level of demand on an electrical supply system over a 24-hour period. Becquerel (Bq): The unit of intrinsic radioactivity, where one Bq equals one disintegration per second. Beta particle: A particle emitted from an atom during radioactive decay, which can be either an electron (negative charge) or a positron."
-      />
-
-      <AccordionItemLeft
-        title="Biological Shield"
-        content="Material, often thick concrete, used to protect humans from radiation by absorbing neutrons and gamma rays."
-      />
+      {glossaryTerms.slice(0, halfLength).map((termData, index) => (
+        <AccordionItemLeft
+          key={index}
+          title={termData.term}
+          content={termData.definition}
+        />
+      ))}
     </div>
   );
 };

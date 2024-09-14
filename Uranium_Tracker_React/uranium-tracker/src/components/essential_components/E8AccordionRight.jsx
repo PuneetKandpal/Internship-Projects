@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchGlossaryData } from "../../store/slices/apiSlice";
+import Loader from "../Loader"; // Import your loader component
+import { useEffect, useState } from "react";
 
+// Accordion Item Component
 const AccordionItemRight = ({ title, content }) => {
   // State to track whether the accordion is open
   const [isOpen, setIsOpen] = useState(false);
@@ -48,41 +52,44 @@ const AccordionItemRight = ({ title, content }) => {
   );
 };
 
+// AccordionRight Component to map over glossary terms
 const AccordionRight = () => {
+  const dispatch = useDispatch();
+  const glossaryData = useSelector((state) => state.api.glossary);
+  const status = useSelector((state) => state.api.status);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    if (status === "idle") {
+      dispatch(fetchGlossaryData());
+    }
+
+    if (status === "succeeded") {
+      setIsLoading(false); // Set loading to false when data is fetched
+    }
+  }, [status, dispatch]);
+
+  // Show loader if data is still being fetched
+  if (isLoading) {
+    return <Loader />;
+  }
+
+  // Get glossary terms from API data
+  const glossaryTerms = glossaryData.glossary_terms || [];
+
+  // Calculate the second half of the array length
+  const halfLength = Math.ceil(glossaryTerms.length / 2);
+  const secondHalfTerms = glossaryTerms.slice(halfLength);
+
   return (
     <div className="accordion-container">
-      <AccordionItemRight
-        title="Boiling Water Reactor (BWR)"
-        content="A type of light water reactor where water is boiled directly in the reactor core to generate steam."
-      />
-      <AccordionItemRight
-        title="Breed"
-        content="The formation of fissile material from fertile material, usually through neutron capture followed by radioactive decay."
-      />
-      <AccordionItemRight
-        title="Breeder Reactor"
-        content="A reactor that produces more fissile material than it consumes, often using depleted uranium as a blanket around the core."
-      />
-      <AccordionItemRight
-        title="Burn"
-        content="The process of undergoing fission or becoming denatured in the reactor core. Burnable absorber, burnable poison: A neutron absorber that is included in the fuel and progressively consumed to compensate for the loss of reactivity as the fuel is burned. Common materials include gadolinium and erbium."
-      />
-      <AccordionItemRight
-        title="Burnup"
-        content="A measure of energy produced by nuclear fuel relative to its mass, typically expressed in gigawatt days per tonne (GWd/t)."
-      />
-      <AccordionItemRight
-        title="Calandria"
-        content="The cylindrical reactor vessel in a PHWR that contains heavy water moderator and is penetrated by calandria tubes holding the fuel and coolant. ."
-      />
-      <AccordionItemRight
-        title="CANDU"
-        content="A type of heavy water reactor (PHWR) developed in Canada, moderated and cooled by heavy water. Centrifuge: A device that spins at high speeds to separate gas components of different masses, such as uranium hexafluoride."
-      />
-      <AccordionItemRight
-        title="Chain Reaction"
-        content="A self-sustaining series of fission reactions where neutrons from fission cause additional fissions."
-      />
+      {secondHalfTerms.map((termData, index) => (
+        <AccordionItemRight
+          key={index}
+          title={termData.term}
+          content={termData.definition}
+        />
+      ))}
     </div>
   );
 };
