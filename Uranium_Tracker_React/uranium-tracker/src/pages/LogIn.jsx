@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaEnvelope, FaLock } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
@@ -42,13 +42,13 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white w-[60%] rounded-lg shadow-lg p-8 flex">
+    <div className="min-h-screen flex items-center justify-center  px-4">
+      <div className="bg-zinc-800/20 w-full max-w-[90%] md:max-w-[60%] rounded-lg shadow-lg p-8 md:flex">
         {/* Left Side */}
-        <div className="hidden md:flex flex-col justify-center w-1/2 bg-green-400 rounded-l-lg p-8 text-white">
-          <h2 className="text-[28px] font-bold">Welcome Back!</h2>
+        <div className="hidden md:flex flex-col justify-center w-full md:w-1/2 bg-green-400 rounded-l-lg p-8 text-white">
+          <h2 className="text-[24px] md:text-[28px] font-bold">Welcome Back!</h2>
           <p className="mt-2">
-            To keep connected with us please login with your personal info
+            To keep connected with us, please log in with your personal info
           </p>
           <p className="mt-1">Don't have an account?</p>
           <NavLink
@@ -65,15 +65,15 @@ const Login = () => {
 
           <form onSubmit={handleSubmit}>
             {/* Email Field */}
-            <div className="mb-5">
-              <label className="text-gray-600 flex items-center mb-1">
+            <div className="mb-6">
+              <label className="text-zinc-300 flex items-center mb-1 text-[15px]">
                 <FaEnvelope className="mr-2 mt-[2px]" /> Email
               </label>
               <input
                 type="text"
-                className={`w-full px-4 py-2 border text-black ${
+                className={`w-full px-4 py-2 text-white bg-zinc-800/50 placeholder ${
                   errors.email ? "border-red-500" : "border-gray-300"
-                } rounded focus:outline-none focus:ring-2 focus:ring-green-500`}
+                } rounded focus:outline-none focus:ring-1 focus:ring-green-500`}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
@@ -84,15 +84,15 @@ const Login = () => {
             </div>
 
             {/* Password Field */}
-            <div className="mb-5">
-              <label className="text-gray-600 flex items-center mb-1">
+            <div className="mb-6">
+              <label className="text-zinc-300 flex items-center mb-1 text-[15px]">
                 <FaLock className="mr-2" /> Password
               </label>
               <input
                 type="password"
-                className={`w-full px-4 py-2 border text-black ${
+                className={`w-full px-4 py-2 text-white bg-zinc-800/50 placeholder ${
                   errors.password ? "border-red-500" : "border-gray-300"
-                } rounded focus:outline-none focus:ring-2 focus:ring-green-500`}
+                } rounded focus:outline-none focus:ring-1 focus:ring-green-500`}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
