@@ -1,24 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchHomeData } from "../store/slices/apiSlice";
-import Loader from "./Loader"; // Import your loader component
 
-const LatestUraniumCompNews = () => {
-  const dispatch = useDispatch();
-  const homeData = useSelector((state) => state.api.home);
-  const status = useSelector((state) => state.api.status);
-  const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
-
+const LatestUraniumCompNews = ({ homeData }) => {
   useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchHomeData());
-    }
-
-    if (status === "succeeded") {
-      setIsLoading(false); // Set loading to false when data is fetched
-    }
-
     gsap.from("#uranium-news-section", {
       scrollTrigger: {
         trigger: "#uranium-news-section",
@@ -30,11 +14,7 @@ const LatestUraniumCompNews = () => {
       duration: 1.5,
       ease: "power2.out",
     });
-  }, [status, dispatch]);
-
-  if (isLoading) {
-    return <Loader />;
-  }
+  }, []);
 
   const { stock_news = [] } = homeData; // Destructure stock_news from homeData
 

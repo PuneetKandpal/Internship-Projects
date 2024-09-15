@@ -1,8 +1,21 @@
 import { useState, useRef } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchVideoData } from "../store/slices/apiSlice";
 
 const VideoModal = ({ video, onClose }) => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(true);
+  const dispatch = useDispatch();
+  const videoData = useSelector((state) => state.api.video);
+  console.log(videoData);
+  const status = useSelector((state) => state.api.status);
+
+  useEffect(() => {
+    if (status === "idle" || status === "failed") {
+      dispatch(fetchVideoData());
+    }
+  }, [status, dispatch]);
 
   const togglePlay = () => {
     if (videoRef.current.paused) {

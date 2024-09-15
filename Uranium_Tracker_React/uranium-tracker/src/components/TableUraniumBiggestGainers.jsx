@@ -1,24 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import gsap from "gsap";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchHomeData } from "../store/slices/apiSlice";
-import Loader from "./Loader"; // Import your loader component
 
-const UraniumTableGainers = () => {
-  const dispatch = useDispatch();
-  const homeData = useSelector((state) => state.api.home);
-  const status = useSelector((state) => state.api.status);
-  const [isLoading, setIsLoading] = useState(true);
-
+const UraniumTableGainers = ({ homeData }) => {
   useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchHomeData());
-    }
-
-    if (status === "succeeded") {
-      setIsLoading(false);
-    }
-
     // GSAP animation
     gsap.from("#uranium-table-section", {
       scrollTrigger: {
@@ -31,17 +15,12 @@ const UraniumTableGainers = () => {
       duration: 1.5,
       ease: "power2.out",
     });
-  }, [status, dispatch, isLoading]);
+  }, []);
 
   // Helper function to determine the color based on the value
   const getColorClass = (value) => {
     return value < 0 ? "text-red-500" : "text-green-500";
   };
-
-  // Show the loader while loading is true
-  if (isLoading) {
-    return <Loader />;
-  }
 
   return (
     <div className="w-full lg:w-[60%] mb-10 lg:mb-0" id="uranium-table-section">

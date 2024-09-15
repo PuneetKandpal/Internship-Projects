@@ -1,35 +1,8 @@
-import { useEffect, useState } from "react";
-// import gsap from "gsap";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchHomeData } from "../store/slices/apiSlice";
-import Loader from "./Loader"; // Import your loader component
-
-const UraniumTableLosers = () => {
-  const dispatch = useDispatch();
-  const homeData = useSelector((state) => state.api.home);
-  const status = useSelector((state) => state.api.status);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchHomeData());
-    }
-
-    if (status === "succeeded") {
-      setIsLoading(false);
-    }
-
-  }, [status, dispatch, isLoading]);
-
+const UraniumTableLosers = ({ homeData }) => {
   // Helper function to determine the color based on the value
   const getColorClass = (value) => {
     return value < 0 ? "text-red-500" : "text-green-500";
   };
-
-  // Show the loader while loading is true
-  if (isLoading) {
-    return <Loader />;
-  }
 
   return (
     <div className="w-full lg:w-[60%] mb-10 lg:mb-0" id="uranium-table-section">
@@ -70,7 +43,7 @@ const UraniumTableLosers = () => {
               </tr>
             </thead>
             <tbody className="bg-bg text-gray-300">
-              {homeData.top_losers.map(([symbol, data], index) => (
+              {homeData?.top_losers?.map(([symbol, data], index) => (
                 <tr
                   key={index}
                   className="hover:bg-zinc-800/30 py-2 border-b border-white/10 text-[13px] text-start"

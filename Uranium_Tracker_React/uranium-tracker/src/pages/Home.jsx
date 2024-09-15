@@ -41,16 +41,16 @@ const Home = () => {
       ) : (
         <div>
           <Navbar />
-          <HomeHero />
-          <Marquee />
+          <HomeHero homeData={homeData} />
+          <Marquee homeData={homeData} />
           <HomePriceChart />
-          <HomeTableNews />
-          <HomeLosarsTableSec />
+          <HomeTableNews homeData={homeData} />
+          <HomeLosarsTableSec homeData={homeData} />
           <UraniumElementOfOpp />
           <DidYouKnow />
-          <HomeFeaturedNewsTweets />
+          <HomeFeaturedNewsTweets homeData={homeData} />
           <HomeUraniumBlogs />
-          <HomeVideoSec />
+          {/* <HomeVideoSec /> */}
           <Footer />
         </div>
       )}
