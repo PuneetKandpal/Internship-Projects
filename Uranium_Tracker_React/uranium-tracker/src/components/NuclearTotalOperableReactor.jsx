@@ -58,6 +58,7 @@ const NuclearTotalOperableReactor = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false, // Ensures the chart adapts to the container size
     indexAxis: "y", // Makes it horizontal
     plugins: {
       legend: {
@@ -91,13 +92,13 @@ const NuclearTotalOperableReactor = () => {
   };
 
   return (
-    <div className="py-16 bg-zinc-800/20 px-6 md:px-20 md:py-20 md:pt-24  min-h-screen">
+    <div className="py-16 bg-zinc-800/20 px-6 md:px-20 md:py-20 md:pt-24 h-[70vh] md:min-h-screen">
       <h2 className="uranium-news-headline flex items-center ml-[-2px] text-[1rem] md:text-[1.4rem] frank mb-3 lg:mb-3 font-semibold text-white capitalize">
         <i className="ri-menu-4-fill text-lime2 text-bold text-xl mr-2"></i>
         Total Operable Reactor Net Capacity (Top 10)
       </h2>
       {nuclearData && (
-        <div className="w-[70%] p-0 rounded-md ">
+        <div className="w-full md:w-[70%] h-[300px] md:h-[500px] p-0 rounded-md ">
           <Bar data={chartData} options={options} />
         </div>
       )}
