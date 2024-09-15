@@ -3,38 +3,38 @@ import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 const HomeUraniumBlogs = () => {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    // Title Section Animation
-    gsap.from(".title-section", {
-      scrollTrigger: {
-        trigger: ".title-section",
-        start: "top 80%",
-        end: "bottom 60%",
-        toggleActions: "play none none reverse",
-      },
-      opacity: 0,
-      y: -50,
-      duration: 1,
-      ease: "power2.out",
-    });
+  //   // Title Section Animation
+  //   gsap.from(".title-section", {
+  //     scrollTrigger: {
+  //       trigger: ".title-section",
+  //       start: "top 80%",
+  //       end: "bottom 60%",
+  //       toggleActions: "play none none reverse",
+  //     },
+  //     opacity: 0,
+  //     y: -50,
+  //     duration: 1,
+  //     ease: "power2.out",
+  //   });
 
-    // Image Section Animation
-    gsap.from(".image-animate", {
-      scrollTrigger: {
-        trigger: ".images-section",
-        start: "top 80%",
-        end: "bottom 60%",
-        toggleActions: "play none none reverse",
-      },
-      opacity: 0,
-      scale: 0.9,
-      duration: 1,
-      stagger: 0.2,
-      ease: "power2.out",
-    });
-  }, []);
+  //   // Image Section Animation
+  //   gsap.from(".image-animate", {
+  //     scrollTrigger: {
+  //       trigger: ".images-section",
+  //       start: "top 80%",
+  //       end: "bottom 60%",
+  //       toggleActions: "play none none reverse",
+  //     },
+  //     opacity: 0,
+  //     scale: 0.9,
+  //     duration: 1,
+  //     stagger: 0.2,
+  //     ease: "power2.out",
+  //   });
+  // }, []);
 
   return (
     <div className="py-18 md:px-20 px-6 overflow-x-hidden">

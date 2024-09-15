@@ -19,18 +19,18 @@ const UraniumTableGainers = () => {
       setIsLoading(false);
     }
 
-    // GSAP animation
-    gsap.from("#uranium-table-section", {
-      scrollTrigger: {
-        trigger: "#uranium-table-section",
-        start: "top 80%",
-        end: "bottom 20%",
-      },
-      opacity: 0,
-      x: -50,
-      duration: 1.5,
-      ease: "power2.out",
-    });
+    // // GSAP animation
+    // gsap.from("#uranium-table-section", {
+    //   scrollTrigger: {
+    //     trigger: "#uranium-table-section",
+    //     start: "top 80%",
+    //     end: "bottom 20%",
+    //   },
+    //   opacity: 0,
+    //   x: -50,
+    //   duration: 1.5,
+    //   ease: "power2.out",
+    // });
   }, [status, dispatch, isLoading]);
 
   // Helper function to determine the color based on the value
@@ -41,6 +41,11 @@ const UraniumTableGainers = () => {
   // Show the loader while loading is true
   if (isLoading) {
     return <Loader />;
+  }
+
+  // Check if homeData and top_gainers exist
+  if (!homeData || !homeData.top_gainers) {
+    return <p>No data available</p>; // Return an empty state if no data is available
   }
 
   return (
@@ -161,14 +166,14 @@ const UraniumTableGainers = () => {
                         opacity=".15"
                       ></path>
                       <path
-                        d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3v-1c0-1.657-1.343-3-3-3Z"
+                        d="M27,5H5c-1.657,0-3,1.343-3,3v1c0-1.657,1.343-3,3-3H27c1.657,0,3,1.343,3,3V8c0-1.657-1.343-3-3-3Z"
                         fill="#fff"
-                        opacity=".2"
+                        opacity=".15"
                       ></path>
                     </svg>
                   </td>
                   <td className="px-5 py-[16px] font-semibold">{symbol}</td>
-                  <td className="px-5 py-[16px]  text-[14px]">{data.name}</td>
+                  <td className="px-5 py-[16px] text-[14px]">{data.name}</td>
                   <td className="px-4 py-[16px]">
                     ${data.current_price.toFixed(2)}
                   </td>

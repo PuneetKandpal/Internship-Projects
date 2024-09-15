@@ -26,7 +26,7 @@ const Home = () => {
     if (status === "idle") {
       dispatch(fetchHomeData());
     }
-  }, [status, dispatch]);  // Removed isLoading from dependency array
+  }, [status, dispatch]); // Removed isLoading from dependency array
 
   useEffect(() => {
     if (status === "succeeded") {

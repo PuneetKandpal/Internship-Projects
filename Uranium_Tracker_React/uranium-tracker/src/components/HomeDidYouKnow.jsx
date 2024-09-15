@@ -1,40 +1,40 @@
-import { useEffect } from 'react';
-import { GiCellarBarrels, GiCoalWagon } from 'react-icons/gi';
-import { RiGasStationFill } from 'react-icons/ri';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useEffect } from "react";
+import { GiCellarBarrels, GiCoalWagon } from "react-icons/gi";
+import { RiGasStationFill } from "react-icons/ri";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const HomeDidYouKnow = () => {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  // useEffect(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    // Animate the left section
-    gsap.from('.did-you-know-left', {
-      scrollTrigger: {
-        trigger: '.did-you-know-left',
-        start: 'top 80%',
-        end: 'bottom 20%',
-      },
-      opacity: 0,
-      x: -100,
-      duration: 1.5,
-      ease: 'power2.out',
-    });
+  //   // Animate the left section
+  //   gsap.from('.did-you-know-left', {
+  //     scrollTrigger: {
+  //       trigger: '.did-you-know-left',
+  //       start: 'top 80%',
+  //       end: 'bottom 20%',
+  //     },
+  //     opacity: 0,
+  //     x: -100,
+  //     duration: 1.5,
+  //     ease: 'power2.out',
+  //   });
 
-    // Animate the images in the right section
-    gsap.from('.did-you-know-images > div', {
-      scrollTrigger: {
-        trigger: '.did-you-know-images',
-        start: 'top 80%',
-        end: 'bottom 20%',
-      },
-      opacity: 0,
-      scale: 0.8,
-      stagger: 0.3,
-      duration: 1.5,
-      ease: 'power2.out',
-    });
-  }, []);
+  //   // Animate the images in the right section
+  //   gsap.from('.did-you-know-images > div', {
+  //     scrollTrigger: {
+  //       trigger: '.did-you-know-images',
+  //       start: 'top 80%',
+  //       end: 'bottom 20%',
+  //     },
+  //     opacity: 0,
+  //     scale: 0.8,
+  //     stagger: 0.3,
+  //     duration: 1.5,
+  //     ease: 'power2.out',
+  //   });
+  // }, []);
 
   return (
     <div className="p-6 md:p-20 pt-14 overflow-x-hidden">
