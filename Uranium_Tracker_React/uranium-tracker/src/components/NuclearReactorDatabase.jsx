@@ -19,7 +19,7 @@ const NuclearReactorDatabase = () => {
   }, [status, dispatch]); // Removed isLoading from dependency array
 
   return (
-    <div className="py-16 mt-20 px-6 md:px-20 md:pb-32 md:pt-10">
+    <div className="py-16 mt-28 px-6 md:px-20 md:pb-32 md:pt-10">
       <h2 className="uranium-news-headline flex items-center ml-[-2px] text-[1rem] md:text-[1.4rem] frank mb-6 lg:mb-9 font-semibold text-white capitalize">
         <i className="ri-menu-4-fill text-lime2 text-bold text-xl mr-2"></i>
         Reactor Database
