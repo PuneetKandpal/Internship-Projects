@@ -97,7 +97,7 @@ const NuclearTotalOperableReactor = () => {
         Total Operable Reactor Net Capacity (Top 10)
       </h2>
       {nuclearData && (
-        <div className="w-[70%] p-0 rounded-md shadow-lg">
+        <div className="w-[70%] p-0 rounded-md ">
           <Bar data={chartData} options={options} />
         </div>
       )}
