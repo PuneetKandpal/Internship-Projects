@@ -5,6 +5,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchNuclearData } from "../store/slices/apiSlice";
 import Loader from "../components/Loader"; // Import your loader component
 import { useEffect, useState } from "react";
+import NuclearReactorDatabase from "../components/NuclearReactorDatabase";
+import NuclearTotalOperableReactor from "../components/NuclearTotalOperableReactor";
+import NuclearRecentConnections from "../components/NuclearRecentConnections";
+import NuclearTopLoadFactor from "../components/NuclearTopLoadFactor";
+import NuclearTopGeneration from "../components/NuclearTopGeneration";
+import NuclearTopLifetimeGeneration from "../components/NuclearTopLifetimeGeneration";
+import NuclearRecentConstructionStarts from "../components/NuclearRecentConstructionStarts";
 
 const Nuclear = () => {
   const dispatch = useDispatch();
@@ -32,6 +39,13 @@ const Nuclear = () => {
       ) : (
         <div>
           <Navbar />
+          <NuclearReactorDatabase />
+          <NuclearTotalOperableReactor />
+          <NuclearRecentConnections />
+          <NuclearTopLoadFactor/>
+          <NuclearTopGeneration/>
+          <NuclearTopLifetimeGeneration/>
+          <NuclearRecentConstructionStarts/>
           <Footer />
         </div>
       )}

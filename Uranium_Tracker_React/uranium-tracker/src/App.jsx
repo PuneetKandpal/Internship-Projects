@@ -18,6 +18,7 @@ import Nuclear from "./pages/Nuclear";
 import Calender from "./pages/Calender";
 import SignUp from "./pages/SignUp";
 import LogIn from "./pages/LogIn";
+import ForgotPassword from "./pages/ForgetPassword";
 
 const App = () => {
   return (
@@ -95,6 +96,14 @@ const App = () => {
             element={
               <div>
                 <LogIn />
+              </div>
+            }
+          />
+          <Route
+            path="/forgetpassword"
+            element={
+              <div>
+                <ForgotPassword />
               </div>
             }
           />
