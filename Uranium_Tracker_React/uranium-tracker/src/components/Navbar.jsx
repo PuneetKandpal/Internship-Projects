@@ -116,6 +116,7 @@ const Navbar = () => {
           >
             News
           </NavLink>
+
           <NavLink
             to="/investments"
             className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
@@ -140,7 +141,6 @@ const Navbar = () => {
           >
             Nuclear
           </NavLink>
-
           <NavLink
             to="/calender"
             className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
