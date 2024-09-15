@@ -14,6 +14,10 @@ import Efive from "./pages/essential_subpages/Efive";
 import Esix from "./pages/essential_subpages/Esix";
 import Eseven from "./pages/essential_subpages/Eseven";
 import Eeight from "./pages/essential_subpages/Eeight";
+import Nuclear from "./pages/Nuclear";
+import Calender from "./pages/Calender";
+import SignUp from "./pages/SignUp";
+import LogIn from "./pages/LogIn";
 
 const App = () => {
   return (
@@ -59,6 +63,38 @@ const App = () => {
             element={
               <div>
                 <Forum />
+              </div>
+            }
+          />
+          <Route
+            path="/nuclear"
+            element={
+              <div>
+                <Nuclear />
+              </div>
+            }
+          />
+          <Route
+            path="/calender"
+            element={
+              <div>
+                <Calender />
+              </div>
+            }
+          />
+          <Route
+            path="/signup"
+            element={
+              <div>
+                <SignUp />
+              </div>
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <div>
+                <LogIn />
               </div>
             }
           />
