@@ -36,6 +36,12 @@ html {
   color: #161616;
 }
 
+.placeholder::placeholder {
+  color: rgba(255, 255, 255, 0.171);
+  font-size: 15px;
+  opacity: 1; /* Ensure full visibility */
+}
+
 .play {
   font-family: "Playfair Display", serif;
 }
