@@ -43,14 +43,14 @@ const Home = () => {
           <Navbar />
           <HomeHero homeData={homeData} />
           <Marquee homeData={homeData} />
-          <HomePriceChart />
+          <HomePriceChart homeData={homeData}/>
           <HomeTableNews homeData={homeData} />
           <HomeLosarsTableSec homeData={homeData} />
           <UraniumElementOfOpp />
           <DidYouKnow />
           <HomeFeaturedNewsTweets homeData={homeData} />
           <HomeUraniumBlogs />
-          {/* <HomeVideoSec /> */}
+          <HomeVideoSec />
           <Footer />
         </div>
       )}
