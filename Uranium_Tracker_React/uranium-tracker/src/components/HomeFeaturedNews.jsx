@@ -1,54 +1,9 @@
-import { useEffect, useState } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchHomeData } from "../store/slices/apiSlice";
-import Loader from "./Loader"; // Import your loader component
+// import { useEffect } from "react";
+// import { gsap, ScrollTrigger } from "gsap";
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const HomeFeaturedNews = () => {
-  const dispatch = useDispatch();
-  const homeData = useSelector((state) => state.api.home);
-  const status = useSelector((state) => state.api.status);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchHomeData());
-    }
-
-    if (status === "succeeded") {
-      setIsLoading(false);
-    }
-
-    // Animations
-    gsap.from(".featured-news", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      scrollTrigger: {
-        trigger: ".featured-news",
-        start: "top 80%",
-      },
-    });
-
-    gsap.from(".news-card", {
-      opacity: 0,
-      x: -50,
-      duration: 1,
-      stagger: 0.2,
-      scrollTrigger: {
-        trigger: ".news-card",
-        start: "top 80%",
-      },
-    });
-  }, [status, dispatch]);
-
-  if (isLoading) {
-    return <Loader />;
-  }
-
+const HomeFeaturedNews = ({ homeData }) => {
   return (
     <div className="w-full lg:w-[50%] h-full mb-10 featured-news overflow-x-hidden">
       <h2 className="flex items-center text-[1rem] md:text-[1.4rem] font-medium text-white capitalize mb-6 lg:mb-12">

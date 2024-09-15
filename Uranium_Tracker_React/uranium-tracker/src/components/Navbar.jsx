@@ -104,40 +104,48 @@ const Navbar = () => {
         className="hidden md:flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-7 absolute md:relative top-full left-0 right-0 bg-black1 md:bg-transparent pb-4 md:pb-0 shadow-md md:shadow-none w-full md:w-auto"
       >
         <ul className="lato text-white tracking-wide capitalize text-[16.2px] pl-10 md:pl-0 mb-4 md:mb-0 font-light flex flex-col md:flex-row gap-y-2 md:gap-y-0 md:gap-x-5 w-full md:w-auto">
-          <NavLink to="/">
-            <a className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0">
-              Home
-            </a>
+          <NavLink
+            to="/"
+            className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
+          >
+            Home
           </NavLink>
-          <NavLink to="/news">
-            <a className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0">
-              News
-            </a>
+          <NavLink
+            to="/news"
+            className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
+          >
+            News
           </NavLink>
-          <NavLink to="/investments">
-            <a className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0">
-              Uranium Investments
-            </a>
+          <NavLink
+            to="/investments"
+            className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
+          >
+            Uranium Investments
           </NavLink>
-          <NavLink to="/essentials">
-            <a className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0">
-              Uranium Essentials
-            </a>
+          <NavLink
+            to="/essentials"
+            className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
+          >
+            Uranium Essentials
           </NavLink>
-          <NavLink to="/forum">
-            <a className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0">
-              Forum
-            </a>
+          <NavLink
+            to="/forum"
+            className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
+          >
+            Forum
           </NavLink>
-          <NavLink to="/nuclear">
-            <a className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0">
-              Nuclear
-            </a>
+          <NavLink
+            to="/nuclear"
+            className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
+          >
+            Nuclear
           </NavLink>
-          <NavLink to="/calender">
-            <a className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0">
-              Calender
-            </a>
+
+          <NavLink
+            to="/calender"
+            className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
+          >
+            Calender
           </NavLink>
         </ul>
 

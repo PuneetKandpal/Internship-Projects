@@ -44,6 +44,14 @@ export const fetchCalendarData = createAsyncThunk(
   }
 );
 
+export const fetchVideoData = createAsyncThunk(
+  "api/fetchVideoData",
+  async () => {
+    const response = await axiosInstance.get("/youtube-videos");
+    return response.data;
+  }
+);
+
 // API Slice
 const apiSlice = createSlice({
   name: "api",
@@ -54,6 +62,7 @@ const apiSlice = createSlice({
     glossary: null,
     nuclear: null,
     calendar: null,
+    video: null,
     status: "idle",
     error: null,
   },
@@ -83,7 +92,16 @@ const apiSlice = createSlice({
       .addCase(fetchCalendarData.fulfilled, (state, action) => {
         state.calendar = action.payload;
         state.status = "succeeded";
+      })
+      .addCase(fetchVideoData.fulfilled, (state, action) => {
+        state.video = action.payload;
+        state.status = "succeeded";
       });
+    // .addCase(fetchVideoData.fulfilled, (state, action) => {
+    //   console.log("Video data fetched:", action.payload);
+    //   state.video = action.payload;
+    //   state.status = "succeeded";
+    // })
   },
 });
 

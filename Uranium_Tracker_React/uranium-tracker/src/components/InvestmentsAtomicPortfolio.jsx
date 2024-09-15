@@ -9,16 +9,16 @@ const InvestmentsAtomicPortfolio = () => {
   const stocksData = useSelector((state) => state.api.stocks);
   const status = useSelector((state) => state.api.status);
   const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
-  // const [topGainers, setTopGainers] = useState({ labels: [], data: [] });
+  const [topGainers, setTopGainers] = useState({ labels: [], data: [] });
   const [topLosers, setTopLosers] = useState({ labels: [], data: [] });
   const [mostFollowed, setMostFollowed] = useState({ labels: [], data: [] });
 
-  // Extract labels and data from stocksData.top_gainers
-  // const extractTopGainers = (topGainersData) => {
-  //   const labels = topGainersData.map((item) => item[0]); // Extract stock symbols
-  //   const data = topGainersData.map((item) => item[1].current_price); // Extract current prices
-  //   return { labels, data };
-  // };
+  // Extract labels and data from stocksData.most_followed_stocks
+  const extractTopGainers = (topGainersData) => {
+    const labels = topGainersData.map((item) => item[0]); // Extract stock symbols
+    const data = topGainersData.map((item) => item[1].current_price); // Extract current prices
+    return { labels, data };
+  };
 
   // Extract labels and data from stocksData.top_losers
   const extractTopLosers = (topLosersData) => {
@@ -91,8 +91,10 @@ const InvestmentsAtomicPortfolio = () => {
     }
 
     if (status === "succeeded") {
-      // const extractedTopGainers = extractTopGainers(stocksData.top_gainers);
-      // setTopGainers(extractedTopGainers);
+      const extractedTopGainers = extractTopGainers(
+        stocksData.most_followed_stocks
+      );
+      setTopGainers(extractedTopGainers);
 
       const extractedTopLosers = extractTopLosers(stocksData.top_losers);
       setTopLosers(extractedTopLosers);
@@ -109,18 +111,18 @@ const InvestmentsAtomicPortfolio = () => {
   // Create charts after the data is fetched
   useEffect(() => {
     if (!isLoading) {
-      // const topGainersCtx = document
-      //   .getElementById("topGainersChart")
-      //   .getContext("2d");
+      const topGainersCtx = document
+        .getElementById("topGainersChart")
+        .getContext("2d");
 
-      // createRadarChart(
-      //   topGainersCtx,
-      //   topGainers.labels,
-      //   topGainers.data,
-      //   "Top Gainers",
-      //   "rgba(40, 167, 69, 0.5)",
-      //   "rgba(40, 167, 69, 1)"
-      // );
+      createRadarChart(
+        topGainersCtx,
+        topGainers.labels,
+        topGainers.data,
+        "Most Followed Stock",
+        "rgba(234, 255, 0, 0.311)",
+        "#d8ca00"
+      );
 
       const topLosersCtx = document
         .getElementById("topLosersChart")
@@ -143,9 +145,9 @@ const InvestmentsAtomicPortfolio = () => {
         mostFollowedCtx,
         mostFollowed.labels,
         mostFollowed.data,
-        "Most Followed Stocks",
-        "rgba(234, 255, 0, 0.311)",
-        "#d8ca00"
+        "Top Gainers",
+        "rgba(40, 167, 69, 0.5)",
+        "rgba(40, 167, 69, 1)"
       );
     }
   }, [isLoading, topLosers, mostFollowed]);

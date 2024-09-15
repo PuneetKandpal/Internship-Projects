@@ -2,24 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchStocksData } from "../store/slices/apiSlice";
 import Loader from "./Loader"; // Import your loader component
 import { useEffect, useState } from "react";
+
 const UraniumTable = () => {
   const dispatch = useDispatch();
   const stocksData = useSelector((state) => state.api.stocks);
   console.log(stocksData);
   const status = useSelector((state) => state.api.status);
   const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
-
-  const tableData = [
-    {
-      symbol: "URA",
-      name: "Global X Uranium ETF",
-      currentPrice: "$25.47",
-      lastPrice: "$25.73",
-      return1M: "-7.28%",
-      returnDaily: "16.28%",
-      volumeDaily: "298,670",
-    },
-  ];
 
   useEffect(() => {
     if (status === "idle") {
@@ -31,10 +20,9 @@ const UraniumTable = () => {
     }
   }, [status, dispatch, isLoading]);
 
-  // Helper function to determine the color based on the value
+  // Helper function to determine the color based on the numeric value
   const getColorClass = (value) => {
-    const numberValue = parseFloat(value.replace("%", ""));
-    return numberValue < 0 ? "text-red-500" : "text-green-500";
+    return value < 0 ? "text-red-500" : "text-green-500";
   };
 
   // Show the loader while loading is true
@@ -83,29 +71,30 @@ const UraniumTable = () => {
               </tr>
             </thead>
             <tbody className="bg-bg text-gray-300">
-              {tableData.map((row, index) => (
+              {stocksData.stocks.map((stock, index) => (
                 <tr
                   key={index}
                   className="hover:bg-zinc-800/30 border-b border-white/10 text-[13px] text-start"
                 >
-                  <td className="px-4 py-[25px]">{row.country}</td>
-                  <td className="px-4 py-[25px] font-semibold">{row.symbol}</td>
-                  <td className="px-4 py-[25px]">{row.name}</td>
-                  <td className="px-4 py-[25px]">{row.currentPrice}</td>
-                  <td className="px-4 py-[25px]">{row.lastPrice}</td>
+                  <td className="px-4 py-[25px]"></td>
+                  <td className="px-4 py-[25px] font-semibold">
+                    {stock.ticker_name}
+                  </td>
+                  <td className="px-4 py-[25px]">{stock.company_name}</td>
+                  <td className="px-4 py-[25px]">{stock.current_price.toFixed(2)}</td>
+                  <td className="px-4 py-[25px]">{stock.last_price.toFixed(2)}</td>
+                  
                   <td
-                    className={`px-4 py-[25px] ${getColorClass(row.return1M)}`}
+                    className={`px-4 py-[25px] ${getColorClass(stock.change_1m)}`}
                   >
-                    {row.return1M}
+                    {stock.change_1m.toFixed(2)}%
                   </td>
                   <td
-                    className={`px-4 py-[25px] ${getColorClass(
-                      row.returnDaily
-                    )}`}
+                    className={`px-4 py-[25px] ${getColorClass(stock.change_1y)}`}
                   >
-                    {row.returnDaily}
+                    {stock.change_1y.toFixed(2)}%
                   </td>
-                  <td className="px-4 py-[25px]">{row.volumeDaily}</td>
+                  <td className="px-4 py-[25px]">{stock.volume}</td>
                 </tr>
               ))}
             </tbody>

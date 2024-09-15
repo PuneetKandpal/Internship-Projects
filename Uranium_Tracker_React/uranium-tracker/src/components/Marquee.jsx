@@ -1,29 +1,7 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchHomeData } from "../store/slices/apiSlice";
-import Loader from "./Loader"; // Import your loader component
 
-const StockMarquee = () => {
-  const dispatch = useDispatch();
-  const homeData = useSelector((state) => state.api.home);
-  const status = useSelector((state) => state.api.status);
-  const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
-
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchHomeData());
-    }
-
-    if (status === "succeeded") {
-      setIsLoading(false); // Set loading to false when data is fetched
-    }
-  }, [status, dispatch]);
-
-  if (isLoading) {
-    return <Loader />;
-  }
-
+const StockMarquee = ({ homeData }) => {
   return (
     <div className="my-0 py-14 sm:py-20 pb-20 sm:pb-28 lato w-full h-[35px] overflow-hidden">
       <Marquee
@@ -33,7 +11,7 @@ const StockMarquee = () => {
         gradientColor={"#161616"}
         gradientWidth={300}
       >
-        {homeData.stocks.map((stock, index) => {
+        {homeData?.stocks?.map((stock, index) => {
           const { ticker, current_price, change_1m } = stock;
           const changeColor =
             change_1m >= 0 ? "text-green-600" : "text-red-600"; // Determine color based on change
