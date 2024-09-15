@@ -23,7 +23,7 @@ const NewsFissionFresh = () => {
     }
   }, [status, dispatch]);
 
-  if (isLoading) {
+  if (isLoading || !newsData || !newsData.stock_news) {
     return <Loader />;
   }
 
