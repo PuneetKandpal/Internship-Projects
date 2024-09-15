@@ -42,13 +42,13 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white w-[60%] rounded-lg shadow-lg p-8 flex">
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
+      <div className="bg-white w-full max-w-[90%] md:max-w-[60%] rounded-lg shadow-lg p-8 md:flex">
         {/* Left Side */}
-        <div className="hidden md:flex flex-col justify-center w-1/2 bg-green-400 rounded-l-lg p-8 text-white">
-          <h2 className="text-[28px] font-bold">Welcome Back!</h2>
+        <div className="hidden md:flex flex-col justify-center w-full md:w-1/2 bg-green-400 rounded-l-lg p-8 text-white">
+          <h2 className="text-[24px] md:text-[28px] font-bold">Welcome Back!</h2>
           <p className="mt-2">
-            To keep connected with us please login with your personal info
+            To keep connected with us, please log in with your personal info
           </p>
           <p className="mt-1">Don't have an account?</p>
           <NavLink
