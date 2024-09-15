@@ -103,10 +103,9 @@ const HomeHero = () => {
             Spot Uranium:
           </h1>
           <h2 className="text-[13px] mt-[-7px] sm:mt-0 sm:text-[14px] md:text-[16px] lg:text-[17.5px] text-white/90 font-medium lato">
-            {homeData?.uranium_spot_price ?? "Loading..."}
+            {homeData.uranium_spot_price}
           </h2>
         </div>
-
         <NavLink
           to="/investments"
           ref={buttonRef}

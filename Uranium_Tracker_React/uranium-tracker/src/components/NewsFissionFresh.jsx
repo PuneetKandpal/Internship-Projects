@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useDispatch, useSelector } from "react-redux";
@@ -23,7 +23,7 @@ const NewsFissionFresh = () => {
     }
   }, [status, dispatch]);
 
-  if (isLoading || !newsData || !newsData.stock_news) {
+  if (isLoading) {
     return <Loader />;
   }
 

@@ -22,30 +22,25 @@ const NewsTrending = () => {
       setIsLoading(false); // Set loading to false when data is fetched
     }
 
-    // gsap.from(".trending-block", {
-    //   opacity: 0,
-    //   y: 50,
-    //   duration: 1,
-    //   stagger: 0.3,
-    //   ease: "power2.out",
-    //   scrollTrigger: {
-    //     trigger: ".py-16",
-    //     start: "top 80%",
-    //     end: "bottom 60%",
-    //     toggleActions: "play none none reverse",
-    //     // markers:true
-    //   },
-    // });
+    gsap.from(".trending-block", {
+      opacity: 0,
+      y: 50,
+      duration: 1,
+      stagger: 0.3,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".py-16",
+        start: "top 80%",
+        end: "bottom 60%",
+        toggleActions: "play none none reverse",
+        // markers:true
+      },
+    });
   }, [status, dispatch, isLoading]);
 
   // Show the loader while loading is true
   if (isLoading) {
     return <Loader />;
-  }
-
-  // Ensure `newsData` and `latest_news` are not null or undefined
-  if (!newsData || !newsData.latest_news) {
-    return <div>No news data available</div>; // Handle the case where data is not available
   }
 
   return (
@@ -95,3 +90,5 @@ const NewsTrending = () => {
 };
 
 export default NewsTrending;
+
+
