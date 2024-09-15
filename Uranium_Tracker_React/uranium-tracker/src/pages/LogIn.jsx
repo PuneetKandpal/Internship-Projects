@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { FaEnvelope, FaLock } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import axios from "axios"; // Use axios to make the API calls
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState({ email: "", password: "" });
+  const [errors, setErrors] = useState({ email: "", password: "", apiError: "" });
+  const navigate = useNavigate();
 
   // Validation function
   const validate = () => {
@@ -33,23 +35,40 @@ const Login = () => {
     return valid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      // Handle successful login logic here
-      console.log("Login successful");
+      try {
+        // Send login request to Django backend
+        const response = await axios.post("http://localhost:8000/api/login/", {
+          email,
+          password,
+        });
+
+        // Get token from response
+        const token = response.data.token;
+
+        // Store token in local storage
+        localStorage.setItem("token", token);
+
+        // Redirect to a protected route
+        navigate("/");
+      } catch (error) {
+        setErrors({
+          ...errors,
+          apiError: error.response?.data?.detail || "Failed to log in",
+        });
+      }
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center  px-4">
+    <div className="min-h-screen flex items-center justify-center px-4">
       <div className="bg-zinc-800/20 w-full max-w-[90%] md:max-w-[60%] rounded-lg shadow-lg p-8 md:flex">
         {/* Left Side */}
-        <div className="hidden md:flex flex-col justify-center w-full md:w-1/2 bg-green-400 rounded-l-lg p-8 text-white">
+        <div className="hidden md:flex flex-col justify-center w-full md:w-1/2 bg-green-500 rounded-l-lg p-8 text-white">
           <h2 className="text-[24px] md:text-[28px] font-bold">Welcome Back!</h2>
-          <p className="mt-2">
-            To keep connected with us, please log in with your personal info
-          </p>
+          <p className="mt-2">To keep connected with us, please log in with your personal info.</p>
           <p className="mt-1">Don't have an account?</p>
           <NavLink
             to="/signup"
@@ -78,9 +97,7 @@ const Login = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email"
               />
-              {errors.email && (
-                <small className="text-red-500">{errors.email}</small>
-              )}
+              {errors.email && <small className="text-red-500">{errors.email}</small>}
             </div>
 
             {/* Password Field */}
@@ -97,20 +114,18 @@ const Login = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
               />
-              {errors.password && (
-                <small className="text-red-500">{errors.password}</small>
-              )}
+              {errors.password && <small className="text-red-500">{errors.password}</small>}
             </div>
 
             {/* Forgot Password */}
             <div className="flex justify-between items-center mb-6">
-              <a
-                href="/forgetpassword"
-                className="text-sm text-green-500 hover:underline"
-              >
+              <a href="/forgetpassword" className="text-sm text-green-500 hover:underline">
                 Forgot Password?
               </a>
             </div>
+
+            {/* API Error */}
+            {errors.apiError && <div className="text-red-500 text-sm mb-4">{errors.apiError}</div>}
 
             {/* Submit Button */}
             <button

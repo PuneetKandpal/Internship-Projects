@@ -1,77 +1,92 @@
 import { useState } from "react";
 import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import API from "../api/auth"; // Axios instance
 
 const SignUp = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
-  // Validation function
   const validate = () => {
     let valid = true;
-    let nameError = "";
-    let emailError = "";
-    let passwordError = "";
-    let confirmPasswordError = "";
+    let newErrors = {};
 
     if (!name) {
-      nameError = "Name is required";
+      newErrors.name = "Name is required";
       valid = false;
     }
 
     if (!email) {
-      emailError = "Email is required";
+      newErrors.email = "Email is required";
       valid = false;
     } else if (!/\S+@\S+\.\S+/.test(email)) {
-      emailError = "Email address is invalid";
+      newErrors.email = "Email address is invalid";
       valid = false;
     }
 
     if (!password) {
-      passwordError = "Password is required";
+      newErrors.password = "Password is required";
       valid = false;
     } else if (password.length < 6) {
-      passwordError = "Password must be at least 6 characters";
+      newErrors.password = "Password must be at least 6 characters";
       valid = false;
     }
 
-    if (!confirmPassword) {
-      confirmPasswordError = "Confirm Password is required";
-      valid = false;
-    } else if (password !== confirmPassword) {
-      confirmPasswordError = "Passwords do not match";
+    if (password !== confirmPassword) {
+      newErrors.confirmPassword = "Passwords do not match";
       valid = false;
     }
 
-    setErrors({
-      name: nameError,
-      email: emailError,
-      password: passwordError,
-      confirmPassword: confirmPasswordError,
-    });
+    setErrors(newErrors);
     return valid;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Sign Up successful");
+      try {
+        // Send sign-up request to backend
+        const response = await API.post("/signup/", {
+          name,
+          email,
+          password,
+        });
+
+        // Get token from response
+        const token = response.data.token;
+
+        // Store token in local storage
+        localStorage.setItem("token", token);
+
+        // Redirect user to a protected page
+        navigate("/");
+      } catch (error) {
+        const errorMessage =
+          error.response?.data?.detail || "Failed to sign up";
+
+        if (error.response?.data?.email) {
+          setErrors({
+            ...errors,
+            apiError: "Email already in use.",
+          });
+        } else {
+          setErrors({
+            ...errors,
+            apiError: errorMessage,
+          });
+        }
+      }
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center  p-4 md:p-0">
+    <div className="min-h-screen flex items-center justify-center p-4 md:p-0">
       <div className="bg-zinc-800/20 w-full md:w-[60%] rounded-lg shadow-lg p-8 flex flex-col md:flex-row">
-        {/* Left Side */}
-        <div className="hidden md:flex flex-col justify-center w-full md:w-1/2 bg-green-400 rounded-l-lg p-8 text-white">
+        <div className="hidden md:flex flex-col justify-center w-full md:w-1/2 bg-green-500 rounded-l-lg p-8 text-white">
           <h2 className="text-[29px] font-bold">Join Us!</h2>
           <p className="mt-2">
             Create an account to enjoy all the features of our service.
@@ -85,7 +100,6 @@ const SignUp = () => {
           </NavLink>
         </div>
 
-        {/* Right Side (SignUp Form) */}
         <div className="w-full md:w-1/2 p-4 md:p-8">
           <h2 className="text-2xl font-semibold text-center mb-6">Sign Up</h2>
 
@@ -165,6 +179,10 @@ const SignUp = () => {
                 <small className="text-red-500">{errors.confirmPassword}</small>
               )}
             </div>
+
+            {errors.apiError && (
+              <div className="text-red-500 text-sm mb-4">{errors.apiError}</div>
+            )}
 
             {/* Submit Button */}
             <button
