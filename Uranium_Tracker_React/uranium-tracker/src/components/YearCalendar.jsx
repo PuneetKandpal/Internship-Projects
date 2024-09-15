@@ -49,34 +49,34 @@ const YearCalendar = ({ events }) => {
   const [hoveredDate, setHoveredDate] = useState(null);
 
   const eventColors = [
-    "bg-[#D8BFD8]",
-    "bg-[#FFB6C1]",
-    "bg-[#90EE90]",
-    "bg-[#9CA3AF]",
+    "bg-[#bc7ebc]",
+    "bg-[#d88e9b]",
+    "bg-[#71b571]",
+    "bg-[#7abde1]",
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 mt-20">
-      <h2 className="text-3xl font-bold mb-8 text-center text-white frank">
+    <div className="container mx-auto px-4 py-8 mt-24">
+      <h2 className="text-3xl font-bold mb-12 text-center text-white frank">
         {currentYear} Yearly Calendar
       </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-6 gap-1">
         {Array.from({ length: 12 }).map((_, month) => (
           <div
             key={month}
             className="bg-zinc-800/20 shadow-md rounded-sm p-4 relative"
           >
-            <h3 className="text-lg font-semibold mb-4 text-center text-white frank">
+            <h3 className="text-lg font-medium mb-4 text-center text-white ">
               {dayjs().month(month).format("MMMM")}
             </h3>
-            <div className="grid grid-cols-7 gap-1 text-center text-white">
+            <div className="grid grid-cols-7 gap-1 text-center text-[13px] text-white">
               {["S", "M", "T", "W", "T", "F", "S"].map((day) => (
-                <div key={day} className="w-8 h-8">
+                <div key={day} className="w-6 h-6 text-[13px]">
                   {day}
                 </div>
               ))}
             </div>
-            <div className="grid grid-cols-7 gap-1 relative">
+            <div className="grid grid-cols-7 gap-1 mt-2 text-[13px] relative">
               {getDaysInMonth(currentYear, month).map((day, idx) => {
                 const date = day
                   ? dayjs(`${currentYear}-${month + 1}-${day}`)
@@ -87,20 +87,20 @@ const YearCalendar = ({ events }) => {
                 const eventColor = event
                   ? eventColors[events.indexOf(event) % eventColors.length]
                   : "bg-zinc-800/70";
-                const textColor = event ? "text-black" : "text-white";
+                const textColor = event ? "text-black1" : "text-white";
 
                 return (
                   <div
                     key={idx}
-                    className={`w-8 h-8 flex items-center justify-center cursor-pointer transition-colors
+                    className={`w-6 h-6 flex items-center justify-center cursor-pointer transition-colors
         ${day ? `${eventColor} ${textColor}` : ""} relative`}
                     onMouseEnter={() => setHoveredDate(date)}
                     onMouseLeave={() => setHoveredDate(null)}
                   >
                     <span>{day}</span>
                     {event && hoveredDate?.isSame(date, "day") && (
-                      <div className="absolute z-50 left-full ml-1 top-1/2 transform -translate-y-1/2 whitespace-nowrap">
-                        <div className="bg-black1 text-white text-sm rounded-md px-2 py-1 flex items-center">
+                      <div className="absolute z-50 left-full ml-1 overflow-auto top-1/2 transform -translate-y-1/2 whitespace-nowrap">
+                        <div className="bg-yellow-300 text-wrap text-black text-sm rounded-md px-2 py-1 flex items-center">
                           <span className="mr-1">*</span>
                           <span>{event.title}</span>
                         </div>
@@ -114,7 +114,7 @@ const YearCalendar = ({ events }) => {
         ))}
       </div>
 
-      <div className="mt-8 space-y-6">
+      <div className="mt-16 space-y-6">
         {events.map((event, index) => (
           <div
             key={index}
