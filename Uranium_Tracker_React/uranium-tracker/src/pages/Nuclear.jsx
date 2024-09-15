@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchNuclearData } from "../store/slices/apiSlice";
 import Loader from "../components/Loader"; // Import your loader component
 import { useEffect, useState } from "react";
+import NuclearReactorDatabase from "../components/NuclearReactorDatabase";
 
 const Nuclear = () => {
   const dispatch = useDispatch();
@@ -32,6 +33,7 @@ const Nuclear = () => {
       ) : (
         <div>
           <Navbar />
+          <NuclearReactorDatabase />
           <Footer />
         </div>
       )}
