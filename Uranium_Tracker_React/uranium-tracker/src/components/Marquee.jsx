@@ -33,27 +33,23 @@ const StockMarquee = () => {
         gradientColor={"#161616"}
         gradientWidth={300}
       >
-        {homeData?.stocks?.length > 0 ? (
-          homeData.stocks.map((stock, index) => {
-            const { ticker, current_price, change_1m } = stock;
-            const changeColor =
-              change_1m >= 0 ? "text-green-600" : "text-red-600"; // Determine color based on change
+        {homeData.stocks.map((stock, index) => {
+          const { ticker, current_price, change_1m } = stock;
+          const changeColor =
+            change_1m >= 0 ? "text-green-600" : "text-red-600"; // Determine color based on change
 
-            return (
-              <span key={index} className="ml-12 font-semibold">
-                {ticker} ${current_price.toFixed(2)}
-                <span className={`${changeColor} font-semibold`}>
-                  {" "}
-                  {change_1m >= 0
-                    ? `▲${(change_1m * 1).toFixed(2)}%`
-                    : `▼${Math.abs(change_1m * 1).toFixed(2)}%`}
-                </span>
+          return (
+            <span key={index} className="ml-12 font-semibold">
+              {ticker} ${current_price.toFixed(2)}
+              <span className={`${changeColor} font-semibold`}>
+                {" "}
+                {change_1m >= 0
+                  ? `▲${(change_1m * 1).toFixed(2)}%`
+                  : `▼${Math.abs(change_1m * 1).toFixed(2)}%`}
               </span>
-            );
-          })
-        ) : (
-          <span>No stock data available</span>
-        )}
+            </span>
+          );
+        })}
       </Marquee>
     </div>
   );

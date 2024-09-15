@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const UraniumTable = () => {
   const dispatch = useDispatch();
   const stocksData = useSelector((state) => state.api.stocks);
-  // console.log(stocksData);
+  console.log(stocksData);
   const status = useSelector((state) => state.api.status);
   const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
 

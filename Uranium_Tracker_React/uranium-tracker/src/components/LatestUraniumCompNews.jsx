@@ -6,7 +6,7 @@ import Loader from "./Loader"; // Import your loader component
 
 const LatestUraniumCompNews = () => {
   const dispatch = useDispatch();
-  const homeData = useSelector((state) => state.api.home || {}); // Ensure homeData is not null
+  const homeData = useSelector((state) => state.api.home);
   const status = useSelector((state) => state.api.status);
   const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
 
