@@ -56,7 +56,7 @@ const YearCalendar = ({ events }) => {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8 mt-24">
+    <div className="mx-auto px-4 py-8 mt-24">
       <h2 className="text-3xl font-bold mb-12 text-center text-white frank">
         {currentYear} Yearly Calendar
       </h2>
