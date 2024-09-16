@@ -27,7 +27,7 @@ const Calendar = () => {
   return (
     <>
       <Navbar />
-      <div className="container px-6 md:px-20 mt-6">
+      <div className=" px-6 md:px-20 mt-6">
         {isLoading ? (
           <Loader /> // Show Loader while fetching data
         ) : (
