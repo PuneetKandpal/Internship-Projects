@@ -1,29 +1,29 @@
-// import { useEffect } from "react";
-// import gsap from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Loader from "./Loader"; // Import your loader component
-
-// gsap.registerPlugin(ScrollTrigger);
+import Loader from "./Loader";
 
 const NewsTrending = ({ newsData }) => {
-  // useEffect(() => {
-  //   gsap.from(".trending-block", {
-  //     opacity: 0,
-  //     y: 50,
-  //     duration: 1,
-  //     stagger: 0.3,
-  //     ease: "power2.out",
-  //     scrollTrigger: {
-  //       trigger: ".py-16",
-  //       start: "top 80%",
-  //       end: "bottom 60%",
-  //       toggleActions: "play none none reverse",
-  //       // markers:true
-  //     },
-  //   });
-  // }, [newsData]);
+  // Function to standardize date format
+  const formatDate = (dateString) => {
+    let date;
+    if (dateString.includes("T")) {
+      // Handle ISO format: "2024-09-12T00:00:00"
+      date = new Date(dateString);
+    } else if (dateString.includes(",")) {
+      // Handle format: "Friday, 6 September 2024"
+      date = new Date(dateString);
+    } else {
+      // Handle format: "12-09-2024"
+      const [day, month, year] = dateString.split("-");
+      date = new Date(`${year}-${month}-${day}`);
+    }
 
-  // Show the loader while loading is true
+    // Format the date to "Sep 6, 2024"
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
+
   if (!newsData) {
     return <Loader />;
   }
@@ -58,12 +58,7 @@ const NewsTrending = ({ newsData }) => {
                 </h1>
               </a>
               <p className="text-[11px] md:text-[12px] lato font-medium text-white/40 mt-2">
-                <span>
-                  {new Date(newsItem.published_date).toLocaleDateString(
-                    "en-US",
-                    { month: "short", day: "numeric", year: "numeric" }
-                  )}
-                </span>
+                <span>{formatDate(newsItem.published_date)}</span>
                 &nbsp; | &nbsp;<span>{newsItem.publisher}</span>
               </p>
             </div>
