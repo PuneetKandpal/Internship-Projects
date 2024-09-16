@@ -51,7 +51,11 @@ const SignUp = () => {
     e.preventDefault();
     if (validate()) {
       try {
-        const response = await API.post("/signup", { name, email, password });
+        const response = await API.post("/register/", {
+          username: name,
+          email,
+          password,
+        });
         const { token } = response.data;
         login(token); // Save token and update auth state
         navigate("/");
