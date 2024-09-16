@@ -1,13 +1,13 @@
 import { useState } from "react";
-import { FaEnvelope, FaLock } from "react-icons/fa";
+import { FaUser, FaLock } from "react-icons/fa"; // Changed to FaUser for username
 import { NavLink, useNavigate } from "react-router-dom";
-import axios from "axios"; // Use axios to make the API calls
+import axios from "axios";
 
 const Login = () => {
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState({
-    email: "",
+    username: "",
     password: "",
     apiError: "",
   });
@@ -16,14 +16,11 @@ const Login = () => {
   // Validation function
   const validate = () => {
     let valid = true;
-    let emailError = "";
+    let usernameError = "";
     let passwordError = "";
 
-    if (!email) {
-      emailError = "Email is required";
-      valid = false;
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
-      emailError = "Email address is invalid";
+    if (!username) {
+      usernameError = "Username is required";
       valid = false;
     }
 
@@ -35,7 +32,7 @@ const Login = () => {
       valid = false;
     }
 
-    setErrors({ email: emailError, password: passwordError });
+    setErrors({ username: usernameError, password: passwordError });
     return valid;
   };
 
@@ -47,7 +44,7 @@ const Login = () => {
         const response = await axios.post(
           "https://web-production-c2d9c.up.railway.app/login/",
           {
-            email,
+            username, // Changed to username
             password,
           }
         );
@@ -94,22 +91,22 @@ const Login = () => {
           <h2 className="text-2xl font-semibold text-center mb-6">Log In</h2>
 
           <form onSubmit={handleSubmit}>
-            {/* Email Field */}
+            {/* Username Field */}
             <div className="mb-6">
               <label className="text-zinc-300 flex items-center mb-1 text-[15px]">
-                <FaEnvelope className="mr-2 mt-[2px]" /> Email
+                <FaUser className="mr-2 mt-[2px]" /> Username
               </label>
               <input
                 type="text"
                 className={`w-full px-4 py-2 text-white bg-zinc-800/50 placeholder ${
-                  errors.email ? "border-red-500" : "border-gray-300"
+                  errors.username ? "border-red-500" : "border-gray-300"
                 } rounded focus:outline-none focus:ring-1 focus:ring-green-500`}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                placeholder="Enter your username"
               />
-              {errors.email && (
-                <small className="text-red-500">{errors.email}</small>
+              {errors.username && (
+                <small className="text-red-500">{errors.username}</small>
               )}
             </div>
 
