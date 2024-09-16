@@ -1,11 +1,4 @@
-import { useEffect, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchNewsData } from "../store/slices/apiSlice";
 import Loader from "./Loader"; // Import your loader component
-
-gsap.registerPlugin(ScrollTrigger);
 
 // Function to format dates consistently
 const formatDate = (dateString) => {
@@ -36,23 +29,9 @@ const formatDate = (dateString) => {
   }
 };
 
-const NewsChainReaction = () => {
-  const dispatch = useDispatch();
-  const NewsData = useSelector((state) => state.api.news); // Fetch your news data
-  const status = useSelector((state) => state.api.status);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchNewsData());
-    }
-
-    if (status === "succeeded") {
-      setIsLoading(false);
-    }
-  }, [status, dispatch]);
-
-  if (isLoading) {
+const NewsChainReaction = ({ newsData }) => {
+  // Show the loader while loading is true
+  if (!newsData) {
     return <Loader />;
   }
 
@@ -64,7 +43,7 @@ const NewsChainReaction = () => {
       </h2>
 
       <div className="flex justify-between flex-wrap">
-        {NewsData.global_uranium_news?.map((newsItem) => (
+        {newsData?.global_uranium_news?.map((newsItem) => (
           <div
             key={newsItem.id}
             className="trending-block w-full sm:w-[48%] lg:w-[22%] mb-6"

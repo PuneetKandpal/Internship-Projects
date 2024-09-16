@@ -15,17 +15,21 @@ const News = () => {
   const status = useSelector((state) => state.api.status);
   const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
 
+  // Ensure "status" is checked for all possible states
   useEffect(() => {
     if (status === "idle") {
       dispatch(fetchNewsData());
     }
-  }, [status, dispatch]); // Removed isLoading from dependency array
+  }, [status, dispatch]);
 
+  // Update "isLoading" based on status
   useEffect(() => {
-    if (status === "succeeded") {
-      setIsLoading(false); // Set loading to false when data is fetched
+    if (status === "succeeded" || status === "failed") {
+      setIsLoading(false); // Stop loader when data is fetched or on failure
+    } else if (status === "loading") {
+      setIsLoading(true); // Show loader while data is fetching
     }
-  }, [status]); // Separate useEffect to handle loading state
+  }, [status]);
 
   return (
     <>
@@ -34,10 +38,10 @@ const News = () => {
       ) : (
         <div>
           <Navbar />
-          <NewsHero />
-          <NewsTrending />
-          <NewsFissionFresh />
-          <NewsChainReaction />
+          <NewsHero newsData={newsData} />
+          <NewsTrending newsData={newsData} />
+          <NewsFissionFresh newsData={newsData} />
+          <NewsChainReaction newsData={newsData}/>
           <Footer />
         </div>
       )}

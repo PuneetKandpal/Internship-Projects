@@ -1,5 +1,5 @@
-import { useEffect, useRef } from "react";
-import gsap from "gsap";
+import {  useRef } from "react";
+// import gsap from "gsap";
 import herovdo from "../assets/hero.mp4";
 import { NavLink } from "react-router-dom";
 import Loader from "./Loader";
