@@ -1,20 +1,20 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchVideoData } from "../store/slices/apiSlice";
+import { useContext } from "react";
+import { VideoContext } from "../context/VideoContext";
+import Loader from "../components/Loader";
 
 const YouTubeVideos = () => {
-  const dispatch = useDispatch();
-  const { video, status, error } = useSelector((state) => state.api);
+  const { data, loading, error } = useContext(VideoContext); // Changed video to data
 
-  useEffect(() => {
-    dispatch(fetchVideoData());
-  }, [dispatch]);
+  if (loading) {
+    return <Loader />;
+  }
 
-  if (status === "loading") return <p>Loading videos...</p>;
-  if (status === "failed") return <p>Error: {error}</p>;
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
-  const mainVideo = video?.videos[0];
-  const sideVideos = video?.videos.slice(1, 5);
+  const mainVideo = data?.videos[0];
+  const sideVideos = data?.videos.slice(1, 5);
 
   // Helper function to generate YouTube embed link
   const getYouTubeEmbedLink = (link) => {

@@ -13,6 +13,7 @@ import Marquee from "../components/Marquee";
 import Navbar from "../components/Navbar";
 import { HomeContext } from "../context/HomeContext";
 import Loader from "../components/Loader";
+import { VideoProvider } from "../context/VideoContext";
 
 const Home = () => {
   const { data, loading, error } = useContext(HomeContext); // Changed homeData to data
@@ -37,7 +38,10 @@ const Home = () => {
       <DidYouKnow />
       <HomeFeaturedNewsTweets homeData={data} />
       {/* <HomeUraniumBlogs /> */}
-      <HomeVideoSec />
+      <VideoProvider>
+        <HomeVideoSec />
+      </VideoProvider>
+
       <Footer />
     </div>
   );

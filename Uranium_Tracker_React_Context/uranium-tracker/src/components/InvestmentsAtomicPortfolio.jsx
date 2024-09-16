@@ -1,14 +1,7 @@
-import { useDispatch, useSelector } from "react-redux";
-import { fetchStocksData } from "../store/slices/apiSlice";
-import Loader from "./Loader"; // Import your loader component
 import { useEffect, useState } from "react";
-// import Chart from "chart.js/auto";
+import Chart from "chart.js/auto";
 
-const InvestmentsAtomicPortfolio = () => {
-  const dispatch = useDispatch();
-  const stocksData = useSelector((state) => state.api.stocks);
-  const status = useSelector((state) => state.api.status);
-  const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
+const InvestmentsAtomicPortfolio = ({ stocksData }) => {
   const [topGainers, setTopGainers] = useState({ labels: [], data: [] });
   const [topLosers, setTopLosers] = useState({ labels: [], data: [] });
   const [mostFollowed, setMostFollowed] = useState({ labels: [], data: [] });
@@ -86,11 +79,7 @@ const InvestmentsAtomicPortfolio = () => {
 
   // Fetch stocks data when component mounts
   useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchStocksData());
-    }
-
-    if (status === "succeeded") {
+    if (stocksData) {
       const extractedTopGainers = extractTopGainers(
         stocksData.most_followed_stocks
       );
@@ -103,18 +92,19 @@ const InvestmentsAtomicPortfolio = () => {
         stocksData.top_performing_stocks
       );
       setMostFollowed(extractedMostFollowed);
-
-      setIsLoading(false); // Set loading to false when data is fetched
     }
-  }, [status, dispatch, stocksData]);
+  }, [stocksData]);
 
   // Create charts after the data is fetched
   useEffect(() => {
-    if (!isLoading) {
+    if (
+      topGainers.labels.length > 0 &&
+      topLosers.labels.length > 0 &&
+      mostFollowed.labels.length > 0
+    ) {
       const topGainersCtx = document
         .getElementById("topGainersChart")
         .getContext("2d");
-
       createRadarChart(
         topGainersCtx,
         topGainers.labels,
@@ -127,7 +117,6 @@ const InvestmentsAtomicPortfolio = () => {
       const topLosersCtx = document
         .getElementById("topLosersChart")
         .getContext("2d");
-
       createRadarChart(
         topLosersCtx,
         topLosers.labels,
@@ -140,7 +129,6 @@ const InvestmentsAtomicPortfolio = () => {
       const mostFollowedCtx = document
         .getElementById("mostFollowedChart")
         .getContext("2d");
-
       createRadarChart(
         mostFollowedCtx,
         mostFollowed.labels,
@@ -150,12 +138,7 @@ const InvestmentsAtomicPortfolio = () => {
         "rgba(40, 167, 69, 1)"
       );
     }
-  }, [isLoading, topLosers, mostFollowed]);
-
-  // Show the loader while loading is true
-  if (isLoading) {
-    return <Loader />;
-  }
+  }, [topGainers, topLosers, mostFollowed]);
 
   return (
     <div id="portfolio" className="bg-zinc-800/30 p-8 mt-5 mb-8 rounded-md">

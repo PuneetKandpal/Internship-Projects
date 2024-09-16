@@ -83,7 +83,7 @@ const Navbar = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-[1000] bg-black1 py-6 px-4 md:px-12 flex justify-between items-center shadow-lg">
-      <a href="home.html">
+      <a href="/">
         <h1 className="play font-semibold text-white frank text-[22px] md:text-2xl flex items-center">
           <i className="ri-compass-fill text-[15px] md:text-[19px] text-black1 bg-lime1 flex justify-center items-center pt-[2px] w-6 h-6 md:w-7 md:h-7 rounded-full mr-2"></i>
           UraniumTracker
