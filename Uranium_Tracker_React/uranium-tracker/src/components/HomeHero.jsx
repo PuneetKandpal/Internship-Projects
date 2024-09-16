@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import herovdo from "../assets/hero.mp4";
 import { NavLink } from "react-router-dom";
+import Loader from "./Loader";
 
 const HomeHero = ({ homeData }) => {
   const heroRef = useRef(null);
@@ -10,40 +11,42 @@ const HomeHero = ({ homeData }) => {
   const buttonRef = useRef(null);
   const videoRef = useRef(null);
 
-  useEffect(() => {
-    // GSAP animations
+  // useEffect(() => {
+  //   const tl = gsap.timeline();
+  //   tl.from(titleRef.current, {
+  //     opacity: 0,
+  //     y: 50,
+  //     duration: 1,
+  //     ease: "power2.out",
+  //   })
+  //     .from(
+  //       flexRef.current,
+  //       { opacity: 0, y: 50, duration: 1, ease: "power2.out" },
+  //       "-=0.8"
+  //     )
+  //     .from(
+  //       buttonRef.current,
+  //       {
+  //         opacity: 0,
+  //         y: 100,
+  //         duration: 1,
+  //         ease: "power2.out",
+  //         clearProps: "all",
+  //       },
+  //       "-=0.8"
+  //     );
 
-    const tl = gsap.timeline();
-    tl.from(titleRef.current, {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      ease: "power2.out",
-    })
-      .from(
-        flexRef.current,
-        { opacity: 0, y: 50, duration: 1, ease: "power2.out" },
-        "-=0.8"
-      )
-      .from(
-        buttonRef.current,
-        {
-          opacity: 0,
-          y: 100,
-          duration: 1,
-          ease: "power2.out",
-          clearProps: "all",
-        },
-        "-=0.8"
-      );
+  //   // Subtle zoom-in effect for background video
+  //   gsap.from(videoRef.current, {
+  //     scale: 1.1,
+  //     duration: 1.5,
+  //     ease: "power2.out",
+  //   });
+  // }, [homeData]);
 
-    // Subtle zoom-in effect for background video
-    gsap.from(videoRef.current, {
-      scale: 1.1,
-      duration: 1.5,
-      ease: "power2.out",
-    });
-  }, []);
+  if (!homeData) {
+    return <Loader />;
+  }
 
   return (
     <div
@@ -58,8 +61,11 @@ const HomeHero = ({ homeData }) => {
           autoPlay
           loop
           muted
+          playsInline
+          preload="metadata"
           className="w-full h-full object-cover object-left pl-40 opacity-90"
         ></video>
+
         <div className="absolute inset-0 bg-gradient-to-r from-[#000000] via-black1/80 to-black1/20"></div>
       </div>
 

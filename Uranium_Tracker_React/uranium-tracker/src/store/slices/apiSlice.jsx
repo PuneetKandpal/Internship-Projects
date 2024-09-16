@@ -3,8 +3,14 @@ import axiosInstance from "../../api/axios";
 
 // Async Thunks for API Calls
 export const fetchHomeData = createAsyncThunk("api/fetchHomeData", async () => {
-  const response = await axiosInstance.get("/home");
-  return response.data;
+  try {
+    const response = await axiosInstance.get("/home");
+    console.log("Home data fetched:", response.data); // Debug line
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching home data:", error); // Log the exact error
+    throw error;
+  }
 });
 
 export const fetchNewsData = createAsyncThunk("api/fetchNewsData", async () => {
@@ -69,9 +75,16 @@ const apiSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      .addCase(fetchHomeData.pending, (state) => {
+        state.status = "loading"; // Set status to "loading" when the request starts
+      })
       .addCase(fetchHomeData.fulfilled, (state, action) => {
         state.home = action.payload;
         state.status = "succeeded";
+      })
+      .addCase(fetchHomeData.rejected, (state, action) => {
+        state.error = action.error.message;
+        state.status = "failed";
       })
       .addCase(fetchNewsData.fulfilled, (state, action) => {
         state.news = action.payload;
