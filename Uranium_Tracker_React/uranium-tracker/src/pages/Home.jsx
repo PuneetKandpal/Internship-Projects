@@ -43,14 +43,14 @@ const Home = () => {
           <Navbar />
           <HomeHero homeData={homeData} />
           <Marquee homeData={homeData} />
-          <HomePriceChart />
+          <HomePriceChart homeData={homeData} />
           <HomeTableNews homeData={homeData} />
           <HomeLosarsTableSec homeData={homeData} />
           <UraniumElementOfOpp />
           <DidYouKnow />
           <HomeFeaturedNewsTweets homeData={homeData} />
           <HomeUraniumBlogs />
-          {/* <HomeVideoSec /> */}
+          <HomeVideoSec />
           <Footer />
         </div>
       )}
@@ -59,3 +59,48 @@ const Home = () => {
 };
 
 export default Home;
+
+// import { useDispatch, useSelector } from "react-redux";
+// import { fetchHomeData } from "../store/slices/apiSlice";
+// import Loader from "../components/Loader";
+// import { useEffect } from "react";
+
+// const Home = () => {
+//   const dispatch = useDispatch();
+//   const homeData = useSelector((state) => state.api.home);
+//   const status = useSelector((state) => state.api.status);
+
+//   useEffect(() => {
+//     if (status === "idle") {
+//       dispatch(fetchHomeData());
+//     }
+//   }, [status, dispatch]);
+
+//   if (status === "loading") {
+//     return <Loader />; // Display loader when status is "loading"
+//   }
+
+//   if (status === "failed") {
+//     return <div>Error fetching data.</div>; // Handle errors
+//   }
+
+//   return (
+//     <div>
+//       <Navbar />
+//       <HomeHero homeData={homeData} />
+
+//       <Marquee homeData={homeData} />
+//       <HomePriceChart homeData={homeData} />
+//       <HomeTableNews homeData={homeData} />
+//       <HomeLosarsTableSec homeData={homeData} />
+//       <UraniumElementOfOpp />
+//       <DidYouKnow />
+//       <HomeFeaturedNewsTweets homeData={homeData} />
+//       <HomeUraniumBlogs />
+//       <HomeVideoSec />
+//       <Footer />
+//     </div>
+//   );
+// };
+
+// export default Home;

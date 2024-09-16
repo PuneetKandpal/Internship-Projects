@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HomePriceChart = () => {
+const HomePriceChart = ({ homeData }) => {
   useEffect(() => {
     gsap.from(".hero-uranium-info", {
       scrollTrigger: {
@@ -37,7 +37,7 @@ const HomePriceChart = () => {
   return (
     <div className="pb-32 pt-10 flex flex-col lg:flex-row justify-between items-center px-6 lg:px-20 uranium-section overflow-hidden">
       {/* Uranium Prices Section */}
-      <PriceChart /> {/* Include PriceChart Component */}
+      <PriceChart homeData={homeData}/> {/* Include PriceChart Component */}
       {/* Uranium Info Section */}
       <div className="w-full mt-4 lg:mt-0 lg:w-[45%] hero-uranium-info">
         <h1 className="mt-[-6px] w-full lg:w-[80%] text-bg frank leading-[45px] sm:leading-[57px] text-[2rem] sm:text-[3rem] text-white font-medium mb-7 uranium-heading">

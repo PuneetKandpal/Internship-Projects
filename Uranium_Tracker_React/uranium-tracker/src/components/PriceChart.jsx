@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const PriceChart = () => {
+const PriceChart = ({ homeData }) => {
   useEffect(() => {
     gsap.from(".uranium-prices", {
       scrollTrigger: {
@@ -29,146 +29,31 @@ const PriceChart = () => {
           <table className="w-full text-left text-white border-separate border-spacing-y-0 uranium-table">
             <thead className="text-xs font-light text-white/30 uppercase tracking-wider py-1">
               <tr>
-                <th className="px-1 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  LiveU3O8
-                </th>
-                <th className="px-1 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  BidLoc
-                </th>
-                <th className="px-1 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  Bid$/lbs
-                </th>
-                <th className="px-1 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  Indic$/lbs
-                </th>
-                <th className="px-1 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  Change$/lbs
-                </th>
-                <th className="px-1 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  Ask$/lbs
-                </th>
-                <th className="px-1 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  AskLoc
-                </th>
+                {homeData?.uranium_data?.headers?.map((h, i) => (
+                  <th
+                    key={i}
+                    className="px-1 sm:px-3 py-2 sm:py-4 border-b border-white/5"
+                  >
+                    {h}
+                  </th>
+                ))}
               </tr>
             </thead>
             <tbody className="text-[12px] sm:text-[13px] text-white/90">
-              <tr className="hover:bg-[#161616]">
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5 text-white/60">
-                  Aug-24
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  CMX
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.00
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.30
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  1.35
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.75
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  CMO
-                </td>
-              </tr>
-              {/* Add more rows as needed */}
-              <tr className="hover:bg-[#161616]">
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5 text-white/60">
-                  Aug-24
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  CMX
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.00
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.30
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  1.35
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.75
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  CMO
-                </td>
-              </tr>
-              <tr className="hover:bg-[#161616]">
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5 text-white/60">
-                  Aug-24
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  CMX
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.00
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.30
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  1.35
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.75
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  CMO
-                </td>
-              </tr>
-              <tr className="hover:bg-[#161616]">
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5 text-white/60">
-                  Aug-24
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  CMX
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.00
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.30
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  1.35
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.75
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  CMO
-                </td>
-              </tr>
-              <tr className="hover:bg-[#161616]">
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5 text-white/60">
-                  Aug-24
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  CMX
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.00
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.30
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  1.35
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  81.75
-                </td>
-                <td className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5">
-                  CMO
-                </td>
-              </tr>
+              {homeData?.uranium_data?.data
+                ?.slice(0, 5)
+                .map((row, rowIndex) => (
+                  <tr key={rowIndex} className="hover:bg-[#161616]">
+                    {row.map((cellData, cellIndex) => (
+                      <td
+                        key={cellIndex}
+                        className="px-2 sm:px-3 py-2 sm:py-4 border-b border-white/5"
+                      >
+                        {cellData}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
             </tbody>
           </table>
         </div>

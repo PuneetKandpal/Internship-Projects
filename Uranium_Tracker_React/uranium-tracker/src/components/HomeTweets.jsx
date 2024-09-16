@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const HomeTweets = () => {
+const HomeTweets = ({ homeData }) => {
   const tweetsRef = useRef(null);
   const tweetCardsRef = useRef([]);
 
