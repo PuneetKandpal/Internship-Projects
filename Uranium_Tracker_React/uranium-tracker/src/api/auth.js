@@ -1,13 +1,13 @@
-// api.js
-import axios from 'axios';
+// auth.js
+import axios from "axios";
 
 const API = axios.create({
-  baseURL: 'http://localhost:8000/api', // Django backend URL
+  baseURL: "https://web-production-c2d9c.up.railway.app", // Django backend URL
 });
 
 // Attach token to each request if it exists
 API.interceptors.request.use((req) => {
-  const token = localStorage.getItem('token');
+  const token = localStorage.getItem("token");
   if (token) {
     req.headers.Authorization = `Bearer ${token}`;
   }

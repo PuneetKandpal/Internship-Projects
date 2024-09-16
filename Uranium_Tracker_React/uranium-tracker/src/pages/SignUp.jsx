@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FaEnvelope, FaLock, FaUser } from "react-icons/fa";
 import { NavLink, useNavigate } from "react-router-dom";
 import API from "../api/auth"; // Axios instance
+import { useAuth } from "../context/AuthContext"; // Import AuthContext
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -10,6 +11,7 @@ const SignUp = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
+  const { login } = useAuth(); // Use AuthContext
 
   const validate = () => {
     let valid = true;
@@ -49,151 +51,106 @@ const SignUp = () => {
     e.preventDefault();
     if (validate()) {
       try {
-        // Send sign-up request to backend
-        const response = await API.post("/signup/", {
-          name,
-          email,
-          password,
-        });
-
-        // Get token from response
-        const token = response.data.token;
-
-        // Store token in local storage
-        localStorage.setItem("token", token);
-
-        // Redirect user to a protected page
+        const response = await API.post("/signup", { name, email, password });
+        const { token } = response.data;
+        login(token); // Save token and update auth state
         navigate("/");
       } catch (error) {
-        const errorMessage =
-          error.response?.data?.detail || "Failed to sign up";
-
-        if (error.response?.data?.email) {
-          setErrors({
-            ...errors,
-            apiError: "Email already in use.",
-          });
-        } else {
-          setErrors({
-            ...errors,
-            apiError: errorMessage,
-          });
-        }
+        console.error("Error signing up:", error);
+        setErrors({ form: "Failed to sign up. Please try again." });
       }
     }
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 md:p-0">
-      <div className="bg-zinc-800/20 w-full md:w-[60%] rounded-lg shadow-lg p-8 flex flex-col md:flex-row">
-        <div className="hidden md:flex flex-col justify-center w-full md:w-1/2 bg-green-500 rounded-l-lg p-8 text-white">
-          <h2 className="text-[29px] font-bold">Join Us!</h2>
-          <p className="mt-2">
-            Create an account to enjoy all the features of our service.
-          </p>
-          <p className="mt-1">Already have an account?</p>
-          <NavLink
-            to="/login"
-            className="mt-2 w-fit bg-white text-green-500 py-2 px-6 rounded font-semibold hover:bg-gray-200"
-          >
-            Log In
+    <div className="flex justify-center items-center min-h-screen bg-black1">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-black2 p-6 rounded-lg shadow-lg w-full max-w-md"
+      >
+        <h1 className="text-2xl font-bold text-white mb-4">Sign Up</h1>
+        {errors.form && <p className="text-red-500 mb-4">{errors.form}</p>}
+        <div className="mb-4">
+          <label htmlFor="name" className="block text-white mb-1">
+            Name
+          </label>
+          <div className="flex items-center border border-gray-700 rounded-lg">
+            <FaUser className="text-gray-400 ml-2" />
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="w-full p-2 bg-black1 text-white rounded-lg outline-none"
+            />
+          </div>
+          {errors.name && <p className="text-red-500 mt-1">{errors.name}</p>}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-white mb-1">
+            Email
+          </label>
+          <div className="flex items-center border border-gray-700 rounded-lg">
+            <FaEnvelope className="text-gray-400 ml-2" />
+            <input
+              type="email"
+              id="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full p-2 bg-black1 text-white rounded-lg outline-none"
+            />
+          </div>
+          {errors.email && <p className="text-red-500 mt-1">{errors.email}</p>}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="password" className="block text-white mb-1">
+            Password
+          </label>
+          <div className="flex items-center border border-gray-700 rounded-lg">
+            <FaLock className="text-gray-400 ml-2" />
+            <input
+              type="password"
+              id="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="w-full p-2 bg-black1 text-white rounded-lg outline-none"
+            />
+          </div>
+          {errors.password && (
+            <p className="text-red-500 mt-1">{errors.password}</p>
+          )}
+        </div>
+        <div className="mb-4">
+          <label htmlFor="confirmPassword" className="block text-white mb-1">
+            Confirm Password
+          </label>
+          <div className="flex items-center border border-gray-700 rounded-lg">
+            <FaLock className="text-gray-400 ml-2" />
+            <input
+              type="password"
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              className="w-full p-2 bg-black1 text-white rounded-lg outline-none"
+            />
+          </div>
+          {errors.confirmPassword && (
+            <p className="text-red-500 mt-1">{errors.confirmPassword}</p>
+          )}
+        </div>
+        <button
+          type="submit"
+          className="bg-lime1 text-black font-semibold px-4 py-2 rounded-lg hover:bg-lime2 transition-all duration-300 w-full"
+        >
+          Sign Up
+        </button>
+        <div className="mt-4 text-white text-center">
+          Already have an account?{" "}
+          <NavLink to="/login" className="text-lime1 hover:underline">
+            Log in
           </NavLink>
         </div>
-
-        <div className="w-full md:w-1/2 p-4 md:p-8">
-          <h2 className="text-2xl font-semibold text-center mb-6">Sign Up</h2>
-
-          <form onSubmit={handleSubmit}>
-            {/* Name Field */}
-            <div className="mb-6">
-              <label className="text-zinc-300 flex items-center mb-1 text-[15px]">
-                <FaUser className="mr-2" /> Name
-              </label>
-              <input
-                type="text"
-                className={`w-full px-4 py-[7px] bg-zinc-800/50 text-white placeholder ${
-                  errors.name ? "border-red-500" : "border-gray-300"
-                } rounded focus:outline-none focus:ring-1 focus:ring-green-500`}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Enter your name"
-              />
-              {errors.name && (
-                <small className="text-red-500">{errors.name}</small>
-              )}
-            </div>
-
-            {/* Email Field */}
-            <div className="mb-6">
-              <label className="text-zinc-300 flex items-center mb-1 text-[15px]">
-                <FaEnvelope className="mr-2 mt-[2px]" /> Email
-              </label>
-              <input
-                type="text"
-                className={`w-full px-4 py-[7px] bg-zinc-800/50 text-white placeholder ${
-                  errors.email ? "border-red-500" : "border-gray-300"
-                } rounded focus:outline-none focus:ring-1 focus:ring-green-500`}
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email"
-              />
-              {errors.email && (
-                <small className="text-red-500">{errors.email}</small>
-              )}
-            </div>
-
-            {/* Password Field */}
-            <div className="mb-6">
-              <label className="text-zinc-300 flex items-center mb-1 text-[15px]">
-                <FaLock className="mr-2" /> Password
-              </label>
-              <input
-                type="password"
-                className={`w-full px-4 py-[7px] bg-zinc-800/50 text-white placeholder ${
-                  errors.password ? "border-red-500" : "border-gray-300"
-                } rounded focus:outline-none focus:ring-1 focus:ring-green-500`}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                placeholder="Enter your password"
-              />
-              {errors.password && (
-                <small className="text-red-500">{errors.password}</small>
-              )}
-            </div>
-
-            {/* Confirm Password Field */}
-            <div className="mb-6">
-              <label className="text-zinc-300 flex items-center mb-1 text-[15px]">
-                <FaLock className="mr-2" /> Confirm Password
-              </label>
-              <input
-                type="password"
-                className={`w-full px-4 py-[7px] bg-zinc-800/50 text-white placeholder ${
-                  errors.confirmPassword ? "border-red-500" : "border-gray-300"
-                } rounded focus:outline-none focus:ring-1 focus:ring-green-500`}
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                placeholder="Confirm your password"
-              />
-              {errors.confirmPassword && (
-                <small className="text-red-500">{errors.confirmPassword}</small>
-              )}
-            </div>
-
-            {errors.apiError && (
-              <div className="text-red-500 text-sm mb-4">{errors.apiError}</div>
-            )}
-
-            {/* Submit Button */}
-            <button
-              type="submit"
-              className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600 focus:outline-none"
-            >
-              Sign Up
-            </button>
-          </form>
-        </div>
-      </div>
+      </form>
     </div>
   );
 };
