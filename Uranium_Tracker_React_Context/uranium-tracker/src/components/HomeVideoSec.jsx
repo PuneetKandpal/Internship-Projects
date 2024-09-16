@@ -15,7 +15,6 @@ const YouTubeVideos = () => {
 
   const mainVideo = video?.videos[0];
   const sideVideos = video?.videos.slice(1, 5);
-  // const remainingVideos = video?.videos.slice(5);
 
   // Helper function to generate YouTube embed link
   const getYouTubeEmbedLink = (link) => {
@@ -74,18 +73,18 @@ const YouTubeVideos = () => {
             {sideVideos?.map((vid, index) => (
               <div
                 key={index}
-                className="relative flex items-center space-x-4 cursor-pointer group side-video"
+                className="relative flex flex-col sm:flex-row items-start sm:items-center sm:space-x-4 cursor-pointer group side-video"
               >
-                <div className="relative flex-shrink-0">
+                <div className="relative w-full sm:w-auto flex-shrink-0">
                   <iframe
-                    className="w-22 h-16 sm:w-24 sm:h-20 md:w-32 md:h-[112px] opacity-70 object-cover group-hover:opacity-40 transition-all duration-500"
+                    className="w-full sm:w-24 sm:h-20 md:w-32 md:h-[112px] opacity-70 object-cover group-hover:opacity-40 transition-all duration-500"
                     src={getYouTubeEmbedLink(vid.link)}
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
                 </div>
-                <div className="flex-1 space-y-2">
+                <div className="mt-2 sm:mt-0 sm:ml-4 flex-1 space-y-2">
                   <a
                     href={vid.link}
                     target="_blank"
@@ -106,34 +105,6 @@ const YouTubeVideos = () => {
             ))}
           </div>
         </div>
-
-        {/* Remaining Videos (Horizontal Layout) */}
-        {/* <div className="flex gap-4 mt-10 no-scrollbar">
-          {remainingVideos?.map((vid, index) => (
-            <div key={index} className="w-full p-2">
-              <iframe
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
-                src={getYouTubeEmbedLink(vid.link)}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-              <a
-                href={vid.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block mt-2"
-              >
-                <h4 className="text-sm font-medium text-white line-clamp-2 hover:text-lime1 transition-colors duration-300">
-                  {vid.title}
-                </h4>
-              </a>
-              <p className="text-xs text-gray-400">
-                {vid.publish_time} • {vid.views}
-              </p>
-            </div>
-          ))}
-        </div> */}
       </div>
     </div>
   );
