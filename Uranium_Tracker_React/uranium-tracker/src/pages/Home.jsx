@@ -53,8 +53,8 @@ const Home = () => {
           <UraniumElementOfOpp />
           <DidYouKnow />
           <HomeFeaturedNewsTweets homeData={homeData} />
-          <HomeUraniumBlogs />
-          <HomeVideoSec />
+          {/* <HomeUraniumBlogs /> */}
+          {/* <HomeVideoSec /> */}
           <Footer />
         </div>
       )}
