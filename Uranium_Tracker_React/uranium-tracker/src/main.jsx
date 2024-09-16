@@ -7,11 +7,11 @@ import store from "./store";
 import { AuthProvider } from "../src/context/AuthContext.jsx"; // Import AuthProvider
 
 createRoot(document.getElementById("root")).render(
-  <AuthProvider>
-    <BrowserRouter>
-      <Provider store={store}>
+  <BrowserRouter>
+    <Provider store={store}>
+      <AuthProvider>
         <App />
-      </Provider>
-    </BrowserRouter>
-  </AuthProvider>
+      </AuthProvider>
+    </Provider>
+  </BrowserRouter>
 );
