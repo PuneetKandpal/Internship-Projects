@@ -58,7 +58,7 @@ const SignUp = () => {
         });
         const { token } = response.data;
         login(token); // Save token and update auth state
-        navigate("/");
+        navigate("/login");
       } catch (error) {
         console.error("Error signing up:", error);
         setErrors({ form: "Failed to sign up. Please try again." });

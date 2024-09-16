@@ -1,32 +1,10 @@
-import { useEffect, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchNewsData } from "../store/slices/apiSlice";
 import Loader from "./Loader";
 
-gsap.registerPlugin(ScrollTrigger);
-
-const NewsFissionFresh = () => {
-  const dispatch = useDispatch();
-  const newsData = useSelector((state) => state.api.news);
-  const status = useSelector((state) => state.api.status);
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchNewsData());
-    }
-
-    if (status === "succeeded") {
-      setIsLoading(false);
-    }
-  }, [status, dispatch]);
-
-  if (isLoading) {
+const NewsFissionFresh = ({ newsData }) => {
+  // Show the loader while loading is true
+  if (!newsData) {
     return <Loader />;
   }
-
   // Helper function to calculate the "time ago" format
   const timeAgo = (dateString) => {
     const date = new Date(dateString);
@@ -49,9 +27,9 @@ const NewsFissionFresh = () => {
     }
   };
 
-  const firstNews = newsData.stock_news[0];
-  const fourNews = newsData.stock_news.slice(1, 5);
-  const remainingNews = newsData.stock_news.slice(5);
+  const firstNews = newsData?.stock_news[0];
+  const fourNews = newsData?.stock_news.slice(1, 5);
+  const remainingNews = newsData?.stock_news.slice(5);
 
   return (
     <div className="py-16 px-6 md:px-20 md:pb-32 md:pt-10 ">

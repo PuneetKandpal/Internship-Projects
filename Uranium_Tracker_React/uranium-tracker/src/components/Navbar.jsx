@@ -78,7 +78,7 @@ const Navbar = () => {
 
   const handleLogout = () => {
     logout();
-    navigate("/");
+    navigate("/login");
   };
 
   return (
@@ -145,21 +145,21 @@ const Navbar = () => {
             to="/calender"
             className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
           >
-            Calender
+            Calendar
           </NavLink>
         </ul>
 
         {isAuthenticated ? (
           <button
             onClick={handleLogout}
-            className="bg-lime1 text-[15px] text-black font-semibold ml-14 md:ml-0 px-3 py-1 hover:bg-lime2 hover:text-black1 transition-all duration-300 w-full md:w-auto text-center"
+            className="bg-lime1 text-[15px] text-black font-semibold ml-14 md:ml-0 px-3 py-1 hover:bg-lime2 hover:text-white transition-all duration-300 lato"
           >
             Logout
           </button>
         ) : (
           <NavLink
             to="/signup"
-            className="bg-lime1 text-[15px] text-black font-semibold ml-14 md:ml-0 px-3 py-1 hover:bg-lime2 hover:text-black1 transition-all duration-300 w-full md:w-auto text-center"
+            className="bg-lime1 text-[15px] text-black font-semibold ml-14 md:ml-0 px-3 py-1 hover:bg-lime2 hover:text-white transition-all duration-300 lato"
           >
             Sign Up
           </NavLink>

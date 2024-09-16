@@ -1,45 +1,30 @@
-import { useEffect, useState } from "react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchNewsData } from "../store/slices/apiSlice";
+// import { useEffect } from "react";
+// import gsap from "gsap";
+// import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Loader from "./Loader"; // Import your loader component
 
-gsap.registerPlugin(ScrollTrigger);
+// gsap.registerPlugin(ScrollTrigger);
 
-const NewsTrending = () => {
-  const dispatch = useDispatch();
-  const newsData = useSelector((state) => state.api.news);
-  const status = useSelector((state) => state.api.status);
-  const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
-
-  useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchNewsData());
-    }
-
-    if (status === "succeeded") {
-      setIsLoading(false); // Set loading to false when data is fetched
-    }
-
-    gsap.from(".trending-block", {
-      opacity: 0,
-      y: 50,
-      duration: 1,
-      stagger: 0.3,
-      ease: "power2.out",
-      scrollTrigger: {
-        trigger: ".py-16",
-        start: "top 80%",
-        end: "bottom 60%",
-        toggleActions: "play none none reverse",
-        // markers:true
-      },
-    });
-  }, [status, dispatch, isLoading]);
+const NewsTrending = ({ newsData }) => {
+  // useEffect(() => {
+  //   gsap.from(".trending-block", {
+  //     opacity: 0,
+  //     y: 50,
+  //     duration: 1,
+  //     stagger: 0.3,
+  //     ease: "power2.out",
+  //     scrollTrigger: {
+  //       trigger: ".py-16",
+  //       start: "top 80%",
+  //       end: "bottom 60%",
+  //       toggleActions: "play none none reverse",
+  //       // markers:true
+  //     },
+  //   });
+  // }, [newsData]);
 
   // Show the loader while loading is true
-  if (isLoading) {
+  if (!newsData) {
     return <Loader />;
   }
 
@@ -90,5 +75,3 @@ const NewsTrending = () => {
 };
 
 export default NewsTrending;
-
-

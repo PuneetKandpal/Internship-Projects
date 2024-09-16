@@ -1,26 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchNewsData } from "../store/slices/apiSlice";
 import Loader from "./Loader"; // Import your loader component
 
-const NewsHero = () => {
-  const dispatch = useDispatch();
-  const newsData = useSelector((state) => state.api.news);
-  const status = useSelector((state) => state.api.status);
-  const [isLoading, setIsLoading] = useState(true); // Initialize isLoading state
-
+const NewsHero = ({ newsData }) => {
   useEffect(() => {
-    if (status === "idle") {
-      dispatch(fetchNewsData());
-    }
-
-    if (status === "succeeded") {
-      setIsLoading(false); // Set loading to false when data is fetched
-    }
-
     gsap.registerPlugin(ScrollTrigger);
 
     // Animate the large image section
@@ -49,10 +34,10 @@ const NewsHero = () => {
         toggleActions: "play none none none",
       },
     });
-  }, [status, dispatch, isLoading]);
+  }, [newsData]);
 
   // Show the loader while loading is true
-  if (isLoading) {
+  if (!newsData) {
     return <Loader />;
   }
 
@@ -64,8 +49,8 @@ const NewsHero = () => {
           <div className="lg:col-span-2 h-full">
             <Link
               to={`${
-                newsData.featured_news.link
-                  ? newsData.featured_news.link
+                newsData?.featured_news?.link
+                  ? newsData?.featured_news?.link
                   : "https://www.mining-technology.com/news/putin-calls-for-export-limits-on-russian-nickel-uranium-and-titanium/"
               } `}
               className="block h-full"
@@ -74,26 +59,26 @@ const NewsHero = () => {
               {/* Link to individual news page */}
               <div className="relative h-[559px] group overflow-hidden animate-large-img">
                 <img
-                  src={newsData.featured_news.image_url}
+                  src={newsData?.featured_news?.image_url}
                   alt="Oculus Quest X Headset"
                   className="w-full h-full object-cover group-hover:scale-105 transition-all duration-500 object-bottom"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-[#111111]/40 to-transparent"></div>
                 <div className="absolute bottom-6 left-5 text-white z-10">
                   <span className="bg-lime1 text-black font-semibold text-xs px-2 py-1 uppercase">
-                    {newsData.featured_news.publisher}
+                    {newsData?.featured_news?.publisher}
                   </span>
                   <h2 className="text-2xl font-semibold pr-6 mt-4 leading-[35px]">
-                    {newsData.featured_news.title}
+                    {newsData?.featured_news?.title}
                   </h2>
                   <div className="flex gap-x-3 items-center">
                     <p className="text-[13.5px] lato text-white/80 mt-5">
-                      {newsData.featured_news.author} –{" "}
+                      {newsData?.featured_news?.author} –{" "}
                     </p>
 
                     <p className="text-[13.5px] lato text-white/80 mt-5">
                       {new Date(
-                        newsData.featured_news.published_date
+                        newsData?.featured_news?.published_date
                           .split("-")
                           .reverse()
                           .join("-")
