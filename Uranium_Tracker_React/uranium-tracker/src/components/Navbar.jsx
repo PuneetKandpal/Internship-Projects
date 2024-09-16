@@ -1,18 +1,19 @@
 import { useState, useEffect, useRef } from "react";
 import gsap from "gsap";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext"; // Import AuthContext
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const menuToggleRef = useRef(null);
+  const { isAuthenticated, logout } = useAuth(); // Use AuthContext
+  const navigate = useNavigate();
 
-  // GSAP animation for navbar on page load
   useEffect(() => {
     gsap.from("nav", { opacity: 0, duration: 1, ease: "power2.out" });
   }, []);
 
-  // Function to toggle the menu
   const toggleMenu = () => {
     const menu = menuRef.current;
     const isHidden = menu.classList.contains("hidden");
@@ -40,7 +41,6 @@ const Navbar = () => {
     setIsMenuOpen(!isHidden);
   };
 
-  // Close the menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -59,7 +59,6 @@ const Navbar = () => {
     };
   }, []);
 
-  // Handle window resize to adjust menu visibility
   useEffect(() => {
     const handleResize = () => {
       const menu = menuRef.current;
@@ -77,9 +76,13 @@ const Navbar = () => {
     };
   }, [isMenuOpen]);
 
+  const handleLogout = () => {
+    logout();
+    navigate("/");
+  };
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-[1000] bg-black1 py-6 px-4 md:px-12 flex justify-between items-center shadow-lg">
-      {/* Logo */}
       <a href="home.html">
         <h1 className="play font-semibold text-white frank text-[22px] md:text-2xl flex items-center">
           <i className="ri-compass-fill text-[15px] md:text-[19px] text-black1 bg-lime1 flex justify-center items-center pt-[2px] w-6 h-6 md:w-7 md:h-7 rounded-full mr-2"></i>
@@ -87,7 +90,6 @@ const Navbar = () => {
         </h1>
       </a>
 
-      {/* Hamburger menu for mobile */}
       <button
         id="menu-toggle"
         ref={menuToggleRef}
@@ -97,7 +99,6 @@ const Navbar = () => {
         <i className={isMenuOpen ? "ri-close-line" : "ri-menu-3-line"}></i>
       </button>
 
-      {/* Links */}
       <div
         id="menu"
         ref={menuRef}
@@ -116,7 +117,6 @@ const Navbar = () => {
           >
             News
           </NavLink>
-
           <NavLink
             to="/investments"
             className="hover:text-lime2 transition-all duration-300 block py-2 px-4 md:p-0"
@@ -149,12 +149,21 @@ const Navbar = () => {
           </NavLink>
         </ul>
 
-        <NavLink
-          to="/signup"
-          className="bg-lime1 text-[15px] text-black font-semibold ml-14 md:ml-0 px-3 py-1 hover:bg-lime2 hover:text-black1 transition-all duration-300 w-full md:w-auto text-center"
-        >
-          Sign Up
-        </NavLink>
+        {isAuthenticated ? (
+          <button
+            onClick={handleLogout}
+            className="bg-lime1 text-[15px] text-black font-semibold ml-14 md:ml-0 px-3 py-1 hover:bg-lime2 hover:text-black1 transition-all duration-300 w-full md:w-auto text-center"
+          >
+            Logout
+          </button>
+        ) : (
+          <NavLink
+            to="/signup"
+            className="bg-lime1 text-[15px] text-black font-semibold ml-14 md:ml-0 px-3 py-1 hover:bg-lime2 hover:text-black1 transition-all duration-300 w-full md:w-auto text-center"
+          >
+            Sign Up
+          </NavLink>
+        )}
       </div>
     </nav>
   );
