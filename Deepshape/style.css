@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+htm {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --bg: #1c1f23;
+  --g1: #e8428c;
+  --g2: #704ee6;
+  --white: #f4f4f6;
+}
