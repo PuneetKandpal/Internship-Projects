@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Design Tool - Dark Theme</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <style>
+    @import url('https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #0d0d0d; /* Dark background */
+      color: #fff; /* White text for dark mode */
+    }
+
+    #canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div class="relative z-10 flex flex-col items-center justify-center h-screen text-center">
+    <h1 class="text-5xl font-bold">Generate Stunning Designs with AI</h1>
+    <p class="mt-4 text-xl text-gray-400">Create amazing posters, flyers, and more in seconds</p>
+    <a href="#waitlist" class="mt-8 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
+      Join the Waitlist
+    </a>
+  </div>
+
+  <canvas id="canvas"></canvas>
+
+  <script>
+    // Setup scene, camera, and renderer
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('canvas'), alpha: true });
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    document.body.appendChild(renderer.domElement);
+
+    // Lighting
+    const ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+    scene.add(ambientLight);
+    const pointLight = new THREE.PointLight(0xffffff, 1, 100);
+    pointLight.position.set(10, 10, 10);
+    scene.add(pointLight);
+
+    // Create 3D AI Globe Model (Artificial Intelligence-related object)
+    const globeGeometry = new THREE.IcosahedronGeometry(3, 1);
+    const globeMaterial = new THREE.MeshStandardMaterial({
+      color: 0x00ffcc, // Futuristic color for the globe
+      wireframe: true,
+    });
+    const globe = new THREE.Mesh(globeGeometry, globeMaterial);
+    scene.add(globe);
+
+    // Neural Particles: Simulating neural signals with expanding and shrinking
+    const particlesGeometry = new THREE.BufferGeometry();
+    const particlesCount = 500;
+    const particlesArray = new Float32Array(particlesCount * 3);
+    for (let i = 0; i < particlesCount * 3; i++) {
+      particlesArray[i] = (Math.random() - 0.5) * 10;
+    }
+    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(particlesArray, 3));
+    const particlesMaterial = new THREE.PointsMaterial({
+      size: 0.05,
+      color: 0xff00ff, // Magenta neural particles
+    });
+    const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+    scene.add(particlesMesh);
+
+    // Camera positioning
+    camera.position.z = 10;
+
+    // Variables for mouse movement and expansion
+    let mouseX = 0, mouseY = 0;
+    let targetX = 0, targetY = 0;
+
+    // Mousemove Event Listener
+    document.addEventListener('mousemove', (event) => {
+      mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+      mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    });
+
+    // Animation Loop
+    function animate() {
+      requestAnimationFrame(animate);
+
+      // Globe follows mouse position
+      targetX = mouseX * 5;
+      targetY = mouseY * 5;
+
+      globe.rotation.y += 0.05 * (targetX - globe.rotation.y);
+      globe.rotation.x += 0.05 * (targetY - globe.rotation.x);
+
+      // Expansion and shrinking of the globe
+      const scaleFactor = 1 + (Math.sin(Date.now() * 0.002) * 0.3);
+      globe.scale.set(scaleFactor, scaleFactor, scaleFactor);
+
+      particlesMesh.rotation.y += 0.002;
+
+      renderer.render(scene, camera);
+    }
+
+    animate();
+
+    // Handle Window Resize
+    window.addEventListener('resize', () => {
+      const width = window.innerWidth;
+      const height = window.innerHeight;
+      renderer.setSize(width, height);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix();
+    });
+  </script>
+</body>
+</html>
