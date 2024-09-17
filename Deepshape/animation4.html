@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Design Tool</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+      }
+      #canvas-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body class="bg-gradient-to-br from-[#4428a7] to-[#79153a] text-white font-sans">
+    <div class="hero-section relative h-screen flex justify-center items-center text-center z-10">
+      <div class="content z-20">
+        <h1 class="text-4xl mb-4 opacity-0">Revolutionize Your Graphic Design Experience</h1>
+        <p class="text-xl mb-8 opacity-0">Harness the power of AI to create stunning visuals, effortlessly.</p>
+        <button class="cta-button px-8 py-4 bg-pink-600 hover:bg-purple-600 rounded-full text-white text-lg opacity-0 transition-all duration-300">Join Our Beta Waitlist</button>
+      </div>
+    </div>
+
+    <div id="canvas-container"></div>
+
+    <script>
+      // Three.js Setup
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document
+        .getElementById("canvas-container")
+        .appendChild(renderer.domElement);
+
+      // Geometry: Particles Sphere
+      const particleCount = 2000;
+      const geometry = new THREE.BufferGeometry();
+      const positions = new Float32Array(particleCount * 3);
+
+      for (let i = 0; i < particleCount * 3; i++) {
+        positions[i] = (Math.random() * 2 - 1) * 5; // Distribute particles randomly
+      }
+
+      geometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(positions, 3)
+      );
+
+      const material = new THREE.PointsMaterial({
+        color: 0xffffff,
+        size: 0.045,
+        blending: THREE.AdditiveBlending,
+        transparent: true,
+      });
+
+      const particles = new THREE.Points(geometry, material);
+      scene.add(particles);
+
+      camera.position.z = 5;
+
+      // Mouse Interaction
+      let mouseX = 0,
+        mouseY = 0;
+      document.addEventListener("mousemove", (event) => {
+        mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+        mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+      });
+
+      // Resize Handling
+      window.addEventListener("resize", () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+      });
+
+      // Animation Loop
+      function animate() {
+        requestAnimationFrame(animate);
+
+        // Rotate particles and respond to mouse
+        particles.rotation.x += 0.001;
+        particles.rotation.y += 0.001;
+        particles.rotation.y += (mouseX - particles.rotation.y) * 0.01;
+        particles.rotation.x += (mouseY - particles.rotation.x) * 0.01;
+
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // GSAP Animations for Text and Button
+      gsap.to("h1", { opacity: 1, duration: 1.5, y: -20 });
+      gsap.to("p", { opacity: 1, duration: 1.5, delay: 0.5, y: -20 });
+      gsap.to(".cta-button", { opacity: 1, duration: 1.5, delay: 1, y: -20 });
+    </script>
+  </body>
+</html>
