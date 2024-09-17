@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Design Hub</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+      .gradient-text {
+        background: linear-gradient(135deg, #4a90e2, #e94e77);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent;
+      }
+    </style>
+  </head>
+  <body class="bg-zinc-950 text-white overflow-hidden dm">
+    <div
+      class="relative h-screen flex flex-col justify-center items-center text-center z-10"
+    >
+      <div class="relative mt-[-100px] z-20">
+        <h1 class="text-[6.5rem] font-extrabold gradient-text mb-4 opacity-0">
+          Design the Future with AI
+        </h1>
+        <p class="text-2xl font-medium mb-8 opacity-0">
+          Empowering creativity and innovation through advanced AI technologies.
+        </p>
+
+        <button
+          class="bg-gradient-to-br from-purple-600 to-red-400 text-lg px-10 py-3 rounded-full"
+        >
+          Explore
+        </button>
+      </div>
+    </div>
+
+    <div
+      id="canvas-container"
+      class="absolute top-0 left-0 w-full h-full z-[-1]"
+    ></div>
+
+    <script>
+      // Three.js Setup
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document
+        .getElementById("canvas-container")
+        .appendChild(renderer.domElement);
+
+      // Create Dynamic Background Particles
+      const particleCount = 1400;
+      const particleGeometry = new THREE.BufferGeometry();
+      const particlePositions = new Float32Array(particleCount * 3);
+
+      for (let i = 0; i < particleCount * 3; i++) {
+        particlePositions[i] = (Math.random() - 0.5) * 20;
+      }
+
+      particleGeometry.setAttribute(
+        "position",
+        new THREE.BufferAttribute(particlePositions, 3)
+      );
+      const particleMaterial = new THREE.PointsMaterial({
+        color: 0x9e9e9e,
+        size: 0.1,
+        transparent: true,
+      });
+      const particles = new THREE.Points(particleGeometry, particleMaterial);
+      scene.add(particles);
+
+      // Lighting
+      const ambientLight = new THREE.AmbientLight(0x404040);
+      scene.add(ambientLight);
+      const pointLight = new THREE.PointLight(0xffffff, 1);
+      pointLight.position.set(5, 5, 5);
+      scene.add(pointLight);
+
+      // Mouse Interaction
+      let mouseX = 0,
+        mouseY = 0;
+      document.addEventListener("mousemove", (event) => {
+        mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+        mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+      });
+
+      // Resize Handling
+      window.addEventListener("resize", () => {
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+      });
+
+      // Animation Loop
+      function animate() {
+        requestAnimationFrame(animate);
+
+        // Animate particles
+        particles.rotation.x += 0.001;
+        particles.rotation.y += 0.001;
+
+        // Camera movement based on mouse
+        camera.position.x += (mouseX * 10 - camera.position.x) * 0.05;
+        camera.position.y += (-mouseY * 10 - camera.position.y) * 0.05;
+        camera.lookAt(scene.position);
+
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // GSAP Animations for Text and Button
+      gsap.fromTo(
+        "h1",
+        { opacity: 0, y: -50 },
+        { opacity: 1, duration: 1.5, y: 0 }
+      );
+      gsap.fromTo(
+        "p",
+        { opacity: 0, y: 20 },
+        { opacity: 1, duration: 1.5, delay: 0.5, y: 0 }
+      );
+      gsap.fromTo(
+        ".cta-button",
+        { opacity: 0, scale: 0.8 },
+        { opacity: 1, duration: 1.5, delay: 1, scale: 1 }
+      );
+    </script>
+  </body>
+</html>
