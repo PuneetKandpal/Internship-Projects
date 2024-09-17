@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animated Hero Section</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+      }
+
+      .webgl {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: -1; /* Send the canvas behind the content */
+        outline: none;
+      }
+
+      .hero-section {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 1; /* Keep the content on top of the canvas */
+      }
+
+      .hero-section h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+      }
+
+      .hero-section p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+      }
+
+      .cta-button {
+        background-color: #ff007f;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1.2rem;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+
+      .cta-button:hover {
+        background-color: #e60073;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Text Content Section -->
+    <div class="hero-section">
+      <div class="content">
+        <h1>Revolutionize Your Graphic Design Experience</h1>
+        <p>Harness the power of AI to create stunning visuals, effortlessly.</p>
+        <button class="cta-button">Join Our Beta Waitlist</button>
+      </div>
+    </div>
+
+    <!-- 3D Animation Canvas -->
+    <canvas class="webgl"></canvas>
+
+    <script type="module">
+      import {
+        BufferAttribute,
+        Clock,
+        PerspectiveCamera,
+        PlaneGeometry,
+        Points,
+        Scene,
+        ShaderMaterial,
+        WebGLRenderer,
+      } from "https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.module.js";
+
+      /**
+       * Sizes and Canvas
+       */
+      const sizes = {
+        width: window.innerWidth,
+        height: window.innerHeight,
+      };
+      const canvas = document.querySelector("canvas.webgl");
+      const scene = new Scene();
+
+      /**
+       * Camera
+       */
+      const camera = new PerspectiveCamera(
+        75,
+        sizes.width / sizes.height,
+        0.1,
+        100
+      );
+      camera.position.z = 10;
+      camera.position.y = 1.1;
+      camera.position.x = 0;
+      scene.add(camera);
+
+      /**
+       * Plane
+       */
+      const planeGeometry = new PlaneGeometry(20, 20, 150, 150);
+      const planeMaterial = new ShaderMaterial({
+        uniforms: {
+          uTime: { value: 0 },
+          uElevation: { value: 0.482 },
+        },
+        vertexShader: `
+          uniform float uTime;
+          uniform float uElevation;
+          attribute float aSize;
+
+          varying float vPositionY;
+          varying float vPositionZ;
+
+          void main() {
+              vec4 modelPosition = modelMatrix * vec4(position, 1.0);
+              modelPosition.y = sin(modelPosition.x - uTime) * sin(modelPosition.z * 0.6 + uTime) * uElevation;
+
+              vec4 viewPosition = viewMatrix * modelPosition;
+              gl_Position = projectionMatrix * viewPosition;
+
+              gl_PointSize = 2.0 * aSize;
+              gl_PointSize *= (1.0 / -viewPosition.z);
+
+              vPositionY = modelPosition.y;
+              vPositionZ = modelPosition.z;
+          }
+        `,
+        fragmentShader: `
+          varying float vPositionY;
+          varying float vPositionZ;
+
+          void main() {
+              float strength = (vPositionY + 0.25) * 0.3;
+              gl_FragColor = vec4(1.0, 1.0, 1.0, strength);
+          }
+        `,
+        transparent: true,
+      });
+
+      // Add random sizes for points in the plane
+      const planeSizesArray = new Float32Array(
+        planeGeometry.attributes.position.count
+      );
+      for (let i = 0; i < planeSizesArray.length; i++) {
+        planeSizesArray[i] = Math.random() * 4.0;
+      }
+      planeGeometry.setAttribute(
+        "aSize",
+        new BufferAttribute(planeSizesArray, 1)
+      );
+
+      const plane = new Points(planeGeometry, planeMaterial);
+      plane.rotation.x = -Math.PI * 0.4;
+      scene.add(plane);
+
+      /**
+       * Resize Event
+       */
+      window.addEventListener("resize", () => {
+        // Update sizes
+        sizes.width = window.innerWidth;
+        sizes.height = window.innerHeight;
+
+        // Update camera
+        camera.aspect = sizes.width / sizes.height;
+        camera.updateProjectionMatrix();
+
+        // Update renderer
+        renderer.setSize(sizes.width, sizes.height);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      });
+
+      /**
+       * Renderer
+       */
+      const renderer = new WebGLRenderer({
+        canvas: canvas,
+      });
+      renderer.setSize(sizes.width, sizes.height);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      /**
+       * Animate Function
+       */
+      const clock = new Clock();
+
+      const animate = () => {
+        const elapsedTime = clock.getElapsedTime();
+
+        // Update the time uniform for the shader
+        planeMaterial.uniforms.uTime.value = elapsedTime;
+
+        // Render the scene
+        renderer.render(scene, camera);
+
+        // Call animate again on the next frame
+        window.requestAnimationFrame(animate);
+      };
+
+      animate();
+    </script>
+  </body>
+</html>
