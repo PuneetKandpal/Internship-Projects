@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI Graphic Design - Next Level Creativity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#6C63FF",
+              secondary: "#FF6584",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .text-shadow {
+          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-white font-sans">
+    <nav class="bg-gray-800 p-4">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="#" class="text-2xl font-bold text-primary">AI Design</a>
+        <ul class="flex space-x-4">
+          <li>
+            <a href="#features" class="hover:text-primary transition"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a href="#benefits" class="hover:text-primary transition"
+              >Benefits</a
+            >
+          </li>
+          <li>
+            <a href="#waitlist" class="hover:text-primary transition"
+              >Join Waitlist</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <header
+      id="hero"
+      class="relative h-screen flex items-center justify-center overflow-hidden"
+    >
+      <div class="z-10 text-center">
+        <h1 class="text-5xl font-bold mb-4 text-shadow animate-pulse">
+          Revolutionize Your Design with AI
+        </h1>
+        <p class="text-xl mb-8">Unleash creativity beyond imagination</p>
+        <a
+          href="#waitlist"
+          class="bg-primary text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-opacity-80 transition"
+          >Get Started</a
+        >
+      </div>
+      <div
+        id="hero-background"
+        class="absolute top-0 left-0 w-full h-full"
+      ></div>
+    </header>
+
+    <section id="features" class="py-20 bg-gray-800">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Features</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div
+            class="bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition"
+          >
+            <h3 class="text-xl font-semibold mb-4">AI-Powered Creativity</h3>
+            <p>
+              Harness the power of artificial intelligence to generate unique
+              designs.
+            </p>
+          </div>
+          <div
+            class="bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition"
+          >
+            <h3 class="text-xl font-semibold mb-4">Infinite Iterations</h3>
+            <p>Explore endless design possibilities with just a few clicks.</p>
+          </div>
+          <div
+            class="bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition"
+          >
+            <h3 class="text-xl font-semibold mb-4">Style Transfer</h3>
+            <p>Apply artistic styles to your designs effortlessly.</p>
+          </div>
+          <div
+            class="bg-gray-700 p-6 rounded-lg shadow-lg transform hover:scale-105 transition"
+          >
+            <h3 class="text-xl font-semibold mb-4">Smart Color Palette</h3>
+            <p>Generate harmonious color schemes automatically.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="benefits" class="py-20 bg-gray-900">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Benefits</h2>
+        <div class="flex flex-wrap justify-center items-center">
+          <div class="w-full md:w-1/2 p-4">
+            <ul class="space-y-4">
+              <li class="flex items-center">
+                <svg
+                  class="w-6 h-6 mr-2 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span>Save time and boost productivity</span>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  class="w-6 h-6 mr-2 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span>Access cutting-edge AI technology</span>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  class="w-6 h-6 mr-2 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span>Enhance your creative workflow</span>
+              </li>
+              <li class="flex items-center">
+                <svg
+                  class="w-6 h-6 mr-2 text-primary"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M5 13l4 4L19 7"
+                  ></path>
+                </svg>
+                <span>Stand out with unique designs</span>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/2 p-4">
+            <div
+              id="benefits-animation"
+              class="w-full h-64 bg-gray-800 rounded-lg"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="waitlist" class="py-20 bg-gray-800">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-8">Join the Waitlist</h2>
+        <p class="text-center mb-8">
+          Be among the first to experience the future of AI-powered graphic
+          design.
+        </p>
+        <form class="max-w-md mx-auto">
+          <div class="flex mb-4">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="flex-grow px-4 py-2 rounded-l-full focus:outline-none focus:ring-2 focus:ring-primary bg-gray-700"
+            />
+            <button
+              type="submit"
+              class="bg-primary text-white px-6 py-2 rounded-r-full hover:bg-opacity-80 transition"
+            >
+              Join Now
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <footer class="bg-gray-900 py-8">
+      <div class="container mx-auto px-4 text-center">
+        <p>&copy; 2024 AI Graphic Design. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Hero background animation
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(
+        75,
+        window.innerWidth / window.innerHeight,
+        0.1,
+        1000
+      );
+      const renderer = new THREE.WebGLRenderer({ alpha: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document
+        .getElementById("hero-background")
+        .appendChild(renderer.domElement);
+
+      const geometry = new THREE.TorusKnotGeometry(10, 3, 100, 16);
+      const material = new THREE.MeshBasicMaterial({
+        color: 0x6c63ff,
+        wireframe: true,
+      });
+      const torusKnot = new THREE.Mesh(geometry, material);
+      scene.add(torusKnot);
+
+      camera.position.z = 30;
+
+      function animate() {
+        requestAnimationFrame(animate);
+        torusKnot.rotation.x += 0.01;
+        torusKnot.rotation.y += 0.01;
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Benefits section animation
+      const benefitsScene = new THREE.Scene();
+      const benefitsCamera = new THREE.PerspectiveCamera(75, 1, 0.1, 1000);
+      const benefitsRenderer = new THREE.WebGLRenderer({ alpha: true });
+      benefitsRenderer.setSize(300, 300);
+      document
+        .getElementById("benefits-animation")
+        .appendChild(benefitsRenderer.domElement);
+
+      const cubeGeometry = new THREE.BoxGeometry();
+      const cubeMaterial = new THREE.MeshBasicMaterial({
+        color: 0xff6584,
+        wireframe: true,
+      });
+      const cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
+      benefitsScene.add(cube);
+
+      benefitsCamera.position.z = 5;
+
+      function animateBenefits() {
+        requestAnimationFrame(animateBenefits);
+        cube.rotation.x += 0.01;
+        cube.rotation.y += 0.01;
+        benefitsRenderer.render(benefitsScene, benefitsCamera);
+      }
+      animateBenefits();
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
