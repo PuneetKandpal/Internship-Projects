@@ -36,34 +36,16 @@ gsap.utils.toArray("[data-aos]").forEach((el) => {
 });
 
 // benefit sec animation
-gsap.registerPlugin(ScrollTrigger);
 
-// Text and Title Animation
-gsap.from(".py-20 [data-aos='fade']", {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  ease: "power3.out",
-  stagger: 0.3,
-  scrollTrigger: {
-    trigger: ".py-20",
-    start: "top 75%",
-    end: "bottom 25%",
-    toggleActions: "play none none none",
-  },
-});
+// form
+document.getElementById("simpleForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent form from reloading the page
 
-// Card Animation
-gsap.from(".grid .card[data-aos='scale']", {
-  opacity: 0,
-  scale: 0.9,
-  duration: 1,
-  ease: "power3.out",
-  stagger: 0.3,
-  scrollTrigger: {
-    trigger: ".py-20",
-    start: "top 75%",
-    end: "bottom 25%",
-    toggleActions: "play none none none",
-  },
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+
+  // Simulate form submission (you can replace this with actual submission code)
+  if (name && email) {
+    document.getElementById("resultMessage").classList.remove("hidden");
+  }
 });
