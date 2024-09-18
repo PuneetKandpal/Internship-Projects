@@ -24,7 +24,7 @@ body {
 }
 
 .gradient {
-  background: linear-gradient(135deg, #4a90e2, #e94e77);
+  background: linear-gradient(135deg, #e94e77, #4a90e2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
