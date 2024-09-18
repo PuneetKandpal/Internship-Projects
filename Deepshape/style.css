@@ -23,8 +23,37 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
+::-webkit-scrollbar {
+  width: 4px;
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--g1), var(--g2));
+  animation: gradientAnimation 5s ease infinite;
+}
+::selection {
+  background: white;
+  color: var(--bg);
+}
+
+/* navbar  */
+/* Additional Styles for Safari and Other Browsers */
+.navbar-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 3.5rem; /* Adjust as needed */
+  object-fit: contain; /* Ensure the logo scales properly */
+}
+
+/* Safari specific adjustments */
+@supports (-webkit-overflow-scrolling: touch) {
+  .navbar-logo {
+    max-height: 3.5rem; /* Adjust if Safari has specific issues */
+  }
+}
+
 .gradient {
-  background: linear-gradient(135deg, #e94e77, #4a90e2);
+  background: linear-gradient(135deg, var(--g2), var(--g1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
