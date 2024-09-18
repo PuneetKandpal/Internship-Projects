@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+
+// hero animation
+
+
 // features -----------------------------------------------------
 lucide.createIcons();
 
