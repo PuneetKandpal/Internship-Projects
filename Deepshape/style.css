@@ -16,8 +16,11 @@
 
 body {
   overflow-x: hidden;
-  /* font-family: "DM Sans", sans-serif; */
   font-family: "Roboto";
+}
+
+.dm {
+  font-family: "DM Sans", sans-serif;
 }
 
 .gradient {

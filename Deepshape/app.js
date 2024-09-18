@@ -12,5 +12,23 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// features
+// features -----------------------------------------------------
 lucide.createIcons();
+
+// feature animation
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray("[data-aos]").forEach((el) => {
+  gsap.from(el, {
+    opacity: 0,
+    y: 50,
+    duration: 1,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: el,
+      start: "top 80%",
+      end: "bottom 20%",
+      toggleActions: "play none none none",
+    },
+  });
+});
