@@ -23,6 +23,22 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
+/* navbar  */
+/* Additional Styles for Safari and Other Browsers */
+.navbar-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 3.5rem; /* Adjust as needed */
+  object-fit: contain; /* Ensure the logo scales properly */
+}
+
+/* Safari specific adjustments */
+@supports (-webkit-overflow-scrolling: touch) {
+  .navbar-logo {
+    max-height: 3.5rem; /* Adjust if Safari has specific issues */
+  }
+}
+
 .gradient {
   background: linear-gradient(135deg, #e94e77, #4a90e2);
   -webkit-background-clip: text;
