@@ -36,3 +36,16 @@ gsap.utils.toArray("[data-aos]").forEach((el) => {
 });
 
 // benefit sec animation
+
+// form
+document.getElementById("simpleForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Prevent form from reloading the page
+
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+
+  // Simulate form submission (you can replace this with actual submission code)
+  if (name && email) {
+    document.getElementById("resultMessage").classList.remove("hidden");
+  }
+});
