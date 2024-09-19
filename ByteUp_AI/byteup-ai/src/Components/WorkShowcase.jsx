@@ -1,22 +1,22 @@
 import { useContext, useState } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import AnimatedCursor from "./AnimatedCursor";
+import it from "../assets/images/insider_trade.png";
+import ut from "../assets/images/uranium_tracker.png";
 
 const projects = [
   {
     id: 1,
     title: "Uranium Tracker",
     category: "SaaS Development",
-    image:
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8d29ya3xlbnwwfHwwfHx8Mg%3D%3D",
+    image: ut,
     className: "col-span-1 row-span-1",
   },
   {
     id: 2,
     title: "Big Swinging Insiders",
     category: "SaaS Development",
-    image:
-      "https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: it,
     className: "col-span-1 row-span-2",
   },
   {
@@ -24,7 +24,7 @@ const projects = [
     title: "FunDesk",
     category: "SaaS Development",
     image:
-      "https://images.unsplash.com/photo-1499914485622-a88fac536970?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8d29ya3xlbnwwfHwwfHx8Mg%3D%3D",
+      "https://img.phemex.com/wp-content/uploads/2022/07/05015552/Linear-Regression-trading-signals.jpg",
     className: "col-span-1 row-span-1",
   },
   {
@@ -32,7 +32,7 @@ const projects = [
     title: "Ecommerce Scraping",
     category: "SaaS Development",
     image:
-      "https://images.unsplash.com/photo-1527689368864-3a821dbccc34?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8d29ya3xlbnwwfHwwfHx8Mg%3D%3D",
+      "https://www.promptcloud.com/wp-content/uploads/2023/09/Web-Scraping-425.jpg",
     className: "col-span-1 row-span-1",
   },
   {
@@ -40,7 +40,7 @@ const projects = [
     title: "Stock Automation",
     category: "SaaS Development",
     image:
-      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8d29ya3xlbnwwfHwwfHx8Mg%3D%3D",
+      "https://www.wiit.cloud/wp-content/uploads/2022/02/wiit-services-saas-process-automation-order-to-cash-slider.jpg",
     className: "col-span-1 row-span-1",
   },
 ];
