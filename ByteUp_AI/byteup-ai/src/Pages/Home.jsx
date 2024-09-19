@@ -6,7 +6,7 @@ import HomeServices from "../Components/HomeServices";
 import Testimonials from "../Components/Testimonials";
 import Footer from "../Components/Footer";
 import Team from "../Components/Team";
-import HomeBlog from "../Components/HomeBlog";
+// import HomeBlog from "../Components/HomeBlog";
 import MarqueeLogo from "../Components/MarqueeLogo";
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
       <MarqueeLogo />
       <HomeWork />
       <HomeServices />
-      <HomeBlog />
+      {/* <HomeBlog /> */}
       <Testimonials />
       <Team />
       <Footer />
