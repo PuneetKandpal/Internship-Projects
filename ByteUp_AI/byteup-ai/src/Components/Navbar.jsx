@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import logoLight from "../assets/logo-light.svg";
 import logoDark from "../assets/logo-dark.svg";
 import { Menu, X } from "lucide-react";
@@ -49,8 +49,8 @@ const Navbar = ({ withHeroSection }) => {
           : "text-white  hover:text-gray-300";
       } else {
         return theme === "light"
-        ? "text-white hover:text-gray-600"
-        : "text-white  hover:text-gray-300";
+          ? "text-white hover:text-gray-600"
+          : "text-white  hover:text-gray-300";
       }
     } else {
       return theme === "light"
@@ -95,9 +95,7 @@ const Navbar = ({ withHeroSection }) => {
             ? "flex flex-col absolute top-full left-0 right-0 p-4 shadow-lg"
             : "hidden"
         } ${
-          theme === "light"
-            ? "bg-white text-black"
-            : "bg-black text-white"
+          theme === "light" ? "bg-white text-black" : "bg-black text-white"
         } md:bg-transparent md:static md:shadow-none`}
       >
         <NavLink
@@ -121,13 +119,13 @@ const Navbar = ({ withHeroSection }) => {
         >
           Work
         </NavLink>
-        <NavLink
+        {/*  <NavLink
           to="/blogs"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}
           onClick={() => setIsMenuOpen(false)}
         >
           Blogs
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="/about"
           className={`hover:opacity-70 transition-all duration-200 ${getLinkStyles()}`}

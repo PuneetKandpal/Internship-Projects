@@ -155,7 +155,10 @@ const ContactUs = () => {
                     }
                     className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
                   />
+                </div>
 
+                {/* Email */}
+                <div className="flex flex-col lg:flex-row justify-between gap-4 font-Archivo text-sm lg:text-[16px]">
                   <input
                     required
                     type="email"
@@ -172,7 +175,7 @@ const ContactUs = () => {
                 </div>
 
                 {/* Second Row: Company Name and Phone Number */}
-                <div className="flex flex-col lg:flex-row justify-between gap-4 font-Archivo text-sm lg:text-[16px]">
+                {/* <div className="flex flex-col lg:flex-row justify-between gap-4 font-Archivo text-sm lg:text-[16px]">
                   <input
                     type="text"
                     placeholder="Company name"
@@ -197,11 +200,11 @@ const ContactUs = () => {
                     }
                     className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
                   />
-                </div>
+                </div> */}
 
                 {/* Third Row: Website URL and Project Description */}
                 <div className="flex flex-col gap-4 font-Archivo text-sm lg:text-[16px]">
-                  <input
+                  {/* <input
                     type="text"
                     placeholder="Website URL"
                     value={formData.websiteUrl}
@@ -212,11 +215,11 @@ const ContactUs = () => {
                       }))
                     }
                     className="py-2 bg-transparent border-b border-gray-300 outline-none w-full"
-                  />
+                  /> */}
 
                   <textarea
-                    rows="3"
-                    placeholder="Tell us about your project"
+                    rows="5"
+                    placeholder="Write a message"
                     value={formData.projectDescription}
                     onChange={(e) =>
                       setFormData((prev) => ({
@@ -231,7 +234,7 @@ const ContactUs = () => {
                 {/* Selection Options */}
                 <div className="flex flex-col gap-4 font-Archivo mt-4">
                   {/* I am interested in section */}
-                  <div className="flex flex-col mb-4">
+                  {/* <div className="flex flex-col mb-4">
                     <label className="block text-gray-500 text-black/40 font-normal mb-2 font-Archivo">
                       I am interested in...
                     </label>
@@ -279,10 +282,10 @@ const ContactUs = () => {
                         {errors.interests}
                       </p>
                     )}
-                  </div>
+                  </div> */}
 
                   {/* Budget section */}
-                  <div className="flex flex-col">
+                  {/* <div className="flex flex-col">
                     <label className="block text-gray-500 text-black/40 font-normal mb-2 font-Archivo">
                       Select budget (USD)
                     </label>
@@ -324,7 +327,7 @@ const ContactUs = () => {
                         {errors.budget}
                       </p>
                     )}
-                  </div>
+                  </div> */}
                 </div>
 
                 {/* Submit Button */}

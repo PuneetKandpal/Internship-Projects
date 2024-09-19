@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import { useContext, useState, useEffect } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import { Link } from "react-router-dom";
 import "../../src/index.css";
@@ -14,12 +14,12 @@ const Hero = () => {
   const slides = [
     {
       image:
-        "url('https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?q=80&w=1776&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+        "url('https://www.shutterstock.com/shutterstock/photos/2284126663/display_1500/stock-photo-data-science-and-big-data-technology-scientist-computing-analysing-and-visualizing-complex-data-2284126663.jpg')",
       text: "New Generation of Technology and Design",
     },
     {
       image:
-        "url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+        "url('https://www.gniotgroup.edu.in/blog/wp-content/uploads/2021/07/ai-ml-banner.png')",
       text: "Software & Tech Development for the Future",
     },
   ];
@@ -59,7 +59,7 @@ const Hero = () => {
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       } ${isScaled ? "opacity-100" : "opacity-0"}`}
     >
-      <AnimatedCursor isHovered={isHovered}/>
+      <AnimatedCursor isHovered={isHovered} />
       <div
         className={`absolute inset-0 bg-cover bg-center transform transition-transform duration-[60s] ease-out ${
           isScaled ? "scale-150" : "scale-100"

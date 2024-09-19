@@ -29,7 +29,8 @@ const Footer = () => {
           </div>
           <div className="pl-0 mt-4">
             <p className="text-[15px] opacity-80">
-              123 Fake Street Anytown, CA 12345 <br /> United States
+              Ahmedabad, Gujarat
+              <br /> India
             </p>
             <p
               className={`flex items-center text-[15.5px] mt-6 font-normal ${
@@ -44,7 +45,7 @@ const Footer = () => {
               }`}
             >
               <FaPhone className="text-[12.5px] ml-[1.5px]" />{" "}
-              <span className="ml-3">(888) 919 349 829</span>
+              <span className="ml-3">(+91) 7802927428</span>
             </p>
           </div>
         </div>
@@ -79,7 +80,7 @@ const Footer = () => {
               >
                 Services
               </Link>
-              <Link
+              {/* <Link
                 className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -88,7 +89,7 @@ const Footer = () => {
                 to="/blogs"
               >
                 Blog
-              </Link>
+              </Link> */}
               <Link
                 className={`transition ease-linear duration-200 w-fit ${
                   theme === "light"
@@ -187,7 +188,8 @@ const Footer = () => {
                     ? "hover:text-white/70"
                     : "hover:text-black/90"
                 }`}
-                href="#"
+                href="https://www.linkedin.com/company/byteup-ai/"
+                target="_blank"
               >
                 <FaLinkedin
                   className={`text-[19px] ml-[1px] ${
@@ -196,7 +198,7 @@ const Footer = () => {
                 />{" "}
                 <span>LinkedIn</span>
               </a>
-              <a
+              {/* <a
                 className={`transition ease-linear duration-200 w-fit flex items-center space-x-3 ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -210,8 +212,8 @@ const Footer = () => {
                   }`}
                 />{" "}
                 <span>Twitter</span>
-              </a>
-              <a
+              </a> */}
+              {/* <a
                 className={`transition ease-linear duration-200 w-fit flex items-center space-x-3 ${
                   theme === "light"
                     ? "hover:text-white/70"
@@ -225,7 +227,7 @@ const Footer = () => {
                   }`}
                 />{" "}
                 <span>Instagram</span>
-              </a>
+              </a> */}
             </ul>
           </div>
         </div>

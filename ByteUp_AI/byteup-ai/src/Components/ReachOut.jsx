@@ -111,7 +111,7 @@ const ReachOutSection = () => {
             Visit our location in real life.
           </p>
           <a href="#" className="text-[#9f7cbe] text-sm md:text-base">
-            221b Elementary Avenue, NY
+            Ahmedabad, Gujarat, India
           </a>
         </div>
         <div ref={phoneRef} className="text-left flex-1">
@@ -134,7 +134,7 @@ const ReachOutSection = () => {
             href="tel:+1234-567-789"
             className="text-[#9f7cbe] text-sm md:text-base"
           >
-            (888) 919 349 829
+            (+91) 7802927428
           </a>
         </div>
       </div>

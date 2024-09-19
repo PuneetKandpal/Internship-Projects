@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { ThemeContext } from "../Context/ThemeContext";
 import AboutHero from "../Components/AboutHero";
 import About3Points from "../Components/About3Points";
-import AboutClients from "../Components/AboutClients";
+// import AboutClients from "../Components/AboutClients";
 import Team from "../Components/Team";
 import Footer from "../Components/Footer";
 
@@ -18,8 +18,10 @@ const About = () => {
       <Navbar withHeroSection={false} />
       <AboutHero />
       <About3Points />
-      <AboutClients />
-      <Team />
+      {/* <AboutClients /> */}
+      <div className="mt-[-9rem]">
+        <Team />
+      </div>
       <Footer />
     </div>
   );
