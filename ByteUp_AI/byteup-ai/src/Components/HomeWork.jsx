@@ -3,6 +3,8 @@ import { ThemeContext } from "../Context/ThemeContext";
 import AnimatedCursor from "./AnimatedCursor";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import it from "../assets/images/insider_trade.png";
+import ut from "../assets/images/uranium_tracker.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -68,36 +70,34 @@ const HomeWork = () => {
 
   const cardData = [
     {
-      image:
-        "https://img.freepik.com/free-photo/marketing-strategy-planning-strategy-concept_53876-42950.jpg?t=st=1723799297~exp=1723802897~hmac=dedd80eb6b170f1cf29675e3545120d2ba4e94cf13190dfbc8aab8ed5bda12c5&w=1060",
+      image: it,
       label: "Big Swinging Insiders",
       description:
         "This project tracks insider trading activities of big companies.",
     },
     {
-      image:
-        "https://img.freepik.com/free-photo/homepage-seen-computer-screen_23-2149416724.jpg?t=st=1723799434~exp=1723803034~hmac=033a0e4867a6a4111311fe85d736c72f4c8e640eea3bcde682b3d6033cf783e6&w=1380",
+      image: ut,
       label: "Uranium Tracker",
       description:
-        "This tool monitors the uranium market and price fluctuations.",
+        "This project monitors the uranium market and price fluctuations.",
     },
     {
       image:
-        "https://img.freepik.com/free-photo/web-design-internet-website-responsive-software-concept_53876-124757.jpg?t=st=1723799538~exp=1723803138~hmac=38f58b99400516532477ad2ef5a32888531fe3f845a34b7ff5e0e32ecc913263&w=1380",
+        "https://img.phemex.com/wp-content/uploads/2022/07/05015552/Linear-Regression-trading-signals.jpg",
       label: "FunDesk",
       description:
         "Analyzes and predicts market trends based on insider activities.",
     },
     {
       image:
-        "https://img.freepik.com/free-photo/develop-coding-web-design-coding-web-template_53876-132245.jpg?t=st=1723799571~exp=1723803171~hmac=923535a417f40245c03a4440b9f3c3f42c9298509d3c8a9b513e9d33fdb77ac4&w=1060",
+        "https://www.promptcloud.com/wp-content/uploads/2023/09/Web-Scraping-425.jpg",
       label: "Ecommerce Scraping",
       description:
         "Provides detailed analytics on uranium mining and investment.",
     },
     {
       image:
-        "https://img.freepik.com/free-photo/homepage-seen-computer-screen_23-2149416724.jpg?t=st=1723799434~exp=1723803034~hmac=033a0e4867a6a4111311fe85d736c72f4c8e640eea3bcde682b3d6033cf783e6&w=1380",
+        "https://www.wiit.cloud/wp-content/uploads/2022/02/wiit-services-saas-process-automation-order-to-cash-slider.jpg",
       label: "Stock Automation",
       description:
         "This tool monitors the uranium market and price fluctuations.",
