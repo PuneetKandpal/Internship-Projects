@@ -30,7 +30,7 @@ const projects = [
   {
     id: 4,
     title: "Ecommerce Scraping",
-    category: "SaaS Development",
+    category: "Web Scrapping",
     image:
       "https://www.promptcloud.com/wp-content/uploads/2023/09/Web-Scraping-425.jpg",
     className: "col-span-1 row-span-1",
@@ -38,7 +38,7 @@ const projects = [
   {
     id: 5,
     title: "Stock Automation",
-    category: "SaaS Development",
+    category: "Automation",
     image:
       "https://www.wiit.cloud/wp-content/uploads/2022/02/wiit-services-saas-process-automation-order-to-cash-slider.jpg",
     className: "col-span-1 row-span-1",

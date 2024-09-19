@@ -128,7 +128,7 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <div className="w-full min-h-[90vh] md:min-h-[90vh] py-14 md:py-0 mt-40 bg-cover bg-center relative bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]">
+    <div className="w-full min-h-[113vh] md:min-h-[90vh] py-14 md:py-0 mt-40 bg-cover bg-center relative bg-[url('https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')]">
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
       <div className="absolute inset-0 flex flex-col lg:flex-row justify-between items-center px-4 sm:px-10 lg:px-20 py-10 z-10">
         <div className="w-full lg:w-[40%] h-auto lg:h-[80%] text-white flex flex-col justify-center mb-10 lg:mb-0">
