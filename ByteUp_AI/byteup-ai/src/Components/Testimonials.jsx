@@ -13,36 +13,36 @@ const Testimonials = () => {
   const testimonials = [
     {
       image:
-        "https://media.istockphoto.com/id/1371934584/photo/portrait-of-a-confident-mature-businesswoman-working-in-a-modern-office.webp?b=1&s=170667a&w=0&k=20&c=ZGVPGtsG0XXzFcUQoDcYCNzxsmu_--Yq9H0TGboxZSA=",
+        "https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_640.png",
       quote:
-        "This company transformed our business with their innovative solutions. Their dedication and expertise were evident in every step of the process.",
-      author: "John Doe",
-      position: "CEO of Company X",
+        "Working with Akshay from ByteUp AI was a great experience. His Python programming skills were top-notch, and he delivered work very quickly. Akshay showed professionalism, technical expertise, and a strong commitment to quality. ByteUp AI’s focus on innovation and detail is impressive. I highly recommend them for any project needing skill and reliability.",
+      author: "Amit Verma",
+      position: "",
     },
     {
       image:
-        "https://media.istockphoto.com/id/1919265357/photo/close-up-portrait-of-confident-businessman-standing-in-office.webp?b=1&s=612x612&w=0&k=20&c=mS5RuBjy8j-pqFh_5iIabHVxgiIrbmwvetxRxAHk7GU=",
+        "https://cdn.pixabay.com/photo/2018/11/13/21/43/avatar-3814049_640.png",
       quote:
-        "Exceptional service and amazing results. We are thrilled with the outcome of our project and highly recommend them.",
-      author: "Jane Smith",
-      position: "Marketing Director, Company Y",
+        "I recently worked with Akshay from Byteup AI, and I couldn’t be more satisfied. He took over a project from another team and did an outstanding job. His communication was excellent, keeping me informed throughout. The project was completed on time, and Akshay’s attention to detail ensured everything met my satisfaction. I highly recommend Akshay and Byteup AI for their reliability and skill.",
+      author: "Genevieve Jackson",
+      position: "",
     },
-    {
-      image:
-        "https://as2.ftcdn.net/jpg/06/37/92/85/220_F_637928505_V2mHRDvy0oGUVFN138S7F2J65gRHVhoo.jpg",
-      quote:
-        "Their team provided excellent support and top-notch expertise. Our project was a success thanks to their hard work.",
-      author: "Michael Johnson",
-      position: "CTO, Company Z",
-    },
-    {
-      image:
-        "https://media.istockphoto.com/id/1490764451/photo/headshot-portrait-of-confident-handsome-mature-middle-age-businessman-at-office.webp?b=1&s=612x612&w=0&k=20&c=Oxn1hxRZ43vNbYcRlsKQs0Wa8zT344VOIJfGbd_qMtY=",
-      quote:
-        "Working with them was a pleasure. They exceeded our expectations and delivered outstanding results.",
-      author: "Emily Davis",
-      position: "Product Manager, Company A",
-    },
+    // {
+    //   image:
+    //     "https://as2.ftcdn.net/jpg/06/37/92/85/220_F_637928505_V2mHRDvy0oGUVFN138S7F2J65gRHVhoo.jpg",
+    //   quote:
+    //     "Their team provided excellent support and top-notch expertise. Our project was a success thanks to their hard work.",
+    //   author: "Michael Johnson",
+    //   position: "CTO, Company Z",
+    // },
+    // {
+    //   image:
+    //     "https://media.istockphoto.com/id/1490764451/photo/headshot-portrait-of-confident-handsome-mature-middle-age-businessman-at-office.webp?b=1&s=612x612&w=0&k=20&c=Oxn1hxRZ43vNbYcRlsKQs0Wa8zT344VOIJfGbd_qMtY=",
+    //   quote:
+    //     "Working with them was a pleasure. They exceeded our expectations and delivered outstanding results.",
+    //   author: "Emily Davis",
+    //   position: "Product Manager, Company A",
+    // },
   ];
 
   const nextTestimonial = () => {
@@ -85,7 +85,7 @@ const Testimonials = () => {
   const animateCount = () => {
     if (!hasAnimated) {
       let count = 1;
-      const targetCount = 30;
+      const targetCount = 20;
       const interval = setInterval(() => {
         if (count <= targetCount) {
           countRef.current.innerText = `${count}+`;
@@ -145,9 +145,10 @@ const Testimonials = () => {
             All About Our Success
           </h1>
           <p className="mt-3 text-sm lg:text-[15px] tracking-[0.6px] text-white/70 font-normal">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. eveniet
-            magnam sunt animi sint iusto sapiente voluptas Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Soluta distin
+            We take pride in our clients' trust, which drives us to deliver
+            innovative solutions and exceptional results. Each project reflects
+            our dedication and leaves a lasting mark on our journey of
+            excellence.
           </p>
         </div>
         <div
