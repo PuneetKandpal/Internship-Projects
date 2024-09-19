@@ -3,6 +3,9 @@ import { ThemeContext } from "../Context/ThemeContext";
 import AnimatedCursor from "./AnimatedCursor";
 import gsap from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import shivProfile from "../assets/images/teamImages/shiv-profile.png";
+import ankitProfile from "../assets/images/teamImages/ankit-profile.jpg";
+import akshayProfile from "../assets/images/teamImages/akshay-profile.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,24 +16,21 @@ const Team = () => {
       position: "Founder",
       linkedin: "https://in.linkedin.com/in/akshay-vayak",
       twitter: "#",
-      image:
-        "https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg",
+      image: akshayProfile,
     },
     {
-      name: "Shivam",
+      name: "Shivam Rishinarayan",
       position: "Co-founder",
-      linkedin: "#",
-      twitter: "#",
-      image:
-        "https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg",
+      linkedin: "https://www.linkedin.com/in/srs0518/",
+      twitter: "https://x.com/S_RISHINARAYAN",
+      image: shivProfile,
     },
     {
       name: "Archit Mittal",
       position: "Co-founder",
-      linkedin: "#",
+      linkedin: "https://www.linkedin.com/in/archit-mittal-analyst/",
       twitter: "#",
-      image:
-        "https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg",
+      image: ankitProfile,
     },
   ];
 
@@ -110,7 +110,7 @@ const Team = () => {
                 >
                   LinkedIn
                 </a>
-                <a
+                {/* <a
                   href={person.twitter}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -121,7 +121,7 @@ const Team = () => {
                   }`}
                 >
                   Twitter
-                </a>
+                </a> */}
               </div>
             </div>
             <h1 className="text-center font-Syne text-[24px] md:text-[26px] font-semibold mt-4">
