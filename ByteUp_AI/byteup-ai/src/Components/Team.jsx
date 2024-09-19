@@ -9,28 +9,28 @@ gsap.registerPlugin(ScrollTrigger);
 const Team = () => {
   const teamMembers = [
     {
-      name: "John Doe",
-      position: "CEO",
-      linkedin: "https://www.linkedin.com/in/johndoe",
-      twitter: "https://twitter.com/johndoe",
+      name: "Akshay Vayak",
+      position: "Founder",
+      linkedin: "https://in.linkedin.com/in/akshay-vayak",
+      twitter: "#",
       image:
-        "https://images.unsplash.com/photo-1556157382-97eda2d62296?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHByb2Zlc3Npb25hbCUyMHByb2ZpbGV8ZW58MHx8MHx8fDI%3D",
+        "https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg",
     },
     {
-      name: "Jane Smith",
-      position: "CTO",
-      linkedin: "https://www.linkedin.com/in/janesmith",
-      twitter: "https://twitter.com/janesmith",
+      name: "Shivam",
+      position: "Co-founder",
+      linkedin: "#",
+      twitter: "#",
       image:
-        "https://images.unsplash.com/photo-1652471943570-f3590a4e52ed?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fHByb2Zlc3Npb25hbCUyMHByb2ZpbGV8ZW58MHx8MHx8fDI%3D",
+        "https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg",
     },
     {
-      name: "Emily Johnson",
-      position: "CFO",
-      linkedin: "https://www.linkedin.com/in/emilyjohnson",
-      twitter: "https://twitter.com/emilyjohnson",
+      name: "Archit Mittal",
+      position: "Co-founder",
+      linkedin: "#",
+      twitter: "#",
       image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHByb2Zlc3Npb25hbCUyMHByb2ZpbGV8ZW58MHx8MHx8fDI%3D",
+        "https://static.vecteezy.com/system/resources/thumbnails/001/840/612/small/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg",
     },
   ];
 
