@@ -63,14 +63,14 @@ const ServiceCard = () => {
                       : "text-gradient-css font-medium"
                   }`}
                 >
-                  Worked on
+                  Starts from
                 </h2>{" "}
                 <p
                   className={`ml-0 text-xl md:text-2xl font-bold ${
                     theme === "light" ? "text-black/45" : "text-white/45"
                   }`}
                 >
-                  {s.estimatedTime} mins
+                  ${s.price} 
                 </p>
               </li>
             </ul>
