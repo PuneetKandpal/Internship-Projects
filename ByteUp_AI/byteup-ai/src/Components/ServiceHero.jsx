@@ -12,7 +12,7 @@ const ServiceHero = () => {
   const { theme } = useContext(ThemeContext);
   const [isHovered, setIsHovered] = useState(false);
   const backgroundUrl =
-    "https://plus.unsplash.com/premium_photo-1681487178876-a1156952ec60?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8aXQlMjBjb21wYW55fGVufDB8fDB8fHww";
+    "https://images.unsplash.com/photo-1532102235608-dc8fc689c9ab?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjB8fGl0JTIwdGVjaCUyMHNlcnZpY2V8ZW58MHx8MHx8fDI%3D";
 
   const contentRef = useRef(null);
 

@@ -14,7 +14,7 @@ const Hero = () => {
   const slides = [
     {
       image:
-        "url('https://www.shutterstock.com/shutterstock/photos/2284126663/display_1500/stock-photo-data-science-and-big-data-technology-scientist-computing-analysing-and-visualizing-complex-data-2284126663.jpg')",
+        "url('https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVjaG5vbG9neXxlbnwwfHwwfHx8Mg%3D%3D')",
       text: "New Generation of Technology and Design",
     },
     {
