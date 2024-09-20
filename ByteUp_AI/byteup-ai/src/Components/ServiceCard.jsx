@@ -70,11 +70,11 @@ const ServiceCard = () => {
                     theme === "light" ? "text-black/45" : "text-white/45"
                   }`}
                 >
-                  ${s.price} 
+                  ${s.price}
                 </p>
               </li>
             </ul>
-            <Link to="/book">
+            <Link to="/contact">
               <SecondaryBtn btn="Book a Call" />
             </Link>
           </div>
