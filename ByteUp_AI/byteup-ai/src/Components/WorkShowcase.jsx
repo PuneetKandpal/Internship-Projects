@@ -13,6 +13,10 @@ const projects = [
     image: ut,
     className: "col-span-1 row-span-1",
     link: "https://ut-react.netlify.app/", // Add your project URL here
+    description: `A comprehensive platform offering real-time news, stock trends,
+                and analysis of the uranium industry. It serves as a hub for
+                professionals, investors, and enthusiasts to stay informed and
+                make data-driven investment decisions.`,
   },
   {
     id: 2,
@@ -21,6 +25,7 @@ const projects = [
     image: it,
     className: "col-span-1 row-span-2",
     link: "https://it-v.netlify.app/",
+    description: `Big Swinging Insiders is a powerful platform developed by Byteup AI, designed to give investors and financial professionals access to real-time insider transaction data across multiple major stock exchanges. By offering in-depth insights into company activities, insider buying and selling, and stock movements, the platform empowers users to make more informed investment decisions based on insider trading trends.`,
   },
   {
     id: 3,
@@ -29,6 +34,7 @@ const projects = [
     image: fundesk,
     className: "col-span-1 row-span-1",
     link: "https://www.fundesk.io",
+    description: `Fundesk is a platform offering a unique blend of content and entertainment. The platform features a fully developed blog site alongside an engaging game, creating an interactive space where users can both learn and have fun. Fundesk is designed to cater to a wide range of audiences, offering insightful blog articles on various topics, as well as a fun gaming experience to keep users entertained.`,
   },
   {
     id: 4,
@@ -38,6 +44,7 @@ const projects = [
       "https://www.promptcloud.com/wp-content/uploads/2023/09/Web-Scraping-425.jpg",
     className: "col-span-1 row-span-1",
     link: "",
+    description: `Our eCommerce Scraping Project is a comprehensive data extraction tool designed to gather vital information from major eCommerce platforms. This project enables businesses and analysts to gain deep insights into product trends, pricing strategies, and market competition by collecting and analyzing vast amounts of data efficiently.`,
   },
   {
     id: 5,
@@ -47,6 +54,7 @@ const projects = [
       "https://www.wiit.cloud/wp-content/uploads/2022/02/wiit-services-saas-process-automation-order-to-cash-slider.jpg",
     className: "col-span-1 row-span-1",
     link: "",
+    description: `Stock Automation streamlines and automates stock market trading, helping traders execute transactions based on predefined criteria. This platform enhances efficiency, reduces human error, and enables real-time market opportunities.`,
   },
 ];
 
@@ -93,6 +101,9 @@ const WorkShowcase = () => {
                 {project.title}
               </h3>
               <p className="text-gray-300 text-sm">{project.category}</p>
+              <p className="py-2 text-gray-300 text-sm">
+                {project.description}
+              </p>
             </div>
           </a>
         ))}

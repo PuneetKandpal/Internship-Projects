@@ -73,38 +73,33 @@ const HomeWork = () => {
     {
       image: it,
       label: "Big Swinging Insiders",
-      description:
-        "This project tracks insider trading activities of big companies.",
+      description: `This platform provides real-time insider data, helping investors & professionals make informed decisions by tracking trends across major stock exchanges.`,
       link: "https://it-v.netlify.app/",
     },
     {
       image: ut,
       label: "Uranium Tracker",
-      description:
-        "This project monitors the uranium market and price fluctuations.",
+      description: `A real-time news, stock trends, and analysis for the uranium industry, helping users stay informed and make data-driven investment decisions.`,
       link: "https://ut-react.netlify.app/",
     },
     {
       image: fundesk,
       label: "FunDesk",
-      description:
-        "Analyzes and predicts market trends based on insider activities.",
+      description: `Fundesk by Byteup AI combines a blog site with an engaging game, offering users both insightful content and entertainment in an interactive platform.`,
       link: "https://www.fundesk.io",
     },
     {
       image:
         "https://www.promptcloud.com/wp-content/uploads/2023/09/Web-Scraping-425.jpg",
       label: "Ecommerce Scraping",
-      description:
-        "Provides detailed analytics on uranium mining and investment.",
+      description: `The eCommerce Scraping Project helps businesses gather insights on trends, pricing, and competition from major platforms.`,
       link: "",
     },
     {
       image:
         "https://www.wiit.cloud/wp-content/uploads/2022/02/wiit-services-saas-process-automation-order-to-cash-slider.jpg",
       label: "Stock Automation",
-      description:
-        "This tool monitors the uranium market and price fluctuations.",
+      description: `Stock Automation automates stock trading, allowing users to execute transactions based on predefined criteria, enhancing efficiency and reducing human error.`,
       link: "",
     },
   ];
