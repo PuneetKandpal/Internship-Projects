@@ -15,7 +15,7 @@ const MarqueeLogo = () => {
 
   return (
     <div
-      className={`pt-20 py-36 select-none ${
+      className={` pt-20 py-36 select-none ${
         theme === "light" ? "bg-white text-black" : "bg-black text-white"
       }`}
     >
