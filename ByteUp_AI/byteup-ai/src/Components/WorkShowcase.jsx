@@ -11,6 +11,7 @@ const projects = [
     category: "SaaS Development",
     image: ut,
     className: "col-span-1 row-span-1",
+    link: "https://ut-react.netlify.app/", // Add your project URL here
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ const projects = [
     category: "SaaS Development",
     image: it,
     className: "col-span-1 row-span-2",
+    link: "https://bigswinginginsiders.com",
   },
   {
     id: 3,
@@ -26,6 +28,7 @@ const projects = [
     image:
       "https://img.phemex.com/wp-content/uploads/2022/07/05015552/Linear-Regression-trading-signals.jpg",
     className: "col-span-1 row-span-1",
+    link: "https://www.fundesk.io",
   },
   {
     id: 4,
@@ -34,6 +37,7 @@ const projects = [
     image:
       "https://www.promptcloud.com/wp-content/uploads/2023/09/Web-Scraping-425.jpg",
     className: "col-span-1 row-span-1",
+    link: "https://ecommercescraping.com",
   },
   {
     id: 5,
@@ -42,6 +46,7 @@ const projects = [
     image:
       "https://www.wiit.cloud/wp-content/uploads/2022/02/wiit-services-saas-process-automation-order-to-cash-slider.jpg",
     className: "col-span-1 row-span-1",
+    link: "https://stockautomation.com",
   },
 ];
 
@@ -71,8 +76,11 @@ const WorkShowcase = () => {
       </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-1">
         {projects.map((project) => (
-          <div
+          <a
             key={project.id}
+            href={project.link} // Add the link here
+            target="_blank" // Open in a new tab
+            rel="noopener noreferrer"
             className={`relative group bg-white ${project.className}`}
           >
             <img
@@ -86,7 +94,7 @@ const WorkShowcase = () => {
               </h3>
               <p className="text-gray-300 text-sm">{project.category}</p>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>
