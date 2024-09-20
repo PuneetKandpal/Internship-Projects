@@ -6,6 +6,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import shivProfile from "../assets/images/teamImages/shiv-profile.png";
 import ankitProfile from "../assets/images/teamImages/ankit-profile.jpg";
 import akshayProfile from "../assets/images/teamImages/akshay-profile.jpg";
+import akshayProfile2 from "../assets/images/teamImages/akshay-profile2.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -16,7 +17,7 @@ const Team = () => {
       position: "Founder",
       linkedin: "https://in.linkedin.com/in/akshay-vayak",
       twitter: "#",
-      image: akshayProfile,
+      image: akshayProfile2,
     },
     {
       name: "Shivam Rishinarayan",
