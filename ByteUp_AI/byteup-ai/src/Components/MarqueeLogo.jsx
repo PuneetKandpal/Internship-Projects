@@ -25,36 +25,76 @@ const MarqueeLogo = () => {
         gradientColor={`${theme === "light" ? "white" : "black"}`}
         className="flex space-x-0 overflow-y-hidden"
       >
-        <div className=" w-auto px-6 md:px-12 md:h-[4.5rem] h-[3.5rem]">
-          <img className="w-full h-full" src={python} alt="Python Logo" />
+        {/* Logo 1 */}
+        <div className="w-auto px-6 md:px-12 md:h-[4.5rem] h-[3.5rem] flex-shrink-0">
+          <img
+            className="w-full h-full object-contain max-w-full max-h-full"
+            src={python}
+            alt="Python Logo"
+          />
         </div>
 
-        <div className=" w-auto px-6 md:px-12 md:h-[6.5rem] h-[5rem]">
-          <img className="w-full h-full" src={django} alt="Django Logo" />
+        {/* Logo 2 */}
+        <div className="w-auto px-6 md:px-12 md:h-[6.5rem] h-[5rem] flex-shrink-0">
+          <img
+            className="w-full h-full object-contain max-w-full max-h-full"
+            src={django}
+            alt="Django Logo"
+          />
         </div>
 
-        <div className=" w-auto px-6 md:px-12 md:h-[7rem] h-[6rem]">
-          <img className="w-full h-full" src={flask} alt="Flask Logo" />
+        {/* Logo 3 */}
+        <div className="w-auto px-6 md:px-12 md:h-[7rem] h-[6rem] flex-shrink-0">
+          <img
+            className="w-full h-full object-contain max-w-full max-h-full"
+            src={flask}
+            alt="Flask Logo"
+          />
         </div>
 
-        <div className=" mt-[-20px] w-auto px-6 md:px-12 md:h-[7rem] h-[6rem]">
-          <img className="w-full h-full" src={gemini} alt="Gemini Logo" />
+        {/* Logo 4 */}
+        <div className="mt-[-20px] w-auto px-6 md:px-12 md:h-[7rem] h-[6rem] flex-shrink-0">
+          <img
+            className="w-full h-full object-contain max-w-full max-h-full"
+            src={gemini}
+            alt="Gemini Logo"
+          />
         </div>
 
-        <div className=" w-auto px-8 md:h-[7.5rem] h-[6rem]">
-          <img className="w-full h-full" src={langchain} alt="LangChain Logo" />
+        {/* Logo 5 */}
+        <div className="w-auto px-8 md:h-[7.5rem] h-[6rem] flex-shrink-0">
+          <img
+            className="w-full h-full object-contain max-w-full max-h-full"
+            src={langchain}
+            alt="LangChain Logo"
+          />
         </div>
 
-        <div className=" w-auto px-6 md:px-12 md:h-16 h-14">
-          <img className="w-full h-full" src={mistral} alt="Mistral Logo" />
+        {/* Logo 6 */}
+        <div className="w-auto px-6 md:px-12 md:h-16 h-14 flex-shrink-0">
+          <img
+            className="w-full h-full object-contain max-w-full max-h-full"
+            src={mistral}
+            alt="Mistral Logo"
+          />
         </div>
 
-        <div className="w-auto ml-5 px-6 md:px-12 md:h-[3.8rem] h-[3rem]">
-          <img className="w-full h-full" src={selenium} alt="Selenium Logo" />
+        {/* Logo 7 */}
+        <div className="w-auto ml-5 px-6 md:px-12 md:h-[3.8rem] h-[3rem] flex-shrink-0">
+          <img
+            className="w-full h-full object-contain max-w-full max-h-full"
+            src={selenium}
+            alt="Selenium Logo"
+          />
         </div>
 
-        <div className="w-auto px-8 md:px-16 md:h-[4.2rem] h-[3.5rem]">
-          <img className="w-full h-full" src={chatgpt} alt="ChatGPT Logo" />
+        {/* Logo 8 */}
+        <div className="w-auto px-8 md:px-16 md:h-[4.2rem] h-[3.5rem] flex-shrink-0">
+          <img
+            className="w-full h-full object-contain max-w-full max-h-full"
+            src={chatgpt}
+            alt="ChatGPT Logo"
+          />
         </div>
       </Marquee>
     </div>

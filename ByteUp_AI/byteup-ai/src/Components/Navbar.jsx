@@ -15,7 +15,7 @@ const Navbar = ({ withHeroSection }) => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const viewportHeight = window.innerHeight;
-      setScrolled(scrollPosition > viewportHeight * 0.4);
+      setScrolled(scrollPosition > viewportHeight * 0.00000);
     };
 
     window.addEventListener("scroll", handleScroll);
