@@ -74,12 +74,14 @@ const HomeWork = () => {
       label: "Big Swinging Insiders",
       description:
         "This project tracks insider trading activities of big companies.",
+      link: "",
     },
     {
       image: ut,
       label: "Uranium Tracker",
       description:
         "This project monitors the uranium market and price fluctuations.",
+      link: "https://ut-react.netlify.app/",
     },
     {
       image:
@@ -87,6 +89,7 @@ const HomeWork = () => {
       label: "FunDesk",
       description:
         "Analyzes and predicts market trends based on insider activities.",
+      link: "https://www.fundesk.io",
     },
     {
       image:
@@ -94,6 +97,7 @@ const HomeWork = () => {
       label: "Ecommerce Scraping",
       description:
         "Provides detailed analytics on uranium mining and investment.",
+      link: "",
     },
     {
       image:
@@ -101,6 +105,7 @@ const HomeWork = () => {
       label: "Stock Automation",
       description:
         "This tool monitors the uranium market and price fluctuations.",
+      link: "",
     },
   ];
 
@@ -164,8 +169,11 @@ const HomeWork = () => {
           className="flex gap-4 md:gap-8 transition-all duration-1000 ease-in-out"
         >
           {cardData.map((card, index) => (
-            <div
+            <a
               key={index}
+              href={card.link} // Link to the live project
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex-shrink-0 w-[300px] md:w-[500px] card"
             >
               <div className="relative h-[200px] md:h-[300px] mb-4 group overflow-hidden">
@@ -192,7 +200,7 @@ const HomeWork = () => {
               >
                 {card.label}
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
