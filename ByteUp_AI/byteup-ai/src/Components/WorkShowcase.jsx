@@ -3,6 +3,7 @@ import { ThemeContext } from "../Context/ThemeContext";
 import AnimatedCursor from "./AnimatedCursor";
 import it from "../assets/images/insider_trade.png";
 import ut from "../assets/images/uranium_tracker.png";
+import fundesk from "../assets/images/Fundesk.png";
 
 const projects = [
   {
@@ -19,14 +20,13 @@ const projects = [
     category: "SaaS Development",
     image: it,
     className: "col-span-1 row-span-2",
-    link: "https://bigswinginginsiders.com",
+    link: "https://it-v.netlify.app/",
   },
   {
     id: 3,
     title: "FunDesk",
     category: "SaaS Development",
-    image:
-      "https://img.phemex.com/wp-content/uploads/2022/07/05015552/Linear-Regression-trading-signals.jpg",
+    image: fundesk,
     className: "col-span-1 row-span-1",
     link: "https://www.fundesk.io",
   },
@@ -37,7 +37,7 @@ const projects = [
     image:
       "https://www.promptcloud.com/wp-content/uploads/2023/09/Web-Scraping-425.jpg",
     className: "col-span-1 row-span-1",
-    link: "https://ecommercescraping.com",
+    link: "",
   },
   {
     id: 5,
@@ -46,7 +46,7 @@ const projects = [
     image:
       "https://www.wiit.cloud/wp-content/uploads/2022/02/wiit-services-saas-process-automation-order-to-cash-slider.jpg",
     className: "col-span-1 row-span-1",
-    link: "https://stockautomation.com",
+    link: "",
   },
 ];
 

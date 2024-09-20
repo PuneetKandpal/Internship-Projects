@@ -5,6 +5,7 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import it from "../assets/images/insider_trade.png";
 import ut from "../assets/images/uranium_tracker.png";
+import fundesk from "../assets/images/Fundesk.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -74,7 +75,7 @@ const HomeWork = () => {
       label: "Big Swinging Insiders",
       description:
         "This project tracks insider trading activities of big companies.",
-      link: "",
+      link: "https://it-v.netlify.app/",
     },
     {
       image: ut,
@@ -84,8 +85,7 @@ const HomeWork = () => {
       link: "https://ut-react.netlify.app/",
     },
     {
-      image:
-        "https://img.phemex.com/wp-content/uploads/2022/07/05015552/Linear-Regression-trading-signals.jpg",
+      image: fundesk,
       label: "FunDesk",
       description:
         "Analyzes and predicts market trends based on insider activities.",
