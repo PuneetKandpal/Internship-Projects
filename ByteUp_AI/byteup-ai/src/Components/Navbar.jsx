@@ -67,9 +67,12 @@ const Navbar = ({ withHeroSection }) => {
     <div
       className={`w-full px-4 md:px-12 fixed top-0 left-0 right-0 z-50 flex justify-between items-center transition-all duration-300 ${getNavStyles()}`}
     >
-      <div className="font-Syne h-[55px] w-[210px] flex justify-center items-center object-cover">
+      <NavLink
+        to="/"
+        className="font-Syne h-[55px] w-[210px] flex justify-center items-center object-cover"
+      >
         <img
-          className="object-cover  ml-[-4rem] md:ml-0 h-[100%] w-[100%] mt-[-2px]"
+          className="object-cover ml-[-4rem] md:ml-0 h-[100%] w-[100%] mt-[-2px]"
           src={
             scrolled || !withHeroSection
               ? theme === "light"
@@ -79,7 +82,7 @@ const Navbar = ({ withHeroSection }) => {
           }
           alt="Logo"
         />
-      </div>
+      </NavLink>
       <div className="md:hidden">
         <button onClick={toggleMenu} className="focus:outline-none">
           {isMenuOpen ? (
